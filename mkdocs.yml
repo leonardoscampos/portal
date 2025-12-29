@@ -1,0 +1,23 @@
+site_name: Portal LC
+site_url: https://leonardoscampos.github.io/portal/
+site_author: Leonardo Campos
+repo_name: leonardoscampos/portal
+repo_url: https://github.com/leonardoscampos/portal
+
+theme:
+  name: material
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  features:
+    - content.code.copy
+    - content.code.annotate
+
+nav:
+  - Home: index.md
+  - Guides:
+      - Introduction: guides/intro.md
+      - Advanced Topics: guides/advanced.md
+  - Tutorials:
+      - Setup Guide: tutorials/setup.md
+      - Deployment Guide: tutorials/deployment.md
