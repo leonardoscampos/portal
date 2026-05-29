@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{# ── Custom page title ── #}
+{% block htmltitle %}
+  {% if page.meta and page.meta.title %}
+    <title>{{ page.meta.title }} — Leonardo Campos</title>
+  {% elif page.title and not page.is_homepage %}
+    <title>{{ page.title }} — Leonardo Campos</title>
+  {% else %}
+    <title>Leonardo Campos — DevOps Engineer Specialist</title>
+  {% endif %}
+{% endblock %}
+
+{# ── Load Inter + JetBrains Mono; force dark color-scheme ── #}
+{% block extrahead %}
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#06101e">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+{% endblock %}
