@@ -1,0 +1,11 @@
+{% if config.extra.alternate and config.extra.alternate | length >= 2 %}
+<div class="md-header__option">
+  <div class="lang-toggle" id="lang-toggle" aria-label="Switch language">
+    <span class="lang-toggle__label lang-toggle__label--en">&#127482;&#127480;</span>
+    <button class="lang-toggle__switch" id="lang-toggle-btn" role="switch" aria-checked="false">
+      <span class="lang-toggle__thumb"></span>
+    </button>
+    <span class="lang-toggle__label lang-toggle__label--pt">&#127463;&#127479;</span>
+  </div>
+</div>
+{% endif %}

@@ -1,24 +1,207 @@
-site_name: Leonardo's Portal
-site_description: A comprehensive portal for Leonardo's projects and tutorials.
+site_name: Leonardo Campos | DevOps Engineer Specialist
+site_description: DevOps Engineer Specialist – Cloud Infrastructure, IaC, CI/CD, Containers and Observability.
 site_url: https://leonardoscampos.github.io/portal/
 site_author: Leonardo Campos
+copyright: "© 2026 Leonardo Campos. All rights reserved."
 repo_name: leonardoscampos/portal
-repo_url: https://github.com/leonardoscampos/portal
 
 theme:
   name: material
+  custom_dir: leonardo/overrides
   palette:
-    primary: 'indigo'
-    accent: 'indigo'
+    scheme: slate
+    primary: custom
+    accent: custom
+  font: false
+  icon:
+    logo: material/rocket-launch
+    repo: fontawesome/brands/github
   features:
+    - navigation.top
+    - navigation.tracking
+    - navigation.indexes
+    - search.highlight
+    - search.suggest
     - content.code.copy
     - content.code.annotate
+    - content.tabs.link
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/about-me.css
+
+extra_javascript:
+  - javascripts/extra.js
+  - javascripts/about-me.js
+
+extra:
+  generator: false
+  alternate:
+    - name: �🇷 Português (Brasil)
+      link: /portal/
+      lang: pt-BR
+    - name: 🇺🇸 English
+      link: /portal/en/
+      lang: en
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/leonardoscampos
+      name: GitHub
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/leonardoscampos
+      name: LinkedIn
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+  - blog
+  - i18n:
+      docs_structure: suffix
+      fallback_to_default: true
+      reconfigure_material: true
+      reconfigure_search: true
+      languages:
+        - locale: pt-BR
+          default: true
+          name: Português (Brasil)
+          build: true
+          site_name: "Leonardo Campos | DevOps Engineer Specialist"
+        - locale: en
+          name: English
+          build: true
+          site_name: "Leonardo Campos | DevOps Engineer Specialist"
+          nav_translations:
+            Home: Início
+            Cloud Infrastructure: Infraestrutura Cloud
+            Overview: Visão Geral
+            Compute: Computação
+            Storage: Armazenamento
+            Networking: Rede
+            Security & IAM: Segurança & IAM
+            Observability: Observabilidade
+            IaC & DevOps: IaC & DevOps
+            CI/CD Pipelines: Pipelines CI/CD
+            Service Mesh: Malha de Serviços
+            Operators: Operadores
+            Container Security: Segurança de Containers
+            Managed Kubernetes: Kubernetes Gerenciado
+            Containers & Orchestration: Containers & Orquestração
+            Monitoring & Observability: Monitoramento & Observabilidade
+            Alerting: Alertas
+            Security & DevSecOps: Segurança & DevSecOps
+            DevSecOps Pipelines: Pipelines DevSecOps
+            Secrets Management: Gestão de Segredos
+            Policy as Code: Política como Código
+            Vulnerability Scanning: Varredura de Vulnerabilidades
+            Identity & Access: Identidade & Acesso
+            Supply Chain: Cadeia de Suprimentos
+            Infrastructure as Code: Infraestrutura como Código
+            About Me: Sobre Mim
+            Guides: Guias
+            Introduction: Introdução
+            Advanced Topics: Tópicos Avançados
+            Tutorials: Tutoriais
+            Setup Guide: Guia de Configuração
+            Deployment Guide: Guia de Implantação
+            Blog: Blog
 
 nav:
   - Home: index.md
-  - Guides:
-      - Introduction: guides/intro.md
-      - Advanced Topics: guides/advanced.md
-  - Tutorials:
-      - Setup Guide: tutorials/setup.md
-      - Deployment Guide: tutorials/deployment.md
+  - Cloud Infrastructure:
+      - Overview: domains/cloud.md
+      - AWS:
+          - Overview: domains/aws/index.md
+          - Compute: domains/aws/compute.md
+          - Storage: domains/aws/storage.md
+          - Networking: domains/aws/networking.md
+          - Security & IAM: domains/aws/security.md
+          - Observability: domains/aws/observability.md
+          - IaC & DevOps: domains/aws/iac.md
+      - Azure:
+          - Overview: domains/azure/index.md
+          - Compute: domains/azure/compute.md
+          - Storage: domains/azure/storage.md
+          - Networking: domains/azure/networking.md
+          - Security & IAM: domains/azure/security.md
+          - Observability: domains/azure/observability.md
+          - IaC & DevOps: domains/azure/iac.md
+      - GCP:
+          - Overview: domains/gcp/index.md
+          - Compute: domains/gcp/compute.md
+          - Storage: domains/gcp/storage.md
+          - Networking: domains/gcp/networking.md
+          - Security & IAM: domains/gcp/security.md
+          - Observability: domains/gcp/observability.md
+          - IaC & DevOps: domains/gcp/iac.md
+      - OCI:
+          - Overview: domains/oci/index.md
+          - Compute: domains/oci/compute.md
+          - Storage: domains/oci/storage.md
+          - Networking: domains/oci/networking.md
+          - Security & IAM: domains/oci/security.md
+          - Observability: domains/oci/observability.md
+          - IaC & DevOps: domains/oci/iac.md
+  - CI/CD Pipelines:
+      - Overview: domains/cicd/index.md
+      - GitHub Actions: domains/cicd/github-actions.md
+      - GitLab CI: domains/cicd/gitlab-ci.md
+      - Jenkins: domains/cicd/jenkins.md
+      - Tekton: domains/cicd/tekton.md
+      - Azure DevOps: domains/cicd/azure-devops.md
+      - CircleCI: domains/cicd/circle-ci.md
+  - Containers & Orchestration:
+      - Overview: domains/containers/index.md
+      - Docker: domains/containers/docker.md
+      - Kubernetes: domains/containers/kubernetes.md
+      - Service Mesh: domains/containers/service-mesh.md
+      - Operators: domains/containers/operators.md
+      - Container Security: domains/containers/container-security.md
+      - Managed Kubernetes: domains/containers/managed-kubernetes.md
+  - Monitoring & Observability:
+      - Overview: domains/monitoring/index.md
+      - Prometheus: domains/monitoring/prometheus.md
+      - Grafana: domains/monitoring/grafana.md
+      - Loki: domains/monitoring/loki.md
+      - OpenTelemetry: domains/monitoring/opentelemetry.md
+      - Alerting: domains/monitoring/alerting.md
+      - APM: domains/monitoring/apm.md
+      - Datadog: domains/monitoring/datadog.md
+      - Dynatrace: domains/monitoring/dynatrace.md
+      - ELK Stack: domains/monitoring/elk.md
+  - Security & DevSecOps:
+      - Overview: domains/security/index.md
+      - DevSecOps Pipelines: domains/security/devsecops.md
+      - Secrets Management: domains/security/secrets.md
+      - Policy as Code: domains/security/opa-policies.md
+      - Vulnerability Scanning: domains/security/vulnerability-scanning.md
+      - Identity & Access: domains/security/identity-access.md
+      - Supply Chain: domains/security/supply-chain.md
+  - Infrastructure as Code:
+      - Overview: domains/iac/index.md
+      - Terraform: domains/iac/terraform.md
+      - Ansible: domains/iac/ansible.md
+      - CloudFormation: domains/iac/cloudformation.md
+      - Pulumi: domains/iac/pulumi.md
+      - Helm: domains/iac/helm.md
+      - GitOps: domains/iac/gitops.md
+      - Packer: domains/iac/packer.md
+  - About Me: about-me.md
+  - Guides: guides/index.md
+  - Tutorials: tutorials/index.md
+  - Blog:
+    - blog/index.md
