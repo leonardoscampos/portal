@@ -1,0 +1,1109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/about-me/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/about-me/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/about-me/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/blog/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/blog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/blog/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/blog/posts/2026-04-28-slos-na-pratica/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/blog/posts/2026-04-28-slos-na-pratica/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/blog/posts/2026-04-28-slos-na-pratica/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/blog/posts/2026-05-10-gitops-com-argocd/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/blog/posts/2026-05-10-gitops-com-argocd/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/blog/posts/2026-05-10-gitops-com-argocd/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/blog/posts/2026-05-20-terraform-em-escala/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/blog/posts/2026-05-20-terraform-em-escala/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/blog/posts/2026-05-20-terraform-em-escala/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/cloud/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/cloud/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/cloud/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/aws/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/aws/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/aws/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/aws/compute/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/aws/compute/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/aws/compute/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/aws/iac/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/aws/iac/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/aws/iac/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/aws/networking/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/aws/networking/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/aws/networking/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/aws/observability/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/aws/observability/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/aws/observability/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/aws/security/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/aws/security/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/aws/security/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/aws/storage/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/aws/storage/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/aws/storage/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/azure/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/azure/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/azure/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/azure/compute/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/azure/compute/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/azure/compute/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/azure/iac/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/azure/iac/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/azure/iac/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/azure/networking/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/azure/networking/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/azure/networking/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/azure/observability/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/azure/observability/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/azure/observability/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/azure/security/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/azure/security/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/azure/security/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/azure/storage/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/azure/storage/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/azure/storage/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/cicd/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/cicd/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/cicd/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/cicd/azure-devops/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/cicd/azure-devops/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/cicd/azure-devops/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/cicd/circle-ci/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/cicd/circle-ci/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/cicd/circle-ci/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/cicd/github-actions/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/cicd/github-actions/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/cicd/github-actions/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/cicd/gitlab-ci/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/cicd/gitlab-ci/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/cicd/gitlab-ci/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/cicd/jenkins/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/cicd/jenkins/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/cicd/jenkins/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/cicd/tekton/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/cicd/tekton/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/cicd/tekton/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/containers/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/containers/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/containers/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/containers/container-security/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/containers/container-security/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/containers/container-security/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/containers/docker/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/containers/docker/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/containers/docker/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/containers/kubernetes/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/containers/kubernetes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/containers/kubernetes/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/containers/managed-kubernetes/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/containers/managed-kubernetes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/containers/managed-kubernetes/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/containers/operators/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/containers/operators/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/containers/operators/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/containers/service-mesh/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/containers/service-mesh/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/containers/service-mesh/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/gcp/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/gcp/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/gcp/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/gcp/compute/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/gcp/compute/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/gcp/compute/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/gcp/iac/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/gcp/iac/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/gcp/iac/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/gcp/networking/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/gcp/networking/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/gcp/networking/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/gcp/observability/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/gcp/observability/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/gcp/observability/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/gcp/security/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/gcp/security/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/gcp/security/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/gcp/storage/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/gcp/storage/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/gcp/storage/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/iac/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/iac/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/iac/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/iac/ansible/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/iac/ansible/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/iac/ansible/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/iac/cloudformation/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/iac/cloudformation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/iac/cloudformation/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/iac/gitops/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/iac/gitops/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/iac/gitops/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/iac/helm/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/iac/helm/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/iac/helm/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/iac/packer/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/iac/packer/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/iac/packer/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/iac/pulumi/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/iac/pulumi/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/iac/pulumi/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/iac/terraform/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/iac/terraform/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/iac/terraform/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/monitoring/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/monitoring/alerting/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/alerting/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/alerting/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/monitoring/apm/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/apm/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/apm/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/monitoring/datadog/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/datadog/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/datadog/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/monitoring/dynatrace/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/dynatrace/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/dynatrace/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/monitoring/elk/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/elk/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/elk/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/monitoring/grafana/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/grafana/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/grafana/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/monitoring/loki/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/loki/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/loki/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/monitoring/opentelemetry/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/opentelemetry/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/opentelemetry/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/monitoring/prometheus/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/prometheus/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/prometheus/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/oci/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/oci/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/oci/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/oci/compute/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/oci/compute/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/oci/compute/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/oci/iac/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/oci/iac/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/oci/iac/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/oci/networking/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/oci/networking/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/oci/networking/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/oci/observability/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/oci/observability/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/oci/observability/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/oci/security/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/oci/security/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/oci/security/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/oci/storage/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/oci/storage/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/oci/storage/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/security/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/security/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/security/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/security/devsecops/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/security/devsecops/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/security/devsecops/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/security/identity-access/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/security/identity-access/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/security/identity-access/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/security/opa-policies/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/security/opa-policies/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/security/opa-policies/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/security/secrets/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/security/secrets/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/security/secrets/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/security/supply-chain/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/security/supply-chain/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/security/supply-chain/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/domains/security/vulnerability-scanning/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/security/vulnerability-scanning/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/security/vulnerability-scanning/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/guides/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/guides/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/guides/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/guides/terraform-multi-env/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/guides/terraform-multi-env/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/guides/terraform-multi-env/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/tutorials/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/tutorials/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/tutorials/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/tutorials/docker-containerize-app/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/tutorials/docker-containerize-app/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/tutorials/docker-containerize-app/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/tutorials/prometheus-grafana/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/tutorials/prometheus-grafana/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/tutorials/prometheus-grafana/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/about-me/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/about-me/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/about-me/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/blog/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/blog/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/blog/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/blog/posts/2026-04-28-slos-na-pratica/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/blog/posts/2026-04-28-slos-na-pratica/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/blog/posts/2026-04-28-slos-na-pratica/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/blog/posts/2026-05-10-gitops-com-argocd/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/blog/posts/2026-05-10-gitops-com-argocd/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/blog/posts/2026-05-10-gitops-com-argocd/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/blog/posts/2026-05-20-terraform-em-escala/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/blog/posts/2026-05-20-terraform-em-escala/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/blog/posts/2026-05-20-terraform-em-escala/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/cloud/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/cloud/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/cloud/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/aws/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/aws/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/aws/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/aws/compute/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/aws/compute/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/aws/compute/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/aws/iac/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/aws/iac/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/aws/iac/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/aws/networking/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/aws/networking/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/aws/networking/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/aws/observability/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/aws/observability/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/aws/observability/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/aws/security/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/aws/security/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/aws/security/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/aws/storage/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/aws/storage/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/aws/storage/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/azure/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/azure/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/azure/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/azure/compute/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/azure/compute/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/azure/compute/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/azure/iac/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/azure/iac/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/azure/iac/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/azure/networking/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/azure/networking/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/azure/networking/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/azure/observability/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/azure/observability/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/azure/observability/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/azure/security/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/azure/security/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/azure/security/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/azure/storage/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/azure/storage/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/azure/storage/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/cicd/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/cicd/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/cicd/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/cicd/azure-devops/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/cicd/azure-devops/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/cicd/azure-devops/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/cicd/circle-ci/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/cicd/circle-ci/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/cicd/circle-ci/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/cicd/github-actions/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/cicd/github-actions/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/cicd/github-actions/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/cicd/gitlab-ci/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/cicd/gitlab-ci/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/cicd/gitlab-ci/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/cicd/jenkins/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/cicd/jenkins/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/cicd/jenkins/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/cicd/tekton/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/cicd/tekton/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/cicd/tekton/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/containers/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/containers/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/containers/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/containers/container-security/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/containers/container-security/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/containers/container-security/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/containers/docker/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/containers/docker/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/containers/docker/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/containers/kubernetes/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/containers/kubernetes/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/containers/kubernetes/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/containers/managed-kubernetes/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/containers/managed-kubernetes/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/containers/managed-kubernetes/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/containers/operators/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/containers/operators/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/containers/operators/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/containers/service-mesh/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/containers/service-mesh/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/containers/service-mesh/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/gcp/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/gcp/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/gcp/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/gcp/compute/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/gcp/compute/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/gcp/compute/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/gcp/iac/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/gcp/iac/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/gcp/iac/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/gcp/networking/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/gcp/networking/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/gcp/networking/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/gcp/observability/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/gcp/observability/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/gcp/observability/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/gcp/security/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/gcp/security/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/gcp/security/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/gcp/storage/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/gcp/storage/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/gcp/storage/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/iac/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/iac/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/iac/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/iac/ansible/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/iac/ansible/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/iac/ansible/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/iac/cloudformation/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/iac/cloudformation/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/iac/cloudformation/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/iac/gitops/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/iac/gitops/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/iac/gitops/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/iac/helm/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/iac/helm/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/iac/helm/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/iac/packer/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/iac/packer/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/iac/packer/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/iac/pulumi/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/iac/pulumi/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/iac/pulumi/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/iac/terraform/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/iac/terraform/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/iac/terraform/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/monitoring/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/monitoring/alerting/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/alerting/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/alerting/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/monitoring/apm/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/apm/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/apm/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/monitoring/datadog/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/datadog/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/datadog/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/monitoring/dynatrace/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/dynatrace/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/dynatrace/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/monitoring/elk/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/elk/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/elk/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/monitoring/grafana/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/grafana/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/grafana/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/monitoring/loki/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/loki/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/loki/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/monitoring/opentelemetry/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/opentelemetry/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/opentelemetry/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/monitoring/prometheus/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/monitoring/prometheus/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/monitoring/prometheus/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/oci/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/oci/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/oci/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/oci/compute/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/oci/compute/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/oci/compute/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/oci/iac/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/oci/iac/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/oci/iac/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/oci/networking/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/oci/networking/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/oci/networking/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/oci/observability/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/oci/observability/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/oci/observability/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/oci/security/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/oci/security/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/oci/security/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/oci/storage/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/oci/storage/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/oci/storage/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/security/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/security/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/security/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/security/devsecops/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/security/devsecops/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/security/devsecops/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/security/identity-access/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/security/identity-access/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/security/identity-access/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/security/opa-policies/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/security/opa-policies/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/security/opa-policies/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/security/secrets/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/security/secrets/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/security/secrets/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/security/supply-chain/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/security/supply-chain/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/security/supply-chain/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/domains/security/vulnerability-scanning/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/domains/security/vulnerability-scanning/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/domains/security/vulnerability-scanning/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/guides/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/guides/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/guides/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/guides/terraform-multi-env/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/guides/terraform-multi-env/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/guides/terraform-multi-env/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/tutorials/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/tutorials/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/tutorials/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/tutorials/docker-containerize-app/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/tutorials/docker-containerize-app/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/tutorials/docker-containerize-app/"/>
+    </url>
+    <url>
+        <loc>https://leonardoscampos.github.io/portal/en/tutorials/prometheus-grafana/</loc>
+        <lastmod>2026-06-01</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://leonardoscampos.github.io/portal/en/tutorials/prometheus-grafana/"/>
+        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://leonardoscampos.github.io/portal/tutorials/prometheus-grafana/"/>
+    </url>
+</urlset>
