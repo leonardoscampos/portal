@@ -1,29 +1,29 @@
 ---
 title: DevSecOps Pipelines
-description: SAST, DAST, SCA, secrets scanning and security gates embedded in GitHub Actions, GitLab CI, and Tekton pipelines.
+description: SAST, DAST, SCA, varredura de segredos e portões de segurança integrados em pipelines do GitHub Actions, GitLab CI e Tekton.
 ---
 
 <div class="domain-page-hero" data-domain="security">
   <div class="dph-left">
     <span class="dph-eyebrow">// security-devsecops / devsecops-pipelines</span>
     <h1 class="dph-title">DevSecOps Pipelines</h1>
-    <p class="dph-desc">Security checks automated as pipeline stages — not bolted on at the end. SAST catches code vulnerabilities at commit time, SCA identifies known CVEs in dependencies, secrets scanning prevents credential leaks, and DAST validates running applications before promotion.</p>
+    <p class="dph-desc">Verificações de segurança automatizadas como estágios de pipeline — não acrescentadas ao final. O SAST detecta vulnerabilidades de código no momento do commit, o SCA identifica CVEs conhecidas em dependências, a varredura de segredos previne vazamentos de credenciais e o DAST valida aplicações em execução antes da promoção.</p>
     <div class="dph-badges">
       <span class="tech-badge">SAST</span>
       <span class="tech-badge">DAST</span>
       <span class="tech-badge">SCA</span>
       <span class="tech-badge">Semgrep</span>
       <span class="tech-badge">OWASP ZAP</span>
-      <span class="tech-badge">Secrets Scanning</span>
+      <span class="tech-badge">Varredura de Segredos</span>
     </div>
   </div>
 </div>
 
-[← Security Overview](index.md) | [Secrets Management →](secrets.md)
+[← Visão Geral de Segurança](index.md) | [Gerenciamento de Segredos →](secrets.md)
 
 ---
 
-## Security Pipeline Stages
+## Estágios do Pipeline de Segurança
 
 ```
 ┌─────────┐  ┌──────────┐  ┌─────────┐  ┌─────────┐  ┌──────────┐  ┌──────────┐
@@ -38,7 +38,7 @@ description: SAST, DAST, SCA, secrets scanning and security gates embedded in Gi
 
 ---
 
-## GitHub Actions — Full Security Pipeline
+## GitHub Actions — Pipeline de Segurança Completo
 
 ```yaml
 name: Security Pipeline
@@ -236,7 +236,7 @@ jobs:
 
 ---
 
-## Semgrep Rules
+## Regras do Semgrep
 
 ```yaml
 # .semgrep/custom-rules.yaml
@@ -277,7 +277,7 @@ rules:
 
 ---
 
-## GitLab CI Security Template
+## Template de Segurança do GitLab CI
 
 ```yaml
 # .gitlab-ci.yml — include GitLab built-in security templates
@@ -308,7 +308,7 @@ container_scanning:
 
 ---
 
-## Pre-commit Hooks
+## Hooks de Pré-commit
 
 ```yaml
 # .pre-commit-config.yaml
@@ -347,7 +347,7 @@ pre-commit run --all-files  # run against all files
 
 ---
 
-## Security Gate Policy
+## Política de Portão de Segurança
 
 ```yaml
 # OPA policy — enforce minimum security checks before merge
@@ -383,24 +383,26 @@ deny[msg] if {
 
 ---
 
-## Compliance as Code — Key Frameworks
+## Conformidade como Código — Frameworks Principais
 
-| Framework | Scope | Tool |
-|-----------|-------|------|
-| CIS Benchmarks | OS, K8s, cloud accounts | `kube-bench`, `cloud-custodian` |
-| NIST SP 800-53 | US federal controls | `OpenSCAP`, custom OPA policies |
-| SOC 2 Type II | SaaS trust service criteria | `Vanta`, `Drata`, `Sprinto` |
-| PCI DSS | Cardholder data environments | Segmentation + audit logging |
-| GDPR | EU personal data | Data classification + encryption |
-| SLSA | Supply chain integrity (4 levels) | Sigstore, OIDC provenance |
+| Framework | Escopo | Ferramenta |
+|-----------|--------|------------|
+| CIS Benchmarks | SO, K8s, contas de nuvem | `kube-bench`, `cloud-custodian` |
+| NIST SP 800-53 | Controles federais dos EUA | `OpenSCAP`, políticas OPA customizadas |
+| SOC 2 Type II | Critérios de confiança para SaaS | `Vanta`, `Drata`, `Sprinto` |
+| PCI DSS | Ambientes de dados de titulares de cartão | Segmentação + registro de auditoria |
+| GDPR | Dados pessoais da UE | Classificação de dados + criptografia |
+| SLSA | Integridade da cadeia de suprimentos (4 níveis) | Sigstore, proveniência OIDC |
 
 ```bash
 # kube-bench — CIS Kubernetes benchmark
 kubectl apply -f https://raw.githubusercontent.com/aquasecurity/kube-bench/main/job.yaml
 kubectl logs -l app=kube-bench
+```
 
+```bash
 # cloud-custodian — AWS compliance rules
 custodian run --output-dir=output policy.yaml
 ```
 
-[← Security Overview](index.md) | [Secrets Management →](secrets.md)
+[← Visão Geral de Segurança](index.md) | [Gerenciamento de Segredos →](secrets.md)

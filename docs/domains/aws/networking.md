@@ -1,13 +1,13 @@
 ---
-title: AWS Networking
-description: VPC, Route 53, CloudFront, ALB/NLB, Transit Gateway — AWS networking fundamentals.
+title: AWS Rede
+description: VPC, Route 53, CloudFront, ALB/NLB, Transit Gateway — fundamentos de rede na AWS.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// aws / networking</span>
-    <h1 class="dph-title">AWS Networking</h1>
-    <p class="dph-desc">Private networks, global DNS, edge delivery, load balancing and hybrid connectivity. AWS networking is the foundation every cloud workload is built on — getting the design right early saves significant refactoring later.</p>
+    <h1 class="dph-title">AWS Rede</h1>
+    <p class="dph-desc">Redes privadas, DNS global, entrega de conteúdo no edge, balanceamento de carga e conectividade híbrida. A rede AWS é a fundação sobre a qual toda carga de trabalho em nuvem é construída — acertar o design desde o início evita retrabalho significativo no futuro.</p>
     <div class="dph-badges">
       <span class="tech-badge">VPC</span>
       <span class="tech-badge">Route 53</span>
@@ -24,18 +24,18 @@ description: VPC, Route 53, CloudFront, ALB/NLB, Transit Gateway — AWS network
 
 ## VPC — Virtual Private Cloud
 
-A VPC is an isolated virtual network within a region. Every production workload starts here — get the CIDR design right before you create anything else.
+Uma VPC é uma rede virtual isolada dentro de uma região. Toda carga de trabalho em produção começa aqui — acerte o design de CIDR antes de criar qualquer outra coisa.
 
-### Subnet design
+### Design de sub-redes
 
-| Subnet type | Route table | Typical use |
-|------------|------------|------------|
-| **Public** | → Internet Gateway | Load balancers, NAT Gateways, bastion hosts |
-| **Private** | → NAT Gateway | App servers, EKS nodes, ECS tasks, databases |
-| **Isolated** | Local only | RDS, ElastiCache, internal services with no internet need |
+| Tipo de sub-rede | Tabela de rotas | Uso típico |
+|-----------------|----------------|------------|
+| **Pública** | → Internet Gateway | Load balancers, NAT Gateways, bastion hosts |
+| **Privada** | → NAT Gateway | Servidores de app, nodes EKS, tasks ECS, bancos de dados |
+| **Isolada** | Somente local | RDS, ElastiCache, serviços internos sem necessidade de internet |
 
-!!! tip "CIDR planning"
-    Use a `/16` per VPC (65,534 IPs) and allocate `/24` subnets per AZ per tier (gives 254 hosts each). Reserve the last `/24` block in each tier for future AZs. Avoid `10.0.0.0/8` if you plan to peer with on-prem networks that already use it — use `100.64.0.0/10` (IANA Shared Address Space) for VPC-internal traffic.
+!!! tip "Planejamento de CIDR"
+    Use `/16` por VPC (65.534 IPs) e aloque sub-redes `/24` por AZ por camada (fornece 254 hosts cada). Reserve o último bloco `/24` em cada camada para AZs futuras. Evite `10.0.0.0/8` se planeja fazer peering com redes on-prem que já o utilizam — use `100.64.0.0/10` (IANA Shared Address Space) para tráfego interno à VPC.
 
 ```hcl
 module "vpc" {
@@ -51,11 +51,11 @@ module "vpc" {
   database_subnets = ["10.20.201.0/24", "10.20.202.0/24", "10.20.203.0/24"]
 
   enable_nat_gateway     = true
-  single_nat_gateway     = false  # one NAT per AZ for HA
+  single_nat_gateway     = false  # um NAT por AZ para HA
   enable_dns_hostnames   = true
   enable_dns_support     = true
 
-  # Required tags for EKS
+  # Tags necessárias para EKS
   private_subnet_tags = {
     "kubernetes.io/role/internal-elb" = 1
   }
@@ -67,15 +67,15 @@ module "vpc" {
 
 ### VPC Endpoints
 
-VPC Endpoints allow private access to AWS services without traversing the internet or NAT Gateway, reducing egress cost and latency.
+Os VPC Endpoints permitem acesso privado aos serviços AWS sem passar pela internet ou pelo NAT Gateway, reduzindo custo de egresso e latência.
 
-| Type | Examples | Cost |
-|------|---------|------|
-| **Gateway** | S3, DynamoDB | Free |
-| **Interface** (PrivateLink) | ECR, Secrets Manager, SSM, KMS, CloudWatch | ~$0.01/hr/AZ |
+| Tipo | Exemplos | Custo |
+|------|---------|-------|
+| **Gateway** | S3, DynamoDB | Gratuito |
+| **Interface** (PrivateLink) | ECR, Secrets Manager, SSM, KMS, CloudWatch | ~$0,01/h/AZ |
 
 ```hcl
-# Gateway endpoint for S3 (free — always create this)
+# Endpoint Gateway para S3 (gratuito — sempre crie este)
 resource "aws_vpc_endpoint" "s3" {
   vpc_id            = module.vpc.vpc_id
   service_name      = "com.amazonaws.${var.region}.s3"
@@ -86,28 +86,28 @@ resource "aws_vpc_endpoint" "s3" {
 
 ### VPC Flow Logs
 
-Enable Flow Logs on every production VPC. Send to S3 for cost-effective long-term retention; query with Athena. Send to CloudWatch Logs for real-time alerting.
+Habilite Flow Logs em toda VPC de produção. Envie para S3 para retenção de longo prazo com baixo custo; consulte com Athena. Envie para CloudWatch Logs para alertas em tempo real.
 
 ---
 
 ## Route 53
 
-Route 53 is AWS's managed DNS and health checking service. It supports both **public hosted zones** (internet-resolvable) and **private hosted zones** (VPC-internal).
+O Route 53 é o serviço gerenciado de DNS e verificação de saúde da AWS. Suporta tanto **zonas hospedadas públicas** (resolúveis pela internet) quanto **zonas hospedadas privadas** (internas à VPC).
 
-### Routing policies
+### Políticas de roteamento
 
-| Policy | Use case |
-|--------|---------|
-| **Simple** | Single resource, no health check |
-| **Weighted** | A/B deployments, traffic shifting between origins |
-| **Latency** | Route to the lowest-latency region |
-| **Failover** | Active/passive DR — primary + secondary with health check |
-| **Geolocation** | Compliance, content localisation |
-| **Geoproximity** | Traffic engineering with bias adjustment |
-| **Multivalue** | Up to 8 healthy records returned (not a load balancer replacement) |
+| Política | Caso de uso |
+|----------|-------------|
+| **Simple** | Recurso único, sem verificação de saúde |
+| **Weighted** | Deploys A/B, distribuição de tráfego entre origens |
+| **Latency** | Roteia para a região com menor latência |
+| **Failover** | DR ativo/passivo — primário + secundário com verificação de saúde |
+| **Geolocation** | Conformidade, localização de conteúdo |
+| **Geoproximity** | Engenharia de tráfego com ajuste de bias |
+| **Multivalue** | Até 8 registros saudáveis retornados (não substitui um load balancer) |
 
 ```hcl
-# Private hosted zone for service-to-service DNS
+# Zona hospedada privada para DNS entre serviços
 resource "aws_route53_zone" "internal" {
   name = "${var.env}.internal.example.com"
 
@@ -116,7 +116,7 @@ resource "aws_route53_zone" "internal" {
   }
 }
 
-# Weighted routing for canary deployment
+# Roteamento ponderado para deploy canário
 resource "aws_route53_record" "api_v1" {
   zone_id = aws_route53_zone.public.zone_id
   name    = "api.example.com"
@@ -137,17 +137,17 @@ resource "aws_route53_record" "api_v1" {
 
 ## CloudFront
 
-CloudFront is AWS's global CDN with 600+ edge locations. It caches content close to users and integrates with WAF, ACM (free TLS), Lambda@Edge and CloudFront Functions.
+O CloudFront é a CDN global da AWS com mais de 600 locais de edge. Faz cache de conteúdo próximo aos usuários e integra-se com WAF, ACM (TLS gratuito), Lambda@Edge e CloudFront Functions.
 
-### Distribution anatomy
+### Anatomia de uma distribuição
 
 ```
-Browser → CloudFront Edge
-           ├── Cache hit → serve immediately
-           └── Cache miss → forward to Origin
-                             ├── S3 (static assets, SPA)
-                             ├── ALB (dynamic API)
-                             └── Custom HTTP origin
+Navegador → CloudFront Edge
+           ├── Cache hit → serve imediatamente
+           └── Cache miss → encaminha para a Origem
+                             ├── S3 (assets estáticos, SPA)
+                             ├── ALB (API dinâmica)
+                             └── Origem HTTP personalizada
 ```
 
 ```hcl
@@ -184,15 +184,15 @@ resource "aws_cloudfront_distribution" "portal" {
 ```
 
 !!! tip "CloudFront Functions vs Lambda@Edge"
-    **CloudFront Functions** run at the edge (sub-ms, 1/6 the cost) for simple URL rewrites, header manipulation and auth token validation. **Lambda@Edge** runs at Regional Edge Caches with full Node.js/Python and up to 30-second timeout — use for OAuth flows, A/B testing, dynamic personalisation.
+    **CloudFront Functions** executam no edge (sub-ms, 1/6 do custo) para reescritas simples de URL, manipulação de headers e validação de tokens de autenticação. **Lambda@Edge** executa nos Regional Edge Caches com Node.js/Python completo e timeout de até 30 segundos — use para fluxos OAuth, testes A/B e personalização dinâmica.
 
 ---
 
 ## ALB & NLB
 
-### Application Load Balancer (ALB) — Layer 7
+### Application Load Balancer (ALB) — Camada 7
 
-ALB routes HTTP/HTTPS traffic based on **rules**: host header, path, query string, HTTP method, source IP, or HTTP headers. Each rule targets a **Target Group** (EC2 instances, ECS tasks by IP, Lambda, or another ALB).
+O ALB roteia tráfego HTTP/HTTPS com base em **regras**: header do host, caminho, query string, método HTTP, IP de origem ou headers HTTP. Cada regra aponta para um **Target Group** (instâncias EC2, tasks ECS por IP, Lambda ou outro ALB).
 
 ```hcl
 resource "aws_lb" "app" {
@@ -231,51 +231,51 @@ resource "aws_lb_listener_rule" "admin" {
 }
 ```
 
-### Network Load Balancer (NLB) — Layer 4
+### Network Load Balancer (NLB) — Camada 4
 
-NLB handles TCP/UDP/TLS at ultra-low latency. Use it when you need: **static IPs** (one per AZ), **PrivateLink** exposure, TLS passthrough to backends, or sub-millisecond latency requirements.
+O NLB lida com TCP/UDP/TLS com latência ultrabaixa. Use-o quando precisar de: **IPs estáticos** (um por AZ), exposição via **PrivateLink**, passagem TLS para os backends, ou requisitos de latência abaixo de milissegundo.
 
 | | ALB | NLB |
 |--|-----|-----|
-| Layer | 7 (HTTP/HTTPS/gRPC) | 4 (TCP/UDP/TLS) |
-| Routing | Content-based rules | IP/port only |
-| Static IPs | No (dynamic DNS) | Yes (one per AZ) |
-| Preserve client IP | X-Forwarded-For header | Native (proxy protocol) |
-| PrivateLink | No | Yes |
+| Camada | 7 (HTTP/HTTPS/gRPC) | 4 (TCP/UDP/TLS) |
+| Roteamento | Regras baseadas em conteúdo | Somente IP/porta |
+| IPs estáticos | Não (DNS dinâmico) | Sim (um por AZ) |
+| Preserva IP do cliente | Header X-Forwarded-For | Nativo (proxy protocol) |
+| PrivateLink | Não | Sim |
 
 ---
 
 ## Transit Gateway
 
-Transit Gateway is a regional hub router that connects VPCs, VPN connections and Direct Connect Gateways through a single attachment model — replacing complex VPC peering meshes.
+O Transit Gateway é um roteador hub regional que conecta VPCs, conexões VPN e Direct Connect Gateways por meio de um modelo de anexo único — substituindo malhas complexas de VPC peering.
 
 ```
 VPC A ─┐
 VPC B ─┼─→ Transit Gateway ←── Direct Connect Gateway ←── On-prem
 VPC C ─┘         │
-                  └─→ VPN Connection ←── Branch office
+                  └─→ VPN Connection ←── Filial
 ```
 
-Key concepts:
-- **Attachments** — VPC, VPN, Direct Connect GW, TGW Peering (cross-region), Connect (SD-WAN)
-- **Route tables** — multiple route tables enable traffic segmentation (e.g. dev VPCs can't reach prod VPCs)
-- **Multicast** — optional; for legacy on-prem multicast migration
+Conceitos principais:
+- **Attachments** — VPC, VPN, Direct Connect GW, TGW Peering (entre regiões), Connect (SD-WAN)
+- **Tabelas de rotas** — múltiplas tabelas permitem segmentação de tráfego (ex.: VPCs dev não alcançam VPCs prod)
+- **Multicast** — opcional; para migração de multicast legado on-prem
 
 !!! note "TGW vs VPC Peering"
-    VPC Peering is non-transitive and requires O(n²) connections for a full mesh. Use TGW when you have more than 3–4 VPCs, need on-prem connectivity, or require centralised egress/inspection routing.
+    O VPC Peering não é transitivo e requer conexões O(n²) para uma malha completa. Use TGW quando tiver mais de 3–4 VPCs, precisar de conectividade on-prem ou requerer roteamento centralizado de egresso/inspeção.
 
 ---
 
 ## PrivateLink
 
-PrivateLink exposes a service (behind an NLB) as a private endpoint in a consumer's VPC — without peering, routing table changes or internet exposure. Used for:
+O PrivateLink expõe um serviço (atrás de um NLB) como endpoint privado na VPC do consumidor — sem peering, alterações na tabela de rotas ou exposição à internet. Utilizado para:
 
-- **AWS Interface Endpoints** — private access to 100+ AWS services (ECR, Secrets Manager, SSM, etc.)
-- **Partner services** — SaaS providers expose endpoints in your VPC
-- **Internal service sharing** — expose platform services (e.g. a centralised auth service) across accounts without VPC peering
+- **AWS Interface Endpoints** — acesso privado a mais de 100 serviços AWS (ECR, Secrets Manager, SSM, etc.)
+- **Serviços de parceiros** — provedores SaaS expõem endpoints na sua VPC
+- **Compartilhamento de serviços internos** — exponha serviços de plataforma (ex.: serviço centralizado de autenticação) entre contas sem VPC peering
 
 ```hcl
-# Expose an internal service via PrivateLink
+# Expor um serviço interno via PrivateLink
 resource "aws_vpc_endpoint_service" "platform" {
   acceptance_required        = false
   network_load_balancer_arns = [aws_lb.platform_nlb.arn]
@@ -285,5 +285,5 @@ resource "aws_vpc_endpoint_service" "platform" {
 
 ---
 
-[← AWS Overview](index.md){ .md-button }
-[Security & IAM →](security.md){ .md-button .md-button--primary }
+[← Visão Geral AWS](index.md){ .md-button }
+[Segurança & IAM →](security.md){ .md-button .md-button--primary }

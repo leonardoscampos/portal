@@ -1,13 +1,13 @@
 ---
-title: AWS Security & IAM
-description: IAM, Organizations, KMS, Secrets Manager, GuardDuty — AWS security and identity fundamentals.
+title: AWS Segurança & IAM
+description: IAM, Organizations, KMS, Secrets Manager, GuardDuty — fundamentos de segurança e identidade na AWS.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// aws / security</span>
-    <h1 class="dph-title">Security &amp; IAM</h1>
-    <p class="dph-desc">Least-privilege identity, envelope encryption, secrets rotation, threat detection and compliance guardrails — the AWS security model from first principles to production-ready multi-account governance.</p>
+    <h1 class="dph-title">Segurança &amp; IAM</h1>
+    <p class="dph-desc">Identidade com menor privilégio, criptografia em envelope, rotação de segredos, detecção de ameaças e guardrails de conformidade — o modelo de segurança AWS dos primeiros princípios à governança multi-conta pronta para produção.</p>
     <div class="dph-badges">
       <span class="tech-badge">IAM</span>
       <span class="tech-badge">Organizations</span>
@@ -24,32 +24,32 @@ description: IAM, Organizations, KMS, Secrets Manager, GuardDuty — AWS securit
 
 ## IAM — Identity and Access Management
 
-IAM is the access control plane for every AWS service. Every API call is evaluated against the IAM policy engine.
+O IAM é o plano de controle de acesso para todos os serviços AWS. Toda chamada de API é avaliada pelo motor de políticas do IAM.
 
-### Identity types
+### Tipos de identidade
 
-| Type | Description | When to use |
-|------|-------------|------------|
-| **IAM User** | Long-lived credentials (access key + password) | Break-glass emergency access only; avoid for workloads |
-| **IAM Role** | Temporary credentials via STS; assumed by principals | EC2 instance profiles, Lambda functions, CI/CD pipelines |
-| **IRSA** | IAM role assumed via Kubernetes OIDC | EKS pod-level permissions without static keys |
-| **Identity Centre** | SSO federated access for humans | Console/CLI access for all team members |
+| Tipo | Descrição | Quando usar |
+|------|-----------|-------------|
+| **IAM User** | Credenciais de longa duração (access key + senha) | Somente acesso de emergência break-glass; evite para cargas de trabalho |
+| **IAM Role** | Credenciais temporárias via STS; assumida por principals | Instance profiles EC2, funções Lambda, pipelines CI/CD |
+| **IRSA** | Role IAM assumida via OIDC do Kubernetes | Permissões em nível de pod EKS sem chaves estáticas |
+| **Identity Centre** | Acesso federado SSO para pessoas | Acesso ao console/CLI para todos os membros do time |
 
-### Policy evaluation order
+### Ordem de avaliação de políticas
 
 ```
-1. Explicit DENY in any policy → DENY (always wins)
-2. SCP (Organizations) allows?  → if no, DENY
-3. Permission boundary allows?  → if no, DENY
-4. Identity-based policy allows? → if no, DENY
-5. Resource-based policy allows? → if yes, ALLOW (cross-account)
+1. DENY explícito em qualquer política → DENY (sempre prevalece)
+2. SCP (Organizations) permite?        → se não, DENY
+3. Permission boundary permite?        → se não, DENY
+4. Política baseada em identidade permite? → se não, DENY
+5. Política baseada em recurso permite?    → se sim, ALLOW (cross-account)
 6. → IMPLICIT DENY
 ```
 
-### Least-privilege role pattern
+### Padrão de role com menor privilégio
 
 ```hcl
-# Role for an ECS task — only what it needs
+# Role para uma task ECS — apenas o que ela precisa
 resource "aws_iam_role" "api_task" {
   name = "${var.project}-api-task"
 
@@ -90,20 +90,20 @@ resource "aws_iam_policy" "api_task" {
 ```
 
 !!! warning "Permission Boundaries"
-    Use **Permission Boundaries** when delegating IAM management to teams or CI/CD pipelines. The boundary acts as a ceiling — even if a policy grants `*`, the boundary constrains what can actually be used. Prevents privilege escalation through self-service IAM.
+    Use **Permission Boundaries** ao delegar gerenciamento de IAM para times ou pipelines CI/CD. O boundary age como um teto — mesmo que uma política conceda `*`, o boundary limita o que pode ser efetivamente usado. Previne escalada de privilégios via IAM self-service.
 
 ---
 
 ## AWS Organizations & SCPs
 
-Organizations lets you manage multiple AWS accounts as a single unit. **Service Control Policies (SCPs)** set the maximum permissions available in any member account — they do not grant access, they only restrict.
+O Organizations permite gerenciar múltiplas contas AWS como uma única unidade. As **Service Control Policies (SCPs)** definem as permissões máximas disponíveis em qualquer conta membro — elas não concedem acesso, apenas restringem.
 
-### SCP key rule
+### Regra principal das SCPs
 
-> An action is allowed only if:  
-> **IAM policy allows it** AND **SCP does not deny it**
+> Uma ação é permitida somente se:  
+> **A política IAM permite** E **o SCP não nega**
 
-### Common preventive SCPs
+### SCPs preventivos comuns
 
 ```json
 {
@@ -143,26 +143,26 @@ Organizations lets you manage multiple AWS accounts as a single unit. **Service 
 }
 ```
 
-!!! tip "OU structure"
-    Use an OU hierarchy: **Root → Security (log archive + audit accounts) → Infrastructure → Workloads (Prod | Non-Prod) → Sandbox**. Attach SCPs at the OU level, never at Root (except deny-list policies that apply everywhere).
+!!! tip "Estrutura de OUs"
+    Use uma hierarquia de OUs: **Root → Security (contas log archive + audit) → Infrastructure → Workloads (Prod | Non-Prod) → Sandbox**. Aplique SCPs no nível da OU, nunca no Root (exceto políticas de deny-list que se aplicam a todos).
 
 ---
 
 ## KMS — Key Management Service
 
-KMS manages cryptographic keys. It never exposes the CMK (Customer Master Key) material — all encrypt/decrypt operations happen inside KMS HSMs.
+O KMS gerencia chaves criptográficas. Ele nunca expõe o material da CMK (Customer Master Key) — todas as operações de encrypt/decrypt acontecem dentro dos HSMs do KMS.
 
-### Envelope encryption
+### Criptografia em envelope
 
-Every AWS service uses **envelope encryption**: KMS generates a data key, which is used to encrypt your data. Only the encrypted data key is stored alongside the data; the plaintext data key is discarded after use.
+Todo serviço AWS usa **criptografia em envelope**: o KMS gera uma data key, que é usada para criptografar seus dados. Apenas a data key criptografada é armazenada junto aos dados; a data key em texto simples é descartada após o uso.
 
 ```
-Data → [ Encrypt with plaintext data key ] → Ciphertext
-         Plaintext data key → [ Encrypt with CMK in KMS ] → Encrypted data key
-         Store: Ciphertext + Encrypted data key
+Dados → [ Criptografar com data key em texto simples ] → Ciphertext
+         Data key em texto simples → [ Criptografar com CMK no KMS ] → Data key criptografada
+         Armazenar: Ciphertext + Data key criptografada
 ```
 
-To decrypt, call `kms:Decrypt` with the encrypted data key → KMS returns the plaintext data key → decrypt your data locally.
+Para descriptografar, chame `kms:Decrypt` com a data key criptografada → KMS retorna a data key em texto simples → descriptografe seus dados localmente.
 
 ```hcl
 resource "aws_kms_key" "app" {
@@ -180,24 +180,24 @@ resource "aws_kms_alias" "app" {
 }
 ```
 
-!!! warning "Key policies are mandatory"
-    Unlike other AWS resource policies, a KMS key **must** have an explicit key policy. If the policy does not grant the account root access, the key becomes unmanageable. Always include: `"Principal": {"AWS": "arn:aws:iam::ACCOUNT_ID:root"}, "Action": "kms:*"` as a baseline statement.
+!!! warning "Políticas de chave são obrigatórias"
+    Ao contrário de outras políticas de recursos AWS, uma chave KMS **deve** ter uma política de chave explícita. Se a política não conceder acesso root à conta, a chave fica impossível de gerenciar. Sempre inclua: `"Principal": {"AWS": "arn:aws:iam::ACCOUNT_ID:root"}, "Action": "kms:*"` como declaração base.
 
 ---
 
 ## Secrets Manager
 
-Secrets Manager stores credentials, API keys and arbitrary JSON with **automatic rotation** using Lambda functions. It is the right choice for any secret that needs rotation or cross-account access.
+O Secrets Manager armazena credenciais, chaves de API e JSON arbitrário com **rotação automática** usando funções Lambda. É a escolha certa para qualquer segredo que precise de rotação ou acesso entre contas.
 
 ### Secrets Manager vs SSM Parameter Store
 
 | | Secrets Manager | SSM Parameter Store (SecureString) |
 |--|----------------|-----------------------------------|
-| **Cost** | $0.40/secret/month | Free (standard), $0.05/10k API calls (advanced) |
-| **Auto-rotation** | Native (RDS, Redshift, Docdb + custom Lambda) | No |
-| **Cross-account** | Yes (resource-based policy) | No |
-| **Versioning** | Yes | Yes |
-| **Best for** | DB credentials, API keys, anything that rotates | Config values, feature flags, non-rotating secrets |
+| **Custo** | $0,40/segredo/mês | Gratuito (standard), $0,05/10k chamadas API (advanced) |
+| **Auto-rotação** | Nativa (RDS, Redshift, Docdb + Lambda personalizado) | Não |
+| **Cross-account** | Sim (política baseada em recurso) | Não |
+| **Versionamento** | Sim | Sim |
+| **Melhor para** | Credenciais de BD, chaves de API, qualquer coisa que rotaciona | Valores de config, feature flags, segredos sem rotação |
 
 ```hcl
 resource "aws_secretsmanager_secret" "db" {
@@ -220,20 +220,20 @@ resource "aws_secretsmanager_secret_rotation" "db" {
 
 ## GuardDuty
 
-GuardDuty is a managed threat detection service that analyses VPC Flow Logs, DNS logs, CloudTrail management events and S3 data events using ML + threat intelligence feeds.
+O GuardDuty é um serviço gerenciado de detecção de ameaças que analisa VPC Flow Logs, logs DNS, eventos de gerenciamento do CloudTrail e eventos de dados S3 usando ML + feeds de inteligência de ameaças.
 
-### Finding categories
+### Categorias de findings
 
-| Category | Example findings |
-|----------|----------------|
+| Categoria | Exemplos de findings |
+|-----------|---------------------|
 | **EC2** | CryptoCurrency:Mining, Backdoor:C2, Trojan:DNSExfiltration |
 | **IAM** | CredentialAccess:AnomalousBehavior, UnauthorizedAccess:IAMUser |
 | **S3** | Discovery:S3/MaliciousIPCaller, Exfiltration:S3/ObjectRead |
 | **Kubernetes** | PrivilegeEscalation:Kubernetes/PrivilegedContainer |
-| **Malware Protection** | Execution:EC2/MaliciousFile (EBS snapshot scanning) |
+| **Malware Protection** | Execution:EC2/MaliciousFile (escaneamento de snapshot EBS) |
 
 ```hcl
-# Enable GuardDuty for all accounts via Organizations
+# Habilitar GuardDuty para todas as contas via Organizations
 resource "aws_guardduty_organization_admin_account" "main" {
   admin_account_id = var.security_account_id
 }
@@ -255,21 +255,21 @@ resource "aws_guardduty_organization_configuration" "main" {
 
 ## Security Hub
 
-Security Hub aggregates findings from GuardDuty, Inspector, Macie, IAM Access Analyzer and Firewall Manager into a single prioritised view. It measures posture against security standards.
+O Security Hub agrega findings do GuardDuty, Inspector, Macie, IAM Access Analyzer e Firewall Manager em uma visão única e priorizada. Mede a postura de segurança em relação a padrões.
 
-### Standards
+### Padrões
 
-| Standard | Purpose |
-|----------|---------|
-| **AWS Foundational Security Best Practices** | AWS-native baseline; 300+ controls |
-| **CIS AWS Foundations Benchmark** | Industry standard; Levels 1 & 2 |
-| **PCI DSS** | Card data compliance controls |
-| **NIST SP 800-53** | Federal / FedRAMP baseline |
+| Padrão | Propósito |
+|--------|-----------|
+| **AWS Foundational Security Best Practices** | Baseline nativo AWS; 300+ controles |
+| **CIS AWS Foundations Benchmark** | Padrão do setor; Níveis 1 & 2 |
+| **PCI DSS** | Controles de conformidade para dados de cartão |
+| **NIST SP 800-53** | Baseline federal / FedRAMP |
 
-!!! tip "Auto-remediation"
-    Wire Security Hub findings to EventBridge → Lambda for automatic remediation. Common patterns: auto-enable CloudTrail if disabled, auto-revoke overly-permissive security group rules, auto-quarantine compromised IAM credentials.
+!!! tip "Auto-remediação"
+    Conecte findings do Security Hub ao EventBridge → Lambda para remediação automática. Padrões comuns: habilitar CloudTrail automaticamente se desabilitado, revogar automaticamente regras de security group excessivamente permissivas, colocar em quarentena credenciais IAM comprometidas.
 
 ---
 
-[← AWS Overview](index.md){ .md-button }
-[Observability →](observability.md){ .md-button .md-button--primary }
+[← Visão Geral AWS](index.md){ .md-button }
+[Observabilidade →](observability.md){ .md-button .md-button--primary }

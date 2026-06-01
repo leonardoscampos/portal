@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Log aggregation with Loki, LogQL, Promtail, Grafana Alloy, log-based metrics, and retention policies.">
+        <meta name="description" content="Agregação de logs com Loki, LogQL, Promtail, Grafana Alloy, métricas baseadas em logs e políticas de retenção.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#architecture" class="md-skip">
+        <a href="#arquitetura" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -2045,10 +2045,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
+  <a href="#arquitetura" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture
+        Arquitetura
       
     </span>
   </a>
@@ -2056,10 +2056,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-helm-simple-scalable-mode" class="md-nav__link">
+  <a href="#instalacao-helm-modo-simple-scalable" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation (Helm — Simple Scalable Mode)
+        Instalação (Helm — Modo Simple Scalable)
       
     </span>
   </a>
@@ -2067,10 +2067,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#promtail-log-shipper" class="md-nav__link">
+  <a href="#promtail-transportador-de-logs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Promtail (Log Shipper)
+        Promtail (Transportador de Logs)
       
     </span>
   </a>
@@ -2078,10 +2078,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#grafana-alloy-kubernetes-logs" class="md-nav__link">
+  <a href="#grafana-alloy-logs-do-kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Grafana Alloy — Kubernetes Logs
+        Grafana Alloy — Logs do Kubernetes
       
     </span>
   </a>
@@ -2101,10 +2101,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#log-selector" class="md-nav__link">
+  <a href="#seletor-de-log" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Log Selector
+        Seletor de Log
       
     </span>
   </a>
@@ -2112,10 +2112,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#line-filters-fast-applied-before-parsing" class="md-nav__link">
+  <a href="#filtros-de-linha-rapidos-aplicados-antes-da-analise" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Line Filters (fast — applied before parsing)
+        Filtros de Linha (rápidos — aplicados antes da análise)
       
     </span>
   </a>
@@ -2123,10 +2123,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#parsers" class="md-nav__link">
+  <a href="#analisadores" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parsers
+        Analisadores
       
     </span>
   </a>
@@ -2134,10 +2134,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#metric-queries" class="md-nav__link">
+  <a href="#consultas-de-metricas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Metric Queries
+        Consultas de Métricas
       
     </span>
   </a>
@@ -2145,10 +2145,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#log-based-alerting-rule" class="md-nav__link">
+  <a href="#regra-de-alerta-baseada-em-logs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Log-based Alerting Rule
+        Regra de Alerta Baseada em Logs
       
     </span>
   </a>
@@ -2161,10 +2161,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#retention-compaction" class="md-nav__link">
+  <a href="#retencao-e-compactacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Retention &amp; Compaction
+        Retenção e Compactação
       
     </span>
   </a>
@@ -2172,10 +2172,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#loki-logql-cheatsheet" class="md-nav__link">
+  <a href="#cheatsheet-de-logql-do-loki" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Loki LogQL Cheatsheet
+        Cheatsheet de LogQL do Loki
       
     </span>
   </a>
@@ -3064,10 +3064,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
+  <a href="#arquitetura" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture
+        Arquitetura
       
     </span>
   </a>
@@ -3075,10 +3075,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-helm-simple-scalable-mode" class="md-nav__link">
+  <a href="#instalacao-helm-modo-simple-scalable" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation (Helm — Simple Scalable Mode)
+        Instalação (Helm — Modo Simple Scalable)
       
     </span>
   </a>
@@ -3086,10 +3086,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#promtail-log-shipper" class="md-nav__link">
+  <a href="#promtail-transportador-de-logs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Promtail (Log Shipper)
+        Promtail (Transportador de Logs)
       
     </span>
   </a>
@@ -3097,10 +3097,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#grafana-alloy-kubernetes-logs" class="md-nav__link">
+  <a href="#grafana-alloy-logs-do-kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Grafana Alloy — Kubernetes Logs
+        Grafana Alloy — Logs do Kubernetes
       
     </span>
   </a>
@@ -3120,10 +3120,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#log-selector" class="md-nav__link">
+  <a href="#seletor-de-log" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Log Selector
+        Seletor de Log
       
     </span>
   </a>
@@ -3131,10 +3131,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#line-filters-fast-applied-before-parsing" class="md-nav__link">
+  <a href="#filtros-de-linha-rapidos-aplicados-antes-da-analise" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Line Filters (fast — applied before parsing)
+        Filtros de Linha (rápidos — aplicados antes da análise)
       
     </span>
   </a>
@@ -3142,10 +3142,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#parsers" class="md-nav__link">
+  <a href="#analisadores" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parsers
+        Analisadores
       
     </span>
   </a>
@@ -3153,10 +3153,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#metric-queries" class="md-nav__link">
+  <a href="#consultas-de-metricas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Metric Queries
+        Consultas de Métricas
       
     </span>
   </a>
@@ -3164,10 +3164,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#log-based-alerting-rule" class="md-nav__link">
+  <a href="#regra-de-alerta-baseada-em-logs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Log-based Alerting Rule
+        Regra de Alerta Baseada em Logs
       
     </span>
   </a>
@@ -3180,10 +3180,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#retention-compaction" class="md-nav__link">
+  <a href="#retencao-e-compactacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Retention &amp; Compaction
+        Retenção e Compactação
       
     </span>
   </a>
@@ -3191,10 +3191,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#loki-logql-cheatsheet" class="md-nav__link">
+  <a href="#cheatsheet-de-logql-do-loki" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Loki LogQL Cheatsheet
+        Cheatsheet de LogQL do Loki
       
     </span>
   </a>
@@ -3220,9 +3220,9 @@
 
 <div class="domain-page-hero" data-domain="monitoring">
   <div class="dph-left">
-    <span class="dph-eyebrow">// monitoring-observability / loki</span>
+    <span class="dph-eyebrow">// monitoramento-observabilidade / loki</span>
     <h1 class="dph-title">Loki</h1>
-    <p class="dph-desc">Grafana Loki is a horizontally-scalable, highly-available log aggregation system inspired by Prometheus. Unlike Elasticsearch, Loki indexes only metadata labels — not log content — making it dramatically cheaper to operate at scale.</p>
+    <p class="dph-desc">O Grafana Loki é um sistema de agregação de logs horizontalmente escalável e de alta disponibilidade, inspirado no Prometheus. Ao contrário do Elasticsearch, o Loki indexa apenas rótulos de metadados — e não o conteúdo dos logs — tornando-o dramaticamente mais barato de operar em escala.</p>
     <div class="dph-badges">
       <span class="tech-badge">LogQL</span>
       <span class="tech-badge">Promtail</span>
@@ -3234,9 +3234,9 @@
   </div>
 </div>
 
-<p><a href="../grafana/">← Grafana</a> | <a href="../">← Monitoring Overview</a> | <a href="../opentelemetry/">OpenTelemetry →</a></p>
+<p><a href="../grafana/">← Grafana</a> | <a href="../">← Visão Geral de Monitoramento</a> | <a href="../opentelemetry/">OpenTelemetry →</a></p>
 <hr />
-<h2 id="architecture">Architecture</h2>
+<h2 id="arquitetura">Arquitetura</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌─────────────────────────────────────────────────────────┐
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│                         Loki                            │
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│  ┌───────────┐   ┌───────────┐   ┌──────────────────┐  │
@@ -3252,18 +3252,18 @@
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  (tail /var/log, k8s pods)         (Explore / dashboards)
 </code></pre></div>
 <hr />
-<h2 id="installation-helm-simple-scalable-mode">Installation (Helm — Simple Scalable Mode)</h2>
+<h2 id="instalacao-helm-modo-simple-scalable">Instalação (Helm — Modo Simple Scalable)</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>grafana<span class="w"> </span>https://grafana.github.io/helm-charts<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>helm<span class="w"> </span>repo<span class="w"> </span>update
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>--install<span class="w"> </span>loki<span class="w"> </span>grafana/loki<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span>--namespace<span class="w"> </span>monitoring<span class="w"> </span>--create-namespace<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span>--values<span class="w"> </span>loki-values.yaml
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># loki-values.yaml — Simple Scalable (write + read + backend)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># loki-values.yaml — Simple Scalable (escrita + leitura + backend)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">deploymentMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SimpleScalable</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nt">loki</span><span class="p">:</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">auth_enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">          </span><span class="c1"># set true for multi-tenant; use X-Scope-OrgID header</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">auth_enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">          </span><span class="c1"># defina como true para multi-tenant; use o header X-Scope-OrgID</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">commonConfig</span><span class="p">:</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">replication_factor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
@@ -3314,7 +3314,7 @@
 <a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a><span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 </code></pre></div>
 <hr />
-<h2 id="promtail-log-shipper">Promtail (Log Shipper)</h2>
+<h2 id="promtail-transportador-de-logs">Promtail (Transportador de Logs)</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>--install<span class="w"> </span>promtail<span class="w"> </span>grafana/promtail<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span>--namespace<span class="w"> </span>monitoring<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>--values<span class="w"> </span>promtail-values.yaml
@@ -3325,9 +3325,9 @@
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://loki.monitoring.svc:3100/loki/api/v1/push</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">snippets</span><span class="p">:</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="c1"># Kubernetes pod logs with structured metadata</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="c1"># Logs de pods Kubernetes com metadados estruturados</span>
 <a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="nt">pipelineStages</span><span class="p">:</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cri</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w">                       </span><span class="c1"># parse CRI-O / containerd format</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cri</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w">                       </span><span class="c1"># analisa o formato CRI-O / containerd</span>
 <a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">match</span><span class="p">:</span>
 <a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">          </span><span class="nt">selector</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;{namespace=&quot;production&quot;}&#39;</span>
 <a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">          </span><span class="nt">stages</span><span class="p">:</span>
@@ -3342,7 +3342,7 @@
 <a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">output</span><span class="p">:</span>
 <a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">                </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">msg</span>
 <a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">    </span><span class="c1"># Add Kubernetes labels</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">    </span><span class="c1"># Adiciona rótulos do Kubernetes</span>
 <a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">    </span><span class="nt">extraScrapeConfigs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">      </span><span class="no">- job_name: kubernetes-pods</span>
 <a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">        </span><span class="no">kubernetes_sd_configs:</span>
@@ -3365,8 +3365,8 @@
 <a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="w">            </span><span class="no">target_label: __path__</span>
 </code></pre></div>
 <hr />
-<h2 id="grafana-alloy-kubernetes-logs">Grafana Alloy — Kubernetes Logs</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">// alloy log collection pipeline (preferred over Promtail for new deployments)</span>
+<h2 id="grafana-alloy-logs-do-kubernetes">Grafana Alloy — Logs do Kubernetes</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1">// pipeline de coleta de logs do Alloy (preferido ao Promtail para novas implantações)</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nv">discovery.kubernetes</span><span class="w"> </span><span class="s2">&quot;pods&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="na">role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;pod&quot;</span>
@@ -3404,7 +3404,7 @@
 <a id="__codelineno-5-36" name="__codelineno-5-36" href="#__codelineno-5-36"></a><span class="p">}</span>
 <a id="__codelineno-5-37" name="__codelineno-5-37" href="#__codelineno-5-37"></a>
 <a id="__codelineno-5-38" name="__codelineno-5-38" href="#__codelineno-5-38"></a><span class="nv">loki.process</span><span class="w"> </span><span class="s2">&quot;parse&quot;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="c1">  // Parse JSON logs and extract fields as labels</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39" href="#__codelineno-5-39"></a><span class="c1">  // Analisa logs JSON e extrai campos como rótulos</span>
 <a id="__codelineno-5-40" name="__codelineno-5-40" href="#__codelineno-5-40"></a><span class="w">  </span><span class="nv">stage.json</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-5-41" name="__codelineno-5-41" href="#__codelineno-5-41"></a><span class="w">    </span><span class="nb">expressions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-5-42" name="__codelineno-5-42" href="#__codelineno-5-42"></a><span class="w">      </span><span class="na">level</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;level&quot;</span><span class="p">,</span>
@@ -3428,56 +3428,56 @@
 </code></pre></div>
 <hr />
 <h2 id="logql">LogQL</h2>
-<h3 id="log-selector">Log Selector</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a># All logs from production namespace, app=api
+<h3 id="seletor-de-log">Seletor de Log</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a># Todos os logs do namespace production, app=api
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>{namespace=&quot;production&quot;, app=&quot;api&quot;}
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a># Regex label match
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a># Correspondência de rótulo por regex
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>{namespace=~&quot;prod|staging&quot;, level=&quot;error&quot;}
 </code></pre></div>
-<h3 id="line-filters-fast-applied-before-parsing">Line Filters (fast — applied before parsing)</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a># Contains string
+<h3 id="filtros-de-linha-rapidos-aplicados-antes-da-analise">Filtros de Linha (rápidos — aplicados antes da análise)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a># Contém string
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>{app=&quot;api&quot;} |= &quot;ERROR&quot;
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a># Does not contain
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a># Não contém
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>{app=&quot;api&quot;} != &quot;healthcheck&quot;
 <a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a># Regex match
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a># Correspondência por regex
 <a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>{app=&quot;api&quot;} |~ &quot;error|panic|fatal&quot;
 <a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a># Case-insensitive regex
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a># Regex sem distinção de maiúsculas
 <a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>{app=&quot;api&quot;} |~ &quot;(?i)timeout&quot;
 </code></pre></div>
-<h3 id="parsers">Parsers</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a># JSON parser — extract fields
+<h3 id="analisadores">Analisadores</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a># Analisador JSON — extrai campos
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>{app=&quot;api&quot;} | json | level=&quot;error&quot;
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a># Logfmt parser
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a># Analisador Logfmt
 <a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>{app=&quot;worker&quot;} | logfmt | duration &gt; 1s
 <a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a># Pattern parser (Apache Combined Log)
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a># Analisador de padrão (Apache Combined Log)
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>{app=&quot;nginx&quot;} | pattern `&lt;ip&gt; - - [&lt;ts&gt;] &quot;&lt;method&gt; &lt;uri&gt; &lt;proto&gt;&quot; &lt;status&gt; &lt;bytes&gt;`
 <a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>             | status &gt;= 500
 <a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a># Regexp parser with named capture groups
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a># Analisador Regexp com grupos de captura nomeados
 <a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>{app=&quot;api&quot;} | regexp `level=(?P&lt;level&gt;\w+) msg=&quot;(?P&lt;msg&gt;[^&quot;]+)&quot;`
 </code></pre></div>
-<h3 id="metric-queries">Metric Queries</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a># Error rate per app (logs/s)
+<h3 id="consultas-de-metricas">Consultas de Métricas</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a># Taxa de erro por app (logs/s)
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>sum by (app) (rate({namespace=&quot;production&quot;} |= &quot;ERROR&quot; [5m]))
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a># Request count over 10 min
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a># Contagem de requisições em 10 min
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>sum(count_over_time({app=&quot;api&quot;}[10m]))
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a># P99 latency from parsed JSON field
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a># Latência P99 a partir de campo JSON analisado
 <a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>quantile_over_time(0.99,
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>  {app=&quot;api&quot;} | json | unwrap duration_ms [5m]
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>) by (endpoint)
 <a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a># Bytes received per pod
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a># Bytes recebidos por pod
 <a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>sum by (pod) (bytes_rate({namespace=&quot;production&quot;}[5m]))
 </code></pre></div>
-<h3 id="log-based-alerting-rule">Log-based Alerting Rule</h3>
+<h3 id="regra-de-alerta-baseada-em-logs">Regra de Alerta Baseada em Logs</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring.coreos.com/v1</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PrometheusRule</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nt">metadata</span><span class="p">:</span>
@@ -3487,7 +3487,7 @@
 <a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span><span class="nt">groups</span><span class="p">:</span>
 <a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">log.errors</span>
 <a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">      </span><span class="nt">rules</span><span class="p">:</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">        </span><span class="c1"># Convert log metric to recording rule for Alertmanager</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">        </span><span class="c1"># Converte métrica de log em recording rule para o Alertmanager</span>
 <a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HighLogErrorRate</span>
 <a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">          </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">            </span><span class="no">sum by (app) (</span>
@@ -3500,12 +3500,12 @@
 <a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="w">            </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;High</span><span class="nv"> </span><span class="s">error</span><span class="nv"> </span><span class="s">log</span><span class="nv"> </span><span class="s">rate</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">$labels.app</span><span class="nv"> </span><span class="s">}}&quot;</span>
 </code></pre></div>
 <hr />
-<h2 id="retention-compaction">Retention &amp; Compaction</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># In loki.limits_config</span>
+<h2 id="retencao-e-compactacao">Retenção e Compactação</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Em loki.limits_config</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nt">limits_config</span><span class="p">:</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nt">retention_period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30d</span><span class="w">            </span><span class="c1"># global default</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nt">retention_period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30d</span><span class="w">            </span><span class="c1"># padrão global</span>
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="c1"># Per-tenant / per-stream overrides (requires auth_enabled: true)</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="c1"># Sobrescritas por tenant / por stream (requer auth_enabled: true)</span>
 <a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="nt">per_tenant_override_config</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/loki/overrides.yaml</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># overrides.yaml</span>
@@ -3515,7 +3515,7 @@
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="nt">compliance-team</span><span class="p">:</span>
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">    </span><span class="nt">retention_period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">365d</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Enable compactor for automatic deletion</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Habilita compactor para exclusão automática</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nt">compactor</span><span class="p">:</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="nt">working_directory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/loki/compactor</span>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="nt">shared_store</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3</span>
@@ -3525,26 +3525,26 @@
 <a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">  </span><span class="nt">delete_request_cancel_period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24h</span>
 </code></pre></div>
 <hr />
-<h2 id="loki-logql-cheatsheet">Loki LogQL Cheatsheet</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a># Last 100 error lines from all pods in production
+<h2 id="cheatsheet-de-logql-do-loki">Cheatsheet de LogQL do Loki</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a># Últimas 100 linhas de erro de todos os pods em production
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>{namespace=&quot;production&quot;} |= &quot;ERROR&quot; | line_format &quot;{{.pod}} {{.msg}}&quot; | limit 100
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a># Slow requests (parsed logfmt, duration &gt; 500ms)
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a># Requisições lentas (logfmt analisado, duração &gt; 500ms)
 <a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>{app=&quot;api&quot;} | logfmt | duration &gt; 500ms
 <a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a># Top labels by log volume
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a># Top rótulos por volume de logs
 <a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>topk(10, sum by (app) (rate({namespace=&quot;production&quot;}[1h])))
 <a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
-<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a># Trace correlation — find log lines with a specific traceID
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a># Correlação de traces — encontra linhas de log com um traceID específico
 <a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>{namespace=&quot;production&quot;} | json | traceID=&quot;abc123def456&quot;
 <a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
-<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a># Errors in the last 15 min grouped by pod
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a># Erros nos últimos 15 min agrupados por pod
 <a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>sum by (pod) (count_over_time({namespace=&quot;production&quot;} |= &quot;error&quot; [15m]))
 <a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
-<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a># Kubernetes event logs
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a># Logs de eventos do Kubernetes
 <a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>{job=&quot;eventrouter&quot;} | json | involvedObject_namespace=&quot;production&quot;
 </code></pre></div>
-<p><a href="../grafana/">← Grafana</a> | <a href="../">← Monitoring Overview</a> | <a href="../opentelemetry/">OpenTelemetry →</a></p>
+<p><a href="../grafana/">← Grafana</a> | <a href="../">← Visão Geral de Monitoramento</a> | <a href="../opentelemetry/">OpenTelemetry →</a></p>
 
 
 

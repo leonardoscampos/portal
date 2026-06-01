@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Terraform HCL, providers, modules, remote state, workspaces and Terraform Cloud reference.">
+        <meta name="description" content="Referência de HCL, provedores, módulos, estado remoto, workspaces e Terraform Cloud.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#core-concepts" class="md-skip">
+        <a href="#conceitos-fundamentais" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -2573,10 +2573,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-concepts" class="md-nav__link">
+  <a href="#conceitos-fundamentais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Concepts
+        Conceitos Fundamentais
       
     </span>
   </a>
@@ -2584,10 +2584,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#provider-version-pinning" class="md-nav__link">
+  <a href="#fixacao-de-versao-de-provedor" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Provider &amp; Version Pinning
+        Fixação de Versão de Provedor
       
     </span>
   </a>
@@ -2595,10 +2595,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#remote-state-backends" class="md-nav__link">
+  <a href="#backends-de-estado-remoto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Remote State Backends
+        Backends de Estado Remoto
       
     </span>
   </a>
@@ -2606,22 +2606,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#module-patterns" class="md-nav__link">
+  <a href="#padroes-de-modulo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Module Patterns
+        Padrões de Módulo
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Module Patterns">
+    <nav class="md-nav" aria-label="Padrões de Módulo">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#flat-module-structure" class="md-nav__link">
+  <a href="#estrutura-de-modulo-simples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Flat Module Structure
+        Estrutura de Módulo Simples
       
     </span>
   </a>
@@ -2629,10 +2629,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#calling-a-local-module" class="md-nav__link">
+  <a href="#chamando-um-modulo-local" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Calling a Local Module
+        Chamando um Módulo Local
       
     </span>
   </a>
@@ -2640,10 +2640,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#registry-module-terraform-registry" class="md-nav__link">
+  <a href="#modulo-do-registro-terraform-registry" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Registry Module (Terraform Registry)
+        Módulo do Registro (Terraform Registry)
       
     </span>
   </a>
@@ -2656,10 +2656,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#variables-validation" class="md-nav__link">
+  <a href="#variaveis-e-validacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Variables &amp; Validation
+        Variáveis e Validação
       
     </span>
   </a>
@@ -2678,10 +2678,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#state-operations" class="md-nav__link">
+  <a href="#operacoes-de-estado" class="md-nav__link">
     <span class="md-ellipsis">
       
-        State Operations
+        Operações de Estado
       
     </span>
   </a>
@@ -2689,10 +2689,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dynamic-blocks" class="md-nav__link">
+  <a href="#blocos-dinamicos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dynamic Blocks
+        Blocos Dinâmicos
       
     </span>
   </a>
@@ -2711,10 +2711,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#github-actions-cicd" class="md-nav__link">
+  <a href="#cicd-com-github-actions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GitHub Actions CI/CD
+        CI/CD com GitHub Actions
       
     </span>
   </a>
@@ -2722,10 +2722,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
+  <a href="#boas-praticas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practices
+        Boas Práticas
       
     </span>
   </a>
@@ -3086,10 +3086,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-concepts" class="md-nav__link">
+  <a href="#conceitos-fundamentais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Concepts
+        Conceitos Fundamentais
       
     </span>
   </a>
@@ -3097,10 +3097,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#provider-version-pinning" class="md-nav__link">
+  <a href="#fixacao-de-versao-de-provedor" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Provider &amp; Version Pinning
+        Fixação de Versão de Provedor
       
     </span>
   </a>
@@ -3108,10 +3108,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#remote-state-backends" class="md-nav__link">
+  <a href="#backends-de-estado-remoto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Remote State Backends
+        Backends de Estado Remoto
       
     </span>
   </a>
@@ -3119,22 +3119,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#module-patterns" class="md-nav__link">
+  <a href="#padroes-de-modulo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Module Patterns
+        Padrões de Módulo
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Module Patterns">
+    <nav class="md-nav" aria-label="Padrões de Módulo">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#flat-module-structure" class="md-nav__link">
+  <a href="#estrutura-de-modulo-simples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Flat Module Structure
+        Estrutura de Módulo Simples
       
     </span>
   </a>
@@ -3142,10 +3142,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#calling-a-local-module" class="md-nav__link">
+  <a href="#chamando-um-modulo-local" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Calling a Local Module
+        Chamando um Módulo Local
       
     </span>
   </a>
@@ -3153,10 +3153,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#registry-module-terraform-registry" class="md-nav__link">
+  <a href="#modulo-do-registro-terraform-registry" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Registry Module (Terraform Registry)
+        Módulo do Registro (Terraform Registry)
       
     </span>
   </a>
@@ -3169,10 +3169,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#variables-validation" class="md-nav__link">
+  <a href="#variaveis-e-validacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Variables &amp; Validation
+        Variáveis e Validação
       
     </span>
   </a>
@@ -3191,10 +3191,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#state-operations" class="md-nav__link">
+  <a href="#operacoes-de-estado" class="md-nav__link">
     <span class="md-ellipsis">
       
-        State Operations
+        Operações de Estado
       
     </span>
   </a>
@@ -3202,10 +3202,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dynamic-blocks" class="md-nav__link">
+  <a href="#blocos-dinamicos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dynamic Blocks
+        Blocos Dinâmicos
       
     </span>
   </a>
@@ -3224,10 +3224,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#github-actions-cicd" class="md-nav__link">
+  <a href="#cicd-com-github-actions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GitHub Actions CI/CD
+        CI/CD com GitHub Actions
       
     </span>
   </a>
@@ -3235,10 +3235,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
+  <a href="#boas-praticas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practices
+        Boas Práticas
       
     </span>
   </a>
@@ -3266,65 +3266,65 @@
   <div class="dph-left">
     <span class="dph-eyebrow">// infrastructure-as-code / terraform</span>
     <h1 class="dph-title">Terraform</h1>
-    <p class="dph-desc">The de-facto multi-cloud IaC standard. Declarative HCL, a rich provider ecosystem and a mature module registry make Terraform the first choice for provisioning cloud infrastructure at any scale.</p>
+    <p class="dph-desc">O padrão de IaC multi-cloud de facto. HCL declarativo, um rico ecossistema de provedores e um registro de módulos maduro fazem do Terraform a primeira escolha para provisionamento de infraestrutura em nuvem em qualquer escala.</p>
     <div class="dph-badges">
       <span class="tech-badge">HCL</span>
       <span class="tech-badge">Providers</span>
       <span class="tech-badge">Modules</span>
-      <span class="tech-badge">Remote State</span>
+      <span class="tech-badge">Estado Remoto</span>
       <span class="tech-badge">Workspaces</span>
       <span class="tech-badge">Terraform Cloud</span>
     </div>
   </div>
 </div>
 
-<p><a href="../">← IaC Overview</a> | <a href="../ansible/">Ansible →</a></p>
+<p><a href="../">← Visão Geral de IaC</a> | <a href="../ansible/">Ansible →</a></p>
 <hr />
-<h2 id="core-concepts">Core Concepts</h2>
+<h2 id="conceitos-fundamentais">Conceitos Fundamentais</h2>
 <table>
 <thead>
 <tr>
-<th>Concept</th>
-<th>Description</th>
+<th>Conceito</th>
+<th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Provider</strong></td>
-<td>Plugin that maps HCL resources to API calls (AWS, Azure, GCP, OCI, Kubernetes…)</td>
+<td><strong>Provedor</strong></td>
+<td>Plugin que mapeia recursos HCL para chamadas de API (AWS, Azure, GCP, OCI, Kubernetes…)</td>
 </tr>
 <tr>
-<td><strong>Resource</strong></td>
-<td>Declarative unit of infrastructure (<code>aws_instance</code>, <code>azurerm_kubernetes_cluster</code>…)</td>
+<td><strong>Recurso</strong></td>
+<td>Unidade declarativa de infraestrutura (<code>aws_instance</code>, <code>azurerm_kubernetes_cluster</code>…)</td>
 </tr>
 <tr>
-<td><strong>Data source</strong></td>
-<td>Read-only reference to existing infrastructure</td>
+<td><strong>Fonte de dados</strong></td>
+<td>Referência somente leitura à infraestrutura existente</td>
 </tr>
 <tr>
-<td><strong>Variable</strong></td>
-<td>Input parameter — type-checked, validated, optional defaults</td>
+<td><strong>Variável</strong></td>
+<td>Parâmetro de entrada — com verificação de tipo, validação e padrões opcionais</td>
 </tr>
 <tr>
-<td><strong>Output</strong></td>
-<td>Exported value consumed by other modules or CLI</td>
+<td><strong>Saída</strong></td>
+<td>Valor exportado consumido por outros módulos ou CLI</td>
 </tr>
 <tr>
-<td><strong>Module</strong></td>
-<td>Reusable group of resources with inputs/outputs</td>
+<td><strong>Módulo</strong></td>
+<td>Grupo reutilizável de recursos com entradas/saídas</td>
 </tr>
 <tr>
-<td><strong>State</strong></td>
-<td>JSON snapshot of real-world resource IDs and attributes</td>
+<td><strong>Estado</strong></td>
+<td>Snapshot JSON dos IDs e atributos de recursos do mundo real</td>
 </tr>
 <tr>
 <td><strong>Plan / Apply</strong></td>
-<td>Two-phase workflow: diff first, mutate second</td>
+<td>Fluxo de trabalho em duas fases: diff primeiro, mutação depois</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="provider-version-pinning">Provider &amp; Version Pinning</h2>
+<h2 id="fixacao-de-versao-de-provedor">Fixação de Versão de Provedor</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># versions.tf</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">terraform</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="na">required_version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;= 1.7&quot;</span>
@@ -3354,7 +3354,7 @@
 <a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="remote-state-backends">Remote State Backends</h2>
+<h2 id="backends-de-estado-remoto">Backends de Estado Remoto</h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">S3 (AWS)</label><label for="__tabbed_1_2">GCS (GCP)</label><label for="__tabbed_1_3">Azure Blob</label><label for="__tabbed_1_4">OCI Object Storage</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3369,7 +3369,7 @@
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span>
 </code></pre></div>
-<p>Bootstrap the S3 bucket and DynamoDB lock table:</p>
+<p>Inicialize o bucket S3 e a tabela de lock do DynamoDB:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>aws<span class="w"> </span>s3api<span class="w"> </span>create-bucket<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>--bucket<span class="w"> </span>my-tfstate-prod<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>--region<span class="w"> </span>us-east-1
@@ -3428,8 +3428,8 @@
 </div>
 </div>
 <hr />
-<h2 id="module-patterns">Module Patterns</h2>
-<h3 id="flat-module-structure">Flat Module Structure</h3>
+<h2 id="padroes-de-modulo">Padrões de Módulo</h2>
+<h3 id="estrutura-de-modulo-simples">Estrutura de Módulo Simples</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>infra/
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>├── main.tf
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>├── variables.tf
@@ -3445,7 +3445,7 @@
 <a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>        ├── variables.tf
 <a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>        └── outputs.tf
 </code></pre></div>
-<h3 id="calling-a-local-module">Calling a Local Module</h3>
+<h3 id="chamando-um-modulo-local">Chamando um Módulo Local</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">module</span><span class="w"> </span><span class="nv">&quot;networking&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="na">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;./modules/networking&quot;</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
@@ -3465,7 +3465,7 @@
 <a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">  </span><span class="na">environment</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nv">var.environment</span>
 <a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="registry-module-terraform-registry">Registry Module (Terraform Registry)</h3>
+<h3 id="modulo-do-registro-terraform-registry">Módulo do Registro (Terraform Registry)</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">module</span><span class="w"> </span><span class="nv">&quot;eks&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="na">source</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;terraform-aws-modules/eks/aws&quot;</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;~&gt; 20.0&quot;</span>
@@ -3486,7 +3486,7 @@
 <a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="variables-validation">Variables &amp; Validation</h2>
+<h2 id="variaveis-e-validacao">Variáveis e Validação</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">variable</span><span class="w"> </span><span class="nv">&quot;environment&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="na">type</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="kt">string</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="na">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Deployment environment (dev, staging, prod).&quot;</span>
@@ -3514,7 +3514,7 @@
 </code></pre></div>
 <hr />
 <h2 id="workspaces">Workspaces</h2>
-<p>Workspaces let you maintain separate state files within a single configuration — useful for per-environment isolation without duplicating code.</p>
+<p>Workspaces permitem manter arquivos de estado separados dentro de uma única configuração — útil para isolamento por ambiente sem duplicar código.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>terraform<span class="w"> </span>workspace<span class="w"> </span>new<span class="w"> </span>staging
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>terraform<span class="w"> </span>workspace<span class="w"> </span>new<span class="w"> </span>prod
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>terraform<span class="w"> </span>workspace<span class="w"> </span><span class="k">select</span><span class="w"> </span>prod
@@ -3539,11 +3539,11 @@
 <a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="p">}</span>
 </code></pre></div>
 <div class="admonition tip">
-<p class="admonition-title">Prefer separate backends over workspaces for prod</p>
-<p>Workspaces share the same backend bucket. For strict prod isolation, use separate state paths or separate backend configurations per environment.</p>
+<p class="admonition-title">Prefira backends separados a workspaces para produção</p>
+<p>Workspaces compartilham o mesmo bucket de backend. Para isolamento estrito de produção, use caminhos de estado separados ou configurações de backend separadas por ambiente.</p>
 </div>
 <hr />
-<h2 id="state-operations">State Operations</h2>
+<h2 id="operacoes-de-estado">Operações de Estado</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># List all resources in state</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>terraform<span class="w"> </span>state<span class="w"> </span>list
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
@@ -3563,7 +3563,7 @@
 <a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>terraform<span class="w"> </span>state<span class="w"> </span>pull<span class="w"> </span>&gt;<span class="w"> </span>backup.tfstate
 </code></pre></div>
 <hr />
-<h2 id="dynamic-blocks">Dynamic Blocks</h2>
+<h2 id="blocos-dinamicos">Blocos Dinâmicos</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;aws_security_group&quot;</span><span class="w"> </span><span class="nv">&quot;app&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="na">name</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;app-sg&quot;</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="na">vpc_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">var.vpc_id</span>
@@ -3602,39 +3602,39 @@
 <table>
 <thead>
 <tr>
-<th>Feature</th>
-<th>Description</th>
+<th>Recurso</th>
+<th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Remote execution</strong></td>
-<td>Plans and applies run in managed workers — no local credentials</td>
+<td><strong>Execução remota</strong></td>
+<td>Plans e applies são executados em workers gerenciados — sem credenciais locais</td>
 </tr>
 <tr>
-<td><strong>State storage</strong></td>
-<td>Encrypted remote state with history and locking</td>
+<td><strong>Armazenamento de estado</strong></td>
+<td>Estado remoto criptografado com histórico e bloqueio</td>
 </tr>
 <tr>
-<td><strong>VCS integration</strong></td>
-<td>Auto-plan on PR, auto-apply on merge</td>
+<td><strong>Integração com VCS</strong></td>
+<td>Auto-plan em PR, auto-apply no merge</td>
 </tr>
 <tr>
-<td><strong>Sentinel policies</strong></td>
-<td>Policy-as-code to enforce governance rules</td>
+<td><strong>Políticas Sentinel</strong></td>
+<td>Policy-as-code para aplicar regras de governança</td>
 </tr>
 <tr>
-<td><strong>Cost estimation</strong></td>
-<td>Estimated monthly cost shown in plan output</td>
+<td><strong>Estimativa de custo</strong></td>
+<td>Custo mensal estimado exibido na saída do plan</td>
 </tr>
 <tr>
-<td><strong>Private registry</strong></td>
-<td>Host internal modules and providers</td>
+<td><strong>Registro privado</strong></td>
+<td>Hospede módulos e provedores internos</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="github-actions-cicd">GitHub Actions CI/CD</h2>
+<h2 id="cicd-com-github-actions">CI/CD com GitHub Actions</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terraform</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="nt">on</span><span class="p">:</span>
@@ -3686,46 +3686,46 @@
 <a id="__codelineno-15-49" name="__codelineno-15-49" href="#__codelineno-15-49"></a><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">terraform apply -auto-approve tfplan</span>
 </code></pre></div>
 <hr />
-<h2 id="best-practices">Best Practices</h2>
+<h2 id="boas-praticas">Boas Práticas</h2>
 <table>
 <thead>
 <tr>
-<th>Practice</th>
-<th>Why</th>
+<th>Prática</th>
+<th>Por quê</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Pin provider versions</strong> with <code>~&gt;</code></td>
-<td>Avoid unexpected breaking changes</td>
+<td><strong>Fixe versões de provedores</strong> com <code>~&gt;</code></td>
+<td>Evite breaking changes inesperadas</td>
 </tr>
 <tr>
-<td><strong>Use <code>terraform fmt</code> in CI</strong></td>
-<td>Enforce consistent formatting</td>
+<td><strong>Use <code>terraform fmt</code> no CI</strong></td>
+<td>Garanta formatação consistente</td>
 </tr>
 <tr>
-<td><strong>Store state remotely with locking</strong></td>
-<td>Prevent concurrent-apply corruption</td>
+<td><strong>Armazene o estado remotamente com locking</strong></td>
+<td>Evite corrupção por apply concorrente</td>
 </tr>
 <tr>
-<td><strong>Never commit <code>terraform.tfvars</code> with secrets</strong></td>
-<td>Use environment variables or Vault</td>
+<td><strong>Nunca faça commit de <code>terraform.tfvars</code> com segredos</strong></td>
+<td>Use variáveis de ambiente ou Vault</td>
 </tr>
 <tr>
-<td><strong>Use <code>moved</code> blocks instead of <code>state mv</code></strong></td>
-<td>Refactors are tracked in code history</td>
+<td><strong>Use blocos <code>moved</code> em vez de <code>state mv</code></strong></td>
+<td>Refatorações são rastreadas no histórico do código</td>
 </tr>
 <tr>
-<td><strong>Separate modules from root</strong></td>
-<td>Easier testing and reuse</td>
+<td><strong>Separe módulos do root</strong></td>
+<td>Facilita testes e reutilização</td>
 </tr>
 <tr>
-<td><strong>Tag all resources via <code>default_tags</code></strong></td>
-<td>Cost attribution and compliance</td>
+<td><strong>Marque todos os recursos via <code>default_tags</code></strong></td>
+<td>Atribuição de custos e conformidade</td>
 </tr>
 <tr>
-<td><strong>Run <code>terraform validate</code> in CI</strong></td>
-<td>Catch syntax errors before plan</td>
+<td><strong>Execute <code>terraform validate</code> no CI</strong></td>
+<td>Capture erros de sintaxe antes do plan</td>
 </tr>
 </tbody>
 </table>

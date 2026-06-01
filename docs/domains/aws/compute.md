@@ -1,13 +1,13 @@
 ---
-title: AWS Compute
-description: EC2, ECS, EKS, Lambda, Fargate — compute services on AWS.
+title: AWS Computação
+description: EC2, ECS, EKS, Lambda, Fargate — serviços de computação na AWS.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// aws / compute</span>
-    <h1 class="dph-title">AWS Compute</h1>
-    <p class="dph-desc">From bare-metal virtual machines to serverless functions, AWS provides compute primitives for every workload shape. Choose the right service based on control requirements, operational overhead and scaling characteristics.</p>
+    <h1 class="dph-title">AWS Computação</h1>
+    <p class="dph-desc">De máquinas virtuais bare-metal a funções serverless, a AWS oferece primitivos de computação para cada tipo de carga de trabalho. Escolha o serviço certo com base nos requisitos de controle, sobrecarga operacional e características de escalabilidade.</p>
     <div class="dph-badges">
       <span class="tech-badge">EC2</span>
       <span class="tech-badge">ECS</span>
@@ -23,26 +23,26 @@ description: EC2, ECS, EKS, Lambda, Fargate — compute services on AWS.
 
 ## EC2 — Elastic Compute Cloud
 
-EC2 provides resizable virtual machines with full OS-level control. It is the foundation of AWS compute and the building block for most other services.
+O EC2 fornece máquinas virtuais redimensionáveis com controle total em nível de sistema operacional. É a base da computação na AWS e o bloco de construção para a maioria dos outros serviços.
 
-### Instance families
+### Famílias de instâncias
 
-| Family | Purpose | Common types |
-|--------|---------|-------------|
-| **T** (burstable) | Dev/test, variable-CPU workloads | `t3.micro`, `t3.medium` |
-| **M** (general) | Balanced CPU/memory | `m6i.xlarge`, `m7g.2xlarge` |
-| **C** (compute) | CPU-intensive: batch, gaming, encoding | `c6i.4xlarge`, `c7g.8xlarge` |
-| **R** (memory) | In-memory DBs, large JVM heaps | `r6i.4xlarge`, `r7g.8xlarge` |
-| **I** (storage) | High NVMe: Cassandra, Kafka | `i3en.3xlarge`, `i4i.4xlarge` |
-| **P / G** | GPU compute / ML inference | `p4d.24xlarge`, `g5.48xlarge` |
-| **m7g / c7g / r7g** | Graviton3 ARM — best price/perf | `m7g.xlarge`, `c7g.4xlarge` |
+| Família | Propósito | Tipos comuns |
+|---------|-----------|--------------|
+| **T** (burstável) | Dev/test, cargas com CPU variável | `t3.micro`, `t3.medium` |
+| **M** (geral) | CPU/memória balanceados | `m6i.xlarge`, `m7g.2xlarge` |
+| **C** (computação) | CPU intensivo: batch, gaming, encoding | `c6i.4xlarge`, `c7g.8xlarge` |
+| **R** (memória) | BDs em memória, heaps JVM grandes | `r6i.4xlarge`, `r7g.8xlarge` |
+| **I** (armazenamento) | NVMe alto: Cassandra, Kafka | `i3en.3xlarge`, `i4i.4xlarge` |
+| **P / G** | Computação GPU / inferência ML | `p4d.24xlarge`, `g5.48xlarge` |
+| **m7g / c7g / r7g** | Graviton3 ARM — melhor custo/desempenho | `m7g.xlarge`, `c7g.4xlarge` |
 
-!!! tip "Default to Graviton"
-    Graviton3 instances offer **20–40% better price-performance** vs x86 equivalents. Default to the `g` suffix generation (m7g, c7g, r7g) unless your software doesn't support ARM.
+!!! tip "Prefira Graviton"
+    As instâncias Graviton3 oferecem **20–40% melhor custo-desempenho** em comparação com equivalentes x86. Use por padrão a geração com sufixo `g` (m7g, c7g, r7g), a menos que seu software não suporte ARM.
 
 ### Auto Scaling Groups
 
-ASGs manage fleets of identical instances. Key components: a **Launch Template** (AMI, instance type, security groups, IAM profile, user data) and **scaling policies** (Target Tracking, Step, Scheduled).
+Os ASGs gerenciam frotas de instâncias idênticas. Componentes principais: um **Launch Template** (AMI, tipo de instância, grupos de segurança, perfil IAM, user data) e **políticas de escalabilidade** (Target Tracking, Step, Scheduled).
 
 ```hcl
 resource "aws_launch_template" "app" {
@@ -86,23 +86,23 @@ resource "aws_autoscaling_group" "app" {
 }
 ```
 
-!!! note "Spot strategy"
-    Use `price-capacity-optimized` allocation strategy and override with 3+ instance types across families. Combine `on_demand_base_capacity = 1` + Spot for the rest to maintain baseline availability even during Spot interruptions.
+!!! note "Estratégia Spot"
+    Use a estratégia de alocação `price-capacity-optimized` e substitua com 3+ tipos de instância de diferentes famílias. Combine `on_demand_base_capacity = 1` + Spot para o restante, mantendo disponibilidade de base mesmo durante interrupções Spot.
 
 ---
 
 ## ECS — Elastic Container Service
 
-ECS is AWS's native container orchestrator. It schedules **Tasks** (running container groups) on **Clusters**, with two launch types: **Fargate** (serverless) and **EC2** (self-managed).
+O ECS é o orquestrador de contêineres nativo da AWS. Ele agenda **Tasks** (grupos de contêineres em execução) em **Clusters**, com dois tipos de lançamento: **Fargate** (serverless) e **EC2** (gerenciado pelo usuário).
 
-### Core concepts
+### Conceitos principais
 
-| Concept | Description |
-|---------|-------------|
-| **Cluster** | Logical boundary for tasks, services and capacity |
-| **Task Definition** | Blueprint: image, vCPU/memory, ports, volumes, IAM role, log config |
-| **Task** | A running instance of a Task Definition |
-| **Service** | Maintains N running tasks; integrates with ALB, handles rolling deploys |
+| Conceito | Descrição |
+|----------|-----------|
+| **Cluster** | Limite lógico para tasks, serviços e capacidade |
+| **Task Definition** | Blueprint: imagem, vCPU/memória, portas, volumes, IAM role, configuração de log |
+| **Task** | Uma instância em execução de uma Task Definition |
+| **Service** | Mantém N tasks em execução; integra-se com ALB, gerencia deploys contínuos |
 
 ```hcl
 resource "aws_ecs_task_definition" "api" {
@@ -160,18 +160,18 @@ resource "aws_ecs_service" "api" {
 
 ## EKS — Elastic Kubernetes Service
 
-EKS is the AWS managed Kubernetes service. AWS manages the control plane; you choose how to run worker nodes.
+O EKS é o serviço Kubernetes gerenciado da AWS. A AWS gerencia o plano de controle; você escolhe como executar os worker nodes.
 
-### Node options
+### Opções de nodes
 
-| Mode | Description | Best for |
-|------|-------------|---------|
-| **Managed Node Groups** | ASG-backed EC2, patching managed by EKS | Most production clusters |
-| **Self-managed nodes** | Custom AMI, OS, ASG | Specific kernel/AMI requirements |
-| **Fargate Profiles** | Serverless pods, no nodes | Burstable / batch workloads |
-| **Karpenter** | Next-gen provisioner, sub-minute node launch | Large, dynamic clusters |
+| Modo | Descrição | Melhor para |
+|------|-----------|-------------|
+| **Managed Node Groups** | EC2 com ASG, patching gerenciado pelo EKS | Maioria dos clusters em produção |
+| **Nodes self-managed** | AMI, SO e ASG personalizados | Requisitos específicos de kernel/AMI |
+| **Fargate Profiles** | Pods serverless, sem nodes | Cargas burstáveis / batch |
+| **Karpenter** | Provisionador de nova geração, lançamento de node em menos de 1 minuto | Clusters grandes e dinâmicos |
 
-### Essential add-ons
+### Add-ons essenciais
 
 ```hcl
 locals {
@@ -194,7 +194,7 @@ resource "aws_eks_addon" "main" {
 
 ### IRSA — IAM Roles for Service Accounts
 
-IRSA lets pods assume IAM roles without static credentials, using the EKS OIDC provider as a trust anchor.
+O IRSA permite que pods assumam roles IAM sem credenciais estáticas, utilizando o provedor OIDC do EKS como âncora de confiança.
 
 ```hcl
 data "aws_iam_policy_document" "irsa_assume" {
@@ -218,35 +218,35 @@ resource "aws_iam_role" "workload" {
 }
 ```
 
-!!! tip "Community EKS module"
-    Use [`terraform-aws-modules/eks/aws`](https://registry.terraform.io/modules/terraform-aws-modules/eks/aws) — it wires up the cluster, managed node groups, OIDC provider and IRSA with sensible defaults. Pin to a specific version and review the changelog between upgrades.
+!!! tip "Módulo EKS da comunidade"
+    Use [`terraform-aws-modules/eks/aws`](https://registry.terraform.io/modules/terraform-aws-modules/eks/aws) — ele configura o cluster, managed node groups, provedor OIDC e IRSA com padrões sensatos. Fixe em uma versão específica e revise o changelog entre atualizações.
 
 ---
 
 ## Lambda
 
-Lambda runs code in response to events without managing any infrastructure. Scales from zero to tens of thousands of concurrent executions automatically.
+O Lambda executa código em resposta a eventos sem gerenciar nenhuma infraestrutura. Escala de zero a dezenas de milhares de execuções simultâneas automaticamente.
 
-### Runtimes & limits
+### Runtimes e limites
 
-| Property | Value |
-|----------|-------|
-| Runtimes | Node.js 20, Python 3.12, Java 21, Go, Ruby 3.2, .NET 8, Container image, Custom |
-| Memory | 128 MB – 10 GB (CPU scales proportionally) |
-| Timeout | up to 15 minutes |
-| Ephemeral storage `/tmp` | 512 MB – 10 GB |
-| Deployment package | 50 MB zipped / 250 MB unzipped / 10 GB container image |
+| Propriedade | Valor |
+|-------------|-------|
+| Runtimes | Node.js 20, Python 3.12, Java 21, Go, Ruby 3.2, .NET 8, Imagem de contêiner, Personalizado |
+| Memória | 128 MB – 10 GB (CPU escala proporcionalmente) |
+| Timeout | até 15 minutos |
+| Armazenamento efêmero `/tmp` | 512 MB – 10 GB |
+| Pacote de implantação | 50 MB comprimido / 250 MB descomprimido / 10 GB imagem de contêiner |
 
-### Common event sources
+### Fontes de eventos comuns
 
-| Trigger | Invocation | Use case |
-|---------|-----------|---------|
-| API Gateway / Function URL | Sync | HTTP APIs |
-| S3 | Async | File processing on upload |
-| SQS | Polling | Message queue workers |
-| EventBridge | Async | Scheduled jobs, event pipelines |
-| DynamoDB Streams | Polling | React to DB changes |
-| Kinesis | Polling | Real-time stream processing |
+| Trigger | Invocação | Caso de uso |
+|---------|-----------|-------------|
+| API Gateway / Function URL | Síncrono | APIs HTTP |
+| S3 | Assíncrono | Processamento de arquivos no upload |
+| SQS | Polling | Workers de fila de mensagens |
+| EventBridge | Assíncrono | Jobs agendados, pipelines de eventos |
+| DynamoDB Streams | Polling | Reagir a alterações no BD |
+| Kinesis | Polling | Processamento de stream em tempo real |
 
 ```hcl
 resource "aws_lambda_function" "processor" {
@@ -279,19 +279,19 @@ resource "aws_lambda_event_source_mapping" "sqs" {
 }
 ```
 
-!!! note "VPC Lambda"
-    Lambda in a VPC is no longer slow — AWS pre-warms ENIs since 2020. You still need sufficient IP space in your subnets (avoid `/28`; prefer `/24` or larger). Use VPC endpoints for S3, DynamoDB and Secrets Manager to avoid traffic routing through NAT.
+!!! note "Lambda em VPC"
+    O Lambda em VPC não é mais lento — a AWS pré-aquece ENIs desde 2020. Você ainda precisa de espaço suficiente de IPs nas suas sub-redes (evite `/28`; prefira `/24` ou maior). Use VPC endpoints para S3, DynamoDB e Secrets Manager para evitar tráfego roteado pelo NAT.
 
 ---
 
 ## Fargate
 
-Fargate is the serverless compute engine for containers, available in both **ECS** and **EKS**. No EC2 nodes to patch, no AMIs to manage.
+O Fargate é o motor de computação serverless para contêineres, disponível tanto no **ECS** quanto no **EKS**. Sem nodes EC2 para corrigir, sem AMIs para gerenciar.
 
-### ECS Fargate sizing
+### Dimensionamento do ECS Fargate
 
-| vCPU | Available memory |
-|------|-----------------|
+| vCPU | Memória disponível |
+|------|--------------------|
 | 0.25 | 0.5 – 2 GB |
 | 0.5  | 1 – 4 GB |
 | 1    | 2 – 8 GB |
@@ -304,16 +304,16 @@ Fargate is the serverless compute engine for containers, available in both **ECS
 
 | | ECS Fargate | EKS Fargate |
 |--|-------------|-------------|
-| **Operational overhead** | Low | Medium (K8s API) |
-| **Tooling** | AWS-native (awscli, CDK) | Standard Kubernetes toolchain |
-| **Networking** | ENI per task (awsvpc mode) | ENI per pod |
-| **Persistent storage** | Ephemeral + EFS volumes | EFS only |
-| **Best for** | Simple services, microservices | Teams already on Kubernetes |
+| **Sobrecarga operacional** | Baixa | Média (API K8s) |
+| **Ferramentas** | Nativo AWS (awscli, CDK) | Toolchain padrão Kubernetes |
+| **Rede** | ENI por task (modo awsvpc) | ENI por pod |
+| **Armazenamento persistente** | Efêmero + volumes EFS | Somente EFS |
+| **Melhor para** | Serviços simples, microsserviços | Times já usando Kubernetes |
 
 !!! tip "Fargate Spot"
-    Enable **Fargate Spot** as a second capacity provider in ECS for up to 70% savings on fault-tolerant workloads. Use `base = 1` for the FARGATE provider and weight the rest toward FARGATE_SPOT.
+    Habilite o **Fargate Spot** como segundo provedor de capacidade no ECS para até 70% de economia em cargas tolerantes a falhas. Use `base = 1` para o provedor FARGATE e distribua o restante para FARGATE_SPOT.
 
 ---
 
-[← AWS Overview](index.md){ .md-button }
-[Storage →](storage.md){ .md-button .md-button--primary }
+[← Visão Geral AWS](index.md){ .md-button }
+[Armazenamento →](storage.md){ .md-button .md-button--primary }

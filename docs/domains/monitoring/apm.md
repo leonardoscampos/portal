@@ -1,44 +1,44 @@
 ---
 title: APM & Distributed Tracing
-description: Jaeger, Grafana Tempo, Elastic APM, Datadog, and New Relic for distributed tracing and application performance monitoring.
+description: Jaeger, Grafana Tempo, Elastic APM, Datadog e New Relic para rastreamento distribuído e monitoramento de desempenho de aplicações.
 ---
 
 <div class="domain-page-hero" data-domain="monitoring">
   <div class="dph-left">
-    <span class="dph-eyebrow">// monitoring-observability / apm</span>
-    <h1 class="dph-title">APM & Distributed Tracing</h1>
-    <p class="dph-desc">Distributed tracing follows a request as it propagates across microservices, revealing latency bottlenecks and error sources invisible to metrics alone. APM platforms layer on auto-instrumentation, profiling, and dependency maps to accelerate root-cause analysis.</p>
+    <span class="dph-eyebrow">// monitoramento-observabilidade / apm</span>
+    <h1 class="dph-title">APM & Rastreamento Distribuído</h1>
+    <p class="dph-desc">O rastreamento distribuído acompanha uma requisição à medida que ela se propaga pelos microsserviços, revelando gargalos de latência e fontes de erro invisíveis apenas pelas métricas. As plataformas APM adicionam auto-instrumentação, perfilamento e mapas de dependências para acelerar a análise de causa raiz.</p>
     <div class="dph-badges">
       <span class="tech-badge">Jaeger</span>
       <span class="tech-badge">Tempo</span>
       <span class="tech-badge">Elastic APM</span>
       <span class="tech-badge">Datadog</span>
       <span class="tech-badge">New Relic</span>
-      <span class="tech-badge">Continuous Profiling</span>
+      <span class="tech-badge">Perfilamento Contínuo</span>
     </div>
   </div>
 </div>
 
-[← Alerting](alerting.md) | [← Monitoring Overview](index.md)
+[← Alerting](alerting.md) | [← Visão Geral de Monitoramento](index.md)
 
 ---
 
-## Tool Comparison
+## Comparação de Ferramentas
 
-| Tool | Type | Storage | Cost model | OTel native |
+| Ferramenta | Tipo | Armazenamento | Modelo de custo | OTel nativo |
 |------|------|---------|-----------|-------------|
-| **Grafana Tempo** | OSS tracing backend | Object store (S3/GCS) | Storage cost only | Yes (OTLP) |
-| **Jaeger** | OSS tracing backend | Cassandra / Elasticsearch / memory | Storage cost only | Yes (via OTEL) |
-| **Elastic APM** | APM platform | Elasticsearch | Self-host or Elastic Cloud | Via OTel |
-| **Datadog APM** | SaaS APM + infra | Managed (SaaS) | Per host/span | Yes (OTLP ingestion) |
-| **New Relic** | SaaS APM + infra | Managed (SaaS) | Per data GB | Yes |
-| **Pyroscope** | Continuous profiling | Object store | Open source | Via OTel profiling |
+| **Grafana Tempo** | Backend de rastreamento OSS | Object store (S3/GCS) | Apenas custo de armazenamento | Sim (OTLP) |
+| **Jaeger** | Backend de rastreamento OSS | Cassandra / Elasticsearch / memória | Apenas custo de armazenamento | Sim (via OTEL) |
+| **Elastic APM** | Plataforma APM | Elasticsearch | Self-host ou Elastic Cloud | Via OTel |
+| **Datadog APM** | APM SaaS + infra | Gerenciado (SaaS) | Por host/span | Sim (ingestão OTLP) |
+| **New Relic** | APM SaaS + infra | Gerenciado (SaaS) | Por GB de dados | Sim |
+| **Pyroscope** | Perfilamento contínuo | Object store | Open source | Via OTel profiling |
 
 ---
 
 ## Grafana Tempo
 
-### Installation (Helm)
+### Instalação (Helm)
 
 ```bash
 helm upgrade --install tempo grafana/tempo-distributed \
@@ -134,7 +134,7 @@ metricsGenerator:
 
 ## Jaeger
 
-### Installation (Operator)
+### Instalação (Operator)
 
 ```bash
 kubectl create namespace observability
@@ -183,7 +183,7 @@ spec:
     hosts:
       - tracing.internal
 
-  # Sampling — remote controlled
+  # Amostragem — controlada remotamente
   sampling:
     options:
       default_strategy:
@@ -192,14 +192,14 @@ spec:
       service_strategies:
         - service: critical-payment-service
           type: probabilistic
-          param: 1.0    # 100% sampling for payment service
+          param: 1.0    # 100% de amostragem para o serviço de pagamento
 ```
 
 ---
 
 ## Elastic APM
 
-### Stack Helm Install
+### Instalação via Helm do Stack
 
 ```bash
 # Elasticsearch + Kibana + APM Server via ECK (Elastic Cloud on Kubernetes)
@@ -247,7 +247,7 @@ spec:
         allow_origins: ["https://app.example.com"]
 ```
 
-### APM Agent (Python / Node)
+### Agente APM (Python / Node)
 
 === "Python"
 
@@ -296,7 +296,7 @@ spec:
 
 ## Datadog APM
 
-### Kubernetes Deployment (Operator)
+### Deploy no Kubernetes (Operator)
 
 ```bash
 helm repo add datadog https://helm.datadoghq.com
@@ -351,7 +351,7 @@ metadata:
     # or: java-lib.version, js-lib.version, dotnet-lib.version, ruby-lib.version
 ```
 
-### Datadog Unified Service Tagging
+### Unified Service Tagging do Datadog
 
 ```yaml
 # Always add these labels to pods for service correlation
@@ -363,7 +363,7 @@ labels:
 
 ---
 
-## Continuous Profiling — Pyroscope
+## Perfilamento Contínuo — Pyroscope
 
 ```bash
 helm upgrade --install pyroscope grafana/pyroscope \
@@ -405,17 +405,17 @@ metadata:
 
 ---
 
-## Observability Platform Decision Matrix
+## Matriz de Decisão de Plataforma de Observabilidade
 
-| Need | Recommended stack |
+| Necessidade | Stack recomendado |
 |------|------------------|
-| OSS only, cost-sensitive | Prometheus + Grafana + Loki + Tempo + Alloy |
-| Long-term metrics retention | Add Mimir or Thanos |
-| Log-heavy workloads | Loki (cheap) or Elasticsearch (full-text search) |
-| Distributed tracing only | Grafana Tempo (simple) or Jaeger |
-| Full SaaS APM | Datadog or New Relic |
-| Elastic stack already deployed | Elastic APM (reuse existing Elasticsearch) |
-| Continuous profiling | Pyroscope (OSS) or Datadog Continuous Profiler |
-| Multi-cloud/vendor-neutral | OpenTelemetry Collector + multiple exporters |
+| Apenas OSS, sensível a custo | Prometheus + Grafana + Loki + Tempo + Alloy |
+| Retenção de métricas de longo prazo | Adicionar Mimir ou Thanos |
+| Cargas de trabalho com muitos logs | Loki (barato) ou Elasticsearch (busca full-text) |
+| Apenas rastreamento distribuído | Grafana Tempo (simples) ou Jaeger |
+| APM SaaS completo | Datadog ou New Relic |
+| Stack Elastic já implantado | Elastic APM (reaproveitar Elasticsearch existente) |
+| Perfilamento contínuo | Pyroscope (OSS) ou Datadog Continuous Profiler |
+| Multi-cloud/vendor-neutral | OpenTelemetry Collector + múltiplos exportadores |
 
-[← Alerting](alerting.md) | [← Monitoring Overview](index.md)
+[← Alerting](alerting.md) | [← Visão Geral de Monitoramento](index.md)

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Azure DevOps YAML pipelines, stages, service connections, environments, variable groups and Artifacts reference.">
+        <meta name="description" content="Referência de pipelines YAML, estágios, conexões de serviço, ambientes, grupos de variáveis e Artifacts do Azure DevOps.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pipeline-anatomy" class="md-skip">
+        <a href="#anatomia-do-pipeline" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -1597,10 +1597,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pipeline-anatomy" class="md-nav__link">
+  <a href="#anatomia-do-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pipeline Anatomy
+        Anatomia do Pipeline
       
     </span>
   </a>
@@ -1608,10 +1608,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-concepts" class="md-nav__link">
+  <a href="#conceitos-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Concepts
+        Conceitos Principais
       
     </span>
   </a>
@@ -1619,10 +1619,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#variables-variable-groups" class="md-nav__link">
+  <a href="#variaveis-e-grupos-de-variaveis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Variables &amp; Variable Groups
+        Variáveis e Grupos de Variáveis
       
     </span>
   </a>
@@ -1630,10 +1630,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#service-connections" class="md-nav__link">
+  <a href="#conexoes-de-servico" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Service Connections
+        Conexões de Serviço
       
     </span>
   </a>
@@ -1641,10 +1641,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#environments-approvals" class="md-nav__link">
+  <a href="#ambientes-e-aprovacoes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Environments &amp; Approvals
+        Ambientes e Aprovações
       
     </span>
   </a>
@@ -1674,10 +1674,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#self-hosted-agents" class="md-nav__link">
+  <a href="#agentes-auto-hospedados" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Self-Hosted Agents
+        Agentes Auto-hospedados
       
     </span>
   </a>
@@ -1685,10 +1685,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#useful-built-in-variables" class="md-nav__link">
+  <a href="#variaveis-integradas-uteis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Useful Built-in Variables
+        Variáveis Integradas Úteis
       
     </span>
   </a>
@@ -1696,10 +1696,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
+  <a href="#boas-praticas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practices
+        Boas Práticas
       
     </span>
   </a>
@@ -3036,10 +3036,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pipeline-anatomy" class="md-nav__link">
+  <a href="#anatomia-do-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pipeline Anatomy
+        Anatomia do Pipeline
       
     </span>
   </a>
@@ -3047,10 +3047,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-concepts" class="md-nav__link">
+  <a href="#conceitos-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Concepts
+        Conceitos Principais
       
     </span>
   </a>
@@ -3058,10 +3058,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#variables-variable-groups" class="md-nav__link">
+  <a href="#variaveis-e-grupos-de-variaveis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Variables &amp; Variable Groups
+        Variáveis e Grupos de Variáveis
       
     </span>
   </a>
@@ -3069,10 +3069,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#service-connections" class="md-nav__link">
+  <a href="#conexoes-de-servico" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Service Connections
+        Conexões de Serviço
       
     </span>
   </a>
@@ -3080,10 +3080,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#environments-approvals" class="md-nav__link">
+  <a href="#ambientes-e-aprovacoes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Environments &amp; Approvals
+        Ambientes e Aprovações
       
     </span>
   </a>
@@ -3113,10 +3113,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#self-hosted-agents" class="md-nav__link">
+  <a href="#agentes-auto-hospedados" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Self-Hosted Agents
+        Agentes Auto-hospedados
       
     </span>
   </a>
@@ -3124,10 +3124,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#useful-built-in-variables" class="md-nav__link">
+  <a href="#variaveis-integradas-uteis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Useful Built-in Variables
+        Variáveis Integradas Úteis
       
     </span>
   </a>
@@ -3135,10 +3135,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
+  <a href="#boas-praticas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practices
+        Boas Práticas
       
     </span>
   </a>
@@ -3166,7 +3166,7 @@
   <div class="dph-left">
     <span class="dph-eyebrow">// cicd-pipelines / azure-devops</span>
     <h1 class="dph-title">Azure DevOps</h1>
-    <p class="dph-desc">Microsoft's end-to-end DevOps platform. YAML multi-stage pipelines with gates and approvals, Azure Artifacts for package management, Environments for deployment tracking with rollback, and deep integration with Azure services through service connections.</p>
+    <p class="dph-desc">Plataforma DevOps end-to-end da Microsoft. Pipelines YAML multi-estágio com gates e aprovações, Azure Artifacts para gerenciamento de pacotes, Ambientes para rastreamento de implantações com rollback e integração profunda com serviços Azure por meio de conexões de serviço.</p>
     <div class="dph-badges">
       <span class="tech-badge">YAML Pipelines</span>
       <span class="tech-badge">Stages</span>
@@ -3180,7 +3180,7 @@
 
 <p><a href="../tekton/">← Tekton</a> | <a href="../">← CI/CD Overview</a> | <a href="../circle-ci/">CircleCI →</a></p>
 <hr />
-<h2 id="pipeline-anatomy">Pipeline Anatomy</h2>
+<h2 id="anatomia-do-pipeline">Anatomia do Pipeline</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># azure-pipelines.yml</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">trigger</span><span class="p">:</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">branches</span><span class="p">:</span>
@@ -3284,64 +3284,64 @@
 <a id="__codelineno-0-101" name="__codelineno-0-101" href="#__codelineno-0-101"></a><span class="w">                    </span><span class="nt">overrideValues</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">image.tag=$(tag)</span>
 </code></pre></div>
 <hr />
-<h2 id="core-concepts">Core Concepts</h2>
+<h2 id="conceitos-principais">Conceitos Principais</h2>
 <table>
 <thead>
 <tr>
-<th>Concept</th>
-<th>Description</th>
+<th>Conceito</th>
+<th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Stage</strong></td>
-<td>Top-level grouping — appears in the pipeline visualization</td>
+<td><strong>Estágio</strong></td>
+<td>Agrupamento de nível superior — aparece na visualização do pipeline</td>
 </tr>
 <tr>
 <td><strong>Job</strong></td>
-<td>Set of steps on a single agent. Jobs in a stage run in parallel by default</td>
+<td>Conjunto de passos em um único agente. Jobs em um estágio são executados em paralelo por padrão</td>
 </tr>
 <tr>
 <td><strong>Deployment Job</strong></td>
-<td>Special job targeting an Environment — tracks deployment history</td>
+<td>Job especial que referencia um Ambiente — rastreia o histórico de implantações</td>
 </tr>
 <tr>
-<td><strong>Step</strong></td>
-<td>A task or script within a job</td>
+<td><strong>Passo</strong></td>
+<td>Uma tarefa ou script dentro de um job</td>
 </tr>
 <tr>
-<td><strong>Task</strong></td>
-<td>Pre-built unit of work (marketplace or built-in)</td>
+<td><strong>Tarefa</strong></td>
+<td>Unidade de trabalho pré-construída (marketplace ou integrada)</td>
 </tr>
 <tr>
-<td><strong>Agent</strong></td>
-<td>Host running jobs: Microsoft-hosted (pay-per-minute) or self-hosted</td>
+<td><strong>Agente</strong></td>
+<td>Host que executa jobs: hospedado pela Microsoft (pago por minuto) ou auto-hospedado</td>
 </tr>
 <tr>
-<td><strong>Agent Pool</strong></td>
-<td>Group of agents. Projects get access to pools via org settings</td>
+<td><strong>Pool de Agentes</strong></td>
+<td>Grupo de agentes. Projetos obtêm acesso a pools pelas configurações da organização</td>
 </tr>
 <tr>
-<td><strong>Service Connection</strong></td>
-<td>Authenticated connection to external services (ACR, AKS, GitHub…)</td>
+<td><strong>Conexão de Serviço</strong></td>
+<td>Conexão autenticada para serviços externos (ACR, AKS, GitHub…)</td>
 </tr>
 <tr>
-<td><strong>Environment</strong></td>
-<td>Named deployment target with history, approvals and resource checks</td>
+<td><strong>Ambiente</strong></td>
+<td>Alvo de implantação nomeado com histórico, aprovações e verificações de recursos</td>
 </tr>
 <tr>
-<td><strong>Variable Group</strong></td>
-<td>Shared set of variables (with optional Key Vault linkage)</td>
+<td><strong>Grupo de Variáveis</strong></td>
+<td>Conjunto compartilhado de variáveis (com vínculo opcional ao Key Vault)</td>
 </tr>
 <tr>
-<td><strong>Artifact</strong></td>
-<td>Build output published with <code>PublishBuildArtifacts@1</code> or Pipeline Artifacts</td>
+<td><strong>Artefato</strong></td>
+<td>Saída de build publicada com <code>PublishBuildArtifacts@1</code> ou Pipeline Artifacts</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="variables-variable-groups">Variables &amp; Variable Groups</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Inline Variables</label><label for="__tabbed_1_2">Variable Group</label><label for="__tabbed_1_3">Runtime Parameters</label></div>
+<h2 id="variaveis-e-grupos-de-variaveis">Variáveis e Grupos de Variáveis</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Variáveis Inline</label><label for="__tabbed_1_2">Grupo de Variáveis</label><label for="__tabbed_1_3">Parâmetros de Execução</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">variables</span><span class="p">:</span>
@@ -3358,7 +3358,7 @@
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localVar</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">something</span>
 </code></pre></div>
-<p>Create groups under <strong>Pipelines → Library → Variable Groups</strong>. For Key Vault-backed groups, set <code>Link secrets from an Azure Key Vault</code>.</p>
+<p>Crie grupos em <strong>Pipelines → Library → Variable Groups</strong>. Para grupos vinculados ao Key Vault, defina <code>Link secrets from an Azure Key Vault</code>.</p>
 </div>
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">parameters</span><span class="p">:</span>
@@ -3381,42 +3381,42 @@
 </div>
 </div>
 <hr />
-<h2 id="service-connections">Service Connections</h2>
+<h2 id="conexoes-de-servico">Conexões de Serviço</h2>
 <table>
 <thead>
 <tr>
-<th>Connection Type</th>
-<th>Purpose</th>
+<th>Tipo de Conexão</th>
+<th>Finalidade</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Azure Resource Manager</strong></td>
-<td>ARM/AKS operations (managed identity or SP)</td>
+<td>Operações ARM/AKS (identidade gerenciada ou SP)</td>
 </tr>
 <tr>
 <td><strong>Docker Registry</strong></td>
-<td>Push/pull from ACR, Docker Hub, GCR</td>
+<td>Push/pull de ACR, Docker Hub, GCR</td>
 </tr>
 <tr>
 <td><strong>Kubernetes</strong></td>
-<td>Deploy to AKS or any cluster (kubeconfig / SA)</td>
+<td>Implantação no AKS ou qualquer cluster (kubeconfig / SA)</td>
 </tr>
 <tr>
 <td><strong>GitHub</strong></td>
-<td>Source checkout, GitHub checks, PR status</td>
+<td>Checkout de código, checks do GitHub, status de PR</td>
 </tr>
 <tr>
 <td><strong>Bitbucket Cloud</strong></td>
-<td>Source checkout</td>
+<td>Checkout de código</td>
 </tr>
 <tr>
 <td><strong>SSH</strong></td>
-<td>SSH-based deployments</td>
+<td>Implantações via SSH</td>
 </tr>
 <tr>
 <td><strong>Generic</strong></td>
-<td>Arbitrary HTTP endpoint with token auth</td>
+<td>Endpoint HTTP arbitrário com autenticação por token</td>
 </tr>
 </tbody>
 </table>
@@ -3431,7 +3431,7 @@
 <a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">      </span><span class="no">kubectl get pods</span>
 </code></pre></div>
 <hr />
-<h2 id="environments-approvals">Environments &amp; Approvals</h2>
+<h2 id="ambientes-e-aprovacoes">Ambientes e Aprovações</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">jobs</span><span class="p">:</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">deployment</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DeployProduction</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
@@ -3443,15 +3443,15 @@
 <a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">          </span><span class="nt">steps</span><span class="p">:</span>
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;Deploying to production&quot;</span>
 </code></pre></div>
-<p><strong>Configure approvals:</strong> <em>Environments → production → Approvals and checks → Approvals</em></p>
-<p>Check types available:
-- Required reviewers (person or group)
-- Branch control (only from protected branch)
-- Business hours gate
-- Invoke Azure Function / REST API</p>
+<p><strong>Configurar aprovações:</strong> <em>Environments → production → Approvals and checks → Approvals</em></p>
+<p>Tipos de verificação disponíveis:
+- Revisores obrigatórios (pessoa ou grupo)
+- Controle de branch (somente de branch protegida)
+- Gate de horário comercial
+- Invocar Azure Function / REST API</p>
 <hr />
 <h2 id="templates">Templates</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Step Template</label><label for="__tabbed_2_2">Stage Template</label><label for="__tabbed_2_3">Pipeline Template</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Template de Passo</label><label for="__tabbed_2_2">Template de Estágio</label><label for="__tabbed_2_3">Template de Pipeline</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># templates/steps/build-and-test.yml</span>
@@ -3553,7 +3553,7 @@
 <a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="w">    </span><span class="nt">publishFeed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-org/my-feed</span>
 </code></pre></div>
 <hr />
-<h2 id="self-hosted-agents">Self-Hosted Agents</h2>
+<h2 id="agentes-auto-hospedados">Agentes Auto-hospedados</h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Docker</label><label for="__tabbed_3_2">Kubernetes (KEDA)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3600,26 +3600,26 @@
 </div>
 </div>
 <hr />
-<h2 id="useful-built-in-variables">Useful Built-in Variables</h2>
+<h2 id="variaveis-integradas-uteis">Variáveis Integradas Úteis</h2>
 <table>
 <thead>
 <tr>
-<th>Variable</th>
-<th>Value</th>
+<th>Variável</th>
+<th>Valor</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>$(Build.BuildId)</code></td>
-<td>Unique build number (auto-incrementing)</td>
+<td>Número de build único (auto-incremental)</td>
 </tr>
 <tr>
 <td><code>$(Build.BuildNumber)</code></td>
-<td>Formatted build number</td>
+<td>Número de build formatado</td>
 </tr>
 <tr>
 <td><code>$(Build.SourceVersion)</code></td>
-<td>Full commit SHA</td>
+<td>SHA completo do commit</td>
 </tr>
 <tr>
 <td><code>$(Build.SourceBranch)</code></td>
@@ -3631,19 +3631,19 @@
 </tr>
 <tr>
 <td><code>$(Build.Repository.Name)</code></td>
-<td>Repository name</td>
+<td>Nome do repositório</td>
 </tr>
 <tr>
 <td><code>$(Build.ArtifactStagingDirectory)</code></td>
-<td>Temp dir for artifacts</td>
+<td>Diretório temporário para artefatos</td>
 </tr>
 <tr>
 <td><code>$(System.DefaultWorkingDirectory)</code></td>
-<td>Source checkout root</td>
+<td>Raiz do checkout do código-fonte</td>
 </tr>
 <tr>
 <td><code>$(System.TeamProject)</code></td>
-<td>Project name</td>
+<td>Nome do projeto</td>
 </tr>
 <tr>
 <td><code>$(Agent.OS)</code></td>
@@ -3651,59 +3651,59 @@
 </tr>
 <tr>
 <td><code>$(Pipeline.Workspace)</code></td>
-<td>Root of the pipeline workspace</td>
+<td>Raiz do workspace do pipeline</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="best-practices">Best Practices</h2>
+<h2 id="boas-praticas">Boas Práticas</h2>
 <table>
 <thead>
 <tr>
-<th>Practice</th>
-<th>Implementation</th>
+<th>Prática</th>
+<th>Implementação</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Multi-stage YAML</strong></td>
-<td>All pipelines in version-controlled YAML — no classic editor</td>
+<td><strong>YAML Multi-estágio</strong></td>
+<td>Todos os pipelines em YAML com controle de versão — sem editor clássico</td>
 </tr>
 <tr>
 <td><strong>Templates</strong></td>
-<td>Centralise DRY logic in a shared <code>pipeline-templates</code> repo</td>
+<td>Centralize lógica DRY em um repositório compartilhado <code>pipeline-templates</code></td>
 </tr>
 <tr>
-<td><strong>Environments for deployments</strong></td>
-<td>Use deployment jobs — enables history, rollback and approvals</td>
+<td><strong>Ambientes para implantações</strong></td>
+<td>Use deployment jobs — habilita histórico, rollback e aprovações</td>
 </tr>
 <tr>
-<td><strong>Key Vault-backed variable groups</strong></td>
-<td>Link secrets directly from Azure Key Vault; never store in DevOps</td>
+<td><strong>Grupos de variáveis com Key Vault</strong></td>
+<td>Vincule secrets diretamente do Azure Key Vault; nunca armazene no DevOps</td>
 </tr>
 <tr>
-<td><strong>Service connections with managed identity</strong></td>
-<td>Prefer workload identity federation over service principal passwords</td>
+<td><strong>Conexões de serviço com identidade gerenciada</strong></td>
+<td>Prefira federação de identidade de carga de trabalho em vez de senhas de service principal</td>
 </tr>
 <tr>
-<td><strong>Agent pool sizing</strong></td>
-<td>Use KEDA autoscaler for self-hosted agents to control costs</td>
+<td><strong>Dimensionamento do pool de agentes</strong></td>
+<td>Use o autoscaler KEDA para agentes auto-hospedados para controlar custos</td>
 </tr>
 <tr>
-<td><strong>Branch policies</strong></td>
-<td>Require pipeline pass + reviewer approval before merge to main</td>
+<td><strong>Políticas de branch</strong></td>
+<td>Exija aprovação do pipeline e de revisor antes do merge para main</td>
 </tr>
 <tr>
-<td><strong><code>condition:</code> expressions</strong></td>
-<td>Guard stages with <code>succeeded()</code>, branch checks, parameter flags</td>
+<td><strong>Expressões <code>condition:</code></strong></td>
+<td>Proteja estágios com <code>succeeded()</code>, verificações de branch, flags de parâmetros</td>
 </tr>
 <tr>
-<td><strong>Artifact retention</strong></td>
-<td>Set pipeline-level retention policies; don't keep artifacts forever</td>
+<td><strong>Retenção de artefatos</strong></td>
+<td>Defina políticas de retenção no nível do pipeline; não mantenha artefatos para sempre</td>
 </tr>
 <tr>
-<td><strong>Audit log</strong></td>
-<td>Enable Azure DevOps Auditing — tracks credential and permission changes</td>
+<td><strong>Log de auditoria</strong></td>
+<td>Habilite o Azure DevOps Auditing — rastreia mudanças de credenciais e permissões</td>
 </tr>
 </tbody>
 </table>

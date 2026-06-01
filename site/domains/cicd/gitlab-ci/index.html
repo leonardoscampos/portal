@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="GitLab CI/CD pipelines, stages, runners, include/extends, environments and Auto DevOps reference.">
+        <meta name="description" content="Pipelines, estágios, runners, include/extends, ambientes e referência de Auto DevOps do GitLab CI/CD.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pipeline-anatomy" class="md-skip">
+        <a href="#anatomia-do-pipeline" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -1513,10 +1513,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pipeline-anatomy" class="md-nav__link">
+  <a href="#anatomia-do-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pipeline Anatomy
+        Anatomia do Pipeline
       
     </span>
   </a>
@@ -1524,10 +1524,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-concepts" class="md-nav__link">
+  <a href="#conceitos-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Concepts
+        Conceitos Principais
       
     </span>
   </a>
@@ -1535,10 +1535,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#predefined-variables-reference" class="md-nav__link">
+  <a href="#referencia-de-variaveis-predefinidas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Predefined Variables Reference
+        Referência de Variáveis Predefinidas
       
     </span>
   </a>
@@ -1546,10 +1546,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#include-extends-templates" class="md-nav__link">
+  <a href="#templates-com-include-extends" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Include &amp; Extends Templates
+        Templates com Include &amp; Extends
       
     </span>
   </a>
@@ -1568,10 +1568,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dag-pipelines-with-needs" class="md-nav__link">
+  <a href="#pipelines-em-dag-com-needs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DAG Pipelines with needs
+        Pipelines em DAG com needs
       
     </span>
   </a>
@@ -1579,10 +1579,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dynamic-child-pipelines" class="md-nav__link">
+  <a href="#child-pipelines-dinamicos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dynamic Child Pipelines
+        Child Pipelines Dinâmicos
       
     </span>
   </a>
@@ -1590,10 +1590,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#runners-configuration" class="md-nav__link">
+  <a href="#configuracao-de-runners" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Runners Configuration
+        Configuração de Runners
       
     </span>
   </a>
@@ -1601,10 +1601,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#container-registry" class="md-nav__link">
+  <a href="#registro-de-containers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Container Registry
+        Registro de Containers
       
     </span>
   </a>
@@ -1612,10 +1612,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#security-scanning-built-in-templates" class="md-nav__link">
+  <a href="#varredura-de-seguranca-templates-integrados" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Security Scanning (built-in templates)
+        Varredura de Segurança (templates integrados)
       
     </span>
   </a>
@@ -1623,10 +1623,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#environments-deployments" class="md-nav__link">
+  <a href="#ambientes-e-implantacoes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Environments &amp; Deployments
+        Ambientes e Implantações
       
     </span>
   </a>
@@ -1634,10 +1634,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#caching" class="md-nav__link">
+  <a href="#cache" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Caching
+        Cache
       
     </span>
   </a>
@@ -1645,10 +1645,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
+  <a href="#boas-praticas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practices
+        Boas Práticas
       
     </span>
   </a>
@@ -3069,10 +3069,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pipeline-anatomy" class="md-nav__link">
+  <a href="#anatomia-do-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pipeline Anatomy
+        Anatomia do Pipeline
       
     </span>
   </a>
@@ -3080,10 +3080,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-concepts" class="md-nav__link">
+  <a href="#conceitos-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Concepts
+        Conceitos Principais
       
     </span>
   </a>
@@ -3091,10 +3091,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#predefined-variables-reference" class="md-nav__link">
+  <a href="#referencia-de-variaveis-predefinidas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Predefined Variables Reference
+        Referência de Variáveis Predefinidas
       
     </span>
   </a>
@@ -3102,10 +3102,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#include-extends-templates" class="md-nav__link">
+  <a href="#templates-com-include-extends" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Include &amp; Extends Templates
+        Templates com Include &amp; Extends
       
     </span>
   </a>
@@ -3124,10 +3124,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dag-pipelines-with-needs" class="md-nav__link">
+  <a href="#pipelines-em-dag-com-needs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DAG Pipelines with needs
+        Pipelines em DAG com needs
       
     </span>
   </a>
@@ -3135,10 +3135,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dynamic-child-pipelines" class="md-nav__link">
+  <a href="#child-pipelines-dinamicos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dynamic Child Pipelines
+        Child Pipelines Dinâmicos
       
     </span>
   </a>
@@ -3146,10 +3146,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#runners-configuration" class="md-nav__link">
+  <a href="#configuracao-de-runners" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Runners Configuration
+        Configuração de Runners
       
     </span>
   </a>
@@ -3157,10 +3157,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#container-registry" class="md-nav__link">
+  <a href="#registro-de-containers" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Container Registry
+        Registro de Containers
       
     </span>
   </a>
@@ -3168,10 +3168,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#security-scanning-built-in-templates" class="md-nav__link">
+  <a href="#varredura-de-seguranca-templates-integrados" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Security Scanning (built-in templates)
+        Varredura de Segurança (templates integrados)
       
     </span>
   </a>
@@ -3179,10 +3179,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#environments-deployments" class="md-nav__link">
+  <a href="#ambientes-e-implantacoes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Environments &amp; Deployments
+        Ambientes e Implantações
       
     </span>
   </a>
@@ -3190,10 +3190,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#caching" class="md-nav__link">
+  <a href="#cache" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Caching
+        Cache
       
     </span>
   </a>
@@ -3201,10 +3201,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
+  <a href="#boas-praticas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practices
+        Boas Práticas
       
     </span>
   </a>
@@ -3232,7 +3232,7 @@
   <div class="dph-left">
     <span class="dph-eyebrow">// cicd-pipelines / gitlab-ci</span>
     <h1 class="dph-title">GitLab CI</h1>
-    <p class="dph-desc">GitLab's built-in CI/CD system. Pipelines defined in `.gitlab-ci.yml` with powerful include/extends templating, DAG job dependencies, dynamic child pipelines, built-in container registry and deep integration with GitLab Environments and review apps.</p>
+    <p class="dph-desc">Sistema de CI/CD integrado do GitLab. Pipelines definidos em `.gitlab-ci.yml` com poderoso templating via include/extends, dependências de jobs em DAG, child pipelines dinâmicos, registro de containers integrado e integração profunda com GitLab Environments e review apps.</p>
     <div class="dph-badges">
       <span class="tech-badge">Pipelines</span>
       <span class="tech-badge">Runners</span>
@@ -3244,9 +3244,9 @@
   </div>
 </div>
 
-<p><a href="../github-actions/">← GitHub Actions</a> | <a href="../">← CI/CD Overview</a> | <a href="../jenkins/">Jenkins →</a></p>
+<p><a href="../github-actions/">← GitHub Actions</a> | <a href="../">← Visão Geral de CI/CD</a> | <a href="../jenkins/">Jenkins →</a></p>
 <hr />
-<h2 id="pipeline-anatomy">Pipeline Anatomy</h2>
+<h2 id="anatomia-do-pipeline">Anatomia do Pipeline</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># .gitlab-ci.yml</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker:25</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
@@ -3302,102 +3302,102 @@
 <a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_COMMIT_BRANCH == &quot;main&quot;</span>
 </code></pre></div>
 <hr />
-<h2 id="core-concepts">Core Concepts</h2>
+<h2 id="conceitos-principais">Conceitos Principais</h2>
 <table>
 <thead>
 <tr>
-<th>Concept</th>
-<th>Description</th>
+<th>Conceito</th>
+<th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Pipeline</strong></td>
-<td>A collection of jobs grouped in stages, triggered by an event</td>
+<td>Coleção de jobs agrupados em estágios, disparada por um evento</td>
 </tr>
 <tr>
 <td><strong>Stage</strong></td>
-<td>Logical grouping; jobs in the same stage run in parallel</td>
+<td>Agrupamento lógico; jobs no mesmo estágio rodam em paralelo</td>
 </tr>
 <tr>
 <td><strong>Job</strong></td>
-<td>Atomic unit of work — runs on a runner</td>
+<td>Unidade atômica de trabalho — executada em um runner</td>
 </tr>
 <tr>
 <td><strong>Runner</strong></td>
-<td>Agent executing jobs: shared, group, or project-scoped</td>
+<td>Agente que executa os jobs: compartilhado, por grupo ou por projeto</td>
 </tr>
 <tr>
 <td><strong>Artifact</strong></td>
-<td>File(s) produced by a job, passed downstream or stored</td>
+<td>Arquivo(s) produzido(s) por um job, passado(s) adiante ou armazenado(s)</td>
 </tr>
 <tr>
 <td><strong>Cache</strong></td>
-<td>Dependencies stored between pipeline runs (per runner)</td>
+<td>Dependências armazenadas entre execuções de pipeline (por runner)</td>
 </tr>
 <tr>
 <td><strong>Environment</strong></td>
-<td>Named deployment target with URL, history and rollback</td>
+<td>Destino de implantação nomeado com URL, histórico e rollback</td>
 </tr>
 <tr>
 <td><strong>Rules</strong></td>
-<td>Conditional logic controlling when jobs are included</td>
+<td>Lógica condicional que controla quando os jobs são incluídos</td>
 </tr>
 <tr>
 <td><strong>Needs</strong></td>
-<td>DAG dependency — run a job before its stage starts</td>
+<td>Dependência em DAG — executa um job antes que seu estágio inicie</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="predefined-variables-reference">Predefined Variables Reference</h2>
+<h2 id="referencia-de-variaveis-predefinidas">Referência de Variáveis Predefinidas</h2>
 <table>
 <thead>
 <tr>
-<th>Variable</th>
-<th>Value</th>
+<th>Variável</th>
+<th>Valor</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>$CI_COMMIT_SHA</code></td>
-<td>Full commit SHA</td>
+<td>SHA completo do commit</td>
 </tr>
 <tr>
 <td><code>$CI_COMMIT_SHORT_SHA</code></td>
-<td>First 8 chars</td>
+<td>Primeiros 8 caracteres</td>
 </tr>
 <tr>
 <td><code>$CI_COMMIT_BRANCH</code></td>
-<td>Branch name (push pipelines)</td>
+<td>Nome do branch (pipelines de push)</td>
 </tr>
 <tr>
 <td><code>$CI_COMMIT_TAG</code></td>
-<td>Tag name (tag pipelines)</td>
+<td>Nome da tag (pipelines de tag)</td>
 </tr>
 <tr>
 <td><code>$CI_MERGE_REQUEST_IID</code></td>
-<td>MR IID (MR pipelines)</td>
+<td>IID do MR (pipelines de MR)</td>
 </tr>
 <tr>
 <td><code>$CI_PROJECT_PATH</code></td>
-<td><code>namespace/project</code></td>
+<td><code>namespace/projeto</code></td>
 </tr>
 <tr>
 <td><code>$CI_REGISTRY</code></td>
-<td>GitLab Container Registry host</td>
+<td>Host do registro de containers do GitLab</td>
 </tr>
 <tr>
 <td><code>$CI_REGISTRY_IMAGE</code></td>
-<td>Full registry path for this project</td>
+<td>Caminho completo do registro para este projeto</td>
 </tr>
 <tr>
 <td><code>$CI_REGISTRY_USER</code></td>
-<td>Auto registry user</td>
+<td>Usuário automático do registro</td>
 </tr>
 <tr>
 <td><code>$CI_REGISTRY_PASSWORD</code></td>
-<td>Auto registry token</td>
+<td>Token automático do registro</td>
 </tr>
 <tr>
 <td><code>$CI_PIPELINE_SOURCE</code></td>
@@ -3405,12 +3405,12 @@
 </tr>
 <tr>
 <td><code>$CI_ENVIRONMENT_NAME</code></td>
-<td>Current deployment environment</td>
+<td>Ambiente de implantação atual</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="include-extends-templates">Include &amp; Extends Templates</h2>
+<h2 id="templates-com-include-extends">Templates com Include &amp; Extends</h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">include</label><label for="__tabbed_1_2">extends</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3486,7 +3486,7 @@
 <a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">schedules</span>
 </code></pre></div>
 <hr />
-<h2 id="dag-pipelines-with-needs">DAG Pipelines with <code>needs</code></h2>
+<h2 id="pipelines-em-dag-com-needs">Pipelines em DAG com <code>needs</code></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">stages</span><span class="p">:</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
@@ -3516,7 +3516,7 @@
 <a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./deploy.sh</span>
 </code></pre></div>
 <hr />
-<h2 id="dynamic-child-pipelines">Dynamic Child Pipelines</h2>
+<h2 id="child-pipelines-dinamicos">Child Pipelines Dinâmicos</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Parent pipeline</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">generate-config</span><span class="p">:</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
@@ -3534,8 +3534,8 @@
 <a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">    </span><span class="nt">strategy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">depend</span><span class="w">           </span><span class="c1"># parent waits for child</span>
 </code></pre></div>
 <hr />
-<h2 id="runners-configuration">Runners Configuration</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Shared (GitLab.com)</label><label for="__tabbed_2_2">Self-hosted (Docker)</label><label for="__tabbed_2_3">Kubernetes Executor</label></div>
+<h2 id="configuracao-de-runners">Configuração de Runners</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Compartilhado (GitLab.com)</label><label for="__tabbed_2_2">Self-hosted (Docker)</label><label for="__tabbed_2_3">Kubernetes Executor</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Uses GitLab-hosted shared runners — no setup needed</span>
@@ -3583,7 +3583,7 @@
 </div>
 </div>
 <hr />
-<h2 id="container-registry">Container Registry</h2>
+<h2 id="registro-de-containers">Registro de Containers</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">variables</span><span class="p">:</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">IMAGE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_REGISTRY_IMAGE/$CI_COMMIT_REF_SLUG:$CI_COMMIT_SHORT_SHA</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
@@ -3598,7 +3598,7 @@
 <a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker push $CI_REGISTRY_IMAGE:latest</span>
 </code></pre></div>
 <hr />
-<h2 id="security-scanning-built-in-templates">Security Scanning (built-in templates)</h2>
+<h2 id="varredura-de-seguranca-templates-integrados">Varredura de Segurança (templates integrados)</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">include</span><span class="p">:</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">template</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Security/SAST.gitlab-ci.yml</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">template</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Security/Secret-Detection.gitlab-ci.yml</span>
@@ -3613,7 +3613,7 @@
 <a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">  </span><span class="nt">DAST_WEBSITE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://staging.example.com</span>
 </code></pre></div>
 <hr />
-<h2 id="environments-deployments">Environments &amp; Deployments</h2>
+<h2 id="ambientes-e-implantacoes">Ambientes e Implantações</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">deploy-staging</span><span class="p">:</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nt">environment</span><span class="p">:</span>
@@ -3648,7 +3648,7 @@
 <a id="__codelineno-11-32" name="__codelineno-11-32" href="#__codelineno-11-32"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">if</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_MERGE_REQUEST_IID</span>
 </code></pre></div>
 <hr />
-<h2 id="caching">Caching</h2>
+<h2 id="cache">Cache</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">cache</span><span class="p">:</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="c1"># Global cache definition</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$CI_COMMIT_REF_SLUG</span>
@@ -3675,58 +3675,58 @@
 <a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="w">    </span><span class="nt">policy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pull</span><span class="w">                </span><span class="c1"># read-only — don&#39;t update cache</span>
 </code></pre></div>
 <hr />
-<h2 id="best-practices">Best Practices</h2>
+<h2 id="boas-praticas">Boas Práticas</h2>
 <table>
 <thead>
 <tr>
-<th>Practice</th>
-<th>Implementation</th>
+<th>Prática</th>
+<th>Implementação</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Use rules over only/except</strong></td>
-<td><code>rules:</code> supports complex conditions; <code>only/except</code> is legacy</td>
+<td><strong>Use rules em vez de only/except</strong></td>
+<td><code>rules:</code> suporta condições complexas; <code>only/except</code> é legado</td>
 </tr>
 <tr>
-<td><strong>DAG with needs</strong></td>
-<td>Reduces pipeline duration — jobs start ASAP</td>
+<td><strong>DAG com needs</strong></td>
+<td>Reduz a duração do pipeline — jobs iniciam o mais rápido possível</td>
 </tr>
 <tr>
-<td><strong>Reuse with extends/.base-* jobs</strong></td>
-<td>Prefix hidden jobs with <code>.</code> to avoid execution</td>
+<td><strong>Reutilize com extends/.base-</strong>*</td>
+<td>Prefixe jobs ocultos com <code>.</code> para evitar execução</td>
 </tr>
 <tr>
-<td><strong>Pin image versions</strong></td>
-<td><code>image: node:20.13.1</code> not <code>node:latest</code></td>
+<td><strong>Fixe versões de imagem</strong></td>
+<td><code>image: node:20.13.1</code> e não <code>node:latest</code></td>
 </tr>
 <tr>
-<td><strong>Artifacts expire_in</strong></td>
-<td>Set short expiry for build artifacts, longer for test reports</td>
+<td><strong>expire_in para artefatos</strong></td>
+<td>Defina validade curta para artefatos de build, maior para relatórios de teste</td>
 </tr>
 <tr>
-<td><strong>Group variables</strong></td>
-<td>Use Group CI/CD variables for secrets shared across projects</td>
+<td><strong>Variáveis de grupo</strong></td>
+<td>Use variáveis CI/CD de grupo para segredos compartilhados entre projetos</td>
 </tr>
 <tr>
-<td><strong>Protected variables</strong></td>
-<td>Mark secrets as <code>Protected</code> — only exposed on protected branches/tags</td>
+<td><strong>Variáveis protegidas</strong></td>
+<td>Marque segredos como <code>Protected</code> — expostos apenas em branches/tags protegidos</td>
 </tr>
 <tr>
-<td><strong>Masked variables</strong></td>
-<td>Enable masking to redact from job logs</td>
+<td><strong>Variáveis mascaradas</strong></td>
+<td>Ative o mascaramento para ocultar nos logs dos jobs</td>
 </tr>
 <tr>
-<td><strong>Least-privilege tokens</strong></td>
-<td>Use project tokens with minimal scopes; rotate regularly</td>
+<td><strong>Tokens com privilégios mínimos</strong></td>
+<td>Use tokens de projeto com escopos mínimos; rotacione regularmente</td>
 </tr>
 <tr>
-<td><strong>DAST on review apps</strong></td>
-<td>Run dynamic scanning against ephemeral review environments</td>
+<td><strong>DAST em review apps</strong></td>
+<td>Execute varredura dinâmica em ambientes de review efêmeros</td>
 </tr>
 </tbody>
 </table>
-<p><a href="../github-actions/">← GitHub Actions</a> | <a href="../">← CI/CD Overview</a> | <a href="../jenkins/">Jenkins →</a></p>
+<p><a href="../github-actions/">← GitHub Actions</a> | <a href="../">← Visão Geral de CI/CD</a> | <a href="../jenkins/">Jenkins →</a></p>
 
 
 

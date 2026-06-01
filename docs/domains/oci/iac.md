@@ -1,13 +1,13 @@
 ---
 title: OCI IaC & DevOps
-description: Terraform, Resource Manager, OCI DevOps, Container Registry — IaC and DevOps on Oracle Cloud.
+description: Terraform, Resource Manager, OCI DevOps, Container Registry — IaC e DevOps na Oracle Cloud.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// oci / iac</span>
     <h1 class="dph-title">OCI IaC &amp; DevOps</h1>
-    <p class="dph-desc">The Terraform OCI provider is mature and comprehensive. Resource Manager is OCI's managed Terraform service — run plans and applies without provisioning CI servers. OCI DevOps provides build and deployment pipelines. OCIR is the managed container registry integrated with OKE.</p>
+    <p class="dph-desc">O provider Terraform para OCI é maduro e abrangente. O Resource Manager é o serviço Terraform gerenciado da OCI — execute plans e applies sem provisionar servidores CI. O OCI DevOps fornece pipelines de build e implantação. O OCIR é o registro de contêiner gerenciado integrado ao OKE.</p>
     <div class="dph-badges">
       <span class="tech-badge">Terraform</span>
       <span class="tech-badge">Resource Manager</span>
@@ -20,11 +20,11 @@ description: Terraform, Resource Manager, OCI DevOps, Container Registry — IaC
 
 ---
 
-## Terraform — OCI Provider
+## Terraform — Provider OCI
 
-The `oracle/oci` provider covers the entire OCI API surface. Remote state can use OCI Object Storage via the S3-compatible backend.
+O provider `oracle/oci` cobre toda a superfície da API OCI. O estado remoto pode usar o OCI Object Storage via backend compatível com S3.
 
-### Provider configuration
+### Configuração do provider
 
 ```hcl
 # versions.tf
@@ -61,9 +61,9 @@ provider "oci" {
 }
 ```
 
-### Using Instance Principals in CI
+### Usando Instance Principals em CI
 
-For build pipelines running on OCI Compute instances (Resource Manager, or self-hosted CI on OCI), use Instance Principals — no API key file needed:
+Para pipelines de build executados em instâncias OCI Compute (Resource Manager, ou CI auto-hospedado na OCI), use Instance Principals — sem necessidade de arquivo de chave de API:
 
 ```hcl
 provider "oci" {
@@ -72,15 +72,15 @@ provider "oci" {
 }
 ```
 
-### Directory layout
+### Estrutura de diretórios
 
 ```
 infrastructure/
 ├── modules/
-│   ├── vcn/           # VCN, subnets, gateways
-│   ├── oke/           # OKE cluster + node pools
-│   ├── vault/         # Vault + keys + secrets
-│   └── devops/        # OCI DevOps project + pipelines
+│   ├── vcn/           # VCN, sub-redes, gateways
+│   ├── oke/           # Cluster OKE + grupos de nós
+│   ├── vault/         # Vault + chaves + segredos
+│   └── devops/        # Projeto OCI DevOps + pipelines
 ├── environments/
 │   ├── prod/
 │   │   ├── main.tf
@@ -89,7 +89,7 @@ infrastructure/
 │   │   └── terraform.tfvars
 │   └── staging/
 └── bootstrap/
-    ├── main.tf        # tfstate bucket + IAM policies
+    ├── main.tf        # bucket de tfstate + políticas IAM
     └── README.md
 ```
 
@@ -97,15 +97,15 @@ infrastructure/
 
 ## Resource Manager
 
-Resource Manager is OCI's managed Terraform service — it hosts Terraform configurations, runs plan/apply operations inside OCI without requiring external CI, and uses Instance Principals for authentication.
+O Resource Manager é o serviço Terraform gerenciado da OCI — ele hospeda configurações Terraform, executa operações de plan/apply dentro da OCI sem exigir CI externo, e usa Instance Principals para autenticação.
 
-### Key concepts
+### Conceitos principais
 
-| Concept | Description |
-|---------|-------------|
-| **Stack** | A Resource Manager deployment unit — contains Terraform config + state |
-| **Job** | A Terraform operation (plan, apply, destroy) executed on a stack |
-| **Configuration source** | Source of Terraform code: Object Storage, GitHub, GitLab, Bitbucket |
+| Conceito | Descrição |
+|---------|-----------|
+| **Stack** | Uma unidade de implantação do Resource Manager — contém configuração Terraform + estado |
+| **Job** | Uma operação Terraform (plan, apply, destroy) executada em uma stack |
+| **Fonte de configuração** | Fonte do código Terraform: Object Storage, GitHub, GitLab, Bitbucket |
 
 ```hcl
 resource "oci_resourcemanager_stack" "oke" {
@@ -136,9 +136,9 @@ resource "oci_resourcemanager_stack" "oke" {
 
 ## OCI DevOps
 
-OCI DevOps is Oracle's managed CI/CD service. It provides **Build Pipelines** (CI) and **Deployment Pipelines** (CD) with native integration with OCI Container Registry, Artifact Registry and OKE.
+O OCI DevOps é o serviço de CI/CD gerenciado da Oracle. Ele fornece **Build Pipelines** (CI) e **Deployment Pipelines** (CD) com integração nativa com OCI Container Registry, Artifact Registry e OKE.
 
-### Build pipeline
+### Pipeline de build
 
 ```yaml
 # build_spec.yaml — OCI DevOps build spec
@@ -203,7 +203,7 @@ resource "oci_devops_build_pipeline" "main" {
 }
 ```
 
-### Deployment pipeline — OKE blue/green
+### Pipeline de implantação — OKE blue/green
 
 ```hcl
 resource "oci_devops_deploy_pipeline" "oke" {
@@ -248,7 +248,7 @@ resource "oci_devops_deploy_stage" "canary" {
 
 ## OCI Container Registry (OCIR)
 
-OCIR is OCI's managed container registry — a Docker v2-compatible registry available in every OCI region. Images are stored per-region under `<region>.ocir.io/<namespace>/<repo>:<tag>`.
+O OCIR é o registro de contêiner gerenciado da OCI — um registro compatível com Docker v2 disponível em todas as regiões OCI. As imagens são armazenadas por região em `<region>.ocir.io/<namespace>/<repo>:<tag>`.
 
 ```hcl
 resource "oci_artifacts_container_repository" "api" {
@@ -264,7 +264,7 @@ resource "oci_artifacts_container_repository" "api" {
 }
 ```
 
-### Authenticate Docker to OCIR
+### Autenticar Docker no OCIR
 
 ```bash
 # Using an Auth Token (user-level — for human use)
@@ -277,9 +277,9 @@ docker login \
 # No docker login required — OCI DevOps service handles registry auth automatically
 ```
 
-### OKE pull from OCIR (Instance Principals)
+### OKE pull do OCIR (Instance Principals)
 
-OKE nodes authenticated via Instance Principals can pull from OCIR in the same tenancy without an `imagePullSecret`. Set the policy:
+Nós OKE autenticados via Instance Principals podem fazer pull do OCIR no mesmo tenancy sem um `imagePullSecret`. Defina a política:
 
 ```hcl
 resource "oci_identity_policy" "oke_pull_ocir" {
@@ -297,7 +297,7 @@ resource "oci_identity_policy" "oke_pull_ocir" {
 
 ## OCI Artifact Registry
 
-OCI Artifact Registry stores generic artefacts — JAR files, Helm charts, Terraform modules, configuration bundles — separate from container images.
+O OCI Artifact Registry armazena artefatos genéricos — arquivos JAR, charts Helm, módulos Terraform, pacotes de configuração — separados das imagens de contêiner.
 
 ```hcl
 resource "oci_artifacts_repository" "helm" {
@@ -309,7 +309,7 @@ resource "oci_artifacts_repository" "helm" {
 }
 ```
 
-### Push a Helm chart
+### Fazer push de um chart Helm
 
 ```bash
 # Push a Helm chart to OCI Artifact Registry
@@ -324,4 +324,4 @@ oci_helm_push() {
 
 ---
 
-[← OCI Overview](index.md){ .md-button }
+[← Visão Geral OCI](index.md){ .md-button }

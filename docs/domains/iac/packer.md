@@ -1,13 +1,13 @@
 ---
 title: Packer
-description: HashiCorp Packer for building immutable machine images across cloud providers — AMIs, Azure images, GCE images, Docker and more.
+description: HashiCorp Packer para criação de imagens de máquina imutáveis em múltiplos provedores de nuvem — AMIs, imagens Azure, imagens GCE, Docker e mais.
 ---
 
 <div class="domain-page-hero" data-domain="iac">
   <div class="dph-left">
     <span class="dph-eyebrow">// infrastructure-as-code / packer</span>
     <h1 class="dph-title">Packer</h1>
-    <p class="dph-desc">HashiCorp Packer automates the creation of identical machine images across multiple platforms from a single source configuration. Build immutable AMIs, Azure images, GCE images and Docker containers — bake your app in, never configure after launch.</p>
+    <p class="dph-desc">HashiCorp Packer automatiza a criação de imagens de máquina idênticas em múltiplas plataformas a partir de uma única configuração de origem. Crie AMIs, imagens Azure, imagens GCE e contêineres Docker imutáveis — empacote sua aplicação, nunca configure após o lançamento.</p>
     <div class="dph-badges">
       <span class="tech-badge">HCL2</span>
       <span class="tech-badge">AMI</span>
@@ -19,11 +19,11 @@ description: HashiCorp Packer for building immutable machine images across cloud
   </div>
 </div>
 
-[← IaC Overview](index.md) | [Terraform →](terraform.md)
+[← Visão Geral de IaC](index.md) | [Terraform →](terraform.md)
 
 ---
 
-## Core Concepts
+## Conceitos Principais
 
 ```
 Source config (HCL2)
@@ -44,7 +44,7 @@ Immutable golden image (versioned, tested, ready to deploy)
 
 ---
 
-## Template Structure (HCL2)
+## Estrutura do Template (HCL2)
 
 ```hcl
 # versions.pkr.hcl
@@ -185,7 +185,7 @@ build {
 
 ---
 
-## Multi-Region AMIs
+## AMIs Multi-Região
 
 ```hcl
 source "amazon-ebs" "app" {
@@ -212,7 +212,7 @@ source "amazon-ebs" "app" {
 
 ---
 
-## Azure & GCP Builders
+## Builders Azure e GCP
 
 === "Azure"
 
@@ -300,7 +300,7 @@ source "amazon-ebs" "app" {
 
 ---
 
-## Multi-Platform Build (Parallel)
+## Build Multi-Plataforma (Paralelo)
 
 ```hcl
 # Build AWS + Azure + GCP images simultaneously in one packer build
@@ -332,7 +332,7 @@ build {
 
 ---
 
-## Provisioners
+## Provisionadores
 
 === "Shell"
 
@@ -401,7 +401,7 @@ build {
 
 ---
 
-## Post-Processors
+## Pós-processadores
 
 ```hcl
 build {
@@ -436,7 +436,7 @@ terraform apply -var="ami_id=$AMI_ID"
 
 ---
 
-## CI/CD Integration
+## Integração com CI/CD
 
 ```yaml
 # GitHub Actions — build and share AMI ID across jobs
@@ -497,7 +497,7 @@ jobs:
 
 ---
 
-## Useful CLI Commands
+## Comandos CLI Úteis
 
 ```bash
 # Initialise plugins
@@ -530,7 +530,7 @@ packer plugins remove github.com/hashicorp/amazon
 
 ---
 
-## IAM Policy (AWS)
+## Política IAM (AWS)
 
 ```json
 {
@@ -564,4 +564,4 @@ packer plugins remove github.com/hashicorp/amazon
 }
 ```
 
-[← IaC Overview](index.md) | [Terraform →](terraform.md)
+[← Visão Geral de IaC](index.md) | [Terraform →](terraform.md)

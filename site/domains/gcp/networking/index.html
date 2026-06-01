@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="VPC, Cloud DNS, Cloud CDN, Cloud Load Balancing, Cloud NAT, Cloud Interconnect — GCP networking.">
+        <meta name="description" content="VPC, Cloud DNS, Cloud CDN, Cloud Load Balancing, Cloud NAT, Cloud Interconnect — rede no Google Cloud.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -33,7 +33,7 @@
     
     
   
-    <title>GCP Networking — Leonardo Campos</title>
+    <title>GCP Rede — Leonardo Campos</title>
   
 
     
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vpc-subnets" class="md-skip">
+        <a href="#vpc-sub-redes" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GCP Networking
+              GCP Rede
             
           </span>
         </div>
@@ -1036,22 +1036,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vpc-subnets" class="md-nav__link">
+  <a href="#vpc-sub-redes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        VPC &amp; Subnets
+        VPC &amp; Sub-redes
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="VPC &amp; Subnets">
+    <nav class="md-nav" aria-label="VPC &amp; Sub-redes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#firewall-rules" class="md-nav__link">
+  <a href="#regras-de-firewall" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Firewall rules
+        Regras de Firewall
       
     </span>
   </a>
@@ -1076,10 +1076,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#load-balancer-types" class="md-nav__link">
+  <a href="#tipos-de-load-balancer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Load balancer types
+        Tipos de Load Balancer
       
     </span>
   </a>
@@ -1087,10 +1087,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#global-https-load-balancer" class="md-nav__link">
+  <a href="#load-balancer-https-global" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Global HTTPS load balancer
+        Load Balancer HTTPS Global
       
     </span>
   </a>
@@ -3039,22 +3039,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#vpc-subnets" class="md-nav__link">
+  <a href="#vpc-sub-redes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        VPC &amp; Subnets
+        VPC &amp; Sub-redes
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="VPC &amp; Subnets">
+    <nav class="md-nav" aria-label="VPC &amp; Sub-redes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#firewall-rules" class="md-nav__link">
+  <a href="#regras-de-firewall" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Firewall rules
+        Regras de Firewall
       
     </span>
   </a>
@@ -3079,10 +3079,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#load-balancer-types" class="md-nav__link">
+  <a href="#tipos-de-load-balancer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Load balancer types
+        Tipos de Load Balancer
       
     </span>
   </a>
@@ -3090,10 +3090,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#global-https-load-balancer" class="md-nav__link">
+  <a href="#load-balancer-https-global" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Global HTTPS load balancer
+        Load Balancer HTTPS Global
       
     </span>
   </a>
@@ -3169,8 +3169,8 @@
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// gcp / networking</span>
-    <h1 class="dph-title">GCP Networking</h1>
-    <p class="dph-desc">GCP's global VPC is unique — a single VPC spans all regions worldwide with no VPC peering required. Cloud Load Balancing is anycast by default. Cloud NAT, Private Service Connect and Cloud Interconnect complete the enterprise networking stack.</p>
+    <h1 class="dph-title">GCP Rede</h1>
+    <p class="dph-desc">A VPC global do GCP é única — uma única VPC abrange todas as regiões do mundo sem necessidade de peering entre VPCs. O Cloud Load Balancing é anycast por padrão. Cloud NAT, Private Service Connect e Cloud Interconnect completam a pilha de rede corporativa.</p>
     <div class="dph-badges">
       <span class="tech-badge">Global VPC</span>
       <span class="tech-badge">Cloud DNS</span>
@@ -3183,8 +3183,8 @@
 </div>
 
 <hr />
-<h2 id="vpc-subnets">VPC &amp; Subnets</h2>
-<p>GCP VPCs are <strong>global</strong> — a single VPC has subnets in every region. This is fundamentally different from AWS/Azure where VPCs/VNets are regional. GCP uses <strong>primary</strong> and <strong>secondary</strong> IP ranges per subnet — secondary ranges are required for GKE pod and service IPs.</p>
+<h2 id="vpc-sub-redes">VPC &amp; Sub-redes</h2>
+<p>As VPCs do GCP são <strong>globais</strong> — uma única VPC possui sub-redes em todas as regiões. Isso é fundamentalmente diferente da AWS/Azure, onde VPCs/VNets são regionais. O GCP usa intervalos de IP <strong>primários</strong> e <strong>secundários</strong> por sub-rede — os intervalos secundários são necessários para IPs de pods e serviços do GKE.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_compute_network&quot;</span><span class="w"> </span><span class="nv">&quot;main&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="na">name</span><span class="w">                    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}-vpc&quot;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="na">auto_create_subnetworks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">false</span><span class="c1">  # always false for custom subnets</span>
@@ -3211,8 +3211,8 @@
 <a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span><span class="nb">log_config</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="na">aggregation_interval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;INTERVAL_5_SEC&quot;</span><span class="err">;</span><span class="w"> </span><span class="na">flow_sampling</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">0.5</span><span class="w"> </span><span class="p">}</span>
 <a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="firewall-rules">Firewall rules</h3>
-<p>GCP firewalls are applied at the <strong>network level</strong>, not subnet/interface level. Rules are either <strong>ingress</strong> or <strong>egress</strong> with a priority (0–65534, lower wins) and target by tag or service account.</p>
+<h3 id="regras-de-firewall">Regras de Firewall</h3>
+<p>Os Firewalls do GCP são aplicados no <strong>nível da rede</strong>, não no nível de sub-rede/interface. As regras são de <strong>entrada</strong> (ingress) ou <strong>saída</strong> (egress) com uma prioridade (0–65534, menor vence) e alvo por tag ou conta de serviço.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_compute_firewall&quot;</span><span class="w"> </span><span class="nv">&quot;allow_internal&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="na">name</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}-allow-internal&quot;</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="na">network</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">google_compute_network.main.name</span>
@@ -3238,20 +3238,20 @@
 <a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="p">}</span>
 </code></pre></div>
 <div class="admonition tip">
-<p class="admonition-title">Service account-based firewall rules</p>
-<p>Prefer <strong>service account</strong> targets over network tags in production. Tags are manually assigned and can be accidentally removed; service accounts are bound to the VM identity and cannot be spoofed.</p>
+<p class="admonition-title">Regras de Firewall baseadas em conta de serviço</p>
+<p>Prefira alvos de <strong>conta de serviço</strong> a tags de rede em produção. As tags são atribuídas manualmente e podem ser removidas acidentalmente; as contas de serviço estão vinculadas à identidade da VM e não podem ser falsificadas.</p>
 </div>
 <hr />
 <h2 id="cloud-load-balancing">Cloud Load Balancing</h2>
-<p>GCP's load balancers are globally anycast by default — a single external IP serves all regions worldwide. GCP routes each request to the closest healthy backend.</p>
-<h3 id="load-balancer-types">Load balancer types</h3>
+<p>Os Load Balancers do GCP são anycast globalmente por padrão — um único IP externo atende todas as regiões do mundo. O GCP roteia cada solicitação para o backend saudável mais próximo.</p>
+<h3 id="tipos-de-load-balancer">Tipos de Load Balancer</h3>
 <table>
 <thead>
 <tr>
-<th>Type</th>
-<th>Scope</th>
-<th>Protocol</th>
-<th>Use case</th>
+<th>Tipo</th>
+<th>Escopo</th>
+<th>Protocolo</th>
+<th>Caso de uso</th>
 </tr>
 </thead>
 <tbody>
@@ -3259,41 +3259,41 @@
 <td><strong>Global External ALB</strong></td>
 <td>Global</td>
 <td>HTTP/HTTPS</td>
-<td>Public web apps, APIs, CDN + WAF</td>
+<td>Aplicações web públicas, APIs, CDN + WAF</td>
 </tr>
 <tr>
 <td><strong>Regional External ALB</strong></td>
 <td>Regional</td>
 <td>HTTP/HTTPS</td>
-<td>Single-region apps</td>
+<td>Aplicações de região única</td>
 </tr>
 <tr>
 <td><strong>Global External NLB</strong> (Passthrough)</td>
 <td>Global</td>
 <td>TCP/UDP</td>
-<td>Non-HTTP, preserves client IP</td>
+<td>Não-HTTP, preserva IP do cliente</td>
 </tr>
 <tr>
 <td><strong>Regional External NLB</strong></td>
 <td>Regional</td>
 <td>TCP/UDP</td>
-<td>Regional passthrough LB</td>
+<td>Load Balancer de passthrough regional</td>
 </tr>
 <tr>
 <td><strong>Internal ALB</strong></td>
 <td>Regional</td>
 <td>HTTP/HTTPS</td>
-<td>Service mesh, internal APIs</td>
+<td>Service mesh, APIs internas</td>
 </tr>
 <tr>
 <td><strong>Internal NLB</strong></td>
 <td>Regional</td>
 <td>TCP/UDP</td>
-<td>Internal databases, services</td>
+<td>Bancos de dados internos, serviços</td>
 </tr>
 </tbody>
 </table>
-<h3 id="global-https-load-balancer">Global HTTPS load balancer</h3>
+<h3 id="load-balancer-https-global">Load Balancer HTTPS Global</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Compute target</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_compute_backend_service&quot;</span><span class="w"> </span><span class="nv">&quot;app&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="na">name</span><span class="w">                  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}-backend&quot;</span>
@@ -3338,7 +3338,7 @@
 </code></pre></div>
 <hr />
 <h2 id="cloud-nat">Cloud NAT</h2>
-<p>Cloud NAT provides outbound internet access for VMs without external IP addresses. It is software-defined — no VMs to manage, automatic scaling.</p>
+<p>O Cloud NAT fornece acesso à internet de saída para VMs sem endereços IP externos. É definido por software — sem VMs para gerenciar, escalonamento automático.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_compute_router&quot;</span><span class="w"> </span><span class="nv">&quot;main&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="na">name</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}-router&quot;</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="na">region</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nv">var.region</span>
@@ -3360,7 +3360,7 @@
 </code></pre></div>
 <hr />
 <h2 id="private-service-connect">Private Service Connect</h2>
-<p>Private Service Connect (PSC) is the GCP equivalent of AWS PrivateLink. It allows consumers to access Google APIs and managed services (Cloud SQL, GCS, PubSub, etc.) or producer services via a private IP in the consumer VPC — no external egress.</p>
+<p>O Private Service Connect (PSC) é o equivalente GCP do AWS PrivateLink. Permite que os consumidores acessem as APIs do Google e serviços gerenciados (Cloud SQL, GCS, PubSub, etc.) ou serviços de produtores via um IP privado na VPC do consumidor — sem egresso externo.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># PSC endpoint for accessing Google APIs privately</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_compute_global_address&quot;</span><span class="w"> </span><span class="nv">&quot;psc&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="na">name</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;psc-google-apis&quot;</span>
@@ -3380,7 +3380,7 @@
 </code></pre></div>
 <hr />
 <h2 id="cloud-dns">Cloud DNS</h2>
-<p>Cloud DNS is Google's managed DNS service with 100% uptime SLA and global anycast distribution. Supports public and private zones, DNSSEC, and DNS peering between VPCs.</p>
+<p>Cloud DNS é o serviço DNS gerenciado do Google com SLA de 100% de uptime e distribuição anycast global. Suporta zonas públicas e privadas, DNSSEC e peering de DNS entre VPCs.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_dns_managed_zone&quot;</span><span class="w"> </span><span class="nv">&quot;public&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="na">name</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}-public&quot;</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="na">dns_name</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.domain}.&quot;</span>
@@ -3404,44 +3404,44 @@
 <table>
 <thead>
 <tr>
-<th>Option</th>
-<th>Bandwidth</th>
-<th>Latency</th>
+<th>Opção</th>
+<th>Largura de banda</th>
+<th>Latência</th>
 <th>SLA</th>
-<th>Use case</th>
+<th>Caso de uso</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Dedicated Interconnect</strong></td>
-<td>10–200 Gbps per circuit</td>
-<td>Low, predictable</td>
-<td>99.99%</td>
-<td>High-bandwidth enterprise</td>
+<td>10–200 Gbps por circuito</td>
+<td>Baixa, previsível</td>
+<td>99,99%</td>
+<td>Corporativo de alta largura de banda</td>
 </tr>
 <tr>
 <td><strong>Partner Interconnect</strong></td>
 <td>50 Mbps – 50 Gbps</td>
-<td>Low</td>
-<td>99.9–99.99%</td>
-<td>Access without 10G ports</td>
+<td>Baixa</td>
+<td>99,9–99,99%</td>
+<td>Acesso sem portas 10G</td>
 </tr>
 <tr>
 <td><strong>HA VPN</strong></td>
-<td>Up to 3 Gbps per tunnel</td>
-<td>Variable</td>
-<td>99.99%</td>
-<td>Lower-cost hybrid, encryption</td>
+<td>Até 3 Gbps por túnel</td>
+<td>Variável</td>
+<td>99,99%</td>
+<td>Híbrido de menor custo, criptografia</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
-<p class="admonition-title">99.99% Interconnect SLA</p>
-<p>To qualify for the 99.99% SLA on Dedicated or Partner Interconnect, you must configure <strong>4 VLAN attachments</strong> (2 per metro, 2 metros) with Cloud Routers in 2 regions. Single-circuit configurations only qualify for the 99.9% SLA.</p>
+<p class="admonition-title">SLA 99,99% do Interconnect</p>
+<p>Para se qualificar para o SLA de 99,99% no Dedicated ou Partner Interconnect, você deve configurar <strong>4 anexos de VLAN</strong> (2 por metrô, 2 metrôs) com Cloud Routers em 2 regiões. Configurações de circuito único se qualificam apenas para o SLA de 99,9%.</p>
 </div>
 <hr />
-<p><a class="md-button" href="../">← GCP Overview</a>
-<a class="md-button md-button--primary" href="../security/">Security &amp; IAM →</a></p>
+<p><a class="md-button" href="../">← Visão Geral GCP</a>
+<a class="md-button md-button--primary" href="../security/">Segurança &amp; IAM →</a></p>
 
 
 

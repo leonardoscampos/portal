@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Ansible playbooks, roles, inventory, Vault, collections and AWX reference.">
+        <meta name="description" content="Referência de playbooks, roles, inventário, Vault, collections e AWX do Ansible.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-ansible-works" class="md-skip">
+        <a href="#como-o-ansible-funciona" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -2601,10 +2601,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-ansible-works" class="md-nav__link">
+  <a href="#como-o-ansible-funciona" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How Ansible Works
+        Como o Ansible Funciona
       
     </span>
   </a>
@@ -2612,10 +2612,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#inventory" class="md-nav__link">
+  <a href="#inventario" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Inventory
+        Inventário
       
     </span>
   </a>
@@ -2678,10 +2678,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-modules-cheatsheet" class="md-nav__link">
+  <a href="#guia-rapido-de-modulos-comuns" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Modules Cheatsheet
+        Guia Rápido de Módulos Comuns
       
     </span>
   </a>
@@ -3025,10 +3025,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-ansible-works" class="md-nav__link">
+  <a href="#como-o-ansible-funciona" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How Ansible Works
+        Como o Ansible Funciona
       
     </span>
   </a>
@@ -3036,10 +3036,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#inventory" class="md-nav__link">
+  <a href="#inventario" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Inventory
+        Inventário
       
     </span>
   </a>
@@ -3102,10 +3102,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-modules-cheatsheet" class="md-nav__link">
+  <a href="#guia-rapido-de-modulos-comuns" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Modules Cheatsheet
+        Guia Rápido de Módulos Comuns
       
     </span>
   </a>
@@ -3144,7 +3144,7 @@
   <div class="dph-left">
     <span class="dph-eyebrow">// infrastructure-as-code / ansible</span>
     <h1 class="dph-title">Ansible</h1>
-    <p class="dph-desc">Agentless configuration management and application deployment over SSH. Ansible excels at OS-level configuration, software installation, patching and post-provision orchestration — a natural complement to Terraform.</p>
+    <p class="dph-desc">Gerenciamento de configuração sem agente e implantação de aplicações via SSH. O Ansible se destaca na configuração de SO, instalação de software, aplicação de patches e orquestração pós-provisionamento — um complemento natural ao Terraform.</p>
     <div class="dph-badges">
       <span class="tech-badge">Playbooks</span>
       <span class="tech-badge">Roles</span>
@@ -3156,10 +3156,10 @@
   </div>
 </div>
 
-<p><a href="../terraform/">← Terraform</a> | <a href="../">← IaC Overview</a> | <a href="../cloudformation/">CloudFormation →</a></p>
+<p><a href="../terraform/">← Terraform</a> | <a href="../">← Visão Geral de IaC</a> | <a href="../cloudformation/">CloudFormation →</a></p>
 <hr />
-<h2 id="how-ansible-works">How Ansible Works</h2>
-<p>Ansible connects to target hosts over SSH (or WinRM for Windows), pushes temporary Python modules and cleans up — no persistent agent required.</p>
+<h2 id="como-o-ansible-funciona">Como o Ansible Funciona</h2>
+<p>O Ansible conecta-se aos hosts alvo via SSH (ou WinRM para Windows), envia módulos Python temporários e os remove — nenhum agente persistente é necessário.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Control Node  ──SSH──▶  Managed Nodes
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  ansible.cfg              host1 (Ubuntu)
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  inventory                host2 (RHEL)
@@ -3167,7 +3167,7 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  roles/
 </code></pre></div>
 <hr />
-<h2 id="inventory">Inventory</h2>
+<h2 id="inventario">Inventário</h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Static INI</label><label for="__tabbed_1_2">Static YAML</label><label for="__tabbed_1_3">Dynamic (AWS EC2)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3274,7 +3274,7 @@
 </code></pre></div>
 <hr />
 <h2 id="roles">Roles</h2>
-<p>Roles are reusable, self-contained units with a standard directory layout.</p>
+<p>Roles são unidades reutilizáveis e autocontidas com um layout de diretório padrão.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>roles/
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>└── nginx/
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    ├── defaults/
@@ -3312,7 +3312,7 @@
 <a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">started</span>
 <a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
-<p>Using a role in a playbook:</p>
+<p>Usando uma role em um playbook:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Configure web servers</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">webservers</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">become</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -3324,7 +3324,7 @@
 </code></pre></div>
 <hr />
 <h2 id="ansible-vault">Ansible Vault</h2>
-<p>Encrypt sensitive data at rest in version control.</p>
+<p>Criptografe dados sensíveis em repouso no controle de versão.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Encrypt a new file</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>ansible-vault<span class="w"> </span>create<span class="w"> </span>group_vars/prod/secrets.yml
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
@@ -3352,8 +3352,8 @@
 <a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="l l-Scalar l-Scalar-Plain">ansible-playbook site.yml --vault-password-file ~/.vault_pass</span>
 </code></pre></div>
 <div class="admonition tip">
-<p class="admonition-title">Use a vault password file in CI</p>
-<p>Store the vault password as a CI secret, write it to a temp file at job start, and pass <code>--vault-password-file</code> to avoid prompts.</p>
+<p class="admonition-title">Use um arquivo de senha do vault no CI</p>
+<p>Armazene a senha do vault como um segredo de CI, escreva-a em um arquivo temporário no início do job e passe <code>--vault-password-file</code> para evitar prompts.</p>
 </div>
 <hr />
 <h2 id="collections-galaxy">Collections &amp; Galaxy</h2>
@@ -3400,107 +3400,107 @@
 <a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="na">ssh_args</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s">-o ControlMaster=auto -o ControlPersist=60s</span>
 </code></pre></div>
 <hr />
-<h2 id="common-modules-cheatsheet">Common Modules Cheatsheet</h2>
+<h2 id="guia-rapido-de-modulos-comuns">Guia Rápido de Módulos Comuns</h2>
 <table>
 <thead>
 <tr>
-<th>Module</th>
-<th>Use Case</th>
+<th>Módulo</th>
+<th>Caso de Uso</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>ansible.builtin.apt</code> / <code>yum</code> / <code>package</code></td>
-<td>Install OS packages</td>
+<td>Instalar pacotes do SO</td>
 </tr>
 <tr>
 <td><code>ansible.builtin.template</code></td>
-<td>Render Jinja2 template to file</td>
+<td>Renderizar template Jinja2 para arquivo</td>
 </tr>
 <tr>
 <td><code>ansible.builtin.copy</code></td>
-<td>Copy static files to hosts</td>
+<td>Copiar arquivos estáticos para hosts</td>
 </tr>
 <tr>
 <td><code>ansible.builtin.file</code></td>
-<td>Manage file/dir permissions and state</td>
+<td>Gerenciar permissões e estado de arquivos/diretórios</td>
 </tr>
 <tr>
 <td><code>ansible.builtin.service</code></td>
-<td>Start/stop/enable systemd services</td>
+<td>Iniciar/parar/habilitar serviços systemd</td>
 </tr>
 <tr>
 <td><code>ansible.builtin.user</code></td>
-<td>Create/manage OS users</td>
+<td>Criar/gerenciar usuários do SO</td>
 </tr>
 <tr>
 <td><code>ansible.builtin.cron</code></td>
-<td>Manage crontab entries</td>
+<td>Gerenciar entradas do crontab</td>
 </tr>
 <tr>
 <td><code>ansible.builtin.shell</code> / <code>command</code></td>
-<td>Run arbitrary commands</td>
+<td>Executar comandos arbitrários</td>
 </tr>
 <tr>
 <td><code>ansible.builtin.get_url</code></td>
-<td>Download files from URLs</td>
+<td>Baixar arquivos de URLs</td>
 </tr>
 <tr>
 <td><code>ansible.builtin.lineinfile</code></td>
-<td>Idempotently edit single lines in files</td>
+<td>Editar linhas individuais em arquivos de forma idempotente</td>
 </tr>
 <tr>
 <td><code>community.general.docker_container</code></td>
-<td>Manage Docker containers</td>
+<td>Gerenciar contêineres Docker</td>
 </tr>
 <tr>
 <td><code>kubernetes.core.k8s</code></td>
-<td>Apply Kubernetes manifests</td>
+<td>Aplicar manifestos Kubernetes</td>
 </tr>
 <tr>
 <td><code>amazon.aws.ec2_instance</code></td>
-<td>Manage EC2 instances</td>
+<td>Gerenciar instâncias EC2</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="awx-ansible-automation-platform">AWX / Ansible Automation Platform</h2>
-<p>AWX is the open-source web UI and API for running Ansible at scale.</p>
+<p>AWX é a interface web e API de código aberto para executar o Ansible em escala.</p>
 <table>
 <thead>
 <tr>
-<th>Concept</th>
-<th>Description</th>
+<th>Conceito</th>
+<th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Inventory</strong></td>
-<td>Hosts/groups defined or synced from cloud sources</td>
+<td><strong>Inventário</strong></td>
+<td>Hosts/grupos definidos ou sincronizados de fontes na nuvem</td>
 </tr>
 <tr>
-<td><strong>Credential</strong></td>
-<td>SSH keys, vault passwords, cloud tokens — stored encrypted</td>
+<td><strong>Credencial</strong></td>
+<td>Chaves SSH, senhas do vault, tokens de nuvem — armazenados criptografados</td>
 </tr>
 <tr>
-<td><strong>Project</strong></td>
-<td>Git repository containing playbooks</td>
+<td><strong>Projeto</strong></td>
+<td>Repositório Git contendo playbooks</td>
 </tr>
 <tr>
 <td><strong>Job Template</strong></td>
-<td>Playbook + inventory + credential = runnable unit</td>
+<td>Playbook + inventário + credencial = unidade executável</td>
 </tr>
 <tr>
 <td><strong>Workflow</strong></td>
-<td>DAG of job templates with conditional branching</td>
+<td>DAG de job templates com ramificação condicional</td>
 </tr>
 <tr>
-<td><strong>Schedule</strong></td>
-<td>Cron-based automatic job execution</td>
+<td><strong>Agendamento</strong></td>
+<td>Execução automática de jobs baseada em cron</td>
 </tr>
 <tr>
 <td><strong>RBAC</strong></td>
-<td>Teams, users and per-object permissions</td>
+<td>Times, usuários e permissões por objeto</td>
 </tr>
 </tbody>
 </table>

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="GKE, Compute Engine, Cloud Run, Cloud Functions — compute on Google Cloud Platform.">
+        <meta name="description" content="GKE, Compute Engine, Cloud Run, Cloud Functions — computação na Google Cloud Platform.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -33,7 +33,7 @@
     
     
   
-    <title>GCP Compute — Leonardo Campos</title>
+    <title>GCP Computação — Leonardo Campos</title>
   
 
     
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GCP Compute
+              GCP Computação
             
           </span>
         </div>
@@ -992,10 +992,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#machine-families" class="md-nav__link">
+  <a href="#familias-de-maquinas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Machine families
+        Famílias de máquinas
       
     </span>
   </a>
@@ -1003,10 +1003,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#managed-instance-groups-mig" class="md-nav__link">
+  <a href="#grupos-de-instancias-gerenciadas-mig" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Managed Instance Groups (MIG)
+        Grupos de Instâncias Gerenciadas (MIG)
       
     </span>
   </a>
@@ -1042,10 +1042,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#workload-identity-for-pods" class="md-nav__link">
+  <a href="#workload-identity-para-pods" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workload Identity for pods
+        Workload Identity para pods
       
     </span>
   </a>
@@ -1069,10 +1069,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cloud-functions-2nd-gen" class="md-nav__link">
+  <a href="#cloud-functions-2a-geracao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cloud Functions (2nd gen)
+        Cloud Functions (2ª geração)
       
     </span>
   </a>
@@ -3040,10 +3040,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#machine-families" class="md-nav__link">
+  <a href="#familias-de-maquinas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Machine families
+        Famílias de máquinas
       
     </span>
   </a>
@@ -3051,10 +3051,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#managed-instance-groups-mig" class="md-nav__link">
+  <a href="#grupos-de-instancias-gerenciadas-mig" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Managed Instance Groups (MIG)
+        Grupos de Instâncias Gerenciadas (MIG)
       
     </span>
   </a>
@@ -3090,10 +3090,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#workload-identity-for-pods" class="md-nav__link">
+  <a href="#workload-identity-para-pods" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workload Identity for pods
+        Workload Identity para pods
       
     </span>
   </a>
@@ -3117,10 +3117,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cloud-functions-2nd-gen" class="md-nav__link">
+  <a href="#cloud-functions-2a-geracao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cloud Functions (2nd gen)
+        Cloud Functions (2ª geração)
       
     </span>
   </a>
@@ -3147,8 +3147,8 @@
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// gcp / compute</span>
-    <h1 class="dph-title">GCP Compute</h1>
-    <p class="dph-desc">Google invented Kubernetes and runs the world's largest container fleet. GKE is the most capable managed Kubernetes offering, Cloud Run is the fastest path to serverless containers, and Autopilot removes node management entirely.</p>
+    <h1 class="dph-title">GCP Computação</h1>
+    <p class="dph-desc">O Google inventou o Kubernetes e opera a maior frota de contêineres do mundo. GKE é a oferta de Kubernetes gerenciado mais capaz, Cloud Run é o caminho mais rápido para contêineres serverless, e Autopilot elimina completamente o gerenciamento de nós.</p>
     <div class="dph-badges">
       <span class="tech-badge">GKE Standard</span>
       <span class="tech-badge">GKE Autopilot</span>
@@ -3162,59 +3162,59 @@
 
 <hr />
 <h2 id="compute-engine">Compute Engine</h2>
-<p>Compute Engine is GCP's IaaS VM service. Machine types follow the pattern <code>{family}-{type}-{vcpus}</code> — e.g., <code>n2-standard-8</code>, <code>c3-highcpu-44</code>.</p>
-<h3 id="machine-families">Machine families</h3>
+<p>Compute Engine é o serviço de VMs IaaS do GCP. Os tipos de máquina seguem o padrão <code>{família}-{tipo}-{vcpus}</code> — por exemplo, <code>n2-standard-8</code>, <code>c3-highcpu-44</code>.</p>
+<h3 id="familias-de-maquinas">Famílias de máquinas</h3>
 <table>
 <thead>
 <tr>
-<th>Family</th>
-<th>Optimised for</th>
-<th>Example</th>
+<th>Família</th>
+<th>Otimizado para</th>
+<th>Exemplo</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>E2</strong></td>
-<td>Cost-efficient, variable performance</td>
+<td>Custo eficiente, desempenho variável</td>
 <td><code>e2-standard-4</code></td>
 </tr>
 <tr>
 <td><strong>N2 / N2D</strong></td>
-<td>Balanced general-purpose (Intel / AMD)</td>
+<td>Uso geral balanceado (Intel / AMD)</td>
 <td><code>n2-standard-8</code></td>
 </tr>
 <tr>
 <td><strong>C3</strong></td>
-<td>Latest Intel Sapphire Rapids, low latency</td>
+<td>Intel Sapphire Rapids mais recente, baixa latência</td>
 <td><code>c3-standard-22</code></td>
 </tr>
 <tr>
 <td><strong>T2D</strong></td>
-<td>AMD EPYC, scale-out compute</td>
+<td>AMD EPYC, computação de expansão horizontal</td>
 <td><code>t2d-standard-32</code></td>
 </tr>
 <tr>
 <td><strong>M3</strong></td>
-<td>Memory-optimised (in-memory DBs)</td>
+<td>Otimizado para memória (BDs em memória)</td>
 <td><code>m3-ultramem-32</code></td>
 </tr>
 <tr>
 <td><strong>A2 / A3</strong></td>
-<td>NVIDIA A100 / H100 GPU</td>
+<td>GPU NVIDIA A100 / H100</td>
 <td><code>a3-highgpu-8g</code></td>
 </tr>
 <tr>
 <td><strong>Tau T2A</strong></td>
-<td>ARM Ampere, throughput workloads</td>
+<td>ARM Ampere, cargas de trabalho de throughput</td>
 <td><code>t2a-standard-16</code></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Spot VMs</p>
-<p>GCP Spot VMs (equivalent to AWS Spot) offer 60–91% discount with preemption notice of 30 seconds. Combine with GKE's node auto-provisioning and Spot node pools for stateless, fault-tolerant workloads.</p>
+<p>GCP Spot VMs (equivalente às Spot da AWS) oferecem 60–91% de desconto com aviso de preempção de 30 segundos. Combine com o aprovisionamento automático de nós do GKE e pools de nós Spot para cargas de trabalho sem estado e tolerantes a falhas.</p>
 </div>
-<h3 id="managed-instance-groups-mig">Managed Instance Groups (MIG)</h3>
+<h3 id="grupos-de-instancias-gerenciadas-mig">Grupos de Instâncias Gerenciadas (MIG)</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_compute_instance_template&quot;</span><span class="w"> </span><span class="nv">&quot;app&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="na">name_prefix</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}-app-&quot;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="na">machine_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;n2-standard-4&quot;</span>
@@ -3269,46 +3269,46 @@
 </code></pre></div>
 <hr />
 <h2 id="gke-google-kubernetes-engine">GKE — Google Kubernetes Engine</h2>
-<p>GKE is the gold standard for managed Kubernetes. The control plane is fully managed, regional (3-AZ control plane), upgradeable in-place and integrated with all GCP IAM, networking and observability services.</p>
+<p>GKE é o padrão ouro para Kubernetes gerenciado. O plano de controle é totalmente gerenciado, regional (plano de controle em 3 AZs), atualizável in-place e integrado a todos os serviços de IAM, rede e observabilidade do GCP.</p>
 <h3 id="gke-standard-vs-autopilot">GKE Standard vs Autopilot</h3>
 <table>
 <thead>
 <tr>
-<th>Aspect</th>
+<th>Aspecto</th>
 <th>Standard</th>
 <th>Autopilot</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Node management</strong></td>
-<td>You manage node pools</td>
-<td>Google manages nodes</td>
+<td><strong>Gerenciamento de nós</strong></td>
+<td>Você gerencia os pools de nós</td>
+<td>Google gerencia os nós</td>
 </tr>
 <tr>
-<td><strong>Cost model</strong></td>
-<td>Per node (VM billing)</td>
-<td>Per pod (vCPU + memory)</td>
+<td><strong>Modelo de custo</strong></td>
+<td>Por nó (cobrança de VM)</td>
+<td>Por pod (vCPU + memória)</td>
 </tr>
 <tr>
-<td><strong>Customisation</strong></td>
-<td>Full control (node taints, labels, machine type)</td>
-<td>Restricted (Google-defined node classes)</td>
+<td><strong>Personalização</strong></td>
+<td>Controle total (taints, labels, tipo de máquina)</td>
+<td>Restrito (classes de nós definidas pelo Google)</td>
 </tr>
 <tr>
-<td><strong>Scaling</strong></td>
-<td>Cluster autoscaler + node auto-provisioning</td>
-<td>Automatic</td>
+<td><strong>Escalabilidade</strong></td>
+<td>Cluster autoscaler + aprovisionamento automático de nós</td>
+<td>Automática</td>
 </tr>
 <tr>
-<td><strong>Security</strong></td>
-<td>You configure pod security</td>
-<td>Hardened by default (no privileged pods)</td>
+<td><strong>Segurança</strong></td>
+<td>Você configura a segurança dos pods</td>
+<td>Reforçada por padrão (sem pods privilegiados)</td>
 </tr>
 <tr>
-<td><strong>Best for</strong></td>
-<td>Custom ML, privileged workloads, cost-tuning</td>
-<td>Standard web services, microservices</td>
+<td><strong>Melhor para</strong></td>
+<td>ML customizado, cargas privilegiadas, ajuste de custo</td>
+<td>Serviços web padrão, microsserviços</td>
 </tr>
 </tbody>
 </table>
@@ -3392,8 +3392,8 @@
 <a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="workload-identity-for-pods">Workload Identity for pods</h3>
-<p>Workload Identity binds a Kubernetes ServiceAccount to a GCP Service Account — pods get GCP credentials via a projected volume token without needing key files.</p>
+<h3 id="workload-identity-para-pods">Workload Identity para pods</h3>
+<p>O Workload Identity vincula uma ServiceAccount do Kubernetes a uma Service Account do GCP — os pods obtêm credenciais do GCP via token de volume projetado sem precisar de arquivos de chave.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># GCP Service Account for the application</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_service_account&quot;</span><span class="w"> </span><span class="nv">&quot;app&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="na">account_id</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}-app&quot;</span>
@@ -3409,7 +3409,7 @@
 </code></pre></div>
 <hr />
 <h2 id="cloud-run">Cloud Run</h2>
-<p>Cloud Run is Google's serverless container platform. A container image is all that's required — no cluster, no node management. Cloud Run scales from zero to thousands of instances in seconds.</p>
+<p>Cloud Run é a plataforma de contêineres serverless do Google. Apenas uma imagem de contêiner é necessária — sem cluster, sem gerenciamento de nós. Cloud Run escala de zero a milhares de instâncias em segundos.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_cloud_run_v2_service&quot;</span><span class="w"> </span><span class="nv">&quot;api&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="na">name</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;api&quot;</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="na">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">var.region</span>
@@ -3452,11 +3452,11 @@
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Cloud Run vs Cloud Run for Anthos</p>
-<p>Standard <strong>Cloud Run</strong> (managed) is fully serverless — Google manages all infrastructure. <strong>Cloud Run for Anthos</strong> (now Cloud Run on GKE) runs on your GKE cluster — gives you VPC-native networking and GPU access at the cost of managing node pools.</p>
+<p>O <strong>Cloud Run</strong> padrão (gerenciado) é totalmente serverless — o Google gerencia toda a infraestrutura. O <strong>Cloud Run for Anthos</strong> (agora Cloud Run no GKE) roda no seu cluster GKE — oferece rede nativa de VPC e acesso a GPU ao custo de gerenciar pools de nós.</p>
 </div>
 <hr />
-<h2 id="cloud-functions-2nd-gen">Cloud Functions (2nd gen)</h2>
-<p>Cloud Functions gen2 is built on Cloud Run — each function runs as a Cloud Run service under the hood, giving it all Cloud Run capabilities: longer timeout (60 min), larger memory (32 GB), concurrency per instance.</p>
+<h2 id="cloud-functions-2a-geracao">Cloud Functions (2ª geração)</h2>
+<p>Cloud Functions gen2 é construído sobre o Cloud Run — cada função roda como um serviço Cloud Run por baixo dos panos, conferindo todas as capacidades do Cloud Run: timeout maior (60 min), mais memória (32 GB), concorrência por instância.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># main.py — HTTP trigger (Python 3.12)</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">functions_framework</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">google.cloud</span><span class="w"> </span><span class="kn">import</span> <span class="n">storage</span>
@@ -3499,8 +3499,8 @@
 <a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
-<p><a class="md-button" href="../">← GCP Overview</a>
-<a class="md-button md-button--primary" href="../storage/">Storage →</a></p>
+<p><a class="md-button" href="../">← Visão Geral GCP</a>
+<a class="md-button md-button--primary" href="../storage/">Armazenamento →</a></p>
 
 
 

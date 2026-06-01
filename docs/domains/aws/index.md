@@ -1,6 +1,6 @@
 ---
 title: Amazon Web Services
-description: AWS compute, storage, networking, security, observability and IaC reference for DevOps engineers.
+description: Referência de computação, armazenamento, rede, segurança, observabilidade e IaC na AWS para engenheiros DevOps.
 hide:
   - toc
 ---
@@ -9,7 +9,7 @@ hide:
   <div class="dph-left">
     <span class="dph-eyebrow">// cloud-infrastructure / aws</span>
     <h1 class="dph-title">Amazon Web Services</h1>
-    <p class="dph-desc">The most mature cloud platform with the deepest service catalog. Six domains mapped to the core AWS pillars — compute, storage, networking, security, observability and infrastructure automation.</p>
+    <p class="dph-desc">A plataforma de nuvem mais madura e com o catálogo de serviços mais completo. Seis domínios mapeados aos pilares centrais da AWS — computação, armazenamento, rede, segurança, observabilidade e automação de infraestrutura.</p>
     <div class="dph-badges">
       <span class="tech-badge">EC2</span>
       <span class="tech-badge">EKS</span>
@@ -29,31 +29,31 @@ hide:
   <a href="compute/" class="section-nav-card">
     <div class="snc-icon">&#127968;</div>
     <div class="snc-body">
-      <span class="snc-label">Compute</span>
-      <span class="snc-desc">EC2, ECS, EKS, Lambda, Fargate — virtual machines, containers and serverless functions.</span>
+      <span class="snc-label">Computação</span>
+      <span class="snc-desc">EC2, ECS, EKS, Lambda, Fargate — máquinas virtuais, contêineres e funções serverless.</span>
     </div>
     <span class="snc-arrow">&#8594;</span>
   </a>
   <a href="storage/" class="section-nav-card">
     <div class="snc-icon">&#128230;</div>
     <div class="snc-body">
-      <span class="snc-label">Storage</span>
-      <span class="snc-desc">S3, EBS, EFS, FSx — object, block and file storage for every workload.</span>
+      <span class="snc-label">Armazenamento</span>
+      <span class="snc-desc">S3, EBS, EFS, FSx — armazenamento de objetos, blocos e arquivos para qualquer carga de trabalho.</span>
     </div>
     <span class="snc-arrow">&#8594;</span>
   </a>
   <a href="networking/" class="section-nav-card">
     <div class="snc-icon">&#127760;</div>
     <div class="snc-body">
-      <span class="snc-label">Networking</span>
-      <span class="snc-desc">VPC, Route 53, CloudFront, ALB/NLB, Transit Gateway and PrivateLink.</span>
+      <span class="snc-label">Rede</span>
+      <span class="snc-desc">VPC, Route 53, CloudFront, ALB/NLB, Transit Gateway e PrivateLink.</span>
     </div>
     <span class="snc-arrow">&#8594;</span>
   </a>
   <a href="security/" class="section-nav-card">
     <div class="snc-icon">&#128274;</div>
     <div class="snc-body">
-      <span class="snc-label">Security &amp; IAM</span>
+      <span class="snc-label">Segurança &amp; IAM</span>
       <span class="snc-desc">IAM, Organizations, KMS, Secrets Manager, GuardDuty, Security Hub.</span>
     </div>
     <span class="snc-arrow">&#8594;</span>
@@ -61,7 +61,7 @@ hide:
   <a href="observability/" class="section-nav-card">
     <div class="snc-icon">&#128202;</div>
     <div class="snc-body">
-      <span class="snc-label">Observability</span>
+      <span class="snc-label">Observabilidade</span>
       <span class="snc-desc">CloudWatch, X-Ray, CloudTrail, AWS Config, Cost Explorer.</span>
     </div>
     <span class="snc-arrow">&#8594;</span>

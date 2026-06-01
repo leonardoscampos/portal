@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Terraform, Bicep, Azure DevOps Pipelines, ACR, Flux v2 — IaC and GitOps on Azure.">
+        <meta name="description" content="Terraform, Bicep, Azure DevOps Pipelines, ACR, Flux v2 — IaC e GitOps no Azure.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#terraform-azurerm-provider" class="md-skip">
+        <a href="#terraform-provider-azurerm" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -870,22 +870,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#terraform-azurerm-provider" class="md-nav__link">
+  <a href="#terraform-provider-azurerm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Terraform — AzureRM Provider
+        Terraform — Provider AzureRM
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Terraform — AzureRM Provider">
+    <nav class="md-nav" aria-label="Terraform — Provider AzureRM">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#remote-backend-setup" class="md-nav__link">
+  <a href="#configuracao-do-backend-remoto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Remote backend setup
+        Configuração do backend remoto
       
     </span>
   </a>
@@ -893,10 +893,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#oidc-federation-keyless-ci-authentication" class="md-nav__link">
+  <a href="#federacao-oidc-autenticacao-sem-segredos-no-ci" class="md-nav__link">
     <span class="md-ellipsis">
       
-        OIDC federation — keyless CI authentication
+        Federação OIDC — autenticação sem segredos no CI
       
     </span>
   </a>
@@ -904,10 +904,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#directory-structure" class="md-nav__link">
+  <a href="#estrutura-de-diretorios" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Directory structure
+        Estrutura de diretórios
       
     </span>
   </a>
@@ -920,10 +920,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bicep-native-azure-iac" class="md-nav__link">
+  <a href="#bicep-iac-nativo-do-azure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bicep — Native Azure IaC
+        Bicep — IaC Nativo do Azure
       
     </span>
   </a>
@@ -943,10 +943,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#yaml-pipeline-terraform-deploy" class="md-nav__link">
+  <a href="#pipeline-yaml-deploy-terraform" class="md-nav__link">
     <span class="md-ellipsis">
       
-        YAML pipeline — Terraform deploy
+        Pipeline YAML — deploy Terraform
       
     </span>
   </a>
@@ -971,10 +971,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#image-lifecycle-policy" class="md-nav__link">
+  <a href="#politica-de-ciclo-de-vida-de-imagens" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Image lifecycle policy
+        Política de ciclo de vida de imagens
       
     </span>
   </a>
@@ -987,10 +987,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#flux-v2-gitops-on-aks" class="md-nav__link">
+  <a href="#flux-v2-gitops-no-aks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Flux v2 — GitOps on AKS
+        Flux v2 — GitOps no AKS
       
     </span>
   </a>
@@ -3056,22 +3056,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#terraform-azurerm-provider" class="md-nav__link">
+  <a href="#terraform-provider-azurerm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Terraform — AzureRM Provider
+        Terraform — Provider AzureRM
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Terraform — AzureRM Provider">
+    <nav class="md-nav" aria-label="Terraform — Provider AzureRM">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#remote-backend-setup" class="md-nav__link">
+  <a href="#configuracao-do-backend-remoto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Remote backend setup
+        Configuração do backend remoto
       
     </span>
   </a>
@@ -3079,10 +3079,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#oidc-federation-keyless-ci-authentication" class="md-nav__link">
+  <a href="#federacao-oidc-autenticacao-sem-segredos-no-ci" class="md-nav__link">
     <span class="md-ellipsis">
       
-        OIDC federation — keyless CI authentication
+        Federação OIDC — autenticação sem segredos no CI
       
     </span>
   </a>
@@ -3090,10 +3090,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#directory-structure" class="md-nav__link">
+  <a href="#estrutura-de-diretorios" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Directory structure
+        Estrutura de diretórios
       
     </span>
   </a>
@@ -3106,10 +3106,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bicep-native-azure-iac" class="md-nav__link">
+  <a href="#bicep-iac-nativo-do-azure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bicep — Native Azure IaC
+        Bicep — IaC Nativo do Azure
       
     </span>
   </a>
@@ -3129,10 +3129,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#yaml-pipeline-terraform-deploy" class="md-nav__link">
+  <a href="#pipeline-yaml-deploy-terraform" class="md-nav__link">
     <span class="md-ellipsis">
       
-        YAML pipeline — Terraform deploy
+        Pipeline YAML — deploy Terraform
       
     </span>
   </a>
@@ -3157,10 +3157,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#image-lifecycle-policy" class="md-nav__link">
+  <a href="#politica-de-ciclo-de-vida-de-imagens" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Image lifecycle policy
+        Política de ciclo de vida de imagens
       
     </span>
   </a>
@@ -3173,10 +3173,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#flux-v2-gitops-on-aks" class="md-nav__link">
+  <a href="#flux-v2-gitops-no-aks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Flux v2 — GitOps on AKS
+        Flux v2 — GitOps no AKS
       
     </span>
   </a>
@@ -3204,7 +3204,7 @@
   <div class="dph-left">
     <span class="dph-eyebrow">// azure / iac</span>
     <h1 class="dph-title">Azure IaC &amp; DevOps</h1>
-    <p class="dph-desc">Terraform with the AzureRM provider is the most common choice for Azure IaC. Bicep is the native ARM replacement with much cleaner syntax. Azure DevOps provides enterprise-grade pipelines with built-in service connection federation to Azure and Flux v2 closes the GitOps loop.</p>
+    <p class="dph-desc">Terraform com o provider AzureRM é a escolha mais comum para IaC no Azure. Bicep é o substituto nativo do ARM com sintaxe muito mais limpa. Azure DevOps fornece pipelines de nível enterprise com federação integrada de service connections para o Azure, e Flux v2 fecha o ciclo GitOps.</p>
     <div class="dph-badges">
       <span class="tech-badge">Terraform</span>
       <span class="tech-badge">Bicep</span>
@@ -3217,9 +3217,9 @@
 </div>
 
 <hr />
-<h2 id="terraform-azurerm-provider">Terraform — AzureRM Provider</h2>
-<p>The <code>hashicorp/azurerm</code> provider is the de-facto standard for managing Azure resources. Always pin the provider version and use a remote backend in Azure Blob Storage.</p>
-<h3 id="remote-backend-setup">Remote backend setup</h3>
+<h2 id="terraform-provider-azurerm">Terraform — Provider AzureRM</h2>
+<p>O provider <code>hashicorp/azurerm</code> é o padrão de facto para gerenciar recursos do Azure. Sempre fixe a versão do provider e use um backend remoto no Azure Blob Storage.</p>
+<h3 id="configuracao-do-backend-remoto">Configuração do backend remoto</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Bootstrap the backend storage account</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">RESOURCE_GROUP</span><span class="o">=</span><span class="s2">&quot;tfstate-rg&quot;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">STORAGE_ACCOUNT</span><span class="o">=</span><span class="s2">&quot;myprojecttfstate</span><span class="k">$(</span>shuf<span class="w"> </span>-i<span class="w"> </span><span class="m">1000</span>-9999<span class="w"> </span>-n1<span class="k">)</span><span class="s2">&quot;</span>
@@ -3227,16 +3227,8 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nv">LOCATION</span><span class="o">=</span><span class="s2">&quot;eastus&quot;</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
 <a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>az<span class="w"> </span>group<span class="w"> </span>create<span class="w"> </span>--name<span class="w"> </span><span class="nv">$RESOURCE_GROUP</span><span class="w"> </span>--location<span class="w"> </span><span class="nv">$LOCATION</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>az<span class="w"> </span>storage<span class="w"> </span>account<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span>--name<span class="w"> </span><span class="nv">$STORAGE_ACCOUNT</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span>--resource-group<span class="w"> </span><span class="nv">$RESOURCE_GROUP</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span>--location<span class="w"> </span><span class="nv">$LOCATION</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span>--sku<span class="w"> </span>Standard_ZRS<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span>--min-tls-version<span class="w"> </span>TLS1_2<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span>--allow-blob-public-access<span class="w"> </span><span class="nb">false</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>az<span class="w"> </span>storage<span class="w"> </span>container<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span>--name<span class="w"> </span><span class="nv">$CONTAINER</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">  </span>--account-name<span class="w"> </span><span class="nv">$STORAGE_ACCOUNT</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>az<span class="w"> </span>storage<span class="w"> </span>account<span class="w"> </span>create<span class="w">   </span>--name<span class="w"> </span><span class="nv">$STORAGE_ACCOUNT</span><span class="w">   </span>--resource-group<span class="w"> </span><span class="nv">$RESOURCE_GROUP</span><span class="w">   </span>--location<span class="w"> </span><span class="nv">$LOCATION</span><span class="w">   </span>--sku<span class="w"> </span>Standard_ZRS<span class="w">   </span>--min-tls-version<span class="w"> </span>TLS1_2<span class="w">   </span>--allow-blob-public-access<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>az<span class="w"> </span>storage<span class="w"> </span>container<span class="w"> </span>create<span class="w">   </span>--name<span class="w"> </span><span class="nv">$CONTAINER</span><span class="w">   </span>--account-name<span class="w"> </span><span class="nv">$STORAGE_ACCOUNT</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># versions.tf</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">terraform</span><span class="w"> </span><span class="p">{</span>
@@ -3275,7 +3267,7 @@
 <a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a><span class="w">  </span><span class="na">use_oidc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span><span class="c1">  # OIDC federation — no client secrets in CI</span>
 <a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="oidc-federation-keyless-ci-authentication">OIDC federation — keyless CI authentication</h3>
+<h3 id="federacao-oidc-autenticacao-sem-segredos-no-ci">Federação OIDC — autenticação sem segredos no CI</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Create a Service Principal with federated credentials for GitHub Actions</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azuread_application&quot;</span><span class="w"> </span><span class="nv">&quot;terraform_ci&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="na">display_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;terraform-ci-${var.env}&quot;</span>
@@ -3299,7 +3291,7 @@
 <a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="w">  </span><span class="na">principal_id</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="nv">azuread_service_principal.terraform_ci.object_id</span>
 <a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="directory-structure">Directory structure</h3>
+<h3 id="estrutura-de-diretorios">Estrutura de diretórios</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>infrastructure/
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├── modules/
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│   ├── aks/
@@ -3317,8 +3309,8 @@
 <a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>    └── main.tf
 </code></pre></div>
 <hr />
-<h2 id="bicep-native-azure-iac">Bicep — Native Azure IaC</h2>
-<p>Bicep is the first-class Azure IaC language. It compiles to ARM templates and has full parity with ARM — but with clean syntax, proper types and excellent VS Code tooling.</p>
+<h2 id="bicep-iac-nativo-do-azure">Bicep — IaC Nativo do Azure</h2>
+<p>Bicep é a linguagem IaC nativa de primeira classe do Azure. Compila para templates ARM e tem paridade total com o ARM — mas com sintaxe limpa, tipos adequados e excelente suporte no VS Code.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>// aks.bicep
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>param clusterName string
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>param location string = resourceGroup().location
@@ -3363,12 +3355,12 @@
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Bicep vs Terraform</p>
-<p>Use <strong>Terraform</strong> when you manage Azure + other clouds (multi-cloud environments). Use <strong>Bicep</strong> for Azure-only shops or when you need first-class support for every Azure preview feature on day 0 — Bicep tracks the ARM API faster than the Terraform AzureRM provider.</p>
+<p>Use <strong>Terraform</strong> quando você gerencia Azure + outras nuvens (ambientes multinuvem). Use <strong>Bicep</strong> para ambientes exclusivamente Azure ou quando precisar de suporte de primeira classe para cada recurso de preview do Azure no dia 0 — Bicep acompanha a API ARM mais rapidamente do que o provider Terraform AzureRM.</p>
 </div>
 <hr />
 <h2 id="azure-devops-pipelines">Azure DevOps Pipelines</h2>
-<p>Azure DevOps (ADO) Pipelines is Microsoft's CI/CD service — deeply integrated with Azure Resource Manager via <strong>Service Connections</strong> (federated OIDC or managed identity).</p>
-<h3 id="yaml-pipeline-terraform-deploy">YAML pipeline — Terraform deploy</h3>
+<p>Azure DevOps (ADO) Pipelines é o serviço de CI/CD da Microsoft — profundamente integrado com o Azure Resource Manager via <strong>Service Connections</strong> (OIDC federado ou managed identity).</p>
+<h3 id="pipeline-yaml-deploy-terraform">Pipeline YAML — deploy Terraform</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># .azure-pipelines/terraform.yml</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">trigger</span><span class="p">:</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> include</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="p p-Indicator">}</span>
@@ -3437,7 +3429,7 @@
 </code></pre></div>
 <hr />
 <h2 id="azure-container-registry-acr">Azure Container Registry (ACR)</h2>
-<p>ACR is Azure's managed container registry. Integrates with AKS via a built-in <code>AcrPull</code> role assignment on the kubelet identity — no secrets required.</p>
+<p>ACR é o registro de contêineres gerenciado do Azure. Integra-se com AKS por meio de uma atribuição de função <code>AcrPull</code> integrada na identidade kubelet — sem necessidade de segredos.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azurerm_container_registry&quot;</span><span class="w"> </span><span class="nv">&quot;main&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="na">name</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}acr${var.env}&quot;</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="na">resource_group_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">azurerm_resource_group.main.name</span>
@@ -3464,7 +3456,7 @@
 <a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">  </span><span class="na">principal_id</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="nv">azurerm_kubernetes_cluster.main.kubelet_identity[0].object_id</span>
 <a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="image-lifecycle-policy">Image lifecycle policy</h3>
+<h3 id="politica-de-ciclo-de-vida-de-imagens">Política de ciclo de vida de imagens</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">&quot;rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="p">{</span>
@@ -3489,8 +3481,8 @@
 <a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="flux-v2-gitops-on-aks">Flux v2 — GitOps on AKS</h2>
-<p>Flux v2 is the CNCF GitOps operator. The <strong>Azure GitOps</strong> add-on deploys and manages Flux on AKS clusters with Azure Monitor integration for reconciliation status.</p>
+<h2 id="flux-v2-gitops-no-aks">Flux v2 — GitOps no AKS</h2>
+<p>Flux v2 é o operador GitOps da CNCF. O complemento <strong>Azure GitOps</strong> implanta e gerencia o Flux em clusters AKS com integração ao Azure Monitor para monitoramento do status de reconciliação.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azurerm_kubernetes_cluster_extension&quot;</span><span class="w"> </span><span class="nv">&quot;flux&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="na">name</span><span class="w">              </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;flux&quot;</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="na">cluster_id</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="nv">azurerm_kubernetes_cluster.main.id</span>
@@ -3534,7 +3526,7 @@
 <a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
-<p><a class="md-button" href="../">← Azure Overview</a></p>
+<p><a class="md-button" href="../">← Visão Geral Azure</a></p>
 
 
 

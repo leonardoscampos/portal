@@ -1,73 +1,73 @@
 ---
 title: Alerting
-description: Alertmanager configuration, routing trees, SLOs, error budgets, on-call patterns, and runbooks.
+description: Configuração do Alertmanager, árvores de roteamento, SLOs, orçamentos de erro, padrões de plantão e runbooks.
 ---
 
 <div class="domain-page-hero" data-domain="monitoring">
   <div class="dph-left">
-    <span class="dph-eyebrow">// monitoring-observability / alerting</span>
+    <span class="dph-eyebrow">// monitoramento-observabilidade / alerting</span>
     <h1 class="dph-title">Alerting</h1>
-    <p class="dph-desc">Effective alerting is about signal over noise. Alertmanager routes, deduplicates, groups, and silences alerts. SLOs define reliability targets; error budgets make burn decisions data-driven. Good runbooks and on-call practices turn alerts into rapid resolution.</p>
+    <p class="dph-desc">Alertas eficazes são sobre sinal acima do ruído. O Alertmanager roteia, deduplica, agrupa e silencia alertas. SLOs definem metas de confiabilidade; orçamentos de erro tornam as decisões de queima orientadas por dados. Bons runbooks e práticas de plantão transformam alertas em resolução rápida.</p>
     <div class="dph-badges">
       <span class="tech-badge">Alertmanager</span>
       <span class="tech-badge">PagerDuty</span>
       <span class="tech-badge">SLOs</span>
-      <span class="tech-badge">Error Budgets</span>
+      <span class="tech-badge">Orçamentos de Erro</span>
       <span class="tech-badge">Runbooks</span>
       <span class="tech-badge">On-Call</span>
     </div>
   </div>
 </div>
 
-[← OpenTelemetry](opentelemetry.md) | [← Monitoring Overview](index.md) | [APM →](apm.md)
+[← OpenTelemetry](opentelemetry.md) | [← Visão Geral de Monitoramento](index.md) | [APM →](apm.md)
 
 ---
 
-## Alertmanager Configuration
+## Configuração do Alertmanager
 
 ```yaml
-# alertmanager.yaml — full production config
+# alertmanager.yaml — configuração completa de produção
 global:
   resolve_timeout: 5m
   pagerduty_url: https://events.pagerduty.com/v2/enqueue
   slack_api_url: https://hooks.slack.com/services/YOUR/WEBHOOK/URL
 
-# Templates for notification messages
+# Templates para mensagens de notificação
 templates:
   - /etc/alertmanager/templates/*.tmpl
 
 route:
   group_by: [alertname, cluster, namespace]
-  group_wait: 30s          # buffer time before sending first notification
-  group_interval: 5m       # time to wait before sending re-grouped alerts
-  repeat_interval: 4h      # re-notify if alert is still firing
-  receiver: default-slack  # catch-all
+  group_wait: 30s          # tempo de espera antes de enviar a primeira notificação
+  group_interval: 5m       # tempo de espera antes de enviar alertas reagrupados
+  repeat_interval: 4h      # renotifica se o alerta ainda estiver disparando
+  receiver: default-slack  # pega-tudo
 
   routes:
-    # Critical alerts → PagerDuty immediately
+    # Alertas críticos → PagerDuty imediatamente
     - matchers:
         - severity = critical
       receiver: pagerduty-critical
       group_wait: 0s
       repeat_interval: 1h
       routes:
-        # Database critical alerts → DBA on-call
+        # Alertas críticos de banco de dados → DBA de plantão
         - matchers:
             - team = dba
           receiver: pagerduty-dba
 
-    # Warning alerts → Slack
+    # Alertas de aviso → Slack
     - matchers:
         - severity = warning
       receiver: slack-warnings
       repeat_interval: 12h
 
-    # Watchdog / heartbeat — suppress
+    # Watchdog / heartbeat — suprimir
     - matchers:
         - alertname = Watchdog
       receiver: "null"
 
-    # Info — only in Slack, no re-notify
+    # Info — apenas no Slack, sem renotificação
     - matchers:
         - severity = info
       receiver: slack-info
@@ -114,12 +114,12 @@ receivers:
         severity: critical
 
 inhibit_rules:
-  # Suppress warning if critical fires for same alertname + namespace
+  # Suprime aviso se crítico disparar para o mesmo alertname + namespace
   - source_matchers: [severity = critical]
     target_matchers: [severity = warning]
     equal: [alertname, namespace]
 
-  # Suppress all if cluster is down
+  # Suprime tudo se o cluster estiver fora
   - source_matchers: [alertname = ClusterDown]
     target_matchers: [severity =~ "warning|critical"]
     equal: [cluster]
@@ -127,7 +127,7 @@ inhibit_rules:
 
 ---
 
-## Alert Notification Templates
+## Templates de Notificação de Alertas
 
 ```go
 {{/* /etc/alertmanager/templates/slack.tmpl */}}
@@ -159,40 +159,40 @@ https://grafana.internal/alerting/list
 
 ---
 
-## SLOs and Error Budgets
+## SLOs e Orçamentos de Erro
 
-### SLO Definition
+### Definição de SLO
 
-| Term | Definition |
+| Termo | Definição |
 |------|-----------|
-| **SLI** (Service Level Indicator) | Quantitative measure: request success rate, P99 latency |
-| **SLO** (Service Level Objective) | Target: "99.9% of requests succeed within 500 ms" |
-| **SLA** (Service Level Agreement) | Business contract; breach has financial consequences |
-| **Error budget** | `1 - SLO`; how much unreliability is "budgeted" |
-| **Burn rate** | How fast the error budget is being consumed |
+| **SLI** (Indicador de Nível de Serviço) | Medida quantitativa: taxa de sucesso das requisições, latência P99 |
+| **SLO** (Objetivo de Nível de Serviço) | Meta: "99,9% das requisições têm sucesso em até 500 ms" |
+| **SLA** (Acordo de Nível de Serviço) | Contrato de negócio; descumprimento tem consequências financeiras |
+| **Orçamento de erro** | `1 - SLO`; quanta não confiabilidade está "orçada" |
+| **Taxa de queima** | Com que velocidade o orçamento de erro está sendo consumido |
 
-### Error Budget Maths
+### Matemática do Orçamento de Erro
 
 $$
 \text{Error budget remaining} = \frac{\text{budget consumed} - \text{total budget}}{\text{total budget}}
 $$
 
-For a 99.9% SLO over 30 days:
+Para um SLO de 99,9% ao longo de 30 dias:
 
 $$
 \text{Total budget} = (1 - 0.999) \times 30 \times 24 \times 60 = 43.2 \text{ min}
 $$
 
-### PromQL — SLO Burn Rate (Google method)
+### PromQL — Taxa de Queima do SLO (método Google)
 
 ```promql
-# SLI: request success rate
+# SLI: taxa de sucesso das requisições
 job:sli_success_rate:ratio5m =
   sum(rate(http_requests_total{status!~"5.."}[5m]))
   /
   sum(rate(http_requests_total[5m]))
 
-# Fast burn: 1h + 5min windows (x14.4 budget burn)
+# Queima rápida: janelas de 1h + 5min (x14.4 de queima do orçamento)
 (
   (1 - job:sli_success_rate:ratio5m) / (1 - 0.999) > 14.4
   and
@@ -200,10 +200,10 @@ job:sli_success_rate:ratio5m =
 )
 ```
 
-### Sloth — SLO-as-Code
+### Sloth — SLO como Código
 
 ```yaml
-# sloth.yaml — generates Prometheus rules from SLO definition
+# sloth.yaml — gera regras do Prometheus a partir da definição do SLO
 version: prometheus/v1
 service: my-api
 labels:
@@ -211,7 +211,7 @@ labels:
 slos:
   - name: requests-availability
     objective: 99.9
-    description: "99.9% of API requests succeed"
+    description: "99,9% das requisições da API têm sucesso"
     sli:
       events:
         error_query: sum(rate(http_requests_total{status=~"5.."}[{{.window}}]))
@@ -229,86 +229,86 @@ slos:
 ```
 
 ```bash
-# Generate recording rules + alerts from SLO definition
+# Gera recording rules + alertas a partir da definição do SLO
 sloth generate -i sloth.yaml -o generated-rules.yaml
 kubectl apply -f generated-rules.yaml
 ```
 
 ---
 
-## Alert Fatigue — Best Practices
+## Fadiga de Alertas — Melhores Práticas
 
-| Anti-pattern | Fix |
+| Antipadrão | Solução |
 |-------------|-----|
-| Alert on every metric breach | Alert on **user impact** (error rate, latency, availability) |
-| No `for` duration | Use `for: 5m` to avoid transient spikes |
-| Missing runbook link | Always set `annotations.runbook_url` |
-| Alerting on the same signal at multiple thresholds | Use burn rate alerts (fast + slow) instead |
-| Warning == critical | Only page for actionable, urgent issues |
-| No inhibition rules | Suppress child alerts when parent fires (e.g. cluster down) |
-| Noisy silences | Create time-based silences for maintenance windows |
+| Alertar a cada violação de métrica | Alertar sobre **impacto ao usuário** (taxa de erro, latência, disponibilidade) |
+| Sem duração `for` | Use `for: 5m` para evitar picos transitórios |
+| Link de runbook ausente | Sempre defina `annotations.runbook_url` |
+| Alertar no mesmo sinal em múltiplos limiares | Use alertas de taxa de queima (rápida + lenta) |
+| Aviso == crítico | Acione apenas para problemas acionáveis e urgentes |
+| Sem regras de inibição | Suprima alertas filhos quando o pai disparar (ex.: cluster fora) |
+| Silêncios ruidosos | Crie silêncios baseados em tempo para janelas de manutenção |
 
 ---
 
-## On-Call Patterns
+## Padrões de Plantão
 
-### PagerDuty Escalation Policy
+### Política de Escalação do PagerDuty
 
 ```
-Level 1: Primary on-call engineer (15 min to ack)
-     ↓ (no ack)
-Level 2: Secondary / manager (30 min to ack)
-     ↓ (no ack)
-Level 3: Director / VP (hard escalation)
+Nível 1: Engenheiro de plantão primário (15 min para confirmar)
+     ↓ (sem confirmação)
+Nível 2: Secundário / gerente (30 min para confirmar)
+     ↓ (sem confirmação)
+Nível 3: Diretor / VP (escalação definitiva)
 ```
 
-### Alertmanager Silence (Maintenance Window)
+### Silêncio do Alertmanager (Janela de Manutenção)
 
 ```bash
-# Silence all alerts for namespace=production for 2 hours
+# Silencia todos os alertas de namespace=production por 2 horas
 amtool silence add \
   --alertmanager.url=http://alertmanager.monitoring.svc:9093 \
   --author="leo" \
-  --comment="Planned maintenance 02:00-04:00 UTC" \
+  --comment="Manutenção planejada 02:00-04:00 UTC" \
   --duration=2h \
   'namespace="production"'
 
-# List active silences
+# Lista silêncios ativos
 amtool silence query --alertmanager.url=http://alertmanager.monitoring.svc:9093
 
-# Expire a silence
+# Expira um silêncio
 amtool silence expire <ID> --alertmanager.url=http://alertmanager.monitoring.svc:9093
 ```
 
-### Runbook Template
+### Template de Runbook
 
 ```markdown
-# Alert: HighErrorRate
+# Alerta: HighErrorRate
 
-## Overview
-The API error rate has exceeded 5% for 5 minutes.
+## Visão Geral
+A taxa de erros da API excedeu 5% por 5 minutos.
 
-## Impact
-Users are experiencing failed requests. Revenue impact: ~$X/min.
+## Impacto
+Usuários estão experienciando requisições com falha. Impacto na receita: ~$X/min.
 
-## Diagnosis
-1. Check recent deployments: `kubectl rollout history deployment/api -n production`
-2. View error logs: `{app="api"} |= "ERROR" | json` in Grafana Explore
-3. Check DB connectivity: `kubectl exec -it deploy/api -- nc -zv db.internal 5432`
-4. Examine traces: filter by `status=ERROR` in Tempo
+## Diagnóstico
+1. Verifique deployments recentes: `kubectl rollout history deployment/api -n production`
+2. Veja logs de erro: `{app="api"} |= "ERROR" | json` no Grafana Explore
+3. Verifique conectividade do banco: `kubectl exec -it deploy/api -- nc -zv db.internal 5432`
+4. Examine traces: filtre por `status=ERROR` no Tempo
 
-## Mitigation
-- **If bad deploy**: `kubectl rollout undo deployment/api -n production`
-- **If DB issue**: notify DBA team, check DB metrics dashboard
-- **If upstream**: check dependency status pages, enable circuit breaker
+## Mitigação
+- **Se deploy ruim**: `kubectl rollout undo deployment/api -n production`
+- **Se problema de banco**: notifique a equipe DBA, verifique o painel de métricas do banco
+- **Se upstream**: verifique as páginas de status das dependências, habilite o circuit breaker
 
-## Escalation
-- Unresolved in 30 min → page engineering manager
-- Data loss suspected → immediately page on-call DBA + security
+## Escalação
+- Não resolvido em 30 min → acione o gerente de engenharia
+- Perda de dados suspeita → acione imediatamente o DBA de plantão + segurança
 
-## Post-incident
-- File incident report within 24 hours
-- Update this runbook with findings
+## Pós-incidente
+- Registre o relatório de incidente em até 24 horas
+- Atualize este runbook com as descobertas
 ```
 
 ---
@@ -323,15 +323,15 @@ helm upgrade --install oncall grafana/oncall \
   --set grafana.grafanaUrl=http://grafana.monitoring.svc
 ```
 
-Key features:
+Principais recursos:
 
-| Feature | Description |
+| Recurso | Descrição |
 |---------|-------------|
-| Schedules | Rotation-based on-call schedules with overrides |
-| Escalation chains | Time-based escalation with multiple responders |
+| Schedules | Escalas de plantão baseadas em rotação com substituições |
+| Escalation chains | Escalação baseada em tempo com múltiplos responsáveis |
 | Integrations | Alertmanager, Grafana Alerting, PagerDuty, Opsgenie |
-| Mobile app | Push notifications with ack/resolve actions |
-| ChatOps | Slack + Telegram integration |
-| Postmortems | Timeline view of incidents with annotations |
+| Mobile app | Notificações push com ações de confirmação/resolução |
+| ChatOps | Integração com Slack + Telegram |
+| Postmortems | Visão de linha do tempo de incidentes com anotações |
 
-[← OpenTelemetry](opentelemetry.md) | [← Monitoring Overview](index.md) | [APM →](apm.md)
+[← OpenTelemetry](opentelemetry.md) | [← Visão Geral de Monitoramento](index.md) | [APM →](apm.md)

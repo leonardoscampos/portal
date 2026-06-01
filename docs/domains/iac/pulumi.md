@@ -1,13 +1,13 @@
 ---
 title: Pulumi
-description: Pulumi multi-language IaC, state management, Pulumi ESC and stack references reference.
+description: Referência de IaC multi-linguagem com Pulumi, gerenciamento de estado, Pulumi ESC e referências de stack.
 ---
 
 <div class="domain-page-hero" data-domain="iac">
   <div class="dph-left">
     <span class="dph-eyebrow">// infrastructure-as-code / pulumi</span>
     <h1 class="dph-title">Pulumi</h1>
-    <p class="dph-desc">Infrastructure as Code using general-purpose languages — TypeScript, Python, Go, Java and .NET. Pulumi integrates natively with package managers, test frameworks and IDEs, enabling software engineering best practices for infrastructure.</p>
+    <p class="dph-desc">Infrastructure as Code usando linguagens de propósito geral — TypeScript, Python, Go, Java e .NET. O Pulumi se integra nativamente com gerenciadores de pacotes, frameworks de teste e IDEs, habilitando as melhores práticas de engenharia de software para infraestrutura.</p>
     <div class="dph-badges">
       <span class="tech-badge">TypeScript</span>
       <span class="tech-badge">Python</span>
@@ -19,26 +19,26 @@ description: Pulumi multi-language IaC, state management, Pulumi ESC and stack r
   </div>
 </div>
 
-[← CloudFormation](cloudformation.md) | [← IaC Overview](index.md) | [Helm →](helm.md)
+[← CloudFormation](cloudformation.md) | [← Visão Geral de IaC](index.md) | [Helm →](helm.md)
 
 ---
 
 ## Pulumi vs Terraform
 
-| Dimension | Pulumi | Terraform |
+| Dimensão | Pulumi | Terraform |
 |-----------|--------|-----------|
-| **Language** | TypeScript, Python, Go, Java, .NET | HCL (domain-specific) |
-| **IDE support** | Full autocomplete, type checking, refactoring | Plugin-based, basic |
-| **Testing** | Native unit/integration test frameworks | Terratest (Go) |
-| **State** | Pulumi Cloud, S3, GCS, Azure Blob, local | Same backends |
-| **Loops / conditionals** | Native language constructs | `count`, `for_each`, `dynamic` |
-| **Provider coverage** | 130+ (including Terraform provider bridge) | 3,000+ native providers |
-| **Learning curve** | Lower for devs, higher for ops | Higher for devs, familiar for ops |
-| **Secrets** | Pulumi ESC, encrypted in state | External (Vault, env vars) |
+| **Linguagem** | TypeScript, Python, Go, Java, .NET | HCL (específico de domínio) |
+| **Suporte a IDE** | Autocomplete completo, verificação de tipos, refatoração | Baseado em plugins, básico |
+| **Testes** | Frameworks nativos de testes unitários/integração | Terratest (Go) |
+| **Estado** | Pulumi Cloud, S3, GCS, Azure Blob, local | Mesmos backends |
+| **Loops / condicionais** | Construtos nativos da linguagem | `count`, `for_each`, `dynamic` |
+| **Cobertura de provedores** | 130+ (incluindo ponte de provedor Terraform) | 3.000+ provedores nativos |
+| **Curva de aprendizado** | Menor para devs, maior para ops | Maior para devs, familiar para ops |
+| **Segredos** | Pulumi ESC, criptografado no estado | Externo (Vault, variáveis de ambiente) |
 
 ---
 
-## Project Structure
+## Estrutura do Projeto
 
 ```
 my-infra/
@@ -67,7 +67,7 @@ config:
 
 ---
 
-## TypeScript Example — EKS Cluster
+## Exemplo TypeScript — EKS Cluster
 
 ```typescript
 // index.ts
@@ -117,7 +117,7 @@ export const clusterName = cluster.eksCluster.name;
 
 ---
 
-## Python Example — S3 + CloudFront
+## Exemplo Python — S3 + CloudFront
 
 ```python
 # __main__.py
@@ -185,9 +185,9 @@ pulumi.export("cdn_domain", distribution.domain_name)
 
 ---
 
-## State Backends
+## Backends de Estado
 
-=== "Pulumi Cloud (default)"
+=== "Pulumi Cloud (padrão)"
 
     ```bash
     pulumi login           # login to Pulumi Cloud
@@ -215,9 +215,9 @@ pulumi stack import --file stack.json
 
 ---
 
-## Stack References
+## Referências de Stack
 
-Stack references allow outputs from one stack to be consumed by another — the Pulumi equivalent of `terraform_remote_state`.
+Referências de stack permitem que saídas de uma stack sejam consumidas por outra — o equivalente Pulumi de `terraform_remote_state`.
 
 ```typescript
 // networking stack exports:
@@ -237,9 +237,9 @@ const subnetIds = networking.requireOutput("privateSubnetIds");
 
 ---
 
-## Pulumi ESC (Environments, Secrets & Configuration)
+## Pulumi ESC (Ambientes, Segredos e Configuração)
 
-Pulumi ESC centralises secrets and configuration — across Pulumi stacks and any other tool (env files, K8s, Terraform).
+O Pulumi ESC centraliza segredos e configurações — em stacks Pulumi e qualquer outra ferramenta (arquivos env, K8s, Terraform).
 
 ```yaml
 # .esc/prod.yaml
@@ -270,7 +270,7 @@ pulumi env run prod -- kubectl apply -f manifests/
 
 ---
 
-## Unit Testing
+## Testes Unitários
 
 ```typescript
 // __tests__/vpc.test.ts
@@ -304,7 +304,7 @@ describe("VPC", () => {
 
 ---
 
-## CI/CD with GitHub Actions
+## CI/CD com GitHub Actions
 
 ```yaml
 name: Pulumi

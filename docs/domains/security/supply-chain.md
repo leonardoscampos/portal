@@ -1,13 +1,13 @@
 ---
-title: Supply Chain Security
-description: Sigstore, cosign, SBOM, SLSA framework, binary authorization, provenance, and dependency security.
+title: Segurança da Cadeia de Suprimentos
+description: Sigstore, cosign, SBOM, framework SLSA, autorização binária, proveniência e segurança de dependências.
 ---
 
 <div class="domain-page-hero" data-domain="security">
   <div class="dph-left">
     <span class="dph-eyebrow">// security-devsecops / supply-chain</span>
-    <h1 class="dph-title">Supply Chain Security</h1>
-    <p class="dph-desc">Software supply chain attacks target build systems, registries, and dependencies — not just running applications. Sigstore provides keyless signing, SBOMs enumerate every component, SLSA defines provenance levels, and binary authorization enforces what can run in production.</p>
+    <h1 class="dph-title">Segurança da Cadeia de Suprimentos</h1>
+    <p class="dph-desc">Ataques à cadeia de suprimentos de software têm como alvo sistemas de build, registries e dependências — não apenas aplicações em execução. O Sigstore oferece assinatura sem chave, SBOMs enumeram cada componente, o SLSA define níveis de proveniência e a autorização binária reforça o que pode ser executado em produção.</p>
     <div class="dph-badges">
       <span class="tech-badge">Sigstore</span>
       <span class="tech-badge">cosign</span>
@@ -19,26 +19,26 @@ description: Sigstore, cosign, SBOM, SLSA framework, binary authorization, prove
   </div>
 </div>
 
-[← Identity & Access](identity-access.md) | [← Security Overview](index.md)
+[← Identidade e Acesso](identity-access.md) | [← Visão Geral de Segurança](index.md)
 
 ---
 
-## SLSA Framework
+## Framework SLSA
 
-SLSA (Supply chain Levels for Software Artifacts) defines four levels of supply chain integrity.
+O SLSA (Supply chain Levels for Software Artifacts) define quatro níveis de integridade da cadeia de suprimentos.
 
-| Level | Requirements | Key controls |
-|-------|-------------|-------------|
-| **SLSA 1** | Documented build process | Provenance generated (unsigned) |
-| **SLSA 2** | Hosted build service | Signed provenance; source versioned |
-| **SLSA 3** | Isolated, auditable build | Hardened CI; no self-hosted runners writing provenance |
-| **SLSA 4** | Two-person review; hermetic build | Reproducible; all deps pinned by digest |
+| Nível | Requisitos | Controles principais |
+|-------|------------|----------------------|
+| **SLSA 1** | Processo de build documentado | Proveniência gerada (não assinada) |
+| **SLSA 2** | Serviço de build hospedado | Proveniência assinada; código-fonte versionado |
+| **SLSA 3** | Build isolado e auditável | CI reforçado; sem runners auto-hospedados gravando proveniência |
+| **SLSA 4** | Revisão por duas pessoas; build hermético | Reproduzível; todas as dependências fixadas por digest |
 
 ---
 
-## Sigstore — Keyless Signing
+## Sigstore — Assinatura Sem Chave
 
-Sigstore is a CNCF project providing free, transparent, keyless signing via OIDC identity (GitHub Actions, Google, Microsoft).
+O Sigstore é um projeto CNCF que oferece assinatura gratuita, transparente e sem chave por meio de identidade OIDC (GitHub Actions, Google, Microsoft).
 
 ```
 Developer/CI                Sigstore stack
@@ -53,7 +53,7 @@ Developer/CI                Sigstore stack
     │  (immutable, append-only)   │
 ```
 
-### cosign — Sign and Verify
+### cosign — Assinar e Verificar
 
 ```bash
 # Install cosign
@@ -87,7 +87,7 @@ cosign sign --key cosign.key ghcr.io/my-org/my-app:1.2.3
 cosign verify --key cosign.pub ghcr.io/my-org/my-app:1.2.3
 ```
 
-### Attach Attestations (SBOM, Provenance, SAST)
+### Anexar Atestações (SBOM, Proveniência, SAST)
 
 ```bash
 # Generate SBOM with Syft
@@ -115,9 +115,9 @@ cosign verify-attestation \
 
 ---
 
-## SBOM (Software Bill of Materials)
+## SBOM (Lista de Materiais de Software)
 
-### Generating SBOMs
+### Gerando SBOMs
 
 === "Syft"
 
@@ -150,13 +150,13 @@ cosign verify-attestation \
     trivy sbom sbom.spdx.json
     ```
 
-### SBOM Formats
+### Formatos de SBOM
 
-| Format | Standard body | Best for |
-|--------|--------------|---------|
-| **SPDX** | Linux Foundation | Open Source, legal compliance |
-| **CycloneDX** | OWASP | Security-focused, rich VEX support |
-| **Syft JSON** | Anchore | Internal toolchain |
+| Formato | Órgão padrão | Melhor para |
+|---------|--------------|-------------|
+| **SPDX** | Linux Foundation | Open Source, conformidade legal |
+| **CycloneDX** | OWASP | Focado em segurança, suporte rico a VEX |
+| **Syft JSON** | Anchore | Cadeia de ferramentas interna |
 
 ### VEX — Vulnerability Exploitability eXchange
 
@@ -184,7 +184,7 @@ cosign verify-attestation \
 
 ---
 
-## GitHub Actions — SLSA Provenance
+## GitHub Actions — Proveniência SLSA
 
 ```yaml
 name: Release with SLSA Provenance
@@ -254,7 +254,7 @@ jobs:
 
 ---
 
-## Binary Authorization (GKE)
+## Autorização Binária (GKE)
 
 ```bash
 # Enable Binary Authorization on GKE cluster
@@ -289,9 +289,9 @@ admissionWhitelistPatterns:
 
 ---
 
-## Dependency Security
+## Segurança de Dependências
 
-### Renovate — Automated Dependency Updates
+### Renovate — Atualizações Automáticas de Dependências
 
 ```json
 // renovate.json
@@ -318,7 +318,7 @@ admissionWhitelistPatterns:
 }
 ```
 
-### Pinning Dependencies by Digest
+### Fixação de Dependências por Digest
 
 ```dockerfile
 # Pin base image by digest — immune to tag mutation
@@ -345,21 +345,21 @@ terraform {
 
 ---
 
-## Supply Chain Security Checklist
+## Lista de Verificação de Segurança da Cadeia de Suprimentos
 
-| Control | Tool | Status |
-|---------|------|--------|
-| Pin all base images by digest | Dockerfile | |
-| Pin GitHub Actions by SHA | workflow YAML | |
-| Pin Terraform providers exactly | `versions.tf` | |
-| Scan dependencies for CVEs in CI | Trivy / Grype | |
-| Sign all container images | cosign keyless | |
-| Generate and attach SBOM | Syft + cosign attest | |
-| Generate SLSA provenance | slsa-framework generator | |
-| Enforce signature verification at deploy | Kyverno verifyImages / BinAuthz | |
-| Rotate signing keys (if using key-based) | KMS rotation | |
-| Monitor Rekor log for anomalies | Rekor monitor | |
-| Automate dependency updates | Renovate / Dependabot | |
-| Block known-malicious packages | private registry allow-list | |
+| Controle | Ferramenta | Status |
+|----------|------------|--------|
+| Fixar todas as imagens base por digest | Dockerfile | |
+| Fixar GitHub Actions por SHA | YAML de workflow | |
+| Fixar provedores Terraform exatamente | `versions.tf` | |
+| Fazer varredura de dependências para CVEs no CI | Trivy / Grype | |
+| Assinar todas as imagens de container | cosign keyless | |
+| Gerar e anexar SBOM | Syft + cosign attest | |
+| Gerar proveniência SLSA | slsa-framework generator | |
+| Aplicar verificação de assinatura no deploy | Kyverno verifyImages / BinAuthz | |
+| Rotacionar chaves de assinatura (se usar chave) | Rotação no KMS | |
+| Monitorar log Rekor para anomalias | Rekor monitor | |
+| Automatizar atualizações de dependências | Renovate / Dependabot | |
+| Bloquear pacotes maliciosos conhecidos | allow-list de registry privado | |
 
-[← Identity & Access](identity-access.md) | [← Security Overview](index.md)
+[← Identidade e Acesso](identity-access.md) | [← Visão Geral de Segurança](index.md)

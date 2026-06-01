@@ -1,13 +1,13 @@
 ---
-title: AWS Observability
-description: CloudWatch, X-Ray, CloudTrail, AWS Config, Cost Explorer — observability on AWS.
+title: AWS Observabilidade
+description: CloudWatch, X-Ray, CloudTrail, AWS Config, Cost Explorer — observabilidade na AWS.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// aws / observability</span>
-    <h1 class="dph-title">AWS Observability</h1>
-    <p class="dph-desc">Metrics, logs, traces, audit trails and compliance drift — the full observability stack for AWS workloads. Built on CloudWatch as the core data plane, enriched with X-Ray tracing, CloudTrail auditing and AWS Config for configuration history.</p>
+    <h1 class="dph-title">AWS Observabilidade</h1>
+    <p class="dph-desc">Métricas, logs, traces, trilhas de auditoria e desvio de conformidade — a stack completa de observabilidade para cargas de trabalho AWS. Construída sobre o CloudWatch como plano de dados central, enriquecida com rastreamento X-Ray, auditoria CloudTrail e AWS Config para histórico de configurações.</p>
     <div class="dph-badges">
       <span class="tech-badge">CloudWatch</span>
       <span class="tech-badge">X-Ray</span>
@@ -23,21 +23,21 @@ description: CloudWatch, X-Ray, CloudTrail, AWS Config, Cost Explorer — observ
 
 ## CloudWatch
 
-CloudWatch is the native AWS observability platform covering **metrics**, **logs**, **alarms**, **dashboards** and **synthetic canaries**. Almost every AWS service publishes metrics to CloudWatch automatically.
+O CloudWatch é a plataforma de observabilidade nativa da AWS cobrindo **métricas**, **logs**, **alarmes**, **dashboards** e **canários sintéticos**. Quase todo serviço AWS publica métricas no CloudWatch automaticamente.
 
-### Metrics fundamentals
+### Fundamentos de métricas
 
-| Concept | Description |
-|---------|-------------|
-| **Namespace** | Logical grouping: `AWS/EC2`, `AWS/ECS`, `AWS/ApplicationELB`, `CWAgent` |
-| **Dimension** | Key-value filter: `InstanceId=i-0abc123`, `ClusterName=prod` |
-| **Metric** | The measurable value: `CPUUtilization`, `HTTPCode_Target_5XX_Count` |
-| **Statistic** | Aggregation: `Average`, `Sum`, `Maximum`, `p99` |
-| **Period** | Aggregation window: 1s / 10s / 30s / 60s / 5m / 1hr |
+| Conceito | Descrição |
+|----------|-----------|
+| **Namespace** | Agrupamento lógico: `AWS/EC2`, `AWS/ECS`, `AWS/ApplicationELB`, `CWAgent` |
+| **Dimension** | Filtro chave-valor: `InstanceId=i-0abc123`, `ClusterName=prod` |
+| **Metric** | O valor mensurável: `CPUUtilization`, `HTTPCode_Target_5XX_Count` |
+| **Statistic** | Agregação: `Average`, `Sum`, `Maximum`, `p99` |
+| **Period** | Janela de agregação: 1s / 10s / 30s / 60s / 5m / 1h |
 
-### Alarms
+### Alarmes
 
-Alarms transition between `OK`, `ALARM` and `INSUFFICIENT_DATA`. Actions include SNS notifications, Auto Scaling policy triggers and EC2 instance recovery.
+Os alarmes transitam entre `OK`, `ALARM` e `INSUFFICIENT_DATA`. As ações incluem notificações SNS, gatilhos de política de Auto Scaling e recuperação de instâncias EC2.
 
 ```hcl
 resource "aws_cloudwatch_metric_alarm" "api_5xx" {
@@ -60,9 +60,9 @@ resource "aws_cloudwatch_metric_alarm" "api_5xx" {
 }
 ```
 
-### Composite alarms
+### Alarmes compostos
 
-Composite alarms combine multiple alarms with AND/OR logic, reducing alert noise. Use them to create a single "service health" alarm that fires only when multiple signals are degraded simultaneously.
+Os alarmes compostos combinam múltiplos alarmes com lógica AND/OR, reduzindo ruído de alertas. Use-os para criar um único alarme de "saúde do serviço" que dispara apenas quando múltiplos sinais estão degradados simultaneamente.
 
 ```hcl
 resource "aws_cloudwatch_composite_alarm" "service_degraded" {
@@ -76,10 +76,10 @@ resource "aws_cloudwatch_composite_alarm" "service_degraded" {
 
 ### Logs Insights
 
-CloudWatch Logs Insights is a query language for searching and analysing log data across log groups. Key operators:
+O CloudWatch Logs Insights é uma linguagem de consulta para pesquisar e analisar dados de log em grupos de log. Operadores principais:
 
 ```sql
--- Top 10 slowest API endpoints in the last hour
+-- Top 10 endpoints de API mais lentos na última hora
 fields @timestamp, path, duration_ms
 | filter status >= 200
 | stats avg(duration_ms) as avg_ms, count() as requests by path
@@ -88,7 +88,7 @@ fields @timestamp, path, duration_ms
 ```
 
 ```sql
--- Error rate per service
+-- Taxa de erros por serviço
 fields @timestamp, service, level
 | filter level = "ERROR"
 | stats count() as errors by service, bin(5m)
@@ -97,23 +97,23 @@ fields @timestamp, service, level
 
 ### Container Insights (EKS / ECS)
 
-Enable Container Insights to collect CPU, memory, network and disk I/O metrics at the pod/task/service level:
+Habilite o Container Insights para coletar métricas de CPU, memória, rede e I/O de disco no nível de pod/task/serviço:
 
 ```hcl
 resource "aws_eks_addon" "cloudwatch_agent" {
   cluster_name  = aws_eks_cluster.main.name
   addon_name    = "amazon-cloudwatch-observability"
   addon_version = "v1.3.0-eksbuild.1"
-  # Requires IRSA with CloudWatchAgentServerPolicy
+  # Requer IRSA com CloudWatchAgentServerPolicy
 }
 ```
 
 ### Managed Prometheus + Grafana
 
-For teams already running Prometheus, **Amazon Managed Service for Prometheus (AMP)** provides a fully managed Prometheus-compatible backend. Pair with **Amazon Managed Grafana (AMG)** for dashboards with SSO via IAM Identity Centre.
+Para times que já executam Prometheus, o **Amazon Managed Service for Prometheus (AMP)** oferece um backend totalmente gerenciado compatível com Prometheus. Combine com o **Amazon Managed Grafana (AMG)** para dashboards com SSO via IAM Identity Centre.
 
 ```yaml
-# Configure Prometheus remote_write to AMP
+# Configurar Prometheus remote_write para o AMP
 remoteWrite:
   - url: https://aps-workspaces.us-east-1.amazonaws.com/workspaces/ws-xxx/api/v1/remote_write
     sigv4:
@@ -125,14 +125,14 @@ remoteWrite:
 
 ---
 
-## X-Ray & OpenTelemetry
+## X-Ray e OpenTelemetry
 
-X-Ray provides distributed tracing — visualise request flows across microservices, identify bottlenecks and debug latency issues.
+O X-Ray fornece rastreamento distribuído — visualize fluxos de requisições entre microsserviços, identifique gargalos e depure problemas de latência.
 
-!!! tip "Prefer OpenTelemetry"
-    The **AWS Distro for OpenTelemetry (ADOT)** is the recommended path for new instrumentation. It is OTel-standard (vendor-neutral) and can send traces to X-Ray, Jaeger, Zipkin or any OTLP-compatible backend. The X-Ray SDK is still supported but creates vendor lock-in.
+!!! tip "Prefira OpenTelemetry"
+    O **AWS Distro for OpenTelemetry (ADOT)** é o caminho recomendado para nova instrumentação. É compatível com o padrão OTel (vendor-neutral) e pode enviar traces para X-Ray, Jaeger, Zipkin ou qualquer backend OTLP. O X-Ray SDK ainda é suportado, mas cria dependência de vendor.
 
-### EKS integration (ADOT operator)
+### Integração com EKS (operador ADOT)
 
 ```yaml
 apiVersion: opentelemetry.io/v1alpha1
@@ -162,9 +162,9 @@ spec:
           exporters: [awsemf]
 ```
 
-### Sampling rules
+### Regras de amostragem
 
-Control trace volume with sampling rules. The default is 5% of requests + 1 request/second reservoir. Define custom rules in X-Ray console or Terraform:
+Controle o volume de traces com regras de amostragem. O padrão é 5% das requisições + 1 requisição/segundo de reservatório. Defina regras personalizadas no console X-Ray ou Terraform:
 
 ```hcl
 resource "aws_xray_sampling_rule" "api" {
@@ -186,15 +186,15 @@ resource "aws_xray_sampling_rule" "api" {
 
 ## CloudTrail
 
-CloudTrail records every AWS API call made in your account — who did what, when, from where. It is the foundation of security auditing and incident investigation.
+O CloudTrail registra toda chamada de API AWS feita em sua conta — quem fez o quê, quando e de onde. É a base da auditoria de segurança e investigação de incidentes.
 
-### Event types
+### Tipos de eventos
 
-| Type | Examples | Default enabled |
-|------|---------|----------------|
-| **Management events** | CreateBucket, RunInstances, AssumeRole | Yes (free) |
-| **Data events** | S3 GetObject/PutObject, Lambda Invoke | No (cost: $0.10/100k) |
-| **Insights events** | Unusual API call rates, error rate spikes | No (cost: $0.35/100k) |
+| Tipo | Exemplos | Habilitado por padrão |
+|------|---------|----------------------|
+| **Management events** | CreateBucket, RunInstances, AssumeRole | Sim (gratuito) |
+| **Data events** | S3 GetObject/PutObject, Lambda Invoke | Não (custo: $0,10/100k) |
+| **Insights events** | Taxas incomuns de chamada de API, picos de taxa de erros | Não (custo: $0,35/100k) |
 
 ```hcl
 resource "aws_cloudtrail" "org" {
@@ -203,7 +203,7 @@ resource "aws_cloudtrail" "org" {
   is_multi_region_trail         = true
   is_organization_trail         = true
   include_global_service_events = true
-  enable_log_file_validation    = true  # SHA-256 hash for tamper detection
+  enable_log_file_validation    = true  # hash SHA-256 para detecção de adulteração
   kms_key_id                    = aws_kms_key.cloudtrail.arn
 
   event_selector {
@@ -222,22 +222,22 @@ resource "aws_cloudtrail" "org" {
 ```
 
 !!! tip "Athena + CloudTrail"
-    Create an Athena table over the CloudTrail S3 prefix using the CloudTrail partition projection. This gives you SQL-based investigation across months of API history with sub-second query times at near-zero cost.
+    Crie uma tabela Athena sobre o prefixo S3 do CloudTrail usando CloudTrail partition projection. Isso fornece investigação baseada em SQL em meses de histórico de API com tempos de consulta abaixo de um segundo a custo quase zero.
 
 ---
 
 ## AWS Config
 
-AWS Config records the configuration state of AWS resources at every change point, enabling compliance auditing and drift detection.
+O AWS Config registra o estado de configuração dos recursos AWS em cada ponto de mudança, permitindo auditoria de conformidade e detecção de desvios.
 
 ### Config Rules
 
-Rules evaluate whether resources comply with a desired configuration. AWS provides 300+ managed rules; you can also write custom rules using Lambda or AWS Config Guard (JSON policy language).
+As regras avaliam se os recursos estão em conformidade com uma configuração desejada. A AWS fornece mais de 300 regras gerenciadas; você também pode escrever regras personalizadas usando Lambda ou AWS Config Guard (linguagem de política JSON).
 
 ```hcl
 resource "aws_config_config_rule" "encrypted_volumes" {
   name        = "encrypted-volumes"
-  description = "Checks if EBS volumes are encrypted"
+  description = "Verifica se os volumes EBS estão criptografados"
 
   source {
     owner             = "AWS"
@@ -257,7 +257,7 @@ resource "aws_config_config_rule" "s3_public_blocked" {
 
 ### Conformance Packs
 
-Conformance packs bundle related Config rules + optional SSM Automation remediation into a deployable package. AWS provides pre-built packs for CIS, NIST and HIPAA.
+Os Conformance Packs agrupam regras Config relacionadas + remediação opcional via SSM Automation em um pacote implantável. A AWS fornece packs pré-construídos para CIS, NIST e HIPAA.
 
 ```hcl
 resource "aws_config_conformance_pack" "cis_l2" {
@@ -270,17 +270,17 @@ resource "aws_config_conformance_pack" "cis_l2" {
 
 ---
 
-## Cost Explorer & Budgets
+## Cost Explorer e Budgets
 
-Cost visibility is an operational discipline. Use Cost Explorer for analysis and Budgets for proactive alerts.
+Visibilidade de custos é uma disciplina operacional. Use o Cost Explorer para análise e Budgets para alertas proativos.
 
-| Tool | Purpose |
-|------|---------|
-| **Cost Explorer** | Visualise, filter and group costs by service, account, tag, region |
-| **Cost Anomaly Detection** | ML-based alerts for unexpected spend spikes |
-| **Budgets** | Alert when actual/forecast cost or usage exceeds thresholds |
-| **Cost and Usage Report (CUR)** | Hourly line-item CSV → S3 → Athena/QuickSight for deep analysis |
-| **Compute Optimizer** | Right-sizing recommendations for EC2, ECS, Lambda, EBS |
+| Ferramenta | Propósito |
+|------------|-----------|
+| **Cost Explorer** | Visualize, filtre e agrupe custos por serviço, conta, tag, região |
+| **Cost Anomaly Detection** | Alertas baseados em ML para picos inesperados de gastos |
+| **Budgets** | Alerte quando custo/uso real ou previsto exceder limites |
+| **Cost and Usage Report (CUR)** | CSV linha a linha por hora → S3 → Athena/QuickSight para análise profunda |
+| **Compute Optimizer** | Recomendações de right-sizing para EC2, ECS, Lambda, EBS |
 
 ```hcl
 resource "aws_budgets_budget" "monthly" {
@@ -300,10 +300,10 @@ resource "aws_budgets_budget" "monthly" {
 }
 ```
 
-!!! tip "Tag everything"
-    Cost allocation tags (`Environment`, `Project`, `Team`, `Service`) are the only way to break down costs per team/product in Cost Explorer. Enforce mandatory tags via AWS Config rule `REQUIRED_TAGS` + SCP that denies resource creation without them.
+!!! tip "Taguear tudo"
+    Tags de alocação de custos (`Environment`, `Project`, `Team`, `Service`) são a única forma de detalhar custos por time/produto no Cost Explorer. Imponha tags obrigatórias via regra AWS Config `REQUIRED_TAGS` + SCP que nega criação de recursos sem elas.
 
 ---
 
-[← AWS Overview](index.md){ .md-button }
+[← Visão Geral AWS](index.md){ .md-button }
 [IaC & DevOps →](iac.md){ .md-button .md-button--primary }

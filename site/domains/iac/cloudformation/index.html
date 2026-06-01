@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="AWS CloudFormation templates, stacks, StackSets, CDK and custom resources reference.">
+        <meta name="description" content="Referência de templates, stacks, StackSets, CDK e recursos personalizados do AWS CloudFormation.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#template-structure" class="md-skip">
+        <a href="#estrutura-do-template" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -2629,10 +2629,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#template-structure" class="md-nav__link">
+  <a href="#estrutura-do-template" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Template Structure
+        Estrutura do Template
       
     </span>
   </a>
@@ -2640,10 +2640,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#intrinsic-functions" class="md-nav__link">
+  <a href="#funcoes-intrinsecas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Intrinsic Functions
+        Funções Intrínsecas
       
     </span>
   </a>
@@ -2662,10 +2662,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#stacksets-multi-account-multi-region" class="md-nav__link">
+  <a href="#stacksets-multi-conta-multi-regiao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        StackSets — Multi-Account / Multi-Region
+        StackSets — Multi-Conta / Multi-Região
       
     </span>
   </a>
@@ -2673,10 +2673,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-resources" class="md-nav__link">
+  <a href="#recursos-personalizados" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Custom Resources
+        Recursos Personalizados
       
     </span>
   </a>
@@ -2695,10 +2695,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#drift-detection" class="md-nav__link">
+  <a href="#deteccao-de-desvio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Drift Detection
+        Detecção de Desvio
       
     </span>
   </a>
@@ -2706,10 +2706,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rollback-stack-policies" class="md-nav__link">
+  <a href="#rollback-e-politicas-de-stack" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rollback &amp; Stack Policies
+        Rollback e Políticas de Stack
       
     </span>
   </a>
@@ -3014,10 +3014,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#template-structure" class="md-nav__link">
+  <a href="#estrutura-do-template" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Template Structure
+        Estrutura do Template
       
     </span>
   </a>
@@ -3025,10 +3025,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#intrinsic-functions" class="md-nav__link">
+  <a href="#funcoes-intrinsecas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Intrinsic Functions
+        Funções Intrínsecas
       
     </span>
   </a>
@@ -3047,10 +3047,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#stacksets-multi-account-multi-region" class="md-nav__link">
+  <a href="#stacksets-multi-conta-multi-regiao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        StackSets — Multi-Account / Multi-Region
+        StackSets — Multi-Conta / Multi-Região
       
     </span>
   </a>
@@ -3058,10 +3058,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#custom-resources" class="md-nav__link">
+  <a href="#recursos-personalizados" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Custom Resources
+        Recursos Personalizados
       
     </span>
   </a>
@@ -3080,10 +3080,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#drift-detection" class="md-nav__link">
+  <a href="#deteccao-de-desvio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Drift Detection
+        Detecção de Desvio
       
     </span>
   </a>
@@ -3091,10 +3091,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#rollback-stack-policies" class="md-nav__link">
+  <a href="#rollback-e-politicas-de-stack" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rollback &amp; Stack Policies
+        Rollback e Políticas de Stack
       
     </span>
   </a>
@@ -3122,7 +3122,7 @@
   <div class="dph-left">
     <span class="dph-eyebrow">// infrastructure-as-code / cloudformation</span>
     <h1 class="dph-title">CloudFormation</h1>
-    <p class="dph-desc">AWS-native declarative IaC. CloudFormation templates describe AWS resources and their dependencies; the service handles provisioning, updates and rollback automatically. CDK adds a higher-level abstraction using real programming languages that compiles down to CloudFormation.</p>
+    <p class="dph-desc">IaC declarativo nativo da AWS. Templates CloudFormation descrevem recursos AWS e suas dependências; o serviço gerencia provisionamento, atualizações e rollback automaticamente. O CDK adiciona uma abstração de mais alto nível usando linguagens de programação reais que compilam para CloudFormation.</p>
     <div class="dph-badges">
       <span class="tech-badge">Templates</span>
       <span class="tech-badge">Stacks</span>
@@ -3134,9 +3134,9 @@
   </div>
 </div>
 
-<p><a href="../ansible/">← Ansible</a> | <a href="../">← IaC Overview</a> | <a href="../pulumi/">Pulumi →</a></p>
+<p><a href="../ansible/">← Ansible</a> | <a href="../">← Visão Geral de IaC</a> | <a href="../pulumi/">Pulumi →</a></p>
 <hr />
-<h2 id="template-structure">Template Structure</h2>
+<h2 id="estrutura-do-template">Estrutura do Template</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">AWSTemplateFormatVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2010-09-09&quot;</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">Description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ECS</span><span class="nv"> </span><span class="s">Service</span><span class="nv"> </span><span class="s">with</span><span class="nv"> </span><span class="s">ALB&quot;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
@@ -3199,64 +3199,64 @@
 <a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a><span class="w">      </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="kt">!Sub</span><span class="w"> </span><span class="s">&quot;${AWS::StackName}-ServiceUrl&quot;</span>
 </code></pre></div>
 <hr />
-<h2 id="intrinsic-functions">Intrinsic Functions</h2>
+<h2 id="funcoes-intrinsecas">Funções Intrínsecas</h2>
 <table>
 <thead>
 <tr>
-<th>Function</th>
-<th>Use Case</th>
+<th>Função</th>
+<th>Caso de Uso</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>!Ref</code></td>
-<td>Reference a parameter or resource's primary ID</td>
+<td>Referenciar o ID primário de um parâmetro ou recurso</td>
 </tr>
 <tr>
 <td><code>!GetAtt Resource.Attr</code></td>
-<td>Get a specific attribute of a resource</td>
+<td>Obter um atributo específico de um recurso</td>
 </tr>
 <tr>
 <td><code>!Sub "string ${Var}"</code></td>
-<td>String interpolation</td>
+<td>Interpolação de strings</td>
 </tr>
 <tr>
 <td><code>!Join [delim, [list]]</code></td>
-<td>Concatenate a list with a delimiter</td>
+<td>Concatenar uma lista com um delimitador</td>
 </tr>
 <tr>
 <td><code>!Select [idx, list]</code></td>
-<td>Pick an element from a list</td>
+<td>Selecionar um elemento de uma lista</td>
 </tr>
 <tr>
 <td><code>!Split [delim, str]</code></td>
-<td>Split a string into a list</td>
+<td>Dividir uma string em uma lista</td>
 </tr>
 <tr>
 <td><code>!FindInMap [Map, Key1, Key2]</code></td>
-<td>Look up a value in a Mappings section</td>
+<td>Buscar um valor na seção Mappings</td>
 </tr>
 <tr>
 <td><code>!If [Cond, True, False]</code></td>
-<td>Conditional value selection</td>
+<td>Seleção condicional de valor</td>
 </tr>
 <tr>
 <td><code>!Equals [A, B]</code></td>
-<td>Produces a Condition boolean</td>
+<td>Produz um booleano de Condição</td>
 </tr>
 <tr>
 <td><code>!And / !Or / !Not</code></td>
-<td>Compound condition logic</td>
+<td>Lógica de condição composta</td>
 </tr>
 <tr>
 <td><code>!ImportValue ExportName</code></td>
-<td>Consume a value exported by another stack</td>
+<td>Consumir um valor exportado por outra stack</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="change-sets">Change Sets</h2>
-<p>Change sets give you a preview of what will be modified before applying:</p>
+<p>Change sets oferecem uma prévia do que será modificado antes de aplicar:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Create a change set</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>aws<span class="w"> </span>cloudformation<span class="w"> </span>create-change-set<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>--stack-name<span class="w"> </span>prod-ecs<span class="w"> </span><span class="se">\</span>
@@ -3276,8 +3276,8 @@
 <a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span>--change-set-name<span class="w"> </span>update-image-v2
 </code></pre></div>
 <hr />
-<h2 id="stacksets-multi-account-multi-region">StackSets — Multi-Account / Multi-Region</h2>
-<p>StackSets deploy a single template across multiple AWS accounts and/or regions from a management account.</p>
+<h2 id="stacksets-multi-conta-multi-regiao">StackSets — Multi-Conta / Multi-Região</h2>
+<p>StackSets implantam um único template em múltiplas contas e/ou regiões AWS a partir de uma conta de gerenciamento.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># stackset.yaml — deploy a GuardDuty baseline to all accounts</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">AWSTemplateFormatVersion</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2010-09-09&quot;</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">Resources</span><span class="p">:</span>
@@ -3306,8 +3306,8 @@
 <a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">  </span>--regions<span class="w"> </span>us-east-1<span class="w"> </span>eu-west-1<span class="w"> </span>ap-southeast-1
 </code></pre></div>
 <hr />
-<h2 id="custom-resources">Custom Resources</h2>
-<p>Custom resources let you invoke Lambda to manage anything not natively supported.</p>
+<h2 id="recursos-personalizados">Recursos Personalizados</h2>
+<p>Recursos personalizados permitem invocar Lambda para gerenciar qualquer coisa sem suporte nativo.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">Resources</span><span class="p">:</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">InitDatabaseFunction</span><span class="p">:</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">Type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AWS::Lambda::Function</span>
@@ -3338,7 +3338,7 @@
 </code></pre></div>
 <hr />
 <h2 id="aws-cdk">AWS CDK</h2>
-<p>CDK (Cloud Development Kit) lets you write infrastructure in TypeScript, Python, Java or Go — compiled to CloudFormation at synth time.</p>
+<p>O CDK (Cloud Development Kit) permite escrever infraestrutura em TypeScript, Python, Java ou Go — compilado para CloudFormation no momento do synth.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">TypeScript</label><label for="__tabbed_1_2">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3412,8 +3412,8 @@
 <a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>cdk<span class="w"> </span>destroy<span class="w">      </span><span class="c1"># tear down the stack</span>
 </code></pre></div>
 <hr />
-<h2 id="drift-detection">Drift Detection</h2>
-<p>CloudFormation can detect when real-world resources have drifted from their template definition.</p>
+<h2 id="deteccao-de-desvio">Detecção de Desvio</h2>
+<p>O CloudFormation pode detectar quando recursos reais desviaram de sua definição no template.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Start drift detection on a stack</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>aws<span class="w"> </span>cloudformation<span class="w"> </span>detect-stack-drift<span class="w"> </span>--stack-name<span class="w"> </span>prod-ecs
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
@@ -3427,7 +3427,7 @@
 <a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">  </span>--stack-resource-drift-status-filters<span class="w"> </span>MODIFIED<span class="w"> </span>DELETED
 </code></pre></div>
 <hr />
-<h2 id="rollback-stack-policies">Rollback &amp; Stack Policies</h2>
+<h2 id="rollback-e-politicas-de-stack">Rollback e Políticas de Stack</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Disable rollback (debug failed deployments)</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>aws<span class="w"> </span>cloudformation<span class="w"> </span>create-stack<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span>--stack-name<span class="w"> </span>my-stack<span class="w"> </span><span class="se">\</span>
@@ -3448,7 +3448,7 @@
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">CDK vs Terraform</p>
-<p>CDK is an excellent choice if your team is already AWS-only and prefers typed languages. For multi-cloud workloads or teams already invested in HCL, Terraform remains the stronger choice.</p>
+<p>O CDK é uma excelente escolha se sua equipe já é exclusivamente AWS e prefere linguagens tipadas. Para cargas de trabalho multi-cloud ou equipes já investidas em HCL, o Terraform continua sendo a escolha mais robusta.</p>
 </div>
 
 

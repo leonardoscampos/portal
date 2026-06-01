@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Terraform, Resource Manager, OCI DevOps, Container Registry — IaC and DevOps on Oracle Cloud.">
+        <meta name="description" content="Terraform, Resource Manager, OCI DevOps, Container Registry — IaC e DevOps na Oracle Cloud.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#terraform-oci-provider" class="md-skip">
+        <a href="#terraform-provider-oci" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -1370,22 +1370,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#terraform-oci-provider" class="md-nav__link">
+  <a href="#terraform-provider-oci" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Terraform — OCI Provider
+        Terraform — Provider OCI
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Terraform — OCI Provider">
+    <nav class="md-nav" aria-label="Terraform — Provider OCI">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#provider-configuration" class="md-nav__link">
+  <a href="#configuracao-do-provider" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Provider configuration
+        Configuração do provider
       
     </span>
   </a>
@@ -1393,10 +1393,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-instance-principals-in-ci" class="md-nav__link">
+  <a href="#usando-instance-principals-em-ci" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using Instance Principals in CI
+        Usando Instance Principals em CI
       
     </span>
   </a>
@@ -1404,10 +1404,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#directory-layout" class="md-nav__link">
+  <a href="#estrutura-de-diretorios" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Directory layout
+        Estrutura de diretórios
       
     </span>
   </a>
@@ -1432,10 +1432,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#key-concepts" class="md-nav__link">
+  <a href="#conceitos-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key concepts
+        Conceitos principais
       
     </span>
   </a>
@@ -1460,10 +1460,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#build-pipeline" class="md-nav__link">
+  <a href="#pipeline-de-build" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Build pipeline
+        Pipeline de build
       
     </span>
   </a>
@@ -1471,10 +1471,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#deployment-pipeline-oke-bluegreen" class="md-nav__link">
+  <a href="#pipeline-de-implantacao-oke-bluegreen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deployment pipeline — OKE blue/green
+        Pipeline de implantação — OKE blue/green
       
     </span>
   </a>
@@ -1499,10 +1499,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#authenticate-docker-to-ocir" class="md-nav__link">
+  <a href="#autenticar-docker-no-ocir" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Authenticate Docker to OCIR
+        Autenticar Docker no OCIR
       
     </span>
   </a>
@@ -1510,10 +1510,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#oke-pull-from-ocir-instance-principals" class="md-nav__link">
+  <a href="#oke-pull-do-ocir-instance-principals" class="md-nav__link">
     <span class="md-ellipsis">
       
-        OKE pull from OCIR (Instance Principals)
+        OKE pull do OCIR (Instance Principals)
       
     </span>
   </a>
@@ -1538,10 +1538,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#push-a-helm-chart" class="md-nav__link">
+  <a href="#fazer-push-de-um-chart-helm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Push a Helm chart
+        Fazer push de um chart Helm
       
     </span>
   </a>
@@ -3112,22 +3112,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#terraform-oci-provider" class="md-nav__link">
+  <a href="#terraform-provider-oci" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Terraform — OCI Provider
+        Terraform — Provider OCI
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Terraform — OCI Provider">
+    <nav class="md-nav" aria-label="Terraform — Provider OCI">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#provider-configuration" class="md-nav__link">
+  <a href="#configuracao-do-provider" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Provider configuration
+        Configuração do provider
       
     </span>
   </a>
@@ -3135,10 +3135,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#using-instance-principals-in-ci" class="md-nav__link">
+  <a href="#usando-instance-principals-em-ci" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using Instance Principals in CI
+        Usando Instance Principals em CI
       
     </span>
   </a>
@@ -3146,10 +3146,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#directory-layout" class="md-nav__link">
+  <a href="#estrutura-de-diretorios" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Directory layout
+        Estrutura de diretórios
       
     </span>
   </a>
@@ -3174,10 +3174,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#key-concepts" class="md-nav__link">
+  <a href="#conceitos-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key concepts
+        Conceitos principais
       
     </span>
   </a>
@@ -3202,10 +3202,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#build-pipeline" class="md-nav__link">
+  <a href="#pipeline-de-build" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Build pipeline
+        Pipeline de build
       
     </span>
   </a>
@@ -3213,10 +3213,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#deployment-pipeline-oke-bluegreen" class="md-nav__link">
+  <a href="#pipeline-de-implantacao-oke-bluegreen" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deployment pipeline — OKE blue/green
+        Pipeline de implantação — OKE blue/green
       
     </span>
   </a>
@@ -3241,10 +3241,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#authenticate-docker-to-ocir" class="md-nav__link">
+  <a href="#autenticar-docker-no-ocir" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Authenticate Docker to OCIR
+        Autenticar Docker no OCIR
       
     </span>
   </a>
@@ -3252,10 +3252,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#oke-pull-from-ocir-instance-principals" class="md-nav__link">
+  <a href="#oke-pull-do-ocir-instance-principals" class="md-nav__link">
     <span class="md-ellipsis">
       
-        OKE pull from OCIR (Instance Principals)
+        OKE pull do OCIR (Instance Principals)
       
     </span>
   </a>
@@ -3280,10 +3280,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#push-a-helm-chart" class="md-nav__link">
+  <a href="#fazer-push-de-um-chart-helm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Push a Helm chart
+        Fazer push de um chart Helm
       
     </span>
   </a>
@@ -3316,7 +3316,7 @@
   <div class="dph-left">
     <span class="dph-eyebrow">// oci / iac</span>
     <h1 class="dph-title">OCI IaC &amp; DevOps</h1>
-    <p class="dph-desc">The Terraform OCI provider is mature and comprehensive. Resource Manager is OCI's managed Terraform service — run plans and applies without provisioning CI servers. OCI DevOps provides build and deployment pipelines. OCIR is the managed container registry integrated with OKE.</p>
+    <p class="dph-desc">O provider Terraform para OCI é maduro e abrangente. O Resource Manager é o serviço Terraform gerenciado da OCI — execute plans e applies sem provisionar servidores CI. O OCI DevOps fornece pipelines de build e implantação. O OCIR é o registro de contêiner gerenciado integrado ao OKE.</p>
     <div class="dph-badges">
       <span class="tech-badge">Terraform</span>
       <span class="tech-badge">Resource Manager</span>
@@ -3328,9 +3328,9 @@
 </div>
 
 <hr />
-<h2 id="terraform-oci-provider">Terraform — OCI Provider</h2>
-<p>The <code>oracle/oci</code> provider covers the entire OCI API surface. Remote state can use OCI Object Storage via the S3-compatible backend.</p>
-<h3 id="provider-configuration">Provider configuration</h3>
+<h2 id="terraform-provider-oci">Terraform — Provider OCI</h2>
+<p>O provider <code>oracle/oci</code> cobre toda a superfície da API OCI. O estado remoto pode usar o OCI Object Storage via backend compatível com S3.</p>
+<h3 id="configuracao-do-provider">Configuração do provider</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># versions.tf</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">terraform</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="na">required_version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;= 1.7&quot;</span>
@@ -3364,20 +3364,20 @@
 <a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="c1">  # OCI_CLI_USER, OCI_CLI_FINGERPRINT, OCI_CLI_KEY_FILE, OCI_CLI_TENANCY, OCI_CLI_REGION</span>
 <a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="using-instance-principals-in-ci">Using Instance Principals in CI</h3>
-<p>For build pipelines running on OCI Compute instances (Resource Manager, or self-hosted CI on OCI), use Instance Principals — no API key file needed:</p>
+<h3 id="usando-instance-principals-em-ci">Usando Instance Principals em CI</h3>
+<p>Para pipelines de build executados em instâncias OCI Compute (Resource Manager, ou CI auto-hospedado na OCI), use Instance Principals — sem necessidade de arquivo de chave de API:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">provider</span><span class="w"> </span><span class="nv">&quot;oci&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="na">auth</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;InstancePrincipal&quot;</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="na">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">var.region</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="directory-layout">Directory layout</h3>
+<h3 id="estrutura-de-diretorios">Estrutura de diretórios</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>infrastructure/
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── modules/
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>│   ├── vcn/           # VCN, subnets, gateways
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│   ├── oke/           # OKE cluster + node pools
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│   ├── vault/         # Vault + keys + secrets
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>│   └── devops/        # OCI DevOps project + pipelines
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>│   ├── vcn/           # VCN, sub-redes, gateways
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│   ├── oke/           # Cluster OKE + grupos de nós
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>│   ├── vault/         # Vault + chaves + segredos
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>│   └── devops/        # Projeto OCI DevOps + pipelines
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>├── environments/
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│   ├── prod/
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>│   │   ├── main.tf
@@ -3386,32 +3386,32 @@
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>│   │   └── terraform.tfvars
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>│   └── staging/
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>└── bootstrap/
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    ├── main.tf        # tfstate bucket + IAM policies
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    ├── main.tf        # bucket de tfstate + políticas IAM
 <a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>    └── README.md
 </code></pre></div>
 <hr />
 <h2 id="resource-manager">Resource Manager</h2>
-<p>Resource Manager is OCI's managed Terraform service — it hosts Terraform configurations, runs plan/apply operations inside OCI without requiring external CI, and uses Instance Principals for authentication.</p>
-<h3 id="key-concepts">Key concepts</h3>
+<p>O Resource Manager é o serviço Terraform gerenciado da OCI — ele hospeda configurações Terraform, executa operações de plan/apply dentro da OCI sem exigir CI externo, e usa Instance Principals para autenticação.</p>
+<h3 id="conceitos-principais">Conceitos principais</h3>
 <table>
 <thead>
 <tr>
-<th>Concept</th>
-<th>Description</th>
+<th>Conceito</th>
+<th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Stack</strong></td>
-<td>A Resource Manager deployment unit — contains Terraform config + state</td>
+<td>Uma unidade de implantação do Resource Manager — contém configuração Terraform + estado</td>
 </tr>
 <tr>
 <td><strong>Job</strong></td>
-<td>A Terraform operation (plan, apply, destroy) executed on a stack</td>
+<td>Uma operação Terraform (plan, apply, destroy) executada em uma stack</td>
 </tr>
 <tr>
-<td><strong>Configuration source</strong></td>
-<td>Source of Terraform code: Object Storage, GitHub, GitLab, Bitbucket</td>
+<td><strong>Fonte de configuração</strong></td>
+<td>Fonte do código Terraform: Object Storage, GitHub, GitLab, Bitbucket</td>
 </tr>
 </tbody>
 </table>
@@ -3440,8 +3440,8 @@
 </code></pre></div>
 <hr />
 <h2 id="oci-devops">OCI DevOps</h2>
-<p>OCI DevOps is Oracle's managed CI/CD service. It provides <strong>Build Pipelines</strong> (CI) and <strong>Deployment Pipelines</strong> (CD) with native integration with OCI Container Registry, Artifact Registry and OKE.</p>
-<h3 id="build-pipeline">Build pipeline</h3>
+<p>O OCI DevOps é o serviço de CI/CD gerenciado da Oracle. Ele fornece <strong>Build Pipelines</strong> (CI) e <strong>Deployment Pipelines</strong> (CD) com integração nativa com OCI Container Registry, Artifact Registry e OKE.</p>
+<h3 id="pipeline-de-build">Pipeline de build</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># build_spec.yaml — OCI DevOps build spec</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">component</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
@@ -3501,7 +3501,7 @@
 <a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="deployment-pipeline-oke-bluegreen">Deployment pipeline — OKE blue/green</h3>
+<h3 id="pipeline-de-implantacao-oke-bluegreen">Pipeline de implantação — OKE blue/green</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;oci_devops_deploy_pipeline&quot;</span><span class="w"> </span><span class="nv">&quot;oke&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="na">project_id</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nv">oci_devops_project.main.id</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="na">display_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}-deploy-oke&quot;</span>
@@ -3541,7 +3541,7 @@
 </code></pre></div>
 <hr />
 <h2 id="oci-container-registry-ocir">OCI Container Registry (OCIR)</h2>
-<p>OCIR is OCI's managed container registry — a Docker v2-compatible registry available in every OCI region. Images are stored per-region under <code>&lt;region&gt;.ocir.io/&lt;namespace&gt;/&lt;repo&gt;:&lt;tag&gt;</code>.</p>
+<p>O OCIR é o registro de contêiner gerenciado da OCI — um registro compatível com Docker v2 disponível em todas as regiões OCI. As imagens são armazenadas por região em <code>&lt;region&gt;.ocir.io/&lt;namespace&gt;/&lt;repo&gt;:&lt;tag&gt;</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;oci_artifacts_container_repository&quot;</span><span class="w"> </span><span class="nv">&quot;api&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="na">compartment_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">var.compartment_id</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="na">display_name</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}/api&quot;</span>
@@ -3554,7 +3554,7 @@
 <a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="authenticate-docker-to-ocir">Authenticate Docker to OCIR</h3>
+<h3 id="autenticar-docker-no-ocir">Autenticar Docker no OCIR</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Using an Auth Token (user-level — for human use)</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>docker<span class="w"> </span>login<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span>--username<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">TENANCY_NAMESPACE</span><span class="si">}</span><span class="s2">/</span><span class="si">${</span><span class="nv">OCI_USERNAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
@@ -3564,8 +3564,8 @@
 <a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># Using Instance Principal (for OCI DevOps / Resource Manager)</span>
 <a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="c1"># No docker login required — OCI DevOps service handles registry auth automatically</span>
 </code></pre></div>
-<h3 id="oke-pull-from-ocir-instance-principals">OKE pull from OCIR (Instance Principals)</h3>
-<p>OKE nodes authenticated via Instance Principals can pull from OCIR in the same tenancy without an <code>imagePullSecret</code>. Set the policy:</p>
+<h3 id="oke-pull-do-ocir-instance-principals">OKE pull do OCIR (Instance Principals)</h3>
+<p>Nós OKE autenticados via Instance Principals podem fazer pull do OCIR no mesmo tenancy sem um <code>imagePullSecret</code>. Defina a política:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;oci_identity_policy&quot;</span><span class="w"> </span><span class="nv">&quot;oke_pull_ocir&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="na">compartment_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">var.tenancy_ocid</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="na">name</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;oke-pull-ocir&quot;</span>
@@ -3578,7 +3578,7 @@
 </code></pre></div>
 <hr />
 <h2 id="oci-artifact-registry">OCI Artifact Registry</h2>
-<p>OCI Artifact Registry stores generic artefacts — JAR files, Helm charts, Terraform modules, configuration bundles — separate from container images.</p>
+<p>O OCI Artifact Registry armazena artefatos genéricos — arquivos JAR, charts Helm, módulos Terraform, pacotes de configuração — separados das imagens de contêiner.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;oci_artifacts_repository&quot;</span><span class="w"> </span><span class="nv">&quot;helm&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="na">compartment_id</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nv">var.compartment_id</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="na">display_name</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}-helm-charts&quot;</span>
@@ -3587,7 +3587,7 @@
 <a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span><span class="na">description</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Helm chart repository for ${var.project} services&quot;</span>
 <a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="push-a-helm-chart">Push a Helm chart</h3>
+<h3 id="fazer-push-de-um-chart-helm">Fazer push de um chart Helm</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Push a Helm chart to OCI Artifact Registry</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>helm<span class="w"> </span>package<span class="w"> </span>./charts/api<span class="w"> </span>--version<span class="w"> </span><span class="m">1</span>.2.3
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
@@ -3598,7 +3598,7 @@
 <a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="o">}</span>
 </code></pre></div>
 <hr />
-<p><a class="md-button" href="../">← OCI Overview</a></p>
+<p><a class="md-button" href="../">← Visão Geral OCI</a></p>
 
 
 

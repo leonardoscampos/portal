@@ -1,13 +1,13 @@
 ---
 title: Container Security
-description: Pod Security Standards, OPA Gatekeeper, Kyverno, Trivy, Falco and runtime defense reference for Kubernetes.
+description: Pod Security Standards, OPA Gatekeeper, Kyverno, Trivy, Falco e referência de defesa em execução para Kubernetes.
 ---
 
 <div class="domain-page-hero" data-domain="containers">
   <div class="dph-left">
     <span class="dph-eyebrow">// containers-orchestration / container-security</span>
     <h1 class="dph-title">Container Security</h1>
-    <p class="dph-desc">Defense-in-depth for containerized workloads. Pod Security Standards enforce baseline hardening, OPA Gatekeeper and Kyverno provide policy-as-code admission control, Trivy scans for vulnerabilities, and Falco detects runtime threats in real time.</p>
+    <p class="dph-desc">Defesa em profundidade para cargas de trabalho conteinerizadas. Pod Security Standards aplicam hardening básico, OPA Gatekeeper e Kyverno fornecem controle de admissão por política como código, Trivy varre vulnerabilidades e Falco detecta ameaças em execução em tempo real.</p>
     <div class="dph-badges">
       <span class="tech-badge">Pod Security Standards</span>
       <span class="tech-badge">OPA Gatekeeper</span>
@@ -19,34 +19,34 @@ description: Pod Security Standards, OPA Gatekeeper, Kyverno, Trivy, Falco and r
   </div>
 </div>
 
-[← Operators](operators.md) | [← Containers Overview](index.md) | [Managed Kubernetes →](managed-kubernetes.md)
+[← Operadores](operators.md) | [← Visão Geral de Containers](index.md) | [Managed Kubernetes →](managed-kubernetes.md)
 
 ---
 
-## Security Layers
+## Camadas de Segurança
 
-| Layer | Tool / Mechanism |
-|-------|-----------------|
-| **Image build** | Trivy, Snyk, Docker Scout — scan before push |
-| **Registry** | Image signing (cosign), content trust, ECR/ACR scan-on-push |
-| **Admission** | OPA Gatekeeper, Kyverno — enforce policy before objects persist |
-| **Runtime enforcement** | Pod Security Standards, seccomp, AppArmor, capabilities |
-| **Runtime detection** | Falco — real-time syscall monitoring |
-| **Network** | NetworkPolicy, mTLS (Istio/Linkerd) |
+| Camada | Ferramenta / Mecanismo |
+|-------|------------------|
+| **Build da imagem** | Trivy, Snyk, Docker Scout — varredura antes do push |
+| **Registro** | Assinatura de imagem (cosign), confiança de conteúdo, scan-on-push do ECR/ACR |
+| **Admissão** | OPA Gatekeeper, Kyverno — aplica política antes de objetos serem persistidos |
+| **Aplicação em execução** | Pod Security Standards, seccomp, AppArmor, capabilities |
+| **Detecção em execução** | Falco — monitoramento de syscall em tempo real |
+| **Rede** | NetworkPolicy, mTLS (Istio/Linkerd) |
 | **Secrets** | External Secrets Operator, Sealed Secrets, Vault Agent |
-| **RBAC** | Least-privilege ServiceAccounts, audit logs |
+| **RBAC** | ServiceAccounts com privilégio mínimo, logs de auditoria |
 
 ---
 
 ## Pod Security Standards
 
-Three built-in policy levels applied via namespace labels:
+Três níveis de política integrados aplicados via labels de namespace:
 
-| Level | Restriction |
+| Nível | Restrição |
 |-------|-------------|
-| **privileged** | Unrestricted (for system namespaces only) |
-| **baseline** | Prevents known privilege escalation; allows most workloads |
-| **restricted** | Hardened — requires non-root, drops all capabilities, no hostPath |
+| **privileged** | Sem restrições (apenas para namespaces de sistema) |
+| **baseline** | Previne escalação de privilégios conhecida; permite a maioria das cargas de trabalho |
+| **restricted** | Enrijecido — requer não-root, descarta todas as capacidades, sem hostPath |
 
 ```bash
 # Enforce restricted policy on a namespace
@@ -89,7 +89,7 @@ helm install gatekeeper gatekeeper/gatekeeper \
   --set replicas=3
 ```
 
-### ConstraintTemplate (Rego policy)
+### ConstraintTemplate (política Rego)
 
 ```yaml
 apiVersion: templates.gatekeeper.sh/v1
@@ -140,7 +140,7 @@ spec:
     labels: [app, version, team]
 ```
 
-### Common Gatekeeper Policies
+### Políticas Comuns do Gatekeeper
 
 ```yaml
 # Require resource limits
@@ -208,7 +208,7 @@ helm install kyverno kyverno/kyverno \
   --set replicaCount=3
 ```
 
-### ClusterPolicy Examples
+### Exemplos de ClusterPolicy
 
 ```yaml
 # Require non-root and drop ALL capabilities
@@ -309,7 +309,7 @@ spec:
 
 ---
 
-## Trivy — Vulnerability Scanning
+## Trivy — Varredura de Vulnerabilidades
 
 ```bash
 # Scan a container image
@@ -356,7 +356,7 @@ trivy fs --scanners vuln,secret,misconfig .
 
 ---
 
-## Falco — Runtime Threat Detection
+## Falco — Detecção de Ameaças em Execução
 
 ```bash
 # Install via Helm (eBPF driver — recommended)
@@ -369,7 +369,7 @@ helm install falco falcosecurity/falco \
   --set falcosidekick.config.slack.webhookurl="https://hooks.slack.com/..."
 ```
 
-### Custom Falco Rules
+### Regras Customizadas do Falco
 
 ```yaml
 # /etc/falco/rules.d/custom.yaml
@@ -416,7 +416,7 @@ helm install falco falcosecurity/falco \
 
 ---
 
-## Seccomp Profiles
+## Perfis Seccomp
 
 ```yaml
 # Use the runtime default seccomp profile (recommended)
@@ -464,7 +464,7 @@ spec:
 
 ---
 
-## Image Signing with Cosign
+## Assinatura de Imagem com Cosign
 
 ```bash
 # Generate key pair
@@ -492,26 +492,26 @@ cosign verify-attestation \
 
 ---
 
-## Security Checklist
+## Checklist de Segurança
 
-| Check | Tool |
+| Verificação | Ferramenta |
 |-------|------|
-| Images have no HIGH/CRITICAL CVEs | Trivy |
-| No secrets in image layers | Trivy (secret scan) |
-| Images are signed | cosign |
-| SBOM attached and verified | syft + cosign |
-| Pods run as non-root | PSS restricted / Kyverno |
-| Read-only root filesystem | PSS restricted / Kyverno |
-| All capabilities dropped | PSS restricted / Kyverno |
-| No privileged containers | OPA Gatekeeper |
-| Resource limits set | OPA Gatekeeper / Kyverno |
-| Images from approved registries | Kyverno |
+| Imagens sem CVEs de severidade ALTA/CRÍTICA | Trivy |
+| Sem secrets nas camadas da imagem | Trivy (secret scan) |
+| Imagens assinadas | cosign |
+| SBOM anexado e verificado | syft + cosign |
+| Pods executam como não-root | PSS restricted / Kyverno |
+| Sistema de arquivos raiz somente leitura | PSS restricted / Kyverno |
+| Todas as capacidades descartadas | PSS restricted / Kyverno |
+| Sem containers privilegiados | OPA Gatekeeper |
+| Limites de recursos configurados | OPA Gatekeeper / Kyverno |
+| Imagens de registros aprovados | Kyverno |
 | Seccomp RuntimeDefault | PSS restricted |
-| NetworkPolicies in place | kubectl |
-| mTLS between services | Istio / Linkerd |
-| Runtime threats monitored | Falco |
-| RBAC least-privilege | kubectl auth can-i --list |
-| Secrets from external store | External Secrets Operator |
-| Audit logs enabled | K8s audit policy |
+| NetworkPolicies implementadas | kubectl |
+| mTLS entre serviços | Istio / Linkerd |
+| Ameaças em execução monitoradas | Falco |
+| RBAC com privilégio mínimo | kubectl auth can-i --list |
+| Secrets de armazenamento externo | External Secrets Operator |
+| Logs de auditoria habilitados | K8s audit policy |
 
-[← Operators](operators.md) | [← Containers Overview](index.md) | [Managed Kubernetes →](managed-kubernetes.md)
+[← Operadores](operators.md) | [← Visão Geral de Containers](index.md) | [Managed Kubernetes →](managed-kubernetes.md)

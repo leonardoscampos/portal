@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Helm chart structure, values, templating, Helmfile, OCI registries and chart testing reference.">
+        <meta name="description" content="Referência de estrutura de charts Helm, valores, templates, Helmfile, registries OCI e testes de charts.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#chart-structure" class="md-skip">
+        <a href="#estrutura-do-chart" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -2685,10 +2685,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#chart-structure" class="md-nav__link">
+  <a href="#estrutura-do-chart" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Chart Structure
+        Estrutura do Chart
       
     </span>
   </a>
@@ -2746,10 +2746,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-cli-commands" class="md-nav__link">
+  <a href="#comandos-cli-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core CLI Commands
+        Comandos CLI Principais
       
     </span>
   </a>
@@ -2757,10 +2757,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#oci-registry" class="md-nav__link">
+  <a href="#registry-oci" class="md-nav__link">
     <span class="md-ellipsis">
       
-        OCI Registry
+        Registry OCI
       
     </span>
   </a>
@@ -2779,10 +2779,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#helm-hooks" class="md-nav__link">
+  <a href="#hooks-do-helm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Helm Hooks
+        Hooks do Helm
       
     </span>
   </a>
@@ -2790,10 +2790,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#chart-testing-ct" class="md-nav__link">
+  <a href="#teste-de-charts-ct" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Chart Testing (ct)
+        Teste de Charts (ct)
       
     </span>
   </a>
@@ -3042,10 +3042,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#chart-structure" class="md-nav__link">
+  <a href="#estrutura-do-chart" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Chart Structure
+        Estrutura do Chart
       
     </span>
   </a>
@@ -3103,10 +3103,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-cli-commands" class="md-nav__link">
+  <a href="#comandos-cli-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core CLI Commands
+        Comandos CLI Principais
       
     </span>
   </a>
@@ -3114,10 +3114,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#oci-registry" class="md-nav__link">
+  <a href="#registry-oci" class="md-nav__link">
     <span class="md-ellipsis">
       
-        OCI Registry
+        Registry OCI
       
     </span>
   </a>
@@ -3136,10 +3136,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#helm-hooks" class="md-nav__link">
+  <a href="#hooks-do-helm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Helm Hooks
+        Hooks do Helm
       
     </span>
   </a>
@@ -3147,10 +3147,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#chart-testing-ct" class="md-nav__link">
+  <a href="#teste-de-charts-ct" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Chart Testing (ct)
+        Teste de Charts (ct)
       
     </span>
   </a>
@@ -3178,7 +3178,7 @@
   <div class="dph-left">
     <span class="dph-eyebrow">// infrastructure-as-code / helm</span>
     <h1 class="dph-title">Helm</h1>
-    <p class="dph-desc">The package manager for Kubernetes. Helm charts bundle Kubernetes manifests with configurable values, enabling repeatable deployments across environments. Helmfile manages multiple releases declaratively across clusters.</p>
+    <p class="dph-desc">O gerenciador de pacotes para Kubernetes. Os charts Helm agrupam manifestos Kubernetes com valores configuráveis, possibilitando implantações repetíveis entre ambientes. O Helmfile gerencia múltiplos releases de forma declarativa em diferentes clusters.</p>
     <div class="dph-badges">
       <span class="tech-badge">Charts</span>
       <span class="tech-badge">Values</span>
@@ -3190,9 +3190,9 @@
   </div>
 </div>
 
-<p><a href="../pulumi/">← Pulumi</a> | <a href="../">← IaC Overview</a> | <a href="../gitops/">GitOps →</a></p>
+<p><a href="../pulumi/">← Pulumi</a> | <a href="../">← Visão Geral de IaC</a> | <a href="../gitops/">GitOps →</a></p>
 <hr />
-<h2 id="chart-structure">Chart Structure</h2>
+<h2 id="estrutura-do-chart">Estrutura do Chart</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>my-app/
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── Chart.yaml            # chart metadata
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── values.yaml           # default values
@@ -3346,7 +3346,7 @@
 <a id="__codelineno-4-50" name="__codelineno-4-50" href="#__codelineno-4-50"></a><span class="w">            </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span>
 </code></pre></div>
 <hr />
-<h2 id="core-cli-commands">Core CLI Commands</h2>
+<h2 id="comandos-cli-principais">Comandos CLI Principais</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Add and update a chart repository</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>bitnami<span class="w"> </span>https://charts.bitnami.com/bitnami
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>helm<span class="w"> </span>repo<span class="w"> </span>update
@@ -3380,8 +3380,8 @@
 <a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a>helm<span class="w"> </span>uninstall<span class="w"> </span>my-app<span class="w"> </span>-n<span class="w"> </span>production
 </code></pre></div>
 <hr />
-<h2 id="oci-registry">OCI Registry</h2>
-<p>Helm 3.8+ supports storing and pulling charts from OCI-compliant registries (ECR, ACR, GAR, Docker Hub).</p>
+<h2 id="registry-oci">Registry OCI</h2>
+<p>Helm 3.8+ suporta armazenar e baixar charts de registries compatíveis com OCI (ECR, ACR, GAR, Docker Hub).</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Push to AWS ECR</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>aws<span class="w"> </span>ecr<span class="w"> </span>create-repository<span class="w"> </span>--repository-name<span class="w"> </span>helm-charts/my-app
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
@@ -3402,7 +3402,7 @@
 </code></pre></div>
 <hr />
 <h2 id="helmfile">Helmfile</h2>
-<p>Helmfile declares all Helm releases for an environment in a single YAML file, enabling <code>helmfile apply</code> as a single idempotent operation.</p>
+<p>O Helmfile declara todos os releases Helm de um ambiente em um único arquivo YAML, permitindo que <code>helmfile apply</code> seja uma operação idempotente.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># helmfile.yaml</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">repositories</span><span class="p">:</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bitnami</span>
@@ -3463,8 +3463,8 @@
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>helmfile<span class="w"> </span>--environment<span class="w"> </span>prod<span class="w"> </span>destroy
 </code></pre></div>
 <hr />
-<h2 id="helm-hooks">Helm Hooks</h2>
-<p>Hooks let you run Jobs at specific lifecycle points.</p>
+<h2 id="hooks-do-helm">Hooks do Helm</h2>
+<p>Hooks permitem executar Jobs em pontos específicos do ciclo de vida.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># templates/db-migrate-job.yaml</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">batch/v1</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Job</span>
@@ -3490,47 +3490,47 @@
 <thead>
 <tr>
 <th>Hook</th>
-<th>When it runs</th>
+<th>Quando é executado</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>pre-install</code></td>
-<td>Before any resources are created</td>
+<td>Antes de qualquer recurso ser criado</td>
 </tr>
 <tr>
 <td><code>post-install</code></td>
-<td>After all resources are installed</td>
+<td>Após todos os recursos serem instalados</td>
 </tr>
 <tr>
 <td><code>pre-upgrade</code></td>
-<td>Before an upgrade begins</td>
+<td>Antes de um upgrade começar</td>
 </tr>
 <tr>
 <td><code>post-upgrade</code></td>
-<td>After an upgrade succeeds</td>
+<td>Após um upgrade ser bem-sucedido</td>
 </tr>
 <tr>
 <td><code>pre-rollback</code></td>
-<td>Before a rollback begins</td>
+<td>Antes de um rollback começar</td>
 </tr>
 <tr>
 <td><code>post-rollback</code></td>
-<td>After a rollback succeeds</td>
+<td>Após um rollback ser bem-sucedido</td>
 </tr>
 <tr>
 <td><code>pre-delete</code></td>
-<td>Before a release is deleted</td>
+<td>Antes de um release ser excluído</td>
 </tr>
 <tr>
 <td><code>test</code></td>
-<td>When <code>helm test</code> is run</td>
+<td>Quando <code>helm test</code> é executado</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="chart-testing-ct">Chart Testing (ct)</h2>
-<p><code>chart-testing</code> is the official lint + test tool for Helm charts, designed for CI.</p>
+<h2 id="teste-de-charts-ct">Teste de Charts (ct)</h2>
+<p><code>chart-testing</code> é a ferramenta oficial de lint + teste para charts Helm, projetada para CI.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># .github/workflows/chart-test.yml</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nt">jobs</span><span class="p">:</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">chart-test</span><span class="p">:</span>

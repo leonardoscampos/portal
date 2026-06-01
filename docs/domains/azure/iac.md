@@ -1,13 +1,13 @@
 ---
 title: Azure IaC & DevOps
-description: Terraform, Bicep, Azure DevOps Pipelines, ACR, Flux v2 — IaC and GitOps on Azure.
+description: Terraform, Bicep, Azure DevOps Pipelines, ACR, Flux v2 — IaC e GitOps no Azure.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// azure / iac</span>
     <h1 class="dph-title">Azure IaC &amp; DevOps</h1>
-    <p class="dph-desc">Terraform with the AzureRM provider is the most common choice for Azure IaC. Bicep is the native ARM replacement with much cleaner syntax. Azure DevOps provides enterprise-grade pipelines with built-in service connection federation to Azure and Flux v2 closes the GitOps loop.</p>
+    <p class="dph-desc">Terraform com o provider AzureRM é a escolha mais comum para IaC no Azure. Bicep é o substituto nativo do ARM com sintaxe muito mais limpa. Azure DevOps fornece pipelines de nível enterprise com federação integrada de service connections para o Azure, e Flux v2 fecha o ciclo GitOps.</p>
     <div class="dph-badges">
       <span class="tech-badge">Terraform</span>
       <span class="tech-badge">Bicep</span>
@@ -21,11 +21,11 @@ description: Terraform, Bicep, Azure DevOps Pipelines, ACR, Flux v2 — IaC and 
 
 ---
 
-## Terraform — AzureRM Provider
+## Terraform — Provider AzureRM
 
-The `hashicorp/azurerm` provider is the de-facto standard for managing Azure resources. Always pin the provider version and use a remote backend in Azure Blob Storage.
+O provider `hashicorp/azurerm` é o padrão de facto para gerenciar recursos do Azure. Sempre fixe a versão do provider e use um backend remoto no Azure Blob Storage.
 
-### Remote backend setup
+### Configuração do backend remoto
 
 ```bash
 # Bootstrap the backend storage account
@@ -35,16 +35,8 @@ CONTAINER="tfstate"
 LOCATION="eastus"
 
 az group create --name $RESOURCE_GROUP --location $LOCATION
-az storage account create \
-  --name $STORAGE_ACCOUNT \
-  --resource-group $RESOURCE_GROUP \
-  --location $LOCATION \
-  --sku Standard_ZRS \
-  --min-tls-version TLS1_2 \
-  --allow-blob-public-access false
-az storage container create \
-  --name $CONTAINER \
-  --account-name $STORAGE_ACCOUNT
+az storage account create   --name $STORAGE_ACCOUNT   --resource-group $RESOURCE_GROUP   --location $LOCATION   --sku Standard_ZRS   --min-tls-version TLS1_2   --allow-blob-public-access false
+az storage container create   --name $CONTAINER   --account-name $STORAGE_ACCOUNT
 ```
 
 ```hcl
@@ -86,7 +78,7 @@ provider "azurerm" {
 }
 ```
 
-### OIDC federation — keyless CI authentication
+### Federação OIDC — autenticação sem segredos no CI
 
 ```hcl
 # Create a Service Principal with federated credentials for GitHub Actions
@@ -113,7 +105,7 @@ resource "azurerm_role_assignment" "terraform_ci_contributor" {
 }
 ```
 
-### Directory structure
+### Estrutura de diretórios
 
 ```
 infrastructure/
@@ -135,9 +127,9 @@ infrastructure/
 
 ---
 
-## Bicep — Native Azure IaC
+## Bicep — IaC Nativo do Azure
 
-Bicep is the first-class Azure IaC language. It compiles to ARM templates and has full parity with ARM — but with clean syntax, proper types and excellent VS Code tooling.
+Bicep é a linguagem IaC nativa de primeira classe do Azure. Compila para templates ARM e tem paridade total com o ARM — mas com sintaxe limpa, tipos adequados e excelente suporte no VS Code.
 
 ```bicep
 // aks.bicep
@@ -184,15 +176,15 @@ output clusterOidcIssuerUrl string = aks.properties.oidcIssuerProfile.issuerURL
 ```
 
 !!! tip "Bicep vs Terraform"
-    Use **Terraform** when you manage Azure + other clouds (multi-cloud environments). Use **Bicep** for Azure-only shops or when you need first-class support for every Azure preview feature on day 0 — Bicep tracks the ARM API faster than the Terraform AzureRM provider.
+    Use **Terraform** quando você gerencia Azure + outras nuvens (ambientes multinuvem). Use **Bicep** para ambientes exclusivamente Azure ou quando precisar de suporte de primeira classe para cada recurso de preview do Azure no dia 0 — Bicep acompanha a API ARM mais rapidamente do que o provider Terraform AzureRM.
 
 ---
 
 ## Azure DevOps Pipelines
 
-Azure DevOps (ADO) Pipelines is Microsoft's CI/CD service — deeply integrated with Azure Resource Manager via **Service Connections** (federated OIDC or managed identity).
+Azure DevOps (ADO) Pipelines é o serviço de CI/CD da Microsoft — profundamente integrado com o Azure Resource Manager via **Service Connections** (OIDC federado ou managed identity).
 
-### YAML pipeline — Terraform deploy
+### Pipeline YAML — deploy Terraform
 
 ```yaml
 # .azure-pipelines/terraform.yml
@@ -266,7 +258,7 @@ stages:
 
 ## Azure Container Registry (ACR)
 
-ACR is Azure's managed container registry. Integrates with AKS via a built-in `AcrPull` role assignment on the kubelet identity — no secrets required.
+ACR é o registro de contêineres gerenciado do Azure. Integra-se com AKS por meio de uma atribuição de função `AcrPull` integrada na identidade kubelet — sem necessidade de segredos.
 
 ```hcl
 resource "azurerm_container_registry" "main" {
@@ -296,7 +288,7 @@ resource "azurerm_role_assignment" "aks_acr_pull" {
 }
 ```
 
-### Image lifecycle policy
+### Política de ciclo de vida de imagens
 
 ```json
 {
@@ -325,9 +317,9 @@ resource "azurerm_role_assignment" "aks_acr_pull" {
 
 ---
 
-## Flux v2 — GitOps on AKS
+## Flux v2 — GitOps no AKS
 
-Flux v2 is the CNCF GitOps operator. The **Azure GitOps** add-on deploys and manages Flux on AKS clusters with Azure Monitor integration for reconciliation status.
+Flux v2 é o operador GitOps da CNCF. O complemento **Azure GitOps** implanta e gerencia o Flux em clusters AKS com integração ao Azure Monitor para monitoramento do status de reconciliação.
 
 ```hcl
 resource "azurerm_kubernetes_cluster_extension" "flux" {
@@ -375,4 +367,4 @@ resource "azurerm_kubernetes_flux_configuration" "apps" {
 
 ---
 
-[← Azure Overview](index.md){ .md-button }
+[← Visão Geral Azure](index.md){ .md-button }

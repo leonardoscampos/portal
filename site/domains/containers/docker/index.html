@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Dockerfile authoring, multi-stage builds, BuildKit, Docker Compose, image optimization and registry patterns.">
+        <meta name="description" content="Autoria de Dockerfile, builds multi-estágio, BuildKit, Docker Compose, otimização de imagem e padrões de registro.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dockerfile-best-practices" class="md-skip">
+        <a href="#boas-praticas-com-dockerfile" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -1734,10 +1734,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dockerfile-best-practices" class="md-nav__link">
+  <a href="#boas-praticas-com-dockerfile" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dockerfile Best Practices
+        Boas Práticas com Dockerfile
       
     </span>
   </a>
@@ -1745,10 +1745,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multi-stage-build-patterns" class="md-nav__link">
+  <a href="#padroes-de-build-multi-estagio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Multi-stage Build Patterns
+        Padrões de Build Multi-estágio
       
     </span>
   </a>
@@ -1756,10 +1756,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#buildkit-features" class="md-nav__link">
+  <a href="#recursos-do-buildkit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BuildKit Features
+        Recursos do BuildKit
       
     </span>
   </a>
@@ -1789,10 +1789,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#image-optimization" class="md-nav__link">
+  <a href="#otimizacao-de-imagem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Image Optimization
+        Otimização de Imagem
       
     </span>
   </a>
@@ -1800,10 +1800,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#registry-operations" class="md-nav__link">
+  <a href="#operacoes-de-registro" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Registry Operations
+        Operações de Registro
       
     </span>
   </a>
@@ -1811,10 +1811,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-networking" class="md-nav__link">
+  <a href="#redes-docker" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Docker Networking
+        Redes Docker
       
     </span>
   </a>
@@ -1822,10 +1822,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#security-hardening" class="md-nav__link">
+  <a href="#hardening-de-seguranca" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Security Hardening
+        Hardening de Segurança
       
     </span>
   </a>
@@ -1833,10 +1833,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-cli-cheatsheet" class="md-nav__link">
+  <a href="#cheatsheet-do-docker-cli" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Docker CLI Cheatsheet
+        Cheatsheet do Docker CLI
       
     </span>
   </a>
@@ -3036,10 +3036,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dockerfile-best-practices" class="md-nav__link">
+  <a href="#boas-praticas-com-dockerfile" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dockerfile Best Practices
+        Boas Práticas com Dockerfile
       
     </span>
   </a>
@@ -3047,10 +3047,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multi-stage-build-patterns" class="md-nav__link">
+  <a href="#padroes-de-build-multi-estagio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Multi-stage Build Patterns
+        Padrões de Build Multi-estágio
       
     </span>
   </a>
@@ -3058,10 +3058,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#buildkit-features" class="md-nav__link">
+  <a href="#recursos-do-buildkit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        BuildKit Features
+        Recursos do BuildKit
       
     </span>
   </a>
@@ -3091,10 +3091,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#image-optimization" class="md-nav__link">
+  <a href="#otimizacao-de-imagem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Image Optimization
+        Otimização de Imagem
       
     </span>
   </a>
@@ -3102,10 +3102,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#registry-operations" class="md-nav__link">
+  <a href="#operacoes-de-registro" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Registry Operations
+        Operações de Registro
       
     </span>
   </a>
@@ -3113,10 +3113,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-networking" class="md-nav__link">
+  <a href="#redes-docker" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Docker Networking
+        Redes Docker
       
     </span>
   </a>
@@ -3124,10 +3124,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#security-hardening" class="md-nav__link">
+  <a href="#hardening-de-seguranca" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Security Hardening
+        Hardening de Segurança
       
     </span>
   </a>
@@ -3135,10 +3135,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker-cli-cheatsheet" class="md-nav__link">
+  <a href="#cheatsheet-do-docker-cli" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Docker CLI Cheatsheet
+        Cheatsheet do Docker CLI
       
     </span>
   </a>
@@ -3166,21 +3166,21 @@
   <div class="dph-left">
     <span class="dph-eyebrow">// containers-orchestration / docker</span>
     <h1 class="dph-title">Docker</h1>
-    <p class="dph-desc">The standard for building and shipping containers. Lean, reproducible images with multi-stage builds and BuildKit, portable development environments with Compose, and a security-conscious approach to Dockerfile authoring and registry management.</p>
+    <p class="dph-desc">O padrão para construção e entrega de containers. Imagens enxutas e reproduzíveis com builds multi-estágio e BuildKit, ambientes de desenvolvimento portáteis com Compose e uma abordagem orientada à segurança para autoria de Dockerfile e gerenciamento de registro.</p>
     <div class="dph-badges">
       <span class="tech-badge">Dockerfile</span>
       <span class="tech-badge">Multi-stage</span>
       <span class="tech-badge">BuildKit</span>
       <span class="tech-badge">Compose</span>
       <span class="tech-badge">Registry</span>
-      <span class="tech-badge">Optimization</span>
+      <span class="tech-badge">Otimização</span>
     </div>
   </div>
 </div>
 
-<p><a href="../">← Containers Overview</a> | <a href="../kubernetes/">Kubernetes →</a></p>
+<p><a href="../">← Visão Geral de Containers</a> | <a href="../kubernetes/">Kubernetes →</a></p>
 <hr />
-<h2 id="dockerfile-best-practices">Dockerfile Best Practices</h2>
+<h2 id="boas-praticas-com-dockerfile">Boas Práticas com Dockerfile</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c"># syntax=docker/dockerfile:1</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c"># ─── Stage 1: Build ─────────────────────────────────</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">FROM</span><span class="w"> </span><span class="s">golang:1.22-alpine</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">builder</span>
@@ -3219,7 +3219,7 @@
 <a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/server&quot;</span><span class="p">]</span>
 </code></pre></div>
 <hr />
-<h2 id="multi-stage-build-patterns">Multi-stage Build Patterns</h2>
+<h2 id="padroes-de-build-multi-estagio">Padrões de Build Multi-estágio</h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Node.js</label><label for="__tabbed_1_2">Python</label><label for="__tabbed_1_3">Java (JVM)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3305,7 +3305,7 @@
 </div>
 </div>
 <hr />
-<h2 id="buildkit-features">BuildKit Features</h2>
+<h2 id="recursos-do-buildkit">Recursos do BuildKit</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Enable BuildKit (default in Docker 23+)</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">DOCKER_BUILDKIT</span><span class="o">=</span><span class="m">1</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
@@ -3444,54 +3444,54 @@
 <a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>docker<span class="w"> </span>compose<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>api<span class="w"> </span>python<span class="w"> </span>manage.py<span class="w"> </span>migrate<span class="w">  </span><span class="c1"># one-off command</span>
 </code></pre></div>
 <hr />
-<h2 id="image-optimization">Image Optimization</h2>
+<h2 id="otimizacao-de-imagem">Otimização de Imagem</h2>
 <table>
 <thead>
 <tr>
-<th>Technique</th>
-<th>Impact</th>
+<th>Técnica</th>
+<th>Impacto</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Multi-stage builds</strong></td>
-<td>Exclude build tools from runtime image</td>
+<td><strong>Builds multi-estágio</strong></td>
+<td>Exclui ferramentas de build da imagem de execução</td>
 </tr>
 <tr>
-<td><strong><code>scratch</code> / distroless base</strong></td>
-<td>Minimal attack surface and smallest size</td>
+<td><strong>Base <code>scratch</code> / distroless</strong></td>
+<td>Superfície de ataque mínima e menor tamanho</td>
 </tr>
 <tr>
-<td><strong>Alpine base</strong></td>
-<td>~5 MB — good balance of size and tooling</td>
+<td><strong>Base Alpine</strong></td>
+<td>~5 MB — bom equilíbrio entre tamanho e ferramental</td>
 </tr>
 <tr>
-<td><strong>Layer ordering</strong></td>
-<td>Copy dependency files before source code for cache efficiency</td>
+<td><strong>Ordenação de camadas</strong></td>
+<td>Copie arquivos de dependência antes do código-fonte para eficiência do cache</td>
 </tr>
 <tr>
 <td><strong><code>--no-install-recommends</code></strong></td>
-<td>Reduce apt-installed package bloat</td>
+<td>Reduz o inchaço de pacotes instalados pelo apt</td>
 </tr>
 <tr>
-<td><strong><code>RUN</code> command chaining</strong></td>
-<td>Combine related commands to reduce layer count</td>
+<td><strong>Encadeamento de comandos <code>RUN</code></strong></td>
+<td>Combine comandos relacionados para reduzir a contagem de camadas</td>
 </tr>
 <tr>
-<td><strong>BuildKit cache mounts</strong></td>
-<td>Skip re-downloading packages (<code>--mount=type=cache</code>)</td>
+<td><strong>Mounts de cache BuildKit</strong></td>
+<td>Evita o re-download de pacotes (<code>--mount=type=cache</code>)</td>
 </tr>
 <tr>
 <td><strong><code>.dockerignore</code></strong></td>
-<td>Keep build context small — exclude <code>node_modules</code>, <code>.git</code>, tests</td>
+<td>Mantém o contexto de build pequeno — exclua <code>node_modules</code>, <code>.git</code>, testes</td>
 </tr>
 <tr>
 <td><strong><code>-ldflags="-w -s"</code> (Go)</strong></td>
-<td>Strip debug info — reduces binary size ~30%</td>
+<td>Remove informações de debug — reduz o tamanho do binário ~30%</td>
 </tr>
 <tr>
 <td><strong><code>--slim</code> / Dive</strong></td>
-<td>Analyse layers with <code>dive</code> tool to find fat layers</td>
+<td>Analise camadas com a ferramenta <code>dive</code> para encontrar camadas pesadas</td>
 </tr>
 </tbody>
 </table>
@@ -3507,7 +3507,7 @@
 <a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>docker<span class="w"> </span><span class="nb">history</span><span class="w"> </span>--no-trunc<span class="w"> </span>my-app:latest
 </code></pre></div>
 <hr />
-<h2 id="registry-operations">Registry Operations</h2>
+<h2 id="operacoes-de-registro">Operações de Registro</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Tag and push</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>docker<span class="w"> </span>tag<span class="w"> </span>my-app:local<span class="w"> </span>ghcr.io/my-org/my-app:1.2.3
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>docker<span class="w"> </span>push<span class="w"> </span>ghcr.io/my-org/my-app:1.2.3
@@ -3530,7 +3530,7 @@
 <a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>cosign<span class="w"> </span>verify<span class="w"> </span>--key<span class="w"> </span>cosign.pub<span class="w"> </span>ghcr.io/my-org/my-app:1.2.3
 </code></pre></div>
 <hr />
-<h2 id="docker-networking">Docker Networking</h2>
+<h2 id="redes-docker">Redes Docker</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Create a custom bridge network</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>docker<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span>--driver<span class="w"> </span>bridge<span class="w"> </span>app-net
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
@@ -3546,7 +3546,7 @@
 <a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>docker<span class="w"> </span>run<span class="w"> </span>-p<span class="w"> </span><span class="m">127</span>.0.0.1:8080:80<span class="w">  </span><span class="c1"># bind to localhost only (security)</span>
 </code></pre></div>
 <hr />
-<h2 id="security-hardening">Security Hardening</h2>
+<h2 id="hardening-de-seguranca">Hardening de Segurança</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c"># Prefer distroless or scratch for production</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">FROM</span><span class="w"> </span><span class="s">gcr.io/distroless/static-debian12:nonroot</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">runtime</span>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
@@ -3576,7 +3576,7 @@
 <a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">  </span>docker/docker-bench-security
 </code></pre></div>
 <hr />
-<h2 id="docker-cli-cheatsheet">Docker CLI Cheatsheet</h2>
+<h2 id="cheatsheet-do-docker-cli">Cheatsheet do Docker CLI</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Build</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>app:tag<span class="w"> </span>-f<span class="w"> </span>Dockerfile.prod<span class="w"> </span>.
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>docker<span class="w"> </span>buildx<span class="w"> </span>build<span class="w"> </span>--platform<span class="w"> </span>linux/amd64,linux/arm64<span class="w"> </span>--push<span class="w"> </span>-t<span class="w"> </span>app:tag<span class="w"> </span>.
@@ -3607,7 +3607,7 @@
 <a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a>docker<span class="w"> </span>load<span class="w"> </span>&lt;<span class="w"> </span>app.tar.gz
 <a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a>docker<span class="w"> </span><span class="nb">export</span><span class="w"> </span>app<span class="w"> </span><span class="p">|</span><span class="w"> </span>gzip<span class="w"> </span>&gt;<span class="w"> </span>container.tar.gz<span class="w">     </span><span class="c1"># running container → tarball</span>
 </code></pre></div>
-<p><a href="../">← Containers Overview</a> | <a href="../kubernetes/">Kubernetes →</a></p>
+<p><a href="../">← Visão Geral de Containers</a> | <a href="../kubernetes/">Kubernetes →</a></p>
 
 
 

@@ -1,13 +1,13 @@
 ---
 title: AWS IaC & DevOps
-description: Terraform, CDK, CloudFormation, CodePipeline, CodeBuild, ECR — infrastructure automation on AWS.
+description: Terraform, CDK, CloudFormation, CodePipeline, CodeBuild, ECR — automação de infraestrutura na AWS.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// aws / iac</span>
     <h1 class="dph-title">IaC &amp; DevOps</h1>
-    <p class="dph-desc">Everything-as-code on AWS — from Terraform remote state in S3 to self-mutating CDK Pipelines, automated container builds and GitOps-driven deployments. No manual console clicks in production.</p>
+    <p class="dph-desc">Tudo-como-código na AWS — do estado remoto Terraform no S3 a CDK Pipelines auto-mutáveis, builds de contêineres automatizados e deploys orientados por GitOps. Sem cliques manuais no console em produção.</p>
     <div class="dph-badges">
       <span class="tech-badge">Terraform</span>
       <span class="tech-badge">CDK</span>
@@ -24,11 +24,11 @@ description: Terraform, CDK, CloudFormation, CodePipeline, CodeBuild, ECR — in
 
 ## Terraform — AWS Provider
 
-The **Terraform AWS Provider** is the primary IaC tool for AWS in most DevOps teams. It covers 1,000+ resource types, integrates with the Terraform Cloud/Enterprise ecosystem and enables multi-cloud portability.
+O **Terraform AWS Provider** é a principal ferramenta de IaC para AWS na maioria dos times DevOps. Abrange mais de 1.000 tipos de recursos, integra-se ao ecossistema Terraform Cloud/Enterprise e permite portabilidade multi-cloud.
 
-### Remote state backend
+### Backend de estado remoto
 
-Always use remote state. S3 + DynamoDB is the standard AWS backend — S3 stores the state file, DynamoDB provides distributed locking.
+Sempre use estado remoto. S3 + DynamoDB é o backend padrão AWS — o S3 armazena o arquivo de estado, o DynamoDB fornece bloqueio distribuído.
 
 ```hcl
 # backend.tf
@@ -65,10 +65,10 @@ provider "aws" {
 }
 ```
 
-### Bootstrap the backend (once per account/region)
+### Bootstrap do backend (uma vez por conta/região)
 
 ```bash
-# Create the state bucket with versioning + encryption
+# Criar o bucket de estado com versionamento + criptografia
 aws s3api create-bucket \
   --bucket my-project-tfstate \
   --region us-east-1
@@ -82,7 +82,7 @@ aws s3api put-bucket-encryption \
   --server-side-encryption-configuration \
     '{"Rules":[{"ApplyServerSideEncryptionByDefault":{"SSEAlgorithm":"aws:kms"}}]}'
 
-# Create the lock table
+# Criar a tabela de bloqueio
 aws dynamodb create-table \
   --table-name my-project-tfstate-lock \
   --billing-mode PAY_PER_REQUEST \
@@ -90,30 +90,30 @@ aws dynamodb create-table \
   --key-schema AttributeName=LockID,KeyType=HASH
 ```
 
-### Community modules
+### Módulos da comunidade
 
-The [`terraform-aws-modules`](https://github.com/terraform-aws-modules) organisation maintains high-quality, battle-tested modules for the most common resources.
+A organização [`terraform-aws-modules`](https://github.com/terraform-aws-modules) mantém módulos de alta qualidade e testados em produção para os recursos mais comuns.
 
-| Module | What it builds |
-|--------|---------------|
-| `terraform-aws-modules/vpc/aws` | VPC + subnets + NAT + endpoints |
-| `terraform-aws-modules/eks/aws` | EKS cluster + node groups + IRSA |
-| `terraform-aws-modules/rds/aws` | RDS instance / cluster + option groups |
-| `terraform-aws-modules/s3-bucket/aws` | S3 with encryption + lifecycle + logging |
-| `terraform-aws-modules/iam/aws` | IAM roles, policies, assumable roles |
+| Módulo | O que constrói |
+|--------|----------------|
+| `terraform-aws-modules/vpc/aws` | VPC + sub-redes + NAT + endpoints |
+| `terraform-aws-modules/eks/aws` | Cluster EKS + node groups + IRSA |
+| `terraform-aws-modules/rds/aws` | Instância / cluster RDS + option groups |
+| `terraform-aws-modules/s3-bucket/aws` | S3 com criptografia + lifecycle + logging |
+| `terraform-aws-modules/iam/aws` | Roles, políticas e assumable roles IAM |
 | `terraform-aws-modules/alb/aws` | ALB/NLB + listeners + target groups |
 
-!!! tip "Pin module versions"
-    Always pin to a specific module version (`version = "~> 20.0"` for EKS). Community modules can introduce breaking changes. Review the module's changelog before upgrading — EKS module major versions often require cluster re-creation.
+!!! tip "Fixe versões de módulos"
+    Sempre fixe em uma versão específica do módulo (`version = "~> 20.0"` para EKS). Módulos da comunidade podem introduzir breaking changes. Revise o changelog do módulo antes de atualizar — versões principais do módulo EKS frequentemente exigem recriação do cluster.
 
-### Workspace strategy
+### Estratégia de workspace
 
 ```
-├── modules/          # Reusable Terraform modules
+├── modules/          # Módulos Terraform reutilizáveis
 │   ├── eks-cluster/
 │   ├── rds-postgres/
 │   └── s3-backend/
-├── live/             # Per-env infrastructure (Terragrunt or plain TF)
+├── live/             # Infraestrutura por ambiente (Terragrunt ou Terraform puro)
 │   ├── prod/
 │   │   ├── us-east-1/
 │   │   │   ├── vpc/
@@ -129,15 +129,15 @@ The [`terraform-aws-modules`](https://github.com/terraform-aws-modules) organisa
 
 ## AWS CDK
 
-The AWS Cloud Development Kit (CDK) defines cloud infrastructure in code using familiar programming languages. CDK synthesizes to CloudFormation templates.
+O AWS Cloud Development Kit (CDK) define infraestrutura em nuvem como código usando linguagens de programação conhecidas. O CDK sintetiza para templates CloudFormation.
 
-### Construct levels
+### Níveis de constructs
 
-| Level | Description | Example |
-|-------|-------------|---------|
-| **L1** (Cfn*) | Direct CloudFormation resource mapping | `CfnBucket`, `CfnSecurityGroup` |
-| **L2** | Higher-level with sensible defaults | `s3.Bucket`, `ec2.Vpc`, `eks.Cluster` |
-| **L3** (Patterns) | Complete architectural patterns | `ecs_patterns.ApplicationLoadBalancedFargateService` |
+| Nível | Descrição | Exemplo |
+|-------|-----------|---------|
+| **L1** (Cfn*) | Mapeamento direto de recurso CloudFormation | `CfnBucket`, `CfnSecurityGroup` |
+| **L2** | Alto nível com padrões sensatos | `s3.Bucket`, `ec2.Vpc`, `eks.Cluster` |
+| **L3** (Patterns) | Padrões arquiteturais completos | `ecs_patterns.ApplicationLoadBalancedFargateService` |
 
 ```python
 from aws_cdk import (
@@ -158,7 +158,7 @@ class ApiStack(Stack):
             container_insights=True
         )
 
-        # L3 pattern: ALB + Fargate + auto-scaling in one construct
+        # Padrão L3: ALB + Fargate + auto-scaling em um único construct
         ecs_patterns.ApplicationLoadBalancedFargateService(self, "Api",
             cluster=cluster,
             cpu=512,
@@ -171,9 +171,9 @@ class ApiStack(Stack):
         )
 ```
 
-### CDK Pipelines (self-mutating)
+### CDK Pipelines (auto-mutável)
 
-CDK Pipelines is a construct library that builds a CI/CD pipeline which automatically updates itself when you push changes to the pipeline definition.
+O CDK Pipelines é uma biblioteca de constructs que cria um pipeline CI/CD que se atualiza automaticamente quando você envia alterações na definição do pipeline.
 
 ```python
 from aws_cdk.pipelines import CodePipeline, CodePipelineSource, ShellStep
@@ -197,36 +197,36 @@ pipeline.add_stage(MyAppStage(self, "Prod",
 
 ## CloudFormation
 
-CloudFormation is the native AWS IaC service. CDK synthesizes to CloudFormation; use it directly when you need native AWS integrations (StackSets, Service Catalog, Control Tower customisations).
+O CloudFormation é o serviço nativo de IaC da AWS. O CDK sintetiza para CloudFormation; use-o diretamente quando precisar de integrações nativas AWS (StackSets, Service Catalog, personalizações do Control Tower).
 
-### Key concepts
+### Conceitos principais
 
-| Concept | Description |
-|---------|-------------|
-| **Stack** | Unit of deployment; maps to a template |
-| **Nested Stack** | Child stack referenced from a parent; breaks the 500-resource limit |
-| **StackSet** | Deploy the same stack to multiple accounts/regions |
-| **Change Set** | Preview changes before executing |
-| **Drift Detection** | Detect manual configuration changes outside CloudFormation |
-| **Stack Policy** | Protect specific resources from update/deletion |
+| Conceito | Descrição |
+|----------|-----------|
+| **Stack** | Unidade de implantação; mapeia para um template |
+| **Nested Stack** | Stack filho referenciado por um pai; quebra o limite de 500 recursos |
+| **StackSet** | Implanta a mesma stack em múltiplas contas/regiões |
+| **Change Set** | Visualiza alterações antes de executar |
+| **Drift Detection** | Detecta alterações manuais de configuração fora do CloudFormation |
+| **Stack Policy** | Protege recursos específicos de atualização/exclusão |
 
-!!! warning "Resource limits"
-    A single CloudFormation stack is limited to 500 resources. For large EKS clusters with many Kubernetes resources, use nested stacks or migrate to CDK (which handles splitting automatically).
+!!! warning "Limites de recursos"
+    Uma única stack CloudFormation é limitada a 500 recursos. Para clusters EKS grandes com muitos recursos Kubernetes, use nested stacks ou migre para CDK (que gerencia a divisão automaticamente).
 
 ---
 
 ## CodePipeline + CodeBuild
 
-AWS-native CI/CD for teams that want a fully managed pipeline without operating Jenkins or GitLab runners.
+CI/CD nativo AWS para times que desejam um pipeline totalmente gerenciado sem operar Jenkins ou runners GitLab.
 
-### Pipeline structure
+### Estrutura do pipeline
 
 ```
 Source (GitHub/CodeCommit/S3)
   ↓
-Build (CodeBuild — lint, test, docker build, push to ECR)
+Build (CodeBuild — lint, test, docker build, push para ECR)
   ↓
-Approval (manual gate for production)
+Approval (gate manual para produção)
   ↓
 Deploy (CodeDeploy / ECS / EKS kubectl / CloudFormation)
 ```
@@ -251,7 +251,7 @@ phases:
 
   pre_build:
     commands:
-      - echo Logging in to Amazon ECR...
+      - echo Fazendo login no Amazon ECR...
       - aws ecr get-login-password | docker login --username AWS --password-stdin $ECR_REGISTRY
       - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c1-8)
 
@@ -279,19 +279,19 @@ cache:
 
 ## ECR — Elastic Container Registry
 
-ECR is the managed Docker/OCI registry for AWS. It integrates natively with ECS, EKS, Lambda (container images), CodeBuild and CodePipeline.
+O ECR é o registro Docker/OCI gerenciado para AWS. Integra-se nativamente com ECS, EKS, Lambda (imagens de contêiner), CodeBuild e CodePipeline.
 
-### Lifecycle policies
+### Políticas de ciclo de vida
 
-Always define lifecycle policies to prevent unbounded storage growth. A common pattern: keep the last 30 tagged images and expire all untagged images after 1 day.
+Sempre defina políticas de ciclo de vida para evitar crescimento ilimitado de armazenamento. Um padrão comum: manter as últimas 30 imagens tagueadas e expirar todas as imagens sem tag após 1 dia.
 
 ```hcl
 resource "aws_ecr_repository" "app" {
   name                 = "${var.project}/app"
-  image_tag_mutability = "IMMUTABLE"  # prevents overwriting existing tags
+  image_tag_mutability = "IMMUTABLE"  # impede sobrescrever tags existentes
 
   image_scanning_configuration {
-    scan_on_push = true  # Inspector v2 enhanced scanning
+    scan_on_push = true  # escaneamento aprimorado Inspector v2
   }
 
   encryption_configuration {
@@ -307,7 +307,7 @@ resource "aws_ecr_lifecycle_policy" "app" {
     rules = [
       {
         rulePriority = 1
-        description  = "Keep last 30 tagged releases"
+        description  = "Manter últimas 30 releases tagueadas"
         selection = {
           tagStatus     = "tagged"
           tagPrefixList = ["v", "release-"]
@@ -318,7 +318,7 @@ resource "aws_ecr_lifecycle_policy" "app" {
       },
       {
         rulePriority = 2
-        description  = "Expire untagged images after 1 day"
+        description  = "Expirar imagens sem tag após 1 dia"
         selection = {
           tagStatus   = "untagged"
           countType   = "sinceImagePushed"
@@ -334,7 +334,7 @@ resource "aws_ecr_lifecycle_policy" "app" {
 
 ### Pull-through cache
 
-ECR Pull-Through Cache transparently caches images from Docker Hub, ECR Public, Quay and GitHub Container Registry in your private ECR registry — reducing external bandwidth, improving reliability and enabling image scanning on cached images.
+O ECR Pull-Through Cache faz cache transparente de imagens do Docker Hub, ECR Public, Quay e GitHub Container Registry em seu registro ECR privado — reduzindo largura de banda externa, melhorando a confiabilidade e habilitando escaneamento de imagens em imagens em cache.
 
 ```hcl
 resource "aws_ecr_pull_through_cache_rule" "dockerhub" {
@@ -344,9 +344,9 @@ resource "aws_ecr_pull_through_cache_rule" "dockerhub" {
 }
 ```
 
-!!! tip "IMMUTABLE tags in production"
-    Set `image_tag_mutability = "IMMUTABLE"` on production ECR repositories. This prevents accidental overwrites of released image tags (`v1.2.3` should always mean the same image). Use content-addressable SHA digests (`@sha256:...`) in Kubernetes manifests for guaranteed reproducibility.
+!!! tip "Tags IMMUTABLE em produção"
+    Defina `image_tag_mutability = "IMMUTABLE"` nos repositórios ECR de produção. Isso impede sobrescritas acidentais de tags de imagem lançadas (`v1.2.3` deve sempre significar a mesma imagem). Use digests SHA endereçáveis por conteúdo (`@sha256:...`) em manifestos Kubernetes para reprodutibilidade garantida.
 
 ---
 
-[← AWS Overview](index.md){ .md-button }
+[← Visão Geral AWS](index.md){ .md-button }

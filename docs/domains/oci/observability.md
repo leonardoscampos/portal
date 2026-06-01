@@ -1,13 +1,13 @@
 ---
-title: OCI Observability
-description: OCI Monitoring, Logging, Logging Analytics, APM, Ops Insights — observability on Oracle Cloud.
+title: OCI Observabilidade
+description: OCI Monitoring, Logging, Logging Analytics, APM, Ops Insights — observabilidade na Oracle Cloud.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// oci / observability</span>
-    <h1 class="dph-title">OCI Observability</h1>
-    <p class="dph-desc">OCI Monitoring provides metrics with Prometheus-compatible remote_write. Logging captures resource and audit logs. Logging Analytics applies ML for pattern detection. APM ships distributed traces via OpenTelemetry. Ops Insights provides database and host performance intelligence.</p>
+    <h1 class="dph-title">OCI Observabilidade</h1>
+    <p class="dph-desc">O OCI Monitoring fornece métricas com remote_write compatível com Prometheus. O Logging captura logs de recursos e auditoria. O Logging Analytics aplica ML para detecção de padrões. O APM envia rastreamentos distribuídos via OpenTelemetry. O Ops Insights fornece inteligência de desempenho para bancos de dados e hosts.</p>
     <div class="dph-badges">
       <span class="tech-badge">OCI Monitoring</span>
       <span class="tech-badge">Logging</span>
@@ -22,9 +22,9 @@ description: OCI Monitoring, Logging, Logging Analytics, APM, Ops Insights — o
 
 ## OCI Monitoring
 
-OCI Monitoring provides time-series metrics for all OCI resources. Custom metrics can be ingested via the Metrics API or via **Prometheus remote_write** — making it easy to centralise metrics from OKE clusters in OCI Monitoring without running your own Prometheus infrastructure.
+O OCI Monitoring fornece métricas de série temporal para todos os recursos OCI. Métricas personalizadas podem ser ingeridas via API de Métricas ou via **Prometheus remote_write** — facilitando a centralização de métricas de clusters OKE no OCI Monitoring sem executar sua própria infraestrutura Prometheus.
 
-### Alarm
+### Alarme
 
 ```hcl
 resource "oci_monitoring_alarm" "oke_cpu" {
@@ -61,7 +61,7 @@ resource "oci_ons_subscription" "ops_email" {
 }
 ```
 
-### Prometheus remote_write to OCI Monitoring
+### Prometheus remote_write para o OCI Monitoring
 
 ```yaml
 # Prometheus or Prometheus Operator remote_write config
@@ -75,7 +75,7 @@ remoteWrite:
       max_samples_per_send: 500
 ```
 
-Or via OCI Managed Service for Prometheus (requires OKE with Instance Principals):
+Ou via OCI Managed Service for Prometheus (requer OKE com Instance Principals):
 
 ```yaml
 # kube-prometheus-stack values.yaml excerpt
@@ -91,14 +91,14 @@ prometheus:
 
 ## OCI Logging
 
-OCI Logging captures two categories of logs:
+O OCI Logging captura duas categorias de logs:
 
-| Category | Examples |
-|---------|---------|
-| **Service logs** | VCN flow logs, Load Balancer access logs, Object Storage access logs, API Gateway logs |
-| **Audit logs** | All API calls within the tenancy (included automatically) |
+| Categoria | Exemplos |
+|-----------|---------|
+| **Logs de serviço** | Logs de fluxo VCN, logs de acesso do Load Balancer, logs de acesso do Object Storage, logs do API Gateway |
+| **Logs de auditoria** | Todas as chamadas de API no tenancy (incluídas automaticamente) |
 
-OKE container logs (stdout/stderr) can be sent to OCI Logging via the **OCI Logging Agent** deployed as a DaemonSet.
+Os logs de contêiner OKE (stdout/stderr) podem ser enviados ao OCI Logging via **OCI Logging Agent** implantado como DaemonSet.
 
 ```hcl
 resource "oci_logging_log_group" "main" {
@@ -126,7 +126,7 @@ resource "oci_logging_log" "vcn_flow" {
 }
 ```
 
-### Log service connector (to Object Storage)
+### Conector de serviço de log (para Object Storage)
 
 ```hcl
 resource "oci_sch_service_connector" "logs_to_storage" {
@@ -156,7 +156,7 @@ resource "oci_sch_service_connector" "logs_to_storage" {
 
 ## Logging Analytics
 
-OCI Logging Analytics is a managed SIEM-like service that applies machine learning to log data — pattern recognition, anomaly detection, clustering and correlation across log sources.
+O OCI Logging Analytics é um serviço gerenciado semelhante a SIEM que aplica machine learning a dados de log — reconhecimento de padrões, detecção de anomalias, clustering e correlação entre fontes de log.
 
 ```hcl
 resource "oci_log_analytics_namespace" "main" {
@@ -166,21 +166,21 @@ resource "oci_log_analytics_namespace" "main" {
 }
 ```
 
-### Useful built-in parsers
+### Parsers integrados úteis
 
-| Log source | Parser |
-|-----------|--------|
-| OKE / Kubernetes | `Kubernetes` — parses JSON pod logs |
-| OCI Audit | `OCI Audit Log` — structured events |
-| VCN Flow Logs | `OCI VCN Flow Log` — parsed IP flows |
+| Fonte de log | Parser |
+|-------------|--------|
+| OKE / Kubernetes | `Kubernetes` — faz parse de logs JSON de pods |
+| OCI Audit | `OCI Audit Log` — eventos estruturados |
+| VCN Flow Logs | `OCI VCN Flow Log` — fluxos IP analisados |
 | Load Balancer | `OCI LBaaS Access Log` |
-| Oracle DB | Multiple Oracle DB parsers |
+| Oracle DB | Múltiplos parsers para Oracle DB |
 
 ---
 
 ## Application Performance Monitoring (APM)
 
-OCI APM provides distributed tracing, synthetic monitoring and session diagnostics. It accepts traces via the **OpenTelemetry OTLP protocol** — no proprietary SDK required.
+O OCI APM fornece rastreamento distribuído, monitoramento sintético e diagnóstico de sessões. Aceita rastreamentos via **protocolo OpenTelemetry OTLP** — sem necessidade de SDK proprietário.
 
 ```hcl
 resource "oci_apm_apm_domain" "main" {
@@ -194,7 +194,7 @@ output "apm_endpoint" {
 }
 ```
 
-### OpenTelemetry configuration for OCI APM
+### Configuração OpenTelemetry para OCI APM
 
 ```yaml
 # OpenTelemetry Collector config — export to OCI APM
@@ -219,7 +219,7 @@ service:
       exporters: [otlphttp/oci-apm]
 ```
 
-### Kubernetes OTEL collector sidecar
+### Sidecar OTEL collector para Kubernetes
 
 ```yaml
 containers:
@@ -243,14 +243,14 @@ containers:
 
 ## Ops Insights
 
-Ops Insights provides capacity planning, SQL analysis and resource utilisation trends for Compute instances and Autonomous/Oracle Databases.
+O Ops Insights fornece planejamento de capacidade, análise de SQL e tendências de utilização de recursos para instâncias de Computação e Bancos de Dados Autônomos/Oracle.
 
-| Feature | Description |
-|---------|-------------|
-| **Capacity Planning** | Forecast CPU, memory and storage growth using ML models |
-| **SQL Warehouse** | Cross-database SQL performance analysis |
-| **Exadata Insights** | Fleet-level Exadata performance monitoring |
-| **Host Insights** | OS-level metrics and top processes |
+| Recurso | Descrição |
+|---------|-----------|
+| **Planejamento de Capacidade** | Prevê crescimento de CPU, memória e armazenamento usando modelos de ML |
+| **SQL Warehouse** | Análise de desempenho SQL entre bancos de dados |
+| **Exadata Insights** | Monitoramento de desempenho Exadata em frota |
+| **Host Insights** | Métricas no nível do SO e principais processos |
 
 ```hcl
 resource "oci_opsi_operations_insights_warehouse" "main" {
@@ -270,7 +270,7 @@ resource "oci_opsi_host_insight" "app_server" {
 
 ---
 
-## Budget Alerts
+## Alertas de Orçamento
 
 ```hcl
 resource "oci_budget_budget" "production" {
@@ -304,5 +304,5 @@ resource "oci_budget_alert_rule" "critical" {
 
 ---
 
-[← OCI Overview](index.md){ .md-button }
+[← Visão Geral OCI](index.md){ .md-button }
 [IaC & DevOps →](iac.md){ .md-button .md-button--primary }

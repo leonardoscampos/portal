@@ -1,13 +1,13 @@
 ---
 title: Grafana
-description: Dashboards, data sources, alerting, provisioning as code, Grafana Agent, and the LGTM observability stack.
+description: Painéis, fontes de dados, alertas, provisionamento como código, Grafana Agent e a stack de observabilidade LGTM.
 ---
 
 <div class="domain-page-hero" data-domain="monitoring">
   <div class="dph-left">
-    <span class="dph-eyebrow">// monitoring-observability / grafana</span>
+    <span class="dph-eyebrow">// monitoramento-observabilidade / grafana</span>
     <h1 class="dph-title">Grafana</h1>
-    <p class="dph-desc">The industry-standard visualization and alerting platform. Grafana queries any data source — Prometheus, Loki, Tempo, Elasticsearch, cloud databases — and renders rich dashboards, unified alerts, and on-call schedules from a single pane of glass.</p>
+    <p class="dph-desc">A plataforma padrão do setor para visualização e alertas. O Grafana consulta qualquer fonte de dados — Prometheus, Loki, Tempo, Elasticsearch, bancos de dados em nuvem — e renderiza painéis ricos, alertas unificados e escalas de plantão a partir de um único painel de controle.</p>
     <div class="dph-badges">
       <span class="tech-badge">Dashboards</span>
       <span class="tech-badge">Data Sources</span>
@@ -19,11 +19,11 @@ description: Dashboards, data sources, alerting, provisioning as code, Grafana A
   </div>
 </div>
 
-[← Prometheus](prometheus.md) | [← Monitoring Overview](index.md) | [Loki →](loki.md)
+[← Prometheus](prometheus.md) | [← Visão Geral de Monitoramento](index.md) | [Loki →](loki.md)
 
 ---
 
-## Installation (Helm)
+## Instalação (Helm)
 
 ```bash
 helm repo add grafana https://grafana.github.io/helm-charts
@@ -81,10 +81,10 @@ resources:
 
 ---
 
-## Data Source Provisioning
+## Provisionamento de Fontes de Dados
 
 ```yaml
-# ConfigMap labelled grafana_datasource=1 — auto-loaded by sidecar
+# ConfigMap com rótulo grafana_datasource=1 — carregado automaticamente pelo sidecar
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -137,10 +137,10 @@ data:
 
 ---
 
-## Dashboard Provisioning as Code
+## Provisionamento de Painéis como Código
 
 ```yaml
-# ConfigMap labelled grafana_dashboard=1
+# ConfigMap com rótulo grafana_dashboard=1
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -182,16 +182,16 @@ data:
 ```
 
 !!! tip "Grafonnet"
-    Use [Grafonnet](https://grafana.github.io/grafonnet/index.html) (Jsonnet library) to generate dashboard JSON programmatically and store it in Git. This avoids JSON drift and enables dashboard code review.
+    Use o [Grafonnet](https://grafana.github.io/grafonnet/index.html) (biblioteca Jsonnet) para gerar o JSON do painel de forma programática e armazená-lo no Git. Isso evita a deriva do JSON e habilita revisão de código dos painéis.
 
 ---
 
-## Grafana Alerting
+## Alertas no Grafana
 
-### Alert Rule (UI-equivalent YAML)
+### Regra de Alerta (YAML equivalente à UI)
 
 ```yaml
-# Grafana alert rules are stored in its DB, but can be provisioned via ConfigMap
+# Regras de alerta do Grafana ficam no banco de dados, mas podem ser provisionadas via ConfigMap
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -233,10 +233,10 @@ data:
               runbook_url: "https://wiki.internal/runbooks/high-error-rate"
 ```
 
-### Contact Points & Notification Policies
+### Pontos de Contato e Políticas de Notificação
 
 ```yaml
-# Provisioned contact points
+# Pontos de contato provisionados
 apiVersion: 1
 contactPoints:
   - orgId: 1
@@ -282,19 +282,19 @@ policies:
 
 ---
 
-## Grafana Alloy (Unified Agent)
+## Grafana Alloy (Agente Unificado)
 
-Grafana Alloy replaces the older Grafana Agent with a River-based configuration pipeline. It collects metrics, logs, and traces.
+O Grafana Alloy substitui o antigo Grafana Agent com um pipeline de configuração baseado em River. Ele coleta métricas, logs e traces.
 
 ```hcl
 // alloy-config.alloy
 
-// Discover Kubernetes pods
+// Descobrir pods Kubernetes
 discovery.kubernetes "pods" {
   role = "pod"
 }
 
-// Scrape metrics from annotated pods
+// Coletar métricas de pods com anotações
 prometheus.scrape "pods" {
   targets    = discovery.kubernetes.pods.targets
   forward_to = [prometheus.remote_write.mimir.receiver]
@@ -312,7 +312,7 @@ prometheus.scrape "pods" {
   }
 }
 
-// Ship metrics to Mimir / Grafana Cloud
+// Enviar métricas para Mimir / Grafana Cloud
 prometheus.remote_write "mimir" {
   endpoint {
     url = "https://mimir.internal/api/v1/push"
@@ -323,7 +323,7 @@ prometheus.remote_write "mimir" {
   }
 }
 
-// Collect logs from pods
+// Coletar logs dos pods
 loki.source.kubernetes "pods" {
   targets    = discovery.kubernetes.pods.targets
   forward_to = [loki.write.default.receiver]
@@ -335,7 +335,7 @@ loki.write "default" {
   }
 }
 
-// OTLP traces → Tempo
+// Traces OTLP → Tempo
 otelcol.receiver.otlp "default" {
   grpc { endpoint = "0.0.0.0:4317" }
   http { endpoint = "0.0.0.0:4318" }
@@ -352,7 +352,7 @@ otelcol.exporter.otlphttp "tempo" {
 ```
 
 ```bash
-# Install Alloy via Helm
+# Instalar Alloy via Helm
 helm upgrade --install alloy grafana/alloy \
   --namespace monitoring \
   --set controller.type=daemonset \
@@ -362,19 +362,19 @@ helm upgrade --install alloy grafana/alloy \
 
 ---
 
-## LGTM Stack Overview
+## Visão Geral da Stack LGTM
 
-| Component | Role | Helm chart |
+| Componente | Papel | Helm chart |
 |-----------|------|-----------|
-| **Loki** | Log aggregation + LogQL | `grafana/loki` |
-| **Grafana** | Visualization + alerting | `grafana/grafana` |
-| **Tempo** | Distributed tracing (OTLP) | `grafana/tempo` |
-| **Mimir** | Long-term Prometheus metrics (object store) | `grafana/mimir-distributed` |
-| **Alloy** | Unified collector (metrics + logs + traces) | `grafana/alloy` |
-| **OnCall** | On-call scheduling + escalation (OSS) | `grafana/oncall` |
+| **Loki** | Agregação de logs + LogQL | `grafana/loki` |
+| **Grafana** | Visualização + alertas | `grafana/grafana` |
+| **Tempo** | Rastreamento distribuído (OTLP) | `grafana/tempo` |
+| **Mimir** | Métricas Prometheus de longo prazo (object store) | `grafana/mimir-distributed` |
+| **Alloy** | Coletor unificado (métricas + logs + traces) | `grafana/alloy` |
+| **OnCall** | Agendamento de plantão + escalação (OSS) | `grafana/oncall` |
 
 ```bash
-# All-in-one: Grafana Cloud k8s monitoring
+# Tudo-em-um: monitoramento k8s Grafana Cloud
 helm upgrade --install k8s-monitoring grafana/k8s-monitoring \
   --namespace monitoring \
   --set cluster.name=prod \
@@ -385,11 +385,11 @@ helm upgrade --install k8s-monitoring grafana/k8s-monitoring \
 
 ---
 
-## Useful Dashboard IDs (Grafana.com)
+## IDs de Painéis Úteis (Grafana.com)
 
-| Dashboard | ID |
+| Painel | ID |
 |-----------|----|
-| Kubernetes cluster overview | 315 |
+| Visão geral do cluster Kubernetes | 315 |
 | Node Exporter Full | 1860 |
 | Kubernetes / Namespace (Pods) | 6417 |
 | Loki & Promtail | 10880 |
@@ -399,11 +399,11 @@ helm upgrade --install k8s-monitoring grafana/k8s-monitoring \
 | Postgres Exporter | 9628 |
 
 ```bash
-# Import via Grafana API
+# Importar via API do Grafana
 curl -X POST https://grafana.internal/api/dashboards/import \
   -H "Content-Type: application/json" \
   -u admin:${GRAFANA_PASSWORD} \
   -d '{"dashboard":{"id":null},"folderId":0,"overwrite":true,"inputs":[],"pluginId":"","path":"","id":1860}'
 ```
 
-[← Prometheus](prometheus.md) | [← Monitoring Overview](index.md) | [Loki →](loki.md)
+[← Prometheus](prometheus.md) | [← Visão Geral de Monitoramento](index.md) | [Loki →](loki.md)

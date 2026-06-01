@@ -1,13 +1,13 @@
 ---
 title: CircleCI
-description: CircleCI orbs, workflows, caching, resource classes, Docker layer caching, contexts and parallelism reference.
+description: Referência de orbs, workflows, cache, classes de recurso, Docker Layer Caching, contextos e paralelismo do CircleCI.
 ---
 
 <div class="domain-page-hero" data-domain="cicd">
   <div class="dph-left">
     <span class="dph-eyebrow">// cicd-pipelines / circle-ci</span>
     <h1 class="dph-title">CircleCI</h1>
-    <p class="dph-desc">Fast, cloud-native CI/CD optimized for developer velocity. Orbs for instant integrations, intelligent test splitting for parallelism, Docker Layer Caching for faster builds, and Contexts for secure, org-wide secret management across pipelines.</p>
+    <p class="dph-desc">CI/CD rápido e nativo em nuvem, otimizado para a velocidade do desenvolvedor. Orbs para integrações instantâneas, divisão inteligente de testes para paralelismo, Docker Layer Caching para builds mais rápidos e Contextos para gerenciamento seguro de secrets em toda a organização.</p>
     <div class="dph-badges">
       <span class="tech-badge">Orbs</span>
       <span class="tech-badge">Workflows</span>
@@ -23,7 +23,7 @@ description: CircleCI orbs, workflows, caching, resource classes, Docker layer c
 
 ---
 
-## Config Anatomy
+## Anatomia da Configuração
 
 ```yaml
 # .circleci/config.yml
@@ -75,7 +75,7 @@ jobs:
   build-push-image:
     machine:
       image: ubuntu-2204:current
-      docker_layer_caching: true      # DLC — reuses Docker layer cache
+      docker_layer_caching: true      # DLC — reutiliza o cache de camadas Docker
     steps:
       - checkout
       - aws-ecr/build-and-push-image:
@@ -122,7 +122,7 @@ workflows:
 
       - build-push-image:
           context:
-            - aws-production            # org-level context with AWS credentials
+            - aws-production            # contexto organizacional com credenciais AWS
           requires:
             - build-and-test
           filters:
@@ -137,7 +137,7 @@ workflows:
               only: main
 
       - hold-production:
-          type: approval              # manual gate
+          type: approval              # gate manual
           requires:
             - deploy-staging
 
@@ -153,24 +153,24 @@ workflows:
 
 ---
 
-## Core Concepts
+## Conceitos Principais
 
-| Concept | Description |
+| Conceito | Descrição |
 |---------|-------------|
-| **Job** | Named set of steps running in an executor |
-| **Step** | A `run` command, built-in step, or orb command |
-| **Executor** | Runtime environment: Docker, machine, macOS, Windows |
-| **Workflow** | DAG of jobs — defines ordering, conditions, approvals |
-| **Orb** | Reusable package of jobs, commands and executors (like an action) |
-| **Context** | Org-level or project-level secret store applied to jobs |
-| **Cache** | Dependency cache persisted across pipeline runs |
-| **Workspace** | Ephemeral data passing between jobs in the same workflow |
-| **Resource class** | CPU/RAM tier for the executor |
-| **DLC** | Docker Layer Caching — speeds up `docker build` across runs |
+| **Job** | Conjunto nomeado de passos executados em um executor |
+| **Passo** | Um comando `run`, passo integrado ou comando de orb |
+| **Executor** | Ambiente de execução: Docker, machine, macOS, Windows |
+| **Workflow** | DAG de jobs — define ordenação, condições e aprovações |
+| **Orb** | Pacote reutilizável de jobs, comandos e executores (semelhante a uma action) |
+| **Contexto** | Armazenamento de secrets no nível da organização ou do projeto, aplicado a jobs |
+| **Cache** | Cache de dependências persistido entre execuções do pipeline |
+| **Workspace** | Dados efêmeros transferidos entre jobs no mesmo workflow |
+| **Classe de recurso** | Nível de CPU/RAM do executor |
+| **DLC** | Docker Layer Caching — acelera `docker build` entre execuções |
 
 ---
 
-## Executors & Resource Classes
+## Executores e Classes de Recurso
 
 === "Docker"
 
@@ -178,14 +178,14 @@ workflows:
     executors:
       small-node:
         docker:
-          - image: cimg/node:20.13   # CircleCI convenience image
-          - image: postgres:16       # service container
+          - image: cimg/node:20.13   # imagem de conveniência do CircleCI
+          - image: postgres:16       # container de serviço
             environment:
               POSTGRES_PASSWORD: test
         resource_class: small        # 1 vCPU, 2 GB RAM
     ```
 
-=== "Machine (Linux VM)"
+=== "Machine (VM Linux)"
 
     ```yaml
     jobs:
@@ -209,16 +209,16 @@ workflows:
           - run: xcodebuild test -scheme MyApp
     ```
 
-=== "Resource Class Reference"
+=== "Referência de Classes de Recurso"
 
-    | Class | vCPU | RAM | Notes |
+    | Classe | vCPU | RAM | Observações |
     |-------|------|-----|-------|
-    | `small` | 1 | 2 GB | Light tasks |
-    | `medium` | 2 | 4 GB | Default |
+    | `small` | 1 | 2 GB | Tarefas leves |
+    | `medium` | 2 | 4 GB | Padrão |
     | `medium+` | 3 | 6 GB | |
     | `large` | 4 | 8 GB | |
     | `xlarge` | 8 | 16 GB | |
-    | `2xlarge` | 16 | 32 GB | Heavy builds |
+    | `2xlarge` | 16 | 32 GB | Builds pesados |
     | `2xlarge+` | 20 | 40 GB | |
 
 ---
@@ -258,7 +258,7 @@ workflows:
 
 ---
 
-## Caching
+## Cache
 
 ```yaml
 jobs:
@@ -266,15 +266,15 @@ jobs:
     steps:
       - checkout
 
-      # Restore cache before installing dependencies
+      # Restaurar cache antes de instalar dependências
       - restore_cache:
           keys:
-            - v2-npm-{{ checksum "package-lock.json" }}  # exact match
-            - v2-npm-                                     # fallback: most recent
+            - v2-npm-{{ checksum "package-lock.json" }}  # correspondência exata
+            - v2-npm-                                     # fallback: o mais recente
 
       - run: npm ci
 
-      # Save after install (only when cache miss)
+      # Salvar após a instalação (apenas em caso de cache miss)
       - save_cache:
           key: v2-npm-{{ checksum "package-lock.json" }}
           paths:
@@ -284,18 +284,18 @@ jobs:
       - run: npm run build
 ```
 
-!!! tip "Cache key templates"
-    | Template | Resolves to |
+!!! tip "Templates de chave de cache"
+    | Template | Resolve para |
     |----------|------------|
-    | `{{ checksum "file" }}` | MD5 of file contents |
-    | `{{ epoch }}` | Unix timestamp (always unique) |
-    | `{{ arch }}` | CPU architecture |
-    | `{{ .Branch }}` | Current branch name |
-    | `{{ .Revision }}` | Full git SHA |
+    | `{{ checksum "file" }}` | MD5 do conteúdo do arquivo |
+    | `{{ epoch }}` | Timestamp Unix (sempre único) |
+    | `{{ arch }}` | Arquitetura da CPU |
+    | `{{ .Branch }}` | Nome da branch atual |
+    | `{{ .Revision }}` | SHA completo do git |
 
 ---
 
-## Workspaces (between jobs)
+## Workspaces (entre Jobs)
 
 ```yaml
 jobs:
@@ -333,12 +333,12 @@ workflows:
 
 ---
 
-## Parallelism & Test Splitting
+## Paralelismo e Divisão de Testes
 
 ```yaml
 jobs:
   test:
-    parallelism: 4                  # spin up 4 containers
+    parallelism: 4                  # inicializa 4 containers
     docker:
       - image: cimg/ruby:3.3
     steps:
@@ -351,7 +351,7 @@ jobs:
           paths: [vendor/bundle]
 
       - run:
-          name: Split and run tests
+          name: Dividir e executar testes
           command: |
             circleci tests glob "spec/**/*_spec.rb" | \
             circleci tests run \
@@ -365,40 +365,40 @@ jobs:
 
 ---
 
-## Contexts & Secrets
+## Contextos e Secrets
 
 ```yaml
-# Context applied to specific jobs
+# Contexto aplicado a jobs específicos
 workflows:
   deploy:
     jobs:
       - deploy:
           context:
-            - aws-production      # org-level context
-            - slack-notifications  # can combine multiple
+            - aws-production      # contexto organizacional
+            - slack-notifications  # é possível combinar múltiplos
 
       - deploy-eu:
           context: aws-production-eu
 ```
 
-**Create contexts:** *Organization Settings → Contexts → Create Context*
+**Criar contextos:** *Organization Settings → Contexts → Create Context*
 
-Restrict context access by security group. Members must be in the group to trigger jobs using that context.
+Restrinja o acesso ao contexto por grupo de segurança. Os membros precisam estar no grupo para acionar jobs que usam aquele contexto.
 
 ```yaml
-# Project-level environment variables (less preferred)
-# Set in: Project Settings → Environment Variables
+# Variáveis de ambiente no nível do projeto (menos recomendado)
+# Configurar em: Project Settings → Environment Variables
 jobs:
   deploy:
     steps:
       - run:
           command: aws s3 sync ./dist s3://$BUCKET_NAME
-          # $BUCKET_NAME comes from project env vars
+          # $BUCKET_NAME vem das variáveis de ambiente do projeto
 ```
 
 ---
 
-## Matrix Jobs
+## Jobs em Matriz
 
 ```yaml
 jobs:
@@ -429,10 +429,10 @@ workflows:
 
 ---
 
-## Dynamic Config
+## Configuração Dinâmica
 
 ```yaml
-# .circleci/config.yml — setup phase (runs first)
+# .circleci/config.yml — fase de setup (executada primeiro)
 version: 2.1
 setup: true
 
@@ -452,7 +452,7 @@ workflows:
 ```
 
 ```yaml
-# .circleci/continue-config.yml — continuation pipeline
+# .circleci/continue-config.yml — pipeline de continuação
 version: 2.1
 parameters:
   run-api-tests:
@@ -471,7 +471,7 @@ workflows:
               only: /.*/
           pre-steps:
             - run:
-                name: Skip if not triggered
+                name: Ignorar se não acionado
                 command: |
                   if [ "<< pipeline.parameters.run-api-tests >>" = "false" ]; then
                     circleci-agent step halt
@@ -480,19 +480,19 @@ workflows:
 
 ---
 
-## Best Practices
+## Boas Práticas
 
-| Practice | Implementation |
+| Prática | Implementação |
 |----------|---------------|
-| **Use Orbs** | Orbs save boilerplate; check Orb Registry before writing custom steps |
-| **DLC on machine executor** | `docker_layer_caching: true` dramatically speeds up image builds |
-| **Contexts over project env vars** | Org-level contexts are easier to audit and revoke |
-| **Parallelism + test splitting** | Reduce test time linearly: 4x parallelism → ~4x faster |
-| **Workspace for artifacts** | `persist_to_workspace` / `attach_workspace` pass build outputs cleanly |
-| **Cache versioning** | Prefix keys with `v1-`, `v2-`... to force invalidation after structural changes |
-| **Resource class right-sizing** | Start with `medium`; profile and downgrade where jobs idle |
-| **Approval jobs for production** | `type: approval` creates manual gates before sensitive deployments |
-| **Dynamic config for monorepos** | Path filtering with `setup: true` skips unaffected services |
-| **`store_test_results`** | Enables Insights timing-based test splitting and failure tracking |
+| **Use Orbs** | Orbs eliminam boilerplate; consulte o Orb Registry antes de criar passos customizados |
+| **DLC no executor machine** | `docker_layer_caching: true` acelera significativamente os builds de imagem |
+| **Contextos em vez de variáveis de projeto** | Contextos organizacionais são mais fáceis de auditar e revogar |
+| **Paralelismo + divisão de testes** | Reduza o tempo de teste linearmente: 4x paralelismo → ~4x mais rápido |
+| **Workspace para artefatos** | `persist_to_workspace` / `attach_workspace` transferem saídas de build de forma limpa |
+| **Versionamento de cache** | Prefixe chaves com `v1-`, `v2-`... para forçar a invalidação após mudanças estruturais |
+| **Dimensionamento da classe de recurso** | Comece com `medium`; faça profiling e reduza onde jobs ficam ociosos |
+| **Jobs de aprovação para produção** | `type: approval` cria gates manuais antes de implantações sensíveis |
+| **Configuração dinâmica para monorepos** | Filtragem por caminho com `setup: true` ignora serviços não afetados |
+| **`store_test_results`** | Habilita a divisão de testes baseada em tempo pelo Insights e rastreamento de falhas |
 
 [← Azure DevOps](azure-devops.md) | [← CI/CD Overview](index.md)

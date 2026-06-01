@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Vendor-neutral instrumentation with OpenTelemetry SDK, Collector pipelines, traces, metrics, and logs.">
+        <meta name="description" content="Instrumentação vendor-neutral com OpenTelemetry SDK, pipelines do Coletor, traces, métricas e logs.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#signal-overview" class="md-skip">
+        <a href="#visao-geral-dos-sinais" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -2073,10 +2073,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#signal-overview" class="md-nav__link">
+  <a href="#visao-geral-dos-sinais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Signal Overview
+        Visão Geral dos Sinais
       
     </span>
   </a>
@@ -2084,10 +2084,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#collector-architecture" class="md-nav__link">
+  <a href="#arquitetura-do-coletor" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Collector Architecture
+        Arquitetura do Coletor
       
     </span>
   </a>
@@ -2095,10 +2095,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#collector-deployment-helm" class="md-nav__link">
+  <a href="#deploy-do-coletor-helm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Collector Deployment (Helm)
+        Deploy do Coletor (Helm)
       
     </span>
   </a>
@@ -2106,10 +2106,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sdk-instrumentation" class="md-nav__link">
+  <a href="#instrumentacao-do-sdk" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SDK Instrumentation
+        Instrumentação do SDK
       
     </span>
   </a>
@@ -2117,10 +2117,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#metrics-with-otel-sdk" class="md-nav__link">
+  <a href="#metricas-com-o-sdk-otel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Metrics with OTel SDK
+        Métricas com o SDK OTel
       
     </span>
   </a>
@@ -2128,10 +2128,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kubernetes-operator-otel-collector-crd" class="md-nav__link">
+  <a href="#kubernetes-operator-crd-do-coletor-otel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Kubernetes Operator — OTel Collector CRD
+        Kubernetes Operator — CRD do Coletor OTel
       
     </span>
   </a>
@@ -2139,22 +2139,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#context-propagation" class="md-nav__link">
+  <a href="#propagacao-de-contexto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Context Propagation
+        Propagação de Contexto
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Context Propagation">
+    <nav class="md-nav" aria-label="Propagação de Contexto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#propagation-formats" class="md-nav__link">
+  <a href="#formatos-de-propagacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Propagation Formats
+        Formatos de Propagação
       
     </span>
   </a>
@@ -2167,10 +2167,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#semantic-conventions-key-attributes" class="md-nav__link">
+  <a href="#convencoes-semanticas-atributos-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Semantic Conventions (Key Attributes)
+        Convenções Semânticas (Atributos Principais)
       
     </span>
   </a>
@@ -3031,10 +3031,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#signal-overview" class="md-nav__link">
+  <a href="#visao-geral-dos-sinais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Signal Overview
+        Visão Geral dos Sinais
       
     </span>
   </a>
@@ -3042,10 +3042,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#collector-architecture" class="md-nav__link">
+  <a href="#arquitetura-do-coletor" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Collector Architecture
+        Arquitetura do Coletor
       
     </span>
   </a>
@@ -3053,10 +3053,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#collector-deployment-helm" class="md-nav__link">
+  <a href="#deploy-do-coletor-helm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Collector Deployment (Helm)
+        Deploy do Coletor (Helm)
       
     </span>
   </a>
@@ -3064,10 +3064,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#sdk-instrumentation" class="md-nav__link">
+  <a href="#instrumentacao-do-sdk" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SDK Instrumentation
+        Instrumentação do SDK
       
     </span>
   </a>
@@ -3075,10 +3075,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#metrics-with-otel-sdk" class="md-nav__link">
+  <a href="#metricas-com-o-sdk-otel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Metrics with OTel SDK
+        Métricas com o SDK OTel
       
     </span>
   </a>
@@ -3086,10 +3086,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kubernetes-operator-otel-collector-crd" class="md-nav__link">
+  <a href="#kubernetes-operator-crd-do-coletor-otel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Kubernetes Operator — OTel Collector CRD
+        Kubernetes Operator — CRD do Coletor OTel
       
     </span>
   </a>
@@ -3097,22 +3097,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#context-propagation" class="md-nav__link">
+  <a href="#propagacao-de-contexto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Context Propagation
+        Propagação de Contexto
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Context Propagation">
+    <nav class="md-nav" aria-label="Propagação de Contexto">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#propagation-formats" class="md-nav__link">
+  <a href="#formatos-de-propagacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Propagation Formats
+        Formatos de Propagação
       
     </span>
   </a>
@@ -3125,10 +3125,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#semantic-conventions-key-attributes" class="md-nav__link">
+  <a href="#convencoes-semanticas-atributos-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Semantic Conventions (Key Attributes)
+        Convenções Semânticas (Atributos Principais)
       
     </span>
   </a>
@@ -3154,9 +3154,9 @@
 
 <div class="domain-page-hero" data-domain="monitoring">
   <div class="dph-left">
-    <span class="dph-eyebrow">// monitoring-observability / opentelemetry</span>
+    <span class="dph-eyebrow">// monitoramento-observabilidade / opentelemetry</span>
     <h1 class="dph-title">OpenTelemetry</h1>
-    <p class="dph-desc">OpenTelemetry (OTel) is the CNCF standard for observability instrumentation. One SDK produces traces, metrics, and logs — the Collector receives, processes, and exports them to any backend. Instrument once, switch backends without code changes.</p>
+    <p class="dph-desc">OpenTelemetry (OTel) é o padrão CNCF para instrumentação de observabilidade. Um único SDK produz traces, métricas e logs — o Coletor os recebe, processa e exporta para qualquer backend. Instrumente uma vez, troque de backend sem alterações no código.</p>
     <div class="dph-badges">
       <span class="tech-badge">OTel SDK</span>
       <span class="tech-badge">Collector</span>
@@ -3168,41 +3168,41 @@
   </div>
 </div>
 
-<p><a href="../loki/">← Loki</a> | <a href="../">← Monitoring Overview</a> | <a href="../alerting/">Alerting →</a></p>
+<p><a href="../loki/">← Loki</a> | <a href="../">← Visão Geral de Monitoramento</a> | <a href="../alerting/">Alerting →</a></p>
 <hr />
-<h2 id="signal-overview">Signal Overview</h2>
+<h2 id="visao-geral-dos-sinais">Visão Geral dos Sinais</h2>
 <table>
 <thead>
 <tr>
-<th>Signal</th>
-<th>Description</th>
-<th>Key OTel API</th>
+<th>Sinal</th>
+<th>Descrição</th>
+<th>API OTel Principal</th>
 <th>Backends</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Traces</strong></td>
-<td>Request flow across services</td>
+<td>Fluxo de requisição entre serviços</td>
 <td><code>Tracer</code>, <code>Span</code></td>
 <td>Tempo, Jaeger, Zipkin, Datadog</td>
 </tr>
 <tr>
-<td><strong>Metrics</strong></td>
-<td>Aggregated measurements over time</td>
+<td><strong>Métricas</strong></td>
+<td>Medições agregadas ao longo do tempo</td>
 <td><code>Meter</code>, <code>Counter</code>, <code>Histogram</code></td>
 <td>Prometheus, Mimir, Datadog</td>
 </tr>
 <tr>
 <td><strong>Logs</strong></td>
-<td>Timestamped structured events</td>
+<td>Eventos estruturados com carimbo de tempo</td>
 <td><code>Logger</code> (LogRecord)</td>
 <td>Loki, Elasticsearch, Cloud Logging</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="collector-architecture">Collector Architecture</h2>
+<h2 id="arquitetura-do-coletor">Arquitetura do Coletor</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a> [App SDK]──OTLP──▶[Collector]──▶[Backend]
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                      │
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>              ┌───────┼────────┐
@@ -3215,7 +3215,7 @@
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>                     Tail Sample
 </code></pre></div>
 <hr />
-<h2 id="collector-deployment-helm">Collector Deployment (Helm)</h2>
+<h2 id="deploy-do-coletor-helm">Deploy do Coletor (Helm)</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>open-telemetry<span class="w"> </span>https://open-telemetry.github.io/opentelemetry-helm-charts
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>helm<span class="w"> </span>repo<span class="w"> </span>update
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
@@ -3308,7 +3308,7 @@
 <a id="__codelineno-2-76" name="__codelineno-2-76" href="#__codelineno-2-76"></a><span class="w">        </span><span class="nt">exporters</span><span class="p">:</span><span class="w">  </span><span class="p p-Indicator">[</span><span class="nv">loki</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 <hr />
-<h2 id="sdk-instrumentation">SDK Instrumentation</h2>
+<h2 id="instrumentacao-do-sdk">Instrumentação do SDK</h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Go</label><label for="__tabbed_1_2">Python</label><label for="__tabbed_1_3">Java</label><label for="__tabbed_1_4">Node.js</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3455,7 +3455,7 @@
 </div>
 </div>
 <hr />
-<h2 id="metrics-with-otel-sdk">Metrics with OTel SDK</h2>
+<h2 id="metricas-com-o-sdk-otel">Métricas com o SDK OTel</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">// Go — create and record metrics</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nx">meter</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">otel</span><span class="p">.</span><span class="nx">Meter</span><span class="p">(</span><span class="s">&quot;my-service&quot;</span><span class="p">)</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
@@ -3486,7 +3486,7 @@
 <a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h2 id="kubernetes-operator-otel-collector-crd">Kubernetes Operator — OTel Collector CRD</h2>
+<h2 id="kubernetes-operator-crd-do-coletor-otel">Kubernetes Operator — CRD do Coletor OTel</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Install OpenTelemetry Operator</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>helm<span class="w"> </span>upgrade<span class="w"> </span>--install<span class="w"> </span>opentelemetry-operator<span class="w"> </span>open-telemetry/opentelemetry-operator<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span>--namespace<span class="w"> </span>monitoring<span class="w"> </span><span class="se">\</span>
@@ -3557,7 +3557,7 @@
 <a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="c1"># or: inject-python, inject-nodejs, inject-go</span>
 </code></pre></div>
 <hr />
-<h2 id="context-propagation">Context Propagation</h2>
+<h2 id="propagacao-de-contexto">Propagação de Contexto</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Service A ──────────────────────────────▶ Service B
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>  │  HTTP header:                           │
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>  │  traceparent: 00-{traceId}-{spanId}-01  │
@@ -3568,20 +3568,20 @@
 <a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>  spanId: 111                             spanId: 222
 <a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>  parentSpanId: (none)                    parentSpanId: 111
 </code></pre></div>
-<h3 id="propagation-formats">Propagation Formats</h3>
+<h3 id="formatos-de-propagacao">Formatos de Propagação</h3>
 <table>
 <thead>
 <tr>
-<th>Format</th>
+<th>Formato</th>
 <th>Header</th>
-<th>Use case</th>
+<th>Caso de Uso</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>W3C TraceContext</td>
 <td><code>traceparent</code>, <code>tracestate</code></td>
-<td>Default for OTel</td>
+<td>Padrão para OTel</td>
 </tr>
 <tr>
 <td>B3 (single)</td>
@@ -3591,22 +3591,22 @@
 <tr>
 <td>B3 (multi)</td>
 <td><code>X-B3-TraceId</code>, <code>X-B3-SpanId</code></td>
-<td>Legacy</td>
+<td>Legado</td>
 </tr>
 <tr>
 <td>Baggage</td>
 <td><code>baggage</code></td>
-<td>Cross-service key-value propagation</td>
+<td>Propagação de chave-valor entre serviços</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="semantic-conventions-key-attributes">Semantic Conventions (Key Attributes)</h2>
+<h2 id="convencoes-semanticas-atributos-principais">Convenções Semânticas (Atributos Principais)</h2>
 <table>
 <thead>
 <tr>
 <th>Namespace</th>
-<th>Key attributes</th>
+<th>Atributos Principais</th>
 </tr>
 </thead>
 <tbody>
@@ -3636,7 +3636,7 @@
 </tr>
 </tbody>
 </table>
-<p><a href="../loki/">← Loki</a> | <a href="../">← Monitoring Overview</a> | <a href="../alerting/">Alerting →</a></p>
+<p><a href="../loki/">← Loki</a> | <a href="../">← Visão Geral de Monitoramento</a> | <a href="../alerting/">Alerting →</a></p>
 
 
 

@@ -1,13 +1,13 @@
 ---
 title: GCP IaC & DevOps
-description: Terraform, Config Connector, Cloud Build, Artifact Registry, Cloud Deploy, Config Sync — IaC on GCP.
+description: Terraform, Config Connector, Cloud Build, Artifact Registry, Cloud Deploy, Config Sync — IaC no GCP.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// gcp / iac</span>
     <h1 class="dph-title">GCP IaC &amp; DevOps</h1>
-    <p class="dph-desc">The Terraform Google provider is mature and comprehensive. Config Connector bridges GCP resources into the Kubernetes API. Cloud Build provides native GCP CI. Cloud Deploy handles progressive delivery to GKE. Config Sync (ACM) closes the GitOps loop.</p>
+    <p class="dph-desc">O provider Terraform para Google é maduro e abrangente. O Config Connector integra recursos GCP à API do Kubernetes. O Cloud Build fornece CI nativo no GCP. O Cloud Deploy gerencia entrega progressiva para o GKE. O Config Sync (ACM) fecha o ciclo GitOps.</p>
     <div class="dph-badges">
       <span class="tech-badge">Terraform</span>
       <span class="tech-badge">Config Connector</span>
@@ -21,11 +21,11 @@ description: Terraform, Config Connector, Cloud Build, Artifact Registry, Cloud 
 
 ---
 
-## Terraform — Google Provider
+## Terraform — Provider Google
 
-The `hashicorp/google` provider is the primary IaC tool for GCP. Remote state lives in a GCS bucket with built-in locking (no DynamoDB equivalent needed).
+O provider `hashicorp/google` é a principal ferramenta de IaC para o GCP. O estado remoto fica em um bucket GCS com bloqueio nativo (sem necessidade de equivalente ao DynamoDB).
 
-### Bootstrap remote state
+### Bootstrap do estado remoto
 
 ```bash
 # Bootstrap script
@@ -33,13 +33,9 @@ PROJECT_ID="my-project"
 BUCKET_NAME="${PROJECT_ID}-tfstate"
 REGION="us-central1"
 
-gcloud storage buckets create "gs://${BUCKET_NAME}" \
-  --location="${REGION}" \
-  --uniform-bucket-level-access \
-  --public-access-prevention
+gcloud storage buckets create "gs://${BUCKET_NAME}"   --location="${REGION}"   --uniform-bucket-level-access   --public-access-prevention
 
-gcloud storage buckets update "gs://${BUCKET_NAME}" \
-  --versioning
+gcloud storage buckets update "gs://${BUCKET_NAME}"   --versioning
 ```
 
 ```hcl
@@ -70,7 +66,7 @@ provider "google" {
 }
 ```
 
-### Workload Identity Federation for CI (keyless)
+### Workload Identity Federation para CI (sem chave)
 
 ```hcl
 # Allow GitHub Actions to impersonate a service account via OIDC
@@ -103,7 +99,7 @@ resource "google_service_account_iam_member" "github_ci" {
 ```
 
 ```yaml
-# GitHub Actions — keyless auth to GCP
+# GitHub Actions — autenticação sem chave para o GCP
 - uses: google-github-actions/auth@v2
   with:
     workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
@@ -114,7 +110,7 @@ resource "google_service_account_iam_member" "github_ci" {
 
 ## Cloud Build
 
-Cloud Build is GCP's managed CI service. It runs build steps as Docker containers — each step is an image. Deep integration with GCP: builds run with a Cloud Build Service Account that can be granted IAM roles.
+O Cloud Build é o serviço de CI gerenciado do GCP. Executa etapas de build como contêineres Docker — cada etapa é uma imagem. Integração profunda com o GCP: os builds rodam com uma conta de serviço do Cloud Build à qual podem ser concedidos papéis IAM.
 
 ```yaml
 # cloudbuild.yaml — build, test, push, deploy
@@ -186,7 +182,7 @@ resource "google_cloudbuild_trigger" "main" {
 
 ## Artifact Registry
 
-Artifact Registry is GCP's managed registry for container images, Helm charts, Maven/npm/Python packages. It replaces the older Container Registry (`gcr.io`).
+O Artifact Registry é o registro gerenciado do GCP para imagens de contêiner, charts Helm, pacotes Maven/npm/Python. Ele substitui o Container Registry (`gcr.io`) mais antigo.
 
 ```hcl
 resource "google_artifact_registry_repository" "images" {
@@ -233,7 +229,7 @@ resource "google_artifact_registry_repository_iam_member" "gke_pull" {
 
 ## Cloud Deploy
 
-Cloud Deploy is GCP's managed continuous delivery service for GKE. It supports sequential targets (dev → staging → prod), canary and blue/green strategies with built-in approval gates and rollback.
+O Cloud Deploy é o serviço de entrega contínua gerenciado do GCP para o GKE. Suporta alvos sequenciais (dev → staging → prod), estratégias canary e blue/green com portões de aprovação integrados e rollback.
 
 ```yaml
 # clouddeploy.yaml
@@ -279,7 +275,7 @@ spec:
 
 ## Config Sync (Anthos Config Management)
 
-Config Sync implements GitOps for GKE — syncs Kubernetes manifests from a Git repository (or OCI image) to GKE clusters. It is the GitOps component of Anthos Config Management (ACM).
+O Config Sync implementa GitOps para o GKE — sincroniza manifestos Kubernetes de um repositório Git (ou imagem OCI) para clusters GKE. É o componente GitOps do Anthos Config Management (ACM).
 
 ```hcl
 resource "google_gke_hub_feature" "config_management" {
@@ -323,9 +319,9 @@ resource "google_gke_hub_feature_membership" "config_sync" {
 }
 ```
 
-!!! tip "OCI sync"
-    Config Sync supports syncing from an **OCI image** stored in Artifact Registry — `sync_repo` can point to an OCI image URI instead of a Git URL. This is faster (no Git clone), works with Artifact Registry CMEK and integrates with the Artifact Registry cleanup policies.
+!!! tip "Sincronização via OCI"
+    O Config Sync suporta sincronização a partir de uma **imagem OCI** armazenada no Artifact Registry — o `sync_repo` pode apontar para um URI de imagem OCI em vez de uma URL Git. Isso é mais rápido (sem clone Git), funciona com CMEK do Artifact Registry e integra-se às políticas de limpeza do Artifact Registry.
 
 ---
 
-[← GCP Overview](index.md){ .md-button }
+[← Visão Geral GCP](index.md){ .md-button }

@@ -1,13 +1,13 @@
 ---
 title: Azure Networking
-description: VNet, Azure DNS, Front Door, App Gateway, ExpressRoute, Private Endpoint — networking on Azure.
+description: VNet, Azure DNS, Front Door, App Gateway, ExpressRoute, Private Endpoint — rede no Azure.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// azure / networking</span>
     <h1 class="dph-title">Azure Networking</h1>
-    <p class="dph-desc">Hub-spoke virtual networks, global traffic management with Front Door, granular load balancing with App Gateway, private connectivity with Private Endpoint and hybrid networking with ExpressRoute — Azure networking designed for enterprise workloads.</p>
+    <p class="dph-desc">Redes virtuais hub-spoke, gerenciamento global de tráfego com Front Door, balanceamento de carga granular com App Gateway, conectividade privada com Private Endpoint e rede híbrida com ExpressRoute — a rede Azure projetada para cargas de trabalho enterprise.</p>
     <div class="dph-badges">
       <span class="tech-badge">VNet</span>
       <span class="tech-badge">Azure DNS</span>
@@ -23,9 +23,9 @@ description: VNet, Azure DNS, Front Door, App Gateway, ExpressRoute, Private End
 
 ## Virtual Network (VNet)
 
-A VNet is an isolated Layer-3 network within an Azure region. Unlike AWS VPCs, Azure VNets support **multiple address spaces** and subnets can span the entire address space of the VNet.
+Uma VNet é uma rede isolada de Camada 3 dentro de uma região do Azure. Diferentemente das VPCs da AWS, as VNets do Azure suportam **múltiplos espaços de endereço** e as sub-redes podem abranger todo o espaço de endereço da VNet.
 
-### Hub-spoke topology
+### Topologia hub-spoke
 
 ```
    On-premises ─── ExpressRoute/VPN ──→ Hub VNet
@@ -80,7 +80,7 @@ resource "azurerm_virtual_network_peering" "hub_to_spoke" {
 
 ### Network Security Groups
 
-NSGs are stateful packet filters applied to subnets or individual NICs. Define rules with allow/deny, priority (100–4096, lower wins), source/dest IP ranges and ports.
+NSGs são filtros de pacotes com estado aplicados a sub-redes ou NICs individuais. Defina regras com allow/deny, prioridade (100–4096, menor vence), intervalos de IP de origem/destino e portas.
 
 ```hcl
 resource "azurerm_network_security_group" "aks" {
@@ -118,14 +118,14 @@ resource "azurerm_network_security_group" "aks" {
 
 ## Azure Front Door
 
-Front Door is Azure's global application delivery network — CDN, WAF, SSL offload, anycast routing and health-based failover in one service. **Front Door Standard/Premium** (the current generation) replaces the classic tier and Azure CDN profiles.
+Front Door é a rede global de entrega de aplicações do Azure — CDN, WAF, offload de SSL, roteamento anycast e failover baseado em saúde em um único serviço. **Front Door Standard/Premium** (geração atual) substitui a camada clássica e os perfis do Azure CDN.
 
 ```
-Browser → Anycast POP (600+ globally)
-            ├── Cached content → serve immediately (CDN)
-            └── Cache miss / dynamic → route to closest healthy origin
-                  ├── Origin: App Service (primary)
-                  └── Origin: Static Website (failover)
+Browser → Anycast POP (600+ globalmente)
+            ├── Conteúdo em cache → servir imediatamente (CDN)
+            └── Cache miss / dinâmico → roteie para a origem mais próxima e saudável
+                  ├── Origem: App Service (primária)
+                  └── Origem: Site estático (failover)
 ```
 
 ```hcl
@@ -160,24 +160,24 @@ resource "azurerm_cdn_frontdoor_origin_group" "app" {
 ```
 
 !!! tip "Front Door vs App Gateway"
-    Use **Front Door** for global multi-region routing, CDN and anycast WAF. Use **Application Gateway** for regional L7 load balancing within a VNet — AKS ingress, URL-path routing to microservices, mTLS termination.
+    Use **Front Door** para roteamento global entre múltiplas regiões, CDN e WAF anycast. Use **Application Gateway** para balanceamento de carga L7 regional dentro de uma VNet — ingress do AKS, roteamento por URL para microsserviços, terminação mTLS.
 
 ---
 
 ## Application Gateway
 
-App Gateway is a regional L7 load balancer and WAF. It is the standard ingress controller for AKS in enterprise Azure environments via the **AGIC** (Application Gateway Ingress Controller) add-on.
+App Gateway é um balanceador de carga L7 regional e WAF. É o controlador de ingress padrão para AKS em ambientes Azure enterprise por meio do complemento **AGIC** (Application Gateway Ingress Controller).
 
-### Key features
+### Recursos principais
 
-| Feature | Description |
-|---------|-------------|
-| **WAF v2** | OWASP CRS 3.2 rule sets, custom rules, bot protection |
-| **SSL/TLS termination** | Offload TLS, re-encrypt to backend |
-| **URL-based routing** | Route `/api/*` to API pods, `/` to frontend |
-| **Cookie-based session affinity** | Sticky sessions |
-| **Autoscaling** | Min 0 to max N instances (v2 SKU) |
-| **Private link** | Expose App Gateway privately across VNets |
+| Recurso | Descrição |
+|---------|-----------|
+| **WAF v2** | Conjuntos de regras OWASP CRS 3.2, regras personalizadas, proteção contra bots |
+| **Terminação SSL/TLS** | Offload de TLS, re-criptografia para o backend |
+| **Roteamento por URL** | Rotear `/api/*` para pods de API, `/` para o frontend |
+| **Afinidade de sessão por cookie** | Sessões sticky |
+| **Escalonamento automático** | Mín 0 a máx N instâncias (SKU v2) |
+| **Private link** | Expor o App Gateway privadamente entre VNets |
 
 ```hcl
 resource "azurerm_application_gateway" "main" {
@@ -210,7 +210,7 @@ resource "azurerm_application_gateway" "main" {
     name                = "app-cert"
     key_vault_secret_id = azurerm_key_vault_certificate.app.secret_id
   }
-  # ... backend pool, http settings, routing rules omitted for brevity
+  # ... pool de backend, configurações http, regras de roteamento omitidos por brevidade
 }
 ```
 
@@ -218,7 +218,7 @@ resource "azurerm_application_gateway" "main" {
 
 ## Private Endpoint
 
-Private Endpoint gives a private IP address in your VNet to an Azure PaaS service (Storage, Key Vault, ACR, AKS API server, SQL, etc.) — traffic stays on the Microsoft backbone, never traversing the internet.
+Private Endpoint atribui um endereço IP privado na sua VNet a um serviço PaaS do Azure (Storage, Key Vault, ACR, servidor de API do AKS, SQL, etc.) — o tráfego permanece no backbone da Microsoft, sem passar pela internet.
 
 ```hcl
 resource "azurerm_private_endpoint" "keyvault" {
@@ -246,31 +246,31 @@ resource "azurerm_private_dns_zone" "keyvault" {
 }
 ```
 
-!!! tip "Private DNS Zones"
-    Each Azure PaaS service has its own `privatelink.*` DNS zone. Link these zones to every VNet that needs to resolve private endpoints. Centralise Private DNS Zones in the hub VNet and link spokes — avoids duplicating zones per spoke.
+!!! tip "Zonas de DNS Privado"
+    Cada serviço PaaS do Azure tem sua própria zona DNS `privatelink.*`. Vincule essas zonas a todas as VNets que precisam resolver endpoints privados. Centralize as Zonas de DNS Privado na VNet hub e vincule os spokes — evita duplicar zonas por spoke.
 
 ---
 
 ## Azure DNS
 
-Azure DNS hosts DNS zones with anycast routing and 100% SLA availability. Use **Private DNS Zones** for internal service-to-service name resolution within VNets.
+Azure DNS hospeda zonas DNS com roteamento anycast e disponibilidade com SLA de 100%. Use **Zonas de DNS Privado** para resolução de nomes internos entre serviços dentro de VNets.
 
-| Zone type | Resolved by | Use case |
-|-----------|------------|---------|
-| **Public DNS** | Internet resolvers | External-facing domains |
-| **Private DNS** | Azure-internal resolvers | VNet-internal service discovery |
+| Tipo de zona | Resolvido por | Caso de uso |
+|--------------|---------------|-------------|
+| **DNS Público** | Resolvedores da internet | Domínios voltados ao público externo |
+| **DNS Privado** | Resolvedores internos do Azure | Descoberta de serviços dentro da VNet |
 
 ---
 
 ## ExpressRoute & VPN Gateway
 
-| Option | Bandwidth | Latency | Cost | Use case |
-|--------|----------|--------|------|---------|
-| **ExpressRoute** | 50 Mbps – 100 Gbps | Low, predictable | High | Production hybrid connectivity |
-| **VPN Gateway** | Up to 10 Gbps | Variable | Lower | Dev/test, backup path, branch offices |
-| **ExpressRoute + VPN** | Combined | Redundant | Higher | HA hybrid with ExpressRoute as primary |
+| Opção | Largura de banda | Latência | Custo | Caso de uso |
+|-------|-----------------|---------|-------|-------------|
+| **ExpressRoute** | 50 Mbps – 100 Gbps | Baixa, previsível | Alto | Conectividade híbrida em produção |
+| **VPN Gateway** | Até 10 Gbps | Variável | Menor | Dev/teste, caminho de backup, filiais |
+| **ExpressRoute + VPN** | Combinado | Redundante | Maior | HA híbrido com ExpressRoute como primário |
 
 ---
 
-[← Azure Overview](index.md){ .md-button }
-[Security & IAM →](security.md){ .md-button .md-button--primary }
+[← Visão Geral Azure](index.md){ .md-button }
+[Segurança & IAM →](security.md){ .md-button .md-button--primary }

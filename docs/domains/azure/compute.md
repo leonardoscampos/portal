@@ -1,13 +1,13 @@
 ---
 title: Azure Compute
-description: Azure VMs, AKS, App Service, Container Apps, Functions — compute on Microsoft Azure.
+description: Azure VMs, AKS, App Service, Container Apps, Functions — computação no Microsoft Azure.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// azure / compute</span>
     <h1 class="dph-title">Azure Compute</h1>
-    <p class="dph-desc">From managed Kubernetes clusters to KEDA-powered serverless containers, Azure provides compute for every workload profile. AKS is the flagship — production-ready, deeply integrated with Entra ID and the Azure networking stack.</p>
+    <p class="dph-desc">De clusters Kubernetes gerenciados a containers serverless com KEDA, o Azure oferece computação para cada perfil de carga de trabalho. O AKS é o carro-chefe — pronto para produção, profundamente integrado ao Entra ID e à stack de rede do Azure.</p>
     <div class="dph-badges">
       <span class="tech-badge">Azure VMs</span>
       <span class="tech-badge">AKS</span>
@@ -23,25 +23,25 @@ description: Azure VMs, AKS, App Service, Container Apps, Functions — compute 
 
 ## Azure Virtual Machines
 
-Azure VMs cover every workload from general-purpose to GPU-accelerated HPC. The naming convention encodes the capability: `Standard_D4s_v5` → D-series (general), 4 vCPUs, s = premium storage, v5 generation.
+As Azure VMs cobrem todas as cargas de trabalho, de uso geral a HPC com aceleração por GPU. A convenção de nomenclatura codifica a capacidade: `Standard_D4s_v5` → Série D (geral), 4 vCPUs, s = armazenamento premium, geração v5.
 
-### VM series overview
+### Visão Geral das Séries de VM
 
-| Series | Purpose | Example sizes |
-|--------|---------|--------------|
-| **B** (Burstable) | Dev/test, variable CPU | `Standard_B2s`, `Standard_B4ms` |
-| **D** (General) | Balanced CPU/memory | `Standard_D4s_v5`, `Standard_D8s_v5` |
-| **F** (Compute) | High CPU-to-memory | `Standard_F8s_v2`, `Standard_F16s_v2` |
-| **E** (Memory) | In-memory databases, large JVMs | `Standard_E8s_v5`, `Standard_E32s_v5` |
-| **L** (Storage) | High local NVMe throughput | `Standard_L8s_v3`, `Standard_L32s_v3` |
-| **N** (GPU) | ML training, rendering | `Standard_NC24ads_A100_v4` |
+| Série | Propósito | Tamanhos de Exemplo |
+|-------|-----------|---------------------|
+| **B** (Expansível) | Dev/teste, CPU variável | `Standard_B2s`, `Standard_B4ms` |
+| **D** (Geral) | CPU/memória balanceados | `Standard_D4s_v5`, `Standard_D8s_v5` |
+| **F** (Computação) | Alta proporção CPU/memória | `Standard_F8s_v2`, `Standard_F16s_v2` |
+| **E** (Memória) | Bancos de dados em memória, JVMs grandes | `Standard_E8s_v5`, `Standard_E32s_v5` |
+| **L** (Armazenamento) | Alto throughput NVMe local | `Standard_L8s_v3`, `Standard_L32s_v3` |
+| **N** (GPU) | Treinamento de ML, renderização | `Standard_NC24ads_A100_v4` |
 
 !!! tip "Spot VMs"
-    Use **Azure Spot VMs** for fault-tolerant batch workloads at up to 90% discount. Set an eviction policy of `Deallocate` (retains disk) rather than `Delete` to preserve state across evictions.
+    Use **Azure Spot VMs** para cargas de trabalho em lote tolerantes a falhas com até 90% de desconto. Defina uma política de remoção `Deallocate` (mantém o disco) em vez de `Delete` para preservar o estado entre remoções.
 
 ### Virtual Machine Scale Sets (VMSS)
 
-VMSS is the Azure equivalent of AWS ASGs — manages a fleet of identical VM instances with automatic scaling and rolling upgrades.
+VMSS é o equivalente Azure dos ASGs da AWS — gerencia uma frota de instâncias de VM idênticas com escalonamento automático e atualizações graduais.
 
 ```hcl
 resource "azurerm_linux_virtual_machine_scale_set" "app" {
@@ -90,16 +90,16 @@ resource "azurerm_linux_virtual_machine_scale_set" "app" {
 
 ## AKS — Azure Kubernetes Service
 
-AKS is Azure's managed Kubernetes service. The control plane is fully managed; you pay only for agent nodes. AKS integrates natively with Azure CNI, Entra ID Workload Identity, Azure Monitor, ACR and Azure Policy.
+AKS é o serviço Kubernetes gerenciado do Azure. O plano de controle é totalmente gerenciado; você paga apenas pelos nós agentes. O AKS integra-se nativamente com Azure CNI, Entra ID Workload Identity, Azure Monitor, ACR e Azure Policy.
 
-### Node pool types
+### Tipos de Node Pool
 
-| Type | Description | Best for |
-|------|-------------|---------|
-| **System node pool** | Runs critical system pods (coredns, metrics-server) | Required in every cluster |
-| **User node pool** | Workload pods, separate from system | Isolate workloads by pool |
-| **Spot node pool** | Evictable VMs at deep discount | Batch, CI runners |
-| **Virtual nodes** (ACI) | Serverless burst; no VM provisioning | Spiky workloads |
+| Tipo | Descrição | Melhor para |
+|------|-----------|-------------|
+| **Node pool de sistema** | Executa pods de sistema críticos (coredns, metrics-server) | Obrigatório em todo cluster |
+| **Node pool de usuário** | Pods de carga de trabalho, separados do sistema | Isolar cargas de trabalho por pool |
+| **Node pool Spot** | VMs removíveis com grande desconto | Batch, executores de CI |
+| **Virtual nodes** (ACI) | Burst serverless; sem provisionamento de VM | Cargas de trabalho com picos |
 
 ```hcl
 resource "azurerm_kubernetes_cluster" "main" {
@@ -151,9 +151,9 @@ resource "azurerm_kubernetes_cluster_node_pool" "app" {
 }
 ```
 
-### Workload Identity (pod-level auth)
+### Workload Identity (autenticação em nível de pod)
 
-Replaces pod-managed identities (aad-pod-identity, now deprecated). Uses OIDC federation — pods get a signed token that Azure trusts, eliminating the need for client secrets or certificates.
+Substitui as identidades gerenciadas por pod (aad-pod-identity, agora depreciado). Usa federação OIDC — os pods recebem um token assinado em que o Azure confia, eliminando a necessidade de segredos de cliente ou certificados.
 
 ```hcl
 resource "azurerm_user_assigned_identity" "app" {
@@ -176,7 +176,7 @@ resource "azurerm_federated_identity_credential" "app" {
 
 ## Container Apps
 
-Azure Container Apps is a serverless container platform built on Kubernetes + KEDA + Dapr — without exposing any Kubernetes API. Ideal for microservices, event-driven workers and API backends that need scale-to-zero.
+Azure Container Apps é uma plataforma de containers serverless construída sobre Kubernetes + KEDA + Dapr — sem expor nenhuma API Kubernetes. Ideal para microsserviços, workers orientados a eventos e backends de API que precisam de scale-to-zero.
 
 ```hcl
 resource "azurerm_container_app" "api" {
@@ -213,33 +213,33 @@ resource "azurerm_container_app" "api" {
 
 ## Azure Functions
 
-Serverless event-driven compute. Supports trigger types: HTTP, Timer, Service Bus, Event Hub, Blob, Queue, Cosmos DB change feed and more.
+Computação serverless orientada a eventos. Suporta tipos de gatilho: HTTP, Timer, Service Bus, Event Hub, Blob, Queue, feed de alterações do Cosmos DB e mais.
 
-### Hosting plans
+### Planos de Hospedagem
 
-| Plan | Cold start | Scale | Best for |
-|------|-----------|-------|---------|
-| **Consumption** | Yes | 0→200 instances | Infrequent, bursty workloads |
-| **Flex Consumption** | Minimised | 0→1000, pre-warm | High-scale with cost control |
-| **Premium** | No | 1→100 (pre-warmed) | Low-latency, VNet integration |
-| **Dedicated (App Service)** | No | Manual/ASG | Predictable, always-on workloads |
+| Plano | Cold start | Escala | Melhor para |
+|-------|-----------|--------|-------------|
+| **Consumption** | Sim | 0→200 instâncias | Cargas de trabalho infrequentes e com picos |
+| **Flex Consumption** | Minimizado | 0→1000, pré-aquecido | Alta escala com controle de custo |
+| **Premium** | Não | 1→100 (pré-aquecido) | Baixa latência, integração com VNet |
+| **Dedicated (App Service)** | Não | Manual/ASG | Cargas de trabalho previsíveis e sempre ativas |
 
 !!! tip "Durable Functions"
-    Use **Durable Functions** for stateful orchestrations: fan-out/fan-in patterns, long-running workflows with human approval steps, and chaining async operations without managing state externally.
+    Use **Durable Functions** para orquestrações com estado: padrões fan-out/fan-in, fluxos de trabalho de longa duração com etapas de aprovação humana e encadeamento de operações assíncronas sem gerenciar estado externamente.
 
 ---
 
 ## Azure Arc
 
-Azure Arc extends the Azure control plane to infrastructure outside Azure — on-premises servers, other cloud VMs, and edge devices. From a DevOps perspective, the most valuable use case is **Arc-enabled Kubernetes**, which lets you manage non-Azure clusters (EKS, GKE, on-prem) through Azure's tooling.
+Azure Arc estende o plano de controle do Azure para infraestrutura fora do Azure — servidores on-premises, VMs em outras nuvens e dispositivos de borda. Do ponto de vista DevOps, o caso de uso mais valioso é o **Kubernetes habilitado para Arc**, que permite gerenciar clusters não-Azure (EKS, GKE, on-prem) por meio das ferramentas do Azure.
 
-| Arc capability | What it enables |
-|---------------|----------------|
-| **Arc-enabled servers** | Azure Policy, Azure Monitor, Defender for Servers on non-Azure VMs |
-| **Arc-enabled Kubernetes** | GitOps (Flux v2), Azure Monitor, Defender for Containers on any cluster |
-| **Arc-enabled data services** | SQL Managed Instance on-prem with Azure billing and patching |
+| Capacidade Arc | O que habilita |
+|----------------|----------------|
+| **Servidores habilitados para Arc** | Azure Policy, Azure Monitor, Defender para Servidores em VMs não-Azure |
+| **Kubernetes habilitado para Arc** | GitOps (Flux v2), Azure Monitor, Defender para Containers em qualquer cluster |
+| **Serviços de dados habilitados para Arc** | SQL Managed Instance on-premises com faturamento e patches do Azure |
 
 ---
 
-[← Azure Overview](index.md){ .md-button }
-[Storage →](storage.md){ .md-button .md-button--primary }
+[← Visão Geral Azure](index.md){ .md-button }
+[Armazenamento →](storage.md){ .md-button .md-button--primary }

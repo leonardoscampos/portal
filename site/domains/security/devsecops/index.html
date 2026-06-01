@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="SAST, DAST, SCA, secrets scanning and security gates embedded in GitHub Actions, GitLab CI, and Tekton pipelines.">
+        <meta name="description" content="SAST, DAST, SCA, varredura de segredos e portões de segurança integrados em pipelines do GitHub Actions, GitLab CI e Tekton.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#security-pipeline-stages" class="md-skip">
+        <a href="#estagios-do-pipeline-de-seguranca" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -2322,10 +2322,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#security-pipeline-stages" class="md-nav__link">
+  <a href="#estagios-do-pipeline-de-seguranca" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Security Pipeline Stages
+        Estágios do Pipeline de Segurança
       
     </span>
   </a>
@@ -2333,10 +2333,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#github-actions-full-security-pipeline" class="md-nav__link">
+  <a href="#github-actions-pipeline-de-seguranca-completo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GitHub Actions — Full Security Pipeline
+        GitHub Actions — Pipeline de Segurança Completo
       
     </span>
   </a>
@@ -2344,10 +2344,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#semgrep-rules" class="md-nav__link">
+  <a href="#regras-do-semgrep" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Semgrep Rules
+        Regras do Semgrep
       
     </span>
   </a>
@@ -2355,10 +2355,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gitlab-ci-security-template" class="md-nav__link">
+  <a href="#template-de-seguranca-do-gitlab-ci" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GitLab CI Security Template
+        Template de Segurança do GitLab CI
       
     </span>
   </a>
@@ -2366,10 +2366,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pre-commit-hooks" class="md-nav__link">
+  <a href="#hooks-de-pre-commit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pre-commit Hooks
+        Hooks de Pré-commit
       
     </span>
   </a>
@@ -2377,10 +2377,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#security-gate-policy" class="md-nav__link">
+  <a href="#politica-de-portao-de-seguranca" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Security Gate Policy
+        Política de Portão de Segurança
       
     </span>
   </a>
@@ -2388,10 +2388,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#compliance-as-code-key-frameworks" class="md-nav__link">
+  <a href="#conformidade-como-codigo-frameworks-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Compliance as Code — Key Frameworks
+        Conformidade como Código — Frameworks Principais
       
     </span>
   </a>
@@ -3003,10 +3003,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#security-pipeline-stages" class="md-nav__link">
+  <a href="#estagios-do-pipeline-de-seguranca" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Security Pipeline Stages
+        Estágios do Pipeline de Segurança
       
     </span>
   </a>
@@ -3014,10 +3014,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#github-actions-full-security-pipeline" class="md-nav__link">
+  <a href="#github-actions-pipeline-de-seguranca-completo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GitHub Actions — Full Security Pipeline
+        GitHub Actions — Pipeline de Segurança Completo
       
     </span>
   </a>
@@ -3025,10 +3025,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#semgrep-rules" class="md-nav__link">
+  <a href="#regras-do-semgrep" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Semgrep Rules
+        Regras do Semgrep
       
     </span>
   </a>
@@ -3036,10 +3036,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#gitlab-ci-security-template" class="md-nav__link">
+  <a href="#template-de-seguranca-do-gitlab-ci" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GitLab CI Security Template
+        Template de Segurança do GitLab CI
       
     </span>
   </a>
@@ -3047,10 +3047,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pre-commit-hooks" class="md-nav__link">
+  <a href="#hooks-de-pre-commit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pre-commit Hooks
+        Hooks de Pré-commit
       
     </span>
   </a>
@@ -3058,10 +3058,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#security-gate-policy" class="md-nav__link">
+  <a href="#politica-de-portao-de-seguranca" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Security Gate Policy
+        Política de Portão de Segurança
       
     </span>
   </a>
@@ -3069,10 +3069,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#compliance-as-code-key-frameworks" class="md-nav__link">
+  <a href="#conformidade-como-codigo-frameworks-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Compliance as Code — Key Frameworks
+        Conformidade como Código — Frameworks Principais
       
     </span>
   </a>
@@ -3100,21 +3100,21 @@
   <div class="dph-left">
     <span class="dph-eyebrow">// security-devsecops / devsecops-pipelines</span>
     <h1 class="dph-title">DevSecOps Pipelines</h1>
-    <p class="dph-desc">Security checks automated as pipeline stages — not bolted on at the end. SAST catches code vulnerabilities at commit time, SCA identifies known CVEs in dependencies, secrets scanning prevents credential leaks, and DAST validates running applications before promotion.</p>
+    <p class="dph-desc">Verificações de segurança automatizadas como estágios de pipeline — não acrescentadas ao final. O SAST detecta vulnerabilidades de código no momento do commit, o SCA identifica CVEs conhecidas em dependências, a varredura de segredos previne vazamentos de credenciais e o DAST valida aplicações em execução antes da promoção.</p>
     <div class="dph-badges">
       <span class="tech-badge">SAST</span>
       <span class="tech-badge">DAST</span>
       <span class="tech-badge">SCA</span>
       <span class="tech-badge">Semgrep</span>
       <span class="tech-badge">OWASP ZAP</span>
-      <span class="tech-badge">Secrets Scanning</span>
+      <span class="tech-badge">Varredura de Segredos</span>
     </div>
   </div>
 </div>
 
-<p><a href="../">← Security Overview</a> | <a href="../secrets/">Secrets Management →</a></p>
+<p><a href="../">← Visão Geral de Segurança</a> | <a href="../secrets/">Gerenciamento de Segredos →</a></p>
 <hr />
-<h2 id="security-pipeline-stages">Security Pipeline Stages</h2>
+<h2 id="estagios-do-pipeline-de-seguranca">Estágios do Pipeline de Segurança</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌─────────┐  ┌──────────┐  ┌─────────┐  ┌─────────┐  ┌──────────┐  ┌──────────┐
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│  Commit │  │  Build   │  │  Test   │  │  Scan   │  │  Stage   │  │  Prod    │
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│         │  │          │  │         │  │         │  │          │  │          │
@@ -3125,7 +3125,7 @@
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>└─────────┘  └──────────┘  └─────────┘  └─────────┘  └──────────┘  └──────────┘
 </code></pre></div>
 <hr />
-<h2 id="github-actions-full-security-pipeline">GitHub Actions — Full Security Pipeline</h2>
+<h2 id="github-actions-pipeline-de-seguranca-completo">GitHub Actions — Pipeline de Segurança Completo</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Security Pipeline</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">on</span><span class="p">:</span>
@@ -3319,7 +3319,7 @@
 <a id="__codelineno-1-191" name="__codelineno-1-191" href="#__codelineno-1-191"></a><span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">report_html.html</span>
 </code></pre></div>
 <hr />
-<h2 id="semgrep-rules">Semgrep Rules</h2>
+<h2 id="regras-do-semgrep">Regras do Semgrep</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># .semgrep/custom-rules.yaml</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">rules</span><span class="p">:</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="c1"># Detect hardcoded credentials</span>
@@ -3356,7 +3356,7 @@
 <a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="w">    </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WARNING</span>
 </code></pre></div>
 <hr />
-<h2 id="gitlab-ci-security-template">GitLab CI Security Template</h2>
+<h2 id="template-de-seguranca-do-gitlab-ci">Template de Segurança do GitLab CI</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># .gitlab-ci.yml — include GitLab built-in security templates</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">include</span><span class="p">:</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">template</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Security/SAST.gitlab-ci.yml</span>
@@ -3383,7 +3383,7 @@
 <a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">    </span><span class="nt">CS_DISABLE_DEPENDENCY_LIST</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;false&quot;</span>
 </code></pre></div>
 <hr />
-<h2 id="pre-commit-hooks">Pre-commit Hooks</h2>
+<h2 id="hooks-de-pre-commit">Hooks de Pré-commit</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># .pre-commit-config.yaml</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">repos</span><span class="p">:</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">repo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/gitleaks/gitleaks</span>
@@ -3416,7 +3416,7 @@
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>pre-commit<span class="w"> </span>run<span class="w"> </span>--all-files<span class="w">  </span><span class="c1"># run against all files</span>
 </code></pre></div>
 <hr />
-<h2 id="security-gate-policy">Security Gate Policy</h2>
+<h2 id="politica-de-portao-de-seguranca">Política de Portão de Segurança</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># OPA policy — enforce minimum security checks before merge</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># Evaluated by CI pipeline or GitHub Actions branch protection</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
@@ -3448,56 +3448,56 @@
 <a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="l l-Scalar l-Scalar-Plain">}</span>
 </code></pre></div>
 <hr />
-<h2 id="compliance-as-code-key-frameworks">Compliance as Code — Key Frameworks</h2>
+<h2 id="conformidade-como-codigo-frameworks-principais">Conformidade como Código — Frameworks Principais</h2>
 <table>
 <thead>
 <tr>
 <th>Framework</th>
-<th>Scope</th>
-<th>Tool</th>
+<th>Escopo</th>
+<th>Ferramenta</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>CIS Benchmarks</td>
-<td>OS, K8s, cloud accounts</td>
+<td>SO, K8s, contas de nuvem</td>
 <td><code>kube-bench</code>, <code>cloud-custodian</code></td>
 </tr>
 <tr>
 <td>NIST SP 800-53</td>
-<td>US federal controls</td>
-<td><code>OpenSCAP</code>, custom OPA policies</td>
+<td>Controles federais dos EUA</td>
+<td><code>OpenSCAP</code>, políticas OPA customizadas</td>
 </tr>
 <tr>
 <td>SOC 2 Type II</td>
-<td>SaaS trust service criteria</td>
+<td>Critérios de confiança para SaaS</td>
 <td><code>Vanta</code>, <code>Drata</code>, <code>Sprinto</code></td>
 </tr>
 <tr>
 <td>PCI DSS</td>
-<td>Cardholder data environments</td>
-<td>Segmentation + audit logging</td>
+<td>Ambientes de dados de titulares de cartão</td>
+<td>Segmentação + registro de auditoria</td>
 </tr>
 <tr>
 <td>GDPR</td>
-<td>EU personal data</td>
-<td>Data classification + encryption</td>
+<td>Dados pessoais da UE</td>
+<td>Classificação de dados + criptografia</td>
 </tr>
 <tr>
 <td>SLSA</td>
-<td>Supply chain integrity (4 levels)</td>
-<td>Sigstore, OIDC provenance</td>
+<td>Integridade da cadeia de suprimentos (4 níveis)</td>
+<td>Sigstore, proveniência OIDC</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># kube-bench — CIS Kubernetes benchmark</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/aquasecurity/kube-bench/main/job.yaml
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>kubectl<span class="w"> </span>logs<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>kube-bench
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1"># cloud-custodian — AWS compliance rules</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>custodian<span class="w"> </span>run<span class="w"> </span>--output-dir<span class="o">=</span>output<span class="w"> </span>policy.yaml
 </code></pre></div>
-<p><a href="../">← Security Overview</a> | <a href="../secrets/">Secrets Management →</a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># cloud-custodian — AWS compliance rules</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>custodian<span class="w"> </span>run<span class="w"> </span>--output-dir<span class="o">=</span>output<span class="w"> </span>policy.yaml
+</code></pre></div>
+<p><a href="../">← Visão Geral de Segurança</a> | <a href="../secrets/">Gerenciamento de Segredos →</a></p>
 
 
 

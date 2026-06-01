@@ -1,13 +1,13 @@
 ---
 title: Jenkins
-description: Jenkins declarative pipelines, shared libraries, Kubernetes agents, multibranch pipelines and credentials reference.
+description: Pipelines declarativas Jenkins, bibliotecas compartilhadas, agentes Kubernetes, pipelines multibranch e referência de credenciais.
 ---
 
 <div class="domain-page-hero" data-domain="cicd">
   <div class="dph-left">
     <span class="dph-eyebrow">// cicd-pipelines / jenkins</span>
     <h1 class="dph-title">Jenkins</h1>
-    <p class="dph-desc">The battle-tested open-source automation server. Declarative and Scripted Pipelines via Jenkinsfile, an enormous plugin ecosystem, Kubernetes-native ephemeral agents, shared libraries for DRY pipelines and deep integration with virtually every tool in the DevOps stack.</p>
+    <p class="dph-desc">O servidor de automação open-source battle-tested. Pipelines Declarativas e Scriptadas via Jenkinsfile, um enorme ecossistema de plugins, agentes efêmeros nativos do Kubernetes, bibliotecas compartilhadas para pipelines DRY e integração profunda com praticamente todas as ferramentas do stack DevOps.</p>
     <div class="dph-badges">
       <span class="tech-badge">Declarative Pipeline</span>
       <span class="tech-badge">Shared Libraries</span>
@@ -19,11 +19,11 @@ description: Jenkins declarative pipelines, shared libraries, Kubernetes agents,
   </div>
 </div>
 
-[← GitLab CI](gitlab-ci.md) | [← CI/CD Overview](index.md) | [Tekton →](tekton.md)
+[← GitLab CI](gitlab-ci.md) | [← Visão Geral de CI/CD](index.md) | [Tekton →](tekton.md)
 
 ---
 
-## Declarative Pipeline Anatomy
+## Anatomia do Pipeline Declarativo
 
 ```groovy
 // Jenkinsfile
@@ -145,19 +145,19 @@ pipeline {
 
 ---
 
-## Pipeline Types
+## Tipos de Pipeline
 
-| Type | Use Case |
+| Tipo | Caso de Uso |
 |------|----------|
-| **Declarative** | Standard YAML-like DSL. Enforces structure, preferred for new pipelines |
-| **Scripted** | Full Groovy — maximum flexibility but harder to maintain |
-| **Multibranch** | Scans repo branches/PRs, creates pipeline per branch automatically |
-| **Organization** | Scans entire GitHub/GitLab org or Bitbucket project |
-| **Blue Ocean** | Modern UI over existing pipelines — visualization and PR integration |
+| **Declarativo** | DSL padrão semelhante a YAML. Impõe estrutura; preferido para novos pipelines |
+| **Scriptado** | Groovy completo — máxima flexibilidade, mas mais difícil de manter |
+| **Multibranch** | Escaneia branches/PRs do repositório e cria pipeline por branch automaticamente |
+| **Organization** | Escaneia toda a org GitHub/GitLab ou projeto Bitbucket |
+| **Blue Ocean** | UI moderna sobre pipelines existentes — visualização e integração com PRs |
 
 ---
 
-## Shared Libraries
+## Bibliotecas Compartilhadas
 
 ```
 vars/
@@ -203,13 +203,13 @@ pipeline {
 }
 ```
 
-**Register library:** *Manage Jenkins → System → Global Pipeline Libraries*
+**Registrar biblioteca:** *Manage Jenkins → System → Global Pipeline Libraries*
 
 ---
 
-## Kubernetes Pod Templates
+## Templates de Pod Kubernetes
 
-=== "Inline YAML (preferred)"
+=== "YAML Inline (preferido)"
 
     ```groovy
     pipeline {
@@ -240,10 +240,10 @@ pipeline {
     }
     ```
 
-=== "Pod Template in Jenkins UI"
+=== "Pod Template na UI do Jenkins"
 
-    Configure under **Manage Jenkins → Clouds → Kubernetes → Pod Templates**.  
-    Reference by label in the Jenkinsfile:
+    Configure em **Manage Jenkins → Clouds → Kubernetes → Pod Templates**.  
+    Referencie pelo label no Jenkinsfile:
 
     ```groovy
     pipeline {
@@ -254,7 +254,7 @@ pipeline {
 
 ---
 
-## Credentials Management
+## Gerenciamento de Credenciais
 
 ```groovy
 // String / secret text
@@ -317,12 +317,12 @@ pipeline {
 }
 ```
 
-Configure in Jenkins UI: **New Item → Multibranch Pipeline → Branch Sources → GitHub/GitLab**.  
-Enable *Discover branches*, *Discover pull requests*, and set scan interval.
+Configure na UI do Jenkins: **New Item → Multibranch Pipeline → Branch Sources → GitHub/GitLab**.  
+Habilite *Discover branches*, *Discover pull requests* e defina o intervalo de varredura.
 
 ---
 
-## Parallel Stages
+## Estágios Paralelos
 
 ```groovy
 stage('Test in parallel') {
@@ -349,7 +349,7 @@ stage('Test in parallel') {
 
 ---
 
-## Matrix (Declarative)
+## Matrix (Declarativo)
 
 ```groovy
 stage('Multi-platform build') {
@@ -383,28 +383,28 @@ stage('Multi-platform build') {
 
 ---
 
-## Essential Plugins
+## Plugins Essenciais
 
-| Plugin | Purpose |
-|--------|---------|
-| **Pipeline** | Core declarative/scripted pipeline support |
-| **Git** | SCM integration |
-| **GitHub Branch Source** | Multibranch + org scan for GitHub |
-| **GitLab Branch Source** | Multibranch + org scan for GitLab |
-| **Kubernetes** | Ephemeral pod-based agents in K8s |
-| **Credentials Binding** | `withCredentials {}` DSL |
-| **Blue Ocean** | Modern pipeline visualization UI |
-| **Pipeline: Shared Groovy Libraries** | Shared library support |
-| **Docker Pipeline** | `docker.build`, `docker.withRegistry` DSL |
-| **JUnit** | Test result publishing |
-| **Cobertura / JaCoCo** | Code coverage reporting |
-| **Slack Notification** | Slack messages from pipelines |
-| **OWASP Dependency-Check** | Dependency vulnerability scanning |
-| **SonarQube Scanner** | Static analysis integration |
+| Plugin | Finalidade |
+|--------|------|
+| **Pipeline** | Suporte central a pipelines declarativas/scriptadas |
+| **Git** | Integração com SCM |
+| **GitHub Branch Source** | Multibranch + varredura de org para GitHub |
+| **GitLab Branch Source** | Multibranch + varredura de org para GitLab |
+| **Kubernetes** | Agentes efêmeros baseados em pods no K8s |
+| **Credentials Binding** | DSL `withCredentials {}` |
+| **Blue Ocean** | UI moderna de visualização de pipelines |
+| **Pipeline: Shared Groovy Libraries** | Suporte a bibliotecas compartilhadas |
+| **Docker Pipeline** | DSL `docker.build`, `docker.withRegistry` |
+| **JUnit** | Publicação de resultados de testes |
+| **Cobertura / JaCoCo** | Relatórios de cobertura de código |
+| **Slack Notification** | Mensagens Slack a partir dos pipelines |
+| **OWASP Dependency-Check** | Varredura de vulnerabilidades em dependências |
+| **SonarQube Scanner** | Integração de análise estática |
 
 ---
 
-## Configuration as Code (JCasC)
+## Configuração como Código (JCasC)
 
 ```yaml
 # jenkins.yaml — loaded at startup via Configuration as Code plugin
@@ -440,19 +440,19 @@ credentials:
 
 ---
 
-## Best Practices
+## Melhores Práticas
 
-| Practice | Implementation |
+| Prática | Implementação |
 |----------|---------------|
-| **Jenkinsfile in SCM** | Store pipelines in version control — never use the UI editor |
-| **Ephemeral K8s agents** | Pod-based agents scale to zero; no persistent agent maintenance |
-| **Shared libraries** | Centralise DRY logic; version-pin library refs in production |
-| **Declarative over Scripted** | Easier to read, validate and lint; use `when`, `input`, `matrix` |
-| **JCasC for controller config** | Reproducible Jenkins installs — no manual UI configuration |
-| **Credentials plugin only** | Never hardcode secrets; use `withCredentials {}` always |
-| **Build discarder** | Set `logRotator` to avoid disk exhaustion |
-| **Parallel & Matrix** | Reduce wall-clock time by running independent stages in parallel |
-| **Timeout on stages** | Prevent hung builds with `timeout(time: N, unit: 'MINUTES')` |
-| **cleanWs() in post** | Free workspace after build to avoid disk buildup on agents |
+| **Jenkinsfile no SCM** | Armazene pipelines no controle de versão — nunca use o editor da UI |
+| **Agentes K8s efêmeros** | Agentes baseados em pods escalam a zero; sem manutenção de agentes persistentes |
+| **Bibliotecas compartilhadas** | Centralize a lógica DRY; fixe versões das referências de biblioteca em produção |
+| **Declarativo sobre Scriptado** | Mais fácil de ler, validar e lintar; use `when`, `input`, `matrix` |
+| **JCasC para configuração do controller** | Instalações Jenkins reproduzíveis — sem configuração manual na UI |
+| **Somente plugin de Credenciais** | Nunca faça hardcode de segredos; sempre use `withCredentials {}` |
+| **Build discarder** | Defina `logRotator` para evitar esgotamento de disco |
+| **Paralelo & Matrix** | Reduza o tempo de parede executando estágios independentes em paralelo |
+| **Timeout nos estágios** | Evite builds travados com `timeout(time: N, unit: 'MINUTES')` |
+| **cleanWs() no post** | Libere o workspace após o build para evitar acúmulo de disco nos agentes |
 
-[← GitLab CI](gitlab-ci.md) | [← CI/CD Overview](index.md) | [Tekton →](tekton.md)
+[← GitLab CI](gitlab-ci.md) | [← Visão Geral de CI/CD](index.md) | [Tekton →](tekton.md)

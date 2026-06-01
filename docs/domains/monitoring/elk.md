@@ -1,13 +1,13 @@
 ---
 title: ELK Stack
-description: Elasticsearch, Logstash, Kibana and Beats — centralised log management, search, analytics and visualisation for cloud-native platforms.
+description: Elasticsearch, Logstash, Kibana e Beats — gerenciamento centralizado de logs, busca, análise e visualização para plataformas cloud-native.
 ---
 
 <div class="domain-page-hero" data-domain="monitoring">
   <div class="dph-left">
-    <span class="dph-eyebrow">// monitoring-observability / elk-stack</span>
+    <span class="dph-eyebrow">// monitoramento-observabilidade / elk-stack</span>
     <h1 class="dph-title">ELK Stack</h1>
-    <p class="dph-desc">The Elastic Stack (Elasticsearch, Logstash, Kibana + Beats) is the most widely deployed open-source log management and search platform. Ingest structured and unstructured logs at scale, apply real-time enrichment with Logstash or Elastic Agent, and visualise with Kibana dashboards and alerting.</p>
+    <p class="dph-desc">O Elastic Stack (Elasticsearch, Logstash, Kibana + Beats) é a plataforma de gerenciamento de logs e busca open-source mais amplamente implantada. Ingira logs estruturados e não estruturados em escala, aplique enriquecimento em tempo real com Logstash ou Elastic Agent e visualize com painéis e alertas do Kibana.</p>
     <div class="dph-badges">
       <span class="tech-badge">Elasticsearch</span>
       <span class="tech-badge">Logstash</span>
@@ -19,11 +19,11 @@ description: Elasticsearch, Logstash, Kibana and Beats — centralised log manag
   </div>
 </div>
 
-[← Monitoring Overview](index.md)
+[← Visão Geral de Monitoramento](index.md)
 
 ---
 
-## Architecture
+## Arquitetura
 
 ```
 ┌──────────────────────────────────────────────────────────────────┐
@@ -55,7 +55,7 @@ description: Elasticsearch, Logstash, Kibana and Beats — centralised log manag
 
 ---
 
-## ECK — Elastic Cloud on Kubernetes
+## ECK — Elastic Cloud no Kubernetes
 
 ```bash
 # Install ECK Operator
@@ -66,7 +66,7 @@ kubectl apply  -f https://download.elastic.co/downloads/eck/2.14.0/operator.yaml
 kubectl -n elastic-system logs -f statefulset.apps/elastic-operator
 ```
 
-### Elasticsearch Cluster
+### Cluster Elasticsearch
 
 ```yaml
 apiVersion: elasticsearch.k8s.elastic.co/v1
@@ -174,7 +174,7 @@ spec:
 
 ---
 
-## Index Lifecycle Management (ILM)
+## Gerenciamento do Ciclo de Vida de Índices (ILM)
 
 ```json
 PUT _ilm/policy/logs-policy
@@ -256,7 +256,7 @@ PUT _index_template/logs-template
 
 ## Elastic Agent + Fleet (Kubernetes)
 
-Fleet is the centralised management UI for Elastic Agent deployments — no manual Beats config files.
+Fleet é a interface de gerenciamento centralizado para implantações do Elastic Agent — sem arquivos de configuração manual do Beats.
 
 ```yaml
 apiVersion: agent.k8s.elastic.co/v1alpha1
@@ -310,7 +310,7 @@ spec:
 
 ---
 
-## Logstash Pipeline
+## Pipeline do Logstash
 
 ```ruby
 # /etc/logstash/conf.d/k8s-logs.conf
@@ -379,7 +379,7 @@ output {
 
 ---
 
-## Elasticsearch Query DSL
+## DSL de Consulta do Elasticsearch
 
 ```bash
 # Full-text search across logs
@@ -434,7 +434,7 @@ curl -X GET "https://es.example.com:9200/logs-*/_search" \
 
 ---
 
-## Kibana Alerting (REST)
+## Alertas no Kibana (REST)
 
 ```bash
 # Create threshold rule — too many errors in 5 minutes
@@ -468,7 +468,7 @@ curl -X POST "https://kibana.example.com/api/alerting/rule" \
 
 ---
 
-## Useful CLI Commands
+## Comandos CLI Úteis
 
 ```bash
 # Cluster health
@@ -494,4 +494,4 @@ kubectl get elasticsearch,kibana,agent -n elastic-system
 kubectl get pods -n elastic-system -l common.k8s.elastic.co/type=elasticsearch
 ```
 
-[← Monitoring Overview](index.md)
+[← Visão Geral de Monitoramento](index.md)

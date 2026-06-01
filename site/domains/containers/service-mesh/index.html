@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Istio and Linkerd service mesh — mTLS, traffic management, observability, canary deployments and fault injection.">
+        <meta name="description" content="Malha de serviços Istio e Linkerd — mTLS, gerenciamento de tráfego, observabilidade, implantações canário e injeção de falhas.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -33,7 +33,7 @@
     
     
   
-    <title>Service Mesh — Leonardo Campos</title>
+    <title>Malha de Serviços — Leonardo Campos</title>
   
 
     
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Service Mesh
+              Malha de Serviços
             
           </span>
         </div>
@@ -1813,10 +1813,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#instalacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation
+        Instalação
       
     </span>
   </a>
@@ -1824,10 +1824,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#virtualservice-traffic-routing" class="md-nav__link">
+  <a href="#virtualservice-roteamento-de-trafego" class="md-nav__link">
     <span class="md-ellipsis">
       
-        VirtualService — Traffic Routing
+        VirtualService — Roteamento de Tráfego
       
     </span>
   </a>
@@ -1835,10 +1835,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#destinationrule-load-balancing-circuit-breaker" class="md-nav__link">
+  <a href="#destinationrule-balanceamento-de-carga-e-disjuntor" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DestinationRule — Load Balancing &amp; Circuit Breaker
+        DestinationRule — Balanceamento de Carga e Disjuntor
       
     </span>
   </a>
@@ -1846,10 +1846,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fault-injection" class="md-nav__link">
+  <a href="#injecao-de-falhas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fault Injection
+        Injeção de Falhas
       
     </span>
   </a>
@@ -1857,10 +1857,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mtls-policy" class="md-nav__link">
+  <a href="#politica-de-mtls" class="md-nav__link">
     <span class="md-ellipsis">
       
-        mTLS Policy
+        Política de mTLS
       
     </span>
   </a>
@@ -1879,10 +1879,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#observability-with-kiali" class="md-nav__link">
+  <a href="#observabilidade-com-kiali" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Observability with Kiali
+        Observabilidade com Kiali
       
     </span>
   </a>
@@ -1907,10 +1907,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#installation_1" class="md-nav__link">
+  <a href="#instalacao_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation
+        Instalação
       
     </span>
   </a>
@@ -1918,10 +1918,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#meshing-workloads" class="md-nav__link">
+  <a href="#inclusao-de-workloads-na-malha" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Meshing Workloads
+        Inclusão de Workloads na Malha
       
     </span>
   </a>
@@ -1940,10 +1940,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#serviceprofile-retries-timeouts" class="md-nav__link">
+  <a href="#serviceprofile-tentativas-e-tempos-limite" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ServiceProfile (Retries &amp; Timeouts)
+        ServiceProfile (Tentativas e Tempos Limite)
       
     </span>
   </a>
@@ -1951,10 +1951,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#multi-cluster-with-service-mirroring" class="md-nav__link">
+  <a href="#multi-cluster-com-espelhamento-de-servicos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Multi-cluster with Service Mirroring
+        Multi-cluster com Espelhamento de Serviços
       
     </span>
   </a>
@@ -1967,10 +1967,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#canary-delivery-workflow" class="md-nav__link">
+  <a href="#fluxo-de-entrega-canario" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Canary Delivery Workflow
+        Fluxo de Entrega Canário
       
     </span>
   </a>
@@ -3137,10 +3137,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
+  <a href="#instalacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation
+        Instalação
       
     </span>
   </a>
@@ -3148,10 +3148,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#virtualservice-traffic-routing" class="md-nav__link">
+  <a href="#virtualservice-roteamento-de-trafego" class="md-nav__link">
     <span class="md-ellipsis">
       
-        VirtualService — Traffic Routing
+        VirtualService — Roteamento de Tráfego
       
     </span>
   </a>
@@ -3159,10 +3159,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#destinationrule-load-balancing-circuit-breaker" class="md-nav__link">
+  <a href="#destinationrule-balanceamento-de-carga-e-disjuntor" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DestinationRule — Load Balancing &amp; Circuit Breaker
+        DestinationRule — Balanceamento de Carga e Disjuntor
       
     </span>
   </a>
@@ -3170,10 +3170,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#fault-injection" class="md-nav__link">
+  <a href="#injecao-de-falhas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fault Injection
+        Injeção de Falhas
       
     </span>
   </a>
@@ -3181,10 +3181,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mtls-policy" class="md-nav__link">
+  <a href="#politica-de-mtls" class="md-nav__link">
     <span class="md-ellipsis">
       
-        mTLS Policy
+        Política de mTLS
       
     </span>
   </a>
@@ -3203,10 +3203,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#observability-with-kiali" class="md-nav__link">
+  <a href="#observabilidade-com-kiali" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Observability with Kiali
+        Observabilidade com Kiali
       
     </span>
   </a>
@@ -3231,10 +3231,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#installation_1" class="md-nav__link">
+  <a href="#instalacao_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation
+        Instalação
       
     </span>
   </a>
@@ -3242,10 +3242,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#meshing-workloads" class="md-nav__link">
+  <a href="#inclusao-de-workloads-na-malha" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Meshing Workloads
+        Inclusão de Workloads na Malha
       
     </span>
   </a>
@@ -3264,10 +3264,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#serviceprofile-retries-timeouts" class="md-nav__link">
+  <a href="#serviceprofile-tentativas-e-tempos-limite" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ServiceProfile (Retries &amp; Timeouts)
+        ServiceProfile (Tentativas e Tempos Limite)
       
     </span>
   </a>
@@ -3275,10 +3275,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#multi-cluster-with-service-mirroring" class="md-nav__link">
+  <a href="#multi-cluster-com-espelhamento-de-servicos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Multi-cluster with Service Mirroring
+        Multi-cluster com Espelhamento de Serviços
       
     </span>
   </a>
@@ -3291,10 +3291,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#canary-delivery-workflow" class="md-nav__link">
+  <a href="#fluxo-de-entrega-canario" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Canary Delivery Workflow
+        Fluxo de Entrega Canário
       
     </span>
   </a>
@@ -3321,26 +3321,26 @@
 <div class="domain-page-hero" data-domain="containers">
   <div class="dph-left">
     <span class="dph-eyebrow">// containers-orchestration / service-mesh</span>
-    <h1 class="dph-title">Service Mesh</h1>
-    <p class="dph-desc">Transparent infrastructure layer for service-to-service communication. Automatic mTLS, fine-grained traffic management, rich L7 observability and progressive delivery patterns — all without changing application code.</p>
+    <h1 class="dph-title">Malha de Serviços</h1>
+    <p class="dph-desc">Camada de infraestrutura transparente para comunicação serviço a serviço. mTLS automático, gerenciamento de tráfego granular, observabilidade L7 rica e padrões de entrega progressiva — tudo sem alterar o código da aplicação.</p>
     <div class="dph-badges">
       <span class="tech-badge">Istio</span>
       <span class="tech-badge">Linkerd</span>
       <span class="tech-badge">mTLS</span>
-      <span class="tech-badge">Traffic Management</span>
-      <span class="tech-badge">Canary</span>
-      <span class="tech-badge">Fault Injection</span>
+      <span class="tech-badge">Gerenciamento de Tráfego</span>
+      <span class="tech-badge">Canário</span>
+      <span class="tech-badge">Injeção de Falhas</span>
     </div>
   </div>
 </div>
 
-<p><a href="../kubernetes/">← Kubernetes</a> | <a href="../">← Containers Overview</a> | <a href="../operators/">Operators →</a></p>
+<p><a href="../kubernetes/">← Kubernetes</a> | <a href="../">← Visão Geral de Contêineres</a> | <a href="../operators/">Operadores →</a></p>
 <hr />
 <h2 id="istio-vs-linkerd">Istio vs Linkerd</h2>
 <table>
 <thead>
 <tr>
-<th>Feature</th>
+<th>Recurso</th>
 <th>Istio</th>
 <th>Linkerd</th>
 </tr>
@@ -3348,59 +3348,59 @@
 <tbody>
 <tr>
 <td><strong>Proxy</strong></td>
-<td>Envoy (powerful, heavy)</td>
-<td>Linkerd2-proxy (Rust, ultra-light)</td>
+<td>Envoy (poderoso, pesado)</td>
+<td>Linkerd2-proxy (Rust, ultraleve)</td>
 </tr>
 <tr>
-<td><strong>Installation</strong></td>
+<td><strong>Instalação</strong></td>
 <td>Helm / <code>istioctl</code></td>
-<td>Helm / <code>linkerd</code> CLI</td>
+<td>Helm / CLI <code>linkerd</code></td>
 </tr>
 <tr>
 <td><strong>mTLS</strong></td>
-<td>Opt-in per namespace/workload</td>
-<td>Automatic for all meshed pods</td>
+<td>Opcional por namespace/workload</td>
+<td>Automático para todos os pods na malha</td>
 </tr>
 <tr>
-<td><strong>Traffic management</strong></td>
+<td><strong>Gerenciamento de tráfego</strong></td>
 <td>VirtualService, DestinationRule</td>
 <td>HTTPRoute (Gateway API)</td>
 </tr>
 <tr>
-<td><strong>Observability</strong></td>
+<td><strong>Observabilidade</strong></td>
 <td>Jaeger, Prometheus, Kiali</td>
-<td>Viz dashboard, Prometheus</td>
+<td>Dashboard Viz, Prometheus</td>
 </tr>
 <tr>
-<td><strong>Protocol detection</strong></td>
-<td>Automatic</td>
-<td>Automatic</td>
+<td><strong>Detecção de protocolo</strong></td>
+<td>Automática</td>
+<td>Automática</td>
 </tr>
 <tr>
-<td><strong>Resource overhead</strong></td>
-<td>High (~50–100 MB/pod)</td>
-<td>Low (~10–20 MB/pod)</td>
+<td><strong>Sobrecarga de recursos</strong></td>
+<td>Alta (~50–100 MB/pod)</td>
+<td>Baixa (~10–20 MB/pod)</td>
 </tr>
 <tr>
-<td><strong>Learning curve</strong></td>
-<td>Steep</td>
-<td>Gentle</td>
+<td><strong>Curva de aprendizado</strong></td>
+<td>Íngreme</td>
+<td>Suave</td>
 </tr>
 <tr>
 <td><strong>Multi-cluster</strong></td>
-<td>Built-in (multi-primary, primary-remote)</td>
-<td>Service mirroring</td>
+<td>Integrado (multi-primary, primary-remote)</td>
+<td>Espelhamento de serviços</td>
 </tr>
 <tr>
-<td><strong>WASM extensions</strong></td>
-<td>Yes (EnvoyFilter)</td>
-<td>No</td>
+<td><strong>Extensões WASM</strong></td>
+<td>Sim (EnvoyFilter)</td>
+<td>Não</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="istio">Istio</h2>
-<h3 id="installation">Installation</h3>
+<h3 id="instalacao">Instalação</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Install istioctl</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>curl<span class="w"> </span>-L<span class="w"> </span>https://istio.io/downloadIstio<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nv">ISTIO_VERSION</span><span class="o">=</span><span class="m">1</span>.22.1<span class="w"> </span>sh<span class="w"> </span>-
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$PWD</span><span class="s2">/istio-1.22.1/bin:</span><span class="nv">$PATH</span><span class="s2">&quot;</span>
@@ -3415,7 +3415,7 @@
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>istioctl<span class="w"> </span>verify-install
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>istioctl<span class="w"> </span>analyze<span class="w"> </span>-n<span class="w"> </span>production
 </code></pre></div>
-<h3 id="virtualservice-traffic-routing">VirtualService — Traffic Routing</h3>
+<h3 id="virtualservice-roteamento-de-trafego">VirtualService — Roteamento de Tráfego</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.istio.io/v1beta1</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VirtualService</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">metadata</span><span class="p">:</span>
@@ -3455,7 +3455,7 @@
 <a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">    </span><span class="c1"># Timeout</span>
 <a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="w">    </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30s</span>
 </code></pre></div>
-<h3 id="destinationrule-load-balancing-circuit-breaker">DestinationRule — Load Balancing &amp; Circuit Breaker</h3>
+<h3 id="destinationrule-balanceamento-de-carga-e-disjuntor">DestinationRule — Balanceamento de Carga e Disjuntor</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.istio.io/v1beta1</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DestinationRule</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">metadata</span><span class="p">:</span>
@@ -3485,7 +3485,7 @@
 <a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
 <a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">        </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v2</span>
 </code></pre></div>
-<h3 id="fault-injection">Fault Injection</h3>
+<h3 id="injecao-de-falhas">Injeção de Falhas</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.istio.io/v1beta1</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">VirtualService</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">metadata</span><span class="p">:</span>
@@ -3507,7 +3507,7 @@
 <a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">            </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api</span>
 <a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="w">            </span><span class="nt">subset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
 </code></pre></div>
-<h3 id="mtls-policy">mTLS Policy</h3>
+<h3 id="politica-de-mtls">Política de mTLS</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Enforce STRICT mTLS across the entire mesh</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">security.istio.io/v1beta1</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PeerAuthentication</span>
@@ -3563,7 +3563,7 @@
 <a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">            </span><span class="nt">methods</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">GET</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">POST</span><span class="p p-Indicator">]</span>
 <a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">            </span><span class="nt">paths</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;/api/*&quot;</span><span class="p p-Indicator">]</span>
 </code></pre></div>
-<h3 id="observability-with-kiali">Observability with Kiali</h3>
+<h3 id="observabilidade-com-kiali">Observabilidade com Kiali</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Install Kiali + addons</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/istio/istio/release-1.22/samples/addons/kiali.yaml
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/istio/istio/release-1.22/samples/addons/prometheus.yaml
@@ -3575,7 +3575,7 @@
 </code></pre></div>
 <hr />
 <h2 id="linkerd">Linkerd</h2>
-<h3 id="installation_1">Installation</h3>
+<h3 id="instalacao_1">Instalação</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Install Linkerd CLI</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>curl<span class="w"> </span>--proto<span class="w"> </span><span class="s1">&#39;=https&#39;</span><span class="w"> </span>--tlsv1.2<span class="w"> </span>-sSfL<span class="w"> </span>https://run.linkerd.io/install<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$HOME</span>/.linkerd2/bin:<span class="nv">$PATH</span>
@@ -3595,7 +3595,7 @@
 <a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>linkerd<span class="w"> </span>viz<span class="w"> </span>check
 <a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>linkerd<span class="w"> </span>viz<span class="w"> </span>dashboard<span class="w"> </span><span class="p">&amp;</span>
 </code></pre></div>
-<h3 id="meshing-workloads">Meshing Workloads</h3>
+<h3 id="inclusao-de-workloads-na-malha">Inclusão de Workloads na Malha</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Inject sidecar via namespace annotation (auto-injection)</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>kubectl<span class="w"> </span>annotate<span class="w"> </span>namespace<span class="w"> </span>production<span class="w"> </span>linkerd.io/inject<span class="o">=</span>enabled
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
@@ -3631,7 +3631,7 @@
 <a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">          </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
 <a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">          </span><span class="nt">weight</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
 </code></pre></div>
-<h3 id="serviceprofile-retries-timeouts">ServiceProfile (Retries &amp; Timeouts)</h3>
+<h3 id="serviceprofile-tentativas-e-tempos-limite">ServiceProfile (Tentativas e Tempos Limite)</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linkerd.io/v1alpha2</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceProfile</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nt">metadata</span><span class="p">:</span>
@@ -3655,7 +3655,7 @@
 <a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="w">        </span><span class="nt">ttl</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10s</span>
 <a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="w">      </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5s</span>
 </code></pre></div>
-<h3 id="multi-cluster-with-service-mirroring">Multi-cluster with Service Mirroring</h3>
+<h3 id="multi-cluster-com-espelhamento-de-servicos">Multi-cluster com Espelhamento de Serviços</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Link clusters</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>linkerd<span class="w"> </span>multicluster<span class="w"> </span>install<span class="w"> </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>linkerd<span class="w"> </span>multicluster<span class="w"> </span>link<span class="w"> </span>--cluster-name<span class="o">=</span>prod-us-east<span class="w"> </span><span class="se">\</span>
@@ -3668,7 +3668,7 @@
 <a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="c1"># api-prod-us-east.production.svc.cluster.local</span>
 </code></pre></div>
 <hr />
-<h2 id="canary-delivery-workflow">Canary Delivery Workflow</h2>
+<h2 id="fluxo-de-entrega-canario">Fluxo de Entrega Canário</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Initial state: 100% → stable (v1)
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Step 1:  10% → canary (v2),  90% → stable (v1)
@@ -3677,7 +3677,7 @@
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>Step 4: 100% → canary (v2),   0% → stable (v1)   ← promote: canary becomes stable
 <a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>         OR rollback if SLO breach detected
 </code></pre></div>
-<p>Automate this with <a href="https://flagger.app">Flagger</a>:</p>
+<p>Automatize isso com <a href="https://flagger.app">Flagger</a>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flagger.app/v1beta1</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Canary</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nt">metadata</span><span class="p">:</span>
@@ -3711,7 +3711,7 @@
 <a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a><span class="w">        </span><span class="nt">metadata</span><span class="p">:</span>
 <a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a><span class="w">          </span><span class="nt">cmd</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;hey</span><span class="nv"> </span><span class="s">-z</span><span class="nv"> </span><span class="s">1m</span><span class="nv"> </span><span class="s">-q</span><span class="nv"> </span><span class="s">10</span><span class="nv"> </span><span class="s">-c</span><span class="nv"> </span><span class="s">2</span><span class="nv"> </span><span class="s">http://api.production/&quot;</span>
 </code></pre></div>
-<p><a href="../kubernetes/">← Kubernetes</a> | <a href="../">← Containers Overview</a> | <a href="../operators/">Operators →</a></p>
+<p><a href="../kubernetes/">← Kubernetes</a> | <a href="../">← Visão Geral de Contêineres</a> | <a href="../operators/">Operadores →</a></p>
 
 
 

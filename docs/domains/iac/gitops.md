@@ -1,13 +1,13 @@
 ---
 title: GitOps
-description: Flux v2, ArgoCD, SOPS, Sealed Secrets, External Secrets and multi-cluster GitOps reference.
+description: Referência de Flux v2, ArgoCD, SOPS, Sealed Secrets, External Secrets e GitOps multi-cluster.
 ---
 
 <div class="domain-page-hero" data-domain="iac">
   <div class="dph-left">
     <span class="dph-eyebrow">// infrastructure-as-code / gitops</span>
     <h1 class="dph-title">GitOps</h1>
-    <p class="dph-desc">Git as the single source of truth for cluster state. A GitOps controller continuously reconciles the live cluster against the desired state in Git — eliminating configuration drift and enabling fully auditable, rollback-friendly deployments.</p>
+    <p class="dph-desc">Git como única fonte de verdade para o estado do cluster. Um controlador GitOps reconcilia continuamente o cluster em execução com o estado desejado no Git — eliminando o desvio de configuração e possibilitando implantações totalmente auditáveis e com suporte a rollback.</p>
     <div class="dph-badges">
       <span class="tech-badge">Flux v2</span>
       <span class="tech-badge">ArgoCD</span>
@@ -19,37 +19,37 @@ description: Flux v2, ArgoCD, SOPS, Sealed Secrets, External Secrets and multi-c
   </div>
 </div>
 
-[← Helm](helm.md) | [← IaC Overview](index.md)
+[← Helm](helm.md) | [← Visão Geral de IaC](index.md)
 
 ---
 
-## GitOps Principles
+## Princípios do GitOps
 
-| Principle | Description |
+| Princípio | Descrição |
 |-----------|-------------|
-| **Declarative** | Desired state expressed in Git, not imperative scripts |
-| **Versioned & immutable** | All changes are Git commits — auditable and revertable |
-| **Continuously reconciled** | Controller detects and corrects drift automatically |
-| **Pull-based** | Cluster pulls from Git; no CI push credentials in the cluster |
+| **Declarativo** | Estado desejado expresso no Git, não em scripts imperativos |
+| **Versionado e imutável** | Todas as alterações são commits no Git — auditáveis e reversíveis |
+| **Continuamente reconciliado** | O controlador detecta e corrige desvios automaticamente |
+| **Baseado em pull** | O cluster puxa do Git; sem credenciais de push de CI no cluster |
 
 ---
 
 ## Flux v2
 
-Flux v2 is a set of Kubernetes controllers built on the GitOps Toolkit. Each controller manages a specific CRD.
+O Flux v2 é um conjunto de controladores Kubernetes construído sobre o GitOps Toolkit. Cada controlador gerencia um CRD específico.
 
-| CRD | Purpose |
+| CRD | Finalidade |
 |-----|---------|
-| `GitRepository` | Source: polls a Git repo for changes |
-| `OCIRepository` | Source: polls an OCI artifact registry |
-| `HelmRepository` | Source: polls a Helm chart index |
-| `Kustomization` | Applies a Kustomize overlay from a source |
-| `HelmRelease` | Installs/upgrades a Helm chart from a source |
-| `ImageRepository` | Watches a container registry for new tags |
-| `ImagePolicy` | Selects the latest image tag matching a policy |
-| `ImageUpdateAutomation` | Commits new image tags back to Git |
+| `GitRepository` | Fonte: monitora um repositório Git por mudanças |
+| `OCIRepository` | Fonte: monitora um registry de artefatos OCI |
+| `HelmRepository` | Fonte: monitora um índice de charts Helm |
+| `Kustomization` | Aplica um overlay Kustomize de uma fonte |
+| `HelmRelease` | Instala/atualiza um chart Helm de uma fonte |
+| `ImageRepository` | Monitora um registry de contêineres por novas tags |
+| `ImagePolicy` | Seleciona a tag de imagem mais recente que corresponde a uma política |
+| `ImageUpdateAutomation` | Realiza commits de novas tags de imagem de volta ao Git |
 
-### Bootstrap Flux onto a cluster
+### Bootstrap do Flux em um cluster
 
 ```bash
 flux bootstrap github \
@@ -60,7 +60,7 @@ flux bootstrap github \
   --personal
 ```
 
-### GitRepository source
+### Fonte GitRepository
 
 ```yaml
 apiVersion: source.toolkit.fluxcd.io/v1
@@ -135,7 +135,7 @@ spec:
     cleanupOnFail: true
 ```
 
-### Image Automation
+### Automação de Imagem
 
 ```yaml
 # Watch registry for new tags
@@ -185,7 +185,7 @@ spec:
 
 ## ArgoCD
 
-ArgoCD is a declarative GitOps controller with a rich UI and RBAC model.
+ArgoCD é um controlador GitOps declarativo com uma interface rica e modelo RBAC.
 
 ### Application
 
@@ -224,7 +224,7 @@ spec:
         maxDuration: 3m
 ```
 
-### ApplicationSet — one app per cluster
+### ApplicationSet — um app por cluster
 
 ```yaml
 apiVersion: argoproj.io/v1alpha1
@@ -266,24 +266,24 @@ spec:
 
 ### Flux vs ArgoCD
 
-| Dimension | Flux v2 | ArgoCD |
+| Dimensão | Flux v2 | ArgoCD |
 |-----------|---------|--------|
-| **Architecture** | Loosely-coupled controllers per CRD | Single monolithic server + repo-server |
-| **UI** | Minimal (Weave GitOps OSS) | Full-featured web UI |
-| **Multi-tenancy** | Flux tenants via namespaced CRDs | Projects + RBAC |
-| **Image automation** | Built-in via ImagePolicy CRDs | Argocd-image-updater (separate project) |
-| **Notification** | notification-controller | argocd-notifications |
-| **Helm support** | HelmRelease CRD | Native, full lifecycle |
-| **Kustomize** | Kustomization CRD | Native overlay support |
-| **Multi-cluster** | One Flux per cluster | Centralized hub + agent spoke |
+| **Arquitetura** | Controladores fracamente acoplados por CRD | Servidor monolítico único + repo-server |
+| **UI** | Mínima (Weave GitOps OSS) | Interface web completa |
+| **Multi-tenancy** | Tenants Flux via CRDs com namespace | Projects + RBAC |
+| **Automação de imagem** | Integrada via CRDs ImagePolicy | Argocd-image-updater (projeto separado) |
+| **Notificação** | notification-controller | argocd-notifications |
+| **Suporte a Helm** | HelmRelease CRD | Nativo, ciclo de vida completo |
+| **Kustomize** | Kustomization CRD | Suporte nativo a overlays |
+| **Multi-cluster** | Um Flux por cluster | Hub centralizado + spoke com agente |
 
 ---
 
-## Secrets in GitOps
+## Segredos no GitOps
 
-### SOPS — Encrypt secrets in Git
+### SOPS — Criptografar segredos no Git
 
-SOPS encrypts only the values in YAML/JSON files, leaving keys readable.
+O SOPS criptografa apenas os valores em arquivos YAML/JSON, mantendo as chaves legíveis.
 
 ```bash
 # Generate a age key pair
@@ -306,7 +306,7 @@ creation_rules:
     age: age1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-Flux integrates SOPS natively — store the age private key as a K8s secret:
+O Flux integra o SOPS nativamente — armazene a chave privada age como um secret K8s:
 
 ```bash
 cat age.agekey | kubectl create secret generic sops-age \
@@ -338,7 +338,7 @@ spec:
 
 ### External Secrets Operator
 
-ESO syncs secrets from external stores (AWS Secrets Manager, Azure Key Vault, GCP Secret Manager, HashiCorp Vault) into Kubernetes Secrets.
+O ESO sincroniza segredos de stores externos (AWS Secrets Manager, Azure Key Vault, GCP Secret Manager, HashiCorp Vault) em Kubernetes Secrets.
 
 ```yaml
 # SecretStore — connection to the external system
@@ -384,7 +384,7 @@ spec:
 
 ---
 
-## Multi-Cluster Repository Layout
+## Layout de Repositório Multi-Cluster
 
 ```
 fleet-infra/

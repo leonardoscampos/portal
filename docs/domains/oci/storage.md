@@ -1,13 +1,13 @@
 ---
-title: OCI Storage
-description: Object Storage, Block Volumes, File Storage, Archive Storage — storage on Oracle Cloud Infrastructure.
+title: OCI Armazenamento
+description: Object Storage, Block Volumes, File Storage, Archive Storage — armazenamento na Oracle Cloud Infrastructure.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// oci / storage</span>
-    <h1 class="dph-title">OCI Storage</h1>
-    <p class="dph-desc">OCI Object Storage offers an S3-compatible API and is the standard location for Terraform state, artefacts and data. Block Volumes deliver ultra-high IOPS at predictable pricing. File Storage provides NFS v3/v4.1 shared mounts for clusters.</p>
+    <h1 class="dph-title">OCI Armazenamento</h1>
+    <p class="dph-desc">O OCI Object Storage oferece uma API compatível com S3 e é o local padrão para estado do Terraform, artefatos e dados. Os Block Volumes entregam IOPS ultra-altos com preços previsíveis. O File Storage fornece montagens NFS v3/v4.1 compartilhadas para clusters.</p>
     <div class="dph-badges">
       <span class="tech-badge">Object Storage</span>
       <span class="tech-badge">Block Volumes</span>
@@ -21,25 +21,25 @@ description: Object Storage, Block Volumes, File Storage, Archive Storage — st
 
 ## Object Storage
 
-OCI Object Storage is regionally durable, S3-compatible object storage. It is used for Terraform remote state, build artefacts, container image layers (OCIR), data lake ingestion and backup targets.
+O OCI Object Storage é um armazenamento de objetos durável regionalmente e compatível com S3. É usado para estado remoto do Terraform, artefatos de build, camadas de imagens de contêiner (OCIR), ingestão de data lake e destinos de backup.
 
-### Storage tiers
+### Camadas de armazenamento
 
-| Tier | Description | Min retention | Use case |
-|------|-------------|--------------|---------|
-| **Standard** | Hot, frequently accessed | None | Artefacts, state files, active data |
-| **Infrequent Access** | Lower storage cost, higher retrieval | 31 days | Backups, logs |
-| **Archive** | Lowest cost, restore required before read | 90 days | Long-term compliance |
+| Camada | Descrição | Retenção mínima | Caso de uso |
+|--------|-----------|-----------------|-------------|
+| **Standard** | Hot, acesso frequente | Nenhuma | Artefatos, arquivos de estado, dados ativos |
+| **Infrequent Access** | Menor custo de armazenamento, maior custo de recuperação | 31 dias | Backups, logs |
+| **Archive** | Menor custo, restauração necessária antes da leitura | 90 dias | Conformidade de longo prazo |
 
-### S3 compatibility
+### Compatibilidade com S3
 
-OCI Object Storage exposes an Amazon S3-compatible endpoint. Most S3 tools (AWS CLI, Terraform S3 backend, s3fs, rclone) work natively with OCI Object Storage:
+O OCI Object Storage expõe um endpoint compatível com o Amazon S3. A maioria das ferramentas S3 (AWS CLI, backend S3 do Terraform, s3fs, rclone) funciona nativamente com o OCI Object Storage:
 
 ```
 Endpoint: https://<namespace>.compat.objectstorage.<region>.oraclecloud.com
 ```
 
-### Terraform state bucket
+### Bucket para estado do Terraform
 
 ```hcl
 resource "oci_objectstorage_bucket" "tfstate" {
@@ -56,7 +56,7 @@ resource "oci_objectstorage_bucket" "tfstate" {
 }
 ```
 
-### Terraform backend (S3-compatible)
+### Backend Terraform (compatível com S3)
 
 ```hcl
 terraform {
@@ -79,7 +79,7 @@ terraform {
 }
 ```
 
-### Lifecycle policy
+### Política de ciclo de vida
 
 ```hcl
 resource "oci_objectstorage_object_lifecycle_policy" "artefacts" {
@@ -116,25 +116,25 @@ resource "oci_objectstorage_object_lifecycle_policy" "artefacts" {
 ```
 
 !!! tip "Pre-Authenticated Requests"
-    Use **Pre-Authenticated Requests (PARs)** to grant time-limited, credential-free access to specific objects or buckets — useful for sharing artefacts with external partners without exposing IAM credentials.
+    Use **Pre-Authenticated Requests (PARs)** para conceder acesso temporário e sem credenciais a objetos ou buckets específicos — útil para compartilhar artefatos com parceiros externos sem expor credenciais IAM.
 
 ---
 
 ## Block Volumes
 
-OCI Block Volumes are high-performance block storage attached to Compute instances and OKE persistent volumes. Block Volumes are automatically replicated across 3 fault domains within an Availability Domain.
+Os OCI Block Volumes são armazenamento em bloco de alto desempenho anexado a instâncias de Computação e volumes persistentes do OKE. Os Block Volumes são replicados automaticamente em 3 domínios de falha dentro de um Availability Domain.
 
-### Performance tiers
+### Camadas de desempenho
 
-| Tier | IOPS/GB | Max IOPS | Max throughput | Use case |
-|------|--------|---------|---------------|---------|
-| **Lower Cost** | 2 | 3,000 | 480 MB/s | Dev/test |
-| **Balanced** | 10 | 25,000 | 480 MB/s | General workloads |
-| **Higher Performance** | 20 | 35,000 | 480 MB/s | Databases |
-| **Ultra-High Performance** | 30–120 | 300,000 | 2,680 MB/s | Mission-critical DBs |
+| Camada | IOPS/GB | IOPS máx. | Throughput máx. | Caso de uso |
+|--------|---------|-----------|-----------------|-------------|
+| **Lower Cost** | 2 | 3.000 | 480 MB/s | Dev/teste |
+| **Balanced** | 10 | 25.000 | 480 MB/s | Cargas de trabalho gerais |
+| **Higher Performance** | 20 | 35.000 | 480 MB/s | Bancos de dados |
+| **Ultra-High Performance** | 30–120 | 300.000 | 2.680 MB/s | BDs de missão crítica |
 
 !!! tip "Ultra-High Performance"
-    OCI's **Ultra-High Performance** tier supports up to 300,000 IOPS and 2,680 MB/s throughput — significantly more than comparable offerings from AWS (EBS io2) or Azure (Ultra Disk) at the same price point.
+    A camada **Ultra-High Performance** da OCI suporta até 300.000 IOPS e 2.680 MB/s de throughput — significativamente mais do que ofertas comparáveis da AWS (EBS io2) ou Azure (Ultra Disk) no mesmo patamar de preço.
 
 ```hcl
 resource "oci_core_volume" "database" {
@@ -158,7 +158,7 @@ resource "oci_core_volume_attachment" "database" {
 }
 ```
 
-### OKE storage classes
+### Classes de armazenamento do OKE
 
 ```yaml
 apiVersion: storage.k8s.io/v1
@@ -174,7 +174,7 @@ allowVolumeExpansion: true
 volumeBindingMode: WaitForFirstConsumer
 ```
 
-### Volume Backup
+### Backup de Volume
 
 ```hcl
 resource "oci_core_volume_backup_policy" "production" {
@@ -209,7 +209,7 @@ resource "oci_core_volume_backup_policy_assignment" "database" {
 
 ## File Storage
 
-OCI File Storage provides a fully managed NFS v3 and NFSv4.1 shared file system. Mount targets expose the NFS endpoint within a VCN subnet; file systems can be mounted from multiple Compute instances and OKE pods simultaneously.
+O OCI File Storage fornece um sistema de arquivos compartilhado NFS v3 e NFSv4.1 totalmente gerenciado. Os Mount targets expõem o endpoint NFS dentro de uma sub-rede VCN; os sistemas de arquivos podem ser montados por múltiplas instâncias de Computação e pods OKE simultaneamente.
 
 ```hcl
 resource "oci_file_storage_file_system" "shared" {
@@ -242,7 +242,7 @@ resource "oci_file_storage_export" "shared" {
 }
 ```
 
-### Mount in OKE pods
+### Montagem em pods OKE
 
 ```yaml
 apiVersion: v1
@@ -266,18 +266,18 @@ spec:
 
 ## Archive Storage
 
-OCI Archive Storage is the lowest-cost storage tier within Object Storage — 10× cheaper than Standard. Objects must be restored (takes up to 1 hour) before they can be downloaded.
+O OCI Archive Storage é a camada de armazenamento de menor custo dentro do Object Storage — 10× mais barato que o Standard. Os objetos devem ser restaurados (leva até 1 hora) antes de serem baixados.
 
-Use cases: regulatory compliance archives, final backup copies, cold disaster recovery data.
+Casos de uso: arquivos de conformidade regulatória, cópias finais de backup, dados de recuperação de desastres frios.
 
-| Attribute | Details |
-|-----------|---------|
-| Minimum retention | 90 days |
-| Restoration time | Up to 1 hour |
-| Pricing | ~$0.001/GB/month (region-dependent) |
-| Access | Via Object Storage API after restoration |
+| Atributo | Detalhes |
+|----------|---------|
+| Retenção mínima | 90 dias |
+| Tempo de restauração | Até 1 hora |
+| Preço | ~$0,001/GB/mês (dependente da região) |
+| Acesso | Via API do Object Storage após restauração |
 
 ---
 
-[← OCI Overview](index.md){ .md-button }
-[Networking →](networking.md){ .md-button .md-button--primary }
+[← Visão Geral OCI](index.md){ .md-button }
+[Rede →](networking.md){ .md-button .md-button--primary }

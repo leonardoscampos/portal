@@ -1,13 +1,13 @@
 ---
 title: Kubernetes
-description: Kubernetes core objects, workloads, networking, RBAC, storage, autoscaling and resource management reference.
+description: Referência de objetos principais, workloads, rede, RBAC, armazenamento, autoescalonamento e gerenciamento de recursos do Kubernetes.
 ---
 
 <div class="domain-page-hero" data-domain="containers">
   <div class="dph-left">
     <span class="dph-eyebrow">// containers-orchestration / kubernetes</span>
     <h1 class="dph-title">Kubernetes</h1>
-    <p class="dph-desc">The de-facto container orchestration platform. Declarative workload management, self-healing deployments, fine-grained RBAC, flexible networking and storage abstractions — all driven by a powerful reconciliation-based control plane.</p>
+    <p class="dph-desc">A plataforma de orquestração de contêineres de facto. Gerenciamento declarativo de workloads, implantações autorreparáveis, RBAC granular, abstrações flexíveis de rede e armazenamento — tudo impulsionado por um poderoso plano de controle baseado em reconciliação.</p>
     <div class="dph-badges">
       <span class="tech-badge">Workloads</span>
       <span class="tech-badge">Networking</span>
@@ -23,31 +23,31 @@ description: Kubernetes core objects, workloads, networking, RBAC, storage, auto
 
 ---
 
-## Core Object Reference
+## Referência de Objetos Principais
 
-| Object | API Group | Description |
+| Objeto | Grupo de API | Descrição |
 |--------|-----------|-------------|
-| **Pod** | core/v1 | Atomic unit — one or more containers sharing network/storage |
-| **ReplicaSet** | apps/v1 | Maintains N identical pod replicas |
-| **Deployment** | apps/v1 | Declarative rolling updates over ReplicaSets |
-| **StatefulSet** | apps/v1 | Ordered, stable identity pods (databases, queues) |
-| **DaemonSet** | apps/v1 | One pod per node (log agents, monitoring) |
-| **Job** | batch/v1 | Run-to-completion workload |
-| **CronJob** | batch/v1 | Scheduled Jobs |
-| **Service** | core/v1 | Stable network endpoint for pods |
-| **Ingress** | networking.k8s.io/v1 | L7 HTTP routing |
-| **ConfigMap** | core/v1 | Non-sensitive configuration data |
-| **Secret** | core/v1 | Sensitive data (base64-encoded, RBAC-protected) |
-| **PersistentVolume** | core/v1 | Cluster-level storage resource |
-| **PersistentVolumeClaim** | core/v1 | User's request for storage |
-| **ServiceAccount** | core/v1 | Identity for pods within the cluster |
-| **NetworkPolicy** | networking.k8s.io/v1 | L3/L4 firewall rules between pods |
-| **HorizontalPodAutoscaler** | autoscaling/v2 | Scale pods based on metrics |
-| **PodDisruptionBudget** | policy/v1 | Availability guarantees during disruptions |
+| **Pod** | core/v1 | Unidade atômica — um ou mais contêineres compartilhando rede/armazenamento |
+| **ReplicaSet** | apps/v1 | Mantém N réplicas idênticas de pod |
+| **Deployment** | apps/v1 | Atualizações progressivas declarativas sobre ReplicaSets |
+| **StatefulSet** | apps/v1 | Pods com identidade estável e ordenada (bancos de dados, filas) |
+| **DaemonSet** | apps/v1 | Um pod por nó (agentes de log, monitoramento) |
+| **Job** | batch/v1 | Workload de execução até conclusão |
+| **CronJob** | batch/v1 | Jobs agendados |
+| **Service** | core/v1 | Endpoint de rede estável para pods |
+| **Ingress** | networking.k8s.io/v1 | Roteamento HTTP L7 |
+| **ConfigMap** | core/v1 | Dados de configuração não sensíveis |
+| **Secret** | core/v1 | Dados sensíveis (codificados em base64, protegidos por RBAC) |
+| **PersistentVolume** | core/v1 | Recurso de armazenamento no nível do cluster |
+| **PersistentVolumeClaim** | core/v1 | Solicitação de armazenamento do usuário |
+| **ServiceAccount** | core/v1 | Identidade para pods dentro do cluster |
+| **NetworkPolicy** | networking.k8s.io/v1 | Regras de firewall L3/L4 entre pods |
+| **HorizontalPodAutoscaler** | autoscaling/v2 | Escalar pods com base em métricas |
+| **PodDisruptionBudget** | policy/v1 | Garantias de disponibilidade durante interrupções |
 
 ---
 
-## Deployment
+## Implantação
 
 ```yaml
 apiVersion: apps/v1
@@ -166,7 +166,7 @@ spec:
 
 ---
 
-## Services & Networking
+## Serviços e Rede
 
 ```yaml
 # ClusterIP (default) — internal only
@@ -347,7 +347,7 @@ rules:
 
 ---
 
-## Storage
+## Armazenamento
 
 ```yaml
 # StorageClass
@@ -416,7 +416,7 @@ spec:
 
 ---
 
-## Autoscaling
+## Autoescalonamento
 
 === "HPA"
 
@@ -519,7 +519,7 @@ spec:
 
 ---
 
-## ConfigMap & Secret Patterns
+## Padrões de ConfigMap e Secret
 
 ```yaml
 # ConfigMap — mount as file
@@ -547,8 +547,8 @@ stringData:                        # stringData auto base64-encodes
   api-key: "my-api-key"
 ```
 
-!!! warning "External secrets in production"
-    Never commit Secrets to Git. Use [External Secrets Operator](../iac/gitops.md) with AWS Secrets Manager, GCP Secret Manager or Azure Key Vault to sync secrets into the cluster automatically.
+!!! warning "Segredos externos em produção"
+    Nunca faça commit de Secrets no Git. Use o [External Secrets Operator](../iac/gitops.md) com AWS Secrets Manager, GCP Secret Manager ou Azure Key Vault para sincronizar segredos no cluster automaticamente.
 
 ---
 
@@ -568,7 +568,7 @@ spec:
 
 ---
 
-## kubectl Cheatsheet
+## Referência Rápida do kubectl
 
 ```bash
 # Context management

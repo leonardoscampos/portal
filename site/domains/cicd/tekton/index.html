@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Tekton Kubernetes-native CI/CD, Tasks, Pipelines, Triggers and Tekton Chains supply chain security reference.">
+        <meta name="description" content="DevOps Engineer Specialist – Cloud Infrastructure, IaC, CI/CD, Containers and Observability.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#core-crd-overview" class="md-skip">
+        <a href="#visao-geral-dos-crds-principais" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -1569,10 +1569,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-crd-overview" class="md-nav__link">
+  <a href="#visao-geral-dos-crds-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core CRD Overview
+        Visão Geral dos CRDs Principais
       
     </span>
   </a>
@@ -1580,10 +1580,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-tekton" class="md-nav__link">
+  <a href="#instalando-o-tekton" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installing Tekton
+        Instalando o Tekton
       
     </span>
   </a>
@@ -1624,10 +1624,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#triggers-webhook-pipelinerun" class="md-nav__link">
+  <a href="#gatilhos-webhook-pipelinerun" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Triggers (Webhook → PipelineRun)
+        Gatilhos (Webhook → PipelineRun)
       
     </span>
   </a>
@@ -1635,10 +1635,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tekton-chains-supply-chain-security" class="md-nav__link">
+  <a href="#tekton-chains-seguranca-da-cadeia-de-suprimentos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tekton Chains — Supply Chain Security
+        Tekton Chains — Segurança da Cadeia de Suprimentos
       
     </span>
   </a>
@@ -1657,10 +1657,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tkn-cli-cheatsheet" class="md-nav__link">
+  <a href="#referencia-rapida-da-cli-tkn" class="md-nav__link">
     <span class="md-ellipsis">
       
-        tkn CLI Cheatsheet
+        Referência Rápida da CLI tkn
       
     </span>
   </a>
@@ -1668,10 +1668,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
+  <a href="#melhores-praticas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practices
+        Melhores Práticas
       
     </span>
   </a>
@@ -3036,10 +3036,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#core-crd-overview" class="md-nav__link">
+  <a href="#visao-geral-dos-crds-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core CRD Overview
+        Visão Geral dos CRDs Principais
       
     </span>
   </a>
@@ -3047,10 +3047,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installing-tekton" class="md-nav__link">
+  <a href="#instalando-o-tekton" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installing Tekton
+        Instalando o Tekton
       
     </span>
   </a>
@@ -3091,10 +3091,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#triggers-webhook-pipelinerun" class="md-nav__link">
+  <a href="#gatilhos-webhook-pipelinerun" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Triggers (Webhook → PipelineRun)
+        Gatilhos (Webhook → PipelineRun)
       
     </span>
   </a>
@@ -3102,10 +3102,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tekton-chains-supply-chain-security" class="md-nav__link">
+  <a href="#tekton-chains-seguranca-da-cadeia-de-suprimentos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tekton Chains — Supply Chain Security
+        Tekton Chains — Segurança da Cadeia de Suprimentos
       
     </span>
   </a>
@@ -3124,10 +3124,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tkn-cli-cheatsheet" class="md-nav__link">
+  <a href="#referencia-rapida-da-cli-tkn" class="md-nav__link">
     <span class="md-ellipsis">
       
-        tkn CLI Cheatsheet
+        Referência Rápida da CLI tkn
       
     </span>
   </a>
@@ -3135,10 +3135,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
+  <a href="#melhores-praticas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practices
+        Melhores Práticas
       
     </span>
   </a>
@@ -3162,11 +3162,15 @@
 
 
 
+<hr />
+<p>title: Tekton
+description: Referência de CI/CD nativo do Kubernetes com Tekton: Tasks, Pipelines, Triggers e segurança da cadeia de suprimentos com Tekton Chains.</p>
+<hr />
 <div class="domain-page-hero" data-domain="cicd">
   <div class="dph-left">
     <span class="dph-eyebrow">// cicd-pipelines / tekton</span>
     <h1 class="dph-title">Tekton</h1>
-    <p class="dph-desc">Kubernetes-native CI/CD framework built on CRDs. Tasks, Pipelines and Triggers run as regular Kubernetes workloads — scalable, portable and fully declarative. Tekton Chains adds automatic supply-chain security with SLSA provenance and Sigstore signing.</p>
+    <p class="dph-desc">Framework de CI/CD nativo do Kubernetes construído sobre CRDs. Tasks, Pipelines e Triggers são executados como workloads regulares do Kubernetes — escaláveis, portáteis e totalmente declarativos. Tekton Chains adiciona segurança automática da cadeia de suprimentos com proveniência SLSA e assinatura Sigstore.</p>
     <div class="dph-badges">
       <span class="tech-badge">Tasks</span>
       <span class="tech-badge">Pipelines</span>
@@ -3178,53 +3182,53 @@
   </div>
 </div>
 
-<p><a href="../jenkins/">← Jenkins</a> | <a href="../">← CI/CD Overview</a> | <a href="../azure-devops/">Azure DevOps →</a></p>
+<p><a href="../jenkins/">← Jenkins</a> | <a href="../">← Visão Geral de CI/CD</a> | <a href="../azure-devops/">Azure DevOps →</a></p>
 <hr />
-<h2 id="core-crd-overview">Core CRD Overview</h2>
+<h2 id="visao-geral-dos-crds-principais">Visão Geral dos CRDs Principais</h2>
 <table>
 <thead>
 <tr>
 <th>CRD</th>
-<th>Description</th>
+<th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Task</strong></td>
-<td>Ordered list of Steps. Each Step is a container. The unit of reuse</td>
+<td>Lista ordenada de Passos. Cada Passo é um contêiner. A unidade de reuso</td>
 </tr>
 <tr>
 <td><strong>TaskRun</strong></td>
-<td>Instantiation of a Task with params and workspaces</td>
+<td>Instanciação de uma Task com parâmetros e workspaces</td>
 </tr>
 <tr>
 <td><strong>Pipeline</strong></td>
-<td>DAG of Tasks with params, workspaces and results wiring</td>
+<td>DAG de Tasks com parâmetros, workspaces e conexão de resultados</td>
 </tr>
 <tr>
 <td><strong>PipelineRun</strong></td>
-<td>Instantiation of a Pipeline</td>
+<td>Instanciação de um Pipeline</td>
 </tr>
 <tr>
 <td><strong>Workspace</strong></td>
-<td>Shared volume between Tasks (PVC, ConfigMap, Secret, emptyDir)</td>
+<td>Volume compartilhado entre Tasks (PVC, ConfigMap, Segredo, emptyDir)</td>
 </tr>
 <tr>
 <td><strong>Param</strong></td>
-<td>Typed input (string, array, object)</td>
+<td>Entrada tipada (string, array, objeto)</td>
 </tr>
 <tr>
 <td><strong>Result</strong></td>
-<td>String output emitted by a Task, consumed by downstream Tasks</td>
+<td>Saída de string emitida por uma Task, consumida por Tasks downstream</td>
 </tr>
 <tr>
 <td><strong>StepAction</strong></td>
-<td>Reusable single Step (Tekton v0.54+, Tekton Hub compatible)</td>
+<td>Passo único reutilizável (Tekton v0.54+, compatível com Tekton Hub)</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="installing-tekton">Installing Tekton</h2>
+<h2 id="instalando-o-tekton">Instalando o Tekton</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Pipelines</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
@@ -3400,7 +3404,7 @@
 <a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">        </span><span class="nt">runAsUser</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">65532</span>
 </code></pre></div>
 <hr />
-<h2 id="triggers-webhook-pipelinerun">Triggers (Webhook → PipelineRun)</h2>
+<h2 id="gatilhos-webhook-pipelinerun">Gatilhos (Webhook → PipelineRun)</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># TriggerBinding — extracts values from the webhook payload</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">triggers.tekton.dev/v1beta1</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TriggerBinding</span>
@@ -3482,13 +3486,13 @@
 <a id="__codelineno-4-79" name="__codelineno-4-79" href="#__codelineno-4-79"></a><span class="w">        </span><span class="nt">ref</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build-deploy-template</span>
 </code></pre></div>
 <hr />
-<h2 id="tekton-chains-supply-chain-security">Tekton Chains — Supply Chain Security</h2>
-<p>Tekton Chains runs as a controller watching TaskRuns. When a TaskRun completes, Chains:</p>
+<h2 id="tekton-chains-seguranca-da-cadeia-de-suprimentos">Tekton Chains — Segurança da Cadeia de Suprimentos</h2>
+<p>Tekton Chains é executado como um controller que monitora TaskRuns. Quando um TaskRun é concluído, o Chains:</p>
 <ol>
-<li>Captures the Task's inputs/outputs and parameters</li>
-<li>Generates an in-toto attestation (SLSA provenance)</li>
-<li>Signs it using the configured key (cosign / KMS)</li>
-<li>Stores the signature as an annotation on the TaskRun</li>
+<li>Captura as entradas/saídas e parâmetros da Task</li>
+<li>Gera um atestado in-toto (proveniência SLSA)</li>
+<li>Assina com a chave configurada (cosign / KMS)</li>
+<li>Armazena a assinatura como uma anotação no TaskRun</li>
 </ol>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># chains-config ConfigMap (in tekton-chains namespace)</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
@@ -3554,7 +3558,7 @@
 <a id="__codelineno-7-29" name="__codelineno-7-29" href="#__codelineno-7-29"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-local-task</span>
 </code></pre></div>
 <hr />
-<h2 id="tkn-cli-cheatsheet">tkn CLI Cheatsheet</h2>
+<h2 id="referencia-rapida-da-cli-tkn">Referência Rápida da CLI tkn</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># List pipelines</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>tkn<span class="w"> </span>pipeline<span class="w"> </span>list
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
@@ -3582,67 +3586,64 @@
 <a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">  </span>-d<span class="w"> </span>@payload.json
 </code></pre></div>
 <hr />
-<h2 id="best-practices">Best Practices</h2>
+<h2 id="melhores-praticas">Melhores Práticas</h2>
 <table>
 <thead>
 <tr>
-<th>Practice</th>
-<th>Implementation</th>
+<th>Prática</th>
+<th>Implementação</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Use Resolvers</strong></td>
-<td>Reference Tasks from Hub or Git — avoid copy-pasting</td>
+<td>Referencie Tasks do Hub ou Git — evite copiar e colar</td>
 </tr>
 <tr>
-<td><strong>Pin Task versions</strong></td>
-<td>Specify exact <code>version</code> in resolver params</td>
+<td><strong>Fixe versões de Task</strong></td>
+<td>Especifique o <code>version</code> exato nos parâmetros do resolver</td>
 </tr>
 <tr>
-<td><strong>Workspaces over env vars</strong></td>
-<td>Pass files between Tasks via shared workspaces</td>
+<td><strong>Workspaces ao invés de variáveis de ambiente</strong></td>
+<td>Passe arquivos entre Tasks via workspaces compartilhados</td>
 </tr>
 <tr>
-<td><strong>Task Results</strong></td>
-<td>Wire outputs between Tasks without side-channel storage</td>
+<td><strong>Resultados de Task</strong></td>
+<td>Conecte saídas entre Tasks sem armazenamento por canal lateral</td>
 </tr>
 <tr>
-<td><strong>Kaniko for image builds</strong></td>
-<td>Rootless, daemon-free builds inside Kubernetes</td>
+<td><strong>Kaniko para builds de imagem</strong></td>
+<td>Builds sem root e sem daemon dentro do Kubernetes</td>
 </tr>
 <tr>
 <td><strong>Tekton Chains</strong></td>
-<td>Enable for automatic SLSA provenance on every TaskRun</td>
+<td>Habilite para proveniência SLSA automática em cada TaskRun</td>
 </tr>
 <tr>
-<td><strong>Resource limits</strong></td>
-<td>Set CPU/memory on all Steps — prevent noisy-neighbour issues</td>
+<td><strong>Limites de recursos</strong></td>
+<td>Defina CPU/memória em todos os Passos — evite problemas de vizinho barulhento</td>
 </tr>
 <tr>
-<td><strong>Non-root Steps</strong></td>
-<td>Run Steps as <code>runAsNonRoot: true</code> for security</td>
+<td><strong>Passos sem root</strong></td>
+<td>Execute Passos com <code>runAsNonRoot: true</code> por segurança</td>
 </tr>
 <tr>
-<td><strong>PipelineRun cleanup</strong></td>
-<td>Use <code>tektoncd/pruner</code> or <code>tkn pipelinerun delete --keep</code></td>
+<td><strong>Limpeza de PipelineRun</strong></td>
+<td>Use <code>tektoncd/pruner</code> ou <code>tkn pipelinerun delete --keep</code></td>
 </tr>
 <tr>
-<td><strong>Dashboard RBAC</strong></td>
-<td>Restrict Dashboard access; it shows secrets via workspace contents</td>
+<td><strong>RBAC do Dashboard</strong></td>
+<td>Restrinja o acesso ao Dashboard; ele exibe segredos via conteúdo dos workspaces</td>
 </tr>
 </tbody>
 </table>
-<p><a href="../jenkins/">← Jenkins</a> | <a href="../">← CI/CD Overview</a> | <a href="../azure-devops/">Azure DevOps →</a></p>
+<p><a href="../jenkins/">← Jenkins</a> | <a href="../">← Visão Geral de CI/CD</a> | <a href="../azure-devops/">Azure DevOps →</a></p>
 
 
 
 
 
 
-
-  
-  
 
 
 

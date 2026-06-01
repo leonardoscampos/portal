@@ -1,13 +1,13 @@
 ---
-title: GCP Security & IAM
-description: Cloud IAM, Workload Identity, Secret Manager, Cloud KMS, Security Command Center, VPC Service Controls.
+title: GCP Segurança & IAM
+description: Cloud IAM, Workload Identity, Secret Manager, Cloud KMS, Security Command Center, VPC Service Controls — segurança e IAM no Google Cloud.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// gcp / security</span>
-    <h1 class="dph-title">GCP Security &amp; IAM</h1>
-    <p class="dph-desc">GCP IAM uses bindings (who, role, where) at every level of the resource hierarchy. Workload Identity eliminates key files for GKE pods. Secret Manager centralises secrets. Cloud KMS handles CMEK. Security Command Center provides cloud posture management.</p>
+    <h1 class="dph-title">GCP Segurança &amp; IAM</h1>
+    <p class="dph-desc">O Cloud IAM usa vínculos (quem, papel, onde) em cada nível da hierarquia de recursos. Workload Identity elimina arquivos de chave para pods GKE. Secret Manager centraliza segredos. Cloud KMS gerencia CMEK. Security Command Center fornece gestão de postura na nuvem.</p>
     <div class="dph-badges">
       <span class="tech-badge">Cloud IAM</span>
       <span class="tech-badge">Workload Identity</span>
@@ -23,9 +23,9 @@ description: Cloud IAM, Workload Identity, Secret Manager, Cloud KMS, Security C
 
 ## Cloud IAM
 
-GCP IAM is based on **bindings**: a tuple of `(principal, role, resource)`. Principals can be Google accounts, service accounts, groups, domains or special identifiers like `allAuthenticatedUsers`.
+O Cloud IAM é baseado em **vínculos**: uma tupla de `(principal, papel, recurso)`. Os principais podem ser contas do Google, contas de serviço, grupos, domínios ou identificadores especiais como `allAuthenticatedUsers`.
 
-### Resource hierarchy
+### Hierarquia de recursos
 
 ```
 Organisation
@@ -34,15 +34,15 @@ Organisation
               └── Resources (GCS bucket, GKE cluster, VM, etc.)
 ```
 
-IAM policies are **inherited downward and additive** — roles granted at the org level apply to all projects. There is no explicit deny (except with **IAM Deny policies**, which are additive denies evaluated before allow policies).
+As políticas do IAM são **herdadas para baixo e aditivas** — papéis concedidos no nível da organização se aplicam a todos os projetos. Não há negação explícita (exceto com as **políticas de negação do IAM**, que são negações aditivas avaliadas antes das políticas de permissão).
 
-### Role types
+### Tipos de papel
 
-| Type | Description | Example |
-|------|-------------|---------|
-| **Basic** | Broad legacy roles | `roles/viewer`, `roles/editor`, `roles/owner` |
-| **Predefined** | Service-specific curated roles | `roles/container.developer` |
-| **Custom** | Organisation-defined set of permissions | `CustomRole/ciDeploy` |
+| Tipo | Descrição | Exemplo |
+|------|-----------|---------|
+| **Básico** | Papéis legados amplos | `roles/viewer`, `roles/editor`, `roles/owner` |
+| **Pré-definido** | Papéis selecionados por serviço | `roles/container.developer` |
+| **Personalizado** | Conjunto de permissões definido pela organização | `CustomRole/ciDeploy` |
 
 ```hcl
 # Grant a CI service account permission to push to Artifact Registry
@@ -60,14 +60,14 @@ resource "google_project_iam_member" "gke_developer" {
 }
 ```
 
-!!! tip "Principle of least privilege"
-    Never use `roles/editor` or `roles/owner` in production. Audit all bindings with `gcloud projects get-iam-policy` or **Policy Analyzer** in Security Command Center. Use **IAM Recommender** to surface over-privileged service accounts automatically.
+!!! tip "Princípio do menor privilégio"
+    Nunca use `roles/editor` ou `roles/owner` em produção. Audite todos os vínculos com `gcloud projects get-iam-policy` ou o **Policy Analyzer** no Security Command Center. Use o **IAM Recommender** para identificar automaticamente contas de serviço com excesso de privilégios.
 
 ---
 
 ## Workload Identity
 
-Workload Identity lets GKE pods act as GCP Service Accounts without mounting key files. The OIDC token projected into the pod is exchanged for a short-lived GCP access token via the Security Token Service (STS).
+O Workload Identity permite que pods GKE atuem como contas de serviço do GCP sem montar arquivos de chave. O token OIDC projetado no pod é trocado por um token de acesso GCP de curta duração via Security Token Service (STS).
 
 ```hcl
 # 1. GCP Service Account for the application
@@ -106,7 +106,7 @@ metadata:
 
 ## Secret Manager
 
-Cloud Secret Manager stores, versions and audits secrets. Access is controlled via IAM (`roles/secretmanager.secretAccessor`). Each access is logged to Cloud Audit Logs.
+O Cloud Secret Manager armazena, versiona e audita segredos. O acesso é controlado via IAM (`roles/secretmanager.secretAccessor`). Cada acesso é registrado no Cloud Audit Logs.
 
 ```hcl
 resource "google_secret_manager_secret" "db_password" {
@@ -133,7 +133,7 @@ resource "google_secret_manager_secret_iam_member" "app" {
 }
 ```
 
-### Mount in GKE via Secrets Store CSI Driver
+### Montar no GKE via Secrets Store CSI Driver
 
 ```yaml
 apiVersion: secrets-store.csi.x-k8s.io/v1
@@ -158,7 +158,7 @@ spec:
 
 ## Cloud KMS
 
-Cloud KMS manages cryptographic keys for envelope encryption of GCP resources (CMEK). Keys exist in a **key ring** within a location; key rings and keys cannot be deleted.
+O Cloud KMS gerencia chaves criptográficas para criptografia em envelope de recursos GCP (CMEK). As chaves existem em um **chaveiro** dentro de uma localização; chaveiros e chaves não podem ser excluídos.
 
 ```hcl
 resource "google_kms_key_ring" "main" {
@@ -197,17 +197,17 @@ resource "google_container_cluster" "main" {
 
 ## Security Command Center (SCC)
 
-SCC is GCP's CSPM (Cloud Security Posture Management) platform. It aggregates findings from Google-built detectors and third-party integrations, maps to frameworks (CIS, PCI-DSS, NIST) and provides asset inventory.
+O SCC é a plataforma CSPM (Gestão de Postura de Segurança na Nuvem) do GCP. Ela agrega descobertas de detectores construídos pelo Google e integrações de terceiros, mapeia para frameworks (CIS, PCI-DSS, NIST) e fornece inventário de ativos.
 
-### Key built-in detectors
+### Principais detectores integrados
 
-| Detector | What it finds |
+| Detector | O que detecta |
 |---------|--------------|
-| **Security Health Analytics** | Misconfigurations (public buckets, firewall open to 0.0.0.0, no OS login) |
-| **Event Threat Detection** | Compromised IAM credentials, cryptomining, brute force, unusual API activity |
-| **Container Threat Detection** | Runtime threats in GKE — reverse shells, binary execution in container |
-| **Web Security Scanner** | XSS, SQLi, mixed content in App Engine / Cloud Run apps |
-| **VM Threat Detection** | Memory-level threats, rootkits (agentless) |
+| **Security Health Analytics** | Configurações incorretas (buckets públicos, Firewall aberto para 0.0.0.0, sem OS login) |
+| **Event Threat Detection** | Credenciais IAM comprometidas, mineração de criptomoedas, força bruta, atividade de API incomum |
+| **Container Threat Detection** | Ameaças em tempo de execução no GKE — shells reversos, execução de binários em contêiner |
+| **Web Security Scanner** | XSS, SQLi, conteúdo misto em apps App Engine / Cloud Run |
+| **VM Threat Detection** | Ameaças no nível de memória, rootkits (sem agente) |
 
 ```hcl
 # Enable SCC at organisation level
@@ -234,7 +234,7 @@ resource "google_scc_organization_custom_module" "deny_public_buckets" {
 
 ## VPC Service Controls
 
-VPC Service Controls (VPC-SC) creates a security perimeter around GCP APIs. Resources inside the perimeter can only communicate with other resources inside the perimeter — preventing data exfiltration even if credentials are compromised.
+O VPC Service Controls (VPC-SC) cria um perímetro de segurança em torno das APIs do GCP. Os recursos dentro do perímetro só podem se comunicar com outros recursos dentro do perímetro — prevenindo exfiltração de dados mesmo se as credenciais forem comprometidas.
 
 ```hcl
 resource "google_access_context_manager_access_policy" "main" {
@@ -263,10 +263,10 @@ resource "google_access_context_manager_service_perimeter" "data" {
 }
 ```
 
-!!! warning "Dry-run mode first"
-    Always deploy VPC-SC in **dry-run mode** (`use_explicit_dry_run_spec = true`) before enforcing. Violations are logged but not blocked — gives you visibility into what would break before enforcement.
+!!! warning "Modo dry-run primeiro"
+    Sempre implante o VPC-SC no **modo dry-run** (`use_explicit_dry_run_spec = true`) antes de aplicar. As violações são registradas, mas não bloqueadas — oferece visibilidade sobre o que quebraria antes da aplicação.
 
 ---
 
-[← GCP Overview](index.md){ .md-button }
-[Observability →](observability.md){ .md-button .md-button--primary }
+[← Visão Geral GCP](index.md){ .md-button }
+[Observabilidade →](observability.md){ .md-button .md-button--primary }

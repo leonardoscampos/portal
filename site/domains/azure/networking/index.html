@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="VNet, Azure DNS, Front Door, App Gateway, ExpressRoute, Private Endpoint — networking on Azure.">
+        <meta name="description" content="VNet, Azure DNS, Front Door, App Gateway, ExpressRoute, Private Endpoint — rede no Azure.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -798,10 +798,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#hub-spoke-topology" class="md-nav__link">
+  <a href="#topologia-hub-spoke" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hub-spoke topology
+        Topologia hub-spoke
       
     </span>
   </a>
@@ -848,10 +848,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#key-features" class="md-nav__link">
+  <a href="#recursos-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key features
+        Recursos principais
       
     </span>
   </a>
@@ -3051,10 +3051,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#hub-spoke-topology" class="md-nav__link">
+  <a href="#topologia-hub-spoke" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hub-spoke topology
+        Topologia hub-spoke
       
     </span>
   </a>
@@ -3101,10 +3101,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#key-features" class="md-nav__link">
+  <a href="#recursos-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key features
+        Recursos principais
       
     </span>
   </a>
@@ -3170,7 +3170,7 @@
   <div class="dph-left">
     <span class="dph-eyebrow">// azure / networking</span>
     <h1 class="dph-title">Azure Networking</h1>
-    <p class="dph-desc">Hub-spoke virtual networks, global traffic management with Front Door, granular load balancing with App Gateway, private connectivity with Private Endpoint and hybrid networking with ExpressRoute — Azure networking designed for enterprise workloads.</p>
+    <p class="dph-desc">Redes virtuais hub-spoke, gerenciamento global de tráfego com Front Door, balanceamento de carga granular com App Gateway, conectividade privada com Private Endpoint e rede híbrida com ExpressRoute — a rede Azure projetada para cargas de trabalho enterprise.</p>
     <div class="dph-badges">
       <span class="tech-badge">VNet</span>
       <span class="tech-badge">Azure DNS</span>
@@ -3184,8 +3184,8 @@
 
 <hr />
 <h2 id="virtual-network-vnet">Virtual Network (VNet)</h2>
-<p>A VNet is an isolated Layer-3 network within an Azure region. Unlike AWS VPCs, Azure VNets support <strong>multiple address spaces</strong> and subnets can span the entire address space of the VNet.</p>
-<h3 id="hub-spoke-topology">Hub-spoke topology</h3>
+<p>Uma VNet é uma rede isolada de Camada 3 dentro de uma região do Azure. Diferentemente das VPCs da AWS, as VNets do Azure suportam <strong>múltiplos espaços de endereço</strong> e as sub-redes podem abranger todo o espaço de endereço da VNet.</p>
+<h3 id="topologia-hub-spoke">Topologia hub-spoke</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>   On-premises ─── ExpressRoute/VPN ──→ Hub VNet
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                                           │
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>               ┌───────────────────────────┤
@@ -3234,7 +3234,7 @@
 <a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="network-security-groups">Network Security Groups</h3>
-<p>NSGs are stateful packet filters applied to subnets or individual NICs. Define rules with allow/deny, priority (100–4096, lower wins), source/dest IP ranges and ports.</p>
+<p>NSGs são filtros de pacotes com estado aplicados a sub-redes ou NICs individuais. Defina regras com allow/deny, prioridade (100–4096, menor vence), intervalos de IP de origem/destino e portas.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azurerm_network_security_group&quot;</span><span class="w"> </span><span class="nv">&quot;aks&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="na">name</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;aks-nsg&quot;</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="na">resource_group_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">azurerm_resource_group.prod.name</span>
@@ -3267,12 +3267,12 @@
 </code></pre></div>
 <hr />
 <h2 id="azure-front-door">Azure Front Door</h2>
-<p>Front Door is Azure's global application delivery network — CDN, WAF, SSL offload, anycast routing and health-based failover in one service. <strong>Front Door Standard/Premium</strong> (the current generation) replaces the classic tier and Azure CDN profiles.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Browser → Anycast POP (600+ globally)
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>            ├── Cached content → serve immediately (CDN)
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>            └── Cache miss / dynamic → route to closest healthy origin
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>                  ├── Origin: App Service (primary)
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>                  └── Origin: Static Website (failover)
+<p>Front Door é a rede global de entrega de aplicações do Azure — CDN, WAF, offload de SSL, roteamento anycast e failover baseado em saúde em um único serviço. <strong>Front Door Standard/Premium</strong> (geração atual) substitui a camada clássica e os perfis do Azure CDN.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Browser → Anycast POP (600+ globalmente)
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>            ├── Conteúdo em cache → servir imediatamente (CDN)
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>            └── Cache miss / dinâmico → roteie para a origem mais próxima e saudável
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>                  ├── Origem: App Service (primária)
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>                  └── Origem: Site estático (failover)
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azurerm_cdn_frontdoor_profile&quot;</span><span class="w"> </span><span class="nv">&quot;main&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="na">name</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}-afd&quot;</span>
@@ -3305,43 +3305,43 @@
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Front Door vs App Gateway</p>
-<p>Use <strong>Front Door</strong> for global multi-region routing, CDN and anycast WAF. Use <strong>Application Gateway</strong> for regional L7 load balancing within a VNet — AKS ingress, URL-path routing to microservices, mTLS termination.</p>
+<p>Use <strong>Front Door</strong> para roteamento global entre múltiplas regiões, CDN e WAF anycast. Use <strong>Application Gateway</strong> para balanceamento de carga L7 regional dentro de uma VNet — ingress do AKS, roteamento por URL para microsserviços, terminação mTLS.</p>
 </div>
 <hr />
 <h2 id="application-gateway">Application Gateway</h2>
-<p>App Gateway is a regional L7 load balancer and WAF. It is the standard ingress controller for AKS in enterprise Azure environments via the <strong>AGIC</strong> (Application Gateway Ingress Controller) add-on.</p>
-<h3 id="key-features">Key features</h3>
+<p>App Gateway é um balanceador de carga L7 regional e WAF. É o controlador de ingress padrão para AKS em ambientes Azure enterprise por meio do complemento <strong>AGIC</strong> (Application Gateway Ingress Controller).</p>
+<h3 id="recursos-principais">Recursos principais</h3>
 <table>
 <thead>
 <tr>
-<th>Feature</th>
-<th>Description</th>
+<th>Recurso</th>
+<th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>WAF v2</strong></td>
-<td>OWASP CRS 3.2 rule sets, custom rules, bot protection</td>
+<td>Conjuntos de regras OWASP CRS 3.2, regras personalizadas, proteção contra bots</td>
 </tr>
 <tr>
-<td><strong>SSL/TLS termination</strong></td>
-<td>Offload TLS, re-encrypt to backend</td>
+<td><strong>Terminação SSL/TLS</strong></td>
+<td>Offload de TLS, re-criptografia para o backend</td>
 </tr>
 <tr>
-<td><strong>URL-based routing</strong></td>
-<td>Route <code>/api/*</code> to API pods, <code>/</code> to frontend</td>
+<td><strong>Roteamento por URL</strong></td>
+<td>Rotear <code>/api/*</code> para pods de API, <code>/</code> para o frontend</td>
 </tr>
 <tr>
-<td><strong>Cookie-based session affinity</strong></td>
-<td>Sticky sessions</td>
+<td><strong>Afinidade de sessão por cookie</strong></td>
+<td>Sessões sticky</td>
 </tr>
 <tr>
-<td><strong>Autoscaling</strong></td>
-<td>Min 0 to max N instances (v2 SKU)</td>
+<td><strong>Escalonamento automático</strong></td>
+<td>Mín 0 a máx N instâncias (SKU v2)</td>
 </tr>
 <tr>
 <td><strong>Private link</strong></td>
-<td>Expose App Gateway privately across VNets</td>
+<td>Expor o App Gateway privadamente entre VNets</td>
 </tr>
 </tbody>
 </table>
@@ -3375,12 +3375,12 @@
 <a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="w">    </span><span class="na">name</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;app-cert&quot;</span>
 <a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a><span class="w">    </span><span class="na">key_vault_secret_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">azurerm_key_vault_certificate.app.secret_id</span>
 <a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a><span class="w">  </span><span class="p">}</span>
-<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="c1">  # ... backend pool, http settings, routing rules omitted for brevity</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="c1">  # ... pool de backend, configurações http, regras de roteamento omitidos por brevidade</span>
 <a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
 <h2 id="private-endpoint">Private Endpoint</h2>
-<p>Private Endpoint gives a private IP address in your VNet to an Azure PaaS service (Storage, Key Vault, ACR, AKS API server, SQL, etc.) — traffic stays on the Microsoft backbone, never traversing the internet.</p>
+<p>Private Endpoint atribui um endereço IP privado na sua VNet a um serviço PaaS do Azure (Storage, Key Vault, ACR, servidor de API do AKS, SQL, etc.) — o tráfego permanece no backbone da Microsoft, sem passar pela internet.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azurerm_private_endpoint&quot;</span><span class="w"> </span><span class="nv">&quot;keyvault&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="na">name</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;kv-pe&quot;</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="na">resource_group_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">azurerm_resource_group.main.name</span>
@@ -3406,30 +3406,30 @@
 <a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="p">}</span>
 </code></pre></div>
 <div class="admonition tip">
-<p class="admonition-title">Private DNS Zones</p>
-<p>Each Azure PaaS service has its own <code>privatelink.*</code> DNS zone. Link these zones to every VNet that needs to resolve private endpoints. Centralise Private DNS Zones in the hub VNet and link spokes — avoids duplicating zones per spoke.</p>
+<p class="admonition-title">Zonas de DNS Privado</p>
+<p>Cada serviço PaaS do Azure tem sua própria zona DNS <code>privatelink.*</code>. Vincule essas zonas a todas as VNets que precisam resolver endpoints privados. Centralize as Zonas de DNS Privado na VNet hub e vincule os spokes — evita duplicar zonas por spoke.</p>
 </div>
 <hr />
 <h2 id="azure-dns">Azure DNS</h2>
-<p>Azure DNS hosts DNS zones with anycast routing and 100% SLA availability. Use <strong>Private DNS Zones</strong> for internal service-to-service name resolution within VNets.</p>
+<p>Azure DNS hospeda zonas DNS com roteamento anycast e disponibilidade com SLA de 100%. Use <strong>Zonas de DNS Privado</strong> para resolução de nomes internos entre serviços dentro de VNets.</p>
 <table>
 <thead>
 <tr>
-<th>Zone type</th>
-<th>Resolved by</th>
-<th>Use case</th>
+<th>Tipo de zona</th>
+<th>Resolvido por</th>
+<th>Caso de uso</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Public DNS</strong></td>
-<td>Internet resolvers</td>
-<td>External-facing domains</td>
+<td><strong>DNS Público</strong></td>
+<td>Resolvedores da internet</td>
+<td>Domínios voltados ao público externo</td>
 </tr>
 <tr>
-<td><strong>Private DNS</strong></td>
-<td>Azure-internal resolvers</td>
-<td>VNet-internal service discovery</td>
+<td><strong>DNS Privado</strong></td>
+<td>Resolvedores internos do Azure</td>
+<td>Descoberta de serviços dentro da VNet</td>
 </tr>
 </tbody>
 </table>
@@ -3438,40 +3438,40 @@
 <table>
 <thead>
 <tr>
-<th>Option</th>
-<th>Bandwidth</th>
-<th>Latency</th>
-<th>Cost</th>
-<th>Use case</th>
+<th>Opção</th>
+<th>Largura de banda</th>
+<th>Latência</th>
+<th>Custo</th>
+<th>Caso de uso</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>ExpressRoute</strong></td>
 <td>50 Mbps – 100 Gbps</td>
-<td>Low, predictable</td>
-<td>High</td>
-<td>Production hybrid connectivity</td>
+<td>Baixa, previsível</td>
+<td>Alto</td>
+<td>Conectividade híbrida em produção</td>
 </tr>
 <tr>
 <td><strong>VPN Gateway</strong></td>
-<td>Up to 10 Gbps</td>
-<td>Variable</td>
-<td>Lower</td>
-<td>Dev/test, backup path, branch offices</td>
+<td>Até 10 Gbps</td>
+<td>Variável</td>
+<td>Menor</td>
+<td>Dev/teste, caminho de backup, filiais</td>
 </tr>
 <tr>
 <td><strong>ExpressRoute + VPN</strong></td>
-<td>Combined</td>
-<td>Redundant</td>
-<td>Higher</td>
-<td>HA hybrid with ExpressRoute as primary</td>
+<td>Combinado</td>
+<td>Redundante</td>
+<td>Maior</td>
+<td>HA híbrido com ExpressRoute como primário</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<p><a class="md-button" href="../">← Azure Overview</a>
-<a class="md-button md-button--primary" href="../security/">Security &amp; IAM →</a></p>
+<p><a class="md-button" href="../">← Visão Geral Azure</a>
+<a class="md-button md-button--primary" href="../security/">Segurança &amp; IAM →</a></p>
 
 
 
