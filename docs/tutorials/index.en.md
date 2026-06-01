@@ -1,38 +1,36 @@
 ---
+title: Tutorials
+description: Step-by-step walkthroughs — from local environment to production deploys.
 hide:
   - toc
 ---
 
-<div class="coming-soon-page">
-  <div class="cs-icon">&#9881;&#65039;</div>
-  <div class="cs-badge">Coming Soon</div>
-  <h1 class="cs-title">Tutorials</h1>
-  <p class="cs-desc">Step-by-step walkthroughs — from local environment to production deployments — are being prepared.</p>
+# Tutorials
 
-  <div class="cs-cards">
-    <div class="cs-card">
-      <span class="cs-card-icon">&#128421;&#65039;</span>
-      <span class="cs-card-label">Local Environment</span>
-    </div>
-    <div class="cs-card">
-      <span class="cs-card-icon">&#127758;</span>
-      <span class="cs-card-label">Production Deployment</span>
-    </div>
-    <div class="cs-card">
-      <span class="cs-card-icon">&#128268;</span>
-      <span class="cs-card-label">CI/CD Integrations</span>
-    </div>
-    <div class="cs-card">
-      <span class="cs-card-icon">&#128736;&#65039;</span>
-      <span class="cs-card-label">Infrastructure Setup</span>
-    </div>
-    <div class="cs-card">
-      <span class="cs-card-icon">&#128202;</span>
-      <span class="cs-card-label">Monitoring</span>
-    </div>
-    <div class="cs-card">
-      <span class="cs-card-icon">&#128272;</span>
-      <span class="cs-card-label">Security &amp; Secrets</span>
-    </div>
-  </div>
+Step-by-step walkthroughs that take you from a local environment to production deploys.
+
+---
+
+<div class="grid cards" markdown>
+
+-   :simple-docker: **[Containerize and Run an Application with Docker](docker-containerize-app.md)**
+
+    ---
+
+    ⏱ **45 min** &nbsp;·&nbsp; `Beginner` &nbsp;·&nbsp; `#docker` `#containers` `#compose`
+
+    From scratch to a Node.js API running in a container with PostgreSQL, multi-stage build and security best practices.
+
+    [:octicons-arrow-right-24: Go to tutorial](docker-containerize-app.md)
+
+-   :simple-prometheus: **[Monitoring Stack with Prometheus and Grafana](prometheus-grafana.md)**
+
+    ---
+
+    ⏱ **60 min** &nbsp;·&nbsp; `Intermediate` &nbsp;·&nbsp; `#prometheus` `#grafana` `#observability`
+
+    Set up Prometheus, Grafana and Alertmanager with Docker Compose, create real dashboards and alerts.
+
+    [:octicons-arrow-right-24: Go to tutorial](prometheus-grafana.md)
+
 </div>

@@ -72,7 +72,6 @@ plugins:
       lang:
         - pt
         - en
-  - blog
   - i18n:
       docs_structure: suffix
       fallback_to_default: true
@@ -116,9 +115,13 @@ plugins:
             Infrastructure as Code: Infraestrutura como Código
             About Me: Sobre Mim
             Guides: Guias
+            Overview: Visão Geral
+            Terraform Multi-env: Terraform Multi-env
             Introduction: Introdução
             Advanced Topics: Tópicos Avançados
             Tutorials: Tutoriais
+            Docker: Docker
+            Prometheus & Grafana: Prometheus & Grafana
             Setup Guide: Guia de Configuração
             Deployment Guide: Guia de Implantação
             Blog: Blog
@@ -204,7 +207,11 @@ nav:
       - GitOps: domains/iac/gitops.md
       - Packer: domains/iac/packer.md
   - About Me: about-me.md
-  - Guides: guides/index.md
-  - Tutorials: tutorials/index.md
-  - Blog:
-    - blog/index.md
+  - Guides:
+      - Overview: guides/index.md
+      - Terraform Multi-env: guides/terraform-multi-env.md
+  - Tutorials:
+      - Overview: tutorials/index.md
+      - Docker: tutorials/docker-containerize-app.md
+      - Prometheus & Grafana: tutorials/prometheus-grafana.md
+  - Blog: blog/index.md
