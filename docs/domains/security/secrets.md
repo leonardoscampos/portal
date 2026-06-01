@@ -1,13 +1,13 @@
 ---
-title: Secrets Management
-description: HashiCorp Vault, External Secrets Operator, AWS Secrets Manager, SOPS — secrets lifecycle without credentials in code.
+title: Gerenciamento de Segredos
+description: HashiCorp Vault, External Secrets Operator, AWS Secrets Manager, SOPS — ciclo de vida de segredos sem credenciais no código.
 ---
 
 <div class="domain-page-hero" data-domain="security">
   <div class="dph-left">
     <span class="dph-eyebrow">// security-devsecops / secrets-management</span>
-    <h1 class="dph-title">Secrets Management</h1>
-    <p class="dph-desc">Secrets belong in a vault — not in Git, environment variables, or container images. Centralised secrets management provides encryption at rest, dynamic credentials, automatic rotation, audit logging, and fine-grained access control for every workload.</p>
+    <h1 class="dph-title">Gerenciamento de Segredos</h1>
+    <p class="dph-desc">Segredos pertencem a um cofre — não ao Git, variáveis de ambiente ou imagens de contêiner. O gerenciamento centralizado de segredos fornece criptografia em repouso, credenciais dinâmicas, rotação automática, registro de auditoria e controle de acesso granular para cada workload.</p>
     <div class="dph-badges">
       <span class="tech-badge">HashiCorp Vault</span>
       <span class="tech-badge">External Secrets Operator</span>
@@ -19,13 +19,13 @@ description: HashiCorp Vault, External Secrets Operator, AWS Secrets Manager, SO
   </div>
 </div>
 
-[← DevSecOps Pipelines](devsecops.md) | [← Security Overview](index.md) | [Policy as Code →](opa-policies.md)
+[← Pipelines DevSecOps](devsecops.md) | [← Visão Geral de Segurança](index.md) | [Política como Código →](opa-policies.md)
 
 ---
 
 ## HashiCorp Vault
 
-### Installation (Helm — HA with Integrated Storage)
+### Instalação (Helm — HA com Armazenamento Integrado)
 
 ```bash
 helm repo add hashicorp https://helm.releases.hashicorp.com
@@ -94,7 +94,7 @@ ui:
   serviceType: ClusterIP
 ```
 
-### Initial Setup
+### Configuração Inicial
 
 ```bash
 # Initialise (first time only)
@@ -115,7 +115,7 @@ export VAULT_TOKEN=$(jq -r '.root_token' vault-keys.json)
 kubectl exec -n vault vault-0 -- vault login "$VAULT_TOKEN"
 ```
 
-### KV Secrets Engine
+### Motor de Segredos KV
 
 ```bash
 # Enable KV v2
@@ -143,7 +143,7 @@ vault kv delete secret/production/database
 vault kv undelete -versions=2 secret/production/database
 ```
 
-### Dynamic Database Credentials
+### Credenciais Dinâmicas de Banco de Dados
 
 ```bash
 # Enable database secrets engine
@@ -174,7 +174,7 @@ vault read database/creds/app-readonly
 #   lease_duration: 1h
 ```
 
-### Kubernetes Auth + Policy
+### Autenticação Kubernetes + Política
 
 ```bash
 # Enable Kubernetes auth
@@ -245,7 +245,7 @@ spec:
 
 ## External Secrets Operator (ESO)
 
-ESO syncs secrets from external providers (AWS, Azure, GCP, Vault) into Kubernetes Secrets — without sidecar agents.
+O ESO sincroniza segredos de provedores externos (AWS, Azure, GCP, Vault) para Kubernetes Secrets — sem agentes sidecar.
 
 ```bash
 helm upgrade --install external-secrets external-secrets/external-secrets \
@@ -312,7 +312,7 @@ spec:
         property: host
 ```
 
-### PushSecret — write K8s Secret back to a provider
+### PushSecret — escrever K8s Secret de volta para um provedor
 
 ```yaml
 apiVersion: external-secrets.io/v1alpha1
@@ -343,7 +343,7 @@ spec:
 
 ---
 
-## SOPS — Secrets in Git (Encrypted)
+## SOPS — Segredos no Git (Criptografados)
 
 ```bash
 # Install
@@ -391,7 +391,7 @@ helm secrets upgrade --install my-app ./chart \
 
 ---
 
-## Sealed Secrets (GitOps-native)
+## Sealed Secrets (nativo para GitOps)
 
 ```bash
 # Install controller
@@ -416,16 +416,16 @@ git add sealed-db-creds.yaml
 
 ---
 
-## Secret Rotation Best Practices
+## Boas Práticas de Rotação de Segredos
 
-| Pattern | Implementation |
+| Padrão | Implementação |
 |---------|---------------|
-| **Short TTLs** | Use dynamic credentials (Vault DB engine) with 1–4 h TTL |
-| **Rotation on breach** | Automate via Vault TOTP / AWS Secrets Manager rotation Lambda |
-| **Zero-downtime rotation** | Lease new creds before revoking old (graceful handoff) |
-| **Audit trail** | Enable Vault audit backend; forward to SIEM |
-| **Break-glass access** | Store unseal keys in hardware HSM / split custody |
-| **No secrets in env vars** | Mount as files from `/vault/secrets/` or K8s Secret volume |
-| **Detect leaks** | Run Gitleaks / TruffleHog in pre-commit and CI |
+| **TTLs Curtos** | Use credenciais dinâmicas (motor de BD do Vault) com TTL de 1–4 h |
+| **Rotação em caso de vazamento** | Automatize via Vault TOTP / Lambda de rotação do AWS Secrets Manager |
+| **Rotação sem interrupção** | Conceda novas credenciais antes de revogar as antigas (handoff gradual) |
+| **Trilha de auditoria** | Ative o backend de auditoria do Vault; encaminhe para o SIEM |
+| **Acesso de emergência** | Armazene chaves de unsealing em HSM de hardware / custódia dividida |
+| **Sem segredos em variáveis de ambiente** | Monte como arquivos de `/vault/secrets/` ou volume K8s Secret |
+| **Detectar vazamentos** | Execute Gitleaks / TruffleHog no pre-commit e CI |
 
-[← DevSecOps Pipelines](devsecops.md) | [← Security Overview](index.md) | [Policy as Code →](opa-policies.md)
+[← Pipelines DevSecOps](devsecops.md) | [← Visão Geral de Segurança](index.md) | [Política como Código →](opa-policies.md)

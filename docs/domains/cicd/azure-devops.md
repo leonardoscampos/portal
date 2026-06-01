@@ -1,13 +1,13 @@
 ---
 title: Azure DevOps
-description: Azure DevOps YAML pipelines, stages, service connections, environments, variable groups and Artifacts reference.
+description: Referência de pipelines YAML, estágios, conexões de serviço, ambientes, grupos de variáveis e Artifacts do Azure DevOps.
 ---
 
 <div class="domain-page-hero" data-domain="cicd">
   <div class="dph-left">
     <span class="dph-eyebrow">// cicd-pipelines / azure-devops</span>
     <h1 class="dph-title">Azure DevOps</h1>
-    <p class="dph-desc">Microsoft's end-to-end DevOps platform. YAML multi-stage pipelines with gates and approvals, Azure Artifacts for package management, Environments for deployment tracking with rollback, and deep integration with Azure services through service connections.</p>
+    <p class="dph-desc">Plataforma DevOps end-to-end da Microsoft. Pipelines YAML multi-estágio com gates e aprovações, Azure Artifacts para gerenciamento de pacotes, Ambientes para rastreamento de implantações com rollback e integração profunda com serviços Azure por meio de conexões de serviço.</p>
     <div class="dph-badges">
       <span class="tech-badge">YAML Pipelines</span>
       <span class="tech-badge">Stages</span>
@@ -23,7 +23,7 @@ description: Azure DevOps YAML pipelines, stages, service connections, environme
 
 ---
 
-## Pipeline Anatomy
+## Anatomia do Pipeline
 
 ```yaml
 # azure-pipelines.yml
@@ -131,27 +131,27 @@ stages:
 
 ---
 
-## Core Concepts
+## Conceitos Principais
 
-| Concept | Description |
+| Conceito | Descrição |
 |---------|-------------|
-| **Stage** | Top-level grouping — appears in the pipeline visualization |
-| **Job** | Set of steps on a single agent. Jobs in a stage run in parallel by default |
-| **Deployment Job** | Special job targeting an Environment — tracks deployment history |
-| **Step** | A task or script within a job |
-| **Task** | Pre-built unit of work (marketplace or built-in) |
-| **Agent** | Host running jobs: Microsoft-hosted (pay-per-minute) or self-hosted |
-| **Agent Pool** | Group of agents. Projects get access to pools via org settings |
-| **Service Connection** | Authenticated connection to external services (ACR, AKS, GitHub…) |
-| **Environment** | Named deployment target with history, approvals and resource checks |
-| **Variable Group** | Shared set of variables (with optional Key Vault linkage) |
-| **Artifact** | Build output published with `PublishBuildArtifacts@1` or Pipeline Artifacts |
+| **Estágio** | Agrupamento de nível superior — aparece na visualização do pipeline |
+| **Job** | Conjunto de passos em um único agente. Jobs em um estágio são executados em paralelo por padrão |
+| **Deployment Job** | Job especial que referencia um Ambiente — rastreia o histórico de implantações |
+| **Passo** | Uma tarefa ou script dentro de um job |
+| **Tarefa** | Unidade de trabalho pré-construída (marketplace ou integrada) |
+| **Agente** | Host que executa jobs: hospedado pela Microsoft (pago por minuto) ou auto-hospedado |
+| **Pool de Agentes** | Grupo de agentes. Projetos obtêm acesso a pools pelas configurações da organização |
+| **Conexão de Serviço** | Conexão autenticada para serviços externos (ACR, AKS, GitHub…) |
+| **Ambiente** | Alvo de implantação nomeado com histórico, aprovações e verificações de recursos |
+| **Grupo de Variáveis** | Conjunto compartilhado de variáveis (com vínculo opcional ao Key Vault) |
+| **Artefato** | Saída de build publicada com `PublishBuildArtifacts@1` ou Pipeline Artifacts |
 
 ---
 
-## Variables & Variable Groups
+## Variáveis e Grupos de Variáveis
 
-=== "Inline Variables"
+=== "Variáveis Inline"
 
     ```yaml
     variables:
@@ -162,7 +162,7 @@ stages:
       semver: $(major).$(minor).$(patch)
     ```
 
-=== "Variable Group"
+=== "Grupo de Variáveis"
 
     ```yaml
     variables:
@@ -171,9 +171,9 @@ stages:
         value: something
     ```
 
-    Create groups under **Pipelines → Library → Variable Groups**. For Key Vault-backed groups, set `Link secrets from an Azure Key Vault`.
+    Crie grupos em **Pipelines → Library → Variable Groups**. Para grupos vinculados ao Key Vault, defina `Link secrets from an Azure Key Vault`.
 
-=== "Runtime Parameters"
+=== "Parâmetros de Execução"
 
     ```yaml
     parameters:
@@ -195,17 +195,17 @@ stages:
 
 ---
 
-## Service Connections
+## Conexões de Serviço
 
-| Connection Type | Purpose |
+| Tipo de Conexão | Finalidade |
 |----------------|---------|
-| **Azure Resource Manager** | ARM/AKS operations (managed identity or SP) |
-| **Docker Registry** | Push/pull from ACR, Docker Hub, GCR |
-| **Kubernetes** | Deploy to AKS or any cluster (kubeconfig / SA) |
-| **GitHub** | Source checkout, GitHub checks, PR status |
-| **Bitbucket Cloud** | Source checkout |
-| **SSH** | SSH-based deployments |
-| **Generic** | Arbitrary HTTP endpoint with token auth |
+| **Azure Resource Manager** | Operações ARM/AKS (identidade gerenciada ou SP) |
+| **Docker Registry** | Push/pull de ACR, Docker Hub, GCR |
+| **Kubernetes** | Implantação no AKS ou qualquer cluster (kubeconfig / SA) |
+| **GitHub** | Checkout de código, checks do GitHub, status de PR |
+| **Bitbucket Cloud** | Checkout de código |
+| **SSH** | Implantações via SSH |
+| **Generic** | Endpoint HTTP arbitrário com autenticação por token |
 
 ```yaml
 # Using a service connection in a task
@@ -221,7 +221,7 @@ stages:
 
 ---
 
-## Environments & Approvals
+## Ambientes e Aprovações
 
 ```yaml
 jobs:
@@ -236,19 +236,19 @@ jobs:
             - script: echo "Deploying to production"
 ```
 
-**Configure approvals:** *Environments → production → Approvals and checks → Approvals*
+**Configurar aprovações:** *Environments → production → Approvals and checks → Approvals*
 
-Check types available:
-- Required reviewers (person or group)
-- Branch control (only from protected branch)
-- Business hours gate
-- Invoke Azure Function / REST API
+Tipos de verificação disponíveis:
+- Revisores obrigatórios (pessoa ou grupo)
+- Controle de branch (somente de branch protegida)
+- Gate de horário comercial
+- Invocar Azure Function / REST API
 
 ---
 
 ## Templates
 
-=== "Step Template"
+=== "Template de Passo"
 
     ```yaml
     # templates/steps/build-and-test.yml
@@ -283,7 +283,7 @@ Check types available:
                   dotnetVersion: '8.x'
     ```
 
-=== "Stage Template"
+=== "Template de Estágio"
 
     ```yaml
     # templates/stages/deploy.yml
@@ -307,7 +307,7 @@ Check types available:
                           --set image.tag=${{ parameters.imageTag }}
     ```
 
-=== "Pipeline Template"
+=== "Template de Pipeline"
 
     ```yaml
     # azure-pipelines.yml
@@ -359,7 +359,7 @@ Check types available:
 
 ---
 
-## Self-Hosted Agents
+## Agentes Auto-hospedados
 
 === "Docker"
 
@@ -408,37 +408,37 @@ Check types available:
 
 ---
 
-## Useful Built-in Variables
+## Variáveis Integradas Úteis
 
-| Variable | Value |
+| Variável | Valor |
 |----------|-------|
-| `$(Build.BuildId)` | Unique build number (auto-incrementing) |
-| `$(Build.BuildNumber)` | Formatted build number |
-| `$(Build.SourceVersion)` | Full commit SHA |
+| `$(Build.BuildId)` | Número de build único (auto-incremental) |
+| `$(Build.BuildNumber)` | Número de build formatado |
+| `$(Build.SourceVersion)` | SHA completo do commit |
 | `$(Build.SourceBranch)` | `refs/heads/main` |
 | `$(Build.SourceBranchName)` | `main` |
-| `$(Build.Repository.Name)` | Repository name |
-| `$(Build.ArtifactStagingDirectory)` | Temp dir for artifacts |
-| `$(System.DefaultWorkingDirectory)` | Source checkout root |
-| `$(System.TeamProject)` | Project name |
+| `$(Build.Repository.Name)` | Nome do repositório |
+| `$(Build.ArtifactStagingDirectory)` | Diretório temporário para artefatos |
+| `$(System.DefaultWorkingDirectory)` | Raiz do checkout do código-fonte |
+| `$(System.TeamProject)` | Nome do projeto |
 | `$(Agent.OS)` | `Linux`, `Darwin`, `Windows_NT` |
-| `$(Pipeline.Workspace)` | Root of the pipeline workspace |
+| `$(Pipeline.Workspace)` | Raiz do workspace do pipeline |
 
 ---
 
-## Best Practices
+## Boas Práticas
 
-| Practice | Implementation |
+| Prática | Implementação |
 |----------|---------------|
-| **Multi-stage YAML** | All pipelines in version-controlled YAML — no classic editor |
-| **Templates** | Centralise DRY logic in a shared `pipeline-templates` repo |
-| **Environments for deployments** | Use deployment jobs — enables history, rollback and approvals |
-| **Key Vault-backed variable groups** | Link secrets directly from Azure Key Vault; never store in DevOps |
-| **Service connections with managed identity** | Prefer workload identity federation over service principal passwords |
-| **Agent pool sizing** | Use KEDA autoscaler for self-hosted agents to control costs |
-| **Branch policies** | Require pipeline pass + reviewer approval before merge to main |
-| **`condition:` expressions** | Guard stages with `succeeded()`, branch checks, parameter flags |
-| **Artifact retention** | Set pipeline-level retention policies; don't keep artifacts forever |
-| **Audit log** | Enable Azure DevOps Auditing — tracks credential and permission changes |
+| **YAML Multi-estágio** | Todos os pipelines em YAML com controle de versão — sem editor clássico |
+| **Templates** | Centralize lógica DRY em um repositório compartilhado `pipeline-templates` |
+| **Ambientes para implantações** | Use deployment jobs — habilita histórico, rollback e aprovações |
+| **Grupos de variáveis com Key Vault** | Vincule secrets diretamente do Azure Key Vault; nunca armazene no DevOps |
+| **Conexões de serviço com identidade gerenciada** | Prefira federação de identidade de carga de trabalho em vez de senhas de service principal |
+| **Dimensionamento do pool de agentes** | Use o autoscaler KEDA para agentes auto-hospedados para controlar custos |
+| **Políticas de branch** | Exija aprovação do pipeline e de revisor antes do merge para main |
+| **Expressões `condition:`** | Proteja estágios com `succeeded()`, verificações de branch, flags de parâmetros |
+| **Retenção de artefatos** | Defina políticas de retenção no nível do pipeline; não mantenha artefatos para sempre |
+| **Log de auditoria** | Habilite o Azure DevOps Auditing — rastreia mudanças de credenciais e permissões |
 
 [← Tekton](tekton.md) | [← CI/CD Overview](index.md) | [CircleCI →](circle-ci.md)

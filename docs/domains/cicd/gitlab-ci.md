@@ -1,13 +1,13 @@
 ---
 title: GitLab CI
-description: GitLab CI/CD pipelines, stages, runners, include/extends, environments and Auto DevOps reference.
+description: Pipelines, estágios, runners, include/extends, ambientes e referência de Auto DevOps do GitLab CI/CD.
 ---
 
 <div class="domain-page-hero" data-domain="cicd">
   <div class="dph-left">
     <span class="dph-eyebrow">// cicd-pipelines / gitlab-ci</span>
     <h1 class="dph-title">GitLab CI</h1>
-    <p class="dph-desc">GitLab's built-in CI/CD system. Pipelines defined in `.gitlab-ci.yml` with powerful include/extends templating, DAG job dependencies, dynamic child pipelines, built-in container registry and deep integration with GitLab Environments and review apps.</p>
+    <p class="dph-desc">Sistema de CI/CD integrado do GitLab. Pipelines definidos em `.gitlab-ci.yml` com poderoso templating via include/extends, dependências de jobs em DAG, child pipelines dinâmicos, registro de containers integrado e integração profunda com GitLab Environments e review apps.</p>
     <div class="dph-badges">
       <span class="tech-badge">Pipelines</span>
       <span class="tech-badge">Runners</span>
@@ -19,11 +19,11 @@ description: GitLab CI/CD pipelines, stages, runners, include/extends, environme
   </div>
 </div>
 
-[← GitHub Actions](github-actions.md) | [← CI/CD Overview](index.md) | [Jenkins →](jenkins.md)
+[← GitHub Actions](github-actions.md) | [← Visão Geral de CI/CD](index.md) | [Jenkins →](jenkins.md)
 
 ---
 
-## Pipeline Anatomy
+## Anatomia do Pipeline
 
 ```yaml
 # .gitlab-ci.yml
@@ -83,42 +83,42 @@ deploy-staging:
 
 ---
 
-## Core Concepts
+## Conceitos Principais
 
-| Concept | Description |
+| Conceito | Descrição |
 |---------|-------------|
-| **Pipeline** | A collection of jobs grouped in stages, triggered by an event |
-| **Stage** | Logical grouping; jobs in the same stage run in parallel |
-| **Job** | Atomic unit of work — runs on a runner |
-| **Runner** | Agent executing jobs: shared, group, or project-scoped |
-| **Artifact** | File(s) produced by a job, passed downstream or stored |
-| **Cache** | Dependencies stored between pipeline runs (per runner) |
-| **Environment** | Named deployment target with URL, history and rollback |
-| **Rules** | Conditional logic controlling when jobs are included |
-| **Needs** | DAG dependency — run a job before its stage starts |
+| **Pipeline** | Coleção de jobs agrupados em estágios, disparada por um evento |
+| **Stage** | Agrupamento lógico; jobs no mesmo estágio rodam em paralelo |
+| **Job** | Unidade atômica de trabalho — executada em um runner |
+| **Runner** | Agente que executa os jobs: compartilhado, por grupo ou por projeto |
+| **Artifact** | Arquivo(s) produzido(s) por um job, passado(s) adiante ou armazenado(s) |
+| **Cache** | Dependências armazenadas entre execuções de pipeline (por runner) |
+| **Environment** | Destino de implantação nomeado com URL, histórico e rollback |
+| **Rules** | Lógica condicional que controla quando os jobs são incluídos |
+| **Needs** | Dependência em DAG — executa um job antes que seu estágio inicie |
 
 ---
 
-## Predefined Variables Reference
+## Referência de Variáveis Predefinidas
 
-| Variable | Value |
+| Variável | Valor |
 |----------|-------|
-| `$CI_COMMIT_SHA` | Full commit SHA |
-| `$CI_COMMIT_SHORT_SHA` | First 8 chars |
-| `$CI_COMMIT_BRANCH` | Branch name (push pipelines) |
-| `$CI_COMMIT_TAG` | Tag name (tag pipelines) |
-| `$CI_MERGE_REQUEST_IID` | MR IID (MR pipelines) |
-| `$CI_PROJECT_PATH` | `namespace/project` |
-| `$CI_REGISTRY` | GitLab Container Registry host |
-| `$CI_REGISTRY_IMAGE` | Full registry path for this project |
-| `$CI_REGISTRY_USER` | Auto registry user |
-| `$CI_REGISTRY_PASSWORD` | Auto registry token |
+| `$CI_COMMIT_SHA` | SHA completo do commit |
+| `$CI_COMMIT_SHORT_SHA` | Primeiros 8 caracteres |
+| `$CI_COMMIT_BRANCH` | Nome do branch (pipelines de push) |
+| `$CI_COMMIT_TAG` | Nome da tag (pipelines de tag) |
+| `$CI_MERGE_REQUEST_IID` | IID do MR (pipelines de MR) |
+| `$CI_PROJECT_PATH` | `namespace/projeto` |
+| `$CI_REGISTRY` | Host do registro de containers do GitLab |
+| `$CI_REGISTRY_IMAGE` | Caminho completo do registro para este projeto |
+| `$CI_REGISTRY_USER` | Usuário automático do registro |
+| `$CI_REGISTRY_PASSWORD` | Token automático do registro |
 | `$CI_PIPELINE_SOURCE` | `push`, `merge_request_event`, `schedule`, `api`… |
-| `$CI_ENVIRONMENT_NAME` | Current deployment environment |
+| `$CI_ENVIRONMENT_NAME` | Ambiente de implantação atual |
 
 ---
 
-## Include & Extends Templates
+## Templates com Include & Extends
 
 === "include"
 
@@ -200,7 +200,7 @@ deploy-legacy:
 
 ---
 
-## DAG Pipelines with `needs`
+## Pipelines em DAG com `needs`
 
 ```yaml
 stages:
@@ -234,7 +234,7 @@ deploy:
 
 ---
 
-## Dynamic Child Pipelines
+## Child Pipelines Dinâmicos
 
 ```yaml
 # Parent pipeline
@@ -256,9 +256,9 @@ trigger-child:
 
 ---
 
-## Runners Configuration
+## Configuração de Runners
 
-=== "Shared (GitLab.com)"
+=== "Compartilhado (GitLab.com)"
 
     ```yaml
     # Uses GitLab-hosted shared runners — no setup needed
@@ -309,7 +309,7 @@ trigger-child:
 
 ---
 
-## Container Registry
+## Registro de Containers
 
 ```yaml
 variables:
@@ -328,7 +328,7 @@ build:
 
 ---
 
-## Security Scanning (built-in templates)
+## Varredura de Segurança (templates integrados)
 
 ```yaml
 include:
@@ -347,7 +347,7 @@ variables:
 
 ---
 
-## Environments & Deployments
+## Ambientes e Implantações
 
 ```yaml
 deploy-staging:
@@ -386,7 +386,7 @@ deploy-review:
 
 ---
 
-## Caching
+## Cache
 
 ```yaml
 cache:
@@ -417,19 +417,19 @@ build:
 
 ---
 
-## Best Practices
+## Boas Práticas
 
-| Practice | Implementation |
+| Prática | Implementação |
 |----------|---------------|
-| **Use rules over only/except** | `rules:` supports complex conditions; `only/except` is legacy |
-| **DAG with needs** | Reduces pipeline duration — jobs start ASAP |
-| **Reuse with extends/.base-* jobs** | Prefix hidden jobs with `.` to avoid execution |
-| **Pin image versions** | `image: node:20.13.1` not `node:latest` |
-| **Artifacts expire_in** | Set short expiry for build artifacts, longer for test reports |
-| **Group variables** | Use Group CI/CD variables for secrets shared across projects |
-| **Protected variables** | Mark secrets as `Protected` — only exposed on protected branches/tags |
-| **Masked variables** | Enable masking to redact from job logs |
-| **Least-privilege tokens** | Use project tokens with minimal scopes; rotate regularly |
-| **DAST on review apps** | Run dynamic scanning against ephemeral review environments |
+| **Use rules em vez de only/except** | `rules:` suporta condições complexas; `only/except` é legado |
+| **DAG com needs** | Reduz a duração do pipeline — jobs iniciam o mais rápido possível |
+| **Reutilize com extends/.base-*** | Prefixe jobs ocultos com `.` para evitar execução |
+| **Fixe versões de imagem** | `image: node:20.13.1` e não `node:latest` |
+| **expire_in para artefatos** | Defina validade curta para artefatos de build, maior para relatórios de teste |
+| **Variáveis de grupo** | Use variáveis CI/CD de grupo para segredos compartilhados entre projetos |
+| **Variáveis protegidas** | Marque segredos como `Protected` — expostos apenas em branches/tags protegidos |
+| **Variáveis mascaradas** | Ative o mascaramento para ocultar nos logs dos jobs |
+| **Tokens com privilégios mínimos** | Use tokens de projeto com escopos mínimos; rotacione regularmente |
+| **DAST em review apps** | Execute varredura dinâmica em ambientes de review efêmeros |
 
-[← GitHub Actions](github-actions.md) | [← CI/CD Overview](index.md) | [Jenkins →](jenkins.md)
+[← GitHub Actions](github-actions.md) | [← Visão Geral de CI/CD](index.md) | [Jenkins →](jenkins.md)

@@ -1,13 +1,13 @@
 ---
-title: OCI Compute
-description: Compute Instances, OKE, Container Instances, Oracle Functions — compute on Oracle Cloud Infrastructure.
+title: OCI Computação
+description: Instâncias de Computação, OKE, Container Instances, Oracle Functions — computação na Oracle Cloud Infrastructure.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// oci / compute</span>
-    <h1 class="dph-title">OCI Compute</h1>
-    <p class="dph-desc">OCI Compute spans bare-metal to ARM-based Ampere A1 instances with the best price/performance in the industry. OKE (Oracle Container Engine for Kubernetes) provides a fully managed Kubernetes control plane with virtual nodes for serverless container workloads.</p>
+    <h1 class="dph-title">OCI Computação</h1>
+    <p class="dph-desc">O OCI Compute abrange desde bare-metal até instâncias Ampere A1 baseadas em ARM com a melhor relação preço/desempenho do mercado. O OKE (Oracle Container Engine for Kubernetes) oferece um plano de controle Kubernetes totalmente gerenciado com nós virtuais para cargas de trabalho de contêineres serverless.</p>
     <div class="dph-badges">
       <span class="tech-badge">Compute Instances</span>
       <span class="tech-badge">OKE</span>
@@ -20,24 +20,24 @@ description: Compute Instances, OKE, Container Instances, Oracle Functions — c
 
 ---
 
-## Compute Instances
+## Instâncias de Computação
 
-OCI Compute instances use a **shape** model — the shape defines CPU, memory, network and storage characteristics. **Flexible shapes** (`.Flex`) allow you to tune vCPU and memory independently.
+As instâncias de Computação OCI utilizam um modelo de **forma** — a forma define as características de CPU, memória, rede e armazenamento. **Formas flexíveis** (`.Flex`) permitem ajustar vCPU e memória de forma independente.
 
-### Shape families
+### Famílias de formas
 
-| Shape | Architecture | vCPU / Memory | Notes |
-|-------|-------------|--------------|-------|
-| **VM.Standard.E5.Flex** | AMD EPYC Genoa | 1–94 vCPU, 1–1049 GB | Most versatile general-purpose |
-| **VM.Standard.A1.Flex** | Ampere Altra ARM | 1–80 vCPU, 1–512 GB | **Best price/performance**; Always Free tier |
-| **VM.Standard3.Flex** | Intel Ice Lake | 1–32 vCPU, 1–512 GB | Intel-only workloads |
-| **BM.Standard.E5.96** | AMD EPYC, bare-metal | 96 vCPU, 1024 GB | No hypervisor overhead |
-| **VM.GPU.A10.1** | NVIDIA A10 GPU | 15 vCPU, 240 GB, 1× A10 | ML inference |
+| Forma | Arquitetura | vCPU / Memória | Notas |
+|-------|-------------|----------------|-------|
+| **VM.Standard.E5.Flex** | AMD EPYC Genoa | 1–94 vCPU, 1–1049 GB | Mais versátil para uso geral |
+| **VM.Standard.A1.Flex** | Ampere Altra ARM | 1–80 vCPU, 1–512 GB | **Melhor preço/desempenho**; camada Always Free |
+| **VM.Standard3.Flex** | Intel Ice Lake | 1–32 vCPU, 1–512 GB | Cargas de trabalho exclusivamente Intel |
+| **BM.Standard.E5.96** | AMD EPYC, bare-metal | 96 vCPU, 1024 GB | Sem overhead de hypervisor |
+| **VM.GPU.A10.1** | NVIDIA A10 GPU | 15 vCPU, 240 GB, 1× A10 | Inferência de ML |
 
 !!! tip "Ampere A1 Always Free"
-    The OCI Always Free tier includes **4 Ampere A1 OCPUs and 24 GB RAM** perpetually — enough to run a small Kubernetes cluster or multiple microservices with zero cost. A1 instances also undercut other ARM cloud offerings by 30–50%.
+    A camada Always Free do OCI inclui **4 OCPUs Ampere A1 e 24 GB de RAM** de forma permanente — suficiente para executar um pequeno cluster Kubernetes ou múltiplos microsserviços sem custo. As instâncias A1 também custam 30–50% menos do que outras ofertas ARM na nuvem.
 
-### Instance configuration
+### Configuração de instância
 
 ```hcl
 data "oci_core_images" "oracle_linux" {
@@ -83,7 +83,7 @@ resource "oci_core_instance" "app" {
 }
 ```
 
-### Instance Pools (autoscaling)
+### Grupos de Instâncias (autoscaling)
 
 ```hcl
 resource "oci_core_instance_configuration" "app" {
@@ -124,15 +124,15 @@ resource "oci_core_instance_pool" "app" {
 
 ## OKE — Oracle Container Engine for Kubernetes
 
-OKE is Oracle's managed Kubernetes service. The control plane is fully managed, multi-AD (Availability Domain) and zero-cost. You pay only for the worker nodes. OKE supports both managed nodes and **virtual nodes** (serverless).
+O OKE é o serviço Kubernetes gerenciado da Oracle. O plano de controle é totalmente gerenciado, multi-AD (Availability Domain) e sem custo. Você paga apenas pelos nós de trabalho. O OKE suporta tanto nós gerenciados quanto **nós virtuais** (serverless).
 
-### Node types
+### Tipos de nós
 
-| Type | Description | Use case |
-|------|-------------|---------|
-| **Managed nodes** | VMs you provision in node pools; you manage OS patching | Standard workloads, GPU |
-| **Virtual nodes** | Serverless pods — no VM management; OCI manages the infrastructure | Scale-to-zero, bursty workloads |
-| **Self-managed nodes** | VMs you join manually | Custom OS, BYOK configurations |
+| Tipo | Descrição | Caso de uso |
+|------|-----------|-------------|
+| **Nós gerenciados** | VMs que você provisiona em grupos de nós; você gerencia o patch do SO | Cargas de trabalho padrão, GPU |
+| **Nós virtuais** | Pods serverless — sem gerenciamento de VM; a OCI gerencia a infraestrutura | Escalar a zero, cargas de trabalho com picos |
+| **Nós autogerenciados** | VMs que você adiciona manualmente | SO personalizado, configurações BYOK |
 
 ```hcl
 resource "oci_containerengine_cluster" "main" {
@@ -194,7 +194,7 @@ resource "oci_containerengine_node_pool" "app" {
 
 ### OKE Workload Identity
 
-OKE Workload Identity lets pods assume OCI IAM roles without Instance Principals or static credentials. Pods present an OIDC token; OCI IAM validates it and returns short-lived credentials.
+O OKE Workload Identity permite que pods assumam papéis do OCI IAM sem Instance Principals ou credenciais estáticas. Os pods apresentam um token OIDC; o OCI IAM valida e retorna credenciais de curta duração.
 
 ```yaml
 # Pod spec — annotate service account for Workload Identity
@@ -211,7 +211,7 @@ metadata:
 
 ## Container Instances
 
-OCI Container Instances are fully serverless containers — no cluster, no node pools. Ideal for short-lived jobs, CI steps, one-off tasks or staging environments that don't need a persistent cluster.
+As OCI Container Instances são contêineres totalmente serverless — sem cluster, sem grupos de nós. Ideais para jobs de curta duração, etapas de CI, tarefas avulsas ou ambientes de staging que não precisam de um cluster persistente.
 
 ```hcl
 resource "oci_container_instances_container_instance" "job" {
@@ -250,7 +250,7 @@ resource "oci_container_instances_container_instance" "job" {
 
 ## Oracle Functions
 
-Oracle Functions is the OCI serverless compute service based on **Fn Project** (open-source). Functions are packaged as Docker images and triggered via HTTP, OCI Events, OCI Queues or Oracle Integration.
+O Oracle Functions é o serviço de computação serverless da OCI baseado no **Fn Project** (open-source). As Functions são empacotadas como imagens Docker e acionadas via HTTP, OCI Events, OCI Queues ou Oracle Integration.
 
 ```python
 # Python handler
@@ -297,5 +297,5 @@ resource "oci_functions_function" "hello" {
 
 ---
 
-[← OCI Overview](index.md){ .md-button }
-[Storage →](storage.md){ .md-button .md-button--primary }
+[← Visão Geral OCI](index.md){ .md-button }
+[Armazenamento →](storage.md){ .md-button .md-button--primary }

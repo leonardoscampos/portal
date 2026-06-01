@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Metrics collection, PromQL, recording rules, Prometheus Operator, federation and remote write.">
+        <meta name="description" content="Coleta de métricas, PromQL, regras de gravação, Prometheus Operator, federação e remote write.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#architecture" class="md-skip">
+        <a href="#arquitetura" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -1989,10 +1989,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
+  <a href="#arquitetura" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture
+        Arquitetura
       
     </span>
   </a>
@@ -2000,10 +2000,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-prometheus-operator-kube-prometheus-stack" class="md-nav__link">
+  <a href="#instalacao-prometheus-operator-kube-prometheus-stack" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation — Prometheus Operator (kube-prometheus-stack)
+        Instalação — Prometheus Operator (kube-prometheus-stack)
       
     </span>
   </a>
@@ -2034,10 +2034,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#selectors" class="md-nav__link">
+  <a href="#seletores" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Selectors
+        Seletores
       
     </span>
   </a>
@@ -2056,10 +2056,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#aggregations" class="md-nav__link">
+  <a href="#agregacoes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Aggregations
+        Agregações
       
     </span>
   </a>
@@ -2067,10 +2067,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#functions" class="md-nav__link">
+  <a href="#funcoes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Functions
+        Funções
       
     </span>
   </a>
@@ -2083,10 +2083,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recording-rules" class="md-nav__link">
+  <a href="#regras-de-gravacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recording Rules
+        Regras de Gravação
       
     </span>
   </a>
@@ -2094,10 +2094,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#alerting-rules" class="md-nav__link">
+  <a href="#regras-de-alerta" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Alerting Rules
+        Regras de Alerta
       
     </span>
   </a>
@@ -2105,22 +2105,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-exporters" class="md-nav__link">
+  <a href="#exporters-comuns" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Exporters
+        Exporters Comuns
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Common Exporters">
+    <nav class="md-nav" aria-label="Exporters Comuns">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#blackbox-probe-example" class="md-nav__link">
+  <a href="#exemplo-de-probe-blackbox" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Blackbox Probe Example
+        Exemplo de Probe Blackbox
       
     </span>
   </a>
@@ -2133,10 +2133,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#federation-thanos" class="md-nav__link">
+  <a href="#federacao-thanos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Federation &amp; Thanos
+        Federação &amp; Thanos
       
     </span>
   </a>
@@ -2144,10 +2144,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#remote-write-to-grafana-cloud" class="md-nav__link">
+  <a href="#remote-write-para-o-grafana-cloud" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Remote Write to Grafana Cloud
+        Remote Write para o Grafana Cloud
       
     </span>
   </a>
@@ -2155,10 +2155,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#promql-cheatsheet" class="md-nav__link">
+  <a href="#guia-rapido-de-promql" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PromQL Cheatsheet
+        Guia Rápido de PromQL
       
     </span>
   </a>
@@ -3103,10 +3103,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
+  <a href="#arquitetura" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture
+        Arquitetura
       
     </span>
   </a>
@@ -3114,10 +3114,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-prometheus-operator-kube-prometheus-stack" class="md-nav__link">
+  <a href="#instalacao-prometheus-operator-kube-prometheus-stack" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation — Prometheus Operator (kube-prometheus-stack)
+        Instalação — Prometheus Operator (kube-prometheus-stack)
       
     </span>
   </a>
@@ -3148,10 +3148,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#selectors" class="md-nav__link">
+  <a href="#seletores" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Selectors
+        Seletores
       
     </span>
   </a>
@@ -3170,10 +3170,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#aggregations" class="md-nav__link">
+  <a href="#agregacoes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Aggregations
+        Agregações
       
     </span>
   </a>
@@ -3181,10 +3181,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#functions" class="md-nav__link">
+  <a href="#funcoes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Functions
+        Funções
       
     </span>
   </a>
@@ -3197,10 +3197,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#recording-rules" class="md-nav__link">
+  <a href="#regras-de-gravacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Recording Rules
+        Regras de Gravação
       
     </span>
   </a>
@@ -3208,10 +3208,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#alerting-rules" class="md-nav__link">
+  <a href="#regras-de-alerta" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Alerting Rules
+        Regras de Alerta
       
     </span>
   </a>
@@ -3219,22 +3219,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-exporters" class="md-nav__link">
+  <a href="#exporters-comuns" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Exporters
+        Exporters Comuns
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Common Exporters">
+    <nav class="md-nav" aria-label="Exporters Comuns">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#blackbox-probe-example" class="md-nav__link">
+  <a href="#exemplo-de-probe-blackbox" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Blackbox Probe Example
+        Exemplo de Probe Blackbox
       
     </span>
   </a>
@@ -3247,10 +3247,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#federation-thanos" class="md-nav__link">
+  <a href="#federacao-thanos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Federation &amp; Thanos
+        Federação &amp; Thanos
       
     </span>
   </a>
@@ -3258,10 +3258,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#remote-write-to-grafana-cloud" class="md-nav__link">
+  <a href="#remote-write-para-o-grafana-cloud" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Remote Write to Grafana Cloud
+        Remote Write para o Grafana Cloud
       
     </span>
   </a>
@@ -3269,10 +3269,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#promql-cheatsheet" class="md-nav__link">
+  <a href="#guia-rapido-de-promql" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PromQL Cheatsheet
+        Guia Rápido de PromQL
       
     </span>
   </a>
@@ -3298,9 +3298,9 @@
 
 <div class="domain-page-hero" data-domain="monitoring">
   <div class="dph-left">
-    <span class="dph-eyebrow">// monitoring-observability / prometheus</span>
+    <span class="dph-eyebrow">// monitoramento-observabilidade / prometheus</span>
     <h1 class="dph-title">Prometheus</h1>
-    <p class="dph-desc">The de-facto standard for metrics in cloud-native environments. Prometheus scrapes time-series metrics via pull, evaluates alerting and recording rules, and integrates with a rich ecosystem of exporters and the Kubernetes Operator pattern for lifecycle management.</p>
+    <p class="dph-desc">O padrão de fato para métricas em ambientes cloud-native. O Prometheus coleta métricas de séries temporais via pull, avalia regras de alerta e gravação, e integra-se com um rico ecossistema de exporters e o padrão Kubernetes Operator para gerenciamento de ciclo de vida.</p>
     <div class="dph-badges">
       <span class="tech-badge">PromQL</span>
       <span class="tech-badge">Prometheus Operator</span>
@@ -3312,9 +3312,9 @@
   </div>
 </div>
 
-<p><a href="../">← Monitoring Overview</a> | <a href="../grafana/">Grafana →</a></p>
+<p><a href="../">← Visão Geral de Monitoramento</a> | <a href="../grafana/">Grafana →</a></p>
 <hr />
-<h2 id="architecture">Architecture</h2>
+<h2 id="arquitetura">Arquitetura</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌──────────────────────────────────────────────────────┐
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│                    Prometheus                        │
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│  ┌──────────────┐   ┌──────────────┐                │
@@ -3335,7 +3335,7 @@
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>   └─────────────┘
 </code></pre></div>
 <hr />
-<h2 id="installation-prometheus-operator-kube-prometheus-stack">Installation — Prometheus Operator (kube-prometheus-stack)</h2>
+<h2 id="instalacao-prometheus-operator-kube-prometheus-stack">Instalação — Prometheus Operator (kube-prometheus-stack)</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>prometheus-community<span class="w"> </span>https://prometheus-community.github.io/helm-charts
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>helm<span class="w"> </span>repo<span class="w"> </span>update
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
@@ -3406,7 +3406,7 @@
 </code></pre></div>
 <hr />
 <h2 id="servicemonitor-podmonitor">ServiceMonitor &amp; PodMonitor</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># ServiceMonitor — scrape a labelled Service</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># ServiceMonitor — coletar de um Service com rótulo</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring.coreos.com/v1</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceMonitor</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">metadata</span><span class="p">:</span>
@@ -3429,7 +3429,7 @@
 <a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">sourceLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">__meta_kubernetes_pod_name</span><span class="p p-Indicator">]</span>
 <a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">          </span><span class="nt">targetLabel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># PodMonitor — scrape pods directly (no Service required)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># PodMonitor — coletar pods diretamente (sem Service)</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring.coreos.com/v1</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PodMonitor</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nt">metadata</span><span class="p">:</span>
@@ -3447,93 +3447,93 @@
 </code></pre></div>
 <hr />
 <h2 id="promql">PromQL</h2>
-<h3 id="selectors">Selectors</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Exact match</span>
+<h3 id="seletores">Seletores</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Correspondência exata</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nv">http_requests_total</span><span class="p">{</span><span class="nl">job</span><span class="o">=</span><span class="p">&quot;</span><span class="s">api</span><span class="p">&quot;,</span><span class="w"> </span><span class="nl">status</span><span class="o">=</span><span class="p">&quot;</span><span class="s">200</span><span class="p">&quot;}</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Regex match</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Correspondência com regex</span>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nv">http_requests_total</span><span class="p">{</span><span class="nl">method</span><span class="o">=~</span><span class="p">&quot;</span><span class="s">GET|POST</span><span class="p">&quot;}</span>
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Negative regex</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># Regex negativo</span>
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nv">http_requests_total</span><span class="p">{</span><span class="nl">pod</span><span class="o">!~</span><span class="p">&quot;</span><span class="s">canary-.*</span><span class="p">&quot;}</span>
 </code></pre></div>
 <h3 id="rate-increase">Rate &amp; Increase</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># per-second rate over 5-min window (use rate for counters)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># taxa por segundo em janela de 5 min (use rate para contadores)</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kr">rate</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">)</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># total increase over 1 hour</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># aumento total em 1 hora</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="kr">increase</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="p">[</span><span class="s">1h</span><span class="p">]</span><span class="o">)</span>
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># rate across all pods, summed by status code</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="c1"># taxa em todos os pods, somada por código de status</span>
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="k">sum</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="o">(</span><span class="nv">status</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span>
 </code></pre></div>
-<h3 id="aggregations">Aggregations</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Average CPU across all containers in a namespace</span>
+<h3 id="agregacoes">Agregações</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># CPU média em todos os containers de um namespace</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">avg</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="o">(</span><span class="nv">pod</span><span class="o">)</span><span class="w"> </span><span class="o">(</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="kr">rate</span><span class="o">(</span><span class="nv">container_cpu_usage_seconds_total</span><span class="p">{</span><span class="nl">namespace</span><span class="o">=</span><span class="p">&quot;</span><span class="s">production</span><span class="p">&quot;}[</span><span class="s">5m</span><span class="p">]</span><span class="o">)</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="o">)</span>
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># P99 latency</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># Latência P99</span>
 <a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="kr">histogram_quantile</span><span class="o">(</span><span class="mf">0.99</span><span class="p">,</span>
 <a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="k">sum</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="o">(</span><span class="nv">le</span><span class="p">,</span><span class="w"> </span><span class="nv">job</span><span class="o">)</span><span class="w"> </span><span class="o">(</span>
 <a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">    </span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_request_duration_seconds_bucket</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">)</span>
 <a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span><span class="o">)</span>
 <a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="o">)</span>
 <a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c1"># Top 10 pods by memory usage</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="c1"># Top 10 pods por uso de memória</span>
 <a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="k">topk</span><span class="o">(</span><span class="mi">10</span><span class="p">,</span>
 <a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">  </span><span class="nv">container_memory_working_set_bytes</span><span class="p">{</span><span class="nl">container</span><span class="o">!=</span><span class="p">&quot;&quot;,</span><span class="w"> </span><span class="nl">container</span><span class="o">!=</span><span class="p">&quot;</span><span class="s">POD</span><span class="p">&quot;}</span>
 <a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="o">)</span>
 </code></pre></div>
-<h3 id="functions">Functions</h3>
+<h3 id="funcoes">Funções</h3>
 <table>
 <thead>
 <tr>
-<th>Function</th>
-<th>Use</th>
+<th>Função</th>
+<th>Uso</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>rate(c[5m])</code></td>
-<td>Per-second rate of counter <code>c</code></td>
+<td>Taxa por segundo do contador <code>c</code></td>
 </tr>
 <tr>
 <td><code>increase(c[1h])</code></td>
-<td>Counter increase over range</td>
+<td>Aumento do contador no intervalo</td>
 </tr>
 <tr>
 <td><code>irate(c[5m])</code></td>
-<td>Instantaneous rate (last two samples)</td>
+<td>Taxa instantânea (últimas duas amostras)</td>
 </tr>
 <tr>
 <td><code>delta(g[5m])</code></td>
-<td>Difference of gauge over range</td>
+<td>Diferença do gauge no intervalo</td>
 </tr>
 <tr>
 <td><code>deriv(g[5m])</code></td>
-<td>Per-second derivative (regression)</td>
+<td>Derivada por segundo (regressão)</td>
 </tr>
 <tr>
 <td><code>histogram_quantile(φ, b)</code></td>
-<td>Percentile from histogram</td>
+<td>Percentil a partir do histograma</td>
 </tr>
 <tr>
 <td><code>predict_linear(g[1h], 4*3600)</code></td>
-<td>Predict value 4 h ahead</td>
+<td>Prevê valor 4 h à frente</td>
 </tr>
 <tr>
 <td><code>absent(m)</code></td>
-<td>Returns 1 if <code>m</code> has no samples</td>
+<td>Retorna 1 se <code>m</code> não tiver amostras</td>
 </tr>
 <tr>
 <td><code>label_replace(v, dst, rep, src, regex)</code></td>
-<td>Rename/transform labels</td>
+<td>Renomeia/transforma rótulos</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="recording-rules">Recording Rules</h2>
+<h2 id="regras-de-gravacao">Regras de Gravação</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring.coreos.com/v1</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PrometheusRule</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nt">metadata</span><span class="p">:</span>
@@ -3572,7 +3572,7 @@
 <a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a><span class="w">            </span><span class="no">)</span>
 </code></pre></div>
 <hr />
-<h2 id="alerting-rules">Alerting Rules</h2>
+<h2 id="regras-de-alerta">Regras de Alerta</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring.coreos.com/v1</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PrometheusRule</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nt">metadata</span><span class="p">:</span>
@@ -3624,60 +3624,60 @@
 <a id="__codelineno-9-49" name="__codelineno-9-49" href="#__codelineno-9-49"></a><span class="w">            </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Disk</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">{{</span><span class="nv"> </span><span class="s">$labels.instance</span><span class="nv"> </span><span class="s">}}</span><span class="nv"> </span><span class="s">will</span><span class="nv"> </span><span class="s">fill</span><span class="nv"> </span><span class="s">in</span><span class="nv"> </span><span class="s">&lt;</span><span class="nv"> </span><span class="s">4</span><span class="nv"> </span><span class="s">h&quot;</span>
 </code></pre></div>
 <hr />
-<h2 id="common-exporters">Common Exporters</h2>
+<h2 id="exporters-comuns">Exporters Comuns</h2>
 <table>
 <thead>
 <tr>
 <th>Exporter</th>
-<th>Metrics</th>
-<th>Helm chart / image</th>
+<th>Métricas</th>
+<th>Helm chart / imagem</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>node_exporter</code></td>
-<td>CPU, memory, disk, network per host</td>
+<td>CPU, memória, disco, rede por host</td>
 <td><code>prometheus-community/prometheus-node-exporter</code></td>
 </tr>
 <tr>
 <td><code>kube-state-metrics</code></td>
-<td>Kubernetes object state (pods, deployments)</td>
-<td>bundled in kube-prometheus-stack</td>
+<td>Estado de objetos Kubernetes (pods, deployments)</td>
+<td>incluso no kube-prometheus-stack</td>
 </tr>
 <tr>
 <td><code>blackbox_exporter</code></td>
-<td>HTTP/TCP/ICMP probe success + latency</td>
+<td>Sucesso de probe HTTP/TCP/ICMP + latência</td>
 <td><code>prometheus-community/prometheus-blackbox-exporter</code></td>
 </tr>
 <tr>
 <td><code>postgres_exporter</code></td>
-<td>PostgreSQL activity, locks, replication</td>
+<td>Atividade, locks, replicação do PostgreSQL</td>
 <td><code>prometheus-community/prometheus-postgres-exporter</code></td>
 </tr>
 <tr>
 <td><code>redis_exporter</code></td>
-<td>Redis commands, memory, keyspace</td>
+<td>Comandos, memória, keyspace do Redis</td>
 <td><code>oliver006/redis_exporter</code></td>
 </tr>
 <tr>
 <td><code>kafka_exporter</code></td>
-<td>Topic / partition lag, broker metrics</td>
+<td>Lag de tópico/partição, métricas de broker</td>
 <td><code>danielqsj/kafka-exporter</code></td>
 </tr>
 <tr>
 <td><code>mysqld_exporter</code></td>
-<td>MySQL queries, replication, InnoDB</td>
+<td>Queries, replicação, InnoDB do MySQL</td>
 <td><code>prometheus-community/prometheus-mysql-exporter</code></td>
 </tr>
 <tr>
 <td><code>otel-collector</code></td>
-<td>OTLP metrics → Prometheus remote write</td>
+<td>Métricas OTLP → Prometheus remote write</td>
 <td><code>open-telemetry/opentelemetry-collector</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="blackbox-probe-example">Blackbox Probe Example</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># ProbeSpec — check external URLs every 30 s</span>
+<h3 id="exemplo-de-probe-blackbox">Exemplo de Probe Blackbox</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># ProbeSpec — verificar URLs externas a cada 30 s</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring.coreos.com/v1</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Probe</span>
 <a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nt">metadata</span><span class="p">:</span>
@@ -3696,9 +3696,9 @@
 <a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.example.com</span>
 </code></pre></div>
 <hr />
-<h2 id="federation-thanos">Federation &amp; Thanos</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Thanos Sidecar — long-term storage via object store</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1"># Add to prometheusSpec in values.yaml</span>
+<h2 id="federacao-thanos">Federação &amp; Thanos</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Thanos Sidecar — armazenamento de longo prazo via object store</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1"># Adicionar ao prometheusSpec em values.yaml</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nt">thanos</span><span class="p">:</span>
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">quay.io/thanos/thanos:v0.36.1</span>
 <a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">  </span><span class="nt">objectStorageConfig</span><span class="p">:</span>
@@ -3709,7 +3709,7 @@
 <a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">        </span><span class="nt">endpoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3.us-east-1.amazonaws.com</span>
 <a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="w">        </span><span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">us-east-1</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Thanos Query — global view across multiple Prometheus shards</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Thanos Query — visão global entre múltiplos shards do Prometheus</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>thanos<span class="w"> </span>query<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span>--http-address<span class="o">=</span><span class="m">0</span>.0.0.0:10902<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span>--endpoint<span class="o">=</span>prometheus-0.monitoring.svc:10901<span class="w"> </span><span class="se">\</span>
@@ -3717,12 +3717,12 @@
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span>--endpoint<span class="o">=</span>thanos-store.monitoring.svc:10901
 </code></pre></div>
 <div class="admonition tip">
-<p class="admonition-title">Grafana Mimir for SaaS-style scaling</p>
-<p>Mimir is a horizontally scalable, multi-tenant Prometheus-compatible TSDB. Use it instead of Thanos when you need simpler operations: <code>helm install mimir grafana/mimir-distributed</code>.</p>
+<p class="admonition-title">Grafana Mimir para escalabilidade estilo SaaS</p>
+<p>Mimir é um TSDB compatível com Prometheus, horizontalmente escalável e multi-tenant. Use-o em vez do Thanos quando precisar de operações mais simples: <code>helm install mimir grafana/mimir-distributed</code>.</p>
 </div>
 <hr />
-<h2 id="remote-write-to-grafana-cloud">Remote Write to Grafana Cloud</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># In prometheusSpec.remoteWrite</span>
+<h2 id="remote-write-para-o-grafana-cloud">Remote Write para o Grafana Cloud</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Em prometheusSpec.remoteWrite</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nt">remoteWrite</span><span class="p">:</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://prometheus-prod-01-eu-west-0.grafana.net/api/prom/push</span>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="nt">basicAuth</span><span class="p">:</span>
@@ -3733,39 +3733,39 @@
 <a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">grafana-cloud-secret</span>
 <a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">        </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apiKey</span>
 <a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">    </span><span class="nt">writeRelabelConfigs</span><span class="p">:</span>
-<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">      </span><span class="c1"># Drop high-cardinality debug metrics</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">      </span><span class="c1"># Remover métricas de debug de alta cardinalidade</span>
 <a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">sourceLabels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">__name__</span><span class="p p-Indicator">]</span>
 <a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">        </span><span class="nt">regex</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;go_.*|process_.*&quot;</span>
 <a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">        </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">drop</span>
 </code></pre></div>
 <hr />
-<h2 id="promql-cheatsheet">PromQL Cheatsheet</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># CPU utilisation per node (0–1)</span>
+<h2 id="guia-rapido-de-promql">Guia Rápido de PromQL</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Utilização de CPU por nó (0–1)</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">avg</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="o">(</span><span class="nv">instance</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">node_cpu_seconds_total</span><span class="p">{</span><span class="nl">mode</span><span class="o">=</span><span class="p">&quot;</span><span class="s">idle</span><span class="p">&quot;}[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span>
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1"># Memory used (bytes)</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1"># Memória utilizada (bytes)</span>
 <a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="nv">node_memory_MemTotal_bytes</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">node_memory_MemAvailable_bytes</span>
 <a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="c1"># Pod restart rate</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="c1"># Taxa de reinicialização de pods</span>
 <a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="kr">rate</span><span class="o">(</span><span class="nv">kube_pod_container_status_restarts_total</span><span class="p">[</span><span class="s">1h</span><span class="p">]</span><span class="o">)</span>
 <a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
-<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="c1"># PVC usage percentage</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="c1"># Percentual de uso do PVC</span>
 <a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="o">(</span><span class="nv">kubelet_volume_stats_used_bytes</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nv">kubelet_volume_stats_capacity_bytes</span><span class="o">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">100</span>
 <a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
-<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="c1"># Network receive rate (bytes/s)</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a><span class="c1"># Taxa de recebimento de rede (bytes/s)</span>
 <a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a><span class="k">sum</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="o">(</span><span class="nv">node</span><span class="o">)</span><span class="w"> </span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">node_network_receive_bytes_total</span><span class="p">{</span><span class="nl">device</span><span class="o">!=</span><span class="p">&quot;</span><span class="s">lo</span><span class="p">&quot;}[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span>
 <a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>
-<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="c1"># Kubelet unavailable nodes</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a><span class="c1"># Nós indisponíveis no Kubelet</span>
 <a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a><span class="k">count</span><span class="o">(</span><span class="nv">kube_node_status_condition</span><span class="p">{</span><span class="nl">condition</span><span class="o">=</span><span class="p">&quot;</span><span class="s">Ready</span><span class="p">&quot;,</span><span class="nl">status</span><span class="o">=</span><span class="p">&quot;</span><span class="s">true</span><span class="p">&quot;}</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="o">)</span>
 <a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>
-<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="c1"># Deployment unavailable replicas</span>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a><span class="c1"># Réplicas indisponíveis em Deployment</span>
 <a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="nv">kube_deployment_status_replicas_unavailable</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span>
 <a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a>
-<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="c1"># HPA at max replicas (risk of saturation)</span>
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a><span class="c1"># HPA no máximo de réplicas (risco de saturação)</span>
 <a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a><span class="nv">kube_horizontalpodautoscaler_status_current_replicas</span>
 <a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a><span class="w">  </span><span class="o">==</span><span class="w"> </span><span class="nv">kube_horizontalpodautoscaler_spec_max_replicas</span>
 </code></pre></div>
-<p><a href="../">← Monitoring Overview</a> | <a href="../grafana/">Grafana →</a></p>
+<p><a href="../">← Visão Geral de Monitoramento</a> | <a href="../grafana/">Grafana →</a></p>
 
 
 

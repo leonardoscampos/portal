@@ -1,29 +1,29 @@
 ---
-title: Kubernetes Operators
-description: CRDs, controller pattern, Kubebuilder, Operator SDK and reconciliation loop reference for DevOps engineers.
+title: Operadores Kubernetes
+description: CRDs, padrão de controlador, Kubebuilder, Operator SDK e referência do loop de reconciliação para engenheiros DevOps.
 ---
 
 <div class="domain-page-hero" data-domain="containers">
   <div class="dph-left">
     <span class="dph-eyebrow">// containers-orchestration / operators</span>
-    <h1 class="dph-title">Kubernetes Operators</h1>
-    <p class="dph-desc">Encode operational domain knowledge into Kubernetes controllers. Custom Resource Definitions extend the API; controllers implement the reconciliation loop — continuously driving actual state towards desired state. Build operators with Kubebuilder or the Operator SDK.</p>
+    <h1 class="dph-title">Operadores Kubernetes</h1>
+    <p class="dph-desc">Codifique conhecimento operacional de domínio em controladores Kubernetes. Custom Resource Definitions estendem a API; controladores implementam o loop de reconciliação — conduzindo continuamente o estado atual em direção ao estado desejado. Construa operadores com Kubebuilder ou o Operator SDK.</p>
     <div class="dph-badges">
       <span class="tech-badge">CRDs</span>
       <span class="tech-badge">Kubebuilder</span>
       <span class="tech-badge">Operator SDK</span>
-      <span class="tech-badge">Reconciliation</span>
-      <span class="tech-badge">Finalizers</span>
+      <span class="tech-badge">Reconciliação</span>
+      <span class="tech-badge">Finalizadores</span>
       <span class="tech-badge">Webhooks</span>
     </div>
   </div>
 </div>
 
-[← Service Mesh](service-mesh.md) | [← Containers Overview](index.md) | [Container Security →](container-security.md)
+[← Malha de Serviços](service-mesh.md) | [← Visão Geral de Contêineres](index.md) | [Segurança de Contêineres →](container-security.md)
 
 ---
 
-## The Operator Pattern
+## O Padrão Operador
 
 ```
 User applies CR  →  Kubernetes API Server stores it
@@ -36,11 +36,11 @@ User applies CR  →  Kubernetes API Server stores it
                  →  Loop repeats on any change or re-queue
 ```
 
-**Key principle:** Reconcile is *idempotent* — running it multiple times produces the same result. Design for repeated calls, not event-driven one-shots.
+**Princípio fundamental:** O Reconcile é *idempotente* — executá-lo múltiplas vezes produz o mesmo resultado. Projete para chamadas repetidas, não para eventos únicos.
 
 ---
 
-## Custom Resource Definition
+## Definição de Recurso Personalizado
 
 ```yaml
 apiVersion: apiextensions.k8s.io/v1
@@ -128,7 +128,7 @@ spec:
 
 ## Kubebuilder
 
-### Project Scaffold
+### Estrutura do Projeto
 
 ```bash
 # Prerequisites
@@ -156,7 +156,7 @@ make install   # install CRDs
 make run       # run controller locally
 ```
 
-### Types (`api/v1alpha1/database_types.go`)
+### Tipos (`api/v1alpha1/database_types.go`)
 
 ```go
 package v1alpha1
@@ -197,7 +197,7 @@ type Database struct {
 }
 ```
 
-### Controller (`internal/controller/database_controller.go`)
+### Controlador (`internal/controller/database_controller.go`)
 
 ```go
 package controller
@@ -297,7 +297,7 @@ func (r *DatabaseReconciler) SetupWithManager(mgr ctrl.Manager) error {
 
 ---
 
-## Operator SDK (Helm-based Operator)
+## Operator SDK (Operador Baseado em Helm)
 
 ```bash
 # Scaffold a Helm-based operator (wraps existing Helm chart)
@@ -317,7 +317,7 @@ make deploy IMG=ghcr.io/my-org/database-operator:v0.1.0
 
 ---
 
-## Admission Webhooks
+## Webhooks de Admissão
 
 ```go
 // Validating webhook — called before CREATE/UPDATE
@@ -365,48 +365,48 @@ webhooks:
 
 ---
 
-## Well-Known Operators
+## Operadores Conhecidos
 
-| Operator | Purpose |
+| Operador | Finalidade |
 |----------|---------|
-| **cert-manager** | Automated TLS certificate lifecycle (Let's Encrypt, Vault, ACME) |
-| **External Secrets Operator** | Sync secrets from AWS SM, GCP SM, Azure KV into K8s Secrets |
-| **Prometheus Operator** | Manage Prometheus, Alertmanager and ServiceMonitors as CRDs |
-| **Argo CD** | GitOps continuous delivery — Application and AppSet CRDs |
-| **Strimzi** | Apache Kafka on Kubernetes |
-| **CloudNativePG** | Production-grade PostgreSQL operator |
-| **Velero** | Backup and restore K8s resources and PVs |
-| **KEDA** | Event-driven autoscaling (ScaledObject, ScaledJob CRDs) |
-| **Crossplane** | Infrastructure provisioning as K8s CRDs (AWS, GCP, Azure) |
-| **Flux** | GitOps — GitRepository, Kustomization, HelmRelease CRDs |
+| **cert-manager** | Ciclo de vida automatizado de certificados TLS (Let's Encrypt, Vault, ACME) |
+| **External Secrets Operator** | Sincronizar segredos do AWS SM, GCP SM, Azure KV em Secrets do K8s |
+| **Prometheus Operator** | Gerenciar Prometheus, Alertmanager e ServiceMonitors como CRDs |
+| **Argo CD** | Entrega contínua GitOps — CRDs de Application e AppSet |
+| **Strimzi** | Apache Kafka no Kubernetes |
+| **CloudNativePG** | Operador PostgreSQL de nível de produção |
+| **Velero** | Backup e restauração de recursos K8s e PVs |
+| **KEDA** | Autoescalonamento orientado a eventos (CRDs ScaledObject, ScaledJob) |
+| **Crossplane** | Provisionamento de infraestrutura como CRDs do K8s (AWS, GCP, Azure) |
+| **Flux** | GitOps — CRDs GitRepository, Kustomization, HelmRelease |
 
 ---
 
-## Operator Maturity Model
+## Modelo de Maturidade do Operador
 
-| Level | Capability |
+| Nível | Capacidade |
 |-------|------------|
-| **1 — Basic Install** | Automated application provisioning |
-| **2 — Seamless Upgrades** | Patch and minor version upgrades |
-| **3 — Full Lifecycle** | Backup, failure recovery, reconfiguration |
-| **4 — Deep Insights** | Metrics, alerts, log processing, workload analysis |
-| **5 — Auto Pilot** | Horizontal/vertical scaling, auto config tuning, anomaly detection |
+| **1 — Instalação Básica** | Provisionamento automatizado de aplicações |
+| **2 — Atualizações Contínuas** | Atualizações de patch e de versão secundária |
+| **3 — Ciclo de Vida Completo** | Backup, recuperação de falhas, reconfiguração |
+| **4 — Insights Profundos** | Métricas, alertas, processamento de logs, análise de workloads |
+| **5 — Piloto Automático** | Escalonamento horizontal/vertical, ajuste automático de configuração, detecção de anomalias |
 
 ---
 
-## Best Practices
+## Boas Práticas
 
-| Practice | Detail |
+| Prática | Detalhe |
 |----------|--------|
-| **Idempotent reconcile** | Safe to call repeatedly — don't use one-shot mutations |
-| **Use `ctrl.SetControllerReference`** | Owned objects get garbage collected when CR is deleted |
-| **Finalizers for external resources** | Prevent CR deletion until external cleanup completes |
-| **Status conditions** | Use `metav1.Condition` — standard format for `kubectl get` columns |
-| **Re-queue on transient errors** | `ctrl.Result{RequeueAfter: 30*time.Second}` for retry |
-| **Leader election** | Always enable for HA deployments (`--leader-elect`) |
-| **RBAC markers** | Use `+kubebuilder:rbac:` comments — `make manifests` generates correct ClusterRole |
-| **Webhook cert-manager** | Use cert-manager to provision and rotate webhook TLS certificates |
-| **Unit test with envtest** | `sigs.k8s.io/controller-runtime/pkg/envtest` spins up a real API server |
-| **OLM for distribution** | Package operators for OperatorHub with Operator Lifecycle Manager |
+| **Reconcile idempotente** | Seguro para chamadas repetidas — não use mutações únicas |
+| **Use `ctrl.SetControllerReference`** | Objetos de propriedade são coletados pelo GC quando o CR é excluído |
+| **Finalizadores para recursos externos** | Impede a exclusão do CR até que a limpeza externa seja concluída |
+| **Condições de status** | Use `metav1.Condition` — formato padrão para colunas do `kubectl get` |
+| **Re-enfileirar em erros transientes** | `ctrl.Result{RequeueAfter: 30*time.Second}` para tentativa |
+| **Eleição de líder** | Sempre habilitar para implantações de HA (`--leader-elect`) |
+| **Marcadores RBAC** | Use comentários `+kubebuilder:rbac:` — `make manifests` gera o ClusterRole correto |
+| **Webhook cert-manager** | Use o cert-manager para provisionar e rotacionar certificados TLS do webhook |
+| **Teste unitário com envtest** | `sigs.k8s.io/controller-runtime/pkg/envtest` inicializa um servidor de API real |
+| **OLM para distribuição** | Empacote operadores para o OperatorHub com o Operator Lifecycle Manager |
 
-[← Service Mesh](service-mesh.md) | [← Containers Overview](index.md) | [Container Security →](container-security.md)
+[← Malha de Serviços](service-mesh.md) | [← Visão Geral de Contêineres](index.md) | [Segurança de Contêineres →](container-security.md)

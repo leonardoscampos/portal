@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="EKS, AKS and GKE — cluster setup, node pools, IAM integration, add-ons, upgrades and operational patterns.">
+        <meta name="description" content="EKS, AKS e GKE — configuração de cluster, grupos de nós, integração IAM, complementos, atualizações e padrões operacionais.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -33,7 +33,7 @@
     
     
   
-    <title>Managed Kubernetes — Leonardo Campos</title>
+    <title>Kubernetes Gerenciado — Leonardo Campos</title>
   
 
     
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#provider-comparison" class="md-skip">
+        <a href="#comparacao-de-provedores" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Managed Kubernetes
+              Kubernetes Gerenciado
             
           </span>
         </div>
@@ -1874,10 +1874,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#provider-comparison" class="md-nav__link">
+  <a href="#comparacao-de-provedores" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Provider Comparison
+        Comparação de Provedores
       
     </span>
   </a>
@@ -1897,10 +1897,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cluster-with-terraform" class="md-nav__link">
+  <a href="#cluster-com-terraform" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster with Terraform
+        Cluster com Terraform
       
     </span>
   </a>
@@ -1908,10 +1908,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#irsa-iam-roles-for-service-accounts" class="md-nav__link">
+  <a href="#irsa-funcoes-iam-para-contas-de-servico" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IRSA — IAM Roles for Service Accounts
+        IRSA — Funções IAM para Contas de Serviço
       
     </span>
   </a>
@@ -1919,10 +1919,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#karpenter-node-autoprovisioning" class="md-nav__link">
+  <a href="#karpenter-aprovisionamento-automatico-de-nos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Karpenter — Node Autoprovisioning
+        Karpenter — Aprovisionamento Automático de Nós
       
     </span>
   </a>
@@ -1930,10 +1930,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#eksctl-quick-reference" class="md-nav__link">
+  <a href="#referencia-rapida-do-eksctl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        eksctl Quick Reference
+        Referência Rápida do eksctl
       
     </span>
   </a>
@@ -1958,10 +1958,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cluster-with-terraform_1" class="md-nav__link">
+  <a href="#cluster-com-terraform_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster with Terraform
+        Cluster com Terraform
       
     </span>
   </a>
@@ -1997,10 +1997,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cluster-with-terraform_2" class="md-nav__link">
+  <a href="#cluster-com-terraform_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster with Terraform
+        Cluster com Terraform
       
     </span>
   </a>
@@ -2035,10 +2035,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cluster-upgrade-strategy" class="md-nav__link">
+  <a href="#estrategia-de-atualizacao-de-cluster" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster Upgrade Strategy
+        Estratégia de Atualização de Cluster
       
     </span>
   </a>
@@ -2046,10 +2046,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#production-operations-checklist" class="md-nav__link">
+  <a href="#checklist-de-operacoes-em-producao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Production Operations Checklist
+        Checklist de Operações em Produção
       
     </span>
   </a>
@@ -3109,10 +3109,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#provider-comparison" class="md-nav__link">
+  <a href="#comparacao-de-provedores" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Provider Comparison
+        Comparação de Provedores
       
     </span>
   </a>
@@ -3132,10 +3132,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cluster-with-terraform" class="md-nav__link">
+  <a href="#cluster-com-terraform" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster with Terraform
+        Cluster com Terraform
       
     </span>
   </a>
@@ -3143,10 +3143,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#irsa-iam-roles-for-service-accounts" class="md-nav__link">
+  <a href="#irsa-funcoes-iam-para-contas-de-servico" class="md-nav__link">
     <span class="md-ellipsis">
       
-        IRSA — IAM Roles for Service Accounts
+        IRSA — Funções IAM para Contas de Serviço
       
     </span>
   </a>
@@ -3154,10 +3154,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#karpenter-node-autoprovisioning" class="md-nav__link">
+  <a href="#karpenter-aprovisionamento-automatico-de-nos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Karpenter — Node Autoprovisioning
+        Karpenter — Aprovisionamento Automático de Nós
       
     </span>
   </a>
@@ -3165,10 +3165,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#eksctl-quick-reference" class="md-nav__link">
+  <a href="#referencia-rapida-do-eksctl" class="md-nav__link">
     <span class="md-ellipsis">
       
-        eksctl Quick Reference
+        Referência Rápida do eksctl
       
     </span>
   </a>
@@ -3193,10 +3193,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cluster-with-terraform_1" class="md-nav__link">
+  <a href="#cluster-com-terraform_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster with Terraform
+        Cluster com Terraform
       
     </span>
   </a>
@@ -3232,10 +3232,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cluster-with-terraform_2" class="md-nav__link">
+  <a href="#cluster-com-terraform_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster with Terraform
+        Cluster com Terraform
       
     </span>
   </a>
@@ -3270,10 +3270,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cluster-upgrade-strategy" class="md-nav__link">
+  <a href="#estrategia-de-atualizacao-de-cluster" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster Upgrade Strategy
+        Estratégia de Atualização de Cluster
       
     </span>
   </a>
@@ -3281,10 +3281,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#production-operations-checklist" class="md-nav__link">
+  <a href="#checklist-de-operacoes-em-producao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Production Operations Checklist
+        Checklist de Operações em Produção
       
     </span>
   </a>
@@ -3311,26 +3311,26 @@
 <div class="domain-page-hero" data-domain="containers">
   <div class="dph-left">
     <span class="dph-eyebrow">// containers-orchestration / managed-kubernetes</span>
-    <h1 class="dph-title">Managed Kubernetes</h1>
-    <p class="dph-desc">Production Kubernetes without managing the control plane. EKS, AKS and GKE handle master node availability, patching and upgrades — letting teams focus on workloads. Each offering has distinct IAM, networking, node management and add-on patterns worth mastering.</p>
+    <h1 class="dph-title">Kubernetes Gerenciado</h1>
+    <p class="dph-desc">Kubernetes em produção sem gerenciar o plano de controle. EKS, AKS e GKE gerenciam a disponibilidade do nó mestre, patches e atualizações — permitindo que as equipes se concentrem nos workloads. Cada oferta tem padrões distintos de IAM, rede, gerenciamento de nós e complementos que valem a pena dominar.</p>
     <div class="dph-badges">
       <span class="tech-badge">EKS</span>
       <span class="tech-badge">AKS</span>
       <span class="tech-badge">GKE</span>
-      <span class="tech-badge">Node Pools</span>
-      <span class="tech-badge">IAM Integration</span>
-      <span class="tech-badge">Cluster Upgrades</span>
+      <span class="tech-badge">Grupos de Nós</span>
+      <span class="tech-badge">Integração IAM</span>
+      <span class="tech-badge">Atualizações de Cluster</span>
     </div>
   </div>
 </div>
 
-<p><a href="../container-security/">← Container Security</a> | <a href="../">← Containers Overview</a></p>
+<p><a href="../container-security/">← Segurança de Contêineres</a> | <a href="../">← Visão Geral de Contêineres</a></p>
 <hr />
-<h2 id="provider-comparison">Provider Comparison</h2>
+<h2 id="comparacao-de-provedores">Comparação de Provedores</h2>
 <table>
 <thead>
 <tr>
-<th>Feature</th>
+<th>Recurso</th>
 <th>EKS (AWS)</th>
 <th>AKS (Azure)</th>
 <th>GKE (GCP)</th>
@@ -3338,28 +3338,28 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Control plane cost</strong></td>
-<td>$0.10/hr per cluster</td>
-<td>Free</td>
-<td>Free (Autopilot: usage-based)</td>
+<td><strong>Custo do plano de controle</strong></td>
+<td>$0,10/hr por cluster</td>
+<td>Gratuito</td>
+<td>Gratuito (Autopilot: baseado em uso)</td>
 </tr>
 <tr>
-<td><strong>IAM integration</strong></td>
+<td><strong>Integração IAM</strong></td>
 <td>IRSA (OIDC) / Pod Identity</td>
 <td>Workload Identity (OIDC)</td>
 <td>Workload Identity</td>
 </tr>
 <tr>
-<td><strong>Node types</strong></td>
-<td>Managed, Self-managed, Fargate</td>
-<td>System + User node pools</td>
+<td><strong>Tipos de nó</strong></td>
+<td>Gerenciado, Autogerenciado, Fargate</td>
+<td>Grupos de nós System + User</td>
 <td>Standard, Autopilot</td>
 </tr>
 <tr>
-<td><strong>Upgrade strategy</strong></td>
+<td><strong>Estratégia de atualização</strong></td>
 <td>Manual / Auto (auto_upgrade)</td>
-<td>Auto-upgrade channels</td>
-<td>Release channels</td>
+<td>Canais de atualização automática</td>
+<td>Canais de lançamento</td>
 </tr>
 <tr>
 <td><strong>CNI</strong></td>
@@ -3368,25 +3368,25 @@
 <td>VPC-native, Dataplane V2 (eBPF)</td>
 </tr>
 <tr>
-<td><strong>GPU nodes</strong></td>
+<td><strong>Nós GPU</strong></td>
 <td>P3, G4dn, P4d</td>
 <td>NC-series, ND-series</td>
-<td>A100, H100, T4 node pools</td>
+<td>Grupos de nós A100, H100, T4</td>
 </tr>
 <tr>
-<td><strong>Spot/preemptible</strong></td>
-<td>Spot instances / Karpenter</td>
-<td>Spot node pools</td>
-<td>Spot/Preemptible node pools</td>
+<td><strong>Spot/preemptível</strong></td>
+<td>Instâncias Spot / Karpenter</td>
+<td>Grupos de nós Spot</td>
+<td>Grupos de nós Spot/Preemptível</td>
 </tr>
 <tr>
-<td><strong>Secret integration</strong></td>
+<td><strong>Integração de segredos</strong></td>
 <td>AWS Secrets Manager (ASCP)</td>
 <td>Azure Key Vault CSI driver</td>
 <td>Secret Manager CSI driver</td>
 </tr>
 <tr>
-<td><strong>Cluster API</strong></td>
+<td><strong>API do Cluster</strong></td>
 <td>eksctl / Terraform</td>
 <td>AZ CLI / Terraform</td>
 <td>gcloud / Terraform</td>
@@ -3395,7 +3395,7 @@
 </table>
 <hr />
 <h2 id="eks-amazon-elastic-kubernetes-service">EKS (Amazon Elastic Kubernetes Service)</h2>
-<h3 id="cluster-with-terraform">Cluster with Terraform</h3>
+<h3 id="cluster-com-terraform">Cluster com Terraform</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">module</span><span class="w"> </span><span class="nv">&quot;eks&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="na">source</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;terraform-aws-modules/eks/aws&quot;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="na">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;~&gt; 20.0&quot;</span>
@@ -3485,7 +3485,7 @@
 <a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="irsa-iam-roles-for-service-accounts">IRSA — IAM Roles for Service Accounts</h3>
+<h3 id="irsa-funcoes-iam-para-contas-de-servico">IRSA — Funções IAM para Contas de Serviço</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Create IAM role trusted by the pod&#39;s service account</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kr">module</span><span class="w"> </span><span class="nv">&quot;s3_irsa_role&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="na">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;terraform-aws-modules/iam/aws//modules/iam-role-for-service-accounts-eks&quot;</span>
@@ -3513,7 +3513,7 @@
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="nt">eks.amazonaws.com/role-arn</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arn:aws:iam::123456789012:role/app-s3-role</span>
 </code></pre></div>
-<h3 id="karpenter-node-autoprovisioning">Karpenter — Node Autoprovisioning</h3>
+<h3 id="karpenter-aprovisionamento-automatico-de-nos">Karpenter — Aprovisionamento Automático de Nós</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># NodePool — replaces Cluster Autoscaler</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">karpenter.sh/v1</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NodePool</span>
@@ -3549,7 +3549,7 @@
 <a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="w">    </span><span class="nt">consolidationPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WhenUnderutilized</span>
 <a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="w">    </span><span class="nt">consolidateAfter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30s</span>
 </code></pre></div>
-<h3 id="eksctl-quick-reference">eksctl Quick Reference</h3>
+<h3 id="referencia-rapida-do-eksctl">Referência Rápida do eksctl</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Create cluster</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>eksctl<span class="w"> </span>create<span class="w"> </span>cluster<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>--name<span class="w"> </span>prod-cluster<span class="w"> </span><span class="se">\</span>
@@ -3577,7 +3577,7 @@
 </code></pre></div>
 <hr />
 <h2 id="aks-azure-kubernetes-service">AKS (Azure Kubernetes Service)</h2>
-<h3 id="cluster-with-terraform_1">Cluster with Terraform</h3>
+<h3 id="cluster-com-terraform_1">Cluster com Terraform</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azurerm_kubernetes_cluster&quot;</span><span class="w"> </span><span class="nv">&quot;prod&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="na">name</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;prod-aks&quot;</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="na">location</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="nv">azurerm_resource_group.main.location</span>
@@ -3685,7 +3685,7 @@
 </code></pre></div>
 <hr />
 <h2 id="gke-google-kubernetes-engine">GKE (Google Kubernetes Engine)</h2>
-<h3 id="cluster-with-terraform_2">Cluster with Terraform</h3>
+<h3 id="cluster-com-terraform_2">Cluster com Terraform</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_container_cluster&quot;</span><span class="w"> </span><span class="nv">&quot;prod&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="na">name</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;prod-cluster&quot;</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="na">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;us-east1&quot;</span><span class="c1">             # regional (HA) cluster</span>
@@ -3820,10 +3820,10 @@
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Autopilot vs Standard</p>
-<p>Autopilot manages nodes, node pools, OS, and capacity automatically. You pay per Pod resource request (not per node). Ideal for teams that want to avoid node operations. Restrictions: no privileged pods, no DaemonSets, no custom kernels.</p>
+<p>O Autopilot gerencia nós, grupos de nós, sistema operacional e capacidade automaticamente. Você paga por solicitação de recurso de Pod (não por nó). Ideal para equipes que desejam evitar operações de nós. Restrições: sem pods privilegiados, sem DaemonSets, sem kernels personalizados.</p>
 </div>
 <hr />
-<h2 id="cluster-upgrade-strategy">Cluster Upgrade Strategy</h2>
+<h2 id="estrategia-de-atualizacao-de-cluster">Estratégia de Atualização de Cluster</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># EKS — blue/green via eksctl</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>eksctl<span class="w"> </span>create<span class="w"> </span>nodegroup<span class="w"> </span>--cluster<span class="w"> </span>prod<span class="w"> </span>--name<span class="w"> </span>v130-nodes<span class="w"> </span>--node-type<span class="w"> </span>m6i.xlarge<span class="w"> </span>--nodes<span class="w"> </span><span class="m">3</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>kubectl<span class="w"> </span>cordon<span class="w"> </span>-l<span class="w"> </span>alpha.eksctl.io/nodegroup-name<span class="o">=</span>v129-nodes<span class="w">    </span><span class="c1"># stop scheduling</span>
@@ -3846,70 +3846,70 @@
 <a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">  </span>--region<span class="w"> </span>us-east1
 </code></pre></div>
 <hr />
-<h2 id="production-operations-checklist">Production Operations Checklist</h2>
+<h2 id="checklist-de-operacoes-em-producao">Checklist de Operações em Produção</h2>
 <table>
 <thead>
 <tr>
-<th>Area</th>
-<th>Practice</th>
+<th>Área</th>
+<th>Prática</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Multi-AZ</strong></td>
-<td>Spread node pools across ≥3 availability zones</td>
+<td>Distribuir grupos de nós em ≥3 zonas de disponibilidade</td>
 </tr>
 <tr>
-<td><strong>Private cluster</strong></td>
-<td>Disable public API endpoint access; use VPN / bastion</td>
+<td><strong>Cluster privado</strong></td>
+<td>Desabilitar acesso público ao endpoint da API; usar VPN / bastion</td>
 </tr>
 <tr>
-<td><strong>Node auto-upgrade</strong></td>
-<td>Enable for OS patches; use maintenance windows for control</td>
+<td><strong>Atualização automática de nós</strong></td>
+<td>Habilitar para patches de SO; usar janelas de manutenção para controle</td>
 </tr>
 <tr>
 <td><strong>PodDisruptionBudget</strong></td>
-<td>Set for all stateful and critical workloads</td>
+<td>Definir para todos os workloads stateful e críticos</td>
 </tr>
 <tr>
-<td><strong>Resource quotas</strong></td>
-<td>Apply per-namespace <code>ResourceQuota</code> and <code>LimitRange</code></td>
+<td><strong>Cotas de recursos</strong></td>
+<td>Aplicar <code>ResourceQuota</code> e <code>LimitRange</code> por namespace</td>
 </tr>
 <tr>
-<td><strong>Cluster autoscaler</strong></td>
-<td>Use Karpenter (EKS), CA (AKS/GKE), or Autopilot (GKE)</td>
+<td><strong>Autoescalonador de cluster</strong></td>
+<td>Usar Karpenter (EKS), CA (AKS/GKE) ou Autopilot (GKE)</td>
 </tr>
 <tr>
-<td><strong>Spot/preemptible nodes</strong></td>
-<td>Use for batch and stateless workloads to cut costs</td>
+<td><strong>Nós Spot/preemptíveis</strong></td>
+<td>Usar para workloads batch e stateless para reduzir custos</td>
 </tr>
 <tr>
-<td><strong>etcd backup</strong></td>
-<td>Managed K8s handles this — verify SLA and PITR window</td>
+<td><strong>Backup do etcd</strong></td>
+<td>O K8s gerenciado trata disso — verificar SLA e janela de PITR</td>
 </tr>
 <tr>
-<td><strong>Audit logs</strong></td>
-<td>Enable K8s audit logging; forward to SIEM</td>
+<td><strong>Logs de auditoria</strong></td>
+<td>Habilitar logs de auditoria do K8s; encaminhar para SIEM</td>
 </tr>
 <tr>
-<td><strong>RBAC audit</strong></td>
-<td>Regularly review <code>ClusterRoleBindings</code> and <code>RoleBindings</code></td>
+<td><strong>Auditoria de RBAC</strong></td>
+<td>Revisar regularmente <code>ClusterRoleBindings</code> e <code>RoleBindings</code></td>
 </tr>
 <tr>
-<td><strong>Image scanning</strong></td>
-<td>Enable scan-on-push in ECR / ACR / Artifact Registry</td>
+<td><strong>Varredura de imagens</strong></td>
+<td>Habilitar varredura no push no ECR / ACR / Artifact Registry</td>
 </tr>
 <tr>
-<td><strong>Namespace isolation</strong></td>
-<td>NetworkPolicy + PSS enforced per namespace</td>
+<td><strong>Isolamento de namespace</strong></td>
+<td>NetworkPolicy + PSS aplicados por namespace</td>
 </tr>
 <tr>
-<td><strong>Monitoring</strong></td>
-<td>Prometheus + Grafana or cloud-native (CloudWatch/AzMonitor/Cloud Ops)</td>
+<td><strong>Monitoramento</strong></td>
+<td>Prometheus + Grafana ou nativo da nuvem (CloudWatch/AzMonitor/Cloud Ops)</td>
 </tr>
 </tbody>
 </table>
-<p><a href="../container-security/">← Container Security</a> | <a href="../">← Containers Overview</a></p>
+<p><a href="../container-security/">← Segurança de Contêineres</a> | <a href="../">← Visão Geral de Contêineres</a></p>
 
 
 

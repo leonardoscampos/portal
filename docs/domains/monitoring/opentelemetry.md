@@ -1,13 +1,13 @@
 ---
 title: OpenTelemetry
-description: Vendor-neutral instrumentation with OpenTelemetry SDK, Collector pipelines, traces, metrics, and logs.
+description: Instrumentação vendor-neutral com OpenTelemetry SDK, pipelines do Coletor, traces, métricas e logs.
 ---
 
 <div class="domain-page-hero" data-domain="monitoring">
   <div class="dph-left">
-    <span class="dph-eyebrow">// monitoring-observability / opentelemetry</span>
+    <span class="dph-eyebrow">// monitoramento-observabilidade / opentelemetry</span>
     <h1 class="dph-title">OpenTelemetry</h1>
-    <p class="dph-desc">OpenTelemetry (OTel) is the CNCF standard for observability instrumentation. One SDK produces traces, metrics, and logs — the Collector receives, processes, and exports them to any backend. Instrument once, switch backends without code changes.</p>
+    <p class="dph-desc">OpenTelemetry (OTel) é o padrão CNCF para instrumentação de observabilidade. Um único SDK produz traces, métricas e logs — o Coletor os recebe, processa e exporta para qualquer backend. Instrumente uma vez, troque de backend sem alterações no código.</p>
     <div class="dph-badges">
       <span class="tech-badge">OTel SDK</span>
       <span class="tech-badge">Collector</span>
@@ -19,21 +19,21 @@ description: Vendor-neutral instrumentation with OpenTelemetry SDK, Collector pi
   </div>
 </div>
 
-[← Loki](loki.md) | [← Monitoring Overview](index.md) | [Alerting →](alerting.md)
+[← Loki](loki.md) | [← Visão Geral de Monitoramento](index.md) | [Alerting →](alerting.md)
 
 ---
 
-## Signal Overview
+## Visão Geral dos Sinais
 
-| Signal | Description | Key OTel API | Backends |
+| Sinal | Descrição | API OTel Principal | Backends |
 |--------|-------------|--------------|---------|
-| **Traces** | Request flow across services | `Tracer`, `Span` | Tempo, Jaeger, Zipkin, Datadog |
-| **Metrics** | Aggregated measurements over time | `Meter`, `Counter`, `Histogram` | Prometheus, Mimir, Datadog |
-| **Logs** | Timestamped structured events | `Logger` (LogRecord) | Loki, Elasticsearch, Cloud Logging |
+| **Traces** | Fluxo de requisição entre serviços | `Tracer`, `Span` | Tempo, Jaeger, Zipkin, Datadog |
+| **Métricas** | Medições agregadas ao longo do tempo | `Meter`, `Counter`, `Histogram` | Prometheus, Mimir, Datadog |
+| **Logs** | Eventos estruturados com carimbo de tempo | `Logger` (LogRecord) | Loki, Elasticsearch, Cloud Logging |
 
 ---
 
-## Collector Architecture
+## Arquitetura do Coletor
 
 ```
  [App SDK]──OTLP──▶[Collector]──▶[Backend]
@@ -50,7 +50,7 @@ description: Vendor-neutral instrumentation with OpenTelemetry SDK, Collector pi
 
 ---
 
-## Collector Deployment (Helm)
+## Deploy do Coletor (Helm)
 
 ```bash
 helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
@@ -149,7 +149,7 @@ config:
 
 ---
 
-## SDK Instrumentation
+## Instrumentação do SDK
 
 === "Go"
 
@@ -302,7 +302,7 @@ config:
 
 ---
 
-## Metrics with OTel SDK
+## Métricas com o SDK OTel
 
 ```go
 // Go — create and record metrics
@@ -337,7 +337,7 @@ latencyHistogram.Record(ctx, elapsed.Seconds(),
 
 ---
 
-## Kubernetes Operator — OTel Collector CRD
+## Kubernetes Operator — CRD do Coletor OTel
 
 ```bash
 # Install OpenTelemetry Operator
@@ -418,7 +418,7 @@ metadata:
 
 ---
 
-## Context Propagation
+## Propagação de Contexto
 
 ```
 Service A ──────────────────────────────▶ Service B
@@ -432,20 +432,20 @@ Span A (root)                           Span B (child)
   parentSpanId: (none)                    parentSpanId: 111
 ```
 
-### Propagation Formats
+### Formatos de Propagação
 
-| Format | Header | Use case |
+| Formato | Header | Caso de Uso |
 |--------|--------|---------|
-| W3C TraceContext | `traceparent`, `tracestate` | Default for OTel |
+| W3C TraceContext | `traceparent`, `tracestate` | Padrão para OTel |
 | B3 (single) | `b3` | Zipkin, Istio |
-| B3 (multi) | `X-B3-TraceId`, `X-B3-SpanId` | Legacy |
-| Baggage | `baggage` | Cross-service key-value propagation |
+| B3 (multi) | `X-B3-TraceId`, `X-B3-SpanId` | Legado |
+| Baggage | `baggage` | Propagação de chave-valor entre serviços |
 
 ---
 
-## Semantic Conventions (Key Attributes)
+## Convenções Semânticas (Atributos Principais)
 
-| Namespace | Key attributes |
+| Namespace | Atributos Principais |
 |-----------|---------------|
 | HTTP | `http.request.method`, `http.response.status_code`, `url.path`, `server.address` |
 | DB | `db.system`, `db.name`, `db.operation.name`, `db.query.text` |
@@ -454,4 +454,4 @@ Span A (root)                           Span B (child)
 | Cloud | `cloud.provider`, `cloud.region`, `cloud.account.id` |
 | K8s | `k8s.cluster.name`, `k8s.namespace.name`, `k8s.pod.name`, `k8s.container.name` |
 
-[← Loki](loki.md) | [← Monitoring Overview](index.md) | [Alerting →](alerting.md)
+[← Loki](loki.md) | [← Visão Geral de Monitoramento](index.md) | [Alerting →](alerting.md)

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Cloud Monitoring, Cloud Logging, Cloud Trace, Managed Prometheus, Error Reporting — observability on GCP.">
+        <meta name="description" content="Cloud Monitoring, Cloud Logging, Cloud Trace, Managed Prometheus, Error Reporting — observabilidade no GCP.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -33,7 +33,7 @@
     
     
   
-    <title>GCP Observability — Leonardo Campos</title>
+    <title>GCP Observabilidade — Leonardo Campos</title>
   
 
     
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GCP Observability
+              GCP Observabilidade
             
           </span>
         </div>
@@ -1104,10 +1104,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#alert-policies" class="md-nav__link">
+  <a href="#politicas-de-alerta" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Alert policies
+        Políticas de alerta
       
     </span>
   </a>
@@ -1115,10 +1115,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#slo-monitoring" class="md-nav__link">
+  <a href="#monitoramento-de-slo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SLO Monitoring
+        Monitoramento de SLO
       
     </span>
   </a>
@@ -1143,10 +1143,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#grafana-integration" class="md-nav__link">
+  <a href="#integracao-com-grafana" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Grafana integration
+        Integração com Grafana
       
     </span>
   </a>
@@ -1171,10 +1171,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#log-based-metrics" class="md-nav__link">
+  <a href="#metricas-baseadas-em-logs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Log-based metrics
+        Métricas baseadas em logs
       
     </span>
   </a>
@@ -1182,10 +1182,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#log-sink-export-to-bigquery" class="md-nav__link">
+  <a href="#sink-de-logs-exportar-para-bigquery" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Log sink (export to BigQuery)
+        Sink de logs (exportar para BigQuery)
       
     </span>
   </a>
@@ -1220,10 +1220,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cloud-billing-cost-controls" class="md-nav__link">
+  <a href="#cloud-billing-controle-de-custos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cloud Billing &amp; Cost Controls
+        Cloud Billing &amp; Controle de Custos
       
     </span>
   </a>
@@ -3079,10 +3079,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#alert-policies" class="md-nav__link">
+  <a href="#politicas-de-alerta" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Alert policies
+        Políticas de alerta
       
     </span>
   </a>
@@ -3090,10 +3090,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#slo-monitoring" class="md-nav__link">
+  <a href="#monitoramento-de-slo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SLO Monitoring
+        Monitoramento de SLO
       
     </span>
   </a>
@@ -3118,10 +3118,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#grafana-integration" class="md-nav__link">
+  <a href="#integracao-com-grafana" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Grafana integration
+        Integração com Grafana
       
     </span>
   </a>
@@ -3146,10 +3146,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#log-based-metrics" class="md-nav__link">
+  <a href="#metricas-baseadas-em-logs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Log-based metrics
+        Métricas baseadas em logs
       
     </span>
   </a>
@@ -3157,10 +3157,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#log-sink-export-to-bigquery" class="md-nav__link">
+  <a href="#sink-de-logs-exportar-para-bigquery" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Log sink (export to BigQuery)
+        Sink de logs (exportar para BigQuery)
       
     </span>
   </a>
@@ -3195,10 +3195,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cloud-billing-cost-controls" class="md-nav__link">
+  <a href="#cloud-billing-controle-de-custos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cloud Billing &amp; Cost Controls
+        Cloud Billing &amp; Controle de Custos
       
     </span>
   </a>
@@ -3225,8 +3225,8 @@
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// gcp / observability</span>
-    <h1 class="dph-title">GCP Observability</h1>
-    <p class="dph-desc">Cloud Operations Suite (formerly Stackdriver) covers metrics, logs and traces. Google Managed Service for Prometheus (GMP) provides native PromQL for GKE. Cloud Trace supports OpenTelemetry natively. SLO monitoring is first-class in Cloud Monitoring.</p>
+    <h1 class="dph-title">GCP Observabilidade</h1>
+    <p class="dph-desc">O Cloud Operations Suite (anteriormente Stackdriver) cobre métricas, logs e rastreamentos. O Google Managed Service for Prometheus (GMP) fornece PromQL nativo para o GKE. O Cloud Trace suporta OpenTelemetry nativamente. O monitoramento de SLO é nativo no Cloud Monitoring.</p>
     <div class="dph-badges">
       <span class="tech-badge">Cloud Monitoring</span>
       <span class="tech-badge">Cloud Logging</span>
@@ -3240,8 +3240,8 @@
 
 <hr />
 <h2 id="cloud-monitoring">Cloud Monitoring</h2>
-<p>Cloud Monitoring collects metrics from all GCP services automatically. Custom metrics can be pushed via the Cloud Monitoring API or via the OpenTelemetry SDK. <strong>Google Managed Service for Prometheus (GMP)</strong> provides a PromQL interface over GKE metrics.</p>
-<h3 id="alert-policies">Alert policies</h3>
+<p>O Cloud Monitoring coleta métricas de todos os serviços GCP automaticamente. Métricas personalizadas podem ser enviadas via Cloud Monitoring API ou via OpenTelemetry SDK. O <strong>Google Managed Service for Prometheus (GMP)</strong> fornece uma interface PromQL sobre métricas do GKE.</p>
+<h3 id="politicas-de-alerta">Políticas de alerta</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_monitoring_alert_policy&quot;</span><span class="w"> </span><span class="nv">&quot;gke_cpu&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="na">display_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;GKE High CPU Usage&quot;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="na">combiner</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;OR&quot;</span>
@@ -3281,7 +3281,7 @@
 <a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="slo-monitoring">SLO Monitoring</h3>
+<h3 id="monitoramento-de-slo">Monitoramento de SLO</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_monitoring_custom_service&quot;</span><span class="w"> </span><span class="nv">&quot;api&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="na">service_id</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;api-service&quot;</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="na">display_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;API Service&quot;</span>
@@ -3313,7 +3313,7 @@
 </code></pre></div>
 <hr />
 <h2 id="google-managed-service-for-prometheus-gmp">Google Managed Service for Prometheus (GMP)</h2>
-<p>GMP is a managed Prometheus service for GKE. It is fully compatible with the Prometheus data model and PromQL, stores data in Google's global metric backend, and requires no Prometheus cluster to operate.</p>
+<p>O GMP é um serviço Prometheus gerenciado para GKE. É totalmente compatível com o modelo de dados do Prometheus e com PromQL, armazena dados no backend global de métricas do Google e não requer nenhum cluster Prometheus para operar.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Enable GMP on GKE cluster via PodMonitoring CRD</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring.googleapis.com/v1</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PodMonitoring</span>
@@ -3341,8 +3341,8 @@
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="grafana-integration">Grafana integration</h3>
-<p>Connect a Grafana instance to GMP using the Cloud Monitoring data source with PromQL:</p>
+<h3 id="integracao-com-grafana">Integração com Grafana</h3>
+<p>Conecte uma instância do Grafana ao GMP usando a fonte de dados do Cloud Monitoring com PromQL:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Grafana datasource for GMP</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">datasources</span><span class="p">:</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GMP</span>
@@ -3352,8 +3352,8 @@
 </code></pre></div>
 <hr />
 <h2 id="cloud-logging">Cloud Logging</h2>
-<p>Cloud Logging automatically collects logs from all GCP services. GKE container logs (stdout/stderr) are captured by the GKE logging agent and sent to Cloud Logging automatically.</p>
-<h3 id="log-based-metrics">Log-based metrics</h3>
+<p>O Cloud Logging coleta automaticamente logs de todos os serviços GCP. Logs de contêineres GKE (stdout/stderr) são capturados pelo agente de logging do GKE e enviados ao Cloud Logging automaticamente.</p>
+<h3 id="metricas-baseadas-em-logs">Métricas baseadas em logs</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_logging_metric&quot;</span><span class="w"> </span><span class="nv">&quot;error_count&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="na">name</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;api-error-rate&quot;</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="na">filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&lt;-</span><span class="dl">EOT</span>
@@ -3377,7 +3377,7 @@
 <a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="log-sink-export-to-bigquery">Log sink (export to BigQuery)</h3>
+<h3 id="sink-de-logs-exportar-para-bigquery">Sink de logs (exportar para BigQuery)</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_logging_project_sink&quot;</span><span class="w"> </span><span class="nv">&quot;bigquery&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="na">name</span><span class="w">                   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;logs-to-bigquery&quot;</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="na">destination</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bigquery.googleapis.com/projects/${var.project_id}/datasets/${google_bigquery_dataset.logs.dataset_id}&quot;</span>
@@ -3395,7 +3395,7 @@
 </code></pre></div>
 <hr />
 <h2 id="cloud-trace">Cloud Trace</h2>
-<p>Cloud Trace is GCP's distributed tracing service. It accepts spans via the OpenTelemetry OTLP protocol and integrates with Cloud Monitoring for trace-to-metric correlation.</p>
+<p>O Cloud Trace é o serviço de rastreamento distribuído do GCP. Aceita spans via protocolo OpenTelemetry OTLP e integra-se ao Cloud Monitoring para correlação de rastreamento com métrica.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Python — OpenTelemetry with GCP exporter</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">opentelemetry</span><span class="w"> </span><span class="kn">import</span> <span class="n">trace</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">opentelemetry.sdk.trace</span><span class="w"> </span><span class="kn">import</span> <span class="n">TracerProvider</span>
@@ -3423,7 +3423,7 @@
 </code></pre></div>
 <hr />
 <h2 id="error-reporting">Error Reporting</h2>
-<p>Error Reporting automatically groups exceptions from Cloud Functions, Cloud Run, GKE, App Engine and Compute Engine logs into distinct error groups with stack traces, affected users and resolution status.</p>
+<p>O Error Reporting agrupa automaticamente exceções de logs do Cloud Functions, Cloud Run, GKE, App Engine e Compute Engine em grupos de erros distintos com stack traces, usuários afetados e status de resolução.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Python — report errors manually</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">google.cloud</span><span class="w"> </span><span class="kn">import</span> <span class="n">error_reporting</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
@@ -3435,11 +3435,11 @@
 <a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="n">client</span><span class="o">.</span><span class="n">report_exception</span><span class="p">()</span>  <span class="c1"># auto-captures current exception + stack trace</span>
 </code></pre></div>
 <div class="admonition tip">
-<p class="admonition-title">Structured logging for Error Reporting</p>
-<p>Log exceptions as structured JSON with <code>severity: ERROR</code> and a <code>message</code> field containing the stack trace. Cloud Logging automatically forwards these to Error Reporting without any SDK dependency — useful for languages without a native Error Reporting client.</p>
+<p class="admonition-title">Logging estruturado para Error Reporting</p>
+<p>Registre exceções como JSON estruturado com <code>severity: ERROR</code> e um campo <code>message</code> contendo o stack trace. O Cloud Logging encaminha esses logs automaticamente para o Error Reporting sem nenhuma dependência de SDK — útil para linguagens sem cliente nativo de Error Reporting.</p>
 </div>
 <hr />
-<h2 id="cloud-billing-cost-controls">Cloud Billing &amp; Cost Controls</h2>
+<h2 id="cloud-billing-controle-de-custos">Cloud Billing &amp; Controle de Custos</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_billing_budget&quot;</span><span class="w"> </span><span class="nv">&quot;prod&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="na">billing_account</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">var.billing_account_id</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="na">display_name</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Production Monthly Budget&quot;</span>
@@ -3465,7 +3465,7 @@
 <a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
-<p><a class="md-button" href="../">← GCP Overview</a>
+<p><a class="md-button" href="../">← Visão Geral GCP</a>
 <a class="md-button md-button--primary" href="../iac/">IaC &amp; DevOps →</a></p>
 
 

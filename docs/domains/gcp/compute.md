@@ -1,13 +1,13 @@
 ---
-title: GCP Compute
-description: GKE, Compute Engine, Cloud Run, Cloud Functions — compute on Google Cloud Platform.
+title: GCP Computação
+description: GKE, Compute Engine, Cloud Run, Cloud Functions — computação na Google Cloud Platform.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// gcp / compute</span>
-    <h1 class="dph-title">GCP Compute</h1>
-    <p class="dph-desc">Google invented Kubernetes and runs the world's largest container fleet. GKE is the most capable managed Kubernetes offering, Cloud Run is the fastest path to serverless containers, and Autopilot removes node management entirely.</p>
+    <h1 class="dph-title">GCP Computação</h1>
+    <p class="dph-desc">O Google inventou o Kubernetes e opera a maior frota de contêineres do mundo. GKE é a oferta de Kubernetes gerenciado mais capaz, Cloud Run é o caminho mais rápido para contêineres serverless, e Autopilot elimina completamente o gerenciamento de nós.</p>
     <div class="dph-badges">
       <span class="tech-badge">GKE Standard</span>
       <span class="tech-badge">GKE Autopilot</span>
@@ -23,24 +23,24 @@ description: GKE, Compute Engine, Cloud Run, Cloud Functions — compute on Goog
 
 ## Compute Engine
 
-Compute Engine is GCP's IaaS VM service. Machine types follow the pattern `{family}-{type}-{vcpus}` — e.g., `n2-standard-8`, `c3-highcpu-44`.
+Compute Engine é o serviço de VMs IaaS do GCP. Os tipos de máquina seguem o padrão `{família}-{tipo}-{vcpus}` — por exemplo, `n2-standard-8`, `c3-highcpu-44`.
 
-### Machine families
+### Famílias de máquinas
 
-| Family | Optimised for | Example |
-|--------|-------------|---------|
-| **E2** | Cost-efficient, variable performance | `e2-standard-4` |
-| **N2 / N2D** | Balanced general-purpose (Intel / AMD) | `n2-standard-8` |
-| **C3** | Latest Intel Sapphire Rapids, low latency | `c3-standard-22` |
-| **T2D** | AMD EPYC, scale-out compute | `t2d-standard-32` |
-| **M3** | Memory-optimised (in-memory DBs) | `m3-ultramem-32` |
-| **A2 / A3** | NVIDIA A100 / H100 GPU | `a3-highgpu-8g` |
-| **Tau T2A** | ARM Ampere, throughput workloads | `t2a-standard-16` |
+| Família | Otimizado para | Exemplo |
+|---------|---------------|---------|
+| **E2** | Custo eficiente, desempenho variável | `e2-standard-4` |
+| **N2 / N2D** | Uso geral balanceado (Intel / AMD) | `n2-standard-8` |
+| **C3** | Intel Sapphire Rapids mais recente, baixa latência | `c3-standard-22` |
+| **T2D** | AMD EPYC, computação de expansão horizontal | `t2d-standard-32` |
+| **M3** | Otimizado para memória (BDs em memória) | `m3-ultramem-32` |
+| **A2 / A3** | GPU NVIDIA A100 / H100 | `a3-highgpu-8g` |
+| **Tau T2A** | ARM Ampere, cargas de trabalho de throughput | `t2a-standard-16` |
 
 !!! tip "Spot VMs"
-    GCP Spot VMs (equivalent to AWS Spot) offer 60–91% discount with preemption notice of 30 seconds. Combine with GKE's node auto-provisioning and Spot node pools for stateless, fault-tolerant workloads.
+    GCP Spot VMs (equivalente às Spot da AWS) oferecem 60–91% de desconto com aviso de preempção de 30 segundos. Combine com o aprovisionamento automático de nós do GKE e pools de nós Spot para cargas de trabalho sem estado e tolerantes a falhas.
 
-### Managed Instance Groups (MIG)
+### Grupos de Instâncias Gerenciadas (MIG)
 
 ```hcl
 resource "google_compute_instance_template" "app" {
@@ -100,18 +100,18 @@ resource "google_compute_region_autoscaler" "app" {
 
 ## GKE — Google Kubernetes Engine
 
-GKE is the gold standard for managed Kubernetes. The control plane is fully managed, regional (3-AZ control plane), upgradeable in-place and integrated with all GCP IAM, networking and observability services.
+GKE é o padrão ouro para Kubernetes gerenciado. O plano de controle é totalmente gerenciado, regional (plano de controle em 3 AZs), atualizável in-place e integrado a todos os serviços de IAM, rede e observabilidade do GCP.
 
 ### GKE Standard vs Autopilot
 
-| Aspect | Standard | Autopilot |
-|--------|---------|-----------|
-| **Node management** | You manage node pools | Google manages nodes |
-| **Cost model** | Per node (VM billing) | Per pod (vCPU + memory) |
-| **Customisation** | Full control (node taints, labels, machine type) | Restricted (Google-defined node classes) |
-| **Scaling** | Cluster autoscaler + node auto-provisioning | Automatic |
-| **Security** | You configure pod security | Hardened by default (no privileged pods) |
-| **Best for** | Custom ML, privileged workloads, cost-tuning | Standard web services, microservices |
+| Aspecto | Standard | Autopilot |
+|---------|----------|-----------|
+| **Gerenciamento de nós** | Você gerencia os pools de nós | Google gerencia os nós |
+| **Modelo de custo** | Por nó (cobrança de VM) | Por pod (vCPU + memória) |
+| **Personalização** | Controle total (taints, labels, tipo de máquina) | Restrito (classes de nós definidas pelo Google) |
+| **Escalabilidade** | Cluster autoscaler + aprovisionamento automático de nós | Automática |
+| **Segurança** | Você configura a segurança dos pods | Reforçada por padrão (sem pods privilegiados) |
+| **Melhor para** | ML customizado, cargas privilegiadas, ajuste de custo | Serviços web padrão, microsserviços |
 
 ```hcl
 resource "google_container_cluster" "main" {
@@ -195,9 +195,9 @@ resource "google_container_node_pool" "app" {
 }
 ```
 
-### Workload Identity for pods
+### Workload Identity para pods
 
-Workload Identity binds a Kubernetes ServiceAccount to a GCP Service Account — pods get GCP credentials via a projected volume token without needing key files.
+O Workload Identity vincula uma ServiceAccount do Kubernetes a uma Service Account do GCP — os pods obtêm credenciais do GCP via token de volume projetado sem precisar de arquivos de chave.
 
 ```hcl
 # GCP Service Account for the application
@@ -218,7 +218,7 @@ resource "google_service_account_iam_member" "workload_identity" {
 
 ## Cloud Run
 
-Cloud Run is Google's serverless container platform. A container image is all that's required — no cluster, no node management. Cloud Run scales from zero to thousands of instances in seconds.
+Cloud Run é a plataforma de contêineres serverless do Google. Apenas uma imagem de contêiner é necessária — sem cluster, sem gerenciamento de nós. Cloud Run escala de zero a milhares de instâncias em segundos.
 
 ```hcl
 resource "google_cloud_run_v2_service" "api" {
@@ -263,13 +263,13 @@ resource "google_cloud_run_service_iam_member" "public" {
 ```
 
 !!! tip "Cloud Run vs Cloud Run for Anthos"
-    Standard **Cloud Run** (managed) is fully serverless — Google manages all infrastructure. **Cloud Run for Anthos** (now Cloud Run on GKE) runs on your GKE cluster — gives you VPC-native networking and GPU access at the cost of managing node pools.
+    O **Cloud Run** padrão (gerenciado) é totalmente serverless — o Google gerencia toda a infraestrutura. O **Cloud Run for Anthos** (agora Cloud Run no GKE) roda no seu cluster GKE — oferece rede nativa de VPC e acesso a GPU ao custo de gerenciar pools de nós.
 
 ---
 
-## Cloud Functions (2nd gen)
+## Cloud Functions (2ª geração)
 
-Cloud Functions gen2 is built on Cloud Run — each function runs as a Cloud Run service under the hood, giving it all Cloud Run capabilities: longer timeout (60 min), larger memory (32 GB), concurrency per instance.
+Cloud Functions gen2 é construído sobre o Cloud Run — cada função roda como um serviço Cloud Run por baixo dos panos, conferindo todas as capacidades do Cloud Run: timeout maior (60 min), mais memória (32 GB), concorrência por instância.
 
 ```python
 # main.py — HTTP trigger (Python 3.12)
@@ -318,5 +318,5 @@ resource "google_cloudfunctions2_function" "processor" {
 
 ---
 
-[← GCP Overview](index.md){ .md-button }
-[Storage →](storage.md){ .md-button .md-button--primary }
+[← Visão Geral GCP](index.md){ .md-button }
+[Armazenamento →](storage.md){ .md-button .md-button--primary }

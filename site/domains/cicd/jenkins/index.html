@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Jenkins declarative pipelines, shared libraries, Kubernetes agents, multibranch pipelines and credentials reference.">
+        <meta name="description" content="Pipelines declarativas Jenkins, bibliotecas compartilhadas, agentes Kubernetes, pipelines multibranch e referência de credenciais.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#declarative-pipeline-anatomy" class="md-skip">
+        <a href="#anatomia-do-pipeline-declarativo" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -1541,10 +1541,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#declarative-pipeline-anatomy" class="md-nav__link">
+  <a href="#anatomia-do-pipeline-declarativo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Declarative Pipeline Anatomy
+        Anatomia do Pipeline Declarativo
       
     </span>
   </a>
@@ -1552,10 +1552,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pipeline-types" class="md-nav__link">
+  <a href="#tipos-de-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pipeline Types
+        Tipos de Pipeline
       
     </span>
   </a>
@@ -1563,10 +1563,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#shared-libraries" class="md-nav__link">
+  <a href="#bibliotecas-compartilhadas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Shared Libraries
+        Bibliotecas Compartilhadas
       
     </span>
   </a>
@@ -1574,10 +1574,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kubernetes-pod-templates" class="md-nav__link">
+  <a href="#templates-de-pod-kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Kubernetes Pod Templates
+        Templates de Pod Kubernetes
       
     </span>
   </a>
@@ -1585,10 +1585,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#credentials-management" class="md-nav__link">
+  <a href="#gerenciamento-de-credenciais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Credentials Management
+        Gerenciamento de Credenciais
       
     </span>
   </a>
@@ -1607,10 +1607,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#parallel-stages" class="md-nav__link">
+  <a href="#estagios-paralelos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parallel Stages
+        Estágios Paralelos
       
     </span>
   </a>
@@ -1618,10 +1618,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#matrix-declarative" class="md-nav__link">
+  <a href="#matrix-declarativo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Matrix (Declarative)
+        Matrix (Declarativo)
       
     </span>
   </a>
@@ -1629,10 +1629,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#essential-plugins" class="md-nav__link">
+  <a href="#plugins-essenciais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Essential Plugins
+        Plugins Essenciais
       
     </span>
   </a>
@@ -1640,10 +1640,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-as-code-jcasc" class="md-nav__link">
+  <a href="#configuracao-como-codigo-jcasc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration as Code (JCasC)
+        Configuração como Código (JCasC)
       
     </span>
   </a>
@@ -1651,10 +1651,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
+  <a href="#melhores-praticas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practices
+        Melhores Práticas
       
     </span>
   </a>
@@ -3047,10 +3047,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#declarative-pipeline-anatomy" class="md-nav__link">
+  <a href="#anatomia-do-pipeline-declarativo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Declarative Pipeline Anatomy
+        Anatomia do Pipeline Declarativo
       
     </span>
   </a>
@@ -3058,10 +3058,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pipeline-types" class="md-nav__link">
+  <a href="#tipos-de-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pipeline Types
+        Tipos de Pipeline
       
     </span>
   </a>
@@ -3069,10 +3069,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#shared-libraries" class="md-nav__link">
+  <a href="#bibliotecas-compartilhadas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Shared Libraries
+        Bibliotecas Compartilhadas
       
     </span>
   </a>
@@ -3080,10 +3080,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kubernetes-pod-templates" class="md-nav__link">
+  <a href="#templates-de-pod-kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Kubernetes Pod Templates
+        Templates de Pod Kubernetes
       
     </span>
   </a>
@@ -3091,10 +3091,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#credentials-management" class="md-nav__link">
+  <a href="#gerenciamento-de-credenciais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Credentials Management
+        Gerenciamento de Credenciais
       
     </span>
   </a>
@@ -3113,10 +3113,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#parallel-stages" class="md-nav__link">
+  <a href="#estagios-paralelos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parallel Stages
+        Estágios Paralelos
       
     </span>
   </a>
@@ -3124,10 +3124,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#matrix-declarative" class="md-nav__link">
+  <a href="#matrix-declarativo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Matrix (Declarative)
+        Matrix (Declarativo)
       
     </span>
   </a>
@@ -3135,10 +3135,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#essential-plugins" class="md-nav__link">
+  <a href="#plugins-essenciais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Essential Plugins
+        Plugins Essenciais
       
     </span>
   </a>
@@ -3146,10 +3146,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-as-code-jcasc" class="md-nav__link">
+  <a href="#configuracao-como-codigo-jcasc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration as Code (JCasC)
+        Configuração como Código (JCasC)
       
     </span>
   </a>
@@ -3157,10 +3157,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
+  <a href="#melhores-praticas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practices
+        Melhores Práticas
       
     </span>
   </a>
@@ -3188,7 +3188,7 @@
   <div class="dph-left">
     <span class="dph-eyebrow">// cicd-pipelines / jenkins</span>
     <h1 class="dph-title">Jenkins</h1>
-    <p class="dph-desc">The battle-tested open-source automation server. Declarative and Scripted Pipelines via Jenkinsfile, an enormous plugin ecosystem, Kubernetes-native ephemeral agents, shared libraries for DRY pipelines and deep integration with virtually every tool in the DevOps stack.</p>
+    <p class="dph-desc">O servidor de automação open-source battle-tested. Pipelines Declarativas e Scriptadas via Jenkinsfile, um enorme ecossistema de plugins, agentes efêmeros nativos do Kubernetes, bibliotecas compartilhadas para pipelines DRY e integração profunda com praticamente todas as ferramentas do stack DevOps.</p>
     <div class="dph-badges">
       <span class="tech-badge">Declarative Pipeline</span>
       <span class="tech-badge">Shared Libraries</span>
@@ -3200,9 +3200,9 @@
   </div>
 </div>
 
-<p><a href="../gitlab-ci/">← GitLab CI</a> | <a href="../">← CI/CD Overview</a> | <a href="../tekton/">Tekton →</a></p>
+<p><a href="../gitlab-ci/">← GitLab CI</a> | <a href="../">← Visão Geral de CI/CD</a> | <a href="../tekton/">Tekton →</a></p>
 <hr />
-<h2 id="declarative-pipeline-anatomy">Declarative Pipeline Anatomy</h2>
+<h2 id="anatomia-do-pipeline-declarativo">Anatomia do Pipeline Declarativo</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Jenkinsfile</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">agent</span><span class="w"> </span><span class="o">{</span>
@@ -3320,39 +3320,39 @@
 <a id="__codelineno-0-115" name="__codelineno-0-115" href="#__codelineno-0-115"></a><span class="o">}</span>
 </code></pre></div>
 <hr />
-<h2 id="pipeline-types">Pipeline Types</h2>
+<h2 id="tipos-de-pipeline">Tipos de Pipeline</h2>
 <table>
 <thead>
 <tr>
-<th>Type</th>
-<th>Use Case</th>
+<th>Tipo</th>
+<th>Caso de Uso</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Declarative</strong></td>
-<td>Standard YAML-like DSL. Enforces structure, preferred for new pipelines</td>
+<td><strong>Declarativo</strong></td>
+<td>DSL padrão semelhante a YAML. Impõe estrutura; preferido para novos pipelines</td>
 </tr>
 <tr>
-<td><strong>Scripted</strong></td>
-<td>Full Groovy — maximum flexibility but harder to maintain</td>
+<td><strong>Scriptado</strong></td>
+<td>Groovy completo — máxima flexibilidade, mas mais difícil de manter</td>
 </tr>
 <tr>
 <td><strong>Multibranch</strong></td>
-<td>Scans repo branches/PRs, creates pipeline per branch automatically</td>
+<td>Escaneia branches/PRs do repositório e cria pipeline por branch automaticamente</td>
 </tr>
 <tr>
 <td><strong>Organization</strong></td>
-<td>Scans entire GitHub/GitLab org or Bitbucket project</td>
+<td>Escaneia toda a org GitHub/GitLab ou projeto Bitbucket</td>
 </tr>
 <tr>
 <td><strong>Blue Ocean</strong></td>
-<td>Modern UI over existing pipelines — visualization and PR integration</td>
+<td>UI moderna sobre pipelines existentes — visualização e integração com PRs</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="shared-libraries">Shared Libraries</h2>
+<h2 id="bibliotecas-compartilhadas">Bibliotecas Compartilhadas</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>vars/
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  deployHelm.groovy
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  dockerBuild.groovy
@@ -3391,10 +3391,10 @@
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="o">}</span>
 <a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="o">}</span>
 </code></pre></div>
-<p><strong>Register library:</strong> <em>Manage Jenkins → System → Global Pipeline Libraries</em></p>
+<p><strong>Registrar biblioteca:</strong> <em>Manage Jenkins → System → Global Pipeline Libraries</em></p>
 <hr />
-<h2 id="kubernetes-pod-templates">Kubernetes Pod Templates</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Inline YAML (preferred)</label><label for="__tabbed_1_2">Pod Template in Jenkins UI</label></div>
+<h2 id="templates-de-pod-kubernetes">Templates de Pod Kubernetes</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">YAML Inline (preferido)</label><label for="__tabbed_1_2">Pod Template na UI do Jenkins</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
@@ -3426,8 +3426,8 @@
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<p>Configure under <strong>Manage Jenkins → Clouds → Kubernetes → Pod Templates</strong>.<br />
-Reference by label in the Jenkinsfile:</p>
+<p>Configure em <strong>Manage Jenkins → Clouds → Kubernetes → Pod Templates</strong>.<br />
+Referencie pelo label no Jenkinsfile:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="n">agent</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">label</span><span class="w"> </span><span class="s1">&#39;terraform-agent&#39;</span><span class="w"> </span><span class="o">}</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="n">stages</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="o">...</span><span class="w"> </span><span class="o">}</span>
@@ -3437,7 +3437,7 @@ Reference by label in the Jenkinsfile:</p>
 </div>
 </div>
 <hr />
-<h2 id="credentials-management">Credentials Management</h2>
+<h2 id="gerenciamento-de-credenciais">Gerenciamento de Credenciais</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">// String / secret text</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">withCredentials</span><span class="o">([</span><span class="n">string</span><span class="o">(</span><span class="nl">credentialsId:</span><span class="w"> </span><span class="s1">&#39;api-token&#39;</span><span class="o">,</span><span class="w"> </span><span class="nl">variable:</span><span class="w"> </span><span class="s1">&#39;TOKEN&#39;</span><span class="o">)])</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="n">sh</span><span class="w"> </span><span class="s1">&#39;curl -H &quot;Authorization: Bearer $TOKEN&quot; https://api.example.com&#39;</span>
@@ -3493,10 +3493,10 @@ Reference by label in the Jenkinsfile:</p>
 <a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">    </span><span class="o">}</span>
 <a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="o">}</span>
 </code></pre></div>
-<p>Configure in Jenkins UI: <strong>New Item → Multibranch Pipeline → Branch Sources → GitHub/GitLab</strong>.<br />
-Enable <em>Discover branches</em>, <em>Discover pull requests</em>, and set scan interval.</p>
+<p>Configure na UI do Jenkins: <strong>New Item → Multibranch Pipeline → Branch Sources → GitHub/GitLab</strong>.<br />
+Habilite <em>Discover branches</em>, <em>Discover pull requests</em> e defina o intervalo de varredura.</p>
 <hr />
-<h2 id="parallel-stages">Parallel Stages</h2>
+<h2 id="estagios-paralelos">Estágios Paralelos</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">stage</span><span class="o">(</span><span class="s1">&#39;Test in parallel&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="n">parallel</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">&#39;Unit tests&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
@@ -3519,7 +3519,7 @@ Enable <em>Discover branches</em>, <em>Discover pull requests</em>, and set scan
 <a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="o">}</span>
 </code></pre></div>
 <hr />
-<h2 id="matrix-declarative">Matrix (Declarative)</h2>
+<h2 id="matrix-declarativo">Matrix (Declarativo)</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">stage</span><span class="o">(</span><span class="s1">&#39;Multi-platform build&#39;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="n">matrix</span><span class="w"> </span><span class="o">{</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">        </span><span class="n">axes</span><span class="w"> </span><span class="o">{</span>
@@ -3549,75 +3549,75 @@ Enable <em>Discover branches</em>, <em>Discover pull requests</em>, and set scan
 <a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a><span class="o">}</span>
 </code></pre></div>
 <hr />
-<h2 id="essential-plugins">Essential Plugins</h2>
+<h2 id="plugins-essenciais">Plugins Essenciais</h2>
 <table>
 <thead>
 <tr>
 <th>Plugin</th>
-<th>Purpose</th>
+<th>Finalidade</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Pipeline</strong></td>
-<td>Core declarative/scripted pipeline support</td>
+<td>Suporte central a pipelines declarativas/scriptadas</td>
 </tr>
 <tr>
 <td><strong>Git</strong></td>
-<td>SCM integration</td>
+<td>Integração com SCM</td>
 </tr>
 <tr>
 <td><strong>GitHub Branch Source</strong></td>
-<td>Multibranch + org scan for GitHub</td>
+<td>Multibranch + varredura de org para GitHub</td>
 </tr>
 <tr>
 <td><strong>GitLab Branch Source</strong></td>
-<td>Multibranch + org scan for GitLab</td>
+<td>Multibranch + varredura de org para GitLab</td>
 </tr>
 <tr>
 <td><strong>Kubernetes</strong></td>
-<td>Ephemeral pod-based agents in K8s</td>
+<td>Agentes efêmeros baseados em pods no K8s</td>
 </tr>
 <tr>
 <td><strong>Credentials Binding</strong></td>
-<td><code>withCredentials {}</code> DSL</td>
+<td>DSL <code>withCredentials {}</code></td>
 </tr>
 <tr>
 <td><strong>Blue Ocean</strong></td>
-<td>Modern pipeline visualization UI</td>
+<td>UI moderna de visualização de pipelines</td>
 </tr>
 <tr>
 <td><strong>Pipeline: Shared Groovy Libraries</strong></td>
-<td>Shared library support</td>
+<td>Suporte a bibliotecas compartilhadas</td>
 </tr>
 <tr>
 <td><strong>Docker Pipeline</strong></td>
-<td><code>docker.build</code>, <code>docker.withRegistry</code> DSL</td>
+<td>DSL <code>docker.build</code>, <code>docker.withRegistry</code></td>
 </tr>
 <tr>
 <td><strong>JUnit</strong></td>
-<td>Test result publishing</td>
+<td>Publicação de resultados de testes</td>
 </tr>
 <tr>
 <td><strong>Cobertura / JaCoCo</strong></td>
-<td>Code coverage reporting</td>
+<td>Relatórios de cobertura de código</td>
 </tr>
 <tr>
 <td><strong>Slack Notification</strong></td>
-<td>Slack messages from pipelines</td>
+<td>Mensagens Slack a partir dos pipelines</td>
 </tr>
 <tr>
 <td><strong>OWASP Dependency-Check</strong></td>
-<td>Dependency vulnerability scanning</td>
+<td>Varredura de vulnerabilidades em dependências</td>
 </tr>
 <tr>
 <td><strong>SonarQube Scanner</strong></td>
-<td>Static analysis integration</td>
+<td>Integração de análise estática</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="configuration-as-code-jcasc">Configuration as Code (JCasC)</h2>
+<h2 id="configuracao-como-codigo-jcasc">Configuração como Código (JCasC)</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># jenkins.yaml — loaded at startup via Configuration as Code plugin</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nt">jenkins</span><span class="p">:</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="nt">systemMessage</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Jenkins</span><span class="nv"> </span><span class="s">managed</span><span class="nv"> </span><span class="s">by</span><span class="nv"> </span><span class="s">JCasC&quot;</span>
@@ -3649,58 +3649,58 @@ Enable <em>Discover branches</em>, <em>Discover pull requests</em>, and set scan
 <a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="w">              </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${DOCKER_HUB_PASSWORD}</span>
 </code></pre></div>
 <hr />
-<h2 id="best-practices">Best Practices</h2>
+<h2 id="melhores-praticas">Melhores Práticas</h2>
 <table>
 <thead>
 <tr>
-<th>Practice</th>
-<th>Implementation</th>
+<th>Prática</th>
+<th>Implementação</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Jenkinsfile in SCM</strong></td>
-<td>Store pipelines in version control — never use the UI editor</td>
+<td><strong>Jenkinsfile no SCM</strong></td>
+<td>Armazene pipelines no controle de versão — nunca use o editor da UI</td>
 </tr>
 <tr>
-<td><strong>Ephemeral K8s agents</strong></td>
-<td>Pod-based agents scale to zero; no persistent agent maintenance</td>
+<td><strong>Agentes K8s efêmeros</strong></td>
+<td>Agentes baseados em pods escalam a zero; sem manutenção de agentes persistentes</td>
 </tr>
 <tr>
-<td><strong>Shared libraries</strong></td>
-<td>Centralise DRY logic; version-pin library refs in production</td>
+<td><strong>Bibliotecas compartilhadas</strong></td>
+<td>Centralize a lógica DRY; fixe versões das referências de biblioteca em produção</td>
 </tr>
 <tr>
-<td><strong>Declarative over Scripted</strong></td>
-<td>Easier to read, validate and lint; use <code>when</code>, <code>input</code>, <code>matrix</code></td>
+<td><strong>Declarativo sobre Scriptado</strong></td>
+<td>Mais fácil de ler, validar e lintar; use <code>when</code>, <code>input</code>, <code>matrix</code></td>
 </tr>
 <tr>
-<td><strong>JCasC for controller config</strong></td>
-<td>Reproducible Jenkins installs — no manual UI configuration</td>
+<td><strong>JCasC para configuração do controller</strong></td>
+<td>Instalações Jenkins reproduzíveis — sem configuração manual na UI</td>
 </tr>
 <tr>
-<td><strong>Credentials plugin only</strong></td>
-<td>Never hardcode secrets; use <code>withCredentials {}</code> always</td>
+<td><strong>Somente plugin de Credenciais</strong></td>
+<td>Nunca faça hardcode de segredos; sempre use <code>withCredentials {}</code></td>
 </tr>
 <tr>
 <td><strong>Build discarder</strong></td>
-<td>Set <code>logRotator</code> to avoid disk exhaustion</td>
+<td>Defina <code>logRotator</code> para evitar esgotamento de disco</td>
 </tr>
 <tr>
-<td><strong>Parallel &amp; Matrix</strong></td>
-<td>Reduce wall-clock time by running independent stages in parallel</td>
+<td><strong>Paralelo &amp; Matrix</strong></td>
+<td>Reduza o tempo de parede executando estágios independentes em paralelo</td>
 </tr>
 <tr>
-<td><strong>Timeout on stages</strong></td>
-<td>Prevent hung builds with <code>timeout(time: N, unit: 'MINUTES')</code></td>
+<td><strong>Timeout nos estágios</strong></td>
+<td>Evite builds travados com <code>timeout(time: N, unit: 'MINUTES')</code></td>
 </tr>
 <tr>
-<td><strong>cleanWs() in post</strong></td>
-<td>Free workspace after build to avoid disk buildup on agents</td>
+<td><strong>cleanWs() no post</strong></td>
+<td>Libere o workspace após o build para evitar acúmulo de disco nos agentes</td>
 </tr>
 </tbody>
 </table>
-<p><a href="../gitlab-ci/">← GitLab CI</a> | <a href="../">← CI/CD Overview</a> | <a href="../tekton/">Tekton →</a></p>
+<p><a href="../gitlab-ci/">← GitLab CI</a> | <a href="../">← Visão Geral de CI/CD</a> | <a href="../tekton/">Tekton →</a></p>
 
 
 

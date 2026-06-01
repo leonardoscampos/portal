@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Pod Security Standards, OPA Gatekeeper, Kyverno, Trivy, Falco and runtime defense reference for Kubernetes.">
+        <meta name="description" content="Pod Security Standards, OPA Gatekeeper, Kyverno, Trivy, Falco e referência de defesa em execução para Kubernetes.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#security-layers" class="md-skip">
+        <a href="#camadas-de-seguranca" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -1846,10 +1846,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#security-layers" class="md-nav__link">
+  <a href="#camadas-de-seguranca" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Security Layers
+        Camadas de Segurança
       
     </span>
   </a>
@@ -1880,10 +1880,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#constrainttemplate-rego-policy" class="md-nav__link">
+  <a href="#constrainttemplate-politica-rego" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ConstraintTemplate (Rego policy)
+        ConstraintTemplate (política Rego)
       
     </span>
   </a>
@@ -1891,10 +1891,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#common-gatekeeper-policies" class="md-nav__link">
+  <a href="#politicas-comuns-do-gatekeeper" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Gatekeeper Policies
+        Políticas Comuns do Gatekeeper
       
     </span>
   </a>
@@ -1919,10 +1919,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#clusterpolicy-examples" class="md-nav__link">
+  <a href="#exemplos-de-clusterpolicy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ClusterPolicy Examples
+        Exemplos de ClusterPolicy
       
     </span>
   </a>
@@ -1935,10 +1935,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#trivy-vulnerability-scanning" class="md-nav__link">
+  <a href="#trivy-varredura-de-vulnerabilidades" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Trivy — Vulnerability Scanning
+        Trivy — Varredura de Vulnerabilidades
       
     </span>
   </a>
@@ -1946,22 +1946,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#falco-runtime-threat-detection" class="md-nav__link">
+  <a href="#falco-deteccao-de-ameacas-em-execucao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Falco — Runtime Threat Detection
+        Falco — Detecção de Ameaças em Execução
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Falco — Runtime Threat Detection">
+    <nav class="md-nav" aria-label="Falco — Detecção de Ameaças em Execução">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#custom-falco-rules" class="md-nav__link">
+  <a href="#regras-customizadas-do-falco" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Custom Falco Rules
+        Regras Customizadas do Falco
       
     </span>
   </a>
@@ -1974,10 +1974,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#seccomp-profiles" class="md-nav__link">
+  <a href="#perfis-seccomp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Seccomp Profiles
+        Perfis Seccomp
       
     </span>
   </a>
@@ -1985,10 +1985,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#image-signing-with-cosign" class="md-nav__link">
+  <a href="#assinatura-de-imagem-com-cosign" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Image Signing with Cosign
+        Assinatura de Imagem com Cosign
       
     </span>
   </a>
@@ -1996,10 +1996,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#security-checklist" class="md-nav__link">
+  <a href="#checklist-de-seguranca" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Security Checklist
+        Checklist de Segurança
       
     </span>
   </a>
@@ -3087,10 +3087,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#security-layers" class="md-nav__link">
+  <a href="#camadas-de-seguranca" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Security Layers
+        Camadas de Segurança
       
     </span>
   </a>
@@ -3121,10 +3121,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#constrainttemplate-rego-policy" class="md-nav__link">
+  <a href="#constrainttemplate-politica-rego" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ConstraintTemplate (Rego policy)
+        ConstraintTemplate (política Rego)
       
     </span>
   </a>
@@ -3132,10 +3132,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#common-gatekeeper-policies" class="md-nav__link">
+  <a href="#politicas-comuns-do-gatekeeper" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Gatekeeper Policies
+        Políticas Comuns do Gatekeeper
       
     </span>
   </a>
@@ -3160,10 +3160,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#clusterpolicy-examples" class="md-nav__link">
+  <a href="#exemplos-de-clusterpolicy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ClusterPolicy Examples
+        Exemplos de ClusterPolicy
       
     </span>
   </a>
@@ -3176,10 +3176,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#trivy-vulnerability-scanning" class="md-nav__link">
+  <a href="#trivy-varredura-de-vulnerabilidades" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Trivy — Vulnerability Scanning
+        Trivy — Varredura de Vulnerabilidades
       
     </span>
   </a>
@@ -3187,22 +3187,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#falco-runtime-threat-detection" class="md-nav__link">
+  <a href="#falco-deteccao-de-ameacas-em-execucao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Falco — Runtime Threat Detection
+        Falco — Detecção de Ameaças em Execução
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Falco — Runtime Threat Detection">
+    <nav class="md-nav" aria-label="Falco — Detecção de Ameaças em Execução">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#custom-falco-rules" class="md-nav__link">
+  <a href="#regras-customizadas-do-falco" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Custom Falco Rules
+        Regras Customizadas do Falco
       
     </span>
   </a>
@@ -3215,10 +3215,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#seccomp-profiles" class="md-nav__link">
+  <a href="#perfis-seccomp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Seccomp Profiles
+        Perfis Seccomp
       
     </span>
   </a>
@@ -3226,10 +3226,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#image-signing-with-cosign" class="md-nav__link">
+  <a href="#assinatura-de-imagem-com-cosign" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Image Signing with Cosign
+        Assinatura de Imagem com Cosign
       
     </span>
   </a>
@@ -3237,10 +3237,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#security-checklist" class="md-nav__link">
+  <a href="#checklist-de-seguranca" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Security Checklist
+        Checklist de Segurança
       
     </span>
   </a>
@@ -3268,7 +3268,7 @@
   <div class="dph-left">
     <span class="dph-eyebrow">// containers-orchestration / container-security</span>
     <h1 class="dph-title">Container Security</h1>
-    <p class="dph-desc">Defense-in-depth for containerized workloads. Pod Security Standards enforce baseline hardening, OPA Gatekeeper and Kyverno provide policy-as-code admission control, Trivy scans for vulnerabilities, and Falco detects runtime threats in real time.</p>
+    <p class="dph-desc">Defesa em profundidade para cargas de trabalho conteinerizadas. Pod Security Standards aplicam hardening básico, OPA Gatekeeper e Kyverno fornecem controle de admissão por política como código, Trivy varre vulnerabilidades e Falco detecta ameaças em execução em tempo real.</p>
     <div class="dph-badges">
       <span class="tech-badge">Pod Security Standards</span>
       <span class="tech-badge">OPA Gatekeeper</span>
@@ -3280,39 +3280,39 @@
   </div>
 </div>
 
-<p><a href="../operators/">← Operators</a> | <a href="../">← Containers Overview</a> | <a href="../managed-kubernetes/">Managed Kubernetes →</a></p>
+<p><a href="../operators/">← Operadores</a> | <a href="../">← Visão Geral de Containers</a> | <a href="../managed-kubernetes/">Managed Kubernetes →</a></p>
 <hr />
-<h2 id="security-layers">Security Layers</h2>
+<h2 id="camadas-de-seguranca">Camadas de Segurança</h2>
 <table>
 <thead>
 <tr>
-<th>Layer</th>
-<th>Tool / Mechanism</th>
+<th>Camada</th>
+<th>Ferramenta / Mecanismo</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Image build</strong></td>
-<td>Trivy, Snyk, Docker Scout — scan before push</td>
+<td><strong>Build da imagem</strong></td>
+<td>Trivy, Snyk, Docker Scout — varredura antes do push</td>
 </tr>
 <tr>
-<td><strong>Registry</strong></td>
-<td>Image signing (cosign), content trust, ECR/ACR scan-on-push</td>
+<td><strong>Registro</strong></td>
+<td>Assinatura de imagem (cosign), confiança de conteúdo, scan-on-push do ECR/ACR</td>
 </tr>
 <tr>
-<td><strong>Admission</strong></td>
-<td>OPA Gatekeeper, Kyverno — enforce policy before objects persist</td>
+<td><strong>Admissão</strong></td>
+<td>OPA Gatekeeper, Kyverno — aplica política antes de objetos serem persistidos</td>
 </tr>
 <tr>
-<td><strong>Runtime enforcement</strong></td>
+<td><strong>Aplicação em execução</strong></td>
 <td>Pod Security Standards, seccomp, AppArmor, capabilities</td>
 </tr>
 <tr>
-<td><strong>Runtime detection</strong></td>
-<td>Falco — real-time syscall monitoring</td>
+<td><strong>Detecção em execução</strong></td>
+<td>Falco — monitoramento de syscall em tempo real</td>
 </tr>
 <tr>
-<td><strong>Network</strong></td>
+<td><strong>Rede</strong></td>
 <td>NetworkPolicy, mTLS (Istio/Linkerd)</td>
 </tr>
 <tr>
@@ -3321,32 +3321,32 @@
 </tr>
 <tr>
 <td><strong>RBAC</strong></td>
-<td>Least-privilege ServiceAccounts, audit logs</td>
+<td>ServiceAccounts com privilégio mínimo, logs de auditoria</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="pod-security-standards">Pod Security Standards</h2>
-<p>Three built-in policy levels applied via namespace labels:</p>
+<p>Três níveis de política integrados aplicados via labels de namespace:</p>
 <table>
 <thead>
 <tr>
-<th>Level</th>
-<th>Restriction</th>
+<th>Nível</th>
+<th>Restrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>privileged</strong></td>
-<td>Unrestricted (for system namespaces only)</td>
+<td>Sem restrições (apenas para namespaces de sistema)</td>
 </tr>
 <tr>
 <td><strong>baseline</strong></td>
-<td>Prevents known privilege escalation; allows most workloads</td>
+<td>Previne escalação de privilégios conhecida; permite a maioria das cargas de trabalho</td>
 </tr>
 <tr>
 <td><strong>restricted</strong></td>
-<td>Hardened — requires non-root, drops all capabilities, no hostPath</td>
+<td>Enrijecido — requer não-root, descarta todas as capacidades, sem hostPath</td>
 </tr>
 </tbody>
 </table>
@@ -3383,7 +3383,7 @@
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>--create-namespace<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span>--set<span class="w"> </span><span class="nv">replicas</span><span class="o">=</span><span class="m">3</span>
 </code></pre></div>
-<h3 id="constrainttemplate-rego-policy">ConstraintTemplate (Rego policy)</h3>
+<h3 id="constrainttemplate-politica-rego">ConstraintTemplate (política Rego)</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">templates.gatekeeper.sh/v1</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConstraintTemplate</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">metadata</span><span class="p">:</span>
@@ -3429,7 +3429,7 @@
 <a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">  </span><span class="nt">parameters</span><span class="p">:</span>
 <a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">    </span><span class="nt">labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">app</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">version</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">team</span><span class="p p-Indicator">]</span>
 </code></pre></div>
-<h3 id="common-gatekeeper-policies">Common Gatekeeper Policies</h3>
+<h3 id="politicas-comuns-do-gatekeeper">Políticas Comuns do Gatekeeper</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Require resource limits</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">templates.gatekeeper.sh/v1</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConstraintTemplate</span>
@@ -3490,7 +3490,7 @@
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span>--create-namespace<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span>--set<span class="w"> </span><span class="nv">replicaCount</span><span class="o">=</span><span class="m">3</span>
 </code></pre></div>
-<h3 id="clusterpolicy-examples">ClusterPolicy Examples</h3>
+<h3 id="exemplos-de-clusterpolicy">Exemplos de ClusterPolicy</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Require non-root and drop ALL capabilities</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kyverno.io/v1</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterPolicy</span>
@@ -3587,7 +3587,7 @@
 <a id="__codelineno-7-94" name="__codelineno-7-94" href="#__codelineno-7-94"></a><span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;ghcr.io/*</span><span class="nv"> </span><span class="s">|</span><span class="nv"> </span><span class="s">123456789012.dkr.ecr.us-east-1.amazonaws.com/*&quot;</span>
 </code></pre></div>
 <hr />
-<h2 id="trivy-vulnerability-scanning">Trivy — Vulnerability Scanning</h2>
+<h2 id="trivy-varredura-de-vulnerabilidades">Trivy — Varredura de Vulnerabilidades</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Scan a container image</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>trivy<span class="w"> </span>image<span class="w"> </span>ghcr.io/my-org/api:1.2.3
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
@@ -3628,7 +3628,7 @@
 <a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">    </span><span class="nt">sarif_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trivy-results.sarif</span>
 </code></pre></div>
 <hr />
-<h2 id="falco-runtime-threat-detection">Falco — Runtime Threat Detection</h2>
+<h2 id="falco-deteccao-de-ameacas-em-execucao">Falco — Detecção de Ameaças em Execução</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Install via Helm (eBPF driver — recommended)</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>falcosecurity<span class="w"> </span>https://falcosecurity.github.io/charts
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>helm<span class="w"> </span>install<span class="w"> </span>falco<span class="w"> </span>falcosecurity/falco<span class="w"> </span><span class="se">\</span>
@@ -3638,7 +3638,7 @@
 <a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">  </span>--set<span class="w"> </span>falcosidekick.enabled<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span>--set<span class="w"> </span>falcosidekick.config.slack.webhookurl<span class="o">=</span><span class="s2">&quot;https://hooks.slack.com/...&quot;</span>
 </code></pre></div>
-<h3 id="custom-falco-rules">Custom Falco Rules</h3>
+<h3 id="regras-customizadas-do-falco">Regras Customizadas do Falco</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># /etc/falco/rules.d/custom.yaml</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rule</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Shell spawned in container</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nt">desc</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Detect shell execution inside a running container</span>
@@ -3681,7 +3681,7 @@
 <a id="__codelineno-11-40" name="__codelineno-11-40" href="#__codelineno-11-40"></a><span class="w">  </span><span class="nt">tags</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">network</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">crypto-mining</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">T1496</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 <hr />
-<h2 id="seccomp-profiles">Seccomp Profiles</h2>
+<h2 id="perfis-seccomp">Perfis Seccomp</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Use the runtime default seccomp profile (recommended)</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nt">spec</span><span class="p">:</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="nt">securityContext</span><span class="p">:</span>
@@ -3723,7 +3723,7 @@
 <a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
-<h2 id="image-signing-with-cosign">Image Signing with Cosign</h2>
+<h2 id="assinatura-de-imagem-com-cosign">Assinatura de Imagem com Cosign</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Generate key pair</span>
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>cosign<span class="w"> </span>generate-key-pair
 <a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
@@ -3747,53 +3747,53 @@
 <a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="w">  </span>ghcr.io/my-org/api:1.2.3
 </code></pre></div>
 <hr />
-<h2 id="security-checklist">Security Checklist</h2>
+<h2 id="checklist-de-seguranca">Checklist de Segurança</h2>
 <table>
 <thead>
 <tr>
-<th>Check</th>
-<th>Tool</th>
+<th>Verificação</th>
+<th>Ferramenta</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Images have no HIGH/CRITICAL CVEs</td>
+<td>Imagens sem CVEs de severidade ALTA/CRÍTICA</td>
 <td>Trivy</td>
 </tr>
 <tr>
-<td>No secrets in image layers</td>
+<td>Sem secrets nas camadas da imagem</td>
 <td>Trivy (secret scan)</td>
 </tr>
 <tr>
-<td>Images are signed</td>
+<td>Imagens assinadas</td>
 <td>cosign</td>
 </tr>
 <tr>
-<td>SBOM attached and verified</td>
+<td>SBOM anexado e verificado</td>
 <td>syft + cosign</td>
 </tr>
 <tr>
-<td>Pods run as non-root</td>
+<td>Pods executam como não-root</td>
 <td>PSS restricted / Kyverno</td>
 </tr>
 <tr>
-<td>Read-only root filesystem</td>
+<td>Sistema de arquivos raiz somente leitura</td>
 <td>PSS restricted / Kyverno</td>
 </tr>
 <tr>
-<td>All capabilities dropped</td>
+<td>Todas as capacidades descartadas</td>
 <td>PSS restricted / Kyverno</td>
 </tr>
 <tr>
-<td>No privileged containers</td>
+<td>Sem containers privilegiados</td>
 <td>OPA Gatekeeper</td>
 </tr>
 <tr>
-<td>Resource limits set</td>
+<td>Limites de recursos configurados</td>
 <td>OPA Gatekeeper / Kyverno</td>
 </tr>
 <tr>
-<td>Images from approved registries</td>
+<td>Imagens de registros aprovados</td>
 <td>Kyverno</td>
 </tr>
 <tr>
@@ -3801,32 +3801,32 @@
 <td>PSS restricted</td>
 </tr>
 <tr>
-<td>NetworkPolicies in place</td>
+<td>NetworkPolicies implementadas</td>
 <td>kubectl</td>
 </tr>
 <tr>
-<td>mTLS between services</td>
+<td>mTLS entre serviços</td>
 <td>Istio / Linkerd</td>
 </tr>
 <tr>
-<td>Runtime threats monitored</td>
+<td>Ameaças em execução monitoradas</td>
 <td>Falco</td>
 </tr>
 <tr>
-<td>RBAC least-privilege</td>
+<td>RBAC com privilégio mínimo</td>
 <td>kubectl auth can-i --list</td>
 </tr>
 <tr>
-<td>Secrets from external store</td>
+<td>Secrets de armazenamento externo</td>
 <td>External Secrets Operator</td>
 </tr>
 <tr>
-<td>Audit logs enabled</td>
+<td>Logs de auditoria habilitados</td>
 <td>K8s audit policy</td>
 </tr>
 </tbody>
 </table>
-<p><a href="../operators/">← Operators</a> | <a href="../">← Containers Overview</a> | <a href="../managed-kubernetes/">Managed Kubernetes →</a></p>
+<p><a href="../operators/">← Operadores</a> | <a href="../">← Visão Geral de Containers</a> | <a href="../managed-kubernetes/">Managed Kubernetes →</a></p>
 
 
 

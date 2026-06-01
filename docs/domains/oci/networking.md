@@ -1,13 +1,13 @@
 ---
-title: OCI Networking
-description: VCN, Load Balancer, Network Firewall, FastConnect, Service Gateway — networking on Oracle Cloud.
+title: OCI Rede
+description: VCN, Load Balancer, Network Firewall, FastConnect, Service Gateway — rede na Oracle Cloud.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// oci / networking</span>
-    <h1 class="dph-title">OCI Networking</h1>
-    <p class="dph-desc">OCI's Virtual Cloud Network (VCN) is your private network within a region. Security Lists and Network Security Groups control traffic. The flexible-shape Load Balancer handles L4 and L7. FastConnect provides dedicated private connectivity to OCI.</p>
+    <h1 class="dph-title">OCI Rede</h1>
+    <p class="dph-desc">A Virtual Cloud Network (VCN) da OCI é sua rede privada dentro de uma região. Security Lists e Network Security Groups controlam o tráfego. O Load Balancer de forma flexível lida com L4 e L7. O FastConnect fornece conectividade privada dedicada à OCI.</p>
     <div class="dph-badges">
       <span class="tech-badge">VCN</span>
       <span class="tech-badge">Load Balancer</span>
@@ -23,19 +23,19 @@ description: VCN, Load Balancer, Network Firewall, FastConnect, Service Gateway 
 
 ## Virtual Cloud Network (VCN)
 
-A VCN is a software-defined network in a single OCI region. Unlike AWS/GCP, OCI VCNs support up to 5 non-overlapping CIDR blocks. Subnets can be **regional** (spanning all ADs) or AD-specific. Use regional subnets for new deployments.
+Uma VCN é uma rede definida por software em uma única região OCI. Ao contrário da AWS/GCP, as VCNs da OCI suportam até 5 blocos CIDR não sobrepostos. As sub-redes podem ser **regionais** (abrangendo todos os ADs) ou específicas de AD. Use sub-redes regionais para novas implantações.
 
-### Network topology
+### Topologia de rede
 
 ```
 VCN (10.0.0.0/16)
-  ├── Public Subnet (10.0.0.0/24)     → Internet Gateway → Internet
+  ├── Sub-rede Pública (10.0.0.0/24)     → Internet Gateway → Internet
   │     └── Load Balancer, Bastion
-  ├── Private App Subnet (10.0.10.0/24) → NAT Gateway → Internet (outbound)
-  │     └── OKE worker nodes, App instances
-  ├── Private Data Subnet (10.0.20.0/24)
-  │     └── Databases, Vault
-  └── Service Gateway → OCI Services (Object Storage, etc.)
+  ├── Sub-rede App Privada (10.0.10.0/24) → NAT Gateway → Internet (saída)
+  │     └── Nós worker OKE, Instâncias de App
+  ├── Sub-rede Dados Privada (10.0.20.0/24)
+  │     └── Bancos de dados, Vault
+  └── Service Gateway → Serviços OCI (Object Storage, etc.)
 ```
 
 ```hcl
@@ -85,11 +85,11 @@ resource "oci_core_subnet" "private_app" {
 
 | | Security List | Network Security Group (NSG) |
 |-|--------------|------------------------------|
-| **Applied to** | Subnet (all VNICs in subnet) | Individual VNICs or LB backends |
-| **Direction** | Both ingress and egress rules | Both ingress and egress |
-| **Granularity** | Coarse — subnet level | Fine — per-resource level |
-| **NSG-as-source** | No | Yes — reference another NSG as source |
-| **Recommendation** | Minimal: allow-all within subnet | Primary: granular per-resource rules |
+| **Aplicado a** | Sub-rede (todos os VNICs na sub-rede) | VNICs individuais ou backends de LB |
+| **Direção** | Regras de entrada e saída | Entrada e saída |
+| **Granularidade** | Grosseira — nível de sub-rede | Refinada — nível por recurso |
+| **NSG como origem** | Não | Sim — referencia outro NSG como origem |
+| **Recomendação** | Mínimo: permitir tudo dentro da sub-rede | Principal: regras granulares por recurso |
 
 ```hcl
 resource "oci_core_network_security_group" "app" {
@@ -123,7 +123,7 @@ resource "oci_core_network_security_group_security_rule" "app_egress" {
 
 ## Load Balancer
 
-OCI's managed Load Balancer supports both L4 (TCP/UDP) and L7 (HTTP/HTTPS) on the same resource using a **flexible shape** — you define minimum and maximum bandwidth rather than selecting a fixed size.
+O Load Balancer gerenciado da OCI suporta tanto L4 (TCP/UDP) quanto L7 (HTTP/HTTPS) no mesmo recurso usando uma **forma flexível** — você define a largura de banda mínima e máxima em vez de selecionar um tamanho fixo.
 
 ```hcl
 resource "oci_load_balancer_load_balancer" "main" {
@@ -175,7 +175,7 @@ resource "oci_load_balancer_listener" "https" {
 
 ## Network Firewall
 
-OCI Network Firewall is a managed next-generation firewall based on Palo Alto Networks technology. It provides deep packet inspection, URL filtering, IDS/IPS, and application-layer filtering for VCN traffic.
+O OCI Network Firewall é um firewall de próxima geração gerenciado baseado na tecnologia Palo Alto Networks. Ele fornece inspeção profunda de pacotes, filtragem de URL, IDS/IPS e filtragem na camada de aplicação para tráfego VCN.
 
 ```hcl
 resource "oci_network_firewall_network_firewall_policy" "main" {
@@ -211,16 +211,16 @@ resource "oci_network_firewall_network_firewall" "main" {
 
 ## FastConnect
 
-FastConnect is OCI's dedicated private connectivity service — analogous to AWS Direct Connect or Azure ExpressRoute. It provides deterministic bandwidth, lower latency and no internet transit.
+O FastConnect é o serviço de conectividade privada dedicada da OCI — análogo ao AWS Direct Connect ou Azure ExpressRoute. Ele fornece largura de banda determinística, menor latência e sem trânsito pela internet.
 
-| Option | Speed | Use case |
-|--------|-------|---------|
-| **FastConnect Partner** | 1–10 Gbps | Access via a co-location partner (Equinix, Megaport) |
-| **FastConnect Direct** | 10 or 100 Gbps | Direct cross-connect in Oracle co-location facilities |
+| Opção | Velocidade | Caso de uso |
+|-------|-----------|-------------|
+| **FastConnect Partner** | 1–10 Gbps | Acesso via parceiro de co-localização (Equinix, Megaport) |
+| **FastConnect Direct** | 10 ou 100 Gbps | Cross-connect direto nas instalações de co-localização Oracle |
 
 ### Dynamic Routing Gateway (DRG)
 
-The DRG is the hub for all external connectivity — FastConnect, Site-to-Site VPN and VCN peering. Attach multiple VCNs to a single DRG and route between them without VCN peering limits.
+O DRG é o hub para toda conectividade externa — FastConnect, VPN Site-a-Site e peering de VCN. Anexe múltiplas VCNs a um único DRG e roteie entre elas sem limites de peering de VCN.
 
 ```hcl
 resource "oci_core_drg" "main" {
@@ -238,7 +238,7 @@ resource "oci_core_drg_attachment" "vcn" {
 
 ## Service Gateway
 
-The Service Gateway provides private connectivity from VCN resources to OCI public services (Object Storage, OCI Registry, Vault, Monitoring, etc.) without traversing the internet. Traffic stays on the Oracle backbone.
+O Service Gateway fornece conectividade privada de recursos VCN para serviços públicos OCI (Object Storage, OCI Registry, Vault, Monitoring, etc.) sem passar pela internet. O tráfego permanece no backbone da Oracle.
 
 ```hcl
 resource "oci_core_route_table" "private" {
@@ -264,5 +264,5 @@ resource "oci_core_route_table" "private" {
 
 ---
 
-[← OCI Overview](index.md){ .md-button }
-[Security & IAM →](security.md){ .md-button .md-button--primary }
+[← Visão Geral OCI](index.md){ .md-button }
+[Segurança & IAM →](security.md){ .md-button .md-button--primary }

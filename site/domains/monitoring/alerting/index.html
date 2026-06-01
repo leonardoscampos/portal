@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Alertmanager configuration, routing trees, SLOs, error budgets, on-call patterns, and runbooks.">
+        <meta name="description" content="Configuração do Alertmanager, árvores de roteamento, SLOs, orçamentos de erro, padrões de plantão e runbooks.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#alertmanager-configuration" class="md-skip">
+        <a href="#configuracao-do-alertmanager" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -2101,10 +2101,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#alertmanager-configuration" class="md-nav__link">
+  <a href="#configuracao-do-alertmanager" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Alertmanager Configuration
+        Configuração do Alertmanager
       
     </span>
   </a>
@@ -2112,10 +2112,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#alert-notification-templates" class="md-nav__link">
+  <a href="#templates-de-notificacao-de-alertas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Alert Notification Templates
+        Templates de Notificação de Alertas
       
     </span>
   </a>
@@ -2123,22 +2123,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#slos-and-error-budgets" class="md-nav__link">
+  <a href="#slos-e-orcamentos-de-erro" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SLOs and Error Budgets
+        SLOs e Orçamentos de Erro
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="SLOs and Error Budgets">
+    <nav class="md-nav" aria-label="SLOs e Orçamentos de Erro">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#slo-definition" class="md-nav__link">
+  <a href="#definicao-de-slo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SLO Definition
+        Definição de SLO
       
     </span>
   </a>
@@ -2146,10 +2146,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#error-budget-maths" class="md-nav__link">
+  <a href="#matematica-do-orcamento-de-erro" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Error Budget Maths
+        Matemática do Orçamento de Erro
       
     </span>
   </a>
@@ -2157,10 +2157,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#promql-slo-burn-rate-google-method" class="md-nav__link">
+  <a href="#promql-taxa-de-queima-do-slo-metodo-google" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PromQL — SLO Burn Rate (Google method)
+        PromQL — Taxa de Queima do SLO (método Google)
       
     </span>
   </a>
@@ -2168,10 +2168,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#sloth-slo-as-code" class="md-nav__link">
+  <a href="#sloth-slo-como-codigo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sloth — SLO-as-Code
+        Sloth — SLO como Código
       
     </span>
   </a>
@@ -2184,10 +2184,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#alert-fatigue-best-practices" class="md-nav__link">
+  <a href="#fadiga-de-alertas-melhores-praticas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Alert Fatigue — Best Practices
+        Fadiga de Alertas — Melhores Práticas
       
     </span>
   </a>
@@ -2195,22 +2195,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#on-call-patterns" class="md-nav__link">
+  <a href="#padroes-de-plantao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        On-Call Patterns
+        Padrões de Plantão
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="On-Call Patterns">
+    <nav class="md-nav" aria-label="Padrões de Plantão">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pagerduty-escalation-policy" class="md-nav__link">
+  <a href="#politica-de-escalacao-do-pagerduty" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PagerDuty Escalation Policy
+        Política de Escalação do PagerDuty
       
     </span>
   </a>
@@ -2218,10 +2218,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#alertmanager-silence-maintenance-window" class="md-nav__link">
+  <a href="#silencio-do-alertmanager-janela-de-manutencao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Alertmanager Silence (Maintenance Window)
+        Silêncio do Alertmanager (Janela de Manutenção)
       
     </span>
   </a>
@@ -2229,10 +2229,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#runbook-template" class="md-nav__link">
+  <a href="#template-de-runbook" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Runbook Template
+        Template de Runbook
       
     </span>
   </a>
@@ -3081,10 +3081,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#alertmanager-configuration" class="md-nav__link">
+  <a href="#configuracao-do-alertmanager" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Alertmanager Configuration
+        Configuração do Alertmanager
       
     </span>
   </a>
@@ -3092,10 +3092,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#alert-notification-templates" class="md-nav__link">
+  <a href="#templates-de-notificacao-de-alertas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Alert Notification Templates
+        Templates de Notificação de Alertas
       
     </span>
   </a>
@@ -3103,22 +3103,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#slos-and-error-budgets" class="md-nav__link">
+  <a href="#slos-e-orcamentos-de-erro" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SLOs and Error Budgets
+        SLOs e Orçamentos de Erro
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="SLOs and Error Budgets">
+    <nav class="md-nav" aria-label="SLOs e Orçamentos de Erro">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#slo-definition" class="md-nav__link">
+  <a href="#definicao-de-slo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SLO Definition
+        Definição de SLO
       
     </span>
   </a>
@@ -3126,10 +3126,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#error-budget-maths" class="md-nav__link">
+  <a href="#matematica-do-orcamento-de-erro" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Error Budget Maths
+        Matemática do Orçamento de Erro
       
     </span>
   </a>
@@ -3137,10 +3137,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#promql-slo-burn-rate-google-method" class="md-nav__link">
+  <a href="#promql-taxa-de-queima-do-slo-metodo-google" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PromQL — SLO Burn Rate (Google method)
+        PromQL — Taxa de Queima do SLO (método Google)
       
     </span>
   </a>
@@ -3148,10 +3148,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#sloth-slo-as-code" class="md-nav__link">
+  <a href="#sloth-slo-como-codigo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sloth — SLO-as-Code
+        Sloth — SLO como Código
       
     </span>
   </a>
@@ -3164,10 +3164,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#alert-fatigue-best-practices" class="md-nav__link">
+  <a href="#fadiga-de-alertas-melhores-praticas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Alert Fatigue — Best Practices
+        Fadiga de Alertas — Melhores Práticas
       
     </span>
   </a>
@@ -3175,22 +3175,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#on-call-patterns" class="md-nav__link">
+  <a href="#padroes-de-plantao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        On-Call Patterns
+        Padrões de Plantão
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="On-Call Patterns">
+    <nav class="md-nav" aria-label="Padrões de Plantão">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pagerduty-escalation-policy" class="md-nav__link">
+  <a href="#politica-de-escalacao-do-pagerduty" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PagerDuty Escalation Policy
+        Política de Escalação do PagerDuty
       
     </span>
   </a>
@@ -3198,10 +3198,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#alertmanager-silence-maintenance-window" class="md-nav__link">
+  <a href="#silencio-do-alertmanager-janela-de-manutencao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Alertmanager Silence (Maintenance Window)
+        Silêncio do Alertmanager (Janela de Manutenção)
       
     </span>
   </a>
@@ -3209,10 +3209,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#runbook-template" class="md-nav__link">
+  <a href="#template-de-runbook" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Runbook Template
+        Template de Runbook
       
     </span>
   </a>
@@ -3254,65 +3254,65 @@
 
 <div class="domain-page-hero" data-domain="monitoring">
   <div class="dph-left">
-    <span class="dph-eyebrow">// monitoring-observability / alerting</span>
+    <span class="dph-eyebrow">// monitoramento-observabilidade / alerting</span>
     <h1 class="dph-title">Alerting</h1>
-    <p class="dph-desc">Effective alerting is about signal over noise. Alertmanager routes, deduplicates, groups, and silences alerts. SLOs define reliability targets; error budgets make burn decisions data-driven. Good runbooks and on-call practices turn alerts into rapid resolution.</p>
+    <p class="dph-desc">Alertas eficazes são sobre sinal acima do ruído. O Alertmanager roteia, deduplica, agrupa e silencia alertas. SLOs definem metas de confiabilidade; orçamentos de erro tornam as decisões de queima orientadas por dados. Bons runbooks e práticas de plantão transformam alertas em resolução rápida.</p>
     <div class="dph-badges">
       <span class="tech-badge">Alertmanager</span>
       <span class="tech-badge">PagerDuty</span>
       <span class="tech-badge">SLOs</span>
-      <span class="tech-badge">Error Budgets</span>
+      <span class="tech-badge">Orçamentos de Erro</span>
       <span class="tech-badge">Runbooks</span>
       <span class="tech-badge">On-Call</span>
     </div>
   </div>
 </div>
 
-<p><a href="../opentelemetry/">← OpenTelemetry</a> | <a href="../">← Monitoring Overview</a> | <a href="../apm/">APM →</a></p>
+<p><a href="../opentelemetry/">← OpenTelemetry</a> | <a href="../">← Visão Geral de Monitoramento</a> | <a href="../apm/">APM →</a></p>
 <hr />
-<h2 id="alertmanager-configuration">Alertmanager Configuration</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># alertmanager.yaml — full production config</span>
+<h2 id="configuracao-do-alertmanager">Configuração do Alertmanager</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># alertmanager.yaml — configuração completa de produção</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">global</span><span class="p">:</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">resolve_timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">pagerduty_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://events.pagerduty.com/v2/enqueue</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nt">slack_api_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://hooks.slack.com/services/YOUR/WEBHOOK/URL</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Templates for notification messages</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Templates para mensagens de notificação</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nt">templates</span><span class="p">:</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/etc/alertmanager/templates/*.tmpl</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="nt">route</span><span class="p">:</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nt">group_by</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">alertname</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">cluster</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">namespace</span><span class="p p-Indicator">]</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nt">group_wait</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30s</span><span class="w">          </span><span class="c1"># buffer time before sending first notification</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="nt">group_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span><span class="w">       </span><span class="c1"># time to wait before sending re-grouped alerts</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="nt">repeat_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4h</span><span class="w">      </span><span class="c1"># re-notify if alert is still firing</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="nt">receiver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default-slack</span><span class="w">  </span><span class="c1"># catch-all</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nt">group_wait</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30s</span><span class="w">          </span><span class="c1"># tempo de espera antes de enviar a primeira notificação</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="nt">group_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span><span class="w">       </span><span class="c1"># tempo de espera antes de enviar alertas reagrupados</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="nt">repeat_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4h</span><span class="w">      </span><span class="c1"># renotifica se o alerta ainda estiver disparando</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="nt">receiver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default-slack</span><span class="w">  </span><span class="c1"># pega-tudo</span>
 <a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
 <a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w">  </span><span class="nt">routes</span><span class="p">:</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="c1"># Critical alerts → PagerDuty immediately</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">    </span><span class="c1"># Alertas críticos → PagerDuty imediatamente</span>
 <a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matchers</span><span class="p">:</span>
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">severity = critical</span>
 <a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">      </span><span class="nt">receiver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pagerduty-critical</span>
 <a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">      </span><span class="nt">group_wait</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0s</span>
 <a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">      </span><span class="nt">repeat_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1h</span>
 <a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">      </span><span class="nt">routes</span><span class="p">:</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="c1"># Database critical alerts → DBA on-call</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">        </span><span class="c1"># Alertas críticos de banco de dados → DBA de plantão</span>
 <a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matchers</span><span class="p">:</span>
 <a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">team = dba</span>
 <a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">          </span><span class="nt">receiver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pagerduty-dba</span>
 <a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="c1"># Warning alerts → Slack</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="c1"># Alertas de aviso → Slack</span>
 <a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matchers</span><span class="p">:</span>
 <a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">severity = warning</span>
 <a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">      </span><span class="nt">receiver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">slack-warnings</span>
 <a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="w">      </span><span class="nt">repeat_interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12h</span>
 <a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">    </span><span class="c1"># Watchdog / heartbeat — suppress</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="w">    </span><span class="c1"># Watchdog / heartbeat — suprimir</span>
 <a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matchers</span><span class="p">:</span>
 <a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alertname = Watchdog</span>
 <a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="w">      </span><span class="nt">receiver</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;null&quot;</span>
 <a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>
-<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">    </span><span class="c1"># Info — only in Slack, no re-notify</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="w">    </span><span class="c1"># Info — apenas no Slack, sem renotificação</span>
 <a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matchers</span><span class="p">:</span>
 <a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">severity = info</span>
 <a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">      </span><span class="nt">receiver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">slack-info</span>
@@ -3359,18 +3359,18 @@
 <a id="__codelineno-0-86" name="__codelineno-0-86" href="#__codelineno-0-86"></a><span class="w">        </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">critical</span>
 <a id="__codelineno-0-87" name="__codelineno-0-87" href="#__codelineno-0-87"></a>
 <a id="__codelineno-0-88" name="__codelineno-0-88" href="#__codelineno-0-88"></a><span class="nt">inhibit_rules</span><span class="p">:</span>
-<a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a><span class="w">  </span><span class="c1"># Suppress warning if critical fires for same alertname + namespace</span>
+<a id="__codelineno-0-89" name="__codelineno-0-89" href="#__codelineno-0-89"></a><span class="w">  </span><span class="c1"># Suprime aviso se crítico disparar para o mesmo alertname + namespace</span>
 <a id="__codelineno-0-90" name="__codelineno-0-90" href="#__codelineno-0-90"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">source_matchers</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">severity = critical</span><span class="p p-Indicator">]</span>
 <a id="__codelineno-0-91" name="__codelineno-0-91" href="#__codelineno-0-91"></a><span class="w">    </span><span class="nt">target_matchers</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">severity = warning</span><span class="p p-Indicator">]</span>
 <a id="__codelineno-0-92" name="__codelineno-0-92" href="#__codelineno-0-92"></a><span class="w">    </span><span class="nt">equal</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">alertname</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">namespace</span><span class="p p-Indicator">]</span>
 <a id="__codelineno-0-93" name="__codelineno-0-93" href="#__codelineno-0-93"></a>
-<a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a><span class="w">  </span><span class="c1"># Suppress all if cluster is down</span>
+<a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a><span class="w">  </span><span class="c1"># Suprime tudo se o cluster estiver fora</span>
 <a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">source_matchers</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">alertname = ClusterDown</span><span class="p p-Indicator">]</span>
 <a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a><span class="w">    </span><span class="nt">target_matchers</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">severity =~ &quot;warning|critical&quot;</span><span class="p p-Indicator">]</span>
 <a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a><span class="w">    </span><span class="nt">equal</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">cluster</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 <hr />
-<h2 id="alert-notification-templates">Alert Notification Templates</h2>
+<h2 id="templates-de-notificacao-de-alertas">Templates de Notificação de Alertas</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{{</span><span class="cm">/* /etc/alertmanager/templates/slack.tmpl */</span><span class="p">}}</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">{{</span><span class="w"> </span><span class="nx">define</span><span class="w"> </span><span class="s">&quot;slack.title&quot;</span><span class="w"> </span><span class="o">-</span><span class="p">}}</span>
@@ -3398,62 +3398,62 @@
 <a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="p">{{</span><span class="o">-</span><span class="w"> </span><span class="nx">end</span><span class="w"> </span><span class="p">}}</span>
 </code></pre></div>
 <hr />
-<h2 id="slos-and-error-budgets">SLOs and Error Budgets</h2>
-<h3 id="slo-definition">SLO Definition</h3>
+<h2 id="slos-e-orcamentos-de-erro">SLOs e Orçamentos de Erro</h2>
+<h3 id="definicao-de-slo">Definição de SLO</h3>
 <table>
 <thead>
 <tr>
-<th>Term</th>
-<th>Definition</th>
+<th>Termo</th>
+<th>Definição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>SLI</strong> (Service Level Indicator)</td>
-<td>Quantitative measure: request success rate, P99 latency</td>
+<td><strong>SLI</strong> (Indicador de Nível de Serviço)</td>
+<td>Medida quantitativa: taxa de sucesso das requisições, latência P99</td>
 </tr>
 <tr>
-<td><strong>SLO</strong> (Service Level Objective)</td>
-<td>Target: "99.9% of requests succeed within 500 ms"</td>
+<td><strong>SLO</strong> (Objetivo de Nível de Serviço)</td>
+<td>Meta: "99,9% das requisições têm sucesso em até 500 ms"</td>
 </tr>
 <tr>
-<td><strong>SLA</strong> (Service Level Agreement)</td>
-<td>Business contract; breach has financial consequences</td>
+<td><strong>SLA</strong> (Acordo de Nível de Serviço)</td>
+<td>Contrato de negócio; descumprimento tem consequências financeiras</td>
 </tr>
 <tr>
-<td><strong>Error budget</strong></td>
-<td><code>1 - SLO</code>; how much unreliability is "budgeted"</td>
+<td><strong>Orçamento de erro</strong></td>
+<td><code>1 - SLO</code>; quanta não confiabilidade está "orçada"</td>
 </tr>
 <tr>
-<td><strong>Burn rate</strong></td>
-<td>How fast the error budget is being consumed</td>
+<td><strong>Taxa de queima</strong></td>
+<td>Com que velocidade o orçamento de erro está sendo consumido</td>
 </tr>
 </tbody>
 </table>
-<h3 id="error-budget-maths">Error Budget Maths</h3>
+<h3 id="matematica-do-orcamento-de-erro">Matemática do Orçamento de Erro</h3>
 <p>$$
 \text{Error budget remaining} = \frac{\text{budget consumed} - \text{total budget}}{\text{total budget}}
 $$</p>
-<p>For a 99.9% SLO over 30 days:</p>
+<p>Para um SLO de 99,9% ao longo de 30 dias:</p>
 <p>$$
 \text{Total budget} = (1 - 0.999) \times 30 \times 24 \times 60 = 43.2 \text{ min}
 $$</p>
-<h3 id="promql-slo-burn-rate-google-method">PromQL — SLO Burn Rate (Google method)</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># SLI: request success rate</span>
+<h3 id="promql-taxa-de-queima-do-slo-metodo-google">PromQL — Taxa de Queima do SLO (método Google)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># SLI: taxa de sucesso das requisições</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">job</span><span class="err">:</span><span class="nv">sli_success_rate</span><span class="err">:</span><span class="nv">ratio5m</span><span class="w"> </span><span class="err">=</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="k">sum</span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="p">{</span><span class="nl">status</span><span class="o">!~</span><span class="p">&quot;</span><span class="s">5..</span><span class="p">&quot;}[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="o">/</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="k">sum</span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">http_requests_total</span><span class="p">[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span>
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Fast burn: 1h + 5min windows (x14.4 budget burn)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Queima rápida: janelas de 1h + 5min (x14.4 de queima do orçamento)</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="o">(</span>
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="o">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">job</span><span class="err">:</span><span class="nv">sli_success_rate</span><span class="err">:</span><span class="nv">ratio5m</span><span class="o">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="o">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.999</span><span class="o">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">14.4</span>
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="ow">and</span>
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="o">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">job</span><span class="err">:</span><span class="nv">sli_success_rate</span><span class="err">:</span><span class="nv">ratio1h</span><span class="o">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="o">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">0.999</span><span class="o">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">14.4</span>
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="o">)</span>
 </code></pre></div>
-<h3 id="sloth-slo-as-code">Sloth — SLO-as-Code</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># sloth.yaml — generates Prometheus rules from SLO definition</span>
+<h3 id="sloth-slo-como-codigo">Sloth — SLO como Código</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># sloth.yaml — gera regras do Prometheus a partir da definição do SLO</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prometheus/v1</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-api</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">labels</span><span class="p">:</span>
@@ -3461,7 +3461,7 @@ $$</p>
 <a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nt">slos</span><span class="p">:</span>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">requests-availability</span>
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="nt">objective</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">99.9</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;99.9%</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">API</span><span class="nv"> </span><span class="s">requests</span><span class="nv"> </span><span class="s">succeed&quot;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;99,9%</span><span class="nv"> </span><span class="s">das</span><span class="nv"> </span><span class="s">requisições</span><span class="nv"> </span><span class="s">da</span><span class="nv"> </span><span class="s">API</span><span class="nv"> </span><span class="s">têm</span><span class="nv"> </span><span class="s">sucesso&quot;</span>
 <a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="nt">sli</span><span class="p">:</span>
 <a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">      </span><span class="nt">events</span><span class="p">:</span>
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="nt">error_query</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sum(rate(http_requests_total{status=~&quot;5..&quot;}[{{.window}}]))</span>
@@ -3477,101 +3477,101 @@ $$</p>
 <a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">      </span><span class="nt">ticket_alert</span><span class="p">:</span>
 <a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">        </span><span class="nt">labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> severity</span><span class="p">:</span><span class="w"> </span><span class="nv">warning</span><span class="w"> </span><span class="p p-Indicator">}</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Generate recording rules + alerts from SLO definition</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Gera recording rules + alertas a partir da definição do SLO</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>sloth<span class="w"> </span>generate<span class="w"> </span>-i<span class="w"> </span>sloth.yaml<span class="w"> </span>-o<span class="w"> </span>generated-rules.yaml
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>generated-rules.yaml
 </code></pre></div>
 <hr />
-<h2 id="alert-fatigue-best-practices">Alert Fatigue — Best Practices</h2>
+<h2 id="fadiga-de-alertas-melhores-praticas">Fadiga de Alertas — Melhores Práticas</h2>
 <table>
 <thead>
 <tr>
-<th>Anti-pattern</th>
-<th>Fix</th>
+<th>Antipadrão</th>
+<th>Solução</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Alert on every metric breach</td>
-<td>Alert on <strong>user impact</strong> (error rate, latency, availability)</td>
+<td>Alertar a cada violação de métrica</td>
+<td>Alertar sobre <strong>impacto ao usuário</strong> (taxa de erro, latência, disponibilidade)</td>
 </tr>
 <tr>
-<td>No <code>for</code> duration</td>
-<td>Use <code>for: 5m</code> to avoid transient spikes</td>
+<td>Sem duração <code>for</code></td>
+<td>Use <code>for: 5m</code> para evitar picos transitórios</td>
 </tr>
 <tr>
-<td>Missing runbook link</td>
-<td>Always set <code>annotations.runbook_url</code></td>
+<td>Link de runbook ausente</td>
+<td>Sempre defina <code>annotations.runbook_url</code></td>
 </tr>
 <tr>
-<td>Alerting on the same signal at multiple thresholds</td>
-<td>Use burn rate alerts (fast + slow) instead</td>
+<td>Alertar no mesmo sinal em múltiplos limiares</td>
+<td>Use alertas de taxa de queima (rápida + lenta)</td>
 </tr>
 <tr>
-<td>Warning == critical</td>
-<td>Only page for actionable, urgent issues</td>
+<td>Aviso == crítico</td>
+<td>Acione apenas para problemas acionáveis e urgentes</td>
 </tr>
 <tr>
-<td>No inhibition rules</td>
-<td>Suppress child alerts when parent fires (e.g. cluster down)</td>
+<td>Sem regras de inibição</td>
+<td>Suprima alertas filhos quando o pai disparar (ex.: cluster fora)</td>
 </tr>
 <tr>
-<td>Noisy silences</td>
-<td>Create time-based silences for maintenance windows</td>
+<td>Silêncios ruidosos</td>
+<td>Crie silêncios baseados em tempo para janelas de manutenção</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="on-call-patterns">On-Call Patterns</h2>
-<h3 id="pagerduty-escalation-policy">PagerDuty Escalation Policy</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Level 1: Primary on-call engineer (15 min to ack)
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>     ↓ (no ack)
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Level 2: Secondary / manager (30 min to ack)
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>     ↓ (no ack)
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Level 3: Director / VP (hard escalation)
+<h2 id="padroes-de-plantao">Padrões de Plantão</h2>
+<h3 id="politica-de-escalacao-do-pagerduty">Política de Escalação do PagerDuty</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Nível 1: Engenheiro de plantão primário (15 min para confirmar)
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>     ↓ (sem confirmação)
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Nível 2: Secundário / gerente (30 min para confirmar)
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>     ↓ (sem confirmação)
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Nível 3: Diretor / VP (escalação definitiva)
 </code></pre></div>
-<h3 id="alertmanager-silence-maintenance-window">Alertmanager Silence (Maintenance Window)</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Silence all alerts for namespace=production for 2 hours</span>
+<h3 id="silencio-do-alertmanager-janela-de-manutencao">Silêncio do Alertmanager (Janela de Manutenção)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Silencia todos os alertas de namespace=production por 2 horas</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>amtool<span class="w"> </span>silence<span class="w"> </span>add<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span>--alertmanager.url<span class="o">=</span>http://alertmanager.monitoring.svc:9093<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span>--author<span class="o">=</span><span class="s2">&quot;leo&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span>--comment<span class="o">=</span><span class="s2">&quot;Planned maintenance 02:00-04:00 UTC&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span>--comment<span class="o">=</span><span class="s2">&quot;Manutenção planejada 02:00-04:00 UTC&quot;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span>--duration<span class="o">=</span>2h<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="s1">&#39;namespace=&quot;production&quot;&#39;</span>
 <a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1"># List active silences</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="c1"># Lista silêncios ativos</span>
 <a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>amtool<span class="w"> </span>silence<span class="w"> </span>query<span class="w"> </span>--alertmanager.url<span class="o">=</span>http://alertmanager.monitoring.svc:9093
 <a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="c1"># Expire a silence</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="c1"># Expira um silêncio</span>
 <a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>amtool<span class="w"> </span>silence<span class="w"> </span>expire<span class="w"> </span>&lt;ID&gt;<span class="w"> </span>--alertmanager.url<span class="o">=</span>http://alertmanager.monitoring.svc:9093
 </code></pre></div>
-<h3 id="runbook-template">Runbook Template</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gh"># Alert: HighErrorRate</span>
+<h3 id="template-de-runbook">Template de Runbook</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gh"># Alerta: HighErrorRate</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="gu">## Overview</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>The API error rate has exceeded 5% for 5 minutes.
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="gu">## Visão Geral</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>A taxa de erros da API excedeu 5% por 5 minutos.
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="gu">## Impact</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>Users are experiencing failed requests. Revenue impact: ~$X/min.
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="gu">## Impacto</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>Usuários estão experienciando requisições com falha. Impacto na receita: ~$X/min.
 <a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="gu">## Diagnosis</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="k">1.</span> Check recent deployments: <span class="sb">`kubectl rollout history deployment/api -n production`</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="k">2.</span> View error logs: <span class="sb">`{app=&quot;api&quot;} |= &quot;ERROR&quot; | json`</span> in Grafana Explore
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="k">3.</span> Check DB connectivity: <span class="sb">`kubectl exec -it deploy/api -- nc -zv db.internal 5432`</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="k">4.</span> Examine traces: filter by <span class="sb">`status=ERROR`</span> in Tempo
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="gu">## Diagnóstico</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="k">1.</span> Verifique deployments recentes: <span class="sb">`kubectl rollout history deployment/api -n production`</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="k">2.</span> Veja logs de erro: <span class="sb">`{app=&quot;api&quot;} |= &quot;ERROR&quot; | json`</span> no Grafana Explore
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="k">3.</span> Verifique conectividade do banco: <span class="sb">`kubectl exec -it deploy/api -- nc -zv db.internal 5432`</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="k">4.</span> Examine traces: filtre por <span class="sb">`status=ERROR`</span> no Tempo
 <a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="gu">## Mitigation</span>
-<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="k">-</span><span class="w"> </span><span class="gs">**If bad deploy**</span>: <span class="sb">`kubectl rollout undo deployment/api -n production`</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="k">-</span><span class="w"> </span><span class="gs">**If DB issue**</span>: notify DBA team, check DB metrics dashboard
-<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="k">-</span><span class="w"> </span><span class="gs">**If upstream**</span>: check dependency status pages, enable circuit breaker
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="gu">## Mitigação</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Se deploy ruim**</span>: <span class="sb">`kubectl rollout undo deployment/api -n production`</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Se problema de banco**</span>: notifique a equipe DBA, verifique o painel de métricas do banco
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="k">-</span><span class="w"> </span><span class="gs">**Se upstream**</span>: verifique as páginas de status das dependências, habilite o circuit breaker
 <a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
-<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="gu">## Escalation</span>
-<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="k">-</span><span class="w"> </span>Unresolved in 30 min → page engineering manager
-<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="k">-</span><span class="w"> </span>Data loss suspected → immediately page on-call DBA + security
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="gu">## Escalação</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="k">-</span><span class="w"> </span>Não resolvido em 30 min → acione o gerente de engenharia
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="k">-</span><span class="w"> </span>Perda de dados suspeita → acione imediatamente o DBA de plantão + segurança
 <a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>
-<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="gu">## Post-incident</span>
-<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="k">-</span><span class="w"> </span>File incident report within 24 hours
-<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="k">-</span><span class="w"> </span>Update this runbook with findings
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="gu">## Pós-incidente</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="k">-</span><span class="w"> </span>Registre o relatório de incidente em até 24 horas
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="k">-</span><span class="w"> </span>Atualize este runbook com as descobertas
 </code></pre></div>
 <hr />
 <h2 id="grafana-oncall-oss">Grafana OnCall (OSS)</h2>
@@ -3581,22 +3581,22 @@ $$</p>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span>--set<span class="w"> </span>grafana.enabled<span class="o">=</span><span class="nb">false</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span>--set<span class="w"> </span>grafana.grafanaUrl<span class="o">=</span>http://grafana.monitoring.svc
 </code></pre></div>
-<p>Key features:</p>
+<p>Principais recursos:</p>
 <table>
 <thead>
 <tr>
-<th>Feature</th>
-<th>Description</th>
+<th>Recurso</th>
+<th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Schedules</td>
-<td>Rotation-based on-call schedules with overrides</td>
+<td>Escalas de plantão baseadas em rotação com substituições</td>
 </tr>
 <tr>
 <td>Escalation chains</td>
-<td>Time-based escalation with multiple responders</td>
+<td>Escalação baseada em tempo com múltiplos responsáveis</td>
 </tr>
 <tr>
 <td>Integrations</td>
@@ -3604,19 +3604,19 @@ $$</p>
 </tr>
 <tr>
 <td>Mobile app</td>
-<td>Push notifications with ack/resolve actions</td>
+<td>Notificações push com ações de confirmação/resolução</td>
 </tr>
 <tr>
 <td>ChatOps</td>
-<td>Slack + Telegram integration</td>
+<td>Integração com Slack + Telegram</td>
 </tr>
 <tr>
 <td>Postmortems</td>
-<td>Timeline view of incidents with annotations</td>
+<td>Visão de linha do tempo de incidentes com anotações</td>
 </tr>
 </tbody>
 </table>
-<p><a href="../opentelemetry/">← OpenTelemetry</a> | <a href="../">← Monitoring Overview</a> | <a href="../apm/">APM →</a></p>
+<p><a href="../opentelemetry/">← OpenTelemetry</a> | <a href="../">← Visão Geral de Monitoramento</a> | <a href="../apm/">APM →</a></p>
 
 
 

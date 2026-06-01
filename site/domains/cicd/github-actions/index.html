@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="GitHub Actions workflows, runners, matrix builds, OIDC, reusable workflows and environments reference.">
+        <meta name="description" content="Workflows, runners, matrix builds, OIDC, workflows reutilizáveis e referência de ambientes do GitHub Actions.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#workflow-anatomy" class="md-skip">
+        <a href="#anatomia-do-workflow" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -1485,10 +1485,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#workflow-anatomy" class="md-nav__link">
+  <a href="#anatomia-do-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workflow Anatomy
+        Anatomia do Workflow
       
     </span>
   </a>
@@ -1496,10 +1496,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-concepts" class="md-nav__link">
+  <a href="#conceitos-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Concepts
+        Conceitos Principais
       
     </span>
   </a>
@@ -1507,10 +1507,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#triggers-reference" class="md-nav__link">
+  <a href="#referencia-de-gatilhos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Triggers Reference
+        Referência de Gatilhos
       
     </span>
   </a>
@@ -1529,10 +1529,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#caching" class="md-nav__link">
+  <a href="#cache" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Caching
+        Cache
       
     </span>
   </a>
@@ -1540,10 +1540,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#oidc-passwordless-cloud-auth" class="md-nav__link">
+  <a href="#oidc-autenticacao-em-nuvem-sem-senha" class="md-nav__link">
     <span class="md-ellipsis">
       
-        OIDC — Passwordless Cloud Auth
+        OIDC — Autenticação em Nuvem Sem Senha
       
     </span>
   </a>
@@ -1551,10 +1551,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reusable-workflows" class="md-nav__link">
+  <a href="#workflows-reutilizaveis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reusable Workflows
+        Workflows Reutilizáveis
       
     </span>
   </a>
@@ -1562,10 +1562,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#composite-actions" class="md-nav__link">
+  <a href="#actions-compostas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Composite Actions
+        Actions Compostas
       
     </span>
   </a>
@@ -1573,10 +1573,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deployment-environments" class="md-nav__link">
+  <a href="#ambientes-de-implantacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deployment Environments
+        Ambientes de Implantação
       
     </span>
   </a>
@@ -1584,10 +1584,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#container-services-docker" class="md-nav__link">
+  <a href="#servicos-de-container-e-docker" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Container Services &amp; Docker
+        Serviços de Container e Docker
       
     </span>
   </a>
@@ -1595,10 +1595,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#container-image-build-push" class="md-nav__link">
+  <a href="#build-e-push-de-imagem-de-container" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Container Image Build &amp; Push
+        Build e Push de Imagem de Container
       
     </span>
   </a>
@@ -1606,10 +1606,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#job-dependencies-outputs" class="md-nav__link">
+  <a href="#dependencias-e-saidas-de-jobs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Job Dependencies &amp; Outputs
+        Dependências e Saídas de Jobs
       
     </span>
   </a>
@@ -1617,10 +1617,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#security-best-practices" class="md-nav__link">
+  <a href="#boas-praticas-de-seguranca" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Security Best Practices
+        Boas Práticas de Segurança
       
     </span>
   </a>
@@ -1628,10 +1628,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#actions-cheatsheet" class="md-nav__link">
+  <a href="#cheatsheet-de-actions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Actions Cheatsheet
+        Cheatsheet de Actions
       
     </span>
   </a>
@@ -3080,10 +3080,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#workflow-anatomy" class="md-nav__link">
+  <a href="#anatomia-do-workflow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workflow Anatomy
+        Anatomia do Workflow
       
     </span>
   </a>
@@ -3091,10 +3091,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-concepts" class="md-nav__link">
+  <a href="#conceitos-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Concepts
+        Conceitos Principais
       
     </span>
   </a>
@@ -3102,10 +3102,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#triggers-reference" class="md-nav__link">
+  <a href="#referencia-de-gatilhos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Triggers Reference
+        Referência de Gatilhos
       
     </span>
   </a>
@@ -3124,10 +3124,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#caching" class="md-nav__link">
+  <a href="#cache" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Caching
+        Cache
       
     </span>
   </a>
@@ -3135,10 +3135,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#oidc-passwordless-cloud-auth" class="md-nav__link">
+  <a href="#oidc-autenticacao-em-nuvem-sem-senha" class="md-nav__link">
     <span class="md-ellipsis">
       
-        OIDC — Passwordless Cloud Auth
+        OIDC — Autenticação em Nuvem Sem Senha
       
     </span>
   </a>
@@ -3146,10 +3146,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reusable-workflows" class="md-nav__link">
+  <a href="#workflows-reutilizaveis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reusable Workflows
+        Workflows Reutilizáveis
       
     </span>
   </a>
@@ -3157,10 +3157,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#composite-actions" class="md-nav__link">
+  <a href="#actions-compostas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Composite Actions
+        Actions Compostas
       
     </span>
   </a>
@@ -3168,10 +3168,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deployment-environments" class="md-nav__link">
+  <a href="#ambientes-de-implantacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deployment Environments
+        Ambientes de Implantação
       
     </span>
   </a>
@@ -3179,10 +3179,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#container-services-docker" class="md-nav__link">
+  <a href="#servicos-de-container-e-docker" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Container Services &amp; Docker
+        Serviços de Container e Docker
       
     </span>
   </a>
@@ -3190,10 +3190,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#container-image-build-push" class="md-nav__link">
+  <a href="#build-e-push-de-imagem-de-container" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Container Image Build &amp; Push
+        Build e Push de Imagem de Container
       
     </span>
   </a>
@@ -3201,10 +3201,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#job-dependencies-outputs" class="md-nav__link">
+  <a href="#dependencias-e-saidas-de-jobs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Job Dependencies &amp; Outputs
+        Dependências e Saídas de Jobs
       
     </span>
   </a>
@@ -3212,10 +3212,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#security-best-practices" class="md-nav__link">
+  <a href="#boas-praticas-de-seguranca" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Security Best Practices
+        Boas Práticas de Segurança
       
     </span>
   </a>
@@ -3223,10 +3223,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#actions-cheatsheet" class="md-nav__link">
+  <a href="#cheatsheet-de-actions" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Actions Cheatsheet
+        Cheatsheet de Actions
       
     </span>
   </a>
@@ -3254,7 +3254,7 @@
   <div class="dph-left">
     <span class="dph-eyebrow">// cicd-pipelines / github-actions</span>
     <h1 class="dph-title">GitHub Actions</h1>
-    <p class="dph-desc">GitHub's native CI/CD platform. Event-driven workflows defined as YAML living alongside your code. Massive marketplace of community actions, built-in OIDC for passwordless cloud auth and first-class support for matrix builds, reusable workflows and deployment environments.</p>
+    <p class="dph-desc">Plataforma nativa de CI/CD do GitHub. Workflows orientados a eventos definidos como YAML que vivem junto ao seu código. Vasto marketplace de actions da comunidade, OIDC integrado para autenticação em nuvem sem senha e suporte de primeira classe para matrix builds, workflows reutilizáveis e ambientes de implantação.</p>
     <div class="dph-badges">
       <span class="tech-badge">Workflows</span>
       <span class="tech-badge">Runners</span>
@@ -3266,9 +3266,9 @@
   </div>
 </div>
 
-<p><a href="../">← CI/CD Overview</a> | <a href="../gitlab-ci/">GitLab CI →</a></p>
+<p><a href="../">← Visão Geral de CI/CD</a> | <a href="../gitlab-ci/">GitLab CI →</a></p>
 <hr />
-<h2 id="workflow-anatomy">Workflow Anatomy</h2>
+<h2 id="anatomia-do-workflow">Anatomia do Workflow</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># .github/workflows/ci.yml</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CI</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
@@ -3312,51 +3312,51 @@
 <a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">coverage.out</span>
 </code></pre></div>
 <hr />
-<h2 id="core-concepts">Core Concepts</h2>
+<h2 id="conceitos-principais">Conceitos Principais</h2>
 <table>
 <thead>
 <tr>
-<th>Concept</th>
-<th>Description</th>
+<th>Conceito</th>
+<th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Workflow</strong></td>
-<td>YAML file in <code>.github/workflows/</code> — top-level automation unit</td>
+<td>Arquivo YAML em <code>.github/workflows/</code> — unidade de automação de nível superior</td>
 </tr>
 <tr>
 <td><strong>Event</strong></td>
-<td>Trigger: <code>push</code>, <code>pull_request</code>, <code>schedule</code>, <code>workflow_dispatch</code>, <code>release</code>…</td>
+<td>Gatilho: <code>push</code>, <code>pull_request</code>, <code>schedule</code>, <code>workflow_dispatch</code>, <code>release</code>…</td>
 </tr>
 <tr>
 <td><strong>Job</strong></td>
-<td>Set of steps that run on the same runner. Jobs run in parallel by default</td>
+<td>Conjunto de passos executados no mesmo runner. Jobs rodam em paralelo por padrão</td>
 </tr>
 <tr>
 <td><strong>Step</strong></td>
-<td>Atomic unit — either <code>run</code> (shell) or <code>uses</code> (action)</td>
+<td>Unidade atômica — <code>run</code> (shell) ou <code>uses</code> (action)</td>
 </tr>
 <tr>
 <td><strong>Action</strong></td>
-<td>Reusable unit: JavaScript, Docker container, or composite</td>
+<td>Unidade reutilizável: JavaScript, container Docker ou composta</td>
 </tr>
 <tr>
 <td><strong>Runner</strong></td>
-<td>Host executing jobs. GitHub-hosted (Ubuntu/Windows/macOS) or self-hosted</td>
+<td>Host que executa os jobs. Hospedado pelo GitHub (Ubuntu/Windows/macOS) ou self-hosted</td>
 </tr>
 <tr>
 <td><strong>Context</strong></td>
-<td>Built-in objects: <code>github</code>, <code>env</code>, <code>vars</code>, <code>secrets</code>, <code>inputs</code>, <code>steps</code>, <code>jobs</code></td>
+<td>Objetos integrados: <code>github</code>, <code>env</code>, <code>vars</code>, <code>secrets</code>, <code>inputs</code>, <code>steps</code>, <code>jobs</code></td>
 </tr>
 <tr>
 <td><strong>Expression</strong></td>
-<td><code>${{ ... }}</code> — evaluated by the runner, supports functions and operators</td>
+<td><code>${{ ... }}</code> — avaliado pelo runner, suporta funções e operadores</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="triggers-reference">Triggers Reference</h2>
+<h2 id="referencia-de-gatilhos">Referência de Gatilhos</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">on</span><span class="p">:</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">push</span><span class="p">:</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">main</span><span class="p p-Indicator">]</span>
@@ -3414,7 +3414,7 @@
 <a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">npm ci &amp;&amp; npm test</span>
 </code></pre></div>
 <hr />
-<h2 id="caching">Caching</h2>
+<h2 id="cache">Cache</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">steps</span><span class="p">:</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
@@ -3435,7 +3435,7 @@
 <a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">      </span><span class="nt">restore-keys</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ runner.os }}-gradle-</span>
 </code></pre></div>
 <hr />
-<h2 id="oidc-passwordless-cloud-auth">OIDC — Passwordless Cloud Auth</h2>
+<h2 id="oidc-autenticacao-em-nuvem-sem-senha">OIDC — Autenticação em Nuvem Sem Senha</h2>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">AWS</label><label for="__tabbed_1_2">GCP</label><label for="__tabbed_1_3">Azure</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -3484,8 +3484,8 @@
 </div>
 </div>
 <hr />
-<h2 id="reusable-workflows">Reusable Workflows</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Caller</label><label for="__tabbed_2_2">Called Workflow</label></div>
+<h2 id="workflows-reutilizaveis">Workflows Reutilizáveis</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Chamador</label><label for="__tabbed_2_2">Workflow Chamado</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># .github/workflows/deploy.yml</span>
@@ -3536,7 +3536,7 @@
 </div>
 </div>
 <hr />
-<h2 id="composite-actions">Composite Actions</h2>
+<h2 id="actions-compostas">Actions Compostas</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># .github/actions/setup-terraform/action.yml</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Setup Terraform</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install Terraform + authenticate to cloud</span>
@@ -3568,7 +3568,7 @@
 <a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a><span class="w">        </span><span class="nt">aws-region</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">us-east-1</span>
 </code></pre></div>
 <hr />
-<h2 id="deployment-environments">Deployment Environments</h2>
+<h2 id="ambientes-de-implantacao">Ambientes de Implantação</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">jobs</span><span class="p">:</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">deploy</span><span class="p">:</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-24.04</span>
@@ -3584,12 +3584,12 @@
 <a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">          </span><span class="nt">APP_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ vars.PROD_APP_URL }}</span><span class="w">      </span><span class="c1"># env-scoped variable</span>
 </code></pre></div>
 <div class="admonition tip">
-<p class="admonition-title">Protection rules</p>
-<p>Environments support required reviewers, wait timers and branch/tag policies.
-Configure under <strong>Settings → Environments</strong> in your repository.</p>
+<p class="admonition-title">Regras de proteção</p>
+<p>Ambientes suportam revisores obrigatórios, temporizadores de espera e políticas de branch/tag.
+Configure em <strong>Configurações → Ambientes</strong> no seu repositório.</p>
 </div>
 <hr />
-<h2 id="container-services-docker">Container Services &amp; Docker</h2>
+<h2 id="servicos-de-container-e-docker">Serviços de Container e Docker</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">jobs</span><span class="p">:</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">integration-test</span><span class="p">:</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-24.04</span>
@@ -3622,7 +3622,7 @@ Configure under <strong>Settings → Environments</strong> in your repository.</
 <a id="__codelineno-11-30" name="__codelineno-11-30" href="#__codelineno-11-30"></a><span class="w">          </span><span class="nt">REDIS_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis://localhost:6379</span>
 </code></pre></div>
 <hr />
-<h2 id="container-image-build-push">Container Image Build &amp; Push</h2>
+<h2 id="build-e-push-de-imagem-de-container">Build e Push de Imagem de Container</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">jobs</span><span class="p">:</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">build-push</span><span class="p">:</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-24.04</span>
@@ -3661,7 +3661,7 @@ Configure under <strong>Settings → Environments</strong> in your repository.</
 <a id="__codelineno-12-36" name="__codelineno-12-36" href="#__codelineno-12-36"></a><span class="w">          </span><span class="nt">cache-to</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type=gha,mode=max</span>
 </code></pre></div>
 <hr />
-<h2 id="job-dependencies-outputs">Job Dependencies &amp; Outputs</h2>
+<h2 id="dependencias-e-saidas-de-jobs">Dependências e Saídas de Jobs</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">jobs</span><span class="p">:</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="nt">build</span><span class="p">:</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-24.04</span>
@@ -3685,55 +3685,55 @@ Configure under <strong>Settings → Environments</strong> in your repository.</
 <a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo &quot;Deploying ${{ needs.build.outputs.image-tag }}&quot;</span>
 </code></pre></div>
 <hr />
-<h2 id="security-best-practices">Security Best Practices</h2>
+<h2 id="boas-praticas-de-seguranca">Boas Práticas de Segurança</h2>
 <table>
 <thead>
 <tr>
-<th>Practice</th>
-<th>Implementation</th>
+<th>Prática</th>
+<th>Implementação</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Pin actions to SHAs</strong></td>
-<td><code>uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683</code> not <code>@v4</code></td>
+<td><strong>Fixar actions em SHAs</strong></td>
+<td><code>uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683</code> e não <code>@v4</code></td>
 </tr>
 <tr>
-<td><strong>Least-privilege permissions</strong></td>
-<td>Declare <code>permissions:</code> at job level, grant only what's needed</td>
+<td><strong>Permissões mínimas</strong></td>
+<td>Declare <code>permissions:</code> no nível do job, conceda apenas o necessário</td>
 </tr>
 <tr>
-<td><strong>OIDC over long-lived secrets</strong></td>
-<td>Use Workload Identity Federation — no stored cloud credentials</td>
+<td><strong>OIDC em vez de segredos de longa duração</strong></td>
+<td>Use Workload Identity Federation — sem credenciais de nuvem armazenadas</td>
 </tr>
 <tr>
-<td><strong>Secret scanning</strong></td>
-<td>Enable GitHub Secret Scanning + push protection in repo settings</td>
+<td><strong>Varredura de segredos</strong></td>
+<td>Ative o GitHub Secret Scanning + proteção de push nas configurações do repositório</td>
 </tr>
 <tr>
-<td><strong>Dependency review</strong></td>
-<td><code>actions/dependency-review-action</code> on every PR</td>
+<td><strong>Revisão de dependências</strong></td>
+<td><code>actions/dependency-review-action</code> em cada PR</td>
 </tr>
 <tr>
-<td><strong>Step security</strong></td>
-<td><code>GITHUB_TOKEN</code> auto-expires per run; never <code>echo</code> secrets</td>
+<td><strong>Segurança de passos</strong></td>
+<td><code>GITHUB_TOKEN</code> expira automaticamente por execução; nunca use <code>echo</code> em segredos</td>
 </tr>
 <tr>
-<td><strong>Third-party actions</strong></td>
-<td>Audit marketplace actions; prefer org-owned or verified creators</td>
+<td><strong>Actions de terceiros</strong></td>
+<td>Audite actions do marketplace; prefira criadores verificados ou da organização</td>
 </tr>
 <tr>
-<td><strong>Environment protection</strong></td>
-<td>Require reviewers for production environments</td>
+<td><strong>Proteção de ambientes</strong></td>
+<td>Exija revisores para ambientes de produção</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="actions-cheatsheet">Actions Cheatsheet</h2>
+<h2 id="cheatsheet-de-actions">Cheatsheet de Actions</h2>
 <table>
 <thead>
 <tr>
-<th>Task</th>
+<th>Tarefa</th>
 <th>Action</th>
 </tr>
 </thead>
@@ -3784,7 +3784,7 @@ Configure under <strong>Settings → Environments</strong> in your repository.</
 </tr>
 <tr>
 <td>kubectl</td>
-<td><code>azure/setup-kubectl@v4</code> or <code>google-github-actions/setup-gcloud@v2</code></td>
+<td><code>azure/setup-kubectl@v4</code> ou <code>google-github-actions/setup-gcloud@v2</code></td>
 </tr>
 <tr>
 <td>Helm</td>
@@ -3795,11 +3795,11 @@ Configure under <strong>Settings → Environments</strong> in your repository.</
 <td><code>hashicorp/setup-terraform@v3</code></td>
 </tr>
 <tr>
-<td>Upload artifact</td>
+<td>Upload de artefato</td>
 <td><code>actions/upload-artifact@v4</code></td>
 </tr>
 <tr>
-<td>Download artifact</td>
+<td>Download de artefato</td>
 <td><code>actions/download-artifact@v4</code></td>
 </tr>
 <tr>
@@ -3807,12 +3807,12 @@ Configure under <strong>Settings → Environments</strong> in your repository.</
 <td><code>actions/cache@v4</code></td>
 </tr>
 <tr>
-<td>Slack notify</td>
+<td>Notificação Slack</td>
 <td><code>slackapi/slack-github-action@v2</code></td>
 </tr>
 </tbody>
 </table>
-<p><a href="../">← CI/CD Overview</a> | <a href="../gitlab-ci/">GitLab CI →</a></p>
+<p><a href="../">← Visão Geral de CI/CD</a> | <a href="../gitlab-ci/">GitLab CI →</a></p>
 
 
 

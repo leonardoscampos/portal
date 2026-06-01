@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="VPC, Route 53, CloudFront, ALB/NLB, Transit Gateway — AWS networking fundamentals.">
+        <meta name="description" content="VPC, Route 53, CloudFront, ALB/NLB, Transit Gateway — fundamentos de rede na AWS.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -33,7 +33,7 @@
     
     
   
-    <title>AWS Networking — Leonardo Campos</title>
+    <title>AWS Rede — Leonardo Campos</title>
   
 
     
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AWS Networking
+              AWS Rede
             
           </span>
         </div>
@@ -548,10 +548,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#subnet-design" class="md-nav__link">
+  <a href="#design-de-sub-redes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Subnet design
+        Design de sub-redes
       
     </span>
   </a>
@@ -598,10 +598,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#routing-policies" class="md-nav__link">
+  <a href="#politicas-de-roteamento" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Routing policies
+        Políticas de roteamento
       
     </span>
   </a>
@@ -626,10 +626,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#distribution-anatomy" class="md-nav__link">
+  <a href="#anatomia-de-uma-distribuicao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Distribution anatomy
+        Anatomia de uma distribuição
       
     </span>
   </a>
@@ -654,10 +654,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#application-load-balancer-alb-layer-7" class="md-nav__link">
+  <a href="#application-load-balancer-alb-camada-7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Application Load Balancer (ALB) — Layer 7
+        Application Load Balancer (ALB) — Camada 7
       
     </span>
   </a>
@@ -665,10 +665,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#network-load-balancer-nlb-layer-4" class="md-nav__link">
+  <a href="#network-load-balancer-nlb-camada-4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Network Load Balancer (NLB) — Layer 4
+        Network Load Balancer (NLB) — Camada 4
       
     </span>
   </a>
@@ -3107,10 +3107,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#subnet-design" class="md-nav__link">
+  <a href="#design-de-sub-redes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Subnet design
+        Design de sub-redes
       
     </span>
   </a>
@@ -3157,10 +3157,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#routing-policies" class="md-nav__link">
+  <a href="#politicas-de-roteamento" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Routing policies
+        Políticas de roteamento
       
     </span>
   </a>
@@ -3185,10 +3185,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#distribution-anatomy" class="md-nav__link">
+  <a href="#anatomia-de-uma-distribuicao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Distribution anatomy
+        Anatomia de uma distribuição
       
     </span>
   </a>
@@ -3213,10 +3213,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#application-load-balancer-alb-layer-7" class="md-nav__link">
+  <a href="#application-load-balancer-alb-camada-7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Application Load Balancer (ALB) — Layer 7
+        Application Load Balancer (ALB) — Camada 7
       
     </span>
   </a>
@@ -3224,10 +3224,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#network-load-balancer-nlb-layer-4" class="md-nav__link">
+  <a href="#network-load-balancer-nlb-camada-4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Network Load Balancer (NLB) — Layer 4
+        Network Load Balancer (NLB) — Camada 4
       
     </span>
   </a>
@@ -3281,8 +3281,8 @@
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// aws / networking</span>
-    <h1 class="dph-title">AWS Networking</h1>
-    <p class="dph-desc">Private networks, global DNS, edge delivery, load balancing and hybrid connectivity. AWS networking is the foundation every cloud workload is built on — getting the design right early saves significant refactoring later.</p>
+    <h1 class="dph-title">AWS Rede</h1>
+    <p class="dph-desc">Redes privadas, DNS global, entrega de conteúdo no edge, balanceamento de carga e conectividade híbrida. A rede AWS é a fundação sobre a qual toda carga de trabalho em nuvem é construída — acertar o design desde o início evita retrabalho significativo no futuro.</p>
     <div class="dph-badges">
       <span class="tech-badge">VPC</span>
       <span class="tech-badge">Route 53</span>
@@ -3297,37 +3297,37 @@
 
 <hr />
 <h2 id="vpc-virtual-private-cloud">VPC — Virtual Private Cloud</h2>
-<p>A VPC is an isolated virtual network within a region. Every production workload starts here — get the CIDR design right before you create anything else.</p>
-<h3 id="subnet-design">Subnet design</h3>
+<p>Uma VPC é uma rede virtual isolada dentro de uma região. Toda carga de trabalho em produção começa aqui — acerte o design de CIDR antes de criar qualquer outra coisa.</p>
+<h3 id="design-de-sub-redes">Design de sub-redes</h3>
 <table>
 <thead>
 <tr>
-<th>Subnet type</th>
-<th>Route table</th>
-<th>Typical use</th>
+<th>Tipo de sub-rede</th>
+<th>Tabela de rotas</th>
+<th>Uso típico</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Public</strong></td>
+<td><strong>Pública</strong></td>
 <td>→ Internet Gateway</td>
 <td>Load balancers, NAT Gateways, bastion hosts</td>
 </tr>
 <tr>
-<td><strong>Private</strong></td>
+<td><strong>Privada</strong></td>
 <td>→ NAT Gateway</td>
-<td>App servers, EKS nodes, ECS tasks, databases</td>
+<td>Servidores de app, nodes EKS, tasks ECS, bancos de dados</td>
 </tr>
 <tr>
-<td><strong>Isolated</strong></td>
-<td>Local only</td>
-<td>RDS, ElastiCache, internal services with no internet need</td>
+<td><strong>Isolada</strong></td>
+<td>Somente local</td>
+<td>RDS, ElastiCache, serviços internos sem necessidade de internet</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
-<p class="admonition-title">CIDR planning</p>
-<p>Use a <code>/16</code> per VPC (65,534 IPs) and allocate <code>/24</code> subnets per AZ per tier (gives 254 hosts each). Reserve the last <code>/24</code> block in each tier for future AZs. Avoid <code>10.0.0.0/8</code> if you plan to peer with on-prem networks that already use it — use <code>100.64.0.0/10</code> (IANA Shared Address Space) for VPC-internal traffic.</p>
+<p class="admonition-title">Planejamento de CIDR</p>
+<p>Use <code>/16</code> por VPC (65.534 IPs) e aloque sub-redes <code>/24</code> por AZ por camada (fornece 254 hosts cada). Reserve o último bloco <code>/24</code> em cada camada para AZs futuras. Evite <code>10.0.0.0/8</code> se planeja fazer peering com redes on-prem que já o utilizam — use <code>100.64.0.0/10</code> (IANA Shared Address Space) para tráfego interno à VPC.</p>
 </div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">module</span><span class="w"> </span><span class="nv">&quot;vpc&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="na">source</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;terraform-aws-modules/vpc/aws&quot;</span>
@@ -3342,11 +3342,11 @@
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="na">database_subnets</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;10.20.201.0/24&quot;, &quot;10.20.202.0/24&quot;, &quot;10.20.203.0/24&quot;</span><span class="p">]</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="na">enable_nat_gateway</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="na">single_nat_gateway</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="no">false</span><span class="c1">  # one NAT per AZ for HA</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span><span class="na">single_nat_gateway</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="no">false</span><span class="c1">  # um NAT por AZ para HA</span>
 <a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">  </span><span class="na">enable_dns_hostnames</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 <a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">  </span><span class="na">enable_dns_support</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 <a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="c1">  # Required tags for EKS</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="c1">  # Tags necessárias para EKS</span>
 <a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w">  </span><span class="nb">private_subnet_tags</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="w">    </span><span class="s2">&quot;kubernetes.io/role/internal-elb&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span>
 <a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="w">  </span><span class="p">}</span>
@@ -3356,29 +3356,29 @@
 <a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="vpc-endpoints">VPC Endpoints</h3>
-<p>VPC Endpoints allow private access to AWS services without traversing the internet or NAT Gateway, reducing egress cost and latency.</p>
+<p>Os VPC Endpoints permitem acesso privado aos serviços AWS sem passar pela internet ou pelo NAT Gateway, reduzindo custo de egresso e latência.</p>
 <table>
 <thead>
 <tr>
-<th>Type</th>
-<th>Examples</th>
-<th>Cost</th>
+<th>Tipo</th>
+<th>Exemplos</th>
+<th>Custo</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Gateway</strong></td>
 <td>S3, DynamoDB</td>
-<td>Free</td>
+<td>Gratuito</td>
 </tr>
 <tr>
 <td><strong>Interface</strong> (PrivateLink)</td>
 <td>ECR, Secrets Manager, SSM, KMS, CloudWatch</td>
-<td>~$0.01/hr/AZ</td>
+<td>~$0,01/h/AZ</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Gateway endpoint for S3 (free — always create this)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Endpoint Gateway para S3 (gratuito — sempre crie este)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;aws_vpc_endpoint&quot;</span><span class="w"> </span><span class="nv">&quot;s3&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="na">vpc_id</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="nv">module.vpc.vpc_id</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="na">service_name</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;com.amazonaws.${var.region}.s3&quot;</span>
@@ -3387,50 +3387,50 @@
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">}</span>
 </code></pre></div>
 <h3 id="vpc-flow-logs">VPC Flow Logs</h3>
-<p>Enable Flow Logs on every production VPC. Send to S3 for cost-effective long-term retention; query with Athena. Send to CloudWatch Logs for real-time alerting.</p>
+<p>Habilite Flow Logs em toda VPC de produção. Envie para S3 para retenção de longo prazo com baixo custo; consulte com Athena. Envie para CloudWatch Logs para alertas em tempo real.</p>
 <hr />
 <h2 id="route-53">Route 53</h2>
-<p>Route 53 is AWS's managed DNS and health checking service. It supports both <strong>public hosted zones</strong> (internet-resolvable) and <strong>private hosted zones</strong> (VPC-internal).</p>
-<h3 id="routing-policies">Routing policies</h3>
+<p>O Route 53 é o serviço gerenciado de DNS e verificação de saúde da AWS. Suporta tanto <strong>zonas hospedadas públicas</strong> (resolúveis pela internet) quanto <strong>zonas hospedadas privadas</strong> (internas à VPC).</p>
+<h3 id="politicas-de-roteamento">Políticas de roteamento</h3>
 <table>
 <thead>
 <tr>
-<th>Policy</th>
-<th>Use case</th>
+<th>Política</th>
+<th>Caso de uso</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Simple</strong></td>
-<td>Single resource, no health check</td>
+<td>Recurso único, sem verificação de saúde</td>
 </tr>
 <tr>
 <td><strong>Weighted</strong></td>
-<td>A/B deployments, traffic shifting between origins</td>
+<td>Deploys A/B, distribuição de tráfego entre origens</td>
 </tr>
 <tr>
 <td><strong>Latency</strong></td>
-<td>Route to the lowest-latency region</td>
+<td>Roteia para a região com menor latência</td>
 </tr>
 <tr>
 <td><strong>Failover</strong></td>
-<td>Active/passive DR — primary + secondary with health check</td>
+<td>DR ativo/passivo — primário + secundário com verificação de saúde</td>
 </tr>
 <tr>
 <td><strong>Geolocation</strong></td>
-<td>Compliance, content localisation</td>
+<td>Conformidade, localização de conteúdo</td>
 </tr>
 <tr>
 <td><strong>Geoproximity</strong></td>
-<td>Traffic engineering with bias adjustment</td>
+<td>Engenharia de tráfego com ajuste de bias</td>
 </tr>
 <tr>
 <td><strong>Multivalue</strong></td>
-<td>Up to 8 healthy records returned (not a load balancer replacement)</td>
+<td>Até 8 registros saudáveis retornados (não substitui um load balancer)</td>
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Private hosted zone for service-to-service DNS</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Zona hospedada privada para DNS entre serviços</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;aws_route53_zone&quot;</span><span class="w"> </span><span class="nv">&quot;internal&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="na">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.env}.internal.example.com&quot;</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
@@ -3439,7 +3439,7 @@
 <a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># Weighted routing for canary deployment</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># Roteamento ponderado para deploy canário</span>
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;aws_route53_record&quot;</span><span class="w"> </span><span class="nv">&quot;api_v1&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="na">zone_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">aws_route53_zone.public.zone_id</span>
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="na">name</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;api.example.com&quot;</span>
@@ -3457,14 +3457,14 @@
 </code></pre></div>
 <hr />
 <h2 id="cloudfront">CloudFront</h2>
-<p>CloudFront is AWS's global CDN with 600+ edge locations. It caches content close to users and integrates with WAF, ACM (free TLS), Lambda@Edge and CloudFront Functions.</p>
-<h3 id="distribution-anatomy">Distribution anatomy</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Browser → CloudFront Edge
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>           ├── Cache hit → serve immediately
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>           └── Cache miss → forward to Origin
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>                             ├── S3 (static assets, SPA)
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>                             ├── ALB (dynamic API)
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>                             └── Custom HTTP origin
+<p>O CloudFront é a CDN global da AWS com mais de 600 locais de edge. Faz cache de conteúdo próximo aos usuários e integra-se com WAF, ACM (TLS gratuito), Lambda@Edge e CloudFront Functions.</p>
+<h3 id="anatomia-de-uma-distribuicao">Anatomia de uma distribuição</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Navegador → CloudFront Edge
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>           ├── Cache hit → serve imediatamente
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>           └── Cache miss → encaminha para a Origem
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>                             ├── S3 (assets estáticos, SPA)
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>                             ├── ALB (API dinâmica)
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>                             └── Origem HTTP personalizada
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;aws_cloudfront_distribution&quot;</span><span class="w"> </span><span class="nv">&quot;portal&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="na">enabled</span><span class="w">             </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
@@ -3499,12 +3499,12 @@
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">CloudFront Functions vs Lambda@Edge</p>
-<p><strong>CloudFront Functions</strong> run at the edge (sub-ms, 1/6 the cost) for simple URL rewrites, header manipulation and auth token validation. <strong>Lambda@Edge</strong> runs at Regional Edge Caches with full Node.js/Python and up to 30-second timeout — use for OAuth flows, A/B testing, dynamic personalisation.</p>
+<p><strong>CloudFront Functions</strong> executam no edge (sub-ms, 1/6 do custo) para reescritas simples de URL, manipulação de headers e validação de tokens de autenticação. <strong>Lambda@Edge</strong> executa nos Regional Edge Caches com Node.js/Python completo e timeout de até 30 segundos — use para fluxos OAuth, testes A/B e personalização dinâmica.</p>
 </div>
 <hr />
 <h2 id="alb-nlb">ALB &amp; NLB</h2>
-<h3 id="application-load-balancer-alb-layer-7">Application Load Balancer (ALB) — Layer 7</h3>
-<p>ALB routes HTTP/HTTPS traffic based on <strong>rules</strong>: host header, path, query string, HTTP method, source IP, or HTTP headers. Each rule targets a <strong>Target Group</strong> (EC2 instances, ECS tasks by IP, Lambda, or another ALB).</p>
+<h3 id="application-load-balancer-alb-camada-7">Application Load Balancer (ALB) — Camada 7</h3>
+<p>O ALB roteia tráfego HTTP/HTTPS com base em <strong>regras</strong>: header do host, caminho, query string, método HTTP, IP de origem ou headers HTTP. Cada regra aponta para um <strong>Target Group</strong> (instâncias EC2, tasks ECS por IP, Lambda ou outro ALB).</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;aws_lb&quot;</span><span class="w"> </span><span class="nv">&quot;app&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="na">name</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}-alb&quot;</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="na">internal</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="no">false</span>
@@ -3540,8 +3540,8 @@
 <a id="__codelineno-5-33" name="__codelineno-5-33" href="#__codelineno-5-33"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-5-34" name="__codelineno-5-34" href="#__codelineno-5-34"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="network-load-balancer-nlb-layer-4">Network Load Balancer (NLB) — Layer 4</h3>
-<p>NLB handles TCP/UDP/TLS at ultra-low latency. Use it when you need: <strong>static IPs</strong> (one per AZ), <strong>PrivateLink</strong> exposure, TLS passthrough to backends, or sub-millisecond latency requirements.</p>
+<h3 id="network-load-balancer-nlb-camada-4">Network Load Balancer (NLB) — Camada 4</h3>
+<p>O NLB lida com TCP/UDP/TLS com latência ultrabaixa. Use-o quando precisar de: <strong>IPs estáticos</strong> (um por AZ), exposição via <strong>PrivateLink</strong>, passagem TLS para os backends, ou requisitos de latência abaixo de milissegundo.</p>
 <table>
 <thead>
 <tr>
@@ -3552,57 +3552,57 @@
 </thead>
 <tbody>
 <tr>
-<td>Layer</td>
+<td>Camada</td>
 <td>7 (HTTP/HTTPS/gRPC)</td>
 <td>4 (TCP/UDP/TLS)</td>
 </tr>
 <tr>
-<td>Routing</td>
-<td>Content-based rules</td>
-<td>IP/port only</td>
+<td>Roteamento</td>
+<td>Regras baseadas em conteúdo</td>
+<td>Somente IP/porta</td>
 </tr>
 <tr>
-<td>Static IPs</td>
-<td>No (dynamic DNS)</td>
-<td>Yes (one per AZ)</td>
+<td>IPs estáticos</td>
+<td>Não (DNS dinâmico)</td>
+<td>Sim (um por AZ)</td>
 </tr>
 <tr>
-<td>Preserve client IP</td>
-<td>X-Forwarded-For header</td>
-<td>Native (proxy protocol)</td>
+<td>Preserva IP do cliente</td>
+<td>Header X-Forwarded-For</td>
+<td>Nativo (proxy protocol)</td>
 </tr>
 <tr>
 <td>PrivateLink</td>
-<td>No</td>
-<td>Yes</td>
+<td>Não</td>
+<td>Sim</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="transit-gateway">Transit Gateway</h2>
-<p>Transit Gateway is a regional hub router that connects VPCs, VPN connections and Direct Connect Gateways through a single attachment model — replacing complex VPC peering meshes.</p>
+<p>O Transit Gateway é um roteador hub regional que conecta VPCs, conexões VPN e Direct Connect Gateways por meio de um modelo de anexo único — substituindo malhas complexas de VPC peering.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>VPC A ─┐
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>VPC B ─┼─→ Transit Gateway ←── Direct Connect Gateway ←── On-prem
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>VPC C ─┘         │
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>                  └─→ VPN Connection ←── Branch office
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>                  └─→ VPN Connection ←── Filial
 </code></pre></div>
-<p>Key concepts:
-- <strong>Attachments</strong> — VPC, VPN, Direct Connect GW, TGW Peering (cross-region), Connect (SD-WAN)
-- <strong>Route tables</strong> — multiple route tables enable traffic segmentation (e.g. dev VPCs can't reach prod VPCs)
-- <strong>Multicast</strong> — optional; for legacy on-prem multicast migration</p>
+<p>Conceitos principais:
+- <strong>Attachments</strong> — VPC, VPN, Direct Connect GW, TGW Peering (entre regiões), Connect (SD-WAN)
+- <strong>Tabelas de rotas</strong> — múltiplas tabelas permitem segmentação de tráfego (ex.: VPCs dev não alcançam VPCs prod)
+- <strong>Multicast</strong> — opcional; para migração de multicast legado on-prem</p>
 <div class="admonition note">
 <p class="admonition-title">TGW vs VPC Peering</p>
-<p>VPC Peering is non-transitive and requires O(n²) connections for a full mesh. Use TGW when you have more than 3–4 VPCs, need on-prem connectivity, or require centralised egress/inspection routing.</p>
+<p>O VPC Peering não é transitivo e requer conexões O(n²) para uma malha completa. Use TGW quando tiver mais de 3–4 VPCs, precisar de conectividade on-prem ou requerer roteamento centralizado de egresso/inspeção.</p>
 </div>
 <hr />
 <h2 id="privatelink">PrivateLink</h2>
-<p>PrivateLink exposes a service (behind an NLB) as a private endpoint in a consumer's VPC — without peering, routing table changes or internet exposure. Used for:</p>
+<p>O PrivateLink expõe um serviço (atrás de um NLB) como endpoint privado na VPC do consumidor — sem peering, alterações na tabela de rotas ou exposição à internet. Utilizado para:</p>
 <ul>
-<li><strong>AWS Interface Endpoints</strong> — private access to 100+ AWS services (ECR, Secrets Manager, SSM, etc.)</li>
-<li><strong>Partner services</strong> — SaaS providers expose endpoints in your VPC</li>
-<li><strong>Internal service sharing</strong> — expose platform services (e.g. a centralised auth service) across accounts without VPC peering</li>
+<li><strong>AWS Interface Endpoints</strong> — acesso privado a mais de 100 serviços AWS (ECR, Secrets Manager, SSM, etc.)</li>
+<li><strong>Serviços de parceiros</strong> — provedores SaaS expõem endpoints na sua VPC</li>
+<li><strong>Compartilhamento de serviços internos</strong> — exponha serviços de plataforma (ex.: serviço centralizado de autenticação) entre contas sem VPC peering</li>
 </ul>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Expose an internal service via PrivateLink</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Expor um serviço interno via PrivateLink</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;aws_vpc_endpoint_service&quot;</span><span class="w"> </span><span class="nv">&quot;platform&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="na">acceptance_required</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="no">false</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="na">network_load_balancer_arns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="nv">aws_lb.platform_nlb.arn</span><span class="p">]</span>
@@ -3610,8 +3610,8 @@
 <a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
-<p><a class="md-button" href="../">← AWS Overview</a>
-<a class="md-button md-button--primary" href="../security/">Security &amp; IAM →</a></p>
+<p><a class="md-button" href="../">← Visão Geral AWS</a>
+<a class="md-button md-button--primary" href="../security/">Segurança &amp; IAM →</a></p>
 
 
 

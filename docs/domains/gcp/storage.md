@@ -1,13 +1,13 @@
 ---
-title: GCP Storage
-description: Cloud Storage, Persistent Disk, Filestore, Cloud SQL, AlloyDB — storage on Google Cloud.
+title: GCP Armazenamento
+description: Cloud Storage, Persistent Disk, Filestore, Cloud SQL, AlloyDB — armazenamento no Google Cloud.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// gcp / storage</span>
-    <h1 class="dph-title">GCP Storage</h1>
-    <p class="dph-desc">Cloud Storage (GCS) is the backbone — objects, artefacts, Terraform state, data lake. Persistent Disk for VM and GKE block storage. Filestore for shared NFS. Cloud SQL and AlloyDB for managed relational databases.</p>
+    <h1 class="dph-title">GCP Armazenamento</h1>
+    <p class="dph-desc">Cloud Storage (GCS) é a espinha dorsal — objetos, artefatos, estado do Terraform, data lake. Persistent Disk para armazenamento em bloco de VMs e GKE. Filestore para NFS compartilhado. Cloud SQL e AlloyDB para bancos de dados relacionais gerenciados.</p>
     <div class="dph-badges">
       <span class="tech-badge">Cloud Storage</span>
       <span class="tech-badge">Persistent Disk</span>
@@ -22,18 +22,18 @@ description: Cloud Storage, Persistent Disk, Filestore, Cloud SQL, AlloyDB — s
 
 ## Cloud Storage (GCS)
 
-GCS is GCP's object storage — globally unique bucket names, flat namespace, eventual consistency replaced by strong consistency in 2021. It is the Terraform backend, container build cache, artefact store and data lake foundation for most GCP workloads.
+GCS é o armazenamento de objetos do GCP — nomes de buckets globalmente únicos, namespace plano, consistência eventual substituída por consistência forte em 2021. É o backend do Terraform, cache de build de contêineres, repositório de artefatos e fundação de data lake para a maioria das cargas de trabalho do GCP.
 
-### Storage classes
+### Classes de armazenamento
 
-| Class | Minimum storage | Access | Use case |
-|-------|----------------|--------|---------|
-| **Standard** | None | Immediate | Hot data, frequently accessed |
-| **Nearline** | 30 days | Immediate | Monthly access, backups |
-| **Coldline** | 90 days | Immediate | Quarterly access, DR |
-| **Archive** | 365 days | Immediate (higher egress cost) | 7+ year retention, compliance |
+| Classe | Armazenamento mínimo | Acesso | Caso de uso |
+|--------|---------------------|--------|-------------|
+| **Standard** | Nenhum | Imediato | Dados quentes, acesso frequente |
+| **Nearline** | 30 dias | Imediato | Acesso mensal, backups |
+| **Coldline** | 90 dias | Imediato | Acesso trimestral, DR |
+| **Archive** | 365 dias | Imediato (custo de egresso maior) | Retenção de 7+ anos, conformidade |
 
-### Terraform state bucket
+### Bucket de estado do Terraform
 
 ```hcl
 resource "google_storage_bucket" "tfstate" {
@@ -56,7 +56,7 @@ resource "google_storage_bucket" "tfstate" {
 }
 ```
 
-### GCS backend config
+### Configuração do backend GCS
 
 ```hcl
 terraform {
@@ -67,7 +67,7 @@ terraform {
 }
 ```
 
-### Lifecycle management
+### Gerenciamento de ciclo de vida
 
 ```hcl
 resource "google_storage_bucket" "artefacts" {
@@ -94,26 +94,26 @@ resource "google_storage_bucket" "artefacts" {
 }
 ```
 
-!!! tip "Uniform bucket-level access"
-    Always enable `uniform_bucket_level_access`. This disables legacy object-level ACLs and enforces IAM-only access control — simpler to audit and manage at scale.
+!!! tip "Acesso uniforme no nível do bucket"
+    Sempre habilite `uniform_bucket_level_access`. Isso desativa as ACLs legadas no nível de objeto e aplica controle de acesso exclusivamente via IAM — mais simples de auditar e gerenciar em escala.
 
 ---
 
 ## Persistent Disk
 
-Persistent Disk (PD) is GCP's block storage for Compute Engine VMs and GKE persistent volumes. Unlike AWS EBS, PD can be mounted **read-only to multiple VMs simultaneously**.
+Persistent Disk (PD) é o armazenamento em bloco do GCP para VMs do Compute Engine e volumes persistentes do GKE. Ao contrário do AWS EBS, o PD pode ser montado como **somente leitura em múltiplas VMs simultaneamente**.
 
-### Disk types
+### Tipos de disco
 
-| Type | Max IOPS | Max throughput | Use case |
-|------|---------|---------------|---------|
-| **pd-standard** | 3,000 | 180 MB/s | Dev/test, cold data |
-| **pd-balanced** | 15,000 | 240 MB/s | General workloads |
-| **pd-ssd** | 60,000 | 1,200 MB/s | Databases, Kafka, high-IOPS |
-| **pd-extreme** | 120,000 | 2,400 MB/s | SAP HANA, ultra-high IOPS |
-| **hyperdisk-balanced** | 160,000 | 2,400 MB/s | Performance-intensive workloads |
+| Tipo | IOPS máximo | Throughput máximo | Caso de uso |
+|------|------------|-------------------|-------------|
+| **pd-standard** | 3.000 | 180 MB/s | Dev/test, dados frios |
+| **pd-balanced** | 15.000 | 240 MB/s | Cargas de trabalho gerais |
+| **pd-ssd** | 60.000 | 1.200 MB/s | Bancos de dados, Kafka, alto IOPS |
+| **pd-extreme** | 120.000 | 2.400 MB/s | SAP HANA, IOPS ultraelevado |
+| **hyperdisk-balanced** | 160.000 | 2.400 MB/s | Cargas de trabalho de alto desempenho |
 
-### GKE storage classes
+### Classes de armazenamento do GKE
 
 ```yaml
 apiVersion: storage.k8s.io/v1
@@ -129,24 +129,24 @@ allowVolumeExpansion: true
 volumeBindingMode: WaitForFirstConsumer
 ```
 
-!!! tip "Regional Persistent Disks"
-    Use **regional-pd** for stateful workloads that need AZ failover without data loss (databases, queues). The disk is synchronously replicated across 2 zones — if the VM fails, rescheduling in the other zone picks up the same disk automatically.
+!!! tip "Persistent Disks Regionais"
+    Use **regional-pd** para cargas de trabalho com estado que precisam de failover entre AZs sem perda de dados (bancos de dados, filas). O disco é replicado de forma síncrona em 2 zonas — se a VM falhar, o reagendamento na outra zona retoma o mesmo disco automaticamente.
 
 ---
 
 ## Filestore
 
-Filestore is GCP's managed NFS file storage. A Filestore instance exports one or more NFS shares, mountable from Compute Engine VMs and GKE pods via the Filestore CSI driver.
+Filestore é o armazenamento de arquivos NFS gerenciado do GCP. Uma instância do Filestore exporta um ou mais compartilhamentos NFS, montáveis a partir de VMs do Compute Engine e pods GKE via driver CSI do Filestore.
 
-### Tiers
+### Níveis
 
-| Tier | Capacity | Performance | Use case |
-|------|---------|------------|---------|
-| **Basic HDD** | 1–63 TB | 600 MB/s | Cold shared files |
-| **Basic SSD** | 2.5–63 TB | 2.5 GB/s | Shared NFS, content repos |
-| **Enterprise** | 1–10 TB | 2.4 GB/s | Mission-critical, CMEK |
-| **High Scale** | 10–100 TB | 25 GB/s | ML training datasets |
-| **Zonal** | 1–9.75 TB | 800 MB/s | Cost-effective zonal NFS |
+| Nível | Capacidade | Desempenho | Caso de uso |
+|-------|-----------|-----------|-------------|
+| **Basic HDD** | 1–63 TB | 600 MB/s | Arquivos compartilhados frios |
+| **Basic SSD** | 2,5–63 TB | 2,5 GB/s | NFS compartilhado, repositórios de conteúdo |
+| **Enterprise** | 1–10 TB | 2,4 GB/s | Missão crítica, CMEK |
+| **High Scale** | 10–100 TB | 25 GB/s | Datasets de treinamento de ML |
+| **Zonal** | 1–9,75 TB | 800 MB/s | NFS zonal econômico |
 
 ```hcl
 resource "google_filestore_instance" "shared" {
@@ -171,18 +171,18 @@ resource "google_filestore_instance" "shared" {
 
 ## Cloud SQL
 
-Cloud SQL is the managed relational database service for MySQL, PostgreSQL and SQL Server on GCP. It handles backups, patching, failover and read replicas automatically.
+Cloud SQL é o serviço de banco de dados relacional gerenciado para MySQL, PostgreSQL e SQL Server no GCP. Ele lida com backups, patches, failover e réplicas de leitura automaticamente.
 
-### Key features
+### Principais recursos
 
-| Feature | Description |
-|---------|-------------|
-| **High availability** | Synchronous failover to standby in different zone |
-| **Read replicas** | Up to 10 replicas, cross-region supported |
-| **Point-in-time recovery** | Restore to any second within retention window |
-| **Private IP** | VPC peering or Private Service Connect |
-| **IAM auth** | Database users backed by GCP IAM — no separate passwords |
-| **Connection pooling** | Use Cloud SQL Auth Proxy or pg_bouncer sidecar |
+| Recurso | Descrição |
+|---------|-----------|
+| **Alta disponibilidade** | Failover síncrono para standby em zona diferente |
+| **Réplicas de leitura** | Até 10 réplicas, cross-region suportado |
+| **Recuperação para um ponto no tempo** | Restauração para qualquer segundo dentro da janela de retenção |
+| **IP privado** | VPC peering ou Private Service Connect |
+| **Autenticação IAM** | Usuários de banco de dados suportados pelo IAM do GCP — sem senhas separadas |
+| **Pool de conexões** | Use Cloud SQL Auth Proxy ou sidecar pg_bouncer |
 
 ```hcl
 resource "google_sql_database_instance" "main" {
@@ -222,7 +222,7 @@ resource "google_sql_database_instance" "main" {
 }
 ```
 
-### Cloud SQL Auth Proxy (in GKE)
+### Cloud SQL Auth Proxy (no GKE)
 
 ```yaml
 # Sidecar pattern — Cloud SQL Auth Proxy in the pod
@@ -243,18 +243,18 @@ containers:
 
 ## AlloyDB for PostgreSQL
 
-AlloyDB is Google's PostgreSQL-compatible database engineered for demanding OLTP workloads — 4× faster than standard Cloud SQL for PostgreSQL, 100× faster analytical queries.
+AlloyDB é o banco de dados compatível com PostgreSQL do Google, projetado para cargas OLTP exigentes — 4× mais rápido que o Cloud SQL para PostgreSQL padrão, 100× mais rápido em consultas analíticas.
 
-| Feature | Cloud SQL PostgreSQL | AlloyDB |
+| Recurso | Cloud SQL PostgreSQL | AlloyDB |
 |---------|---------------------|---------|
-| **Engine** | Vanilla PostgreSQL | Enhanced PostgreSQL |
-| **OLTP performance** | Standard | ~4× faster |
-| **Analytics** | Standard | Columnar engine (100× faster) |
-| **ML** | No | `google_ml_predict()` built-in |
-| **HA** | Zonal standby | Multi-node HA (3 zones) |
-| **Pricing** | Lower | Higher (~3–4×) |
+| **Engine** | PostgreSQL padrão | PostgreSQL aprimorado |
+| **Desempenho OLTP** | Padrão | ~4× mais rápido |
+| **Análises** | Padrão | Engine colunar (100× mais rápido) |
+| **ML** | Não | `google_ml_predict()` integrado |
+| **HA** | Standby zonal | HA multi-nó (3 zonas) |
+| **Preço** | Menor | Maior (~3–4×) |
 
 ---
 
-[← GCP Overview](index.md){ .md-button }
-[Networking →](networking.md){ .md-button .md-button--primary }
+[← Visão Geral GCP](index.md){ .md-button }
+[Rede →](networking.md){ .md-button .md-button--primary }

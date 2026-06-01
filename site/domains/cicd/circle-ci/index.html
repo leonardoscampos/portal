@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="CircleCI orbs, workflows, caching, resource classes, Docker layer caching, contexts and parallelism reference.">
+        <meta name="description" content="Referência de orbs, workflows, cache, classes de recurso, Docker Layer Caching, contextos e paralelismo do CircleCI.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#config-anatomy" class="md-skip">
+        <a href="#anatomia-da-configuracao" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -1625,10 +1625,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#config-anatomy" class="md-nav__link">
+  <a href="#anatomia-da-configuracao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Config Anatomy
+        Anatomia da Configuração
       
     </span>
   </a>
@@ -1636,10 +1636,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-concepts" class="md-nav__link">
+  <a href="#conceitos-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Concepts
+        Conceitos Principais
       
     </span>
   </a>
@@ -1647,10 +1647,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#executors-resource-classes" class="md-nav__link">
+  <a href="#executores-e-classes-de-recurso" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Executors &amp; Resource Classes
+        Executores e Classes de Recurso
       
     </span>
   </a>
@@ -1669,10 +1669,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#caching" class="md-nav__link">
+  <a href="#cache" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Caching
+        Cache
       
     </span>
   </a>
@@ -1680,10 +1680,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#workspaces-between-jobs" class="md-nav__link">
+  <a href="#workspaces-entre-jobs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workspaces (between jobs)
+        Workspaces (entre Jobs)
       
     </span>
   </a>
@@ -1691,10 +1691,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#parallelism-test-splitting" class="md-nav__link">
+  <a href="#paralelismo-e-divisao-de-testes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parallelism &amp; Test Splitting
+        Paralelismo e Divisão de Testes
       
     </span>
   </a>
@@ -1702,10 +1702,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#contexts-secrets" class="md-nav__link">
+  <a href="#contextos-e-secrets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Contexts &amp; Secrets
+        Contextos e Secrets
       
     </span>
   </a>
@@ -1713,10 +1713,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#matrix-jobs" class="md-nav__link">
+  <a href="#jobs-em-matriz" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Matrix Jobs
+        Jobs em Matriz
       
     </span>
   </a>
@@ -1724,10 +1724,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dynamic-config" class="md-nav__link">
+  <a href="#configuracao-dinamica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dynamic Config
+        Configuração Dinâmica
       
     </span>
   </a>
@@ -1735,10 +1735,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
+  <a href="#boas-praticas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practices
+        Boas Práticas
       
     </span>
   </a>
@@ -3047,10 +3047,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#config-anatomy" class="md-nav__link">
+  <a href="#anatomia-da-configuracao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Config Anatomy
+        Anatomia da Configuração
       
     </span>
   </a>
@@ -3058,10 +3058,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-concepts" class="md-nav__link">
+  <a href="#conceitos-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Concepts
+        Conceitos Principais
       
     </span>
   </a>
@@ -3069,10 +3069,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#executors-resource-classes" class="md-nav__link">
+  <a href="#executores-e-classes-de-recurso" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Executors &amp; Resource Classes
+        Executores e Classes de Recurso
       
     </span>
   </a>
@@ -3091,10 +3091,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#caching" class="md-nav__link">
+  <a href="#cache" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Caching
+        Cache
       
     </span>
   </a>
@@ -3102,10 +3102,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#workspaces-between-jobs" class="md-nav__link">
+  <a href="#workspaces-entre-jobs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workspaces (between jobs)
+        Workspaces (entre Jobs)
       
     </span>
   </a>
@@ -3113,10 +3113,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#parallelism-test-splitting" class="md-nav__link">
+  <a href="#paralelismo-e-divisao-de-testes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parallelism &amp; Test Splitting
+        Paralelismo e Divisão de Testes
       
     </span>
   </a>
@@ -3124,10 +3124,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#contexts-secrets" class="md-nav__link">
+  <a href="#contextos-e-secrets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Contexts &amp; Secrets
+        Contextos e Secrets
       
     </span>
   </a>
@@ -3135,10 +3135,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#matrix-jobs" class="md-nav__link">
+  <a href="#jobs-em-matriz" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Matrix Jobs
+        Jobs em Matriz
       
     </span>
   </a>
@@ -3146,10 +3146,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#dynamic-config" class="md-nav__link">
+  <a href="#configuracao-dinamica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dynamic Config
+        Configuração Dinâmica
       
     </span>
   </a>
@@ -3157,10 +3157,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
+  <a href="#boas-praticas" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practices
+        Boas Práticas
       
     </span>
   </a>
@@ -3188,7 +3188,7 @@
   <div class="dph-left">
     <span class="dph-eyebrow">// cicd-pipelines / circle-ci</span>
     <h1 class="dph-title">CircleCI</h1>
-    <p class="dph-desc">Fast, cloud-native CI/CD optimized for developer velocity. Orbs for instant integrations, intelligent test splitting for parallelism, Docker Layer Caching for faster builds, and Contexts for secure, org-wide secret management across pipelines.</p>
+    <p class="dph-desc">CI/CD rápido e nativo em nuvem, otimizado para a velocidade do desenvolvedor. Orbs para integrações instantâneas, divisão inteligente de testes para paralelismo, Docker Layer Caching para builds mais rápidos e Contextos para gerenciamento seguro de secrets em toda a organização.</p>
     <div class="dph-badges">
       <span class="tech-badge">Orbs</span>
       <span class="tech-badge">Workflows</span>
@@ -3202,7 +3202,7 @@
 
 <p><a href="../azure-devops/">← Azure DevOps</a> | <a href="../">← CI/CD Overview</a></p>
 <hr />
-<h2 id="config-anatomy">Config Anatomy</h2>
+<h2 id="anatomia-da-configuracao">Anatomia da Configuração</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># .circleci/config.yml</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.1</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
@@ -3252,7 +3252,7 @@
 <a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="w">  </span><span class="nt">build-push-image</span><span class="p">:</span>
 <a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="w">    </span><span class="nt">machine</span><span class="p">:</span>
 <a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="w">      </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-2204:current</span>
-<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="w">      </span><span class="nt">docker_layer_caching</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">      </span><span class="c1"># DLC — reuses Docker layer cache</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="w">      </span><span class="nt">docker_layer_caching</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">      </span><span class="c1"># DLC — reutiliza o cache de camadas Docker</span>
 <a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
 <a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">checkout</span>
 <a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">aws-ecr/build-and-push-image</span><span class="p">:</span>
@@ -3299,7 +3299,7 @@
 <a id="__codelineno-0-94" name="__codelineno-0-94" href="#__codelineno-0-94"></a>
 <a id="__codelineno-0-95" name="__codelineno-0-95" href="#__codelineno-0-95"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">build-push-image</span><span class="p">:</span>
 <a id="__codelineno-0-96" name="__codelineno-0-96" href="#__codelineno-0-96"></a><span class="w">          </span><span class="nt">context</span><span class="p">:</span>
-<a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws-production</span><span class="w">            </span><span class="c1"># org-level context with AWS credentials</span>
+<a id="__codelineno-0-97" name="__codelineno-0-97" href="#__codelineno-0-97"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws-production</span><span class="w">            </span><span class="c1"># contexto organizacional com credenciais AWS</span>
 <a id="__codelineno-0-98" name="__codelineno-0-98" href="#__codelineno-0-98"></a><span class="w">          </span><span class="nt">requires</span><span class="p">:</span>
 <a id="__codelineno-0-99" name="__codelineno-0-99" href="#__codelineno-0-99"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build-and-test</span>
 <a id="__codelineno-0-100" name="__codelineno-0-100" href="#__codelineno-0-100"></a><span class="w">          </span><span class="nt">filters</span><span class="p">:</span>
@@ -3314,7 +3314,7 @@
 <a id="__codelineno-0-109" name="__codelineno-0-109" href="#__codelineno-0-109"></a><span class="w">              </span><span class="nt">only</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 <a id="__codelineno-0-110" name="__codelineno-0-110" href="#__codelineno-0-110"></a>
 <a id="__codelineno-0-111" name="__codelineno-0-111" href="#__codelineno-0-111"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">hold-production</span><span class="p">:</span>
-<a id="__codelineno-0-112" name="__codelineno-0-112" href="#__codelineno-0-112"></a><span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">approval</span><span class="w">              </span><span class="c1"># manual gate</span>
+<a id="__codelineno-0-112" name="__codelineno-0-112" href="#__codelineno-0-112"></a><span class="w">          </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">approval</span><span class="w">              </span><span class="c1"># gate manual</span>
 <a id="__codelineno-0-113" name="__codelineno-0-113" href="#__codelineno-0-113"></a><span class="w">          </span><span class="nt">requires</span><span class="p">:</span>
 <a id="__codelineno-0-114" name="__codelineno-0-114" href="#__codelineno-0-114"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy-staging</span>
 <a id="__codelineno-0-115" name="__codelineno-0-115" href="#__codelineno-0-115"></a>
@@ -3328,67 +3328,67 @@
 <a id="__codelineno-0-123" name="__codelineno-0-123" href="#__codelineno-0-123"></a><span class="w">              </span><span class="nt">only</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 </code></pre></div>
 <hr />
-<h2 id="core-concepts">Core Concepts</h2>
+<h2 id="conceitos-principais">Conceitos Principais</h2>
 <table>
 <thead>
 <tr>
-<th>Concept</th>
-<th>Description</th>
+<th>Conceito</th>
+<th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Job</strong></td>
-<td>Named set of steps running in an executor</td>
+<td>Conjunto nomeado de passos executados em um executor</td>
 </tr>
 <tr>
-<td><strong>Step</strong></td>
-<td>A <code>run</code> command, built-in step, or orb command</td>
+<td><strong>Passo</strong></td>
+<td>Um comando <code>run</code>, passo integrado ou comando de orb</td>
 </tr>
 <tr>
 <td><strong>Executor</strong></td>
-<td>Runtime environment: Docker, machine, macOS, Windows</td>
+<td>Ambiente de execução: Docker, machine, macOS, Windows</td>
 </tr>
 <tr>
 <td><strong>Workflow</strong></td>
-<td>DAG of jobs — defines ordering, conditions, approvals</td>
+<td>DAG de jobs — define ordenação, condições e aprovações</td>
 </tr>
 <tr>
 <td><strong>Orb</strong></td>
-<td>Reusable package of jobs, commands and executors (like an action)</td>
+<td>Pacote reutilizável de jobs, comandos e executores (semelhante a uma action)</td>
 </tr>
 <tr>
-<td><strong>Context</strong></td>
-<td>Org-level or project-level secret store applied to jobs</td>
+<td><strong>Contexto</strong></td>
+<td>Armazenamento de secrets no nível da organização ou do projeto, aplicado a jobs</td>
 </tr>
 <tr>
 <td><strong>Cache</strong></td>
-<td>Dependency cache persisted across pipeline runs</td>
+<td>Cache de dependências persistido entre execuções do pipeline</td>
 </tr>
 <tr>
 <td><strong>Workspace</strong></td>
-<td>Ephemeral data passing between jobs in the same workflow</td>
+<td>Dados efêmeros transferidos entre jobs no mesmo workflow</td>
 </tr>
 <tr>
-<td><strong>Resource class</strong></td>
-<td>CPU/RAM tier for the executor</td>
+<td><strong>Classe de recurso</strong></td>
+<td>Nível de CPU/RAM do executor</td>
 </tr>
 <tr>
 <td><strong>DLC</strong></td>
-<td>Docker Layer Caching — speeds up <code>docker build</code> across runs</td>
+<td>Docker Layer Caching — acelera <code>docker build</code> entre execuções</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="executors-resource-classes">Executors &amp; Resource Classes</h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Docker</label><label for="__tabbed_1_2">Machine (Linux VM)</label><label for="__tabbed_1_3">macOS</label><label for="__tabbed_1_4">Resource Class Reference</label></div>
+<h2 id="executores-e-classes-de-recurso">Executores e Classes de Recurso</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Docker</label><label for="__tabbed_1_2">Machine (VM Linux)</label><label for="__tabbed_1_3">macOS</label><label for="__tabbed_1_4">Referência de Classes de Recurso</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">executors</span><span class="p">:</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">small-node</span><span class="p">:</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">docker</span><span class="p">:</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cimg/node:20.13</span><span class="w">   </span><span class="c1"># CircleCI convenience image</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres:16</span><span class="w">       </span><span class="c1"># service container</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cimg/node:20.13</span><span class="w">   </span><span class="c1"># imagem de conveniência do CircleCI</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres:16</span><span class="w">       </span><span class="c1"># container de serviço</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="nt">environment</span><span class="p">:</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">          </span><span class="nt">POSTGRES_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">resource_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">small</span><span class="w">        </span><span class="c1"># 1 vCPU, 2 GB RAM</span>
@@ -3418,10 +3418,10 @@
 <table>
 <thead>
 <tr>
-<th>Class</th>
+<th>Classe</th>
 <th>vCPU</th>
 <th>RAM</th>
-<th>Notes</th>
+<th>Observações</th>
 </tr>
 </thead>
 <tbody>
@@ -3429,13 +3429,13 @@
 <td><code>small</code></td>
 <td>1</td>
 <td>2 GB</td>
-<td>Light tasks</td>
+<td>Tarefas leves</td>
 </tr>
 <tr>
 <td><code>medium</code></td>
 <td>2</td>
 <td>4 GB</td>
-<td>Default</td>
+<td>Padrão</td>
 </tr>
 <tr>
 <td><code>medium+</code></td>
@@ -3459,7 +3459,7 @@
 <td><code>2xlarge</code></td>
 <td>16</td>
 <td>32 GB</td>
-<td>Heavy builds</td>
+<td>Builds pesados</td>
 </tr>
 <tr>
 <td><code>2xlarge+</code></td>
@@ -3504,21 +3504,21 @@
 <a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">          </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws-credentials</span>
 </code></pre></div>
 <hr />
-<h2 id="caching">Caching</h2>
+<h2 id="cache">Cache</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">jobs</span><span class="p">:</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">build</span><span class="p">:</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">checkout</span>
 <a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">      </span><span class="c1"># Restore cache before installing dependencies</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">      </span><span class="c1"># Restaurar cache antes de instalar dependências</span>
 <a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">restore_cache</span><span class="p">:</span>
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">          </span><span class="nt">keys</span><span class="p">:</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v2-npm-{{ checksum &quot;package-lock.json&quot; }}</span><span class="w">  </span><span class="c1"># exact match</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v2-npm-</span><span class="w">                                     </span><span class="c1"># fallback: most recent</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v2-npm-{{ checksum &quot;package-lock.json&quot; }}</span><span class="w">  </span><span class="c1"># correspondência exata</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v2-npm-</span><span class="w">                                     </span><span class="c1"># fallback: o mais recente</span>
 <a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
 <a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">npm ci</span>
 <a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">      </span><span class="c1"># Save after install (only when cache miss)</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">      </span><span class="c1"># Salvar após a instalação (apenas em caso de cache miss)</span>
 <a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">save_cache</span><span class="p">:</span>
 <a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a><span class="w">          </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v2-npm-{{ checksum &quot;package-lock.json&quot; }}</span>
 <a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a><span class="w">          </span><span class="nt">paths</span><span class="p">:</span>
@@ -3528,40 +3528,40 @@
 <a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">npm run build</span>
 </code></pre></div>
 <div class="admonition tip">
-<p class="admonition-title">Cache key templates</p>
+<p class="admonition-title">Templates de chave de cache</p>
 <table>
 <thead>
 <tr>
 <th>Template</th>
-<th>Resolves to</th>
+<th>Resolve para</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>{{ checksum "file" }}</code></td>
-<td>MD5 of file contents</td>
+<td>MD5 do conteúdo do arquivo</td>
 </tr>
 <tr>
 <td><code>{{ epoch }}</code></td>
-<td>Unix timestamp (always unique)</td>
+<td>Timestamp Unix (sempre único)</td>
 </tr>
 <tr>
 <td><code>{{ arch }}</code></td>
-<td>CPU architecture</td>
+<td>Arquitetura da CPU</td>
 </tr>
 <tr>
 <td><code>{{ .Branch }}</code></td>
-<td>Current branch name</td>
+<td>Nome da branch atual</td>
 </tr>
 <tr>
 <td><code>{{ .Revision }}</code></td>
-<td>Full git SHA</td>
+<td>SHA completo do git</td>
 </tr>
 </tbody>
 </table>
 </div>
 <hr />
-<h2 id="workspaces-between-jobs">Workspaces (between jobs)</h2>
+<h2 id="workspaces-entre-jobs">Workspaces (entre Jobs)</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">jobs</span><span class="p">:</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">build</span><span class="p">:</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
@@ -3595,10 +3595,10 @@
 <a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="w">          </span><span class="nt">requires</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">test</span><span class="p p-Indicator">]</span>
 </code></pre></div>
 <hr />
-<h2 id="parallelism-test-splitting">Parallelism &amp; Test Splitting</h2>
+<h2 id="paralelismo-e-divisao-de-testes">Paralelismo e Divisão de Testes</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">jobs</span><span class="p">:</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="nt">test</span><span class="p">:</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">parallelism</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span><span class="w">                  </span><span class="c1"># spin up 4 containers</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="nt">parallelism</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span><span class="w">                  </span><span class="c1"># inicializa 4 containers</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="nt">docker</span><span class="p">:</span>
 <a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cimg/ruby:3.3</span>
 <a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
@@ -3611,7 +3611,7 @@
 <a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">          </span><span class="nt">paths</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">vendor/bundle</span><span class="p p-Indicator">]</span>
 <a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>
 <a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span>
-<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Split and run tests</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Dividir e executar testes</span>
 <a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">            </span><span class="no">circleci tests glob &quot;spec/**/*_spec.rb&quot; | \</span>
 <a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">            </span><span class="no">circleci tests run \</span>
@@ -3623,32 +3623,32 @@
 <a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test-results</span>
 </code></pre></div>
 <hr />
-<h2 id="contexts-secrets">Contexts &amp; Secrets</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Context applied to specific jobs</span>
+<h2 id="contextos-e-secrets">Contextos e Secrets</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Contexto aplicado a jobs específicos</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nt">workflows</span><span class="p">:</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nt">deploy</span><span class="p">:</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">jobs</span><span class="p">:</span>
 <a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">deploy</span><span class="p">:</span>
 <a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">          </span><span class="nt">context</span><span class="p">:</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws-production</span><span class="w">      </span><span class="c1"># org-level context</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">slack-notifications</span><span class="w">  </span><span class="c1"># can combine multiple</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws-production</span><span class="w">      </span><span class="c1"># contexto organizacional</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">slack-notifications</span><span class="w">  </span><span class="c1"># é possível combinar múltiplos</span>
 <a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
 <a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">deploy-eu</span><span class="p">:</span>
 <a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">          </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws-production-eu</span>
 </code></pre></div>
-<p><strong>Create contexts:</strong> <em>Organization Settings → Contexts → Create Context</em></p>
-<p>Restrict context access by security group. Members must be in the group to trigger jobs using that context.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Project-level environment variables (less preferred)</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1"># Set in: Project Settings → Environment Variables</span>
+<p><strong>Criar contextos:</strong> <em>Organization Settings → Contexts → Create Context</em></p>
+<p>Restrinja o acesso ao contexto por grupo de segurança. Os membros precisam estar no grupo para acionar jobs que usam aquele contexto.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Variáveis de ambiente no nível do projeto (menos recomendado)</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1"># Configurar em: Project Settings → Environment Variables</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nt">jobs</span><span class="p">:</span>
 <a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="nt">deploy</span><span class="p">:</span>
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span>
 <a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws s3 sync ./dist s3://$BUCKET_NAME</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">          </span><span class="c1"># $BUCKET_NAME comes from project env vars</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">          </span><span class="c1"># $BUCKET_NAME vem das variáveis de ambiente do projeto</span>
 </code></pre></div>
 <hr />
-<h2 id="matrix-jobs">Matrix Jobs</h2>
+<h2 id="jobs-em-matriz">Jobs em Matriz</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">jobs</span><span class="p">:</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="nt">test-matrix</span><span class="p">:</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">    </span><span class="nt">parameters</span><span class="p">:</span>
@@ -3675,8 +3675,8 @@
 <a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test-node-&lt;&lt; matrix.node-version &gt;&gt;</span>
 </code></pre></div>
 <hr />
-<h2 id="dynamic-config">Dynamic Config</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># .circleci/config.yml — setup phase (runs first)</span>
+<h2 id="configuracao-dinamica">Configuração Dinâmica</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># .circleci/config.yml — fase de setup (executada primeiro)</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.1</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nt">setup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
@@ -3694,7 +3694,7 @@
 <a id="__codelineno-11-16" name="__codelineno-11-16" href="#__codelineno-11-16"></a><span class="w">            </span><span class="no">services/web/.* run-web-tests true</span>
 <a id="__codelineno-11-17" name="__codelineno-11-17" href="#__codelineno-11-17"></a><span class="w">            </span><span class="no">infra/.*        run-infra-plan true</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># .circleci/continue-config.yml — continuation pipeline</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># .circleci/continue-config.yml — pipeline de continuação</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.1</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nt">parameters</span><span class="p">:</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">  </span><span class="nt">run-api-tests</span><span class="p">:</span>
@@ -3713,61 +3713,61 @@
 <a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">              </span><span class="nt">only</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/.*/</span>
 <a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">          </span><span class="nt">pre-steps</span><span class="p">:</span>
 <a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span>
-<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">                </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Skip if not triggered</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">                </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ignorar se não acionado</span>
 <a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">                </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
 <a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="w">                  </span><span class="no">if [ &quot;&lt;&lt; pipeline.parameters.run-api-tests &gt;&gt;&quot; = &quot;false&quot; ]; then</span>
 <a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="w">                    </span><span class="no">circleci-agent step halt</span>
 <a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a><span class="w">                  </span><span class="no">fi</span>
 </code></pre></div>
 <hr />
-<h2 id="best-practices">Best Practices</h2>
+<h2 id="boas-praticas">Boas Práticas</h2>
 <table>
 <thead>
 <tr>
-<th>Practice</th>
-<th>Implementation</th>
+<th>Prática</th>
+<th>Implementação</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Use Orbs</strong></td>
-<td>Orbs save boilerplate; check Orb Registry before writing custom steps</td>
+<td>Orbs eliminam boilerplate; consulte o Orb Registry antes de criar passos customizados</td>
 </tr>
 <tr>
-<td><strong>DLC on machine executor</strong></td>
-<td><code>docker_layer_caching: true</code> dramatically speeds up image builds</td>
+<td><strong>DLC no executor machine</strong></td>
+<td><code>docker_layer_caching: true</code> acelera significativamente os builds de imagem</td>
 </tr>
 <tr>
-<td><strong>Contexts over project env vars</strong></td>
-<td>Org-level contexts are easier to audit and revoke</td>
+<td><strong>Contextos em vez de variáveis de projeto</strong></td>
+<td>Contextos organizacionais são mais fáceis de auditar e revogar</td>
 </tr>
 <tr>
-<td><strong>Parallelism + test splitting</strong></td>
-<td>Reduce test time linearly: 4x parallelism → ~4x faster</td>
+<td><strong>Paralelismo + divisão de testes</strong></td>
+<td>Reduza o tempo de teste linearmente: 4x paralelismo → ~4x mais rápido</td>
 </tr>
 <tr>
-<td><strong>Workspace for artifacts</strong></td>
-<td><code>persist_to_workspace</code> / <code>attach_workspace</code> pass build outputs cleanly</td>
+<td><strong>Workspace para artefatos</strong></td>
+<td><code>persist_to_workspace</code> / <code>attach_workspace</code> transferem saídas de build de forma limpa</td>
 </tr>
 <tr>
-<td><strong>Cache versioning</strong></td>
-<td>Prefix keys with <code>v1-</code>, <code>v2-</code>... to force invalidation after structural changes</td>
+<td><strong>Versionamento de cache</strong></td>
+<td>Prefixe chaves com <code>v1-</code>, <code>v2-</code>... para forçar a invalidação após mudanças estruturais</td>
 </tr>
 <tr>
-<td><strong>Resource class right-sizing</strong></td>
-<td>Start with <code>medium</code>; profile and downgrade where jobs idle</td>
+<td><strong>Dimensionamento da classe de recurso</strong></td>
+<td>Comece com <code>medium</code>; faça profiling e reduza onde jobs ficam ociosos</td>
 </tr>
 <tr>
-<td><strong>Approval jobs for production</strong></td>
-<td><code>type: approval</code> creates manual gates before sensitive deployments</td>
+<td><strong>Jobs de aprovação para produção</strong></td>
+<td><code>type: approval</code> cria gates manuais antes de implantações sensíveis</td>
 </tr>
 <tr>
-<td><strong>Dynamic config for monorepos</strong></td>
-<td>Path filtering with <code>setup: true</code> skips unaffected services</td>
+<td><strong>Configuração dinâmica para monorepos</strong></td>
+<td>Filtragem por caminho com <code>setup: true</code> ignora serviços não afetados</td>
 </tr>
 <tr>
 <td><strong><code>store_test_results</code></strong></td>
-<td>Enables Insights timing-based test splitting and failure tracking</td>
+<td>Habilita a divisão de testes baseada em tempo pelo Insights e rastreamento de falhas</td>
 </tr>
 </tbody>
 </table>

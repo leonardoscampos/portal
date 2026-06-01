@@ -1,48 +1,48 @@
 ---
-title: Service Mesh
-description: Istio and Linkerd service mesh — mTLS, traffic management, observability, canary deployments and fault injection.
+title: Malha de Serviços
+description: Malha de serviços Istio e Linkerd — mTLS, gerenciamento de tráfego, observabilidade, implantações canário e injeção de falhas.
 ---
 
 <div class="domain-page-hero" data-domain="containers">
   <div class="dph-left">
     <span class="dph-eyebrow">// containers-orchestration / service-mesh</span>
-    <h1 class="dph-title">Service Mesh</h1>
-    <p class="dph-desc">Transparent infrastructure layer for service-to-service communication. Automatic mTLS, fine-grained traffic management, rich L7 observability and progressive delivery patterns — all without changing application code.</p>
+    <h1 class="dph-title">Malha de Serviços</h1>
+    <p class="dph-desc">Camada de infraestrutura transparente para comunicação serviço a serviço. mTLS automático, gerenciamento de tráfego granular, observabilidade L7 rica e padrões de entrega progressiva — tudo sem alterar o código da aplicação.</p>
     <div class="dph-badges">
       <span class="tech-badge">Istio</span>
       <span class="tech-badge">Linkerd</span>
       <span class="tech-badge">mTLS</span>
-      <span class="tech-badge">Traffic Management</span>
-      <span class="tech-badge">Canary</span>
-      <span class="tech-badge">Fault Injection</span>
+      <span class="tech-badge">Gerenciamento de Tráfego</span>
+      <span class="tech-badge">Canário</span>
+      <span class="tech-badge">Injeção de Falhas</span>
     </div>
   </div>
 </div>
 
-[← Kubernetes](kubernetes.md) | [← Containers Overview](index.md) | [Operators →](operators.md)
+[← Kubernetes](kubernetes.md) | [← Visão Geral de Contêineres](index.md) | [Operadores →](operators.md)
 
 ---
 
 ## Istio vs Linkerd
 
-| Feature | Istio | Linkerd |
+| Recurso | Istio | Linkerd |
 |---------|-------|---------|
-| **Proxy** | Envoy (powerful, heavy) | Linkerd2-proxy (Rust, ultra-light) |
-| **Installation** | Helm / `istioctl` | Helm / `linkerd` CLI |
-| **mTLS** | Opt-in per namespace/workload | Automatic for all meshed pods |
-| **Traffic management** | VirtualService, DestinationRule | HTTPRoute (Gateway API) |
-| **Observability** | Jaeger, Prometheus, Kiali | Viz dashboard, Prometheus |
-| **Protocol detection** | Automatic | Automatic |
-| **Resource overhead** | High (~50–100 MB/pod) | Low (~10–20 MB/pod) |
-| **Learning curve** | Steep | Gentle |
-| **Multi-cluster** | Built-in (multi-primary, primary-remote) | Service mirroring |
-| **WASM extensions** | Yes (EnvoyFilter) | No |
+| **Proxy** | Envoy (poderoso, pesado) | Linkerd2-proxy (Rust, ultraleve) |
+| **Instalação** | Helm / `istioctl` | Helm / CLI `linkerd` |
+| **mTLS** | Opcional por namespace/workload | Automático para todos os pods na malha |
+| **Gerenciamento de tráfego** | VirtualService, DestinationRule | HTTPRoute (Gateway API) |
+| **Observabilidade** | Jaeger, Prometheus, Kiali | Dashboard Viz, Prometheus |
+| **Detecção de protocolo** | Automática | Automática |
+| **Sobrecarga de recursos** | Alta (~50–100 MB/pod) | Baixa (~10–20 MB/pod) |
+| **Curva de aprendizado** | Íngreme | Suave |
+| **Multi-cluster** | Integrado (multi-primary, primary-remote) | Espelhamento de serviços |
+| **Extensões WASM** | Sim (EnvoyFilter) | Não |
 
 ---
 
 ## Istio
 
-### Installation
+### Instalação
 
 ```bash
 # Install istioctl
@@ -60,7 +60,7 @@ istioctl verify-install
 istioctl analyze -n production
 ```
 
-### VirtualService — Traffic Routing
+### VirtualService — Roteamento de Tráfego
 
 ```yaml
 apiVersion: networking.istio.io/v1beta1
@@ -103,7 +103,7 @@ spec:
     timeout: 30s
 ```
 
-### DestinationRule — Load Balancing & Circuit Breaker
+### DestinationRule — Balanceamento de Carga e Disjuntor
 
 ```yaml
 apiVersion: networking.istio.io/v1beta1
@@ -136,7 +136,7 @@ spec:
         version: v2
 ```
 
-### Fault Injection
+### Injeção de Falhas
 
 ```yaml
 apiVersion: networking.istio.io/v1beta1
@@ -161,7 +161,7 @@ spec:
             subset: v1
 ```
 
-### mTLS Policy
+### Política de mTLS
 
 ```yaml
 # Enforce STRICT mTLS across the entire mesh
@@ -223,7 +223,7 @@ spec:
             paths: ["/api/*"]
 ```
 
-### Observability with Kiali
+### Observabilidade com Kiali
 
 ```bash
 # Install Kiali + addons
@@ -240,7 +240,7 @@ istioctl dashboard kiali
 
 ## Linkerd
 
-### Installation
+### Instalação
 
 ```bash
 # Install Linkerd CLI
@@ -263,7 +263,7 @@ linkerd viz check
 linkerd viz dashboard &
 ```
 
-### Meshing Workloads
+### Inclusão de Workloads na Malha
 
 ```bash
 # Inject sidecar via namespace annotation (auto-injection)
@@ -305,7 +305,7 @@ spec:
           weight: 10
 ```
 
-### ServiceProfile (Retries & Timeouts)
+### ServiceProfile (Tentativas e Tempos Limite)
 
 ```yaml
 apiVersion: linkerd.io/v1alpha2
@@ -332,7 +332,7 @@ spec:
       timeout: 5s
 ```
 
-### Multi-cluster with Service Mirroring
+### Multi-cluster com Espelhamento de Serviços
 
 ```bash
 # Link clusters
@@ -349,7 +349,7 @@ kubectl label svc api mirror.linkerd.io/exported=true -n production
 
 ---
 
-## Canary Delivery Workflow
+## Fluxo de Entrega Canário
 
 ```
 Initial state: 100% → stable (v1)
@@ -361,7 +361,7 @@ Step 4: 100% → canary (v2),   0% → stable (v1)   ← promote: canary becomes
          OR rollback if SLO breach detected
 ```
 
-Automate this with [Flagger](https://flagger.app):
+Automatize isso com [Flagger](https://flagger.app):
 
 ```yaml
 apiVersion: flagger.app/v1beta1
@@ -398,4 +398,4 @@ spec:
           cmd: "hey -z 1m -q 10 -c 2 http://api.production/"
 ```
 
-[← Kubernetes](kubernetes.md) | [← Containers Overview](index.md) | [Operators →](operators.md)
+[← Kubernetes](kubernetes.md) | [← Visão Geral de Contêineres](index.md) | [Operadores →](operators.md)

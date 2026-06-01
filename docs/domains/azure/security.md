@@ -1,13 +1,13 @@
 ---
 title: Azure Security & IAM
-description: Entra ID, RBAC, Key Vault, Defender for Cloud, Azure Policy, PIM — security on Azure.
+description: Entra ID, RBAC, Key Vault, Defender for Cloud, Azure Policy, PIM — segurança no Azure.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// azure / security</span>
     <h1 class="dph-title">Azure Security &amp; IAM</h1>
-    <p class="dph-desc">Entra ID is the identity backbone for Azure — every API call is authenticated against it. Pair RBAC with Workload Identity for zero-secret AKS pods, centralise secrets in Key Vault, enforce configuration with Azure Policy and gain cloud posture visibility with Defender for Cloud.</p>
+    <p class="dph-desc">Entra ID é a espinha dorsal de identidade do Azure — toda chamada de API é autenticada por ele. Combine RBAC com Workload Identity para pods AKS sem segredos, centralize segredos no Key Vault, aplique Conformidade com Azure Policy e obtenha visibilidade de postura na nuvem com Defender for Cloud.</p>
     <div class="dph-badges">
       <span class="tech-badge">Entra ID</span>
       <span class="tech-badge">RBAC</span>
@@ -21,62 +21,62 @@ description: Entra ID, RBAC, Key Vault, Defender for Cloud, Azure Policy, PIM �
 
 ---
 
-## Microsoft Entra ID (formerly Azure AD)
+## Microsoft Entra ID (anteriormente Azure AD)
 
-Entra ID is Azure's identity provider — it handles authentication (who you are) for all Azure services. Authorization is handled by Azure RBAC (what you can do).
+Entra ID é o provedor de identidade do Azure — gerencia a autenticação (quem você é) para todos os serviços do Azure. A autorização é gerenciada pelo Azure RBAC (o que você pode fazer).
 
-### Key identity primitives
+### Primitivas de identidade principais
 
-| Primitive | Description |
-|-----------|-------------|
-| **User** | Human identities, synced from on-prem AD or cloud-only |
-| **Service Principal** | App identity — used by automation, Terraform, CI pipelines |
-| **Managed Identity** | System-assigned or user-assigned identity for Azure resources (no credential management) |
-| **Workload Identity** | OIDC federation for Kubernetes pods — replaces aad-pod-identity |
-| **Groups** | Assign RBAC roles to groups, not individual identities |
-| **App Registration** | OAuth 2.0 / OIDC client registration |
+| Primitiva | Descrição |
+|-----------|-----------|
+| **User** | Identidades humanas, sincronizadas do AD on-premises ou apenas na nuvem |
+| **Service Principal** | Identidade de aplicação — usada por automações, Terraform, pipelines de CI |
+| **Managed Identity** | Identidade atribuída pelo sistema ou pelo usuário para recursos do Azure (sem gerenciamento de credenciais) |
+| **Workload Identity** | Federação OIDC para pods Kubernetes — substitui o aad-pod-identity |
+| **Groups** | Atribua funções RBAC a grupos, não a identidades individuais |
+| **App Registration** | Registro de cliente OAuth 2.0 / OIDC |
 
-### Authentication flows for automation
+### Fluxos de autenticação para automação
 
 ```
-Terraform / CI pipeline
-  → Service Principal (client ID + secret or federated credential)
-  → Entra ID token
-  → Azure Resource Manager API
+Terraform / pipeline de CI
+  → Service Principal (client ID + segredo ou credencial federada)
+  → Token do Entra ID
+  → API do Azure Resource Manager
 
-AKS pod
-  → Workload Identity (OIDC projected volume token)
-  → Entra ID validates token against AKS OIDC issuer
-  → Returns access token for Key Vault / Storage / etc.
+Pod do AKS
+  → Workload Identity (token do volume projetado OIDC)
+  → Entra ID valida o token contra o emissor OIDC do AKS
+  → Retorna token de acesso para Key Vault / Storage / etc.
 ```
 
 ---
 
 ## Azure RBAC
 
-Azure RBAC controls who can perform what actions on which resources. Assignments are scoped: Management Group → Subscription → Resource Group → Resource.
+O Azure RBAC controla quem pode realizar quais ações em quais recursos. As atribuições têm escopo: Grupo de Gerenciamento → Assinatura → Grupo de Recursos → Recurso.
 
-### Built-in roles
+### Funções integradas
 
-| Role | Scope | Use case |
-|------|-------|---------|
-| **Owner** | Full control + RBAC management | Avoid; prefer Contributor |
-| **Contributor** | Full resource control, no RBAC | App team lead |
-| **Reader** | Read-only | Auditors, read-only CI steps |
-| **AKS Cluster Admin** | Full kubectl access | Break-glass only |
-| **AKS Azure RBAC Admin** | RBAC management in cluster | Cluster operators |
-| **Key Vault Secrets User** | Read secrets | Apps via Managed/Workload Identity |
-| **Storage Blob Data Contributor** | Read/write blobs | Apps, CI pipelines |
+| Função | Escopo | Caso de uso |
+|--------|--------|-------------|
+| **Owner** | Controle total + gerenciamento de RBAC | Evitar; prefira Contributor |
+| **Contributor** | Controle total de recursos, sem RBAC | Líder da equipe de aplicação |
+| **Reader** | Somente leitura | Auditores, etapas de CI somente leitura |
+| **AKS Cluster Admin** | Acesso total ao kubectl | Apenas break-glass |
+| **AKS Azure RBAC Admin** | Gerenciamento de RBAC no cluster | Operadores do cluster |
+| **Key Vault Secrets User** | Leitura de segredos | Apps via Managed/Workload Identity |
+| **Storage Blob Data Contributor** | Leitura/escrita de blobs | Apps, pipelines de CI |
 
 ```hcl
-# Assign the Workload Identity access to Key Vault secrets
+# Atribuir à Workload Identity acesso aos segredos do Key Vault
 resource "azurerm_role_assignment" "app_kv_secrets" {
   scope                = azurerm_key_vault.main.id
   role_definition_name = "Key Vault Secrets User"
   principal_id         = azurerm_user_assigned_identity.app.principal_id
 }
 
-# Assign ACR pull to AKS kubelet identity
+# Atribuir ACR pull à identidade kubelet do AKS
 resource "azurerm_role_assignment" "aks_acr_pull" {
   scope                = azurerm_container_registry.main.id
   role_definition_name = "AcrPull"
@@ -84,22 +84,22 @@ resource "azurerm_role_assignment" "aks_acr_pull" {
 }
 ```
 
-!!! tip "Avoid assignment sprawl"
-    Assign roles to **Entra ID Groups**, not individual users or service principals. This makes role management auditable and avoids the N×M assignment matrix that appears in large organisations.
+!!! tip "Evite proliferação de atribuições"
+    Atribua funções a **Grupos do Entra ID**, não a usuários individuais ou service principals. Isso torna o gerenciamento de funções auditável e evita a matriz N×M de atribuições que surge em grandes organizações.
 
 ---
 
 ## Key Vault
 
-Azure Key Vault stores secrets, encryption keys and certificates. It has built-in RBAC, soft delete, purge protection and access logging. Use it for everything — database passwords, API keys, TLS certificates, SSH keys.
+Azure Key Vault armazena segredos, chaves de criptografia e certificados. Possui RBAC integrado, exclusão reversível, proteção contra limpeza e registro de acessos. Use-o para tudo — senhas de banco de dados, chaves de API, certificados TLS, chaves SSH.
 
-### Key Vault objects
+### Objetos do Key Vault
 
-| Object type | Description | Typical use |
-|------------|-------------|------------|
-| **Secret** | Arbitrary string value | DB passwords, API keys, tokens |
-| **Key** | RSA or EC cryptographic key | Envelope encryption, signing |
-| **Certificate** | X.509 certificate + private key | TLS, mTLS |
+| Tipo de objeto | Descrição | Uso típico |
+|----------------|-----------|------------|
+| **Secret** | Valor de string arbitrário | Senhas de BD, chaves de API, tokens |
+| **Key** | Chave criptográfica RSA ou EC | Criptografia de envelope, assinatura |
+| **Certificate** | Certificado X.509 + chave privada | TLS, mTLS |
 
 ```hcl
 resource "azurerm_key_vault" "main" {
@@ -126,9 +126,9 @@ resource "azurerm_key_vault_secret" "db_password" {
 }
 ```
 
-### Mount Key Vault secrets in AKS pods
+### Montar segredos do Key Vault em pods do AKS
 
-Use the **Secrets Store CSI Driver** with the Azure Key Vault provider — secrets are mounted as files or synced to Kubernetes Secrets automatically.
+Use o **Secrets Store CSI Driver** com o provedor do Azure Key Vault — os segredos são montados como arquivos ou sincronizados com Kubernetes Secrets automaticamente.
 
 ```yaml
 apiVersion: secrets-store.csi.x-k8s.io/v1
@@ -159,29 +159,29 @@ spec:
 
 ## Defender for Cloud
 
-Defender for Cloud (formerly Azure Security Center) provides cloud security posture management (CSPM) and cloud workload protection (CWPP) across Azure, hybrid and multi-cloud.
+Defender for Cloud (anteriormente Azure Security Center) fornece gerenciamento de postura de segurança na nuvem (CSPM) e proteção de cargas de trabalho na nuvem (CWPP) no Azure, em ambientes híbridos e multinuvem.
 
-### Defender plans
+### Planos do Defender
 
-| Plan | Protects | Key detections |
-|------|---------|---------------|
-| **Defender for Servers** | VMs, Arc servers | Fileless attacks, brute force, Defender AV |
-| **Defender for Containers** | AKS, Arc K8s | Image vulnerabilities, runtime threats, K8s API anomalies |
-| **Defender for Storage** | Blob, ADLS Gen2 | Malware scanning, unusual access, anomalous upload |
-| **Defender for Key Vault** | Key Vault | Unusual access patterns, high volume operations |
-| **Defender for DevOps** | GitHub, ADO | Secret scanning, IaC misconfigurations, code vulnerabilities |
+| Plano | Protege | Detecções principais |
+|-------|---------|----------------------|
+| **Defender for Servers** | VMs, servidores Arc | Ataques sem arquivo, força bruta, Defender AV |
+| **Defender for Containers** | AKS, Arc K8s | Vulnerabilidades em imagens, ameaças em tempo de execução, anomalias na API do K8s |
+| **Defender for Storage** | Blob, ADLS Gen2 | Varredura de malware, acesso incomum, upload anômalo |
+| **Defender for Key Vault** | Key Vault | Padrões de acesso incomuns, operações em alto volume |
+| **Defender for DevOps** | GitHub, ADO | Varredura de segredos, configurações incorretas de IaC, vulnerabilidades de código |
 
-!!! tip "Secure Score"
-    The **Secure Score** dashboard aggregates all recommendations into a single percentage. Treat it like a security backlog — prioritise recommendations with the highest score impact first. Use **Governance rules** to assign recommendations to owners with due dates.
+!!! tip "Pontuação de Segurança"
+    O painel de **Pontuação de Segurança** agrega todas as recomendações em um único percentual. Trate-o como um backlog de segurança — priorize as recomendações com maior impacto na pontuação primeiro. Use **Regras de Governança** para atribuir recomendações a responsáveis com prazos.
 
 ---
 
 ## Azure Policy
 
-Azure Policy enforces compliance on Azure resources — at creation time (deny), on existing resources (audit), or by automatically remediating drift. Assign policies at management group scope to enforce across all subscriptions in an organisation.
+Azure Policy aplica Conformidade nos recursos do Azure — no momento da criação (negar), em recursos existentes (auditar) ou corrigindo desvios automaticamente. Atribua políticas no escopo do grupo de gerenciamento para aplicar em todas as assinaturas de uma organização.
 
 ```hcl
-# Deny public network access to Storage Accounts
+# Negar acesso público à rede em Contas de Armazenamento
 resource "azurerm_policy_assignment" "deny_public_storage" {
   name                 = "deny-public-storage"
   scope                = data.azurerm_management_group.root.id
@@ -194,7 +194,7 @@ resource "azurerm_policy_assignment" "deny_public_storage" {
   })
 }
 
-# Require Key Vault soft delete + purge protection
+# Exigir exclusão reversível + proteção contra limpeza no Key Vault
 resource "azurerm_policy_assignment" "kv_protection" {
   name                 = "kv-soft-delete"
   scope                = data.azurerm_management_group.root.id
@@ -204,9 +204,9 @@ resource "azurerm_policy_assignment" "kv_protection" {
 }
 ```
 
-### Policy initiative (policy set)
+### Iniciativa de Política (conjunto de políticas)
 
-Group related policies into an **initiative** (formerly policy set) and assign the initiative as a single unit. Azure provides built-in initiatives for CIS, NIST 800-53, PCI-DSS compliance.
+Agrupe políticas relacionadas em uma **iniciativa** (anteriormente conjunto de políticas) e atribua a iniciativa como uma unidade única. O Azure fornece iniciativas integradas para Conformidade com CIS, NIST 800-53 e PCI-DSS.
 
 ```hcl
 resource "azurerm_policy_set_definition" "baseline" {
@@ -228,20 +228,20 @@ resource "azurerm_policy_set_definition" "baseline" {
 
 ## Privileged Identity Management (PIM)
 
-PIM provides just-in-time (JIT) privileged access to Entra ID roles and Azure RBAC roles. Users request elevation, provide a justification, and the access is time-bound (up to 8 hours) with an automatic expiry.
+O PIM fornece acesso privilegiado just-in-time (JIT) a funções do Entra ID e funções do Azure RBAC. Os usuários solicitam elevação, fornecem uma justificativa e o acesso é limitado no tempo (até 8 horas) com expiração automática.
 
-| PIM feature | Description |
-|------------|-------------|
-| **Eligible assignments** | User can activate the role on demand — not permanently active |
-| **Active assignments** | Permanently active role — avoid for privileged roles |
-| **Activation approval** | Require a second person to approve elevation |
-| **Conditional Access on activation** | Require MFA or compliant device when activating |
-| **Access reviews** | Periodic review of who has eligible assignments |
+| Recurso do PIM | Descrição |
+|----------------|-----------|
+| **Atribuições elegíveis** | O usuário pode ativar a função sob demanda — não permanentemente ativa |
+| **Atribuições ativas** | Função permanentemente ativa — evitar para funções privilegiadas |
+| **Aprovação de ativação** | Exigir que uma segunda pessoa aprove a elevação |
+| **Acesso Condicional na ativação** | Exigir MFA ou dispositivo em conformidade ao ativar |
+| **Revisões de acesso** | Revisão periódica de quem possui atribuições elegíveis |
 
-!!! warning "Always use PIM for Owner/Contributor"
-    No persistent `Owner` or `Contributor` assignments at subscription scope. All elevated access should go through PIM with justification and time-bound activation — this is audited in Entra ID sign-in logs and PIM audit events.
+!!! warning "Sempre use PIM para Owner/Contributor"
+    Nenhuma atribuição persistente de `Owner` ou `Contributor` no escopo da assinatura. Todo acesso elevado deve passar pelo PIM com justificativa e ativação limitada no tempo — isso fica auditado nos logs de entrada do Entra ID e nos eventos de auditoria do PIM.
 
 ---
 
-[← Azure Overview](index.md){ .md-button }
-[Observability →](observability.md){ .md-button .md-button--primary }
+[← Visão Geral Azure](index.md){ .md-button }
+[Observabilidade →](observability.md){ .md-button .md-button--primary }

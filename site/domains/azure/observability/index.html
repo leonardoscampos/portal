@@ -33,7 +33,7 @@
     
     
   
-    <title>Azure Observability — Leonardo Campos</title>
+    <title>Azure Observabilidade — Leonardo Campos</title>
   
 
     
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Azure Observability
+              Azure Observabilidade
             
           </span>
         </div>
@@ -854,10 +854,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#data-model" class="md-nav__link">
+  <a href="#modelo-de-dados" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data model
+        Modelo de dados
       
     </span>
   </a>
@@ -876,10 +876,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#metric-alerts" class="md-nav__link">
+  <a href="#alertas-de-metrica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Metric alerts
+        Alertas de métrica
       
     </span>
   </a>
@@ -904,10 +904,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#key-concepts" class="md-nav__link">
+  <a href="#conceitos-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key concepts
+        Conceitos principais
       
     </span>
   </a>
@@ -915,10 +915,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#availability-test" class="md-nav__link">
+  <a href="#teste-de-disponibilidade" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Availability test
+        Teste de disponibilidade
       
     </span>
   </a>
@@ -943,10 +943,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#useful-kql-queries" class="md-nav__link">
+  <a href="#consultas-kql-uteis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Useful KQL queries
+        Consultas KQL úteis
       
     </span>
   </a>
@@ -982,10 +982,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#budgets" class="md-nav__link">
+  <a href="#orcamentos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Budgets
+        Orçamentos
       
     </span>
   </a>
@@ -3096,10 +3096,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#data-model" class="md-nav__link">
+  <a href="#modelo-de-dados" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Data model
+        Modelo de dados
       
     </span>
   </a>
@@ -3118,10 +3118,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#metric-alerts" class="md-nav__link">
+  <a href="#alertas-de-metrica" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Metric alerts
+        Alertas de métrica
       
     </span>
   </a>
@@ -3146,10 +3146,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#key-concepts" class="md-nav__link">
+  <a href="#conceitos-principais" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key concepts
+        Conceitos principais
       
     </span>
   </a>
@@ -3157,10 +3157,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#availability-test" class="md-nav__link">
+  <a href="#teste-de-disponibilidade" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Availability test
+        Teste de disponibilidade
       
     </span>
   </a>
@@ -3185,10 +3185,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#useful-kql-queries" class="md-nav__link">
+  <a href="#consultas-kql-uteis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Useful KQL queries
+        Consultas KQL úteis
       
     </span>
   </a>
@@ -3224,10 +3224,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#budgets" class="md-nav__link">
+  <a href="#orcamentos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Budgets
+        Orçamentos
       
     </span>
   </a>
@@ -3259,8 +3259,8 @@
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// azure / observability</span>
-    <h1 class="dph-title">Azure Observability</h1>
-    <p class="dph-desc">Azure Monitor is the umbrella service — metrics flow to the Metrics store, logs flow to Log Analytics, distributed traces flow to Application Insights. Container Insights provides AKS-specific dashboards out of the box. Azure Managed Grafana ties it all together.</p>
+    <h1 class="dph-title">Azure Observabilidade</h1>
+    <p class="dph-desc">Azure Monitor é o serviço guarda-chuva — métricas fluem para o armazenamento de Métricas, logs fluem para o Log Analytics, rastreamentos distribuídos fluem para o Application Insights. Container Insights fornece painéis específicos para AKS prontos para uso. Azure Managed Grafana une tudo isso.</p>
     <div class="dph-badges">
       <span class="tech-badge">Azure Monitor</span>
       <span class="tech-badge">Log Analytics</span>
@@ -3274,8 +3274,8 @@
 
 <hr />
 <h2 id="azure-monitor">Azure Monitor</h2>
-<p>Azure Monitor collects metrics and logs from all Azure services automatically. Resources send <strong>platform metrics</strong> to the Metrics store (15-month retention) and <strong>resource logs</strong> (diagnostic settings) to Log Analytics, a Storage Account or an Event Hub.</p>
-<h3 id="data-model">Data model</h3>
+<p>Azure Monitor coleta métricas e logs de todos os serviços do Azure automaticamente. Os recursos enviam <strong>métricas de plataforma</strong> para o armazenamento de Métricas (retenção de 15 meses) e <strong>logs de recursos</strong> (configurações de diagnóstico) para o Log Analytics, uma Conta de Armazenamento ou um Event Hub.</p>
+<h3 id="modelo-de-dados">Modelo de dados</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Azure Resource
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  ├── Platform metrics  ──→ Azure Monitor Metrics (time-series, 93-day default)
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  ├── Resource logs     ──→ Log Analytics Workspace (KQL query engine)
@@ -3307,7 +3307,7 @@
 <a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">  </span><span class="nb">metric</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="na">category</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;AllMetrics&quot;</span><span class="err">;</span><span class="w"> </span><span class="na">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span><span class="w"> </span><span class="p">}</span>
 <a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="metric-alerts">Metric alerts</h3>
+<h3 id="alertas-de-metrica">Alertas de métrica</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azurerm_monitor_metric_alert&quot;</span><span class="w"> </span><span class="nv">&quot;aks_node_cpu&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="na">name</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;aks-node-cpu-high&quot;</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="na">resource_group_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">azurerm_resource_group.main.name</span>
@@ -3340,35 +3340,35 @@
 </code></pre></div>
 <hr />
 <h2 id="application-insights">Application Insights</h2>
-<p>Application Insights is the APM (Application Performance Monitoring) component of Azure Monitor. It collects distributed traces, request rates, failure rates, response times, dependencies and custom events.</p>
-<h3 id="key-concepts">Key concepts</h3>
+<p>Application Insights é o componente APM (Application Performance Monitoring) do Azure Monitor. Coleta rastreamentos distribuídos, taxas de requisições, taxas de falha, tempos de resposta, dependências e eventos personalizados.</p>
+<h3 id="conceitos-principais">Conceitos principais</h3>
 <table>
 <thead>
 <tr>
-<th>Concept</th>
-<th>Description</th>
+<th>Conceito</th>
+<th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Sampling</strong></td>
-<td>Adaptive sampling reduces data volume while preserving statistical accuracy</td>
+<td>Amostragem adaptativa reduz o volume de dados preservando a precisão estatística</td>
 </tr>
 <tr>
 <td><strong>Availability tests</strong></td>
-<td>Synthetic pings from Azure PoPs — alerts on downtime</td>
+<td>Pings sintéticos a partir de PoPs do Azure — alertas em caso de indisponibilidade</td>
 </tr>
 <tr>
 <td><strong>Smart Detection</strong></td>
-<td>Automatic anomaly detection for failure spikes, response time degradation</td>
+<td>Detecção automática de anomalias para picos de falhas e degradação do tempo de resposta</td>
 </tr>
 <tr>
 <td><strong>Live Metrics</strong></td>
-<td>Real-time streaming of telemetry with 1-second granularity</td>
+<td>Streaming em tempo real de telemetria com granularidade de 1 segundo</td>
 </tr>
 <tr>
 <td><strong>Application Map</strong></td>
-<td>Auto-generated service dependency graph</td>
+<td>Grafo de dependências de serviços gerado automaticamente</td>
 </tr>
 </tbody>
 </table>
@@ -3386,14 +3386,14 @@
 <a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="na">sensitive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">true</span>
 <a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="p">}</span>
 </code></pre></div>
-<p>Use the connection string (not the deprecated instrumentation key) in your application:</p>
+<p>Use a string de conexão (não a chave de instrumentação obsoleta) em sua aplicação:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Python SDK — no dependency on APPLICATIONINSIGHTS_CONNECTION_STRING env var</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">azure.monitor.opentelemetry</span><span class="w"> </span><span class="kn">import</span> <span class="n">configure_azure_monitor</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">configure_azure_monitor</span><span class="p">(</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">connection_string</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;APPLICATIONINSIGHTS_CONNECTION_STRING&quot;</span><span class="p">]</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">)</span>
 </code></pre></div>
-<h3 id="availability-test">Availability test</h3>
+<h3 id="teste-de-disponibilidade">Teste de disponibilidade</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azurerm_application_insights_standard_web_test&quot;</span><span class="w"> </span><span class="nv">&quot;health&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="na">name</span><span class="w">                    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;health-check&quot;</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="na">resource_group_name</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="nv">azurerm_resource_group.main.name</span>
@@ -3419,7 +3419,7 @@
 </code></pre></div>
 <hr />
 <h2 id="container-insights">Container Insights</h2>
-<p>Container Insights is the AKS-specific observability add-on. It deploys a DaemonSet that collects node and pod metrics and ships container logs to Log Analytics.</p>
+<p>Container Insights é o complemento de observabilidade específico para AKS. Implanta um DaemonSet que coleta métricas de nós e pods e envia logs de contêineres para o Log Analytics.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Enable Container Insights on AKS cluster</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azurerm_kubernetes_cluster&quot;</span><span class="w"> </span><span class="nv">&quot;main&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="c1">  # ... existing config ...</span>
@@ -3432,7 +3432,7 @@
 <a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span><span class="nb">monitor_metrics</span><span class="w"> </span><span class="p">{}</span><span class="c1">  # enable Managed Prometheus</span>
 <a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="useful-kql-queries">Useful KQL queries</h3>
+<h3 id="consultas-kql-uteis">Consultas KQL úteis</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c">// Container CPU usage by namespace</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">Perf</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">|</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">ObjectName</span><span class="w"> </span><span class="p">==</span><span class="w"> </span><span class="s">&quot;K8SContainer&quot;</span>
@@ -3452,7 +3452,7 @@
 </code></pre></div>
 <hr />
 <h2 id="azure-managed-grafana">Azure Managed Grafana</h2>
-<p>Azure Managed Grafana is a fully managed Grafana instance. It integrates with Azure Monitor (metrics), Azure Data Explorer and Prometheus-compatible endpoints including the AKS Managed Prometheus workspace.</p>
+<p>Azure Managed Grafana é uma instância Grafana totalmente gerenciada. Integra-se com Azure Monitor (métricas), Azure Data Explorer e endpoints compatíveis com Prometheus, incluindo o workspace Managed Prometheus do AKS.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azurerm_dashboard_grafana&quot;</span><span class="w"> </span><span class="nv">&quot;main&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="na">name</span><span class="w">                              </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}-grafana&quot;</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="na">resource_group_name</span><span class="w">               </span><span class="o">=</span><span class="w"> </span><span class="nv">azurerm_resource_group.main.name</span>
@@ -3472,8 +3472,8 @@
 </code></pre></div>
 <hr />
 <h2 id="cost-management">Cost Management</h2>
-<p>Azure Cost Management and Billing provides budgets, cost alerts, cost allocation via tags and recommendations.</p>
-<h3 id="budgets">Budgets</h3>
+<p>Azure Cost Management and Billing fornece orçamentos, alertas de custo, alocação de custos via tags e recomendações.</p>
+<h3 id="orcamentos">Orçamentos</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azurerm_consumption_budget_subscription&quot;</span><span class="w"> </span><span class="nv">&quot;prod&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="na">name</span><span class="w">            </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;prod-monthly-budget&quot;</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="na">subscription_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.azurerm_subscription.current.id</span>
@@ -3501,11 +3501,11 @@
 <a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a><span class="p">}</span>
 </code></pre></div>
 <div class="admonition tip">
-<p class="admonition-title">Tag enforcement for cost allocation</p>
-<p>Use <strong>Azure Policy</strong> to enforce <code>environment</code> and <code>cost-center</code> tags on all resource groups at creation time. Log Analytics and Cost Management both support filtering by tags, enabling per-team cost reporting from a single workspace.</p>
+<p class="admonition-title">Aplicação de tags para alocação de custos</p>
+<p>Use <strong>Azure Policy</strong> para aplicar tags <code>environment</code> e <code>cost-center</code> em todos os grupos de recursos no momento da criação. Log Analytics e Cost Management suportam filtragem por tags, permitindo relatórios de custo por equipe a partir de um único workspace.</p>
 </div>
 <hr />
-<p><a class="md-button" href="../">← Azure Overview</a>
+<p><a class="md-button" href="../">← Visão Geral Azure</a>
 <a class="md-button md-button--primary" href="../iac/">IaC &amp; DevOps →</a></p>
 
 

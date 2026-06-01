@@ -1,47 +1,47 @@
 ---
-title: Managed Kubernetes
-description: EKS, AKS and GKE — cluster setup, node pools, IAM integration, add-ons, upgrades and operational patterns.
+title: Kubernetes Gerenciado
+description: EKS, AKS e GKE — configuração de cluster, grupos de nós, integração IAM, complementos, atualizações e padrões operacionais.
 ---
 
 <div class="domain-page-hero" data-domain="containers">
   <div class="dph-left">
     <span class="dph-eyebrow">// containers-orchestration / managed-kubernetes</span>
-    <h1 class="dph-title">Managed Kubernetes</h1>
-    <p class="dph-desc">Production Kubernetes without managing the control plane. EKS, AKS and GKE handle master node availability, patching and upgrades — letting teams focus on workloads. Each offering has distinct IAM, networking, node management and add-on patterns worth mastering.</p>
+    <h1 class="dph-title">Kubernetes Gerenciado</h1>
+    <p class="dph-desc">Kubernetes em produção sem gerenciar o plano de controle. EKS, AKS e GKE gerenciam a disponibilidade do nó mestre, patches e atualizações — permitindo que as equipes se concentrem nos workloads. Cada oferta tem padrões distintos de IAM, rede, gerenciamento de nós e complementos que valem a pena dominar.</p>
     <div class="dph-badges">
       <span class="tech-badge">EKS</span>
       <span class="tech-badge">AKS</span>
       <span class="tech-badge">GKE</span>
-      <span class="tech-badge">Node Pools</span>
-      <span class="tech-badge">IAM Integration</span>
-      <span class="tech-badge">Cluster Upgrades</span>
+      <span class="tech-badge">Grupos de Nós</span>
+      <span class="tech-badge">Integração IAM</span>
+      <span class="tech-badge">Atualizações de Cluster</span>
     </div>
   </div>
 </div>
 
-[← Container Security](container-security.md) | [← Containers Overview](index.md)
+[← Segurança de Contêineres](container-security.md) | [← Visão Geral de Contêineres](index.md)
 
 ---
 
-## Provider Comparison
+## Comparação de Provedores
 
-| Feature | EKS (AWS) | AKS (Azure) | GKE (GCP) |
+| Recurso | EKS (AWS) | AKS (Azure) | GKE (GCP) |
 |---------|-----------|-------------|-----------|
-| **Control plane cost** | $0.10/hr per cluster | Free | Free (Autopilot: usage-based) |
-| **IAM integration** | IRSA (OIDC) / Pod Identity | Workload Identity (OIDC) | Workload Identity |
-| **Node types** | Managed, Self-managed, Fargate | System + User node pools | Standard, Autopilot |
-| **Upgrade strategy** | Manual / Auto (auto_upgrade) | Auto-upgrade channels | Release channels |
+| **Custo do plano de controle** | $0,10/hr por cluster | Gratuito | Gratuito (Autopilot: baseado em uso) |
+| **Integração IAM** | IRSA (OIDC) / Pod Identity | Workload Identity (OIDC) | Workload Identity |
+| **Tipos de nó** | Gerenciado, Autogerenciado, Fargate | Grupos de nós System + User | Standard, Autopilot |
+| **Estratégia de atualização** | Manual / Auto (auto_upgrade) | Canais de atualização automática | Canais de lançamento |
 | **CNI** | AWS VPC CNI, Calico, Cilium | Azure CNI, Kubenet, Cilium | VPC-native, Dataplane V2 (eBPF) |
-| **GPU nodes** | P3, G4dn, P4d | NC-series, ND-series | A100, H100, T4 node pools |
-| **Spot/preemptible** | Spot instances / Karpenter | Spot node pools | Spot/Preemptible node pools |
-| **Secret integration** | AWS Secrets Manager (ASCP) | Azure Key Vault CSI driver | Secret Manager CSI driver |
-| **Cluster API** | eksctl / Terraform | AZ CLI / Terraform | gcloud / Terraform |
+| **Nós GPU** | P3, G4dn, P4d | NC-series, ND-series | Grupos de nós A100, H100, T4 |
+| **Spot/preemptível** | Instâncias Spot / Karpenter | Grupos de nós Spot | Grupos de nós Spot/Preemptível |
+| **Integração de segredos** | AWS Secrets Manager (ASCP) | Azure Key Vault CSI driver | Secret Manager CSI driver |
+| **API do Cluster** | eksctl / Terraform | AZ CLI / Terraform | gcloud / Terraform |
 
 ---
 
 ## EKS (Amazon Elastic Kubernetes Service)
 
-### Cluster with Terraform
+### Cluster com Terraform
 
 ```hcl
 module "eks" {
@@ -134,7 +134,7 @@ module "eks" {
 }
 ```
 
-### IRSA — IAM Roles for Service Accounts
+### IRSA — Funções IAM para Contas de Serviço
 
 ```hcl
 # Create IAM role trusted by the pod's service account
@@ -167,7 +167,7 @@ metadata:
     eks.amazonaws.com/role-arn: arn:aws:iam::123456789012:role/app-s3-role
 ```
 
-### Karpenter — Node Autoprovisioning
+### Karpenter — Aprovisionamento Automático de Nós
 
 ```yaml
 # NodePool — replaces Cluster Autoscaler
@@ -206,7 +206,7 @@ spec:
     consolidateAfter: 30s
 ```
 
-### eksctl Quick Reference
+### Referência Rápida do eksctl
 
 ```bash
 # Create cluster
@@ -239,7 +239,7 @@ eksctl upgrade nodegroup --cluster prod-cluster --name general --kubernetes-vers
 
 ## AKS (Azure Kubernetes Service)
 
-### Cluster with Terraform
+### Cluster com Terraform
 
 ```hcl
 resource "azurerm_kubernetes_cluster" "prod" {
@@ -357,7 +357,7 @@ metadata:
 
 ## GKE (Google Kubernetes Engine)
 
-### Cluster with Terraform
+### Cluster com Terraform
 
 ```hcl
 resource "google_container_cluster" "prod" {
@@ -502,11 +502,11 @@ resource "google_container_cluster" "autopilot" {
 ```
 
 !!! tip "Autopilot vs Standard"
-    Autopilot manages nodes, node pools, OS, and capacity automatically. You pay per Pod resource request (not per node). Ideal for teams that want to avoid node operations. Restrictions: no privileged pods, no DaemonSets, no custom kernels.
+    O Autopilot gerencia nós, grupos de nós, sistema operacional e capacidade automaticamente. Você paga por solicitação de recurso de Pod (não por nó). Ideal para equipes que desejam evitar operações de nós. Restrições: sem pods privilegiados, sem DaemonSets, sem kernels personalizados.
 
 ---
 
-## Cluster Upgrade Strategy
+## Estratégia de Atualização de Cluster
 
 ```bash
 # EKS — blue/green via eksctl
@@ -533,22 +533,22 @@ gcloud container clusters upgrade prod-cluster \
 
 ---
 
-## Production Operations Checklist
+## Checklist de Operações em Produção
 
-| Area | Practice |
+| Área | Prática |
 |------|----------|
-| **Multi-AZ** | Spread node pools across ≥3 availability zones |
-| **Private cluster** | Disable public API endpoint access; use VPN / bastion |
-| **Node auto-upgrade** | Enable for OS patches; use maintenance windows for control |
-| **PodDisruptionBudget** | Set for all stateful and critical workloads |
-| **Resource quotas** | Apply per-namespace `ResourceQuota` and `LimitRange` |
-| **Cluster autoscaler** | Use Karpenter (EKS), CA (AKS/GKE), or Autopilot (GKE) |
-| **Spot/preemptible nodes** | Use for batch and stateless workloads to cut costs |
-| **etcd backup** | Managed K8s handles this — verify SLA and PITR window |
-| **Audit logs** | Enable K8s audit logging; forward to SIEM |
-| **RBAC audit** | Regularly review `ClusterRoleBindings` and `RoleBindings` |
-| **Image scanning** | Enable scan-on-push in ECR / ACR / Artifact Registry |
-| **Namespace isolation** | NetworkPolicy + PSS enforced per namespace |
-| **Monitoring** | Prometheus + Grafana or cloud-native (CloudWatch/AzMonitor/Cloud Ops) |
+| **Multi-AZ** | Distribuir grupos de nós em ≥3 zonas de disponibilidade |
+| **Cluster privado** | Desabilitar acesso público ao endpoint da API; usar VPN / bastion |
+| **Atualização automática de nós** | Habilitar para patches de SO; usar janelas de manutenção para controle |
+| **PodDisruptionBudget** | Definir para todos os workloads stateful e críticos |
+| **Cotas de recursos** | Aplicar `ResourceQuota` e `LimitRange` por namespace |
+| **Autoescalonador de cluster** | Usar Karpenter (EKS), CA (AKS/GKE) ou Autopilot (GKE) |
+| **Nós Spot/preemptíveis** | Usar para workloads batch e stateless para reduzir custos |
+| **Backup do etcd** | O K8s gerenciado trata disso — verificar SLA e janela de PITR |
+| **Logs de auditoria** | Habilitar logs de auditoria do K8s; encaminhar para SIEM |
+| **Auditoria de RBAC** | Revisar regularmente `ClusterRoleBindings` e `RoleBindings` |
+| **Varredura de imagens** | Habilitar varredura no push no ECR / ACR / Artifact Registry |
+| **Isolamento de namespace** | NetworkPolicy + PSS aplicados por namespace |
+| **Monitoramento** | Prometheus + Grafana ou nativo da nuvem (CloudWatch/AzMonitor/Cloud Ops) |
 
-[← Container Security](container-security.md) | [← Containers Overview](index.md)
+[← Segurança de Contêineres](container-security.md) | [← Visão Geral de Contêineres](index.md)

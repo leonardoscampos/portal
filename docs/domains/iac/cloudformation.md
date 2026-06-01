@@ -1,13 +1,13 @@
 ---
 title: CloudFormation
-description: AWS CloudFormation templates, stacks, StackSets, CDK and custom resources reference.
+description: Referência de templates, stacks, StackSets, CDK e recursos personalizados do AWS CloudFormation.
 ---
 
 <div class="domain-page-hero" data-domain="iac">
   <div class="dph-left">
     <span class="dph-eyebrow">// infrastructure-as-code / cloudformation</span>
     <h1 class="dph-title">CloudFormation</h1>
-    <p class="dph-desc">AWS-native declarative IaC. CloudFormation templates describe AWS resources and their dependencies; the service handles provisioning, updates and rollback automatically. CDK adds a higher-level abstraction using real programming languages that compiles down to CloudFormation.</p>
+    <p class="dph-desc">IaC declarativo nativo da AWS. Templates CloudFormation descrevem recursos AWS e suas dependências; o serviço gerencia provisionamento, atualizações e rollback automaticamente. O CDK adiciona uma abstração de mais alto nível usando linguagens de programação reais que compilam para CloudFormation.</p>
     <div class="dph-badges">
       <span class="tech-badge">Templates</span>
       <span class="tech-badge">Stacks</span>
@@ -19,11 +19,11 @@ description: AWS CloudFormation templates, stacks, StackSets, CDK and custom res
   </div>
 </div>
 
-[← Ansible](ansible.md) | [← IaC Overview](index.md) | [Pulumi →](pulumi.md)
+[← Ansible](ansible.md) | [← Visão Geral de IaC](index.md) | [Pulumi →](pulumi.md)
 
 ---
 
-## Template Structure
+## Estrutura do Template
 
 ```yaml
 AWSTemplateFormatVersion: "2010-09-09"
@@ -90,27 +90,27 @@ Outputs:
 
 ---
 
-## Intrinsic Functions
+## Funções Intrínsecas
 
-| Function | Use Case |
+| Função | Caso de Uso |
 |----------|----------|
-| `!Ref` | Reference a parameter or resource's primary ID |
-| `!GetAtt Resource.Attr` | Get a specific attribute of a resource |
-| `!Sub "string ${Var}"` | String interpolation |
-| `!Join [delim, [list]]` | Concatenate a list with a delimiter |
-| `!Select [idx, list]` | Pick an element from a list |
-| `!Split [delim, str]` | Split a string into a list |
-| `!FindInMap [Map, Key1, Key2]` | Look up a value in a Mappings section |
-| `!If [Cond, True, False]` | Conditional value selection |
-| `!Equals [A, B]` | Produces a Condition boolean |
-| `!And / !Or / !Not` | Compound condition logic |
-| `!ImportValue ExportName` | Consume a value exported by another stack |
+| `!Ref` | Referenciar o ID primário de um parâmetro ou recurso |
+| `!GetAtt Resource.Attr` | Obter um atributo específico de um recurso |
+| `!Sub "string ${Var}"` | Interpolação de strings |
+| `!Join [delim, [list]]` | Concatenar uma lista com um delimitador |
+| `!Select [idx, list]` | Selecionar um elemento de uma lista |
+| `!Split [delim, str]` | Dividir uma string em uma lista |
+| `!FindInMap [Map, Key1, Key2]` | Buscar um valor na seção Mappings |
+| `!If [Cond, True, False]` | Seleção condicional de valor |
+| `!Equals [A, B]` | Produz um booleano de Condição |
+| `!And / !Or / !Not` | Lógica de condição composta |
+| `!ImportValue ExportName` | Consumir um valor exportado por outra stack |
 
 ---
 
 ## Change Sets
 
-Change sets give you a preview of what will be modified before applying:
+Change sets oferecem uma prévia do que será modificado antes de aplicar:
 
 ```bash
 # Create a change set
@@ -134,9 +134,9 @@ aws cloudformation execute-change-set \
 
 ---
 
-## StackSets — Multi-Account / Multi-Region
+## StackSets — Multi-Conta / Multi-Região
 
-StackSets deploy a single template across multiple AWS accounts and/or regions from a management account.
+StackSets implantam um único template em múltiplas contas e/ou regiões AWS a partir de uma conta de gerenciamento.
 
 ```yaml
 # stackset.yaml — deploy a GuardDuty baseline to all accounts
@@ -171,9 +171,9 @@ aws cloudformation create-stack-instances \
 
 ---
 
-## Custom Resources
+## Recursos Personalizados
 
-Custom resources let you invoke Lambda to manage anything not natively supported.
+Recursos personalizados permitem invocar Lambda para gerenciar qualquer coisa sem suporte nativo.
 
 ```yaml
 Resources:
@@ -209,7 +209,7 @@ Resources:
 
 ## AWS CDK
 
-CDK (Cloud Development Kit) lets you write infrastructure in TypeScript, Python, Java or Go — compiled to CloudFormation at synth time.
+O CDK (Cloud Development Kit) permite escrever infraestrutura em TypeScript, Python, Java ou Go — compilado para CloudFormation no momento do synth.
 
 === "TypeScript"
 
@@ -287,9 +287,9 @@ cdk destroy      # tear down the stack
 
 ---
 
-## Drift Detection
+## Detecção de Desvio
 
-CloudFormation can detect when real-world resources have drifted from their template definition.
+O CloudFormation pode detectar quando recursos reais desviaram de sua definição no template.
 
 ```bash
 # Start drift detection on a stack
@@ -307,7 +307,7 @@ aws cloudformation describe-stack-resource-drifts \
 
 ---
 
-## Rollback & Stack Policies
+## Rollback e Políticas de Stack
 
 ```bash
 # Disable rollback (debug failed deployments)
@@ -330,4 +330,4 @@ aws cloudformation set-stack-policy \
 ```
 
 !!! warning "CDK vs Terraform"
-    CDK is an excellent choice if your team is already AWS-only and prefers typed languages. For multi-cloud workloads or teams already invested in HCL, Terraform remains the stronger choice.
+    O CDK é uma excelente escolha se sua equipe já é exclusivamente AWS e prefere linguagens tipadas. Para cargas de trabalho multi-cloud ou equipes já investidas em HCL, o Terraform continua sendo a escolha mais robusta.

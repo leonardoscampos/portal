@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Azure VMs, AKS, App Service, Container Apps, Functions — compute on Microsoft Azure.">
+        <meta name="description" content="Azure VMs, AKS, App Service, Container Apps, Functions — computação no Microsoft Azure.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -742,10 +742,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#vm-series-overview" class="md-nav__link">
+  <a href="#visao-geral-das-series-de-vm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        VM series overview
+        Visão Geral das Séries de VM
       
     </span>
   </a>
@@ -781,10 +781,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#node-pool-types" class="md-nav__link">
+  <a href="#tipos-de-node-pool" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Node pool types
+        Tipos de Node Pool
       
     </span>
   </a>
@@ -792,10 +792,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#workload-identity-pod-level-auth" class="md-nav__link">
+  <a href="#workload-identity-autenticacao-em-nivel-de-pod" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workload Identity (pod-level auth)
+        Workload Identity (autenticação em nível de pod)
       
     </span>
   </a>
@@ -831,10 +831,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#hosting-plans" class="md-nav__link">
+  <a href="#planos-de-hospedagem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hosting plans
+        Planos de Hospedagem
       
     </span>
   </a>
@@ -3068,10 +3068,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#vm-series-overview" class="md-nav__link">
+  <a href="#visao-geral-das-series-de-vm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        VM series overview
+        Visão Geral das Séries de VM
       
     </span>
   </a>
@@ -3107,10 +3107,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#node-pool-types" class="md-nav__link">
+  <a href="#tipos-de-node-pool" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Node pool types
+        Tipos de Node Pool
       
     </span>
   </a>
@@ -3118,10 +3118,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#workload-identity-pod-level-auth" class="md-nav__link">
+  <a href="#workload-identity-autenticacao-em-nivel-de-pod" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Workload Identity (pod-level auth)
+        Workload Identity (autenticação em nível de pod)
       
     </span>
   </a>
@@ -3157,10 +3157,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#hosting-plans" class="md-nav__link">
+  <a href="#planos-de-hospedagem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hosting plans
+        Planos de Hospedagem
       
     </span>
   </a>
@@ -3204,7 +3204,7 @@
   <div class="dph-left">
     <span class="dph-eyebrow">// azure / compute</span>
     <h1 class="dph-title">Azure Compute</h1>
-    <p class="dph-desc">From managed Kubernetes clusters to KEDA-powered serverless containers, Azure provides compute for every workload profile. AKS is the flagship — production-ready, deeply integrated with Entra ID and the Azure networking stack.</p>
+    <p class="dph-desc">De clusters Kubernetes gerenciados a containers serverless com KEDA, o Azure oferece computação para cada perfil de carga de trabalho. O AKS é o carro-chefe — pronto para produção, profundamente integrado ao Entra ID e à stack de rede do Azure.</p>
     <div class="dph-badges">
       <span class="tech-badge">Azure VMs</span>
       <span class="tech-badge">AKS</span>
@@ -3218,55 +3218,55 @@
 
 <hr />
 <h2 id="azure-virtual-machines">Azure Virtual Machines</h2>
-<p>Azure VMs cover every workload from general-purpose to GPU-accelerated HPC. The naming convention encodes the capability: <code>Standard_D4s_v5</code> → D-series (general), 4 vCPUs, s = premium storage, v5 generation.</p>
-<h3 id="vm-series-overview">VM series overview</h3>
+<p>As Azure VMs cobrem todas as cargas de trabalho, de uso geral a HPC com aceleração por GPU. A convenção de nomenclatura codifica a capacidade: <code>Standard_D4s_v5</code> → Série D (geral), 4 vCPUs, s = armazenamento premium, geração v5.</p>
+<h3 id="visao-geral-das-series-de-vm">Visão Geral das Séries de VM</h3>
 <table>
 <thead>
 <tr>
-<th>Series</th>
-<th>Purpose</th>
-<th>Example sizes</th>
+<th>Série</th>
+<th>Propósito</th>
+<th>Tamanhos de Exemplo</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>B</strong> (Burstable)</td>
-<td>Dev/test, variable CPU</td>
+<td><strong>B</strong> (Expansível)</td>
+<td>Dev/teste, CPU variável</td>
 <td><code>Standard_B2s</code>, <code>Standard_B4ms</code></td>
 </tr>
 <tr>
-<td><strong>D</strong> (General)</td>
-<td>Balanced CPU/memory</td>
+<td><strong>D</strong> (Geral)</td>
+<td>CPU/memória balanceados</td>
 <td><code>Standard_D4s_v5</code>, <code>Standard_D8s_v5</code></td>
 </tr>
 <tr>
-<td><strong>F</strong> (Compute)</td>
-<td>High CPU-to-memory</td>
+<td><strong>F</strong> (Computação)</td>
+<td>Alta proporção CPU/memória</td>
 <td><code>Standard_F8s_v2</code>, <code>Standard_F16s_v2</code></td>
 </tr>
 <tr>
-<td><strong>E</strong> (Memory)</td>
-<td>In-memory databases, large JVMs</td>
+<td><strong>E</strong> (Memória)</td>
+<td>Bancos de dados em memória, JVMs grandes</td>
 <td><code>Standard_E8s_v5</code>, <code>Standard_E32s_v5</code></td>
 </tr>
 <tr>
-<td><strong>L</strong> (Storage)</td>
-<td>High local NVMe throughput</td>
+<td><strong>L</strong> (Armazenamento)</td>
+<td>Alto throughput NVMe local</td>
 <td><code>Standard_L8s_v3</code>, <code>Standard_L32s_v3</code></td>
 </tr>
 <tr>
 <td><strong>N</strong> (GPU)</td>
-<td>ML training, rendering</td>
+<td>Treinamento de ML, renderização</td>
 <td><code>Standard_NC24ads_A100_v4</code></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Spot VMs</p>
-<p>Use <strong>Azure Spot VMs</strong> for fault-tolerant batch workloads at up to 90% discount. Set an eviction policy of <code>Deallocate</code> (retains disk) rather than <code>Delete</code> to preserve state across evictions.</p>
+<p>Use <strong>Azure Spot VMs</strong> para cargas de trabalho em lote tolerantes a falhas com até 90% de desconto. Defina uma política de remoção <code>Deallocate</code> (mantém o disco) em vez de <code>Delete</code> para preservar o estado entre remoções.</p>
 </div>
 <h3 id="virtual-machine-scale-sets-vmss">Virtual Machine Scale Sets (VMSS)</h3>
-<p>VMSS is the Azure equivalent of AWS ASGs — manages a fleet of identical VM instances with automatic scaling and rolling upgrades.</p>
+<p>VMSS é o equivalente Azure dos ASGs da AWS — gerencia uma frota de instâncias de VM idênticas com escalonamento automático e atualizações graduais.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azurerm_linux_virtual_machine_scale_set&quot;</span><span class="w"> </span><span class="nv">&quot;app&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="na">name</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}-vmss&quot;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="na">resource_group_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">azurerm_resource_group.main.name</span>
@@ -3310,36 +3310,36 @@
 </code></pre></div>
 <hr />
 <h2 id="aks-azure-kubernetes-service">AKS — Azure Kubernetes Service</h2>
-<p>AKS is Azure's managed Kubernetes service. The control plane is fully managed; you pay only for agent nodes. AKS integrates natively with Azure CNI, Entra ID Workload Identity, Azure Monitor, ACR and Azure Policy.</p>
-<h3 id="node-pool-types">Node pool types</h3>
+<p>AKS é o serviço Kubernetes gerenciado do Azure. O plano de controle é totalmente gerenciado; você paga apenas pelos nós agentes. O AKS integra-se nativamente com Azure CNI, Entra ID Workload Identity, Azure Monitor, ACR e Azure Policy.</p>
+<h3 id="tipos-de-node-pool">Tipos de Node Pool</h3>
 <table>
 <thead>
 <tr>
-<th>Type</th>
-<th>Description</th>
-<th>Best for</th>
+<th>Tipo</th>
+<th>Descrição</th>
+<th>Melhor para</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>System node pool</strong></td>
-<td>Runs critical system pods (coredns, metrics-server)</td>
-<td>Required in every cluster</td>
+<td><strong>Node pool de sistema</strong></td>
+<td>Executa pods de sistema críticos (coredns, metrics-server)</td>
+<td>Obrigatório em todo cluster</td>
 </tr>
 <tr>
-<td><strong>User node pool</strong></td>
-<td>Workload pods, separate from system</td>
-<td>Isolate workloads by pool</td>
+<td><strong>Node pool de usuário</strong></td>
+<td>Pods de carga de trabalho, separados do sistema</td>
+<td>Isolar cargas de trabalho por pool</td>
 </tr>
 <tr>
-<td><strong>Spot node pool</strong></td>
-<td>Evictable VMs at deep discount</td>
-<td>Batch, CI runners</td>
+<td><strong>Node pool Spot</strong></td>
+<td>VMs removíveis com grande desconto</td>
+<td>Batch, executores de CI</td>
 </tr>
 <tr>
 <td><strong>Virtual nodes</strong> (ACI)</td>
-<td>Serverless burst; no VM provisioning</td>
-<td>Spiky workloads</td>
+<td>Burst serverless; sem provisionamento de VM</td>
+<td>Cargas de trabalho com picos</td>
 </tr>
 </tbody>
 </table>
@@ -3391,8 +3391,8 @@
 <a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a><span class="w">  </span><span class="nb">node_labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;workload&quot;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;app&quot;</span><span class="w"> </span><span class="p">}</span>
 <a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="workload-identity-pod-level-auth">Workload Identity (pod-level auth)</h3>
-<p>Replaces pod-managed identities (aad-pod-identity, now deprecated). Uses OIDC federation — pods get a signed token that Azure trusts, eliminating the need for client secrets or certificates.</p>
+<h3 id="workload-identity-autenticacao-em-nivel-de-pod">Workload Identity (autenticação em nível de pod)</h3>
+<p>Substitui as identidades gerenciadas por pod (aad-pod-identity, agora depreciado). Usa federação OIDC — os pods recebem um token assinado em que o Azure confia, eliminando a necessidade de segredos de cliente ou certificados.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azurerm_user_assigned_identity&quot;</span><span class="w"> </span><span class="nv">&quot;app&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="na">name</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}-app-identity&quot;</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="na">resource_group_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">azurerm_resource_group.main.name</span>
@@ -3410,7 +3410,7 @@
 </code></pre></div>
 <hr />
 <h2 id="container-apps">Container Apps</h2>
-<p>Azure Container Apps is a serverless container platform built on Kubernetes + KEDA + Dapr — without exposing any Kubernetes API. Ideal for microservices, event-driven workers and API backends that need scale-to-zero.</p>
+<p>Azure Container Apps é uma plataforma de containers serverless construída sobre Kubernetes + KEDA + Dapr — sem expor nenhuma API Kubernetes. Ideal para microsserviços, workers orientados a eventos e backends de API que precisam de scale-to-zero.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azurerm_container_app&quot;</span><span class="w"> </span><span class="nv">&quot;api&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="na">name</span><span class="w">                         </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;api&quot;</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="na">container_app_environment_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">azurerm_container_app_environment.main.id</span>
@@ -3442,76 +3442,76 @@
 </code></pre></div>
 <hr />
 <h2 id="azure-functions">Azure Functions</h2>
-<p>Serverless event-driven compute. Supports trigger types: HTTP, Timer, Service Bus, Event Hub, Blob, Queue, Cosmos DB change feed and more.</p>
-<h3 id="hosting-plans">Hosting plans</h3>
+<p>Computação serverless orientada a eventos. Suporta tipos de gatilho: HTTP, Timer, Service Bus, Event Hub, Blob, Queue, feed de alterações do Cosmos DB e mais.</p>
+<h3 id="planos-de-hospedagem">Planos de Hospedagem</h3>
 <table>
 <thead>
 <tr>
-<th>Plan</th>
+<th>Plano</th>
 <th>Cold start</th>
-<th>Scale</th>
-<th>Best for</th>
+<th>Escala</th>
+<th>Melhor para</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Consumption</strong></td>
-<td>Yes</td>
-<td>0→200 instances</td>
-<td>Infrequent, bursty workloads</td>
+<td>Sim</td>
+<td>0→200 instâncias</td>
+<td>Cargas de trabalho infrequentes e com picos</td>
 </tr>
 <tr>
 <td><strong>Flex Consumption</strong></td>
-<td>Minimised</td>
-<td>0→1000, pre-warm</td>
-<td>High-scale with cost control</td>
+<td>Minimizado</td>
+<td>0→1000, pré-aquecido</td>
+<td>Alta escala com controle de custo</td>
 </tr>
 <tr>
 <td><strong>Premium</strong></td>
-<td>No</td>
-<td>1→100 (pre-warmed)</td>
-<td>Low-latency, VNet integration</td>
+<td>Não</td>
+<td>1→100 (pré-aquecido)</td>
+<td>Baixa latência, integração com VNet</td>
 </tr>
 <tr>
 <td><strong>Dedicated (App Service)</strong></td>
-<td>No</td>
+<td>Não</td>
 <td>Manual/ASG</td>
-<td>Predictable, always-on workloads</td>
+<td>Cargas de trabalho previsíveis e sempre ativas</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Durable Functions</p>
-<p>Use <strong>Durable Functions</strong> for stateful orchestrations: fan-out/fan-in patterns, long-running workflows with human approval steps, and chaining async operations without managing state externally.</p>
+<p>Use <strong>Durable Functions</strong> para orquestrações com estado: padrões fan-out/fan-in, fluxos de trabalho de longa duração com etapas de aprovação humana e encadeamento de operações assíncronas sem gerenciar estado externamente.</p>
 </div>
 <hr />
 <h2 id="azure-arc">Azure Arc</h2>
-<p>Azure Arc extends the Azure control plane to infrastructure outside Azure — on-premises servers, other cloud VMs, and edge devices. From a DevOps perspective, the most valuable use case is <strong>Arc-enabled Kubernetes</strong>, which lets you manage non-Azure clusters (EKS, GKE, on-prem) through Azure's tooling.</p>
+<p>Azure Arc estende o plano de controle do Azure para infraestrutura fora do Azure — servidores on-premises, VMs em outras nuvens e dispositivos de borda. Do ponto de vista DevOps, o caso de uso mais valioso é o <strong>Kubernetes habilitado para Arc</strong>, que permite gerenciar clusters não-Azure (EKS, GKE, on-prem) por meio das ferramentas do Azure.</p>
 <table>
 <thead>
 <tr>
-<th>Arc capability</th>
-<th>What it enables</th>
+<th>Capacidade Arc</th>
+<th>O que habilita</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Arc-enabled servers</strong></td>
-<td>Azure Policy, Azure Monitor, Defender for Servers on non-Azure VMs</td>
+<td><strong>Servidores habilitados para Arc</strong></td>
+<td>Azure Policy, Azure Monitor, Defender para Servidores em VMs não-Azure</td>
 </tr>
 <tr>
-<td><strong>Arc-enabled Kubernetes</strong></td>
-<td>GitOps (Flux v2), Azure Monitor, Defender for Containers on any cluster</td>
+<td><strong>Kubernetes habilitado para Arc</strong></td>
+<td>GitOps (Flux v2), Azure Monitor, Defender para Containers em qualquer cluster</td>
 </tr>
 <tr>
-<td><strong>Arc-enabled data services</strong></td>
-<td>SQL Managed Instance on-prem with Azure billing and patching</td>
+<td><strong>Serviços de dados habilitados para Arc</strong></td>
+<td>SQL Managed Instance on-premises com faturamento e patches do Azure</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<p><a class="md-button" href="../">← Azure Overview</a>
-<a class="md-button md-button--primary" href="../storage/">Storage →</a></p>
+<p><a class="md-button" href="../">← Visão Geral Azure</a>
+<a class="md-button md-button--primary" href="../storage/">Armazenamento →</a></p>
 
 
 

@@ -1,6 +1,6 @@
 ---
-title: GCP Overview
-description: GCP compute, storage, networking, security, observability and IaC reference for DevOps engineers.
+title: GCP Visão Geral
+description: Referência de computação, armazenamento, rede, segurança, observabilidade e IaC no GCP para engenheiros DevOps.
 hide:
   - toc
 ---
@@ -9,7 +9,7 @@ hide:
   <div class="dph-left">
     <span class="dph-eyebrow">// cloud-infrastructure / gcp</span>
     <h1 class="dph-title">Google Cloud Platform</h1>
-    <p class="dph-desc">The cloud born from Google's own infrastructure. Home of Kubernetes (GKE is the gold standard), serverless containers via Cloud Run, and the most advanced data and ML platform in the industry.</p>
+    <p class="dph-desc">A nuvem nascida da própria infraestrutura do Google. Lar do Kubernetes (GKE é o padrão ouro), containers serverless via Cloud Run, e a plataforma de dados e ML mais avançada da indústria.</p>
     <div class="dph-badges">
       <span class="tech-badge">GKE</span>
       <span class="tech-badge">Cloud Run</span>
@@ -28,7 +28,7 @@ hide:
   <a href="compute/" class="section-nav-card">
     <div class="snc-icon">&#127968;</div>
     <div class="snc-body">
-      <span class="snc-label">Compute</span>
+      <span class="snc-label">Computação</span>
       <span class="snc-desc">GKE, Compute Engine, Cloud Run, Cloud Functions, GKE Autopilot, Batch.</span>
     </div>
     <span class="snc-arrow">&#8594;</span>
@@ -36,7 +36,7 @@ hide:
   <a href="storage/" class="section-nav-card">
     <div class="snc-icon">&#128230;</div>
     <div class="snc-body">
-      <span class="snc-label">Storage</span>
+      <span class="snc-label">Armazenamento</span>
       <span class="snc-desc">Cloud Storage, Persistent Disk, Filestore, Cloud SQL, AlloyDB, Spanner.</span>
     </div>
     <span class="snc-arrow">&#8594;</span>
@@ -44,7 +44,7 @@ hide:
   <a href="networking/" class="section-nav-card">
     <div class="snc-icon">&#127760;</div>
     <div class="snc-body">
-      <span class="snc-label">Networking</span>
+      <span class="snc-label">Rede</span>
       <span class="snc-desc">VPC, Cloud DNS, Cloud CDN, Cloud Load Balancing, Cloud NAT, Cloud Interconnect.</span>
     </div>
     <span class="snc-arrow">&#8594;</span>
@@ -52,7 +52,7 @@ hide:
   <a href="security/" class="section-nav-card">
     <div class="snc-icon">&#128274;</div>
     <div class="snc-body">
-      <span class="snc-label">Security &amp; IAM</span>
+      <span class="snc-label">Segurança &amp; IAM</span>
       <span class="snc-desc">Cloud IAM, Workload Identity, Secret Manager, Cloud KMS, Security Command Center.</span>
     </div>
     <span class="snc-arrow">&#8594;</span>
@@ -60,7 +60,7 @@ hide:
   <a href="observability/" class="section-nav-card">
     <div class="snc-icon">&#128202;</div>
     <div class="snc-body">
-      <span class="snc-label">Observability</span>
+      <span class="snc-label">Observabilidade</span>
       <span class="snc-desc">Cloud Monitoring, Cloud Logging, Cloud Trace, Managed Prometheus, Error Reporting.</span>
     </div>
     <span class="snc-arrow">&#8594;</span>

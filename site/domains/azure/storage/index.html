@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Blob Storage, Azure Files, Managed Disks, Data Lake Gen2 — storage on Microsoft Azure.">
+        <meta name="description" content="Blob Storage para objetos e artefatos, Managed Disks para volumes persistentes, Azure Files para montagens NFS/SMB compartilhadas e Data Lake Gen2 para pipelines de analytics — a stack completa de armazenamento Azure para cargas de trabalho DevOps.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -770,10 +770,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#access-tiers" class="md-nav__link">
+  <a href="#camadas-de-acesso" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Access tiers
+        Camadas de Acesso
       
     </span>
   </a>
@@ -781,10 +781,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#storage-account-blob-container" class="md-nav__link">
+  <a href="#conta-de-armazenamento-container-blob" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Storage account + blob container
+        Conta de Armazenamento + Container Blob
       
     </span>
   </a>
@@ -792,10 +792,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#lifecycle-management" class="md-nav__link">
+  <a href="#gerenciamento-de-ciclo-de-vida" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lifecycle management
+        Gerenciamento de Ciclo de Vida
       
     </span>
   </a>
@@ -803,10 +803,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#terraform-remote-state-in-azure" class="md-nav__link">
+  <a href="#estado-remoto-do-terraform-no-azure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Terraform remote state in Azure
+        Estado Remoto do Terraform no Azure
       
     </span>
   </a>
@@ -831,10 +831,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#disk-types" class="md-nav__link">
+  <a href="#tipos-de-disco" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Disk types
+        Tipos de Disco
       
     </span>
   </a>
@@ -842,10 +842,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#aks-storage-classes" class="md-nav__link">
+  <a href="#classes-de-armazenamento-aks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AKS storage classes
+        Classes de Armazenamento AKS
       
     </span>
   </a>
@@ -870,10 +870,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#share-tiers" class="md-nav__link">
+  <a href="#camadas-de-compartilhamento" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Share tiers
+        Camadas de Compartilhamento
       
     </span>
   </a>
@@ -881,10 +881,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mount-in-kubernetes-rwx" class="md-nav__link">
+  <a href="#montagem-no-kubernetes-rwx" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mount in Kubernetes (RWX)
+        Montagem no Kubernetes (RWX)
       
     </span>
   </a>
@@ -3101,10 +3101,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#access-tiers" class="md-nav__link">
+  <a href="#camadas-de-acesso" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Access tiers
+        Camadas de Acesso
       
     </span>
   </a>
@@ -3112,10 +3112,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#storage-account-blob-container" class="md-nav__link">
+  <a href="#conta-de-armazenamento-container-blob" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Storage account + blob container
+        Conta de Armazenamento + Container Blob
       
     </span>
   </a>
@@ -3123,10 +3123,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#lifecycle-management" class="md-nav__link">
+  <a href="#gerenciamento-de-ciclo-de-vida" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lifecycle management
+        Gerenciamento de Ciclo de Vida
       
     </span>
   </a>
@@ -3134,10 +3134,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#terraform-remote-state-in-azure" class="md-nav__link">
+  <a href="#estado-remoto-do-terraform-no-azure" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Terraform remote state in Azure
+        Estado Remoto do Terraform no Azure
       
     </span>
   </a>
@@ -3162,10 +3162,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#disk-types" class="md-nav__link">
+  <a href="#tipos-de-disco" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Disk types
+        Tipos de Disco
       
     </span>
   </a>
@@ -3173,10 +3173,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#aks-storage-classes" class="md-nav__link">
+  <a href="#classes-de-armazenamento-aks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        AKS storage classes
+        Classes de Armazenamento AKS
       
     </span>
   </a>
@@ -3201,10 +3201,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#share-tiers" class="md-nav__link">
+  <a href="#camadas-de-compartilhamento" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Share tiers
+        Camadas de Compartilhamento
       
     </span>
   </a>
@@ -3212,10 +3212,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#mount-in-kubernetes-rwx" class="md-nav__link">
+  <a href="#montagem-no-kubernetes-rwx" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mount in Kubernetes (RWX)
+        Montagem no Kubernetes (RWX)
       
     </span>
   </a>
@@ -3270,7 +3270,7 @@
   <div class="dph-left">
     <span class="dph-eyebrow">// azure / storage</span>
     <h1 class="dph-title">Azure Storage</h1>
-    <p class="dph-desc">Blob Storage for objects and artefacts, Managed Disks for persistent volumes, Azure Files for shared NFS/SMB mounts, and Data Lake Gen2 for analytics pipelines — the full Azure storage stack for DevOps workloads.</p>
+    <p class="dph-desc">Blob Storage para objetos e artefatos, Managed Disks para volumes persistentes, Azure Files para montagens NFS/SMB compartilhadas e Data Lake Gen2 para pipelines de analytics — a stack completa de armazenamento Azure para cargas de trabalho DevOps.</p>
     <div class="dph-badges">
       <span class="tech-badge">Blob Storage</span>
       <span class="tech-badge">Azure Files</span>
@@ -3283,45 +3283,45 @@
 
 <hr />
 <h2 id="blob-storage">Blob Storage</h2>
-<p>Azure Blob Storage is the object storage backbone for Azure — artefacts, backups, static websites, container images via ACR and Terraform remote state all rely on it.</p>
-<h3 id="access-tiers">Access tiers</h3>
+<p>Azure Blob Storage é a espinha dorsal de armazenamento de objetos do Azure — artefatos, backups, sites estáticos, imagens de container via ACR e estado remoto do Terraform, todos dependem dele.</p>
+<h3 id="camadas-de-acesso">Camadas de Acesso</h3>
 <table>
 <thead>
 <tr>
-<th>Tier</th>
-<th>Retrieval latency</th>
-<th>Min retention</th>
-<th>Best for</th>
+<th>Camada</th>
+<th>Latência de acesso</th>
+<th>Retenção mínima</th>
+<th>Melhor para</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Hot</strong></td>
-<td>Immediate</td>
-<td>None</td>
-<td>Frequently accessed data</td>
+<td>Imediata</td>
+<td>Nenhuma</td>
+<td>Dados acessados com frequência</td>
 </tr>
 <tr>
 <td><strong>Cool</strong></td>
-<td>Immediate</td>
-<td>30 days</td>
-<td>Backups, infrequent reads</td>
+<td>Imediata</td>
+<td>30 dias</td>
+<td>Backups, leituras infrequentes</td>
 </tr>
 <tr>
 <td><strong>Cold</strong></td>
-<td>Immediate</td>
-<td>90 days</td>
-<td>Long-term archives, quarterly access</td>
+<td>Imediata</td>
+<td>90 dias</td>
+<td>Arquivos de longo prazo, acesso trimestral</td>
 </tr>
 <tr>
 <td><strong>Archive</strong></td>
-<td>Hours (rehydration)</td>
-<td>180 days</td>
-<td>Compliance, 7+ year retention</td>
+<td>Horas (reidratação)</td>
+<td>180 dias</td>
+<td>Conformidade, retenção de 7+ anos</td>
 </tr>
 </tbody>
 </table>
-<h3 id="storage-account-blob-container">Storage account + blob container</h3>
+<h3 id="conta-de-armazenamento-container-blob">Conta de Armazenamento + Container Blob</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azurerm_storage_account&quot;</span><span class="w"> </span><span class="nv">&quot;artefacts&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="na">name</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}artefacts${var.env}&quot;</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="na">resource_group_name</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nv">azurerm_resource_group.main.name</span>
@@ -3347,7 +3347,7 @@
 <a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">  </span><span class="na">container_access_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;private&quot;</span>
 <a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="lifecycle-management">Lifecycle management</h3>
+<h3 id="gerenciamento-de-ciclo-de-vida">Gerenciamento de Ciclo de Vida</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azurerm_storage_management_policy&quot;</span><span class="w"> </span><span class="nv">&quot;artefacts&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="na">storage_account_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">azurerm_storage_account.artefacts.id</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
@@ -3371,7 +3371,7 @@
 <a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">  </span><span class="p">}</span>
 <a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="terraform-remote-state-in-azure">Terraform remote state in Azure</h3>
+<h3 id="estado-remoto-do-terraform-no-azure">Estado Remoto do Terraform no Azure</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># backend.tf</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">terraform</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="kr">backend</span><span class="w"> </span><span class="nv">&quot;azurerm&quot;</span><span class="w"> </span><span class="p">{</span>
@@ -3385,59 +3385,59 @@
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">ZRS vs GRS</p>
-<p>For most production workloads use <strong>ZRS</strong> (Zone-Redundant Storage) — synchronous replication across 3 AZs in the same region with no RPO. Use <strong>GRS/GZRS</strong> only when you need cross-region DR with an RPO of ~15 minutes.</p>
+<p>Para a maioria das cargas de trabalho em produção, use <strong>ZRS</strong> (Armazenamento com Redundância de Zona) — replicação síncrona em 3 AZs na mesma região sem RPO. Use <strong>GRS/GZRS</strong> somente quando precisar de DR entre regiões com RPO de ~15 minutos.</p>
 </div>
 <hr />
 <h2 id="managed-disks">Managed Disks</h2>
-<p>Managed Disks are block storage for Azure VMs and AKS persistent volumes. Azure manages redundancy and placement.</p>
-<h3 id="disk-types">Disk types</h3>
+<p>Managed Disks são armazenamento em bloco para VMs Azure e volumes persistentes do AKS. O Azure gerencia a redundância e o posicionamento.</p>
+<h3 id="tipos-de-disco">Tipos de Disco</h3>
 <table>
 <thead>
 <tr>
-<th>Type</th>
-<th>Max IOPS</th>
-<th>Max throughput</th>
-<th>Use case</th>
+<th>Tipo</th>
+<th>IOPS máximos</th>
+<th>Throughput máximo</th>
+<th>Caso de uso</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Standard HDD</strong></td>
-<td>2,000</td>
+<td>2.000</td>
 <td>500 MB/s</td>
-<td>Dev/test, cold data</td>
+<td>Dev/teste, dados frios</td>
 </tr>
 <tr>
 <td><strong>Standard SSD</strong></td>
-<td>6,000</td>
+<td>6.000</td>
 <td>750 MB/s</td>
-<td>Web servers, lightly loaded DBs</td>
+<td>Servidores web, bancos de dados com pouca carga</td>
 </tr>
 <tr>
 <td><strong>Premium SSD v1</strong></td>
-<td>20,000</td>
+<td>20.000</td>
 <td>900 MB/s</td>
-<td>Production databases</td>
+<td>Bancos de dados em produção</td>
 </tr>
 <tr>
 <td><strong>Premium SSD v2</strong></td>
-<td>80,000</td>
-<td>1,200 MB/s</td>
-<td>High-throughput databases, Kafka</td>
+<td>80.000</td>
+<td>1.200 MB/s</td>
+<td>Bancos de dados de alto throughput, Kafka</td>
 </tr>
 <tr>
 <td><strong>Ultra Disk</strong></td>
-<td>160,000</td>
-<td>4,000 MB/s</td>
-<td>SAP HANA, top-tier DB workloads</td>
+<td>160.000</td>
+<td>4.000 MB/s</td>
+<td>SAP HANA, cargas de trabalho de banco de dados de alto nível</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
-<p class="admonition-title">Ephemeral OS disks</p>
-<p>For AKS node pools, always use <strong>Ephemeral OS disks</strong> (<code>os_disk_type = "Ephemeral"</code>). They use local VM storage rather than a separate Managed Disk — faster node provisioning, lower latency for OS operations and zero disk cost.</p>
+<p class="admonition-title">Discos de SO efêmeros</p>
+<p>Para node pools do AKS, sempre use <strong>discos de SO efêmeros</strong> (<code>os_disk_type = "Ephemeral"</code>). Eles usam armazenamento local da VM em vez de um Managed Disk separado — provisionamento de nó mais rápido, menor latência para operações de SO e custo zero de disco.</p>
 </div>
-<h3 id="aks-storage-classes">AKS storage classes</h3>
+<h3 id="classes-de-armazenamento-aks">Classes de Armazenamento AKS</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Premium SSD v2 storage class for AKS</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">storage.k8s.io/v1</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StorageClass</span>
@@ -3455,41 +3455,41 @@
 </code></pre></div>
 <hr />
 <h2 id="azure-files">Azure Files</h2>
-<p>Azure Files provides fully managed SMB and NFS file shares accessible from Azure and on-premises simultaneously. Mounted directly in AKS pods via the Azure Files CSI driver.</p>
-<h3 id="share-tiers">Share tiers</h3>
+<p>Azure Files fornece compartilhamentos de arquivos SMB e NFS totalmente gerenciados, acessíveis do Azure e on-premises simultaneamente. Montados diretamente em pods do AKS via driver CSI do Azure Files.</p>
+<h3 id="camadas-de-compartilhamento">Camadas de Compartilhamento</h3>
 <table>
 <thead>
 <tr>
-<th>Tier</th>
-<th>Protocol</th>
-<th>Performance</th>
-<th>Best for</th>
+<th>Camada</th>
+<th>Protocolo</th>
+<th>Desempenho</th>
+<th>Melhor para</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Transaction Optimised</strong></td>
 <td>SMB / REST</td>
-<td>Standard HDD-backed</td>
-<td>Shared config, low-IOPS</td>
+<td>Com suporte de HDD Padrão</td>
+<td>Config compartilhada, baixo IOPS</td>
 </tr>
 <tr>
 <td><strong>Hot</strong></td>
 <td>SMB / REST</td>
-<td>Standard SSD</td>
-<td>General-purpose shared storage</td>
+<td>SSD Padrão</td>
+<td>Armazenamento compartilhado de uso geral</td>
 </tr>
 <tr>
 <td><strong>Cool</strong></td>
 <td>SMB / REST</td>
-<td>Standard HDD, lowest cost</td>
-<td>Archives, infrequent access</td>
+<td>HDD Padrão, menor custo</td>
+<td>Arquivos, acesso infrequente</td>
 </tr>
 <tr>
 <td><strong>Premium</strong></td>
 <td>SMB / NFS</td>
-<td>SSD-backed, low latency</td>
-<td>Databases, CI caches, containers</td>
+<td>Com suporte de SSD, baixa latência</td>
+<td>Bancos de dados, caches de CI, containers</td>
 </tr>
 </tbody>
 </table>
@@ -3500,7 +3500,7 @@
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="na">enabled_protocol</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;NFS&quot;</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="mount-in-kubernetes-rwx">Mount in Kubernetes (RWX)</h3>
+<h3 id="montagem-no-kubernetes-rwx">Montagem no Kubernetes (RWX)</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PersistentVolume</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">metadata</span><span class="p">:</span>
@@ -3521,7 +3521,7 @@
 </code></pre></div>
 <hr />
 <h2 id="data-lake-storage-gen2">Data Lake Storage Gen2</h2>
-<p>ADLS Gen2 is Blob Storage with a hierarchical namespace enabled — gives POSIX-compatible directory operations, ACLs at the file/folder level and optimised analytics performance for Spark, Databricks and Synapse workloads.</p>
+<p>ADLS Gen2 é o Blob Storage com namespace hierárquico habilitado — fornece operações de diretório compatíveis com POSIX, ACLs no nível de arquivo/pasta e desempenho de analytics otimizado para cargas de trabalho Spark, Databricks e Synapse.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azurerm_storage_account&quot;</span><span class="w"> </span><span class="nv">&quot;datalake&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="na">name</span><span class="w">                     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}datalake&quot;</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="na">resource_group_name</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="nv">azurerm_resource_group.main.name</span>
@@ -3541,7 +3541,7 @@
 </code></pre></div>
 <hr />
 <h2 id="azure-backup">Azure Backup</h2>
-<p>Azure Backup is the managed backup service for VMs, Managed Disks, Azure Files, Azure Database for PostgreSQL and AKS volumes.</p>
+<p>Azure Backup é o serviço de backup gerenciado para VMs, Managed Disks, Azure Files, Azure Database for PostgreSQL e volumes do AKS.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;azurerm_recovery_services_vault&quot;</span><span class="w"> </span><span class="nv">&quot;main&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="na">name</span><span class="w">                </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}-rsv&quot;</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="na">resource_group_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">azurerm_resource_group.main.name</span>
@@ -3562,8 +3562,8 @@
 <a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="p">}</span>
 </code></pre></div>
 <hr />
-<p><a class="md-button" href="../">← Azure Overview</a>
-<a class="md-button md-button--primary" href="../networking/">Networking →</a></p>
+<p><a class="md-button" href="../">← Visão Geral Azure</a>
+<a class="md-button md-button--primary" href="../networking/">Rede →</a></p>
 
 
 

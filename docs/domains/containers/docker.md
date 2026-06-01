@@ -1,29 +1,29 @@
 ---
 title: Docker
-description: Dockerfile authoring, multi-stage builds, BuildKit, Docker Compose, image optimization and registry patterns.
+description: Autoria de Dockerfile, builds multi-estágio, BuildKit, Docker Compose, otimização de imagem e padrões de registro.
 ---
 
 <div class="domain-page-hero" data-domain="containers">
   <div class="dph-left">
     <span class="dph-eyebrow">// containers-orchestration / docker</span>
     <h1 class="dph-title">Docker</h1>
-    <p class="dph-desc">The standard for building and shipping containers. Lean, reproducible images with multi-stage builds and BuildKit, portable development environments with Compose, and a security-conscious approach to Dockerfile authoring and registry management.</p>
+    <p class="dph-desc">O padrão para construção e entrega de containers. Imagens enxutas e reproduzíveis com builds multi-estágio e BuildKit, ambientes de desenvolvimento portáteis com Compose e uma abordagem orientada à segurança para autoria de Dockerfile e gerenciamento de registro.</p>
     <div class="dph-badges">
       <span class="tech-badge">Dockerfile</span>
       <span class="tech-badge">Multi-stage</span>
       <span class="tech-badge">BuildKit</span>
       <span class="tech-badge">Compose</span>
       <span class="tech-badge">Registry</span>
-      <span class="tech-badge">Optimization</span>
+      <span class="tech-badge">Otimização</span>
     </div>
   </div>
 </div>
 
-[← Containers Overview](index.md) | [Kubernetes →](kubernetes.md)
+[← Visão Geral de Containers](index.md) | [Kubernetes →](kubernetes.md)
 
 ---
 
-## Dockerfile Best Practices
+## Boas Práticas com Dockerfile
 
 ```dockerfile
 # syntax=docker/dockerfile:1
@@ -66,7 +66,7 @@ ENTRYPOINT ["/server"]
 
 ---
 
-## Multi-stage Build Patterns
+## Padrões de Build Multi-estágio
 
 === "Node.js"
 
@@ -156,7 +156,7 @@ ENTRYPOINT ["/server"]
 
 ---
 
-## BuildKit Features
+## Recursos do BuildKit
 
 ```bash
 # Enable BuildKit (default in Docker 23+)
@@ -317,20 +317,20 @@ docker compose run --rm api python manage.py migrate  # one-off command
 
 ---
 
-## Image Optimization
+## Otimização de Imagem
 
-| Technique | Impact |
+| Técnica | Impacto |
 |-----------|--------|
-| **Multi-stage builds** | Exclude build tools from runtime image |
-| **`scratch` / distroless base** | Minimal attack surface and smallest size |
-| **Alpine base** | ~5 MB — good balance of size and tooling |
-| **Layer ordering** | Copy dependency files before source code for cache efficiency |
-| **`--no-install-recommends`** | Reduce apt-installed package bloat |
-| **`RUN` command chaining** | Combine related commands to reduce layer count |
-| **BuildKit cache mounts** | Skip re-downloading packages (`--mount=type=cache`) |
-| **`.dockerignore`** | Keep build context small — exclude `node_modules`, `.git`, tests |
-| **`-ldflags="-w -s"` (Go)** | Strip debug info — reduces binary size ~30% |
-| **`--slim` / Dive** | Analyse layers with `dive` tool to find fat layers |
+| **Builds multi-estágio** | Exclui ferramentas de build da imagem de execução |
+| **Base `scratch` / distroless** | Superfície de ataque mínima e menor tamanho |
+| **Base Alpine** | ~5 MB — bom equilíbrio entre tamanho e ferramental |
+| **Ordenação de camadas** | Copie arquivos de dependência antes do código-fonte para eficiência do cache |
+| **`--no-install-recommends`** | Reduz o inchaço de pacotes instalados pelo apt |
+| **Encadeamento de comandos `RUN`** | Combine comandos relacionados para reduzir a contagem de camadas |
+| **Mounts de cache BuildKit** | Evita o re-download de pacotes (`--mount=type=cache`) |
+| **`.dockerignore`** | Mantém o contexto de build pequeno — exclua `node_modules`, `.git`, testes |
+| **`-ldflags="-w -s"` (Go)** | Remove informações de debug — reduz o tamanho do binário ~30% |
+| **`--slim` / Dive** | Analise camadas com a ferramenta `dive` para encontrar camadas pesadas |
 
 ```bash
 # Analyse image layers
@@ -347,7 +347,7 @@ docker history --no-trunc my-app:latest
 
 ---
 
-## Registry Operations
+## Operações de Registro
 
 ```bash
 # Tag and push
@@ -374,7 +374,7 @@ cosign verify --key cosign.pub ghcr.io/my-org/my-app:1.2.3
 
 ---
 
-## Docker Networking
+## Redes Docker
 
 ```bash
 # Create a custom bridge network
@@ -394,7 +394,7 @@ docker run -p 127.0.0.1:8080:80  # bind to localhost only (security)
 
 ---
 
-## Security Hardening
+## Hardening de Segurança
 
 ```dockerfile
 # Prefer distroless or scratch for production
@@ -430,7 +430,7 @@ docker run --rm -it \
 
 ---
 
-## Docker CLI Cheatsheet
+## Cheatsheet do Docker CLI
 
 ```bash
 # Build
@@ -464,4 +464,4 @@ docker load < app.tar.gz
 docker export app | gzip > container.tar.gz     # running container → tarball
 ```
 
-[← Containers Overview](index.md) | [Kubernetes →](kubernetes.md)
+[← Visão Geral de Containers](index.md) | [Kubernetes →](kubernetes.md)

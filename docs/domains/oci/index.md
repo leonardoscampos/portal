@@ -1,6 +1,6 @@
 ---
 title: Oracle Cloud Infrastructure
-description: OCI compute, storage, networking, security, observability and IaC reference for DevOps engineers.
+description: Referência de computação, armazenamento, rede, segurança, observabilidade e IaC no OCI para engenheiros DevOps.
 hide:
   - toc
 ---
@@ -9,7 +9,7 @@ hide:
   <div class="dph-left">
     <span class="dph-eyebrow">// cloud-infrastructure / oci</span>
     <h1 class="dph-title">Oracle Cloud Infrastructure</h1>
-    <p class="dph-desc">Second-generation cloud with bare-metal performance, predictable pricing, and the most generous Always Free tier in the industry. OKE is production-ready and Ampere A1 ARM instances deliver unmatched price/performance.</p>
+    <p class="dph-desc">Nuvem de segunda geração com desempenho bare-metal, preços previsíveis e o nível Always Free mais generoso da indústria. OKE está pronto para produção e as instâncias ARM Ampere A1 oferecem a melhor relação preço/desempenho disponível.</p>
     <div class="dph-badges">
       <span class="tech-badge">OKE</span>
       <span class="tech-badge">Ampere A1</span>
@@ -28,15 +28,15 @@ hide:
   <a href="compute/" class="section-nav-card">
     <div class="snc-icon">&#127968;</div>
     <div class="snc-body">
-      <span class="snc-label">Compute</span>
-      <span class="snc-desc">Compute Instances, OKE, Container Instances, Oracle Functions, Ampere A1.</span>
+      <span class="snc-label">Computação</span>
+      <span class="snc-desc">Instâncias de Computação, OKE, Container Instances, Oracle Functions, Ampere A1.</span>
     </div>
     <span class="snc-arrow">&#8594;</span>
   </a>
   <a href="storage/" class="section-nav-card">
     <div class="snc-icon">&#128230;</div>
     <div class="snc-body">
-      <span class="snc-label">Storage</span>
+      <span class="snc-label">Armazenamento</span>
       <span class="snc-desc">Object Storage, Block Volumes, File Storage, Archive Storage.</span>
     </div>
     <span class="snc-arrow">&#8594;</span>
@@ -44,7 +44,7 @@ hide:
   <a href="networking/" class="section-nav-card">
     <div class="snc-icon">&#127760;</div>
     <div class="snc-body">
-      <span class="snc-label">Networking</span>
+      <span class="snc-label">Rede</span>
       <span class="snc-desc">VCN, Load Balancer, Network Firewall, FastConnect, Service Gateway.</span>
     </div>
     <span class="snc-arrow">&#8594;</span>
@@ -52,7 +52,7 @@ hide:
   <a href="security/" class="section-nav-card">
     <div class="snc-icon">&#128274;</div>
     <div class="snc-body">
-      <span class="snc-label">Security &amp; IAM</span>
+      <span class="snc-label">Segurança &amp; IAM</span>
       <span class="snc-desc">OCI IAM, Vault, Security Zones, Cloud Guard, Bastion, Certificates.</span>
     </div>
     <span class="snc-arrow">&#8594;</span>
@@ -60,7 +60,7 @@ hide:
   <a href="observability/" class="section-nav-card">
     <div class="snc-icon">&#128202;</div>
     <div class="snc-body">
-      <span class="snc-label">Observability</span>
+      <span class="snc-label">Observabilidade</span>
       <span class="snc-desc">OCI Monitoring, Logging, Logging Analytics, APM, Ops Insights.</span>
     </div>
     <span class="snc-arrow">&#8594;</span>

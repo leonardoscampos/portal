@@ -1,13 +1,13 @@
 ---
-title: GCP Networking
-description: VPC, Cloud DNS, Cloud CDN, Cloud Load Balancing, Cloud NAT, Cloud Interconnect — GCP networking.
+title: GCP Rede
+description: VPC, Cloud DNS, Cloud CDN, Cloud Load Balancing, Cloud NAT, Cloud Interconnect — rede no Google Cloud.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// gcp / networking</span>
-    <h1 class="dph-title">GCP Networking</h1>
-    <p class="dph-desc">GCP's global VPC is unique — a single VPC spans all regions worldwide with no VPC peering required. Cloud Load Balancing is anycast by default. Cloud NAT, Private Service Connect and Cloud Interconnect complete the enterprise networking stack.</p>
+    <h1 class="dph-title">GCP Rede</h1>
+    <p class="dph-desc">A VPC global do GCP é única — uma única VPC abrange todas as regiões do mundo sem necessidade de peering entre VPCs. O Cloud Load Balancing é anycast por padrão. Cloud NAT, Private Service Connect e Cloud Interconnect completam a pilha de rede corporativa.</p>
     <div class="dph-badges">
       <span class="tech-badge">Global VPC</span>
       <span class="tech-badge">Cloud DNS</span>
@@ -21,9 +21,9 @@ description: VPC, Cloud DNS, Cloud CDN, Cloud Load Balancing, Cloud NAT, Cloud I
 
 ---
 
-## VPC & Subnets
+## VPC & Sub-redes
 
-GCP VPCs are **global** — a single VPC has subnets in every region. This is fundamentally different from AWS/Azure where VPCs/VNets are regional. GCP uses **primary** and **secondary** IP ranges per subnet — secondary ranges are required for GKE pod and service IPs.
+As VPCs do GCP são **globais** — uma única VPC possui sub-redes em todas as regiões. Isso é fundamentalmente diferente da AWS/Azure, onde VPCs/VNets são regionais. O GCP usa intervalos de IP **primários** e **secundários** por sub-rede — os intervalos secundários são necessários para IPs de pods e serviços do GKE.
 
 ```hcl
 resource "google_compute_network" "main" {
@@ -53,9 +53,9 @@ resource "google_compute_subnetwork" "gke" {
 }
 ```
 
-### Firewall rules
+### Regras de Firewall
 
-GCP firewalls are applied at the **network level**, not subnet/interface level. Rules are either **ingress** or **egress** with a priority (0–65534, lower wins) and target by tag or service account.
+Os Firewalls do GCP são aplicados no **nível da rede**, não no nível de sub-rede/interface. As regras são de **entrada** (ingress) ou **saída** (egress) com uma prioridade (0–65534, menor vence) e alvo por tag ou conta de serviço.
 
 ```hcl
 resource "google_compute_firewall" "allow_internal" {
@@ -83,27 +83,27 @@ resource "google_compute_firewall" "allow_health_check" {
 }
 ```
 
-!!! tip "Service account-based firewall rules"
-    Prefer **service account** targets over network tags in production. Tags are manually assigned and can be accidentally removed; service accounts are bound to the VM identity and cannot be spoofed.
+!!! tip "Regras de Firewall baseadas em conta de serviço"
+    Prefira alvos de **conta de serviço** a tags de rede em produção. As tags são atribuídas manualmente e podem ser removidas acidentalmente; as contas de serviço estão vinculadas à identidade da VM e não podem ser falsificadas.
 
 ---
 
 ## Cloud Load Balancing
 
-GCP's load balancers are globally anycast by default — a single external IP serves all regions worldwide. GCP routes each request to the closest healthy backend.
+Os Load Balancers do GCP são anycast globalmente por padrão — um único IP externo atende todas as regiões do mundo. O GCP roteia cada solicitação para o backend saudável mais próximo.
 
-### Load balancer types
+### Tipos de Load Balancer
 
-| Type | Scope | Protocol | Use case |
-|------|-------|---------|---------|
-| **Global External ALB** | Global | HTTP/HTTPS | Public web apps, APIs, CDN + WAF |
-| **Regional External ALB** | Regional | HTTP/HTTPS | Single-region apps |
-| **Global External NLB** (Passthrough) | Global | TCP/UDP | Non-HTTP, preserves client IP |
-| **Regional External NLB** | Regional | TCP/UDP | Regional passthrough LB |
-| **Internal ALB** | Regional | HTTP/HTTPS | Service mesh, internal APIs |
-| **Internal NLB** | Regional | TCP/UDP | Internal databases, services |
+| Tipo | Escopo | Protocolo | Caso de uso |
+|------|--------|-----------|-------------|
+| **Global External ALB** | Global | HTTP/HTTPS | Aplicações web públicas, APIs, CDN + WAF |
+| **Regional External ALB** | Regional | HTTP/HTTPS | Aplicações de região única |
+| **Global External NLB** (Passthrough) | Global | TCP/UDP | Não-HTTP, preserva IP do cliente |
+| **Regional External NLB** | Regional | TCP/UDP | Load Balancer de passthrough regional |
+| **Internal ALB** | Regional | HTTP/HTTPS | Service mesh, APIs internas |
+| **Internal NLB** | Regional | TCP/UDP | Bancos de dados internos, serviços |
 
-### Global HTTPS load balancer
+### Load Balancer HTTPS Global
 
 ```hcl
 # Compute target
@@ -153,7 +153,7 @@ resource "google_compute_global_forwarding_rule" "app" {
 
 ## Cloud NAT
 
-Cloud NAT provides outbound internet access for VMs without external IP addresses. It is software-defined — no VMs to manage, automatic scaling.
+O Cloud NAT fornece acesso à internet de saída para VMs sem endereços IP externos. É definido por software — sem VMs para gerenciar, escalonamento automático.
 
 ```hcl
 resource "google_compute_router" "main" {
@@ -180,7 +180,7 @@ resource "google_compute_router_nat" "main" {
 
 ## Private Service Connect
 
-Private Service Connect (PSC) is the GCP equivalent of AWS PrivateLink. It allows consumers to access Google APIs and managed services (Cloud SQL, GCS, PubSub, etc.) or producer services via a private IP in the consumer VPC — no external egress.
+O Private Service Connect (PSC) é o equivalente GCP do AWS PrivateLink. Permite que os consumidores acessem as APIs do Google e serviços gerenciados (Cloud SQL, GCS, PubSub, etc.) ou serviços de produtores via um IP privado na VPC do consumidor — sem egresso externo.
 
 ```hcl
 # PSC endpoint for accessing Google APIs privately
@@ -205,7 +205,7 @@ resource "google_compute_global_forwarding_rule" "psc" {
 
 ## Cloud DNS
 
-Cloud DNS is Google's managed DNS service with 100% uptime SLA and global anycast distribution. Supports public and private zones, DNSSEC, and DNS peering between VPCs.
+Cloud DNS é o serviço DNS gerenciado do Google com SLA de 100% de uptime e distribuição anycast global. Suporta zonas públicas e privadas, DNSSEC e peering de DNS entre VPCs.
 
 ```hcl
 resource "google_dns_managed_zone" "public" {
@@ -231,16 +231,16 @@ resource "google_dns_record_set" "app" {
 
 ## Cloud Interconnect & VPN
 
-| Option | Bandwidth | Latency | SLA | Use case |
-|--------|----------|--------|-----|---------|
-| **Dedicated Interconnect** | 10–200 Gbps per circuit | Low, predictable | 99.99% | High-bandwidth enterprise |
-| **Partner Interconnect** | 50 Mbps – 50 Gbps | Low | 99.9–99.99% | Access without 10G ports |
-| **HA VPN** | Up to 3 Gbps per tunnel | Variable | 99.99% | Lower-cost hybrid, encryption |
+| Opção | Largura de banda | Latência | SLA | Caso de uso |
+|-------|-----------------|---------|-----|-------------|
+| **Dedicated Interconnect** | 10–200 Gbps por circuito | Baixa, previsível | 99,99% | Corporativo de alta largura de banda |
+| **Partner Interconnect** | 50 Mbps – 50 Gbps | Baixa | 99,9–99,99% | Acesso sem portas 10G |
+| **HA VPN** | Até 3 Gbps por túnel | Variável | 99,99% | Híbrido de menor custo, criptografia |
 
-!!! tip "99.99% Interconnect SLA"
-    To qualify for the 99.99% SLA on Dedicated or Partner Interconnect, you must configure **4 VLAN attachments** (2 per metro, 2 metros) with Cloud Routers in 2 regions. Single-circuit configurations only qualify for the 99.9% SLA.
+!!! tip "SLA 99,99% do Interconnect"
+    Para se qualificar para o SLA de 99,99% no Dedicated ou Partner Interconnect, você deve configurar **4 anexos de VLAN** (2 por metrô, 2 metrôs) com Cloud Routers em 2 regiões. Configurações de circuito único se qualificam apenas para o SLA de 99,9%.
 
 ---
 
-[← GCP Overview](index.md){ .md-button }
-[Security & IAM →](security.md){ .md-button .md-button--primary }
+[← Visão Geral GCP](index.md){ .md-button }
+[Segurança & IAM →](security.md){ .md-button .md-button--primary }

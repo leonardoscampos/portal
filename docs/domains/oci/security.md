@@ -1,13 +1,13 @@
 ---
-title: OCI Security & IAM
-description: OCI IAM, Vault, Security Zones, Cloud Guard, Bastion, Certificates — security on Oracle Cloud.
+title: OCI Segurança & IAM
+description: OCI IAM, Vault, Security Zones, Cloud Guard, Bastion, Certificados — segurança na Oracle Cloud.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// oci / security</span>
-    <h1 class="dph-title">OCI Security &amp; IAM</h1>
-    <p class="dph-desc">OCI IAM uses compartments to isolate resources and policies to grant access. Dynamic Groups enable Instance Principals — Compute VMs and OKE pods authenticate to OCI services without stored credentials. Vault protects keys and secrets. Cloud Guard continuously monitors for threats.</p>
+    <h1 class="dph-title">OCI Segurança &amp; IAM</h1>
+    <p class="dph-desc">O OCI IAM usa compartimentos para isolar recursos e políticas para conceder acesso. Dynamic Groups habilitam Instance Principals — VMs de Computação e pods OKE se autenticam nos serviços OCI sem credenciais armazenadas. O Vault protege chaves e segredos. O Cloud Guard monitora continuamente ameaças.</p>
     <div class="dph-badges">
       <span class="tech-badge">OCI IAM</span>
       <span class="tech-badge">Compartments</span>
@@ -24,14 +24,14 @@ description: OCI IAM, Vault, Security Zones, Cloud Guard, Bastion, Certificates 
 
 ## OCI IAM
 
-OCI IAM is the identity and access management system for OCI. Unlike AWS IAM or GCP IAM, OCI IAM uses **compartments** as the primary resource isolation mechanism — think of compartments as resource containers that mirror your org structure.
+O OCI IAM é o sistema de gerenciamento de identidade e acesso da OCI. Ao contrário do AWS IAM ou GCP IAM, o OCI IAM usa **compartimentos** como mecanismo primário de isolamento de recursos — pense nos compartimentos como contêineres de recursos que espelham a estrutura da sua organização.
 
-### Compartments
+### Compartimentos
 
 ```
-Root Compartment (Tenancy)
+Compartimento Raiz (Tenancy)
   ├── Networking
-  │     └── VCNs, DRG, DNS zones
+  │     └── VCNs, DRG, zonas DNS
   ├── Production
   │     ├── Production-Apps
   │     └── Production-Data
@@ -54,20 +54,20 @@ resource "oci_identity_compartment" "prod_apps" {
 }
 ```
 
-### IAM Policies
+### Políticas IAM
 
-Policies are written in a human-readable policy language attached to a compartment:
+As políticas são escritas em uma linguagem de política legível por humanos, vinculada a um compartimento:
 
 ```
 Allow <subject> to <verb> <resource-type> in <location> [where <conditions>]
 ```
 
-| Verb | Operations allowed |
-|------|-------------------|
-| **inspect** | List resources (no details) |
-| **read** | Inspect + get resource details |
-| **use** | Read + perform operations (start/stop VM, etc.) |
-| **manage** | Full CRUD |
+| Verbo | Operações permitidas |
+|-------|----------------------|
+| **inspect** | Listar recursos (sem detalhes) |
+| **read** | Inspect + obter detalhes do recurso |
+| **use** | Read + realizar operações (iniciar/parar VM, etc.) |
+| **manage** | CRUD completo |
 
 ```hcl
 resource "oci_identity_policy" "oke_node_policy" {
@@ -89,7 +89,7 @@ resource "oci_identity_policy" "oke_node_policy" {
 
 ## Dynamic Groups
 
-Dynamic Groups allow compute instances, OKE pods and other OCI resources to authenticate to OCI services as a **principal** — no API keys or stored credentials needed. Membership is defined by a matching rule.
+Os Dynamic Groups permitem que instâncias de computação, pods OKE e outros recursos OCI se autentiquem nos serviços OCI como um **principal** — sem chaves de API ou credenciais armazenadas. A associação é definida por uma regra de correspondência.
 
 ```hcl
 # Dynamic group for OKE node pool instances
@@ -121,14 +121,14 @@ resource "oci_identity_dynamic_group" "oke_workload" {
 
 ## OCI Vault
 
-OCI Vault manages master encryption keys and secrets. Keys are stored in HSM-backed hardware (FIPS 140-2 Level 3). Vault integrates with Block Volumes, Object Storage, Boot Volumes and OKE etcd for CMEK.
+O OCI Vault gerencia chaves de criptografia mestras e segredos. As chaves são armazenadas em hardware respaldado por HSM (FIPS 140-2 Level 3). O Vault integra-se com Block Volumes, Object Storage, Boot Volumes e o etcd do OKE para CMEK.
 
-### Vault types
+### Tipos de Vault
 
-| Type | Key storage | Use case |
-|------|------------|---------|
-| **Virtual Private Vault** | Dedicated HSM partition | High-security production |
-| **Default Virtual Vault** | Shared HSM | Standard workloads (lower cost) |
+| Tipo | Armazenamento de chaves | Caso de uso |
+|------|------------------------|-------------|
+| **Virtual Private Vault** | Partição HSM dedicada | Produção de alta segurança |
+| **Default Virtual Vault** | HSM compartilhado | Cargas de trabalho padrão (menor custo) |
 
 ```hcl
 resource "oci_kms_vault" "main" {
@@ -149,7 +149,7 @@ resource "oci_kms_key" "master" {
 }
 ```
 
-### Secrets
+### Segredos
 
 ```hcl
 resource "oci_vault_secret" "db_password" {
@@ -171,9 +171,9 @@ resource "oci_vault_secret" "db_password" {
 }
 ```
 
-### Retrieve a secret in OKE pods
+### Recuperar um segredo em pods OKE
 
-Use Instance Principals (Dynamic Group) + the OCI SDK — no secret injection needed:
+Use Instance Principals (Dynamic Group) + o OCI SDK — sem necessidade de injeção de segredos:
 
 ```python
 import oci
@@ -194,7 +194,7 @@ password = base64.b64decode(secret_bundle.secret_bundle_content.content).decode(
 
 ## Security Zones
 
-Security Zones enforce a set of **security zone policies** on a compartment — they prevent operations that violate the policies. Oracle provides a **Maximum Security** recipe that blocks public IPs, unencrypted storage and public buckets.
+As Security Zones aplicam um conjunto de **políticas de zona de segurança** em um compartimento — elas impedem operações que violem as políticas. A Oracle fornece uma receita de **Segurança Máxima** que bloqueia IPs públicos, armazenamento não criptografado e buckets públicos.
 
 ```hcl
 resource "oci_cloud_guard_security_zone" "production" {
@@ -205,22 +205,22 @@ resource "oci_cloud_guard_security_zone" "production" {
 }
 ```
 
-!!! warning "Security Zone restrictions"
-    Enabling a Security Zone will block creation of resources that violate its policies — including public-IP VNICs and unencrypted Block Volumes. Test all IaC code against a non-zone compartment first, then migrate to the zone once compliant.
+!!! warning "Restrições da Security Zone"
+    Habilitar uma Security Zone bloqueará a criação de recursos que violem suas políticas — incluindo VNICs com IP público e Block Volumes não criptografados. Teste todo o código IaC em um compartimento sem zona primeiro, depois migre para a zona quando estiver em conformidade.
 
 ---
 
 ## Cloud Guard
 
-Cloud Guard continuously monitors OCI resources and activities for security threats and misconfigurations. It maps findings to detectors (security rules) and surfaces them as **problems** with a risk score.
+O Cloud Guard monitora continuamente recursos e atividades OCI em busca de ameaças de segurança e configurações incorretas. Ele mapeia as descobertas para detectores (regras de segurança) e as apresenta como **problemas** com uma pontuação de risco.
 
-### Detector types
+### Tipos de detectores
 
-| Detector | What it monitors |
-|---------|----------------|
-| **Configuration** | Misconfigurations: public buckets, unrestricted security lists, no MFA |
-| **Activity** | Suspicious API calls: unusual geography, excessive failures, privilege escalation |
-| **Threat Intelligence** | Known malicious IPs/domains in network flows or audit logs |
+| Detector | O que monitora |
+|----------|----------------|
+| **Configuração** | Configurações incorretas: buckets públicos, security lists sem restrição, sem MFA |
+| **Atividade** | Chamadas de API suspeitas: geografia incomum, falhas excessivas, escalonamento de privilégio |
+| **Inteligência de Ameaças** | IPs/domínios maliciosos conhecidos em fluxos de rede ou logs de auditoria |
 
 ```hcl
 resource "oci_cloud_guard_cloud_guard_configuration" "main" {
@@ -241,9 +241,9 @@ resource "oci_cloud_guard_target" "root" {
 
 ---
 
-## Bastion Service
+## Serviço Bastion
 
-OCI Bastion provides secure, temporary SSH or RDP access to private instances — no jump box VM to manage, no public IP on the target.
+O OCI Bastion fornece acesso SSH ou RDP seguro e temporário a instâncias privadas — sem VM de jump box para gerenciar, sem IP público no destino.
 
 ```hcl
 resource "oci_bastion_bastion" "main" {
@@ -276,5 +276,5 @@ resource "oci_bastion_session" "ssh" {
 
 ---
 
-[← OCI Overview](index.md){ .md-button }
-[Observability →](observability.md){ .md-button .md-button--primary }
+[← Visão Geral OCI](index.md){ .md-button }
+[Observabilidade →](observability.md){ .md-button .md-button--primary }

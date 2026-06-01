@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Cloud IAM, Workload Identity, Secret Manager, Cloud KMS, Security Command Center, VPC Service Controls.">
+        <meta name="description" content="Cloud IAM, Workload Identity, Secret Manager, Cloud KMS, Security Command Center, VPC Service Controls — segurança e IAM no Google Cloud.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -33,7 +33,7 @@
     
     
   
-    <title>GCP Security & IAM — Leonardo Campos</title>
+    <title>GCP Segurança & IAM — Leonardo Campos</title>
   
 
     
@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GCP Security & IAM
+              GCP Segurança & IAM
             
           </span>
         </div>
@@ -1076,10 +1076,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#resource-hierarchy" class="md-nav__link">
+  <a href="#hierarquia-de-recursos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Resource hierarchy
+        Hierarquia de recursos
       
     </span>
   </a>
@@ -1087,10 +1087,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#role-types" class="md-nav__link">
+  <a href="#tipos-de-papel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Role types
+        Tipos de papel
       
     </span>
   </a>
@@ -1126,10 +1126,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mount-in-gke-via-secrets-store-csi-driver" class="md-nav__link">
+  <a href="#montar-no-gke-via-secrets-store-csi-driver" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mount in GKE via Secrets Store CSI Driver
+        Montar no GKE via Secrets Store CSI Driver
       
     </span>
   </a>
@@ -1165,10 +1165,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#key-built-in-detectors" class="md-nav__link">
+  <a href="#principais-detectores-integrados" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key built-in detectors
+        Principais detectores integrados
       
     </span>
   </a>
@@ -3068,10 +3068,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#resource-hierarchy" class="md-nav__link">
+  <a href="#hierarquia-de-recursos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Resource hierarchy
+        Hierarquia de recursos
       
     </span>
   </a>
@@ -3079,10 +3079,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#role-types" class="md-nav__link">
+  <a href="#tipos-de-papel" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Role types
+        Tipos de papel
       
     </span>
   </a>
@@ -3118,10 +3118,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mount-in-gke-via-secrets-store-csi-driver" class="md-nav__link">
+  <a href="#montar-no-gke-via-secrets-store-csi-driver" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mount in GKE via Secrets Store CSI Driver
+        Montar no GKE via Secrets Store CSI Driver
       
     </span>
   </a>
@@ -3157,10 +3157,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#key-built-in-detectors" class="md-nav__link">
+  <a href="#principais-detectores-integrados" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key built-in detectors
+        Principais detectores integrados
       
     </span>
   </a>
@@ -3203,8 +3203,8 @@
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// gcp / security</span>
-    <h1 class="dph-title">GCP Security &amp; IAM</h1>
-    <p class="dph-desc">GCP IAM uses bindings (who, role, where) at every level of the resource hierarchy. Workload Identity eliminates key files for GKE pods. Secret Manager centralises secrets. Cloud KMS handles CMEK. Security Command Center provides cloud posture management.</p>
+    <h1 class="dph-title">GCP Segurança &amp; IAM</h1>
+    <p class="dph-desc">O Cloud IAM usa vínculos (quem, papel, onde) em cada nível da hierarquia de recursos. Workload Identity elimina arquivos de chave para pods GKE. Secret Manager centraliza segredos. Cloud KMS gerencia CMEK. Security Command Center fornece gestão de postura na nuvem.</p>
     <div class="dph-badges">
       <span class="tech-badge">Cloud IAM</span>
       <span class="tech-badge">Workload Identity</span>
@@ -3218,37 +3218,37 @@
 
 <hr />
 <h2 id="cloud-iam">Cloud IAM</h2>
-<p>GCP IAM is based on <strong>bindings</strong>: a tuple of <code>(principal, role, resource)</code>. Principals can be Google accounts, service accounts, groups, domains or special identifiers like <code>allAuthenticatedUsers</code>.</p>
-<h3 id="resource-hierarchy">Resource hierarchy</h3>
+<p>O Cloud IAM é baseado em <strong>vínculos</strong>: uma tupla de <code>(principal, papel, recurso)</code>. Os principais podem ser contas do Google, contas de serviço, grupos, domínios ou identificadores especiais como <code>allAuthenticatedUsers</code>.</p>
+<h3 id="hierarquia-de-recursos">Hierarquia de recursos</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Organisation
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  └── Folder (optional — business unit, environment)
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        └── Project
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>              └── Resources (GCS bucket, GKE cluster, VM, etc.)
 </code></pre></div>
-<p>IAM policies are <strong>inherited downward and additive</strong> — roles granted at the org level apply to all projects. There is no explicit deny (except with <strong>IAM Deny policies</strong>, which are additive denies evaluated before allow policies).</p>
-<h3 id="role-types">Role types</h3>
+<p>As políticas do IAM são <strong>herdadas para baixo e aditivas</strong> — papéis concedidos no nível da organização se aplicam a todos os projetos. Não há negação explícita (exceto com as <strong>políticas de negação do IAM</strong>, que são negações aditivas avaliadas antes das políticas de permissão).</p>
+<h3 id="tipos-de-papel">Tipos de papel</h3>
 <table>
 <thead>
 <tr>
-<th>Type</th>
-<th>Description</th>
-<th>Example</th>
+<th>Tipo</th>
+<th>Descrição</th>
+<th>Exemplo</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Basic</strong></td>
-<td>Broad legacy roles</td>
+<td><strong>Básico</strong></td>
+<td>Papéis legados amplos</td>
 <td><code>roles/viewer</code>, <code>roles/editor</code>, <code>roles/owner</code></td>
 </tr>
 <tr>
-<td><strong>Predefined</strong></td>
-<td>Service-specific curated roles</td>
+<td><strong>Pré-definido</strong></td>
+<td>Papéis selecionados por serviço</td>
 <td><code>roles/container.developer</code></td>
 </tr>
 <tr>
-<td><strong>Custom</strong></td>
-<td>Organisation-defined set of permissions</td>
+<td><strong>Personalizado</strong></td>
+<td>Conjunto de permissões definido pela organização</td>
 <td><code>CustomRole/ciDeploy</code></td>
 </tr>
 </tbody>
@@ -3268,12 +3268,12 @@
 <a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">}</span>
 </code></pre></div>
 <div class="admonition tip">
-<p class="admonition-title">Principle of least privilege</p>
-<p>Never use <code>roles/editor</code> or <code>roles/owner</code> in production. Audit all bindings with <code>gcloud projects get-iam-policy</code> or <strong>Policy Analyzer</strong> in Security Command Center. Use <strong>IAM Recommender</strong> to surface over-privileged service accounts automatically.</p>
+<p class="admonition-title">Princípio do menor privilégio</p>
+<p>Nunca use <code>roles/editor</code> ou <code>roles/owner</code> em produção. Audite todos os vínculos com <code>gcloud projects get-iam-policy</code> ou o <strong>Policy Analyzer</strong> no Security Command Center. Use o <strong>IAM Recommender</strong> para identificar automaticamente contas de serviço com excesso de privilégios.</p>
 </div>
 <hr />
 <h2 id="workload-identity">Workload Identity</h2>
-<p>Workload Identity lets GKE pods act as GCP Service Accounts without mounting key files. The OIDC token projected into the pod is exchanged for a short-lived GCP access token via the Security Token Service (STS).</p>
+<p>O Workload Identity permite que pods GKE atuem como contas de serviço do GCP sem montar arquivos de chave. O token OIDC projetado no pod é trocado por um token de acesso GCP de curta duração via Security Token Service (STS).</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># 1. GCP Service Account for the application</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_service_account&quot;</span><span class="w"> </span><span class="nv">&quot;app&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="na">account_id</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}-app&quot;</span>
@@ -3305,7 +3305,7 @@
 </code></pre></div>
 <hr />
 <h2 id="secret-manager">Secret Manager</h2>
-<p>Cloud Secret Manager stores, versions and audits secrets. Access is controlled via IAM (<code>roles/secretmanager.secretAccessor</code>). Each access is logged to Cloud Audit Logs.</p>
+<p>O Cloud Secret Manager armazena, versiona e audita segredos. O acesso é controlado via IAM (<code>roles/secretmanager.secretAccessor</code>). Cada acesso é registrado no Cloud Audit Logs.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_secret_manager_secret&quot;</span><span class="w"> </span><span class="nv">&quot;db_password&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="na">secret_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;db-password&quot;</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="na">project</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="nv">var.project_id</span>
@@ -3329,7 +3329,7 @@
 <a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">  </span><span class="na">member</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;serviceAccount:${google_service_account.app.email}&quot;</span>
 <a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="p">}</span>
 </code></pre></div>
-<h3 id="mount-in-gke-via-secrets-store-csi-driver">Mount in GKE via Secrets Store CSI Driver</h3>
+<h3 id="montar-no-gke-via-secrets-store-csi-driver">Montar no GKE via Secrets Store CSI Driver</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets-store.csi.x-k8s.io/v1</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretProviderClass</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nt">metadata</span><span class="p">:</span>
@@ -3349,7 +3349,7 @@
 </code></pre></div>
 <hr />
 <h2 id="cloud-kms">Cloud KMS</h2>
-<p>Cloud KMS manages cryptographic keys for envelope encryption of GCP resources (CMEK). Keys exist in a <strong>key ring</strong> within a location; key rings and keys cannot be deleted.</p>
+<p>O Cloud KMS gerencia chaves criptográficas para criptografia em envelope de recursos GCP (CMEK). As chaves existem em um <strong>chaveiro</strong> dentro de uma localização; chaveiros e chaves não podem ser excluídos.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_kms_key_ring&quot;</span><span class="w"> </span><span class="nv">&quot;main&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="na">name</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;${var.project}-kr&quot;</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="na">location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;us&quot;</span><span class="c1">   # global, or a specific region for data residency</span>
@@ -3383,35 +3383,35 @@
 </code></pre></div>
 <hr />
 <h2 id="security-command-center-scc">Security Command Center (SCC)</h2>
-<p>SCC is GCP's CSPM (Cloud Security Posture Management) platform. It aggregates findings from Google-built detectors and third-party integrations, maps to frameworks (CIS, PCI-DSS, NIST) and provides asset inventory.</p>
-<h3 id="key-built-in-detectors">Key built-in detectors</h3>
+<p>O SCC é a plataforma CSPM (Gestão de Postura de Segurança na Nuvem) do GCP. Ela agrega descobertas de detectores construídos pelo Google e integrações de terceiros, mapeia para frameworks (CIS, PCI-DSS, NIST) e fornece inventário de ativos.</p>
+<h3 id="principais-detectores-integrados">Principais detectores integrados</h3>
 <table>
 <thead>
 <tr>
 <th>Detector</th>
-<th>What it finds</th>
+<th>O que detecta</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Security Health Analytics</strong></td>
-<td>Misconfigurations (public buckets, firewall open to 0.0.0.0, no OS login)</td>
+<td>Configurações incorretas (buckets públicos, Firewall aberto para 0.0.0.0, sem OS login)</td>
 </tr>
 <tr>
 <td><strong>Event Threat Detection</strong></td>
-<td>Compromised IAM credentials, cryptomining, brute force, unusual API activity</td>
+<td>Credenciais IAM comprometidas, mineração de criptomoedas, força bruta, atividade de API incomum</td>
 </tr>
 <tr>
 <td><strong>Container Threat Detection</strong></td>
-<td>Runtime threats in GKE — reverse shells, binary execution in container</td>
+<td>Ameaças em tempo de execução no GKE — shells reversos, execução de binários em contêiner</td>
 </tr>
 <tr>
 <td><strong>Web Security Scanner</strong></td>
-<td>XSS, SQLi, mixed content in App Engine / Cloud Run apps</td>
+<td>XSS, SQLi, conteúdo misto em apps App Engine / Cloud Run</td>
 </tr>
 <tr>
 <td><strong>VM Threat Detection</strong></td>
-<td>Memory-level threats, rootkits (agentless)</td>
+<td>Ameaças no nível de memória, rootkits (sem agente)</td>
 </tr>
 </tbody>
 </table>
@@ -3436,7 +3436,7 @@
 </code></pre></div>
 <hr />
 <h2 id="vpc-service-controls">VPC Service Controls</h2>
-<p>VPC Service Controls (VPC-SC) creates a security perimeter around GCP APIs. Resources inside the perimeter can only communicate with other resources inside the perimeter — preventing data exfiltration even if credentials are compromised.</p>
+<p>O VPC Service Controls (VPC-SC) cria um perímetro de segurança em torno das APIs do GCP. Os recursos dentro do perímetro só podem se comunicar com outros recursos dentro do perímetro — prevenindo exfiltração de dados mesmo se as credenciais forem comprometidas.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;google_access_context_manager_access_policy&quot;</span><span class="w"> </span><span class="nv">&quot;main&quot;</span><span class="w"> </span><span class="p">{</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="na">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;organizations/${var.org_id}&quot;</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="na">title</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Main Access Policy&quot;</span>
@@ -3463,12 +3463,12 @@
 <a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="p">}</span>
 </code></pre></div>
 <div class="admonition warning">
-<p class="admonition-title">Dry-run mode first</p>
-<p>Always deploy VPC-SC in <strong>dry-run mode</strong> (<code>use_explicit_dry_run_spec = true</code>) before enforcing. Violations are logged but not blocked — gives you visibility into what would break before enforcement.</p>
+<p class="admonition-title">Modo dry-run primeiro</p>
+<p>Sempre implante o VPC-SC no <strong>modo dry-run</strong> (<code>use_explicit_dry_run_spec = true</code>) antes de aplicar. As violações são registradas, mas não bloqueadas — oferece visibilidade sobre o que quebraria antes da aplicação.</p>
 </div>
 <hr />
-<p><a class="md-button" href="../">← GCP Overview</a>
-<a class="md-button md-button--primary" href="../observability/">Observability →</a></p>
+<p><a class="md-button" href="../">← Visão Geral GCP</a>
+<a class="md-button md-button--primary" href="../observability/">Observabilidade →</a></p>
 
 
 

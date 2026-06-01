@@ -1,13 +1,13 @@
 ---
-title: Azure Observability
+title: Azure Observabilidade
 description: Azure Monitor, Log Analytics, Application Insights, Container Insights, Cost Management.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// azure / observability</span>
-    <h1 class="dph-title">Azure Observability</h1>
-    <p class="dph-desc">Azure Monitor is the umbrella service — metrics flow to the Metrics store, logs flow to Log Analytics, distributed traces flow to Application Insights. Container Insights provides AKS-specific dashboards out of the box. Azure Managed Grafana ties it all together.</p>
+    <h1 class="dph-title">Azure Observabilidade</h1>
+    <p class="dph-desc">Azure Monitor é o serviço guarda-chuva — métricas fluem para o armazenamento de Métricas, logs fluem para o Log Analytics, rastreamentos distribuídos fluem para o Application Insights. Container Insights fornece painéis específicos para AKS prontos para uso. Azure Managed Grafana une tudo isso.</p>
     <div class="dph-badges">
       <span class="tech-badge">Azure Monitor</span>
       <span class="tech-badge">Log Analytics</span>
@@ -23,9 +23,9 @@ description: Azure Monitor, Log Analytics, Application Insights, Container Insig
 
 ## Azure Monitor
 
-Azure Monitor collects metrics and logs from all Azure services automatically. Resources send **platform metrics** to the Metrics store (15-month retention) and **resource logs** (diagnostic settings) to Log Analytics, a Storage Account or an Event Hub.
+Azure Monitor coleta métricas e logs de todos os serviços do Azure automaticamente. Os recursos enviam **métricas de plataforma** para o armazenamento de Métricas (retenção de 15 meses) e **logs de recursos** (configurações de diagnóstico) para o Log Analytics, uma Conta de Armazenamento ou um Event Hub.
 
-### Data model
+### Modelo de dados
 
 ```
 Azure Resource
@@ -63,7 +63,7 @@ resource "azurerm_monitor_diagnostic_setting" "aks" {
 }
 ```
 
-### Metric alerts
+### Alertas de métrica
 
 ```hcl
 resource "azurerm_monitor_metric_alert" "aks_node_cpu" {
@@ -101,17 +101,17 @@ resource "azurerm_monitor_action_group" "ops" {
 
 ## Application Insights
 
-Application Insights is the APM (Application Performance Monitoring) component of Azure Monitor. It collects distributed traces, request rates, failure rates, response times, dependencies and custom events.
+Application Insights é o componente APM (Application Performance Monitoring) do Azure Monitor. Coleta rastreamentos distribuídos, taxas de requisições, taxas de falha, tempos de resposta, dependências e eventos personalizados.
 
-### Key concepts
+### Conceitos principais
 
-| Concept | Description |
+| Conceito | Descrição |
 |---------|-------------|
-| **Sampling** | Adaptive sampling reduces data volume while preserving statistical accuracy |
-| **Availability tests** | Synthetic pings from Azure PoPs — alerts on downtime |
-| **Smart Detection** | Automatic anomaly detection for failure spikes, response time degradation |
-| **Live Metrics** | Real-time streaming of telemetry with 1-second granularity |
-| **Application Map** | Auto-generated service dependency graph |
+| **Sampling** | Amostragem adaptativa reduz o volume de dados preservando a precisão estatística |
+| **Availability tests** | Pings sintéticos a partir de PoPs do Azure — alertas em caso de indisponibilidade |
+| **Smart Detection** | Detecção automática de anomalias para picos de falhas e degradação do tempo de resposta |
+| **Live Metrics** | Streaming em tempo real de telemetria com granularidade de 1 segundo |
+| **Application Map** | Grafo de dependências de serviços gerado automaticamente |
 
 ```hcl
 resource "azurerm_application_insights" "app" {
@@ -129,7 +129,7 @@ output "app_insights_connection_string" {
 }
 ```
 
-Use the connection string (not the deprecated instrumentation key) in your application:
+Use a string de conexão (não a chave de instrumentação obsoleta) em sua aplicação:
 
 ```python
 # Python SDK — no dependency on APPLICATIONINSIGHTS_CONNECTION_STRING env var
@@ -139,7 +139,7 @@ configure_azure_monitor(
 )
 ```
 
-### Availability test
+### Teste de disponibilidade
 
 ```hcl
 resource "azurerm_application_insights_standard_web_test" "health" {
@@ -170,7 +170,7 @@ resource "azurerm_application_insights_standard_web_test" "health" {
 
 ## Container Insights
 
-Container Insights is the AKS-specific observability add-on. It deploys a DaemonSet that collects node and pod metrics and ships container logs to Log Analytics.
+Container Insights é o complemento de observabilidade específico para AKS. Implanta um DaemonSet que coleta métricas de nós e pods e envia logs de contêineres para o Log Analytics.
 
 ```hcl
 # Enable Container Insights on AKS cluster
@@ -186,7 +186,7 @@ resource "azurerm_kubernetes_cluster" "main" {
 }
 ```
 
-### Useful KQL queries
+### Consultas KQL úteis
 
 ```kusto
 // Container CPU usage by namespace
@@ -211,7 +211,7 @@ KubeEvents
 
 ## Azure Managed Grafana
 
-Azure Managed Grafana is a fully managed Grafana instance. It integrates with Azure Monitor (metrics), Azure Data Explorer and Prometheus-compatible endpoints including the AKS Managed Prometheus workspace.
+Azure Managed Grafana é uma instância Grafana totalmente gerenciada. Integra-se com Azure Monitor (métricas), Azure Data Explorer e endpoints compatíveis com Prometheus, incluindo o workspace Managed Prometheus do AKS.
 
 ```hcl
 resource "azurerm_dashboard_grafana" "main" {
@@ -236,9 +236,9 @@ resource "azurerm_monitor_workspace" "main" {
 
 ## Cost Management
 
-Azure Cost Management and Billing provides budgets, cost alerts, cost allocation via tags and recommendations.
+Azure Cost Management and Billing fornece orçamentos, alertas de custo, alocação de custos via tags e recomendações.
 
-### Budgets
+### Orçamentos
 
 ```hcl
 resource "azurerm_consumption_budget_subscription" "prod" {
@@ -268,10 +268,10 @@ resource "azurerm_consumption_budget_subscription" "prod" {
 }
 ```
 
-!!! tip "Tag enforcement for cost allocation"
-    Use **Azure Policy** to enforce `environment` and `cost-center` tags on all resource groups at creation time. Log Analytics and Cost Management both support filtering by tags, enabling per-team cost reporting from a single workspace.
+!!! tip "Aplicação de tags para alocação de custos"
+    Use **Azure Policy** para aplicar tags `environment` e `cost-center` em todos os grupos de recursos no momento da criação. Log Analytics e Cost Management suportam filtragem por tags, permitindo relatórios de custo por equipe a partir de um único workspace.
 
 ---
 
-[← Azure Overview](index.md){ .md-button }
+[← Visão Geral Azure](index.md){ .md-button }
 [IaC & DevOps →](iac.md){ .md-button .md-button--primary }

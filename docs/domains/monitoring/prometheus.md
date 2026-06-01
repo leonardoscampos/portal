@@ -1,13 +1,13 @@
 ---
 title: Prometheus
-description: Metrics collection, PromQL, recording rules, Prometheus Operator, federation and remote write.
+description: Coleta de métricas, PromQL, regras de gravação, Prometheus Operator, federação e remote write.
 ---
 
 <div class="domain-page-hero" data-domain="monitoring">
   <div class="dph-left">
-    <span class="dph-eyebrow">// monitoring-observability / prometheus</span>
+    <span class="dph-eyebrow">// monitoramento-observabilidade / prometheus</span>
     <h1 class="dph-title">Prometheus</h1>
-    <p class="dph-desc">The de-facto standard for metrics in cloud-native environments. Prometheus scrapes time-series metrics via pull, evaluates alerting and recording rules, and integrates with a rich ecosystem of exporters and the Kubernetes Operator pattern for lifecycle management.</p>
+    <p class="dph-desc">O padrão de fato para métricas em ambientes cloud-native. O Prometheus coleta métricas de séries temporais via pull, avalia regras de alerta e gravação, e integra-se com um rico ecossistema de exporters e o padrão Kubernetes Operator para gerenciamento de ciclo de vida.</p>
     <div class="dph-badges">
       <span class="tech-badge">PromQL</span>
       <span class="tech-badge">Prometheus Operator</span>
@@ -19,11 +19,11 @@ description: Metrics collection, PromQL, recording rules, Prometheus Operator, f
   </div>
 </div>
 
-[← Monitoring Overview](index.md) | [Grafana →](grafana.md)
+[← Visão Geral de Monitoramento](index.md) | [Grafana →](grafana.md)
 
 ---
 
-## Architecture
+## Arquitetura
 
 ```
 ┌──────────────────────────────────────────────────────┐
@@ -48,7 +48,7 @@ description: Metrics collection, PromQL, recording rules, Prometheus Operator, f
 
 ---
 
-## Installation — Prometheus Operator (kube-prometheus-stack)
+## Instalação — Prometheus Operator (kube-prometheus-stack)
 
 ```bash
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
@@ -127,7 +127,7 @@ kubeStateMetrics:
 ## ServiceMonitor & PodMonitor
 
 ```yaml
-# ServiceMonitor — scrape a labelled Service
+# ServiceMonitor — coletar de um Service com rótulo
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
@@ -152,7 +152,7 @@ spec:
 ```
 
 ```yaml
-# PodMonitor — scrape pods directly (no Service required)
+# PodMonitor — coletar pods diretamente (sem Service)
 apiVersion: monitoring.coreos.com/v1
 kind: PodMonitor
 metadata:
@@ -173,70 +173,70 @@ spec:
 
 ## PromQL
 
-### Selectors
+### Seletores
 
 ```promql
-# Exact match
+# Correspondência exata
 http_requests_total{job="api", status="200"}
 
-# Regex match
+# Correspondência com regex
 http_requests_total{method=~"GET|POST"}
 
-# Negative regex
+# Regex negativo
 http_requests_total{pod!~"canary-.*"}
 ```
 
 ### Rate & Increase
 
 ```promql
-# per-second rate over 5-min window (use rate for counters)
+# taxa por segundo em janela de 5 min (use rate para contadores)
 rate(http_requests_total[5m])
 
-# total increase over 1 hour
+# aumento total em 1 hora
 increase(http_requests_total[1h])
 
-# rate across all pods, summed by status code
+# taxa em todos os pods, somada por código de status
 sum by (status) (rate(http_requests_total[5m]))
 ```
 
-### Aggregations
+### Agregações
 
 ```promql
-# Average CPU across all containers in a namespace
+# CPU média em todos os containers de um namespace
 avg by (pod) (
   rate(container_cpu_usage_seconds_total{namespace="production"}[5m])
 )
 
-# P99 latency
+# Latência P99
 histogram_quantile(0.99,
   sum by (le, job) (
     rate(http_request_duration_seconds_bucket[5m])
   )
 )
 
-# Top 10 pods by memory usage
+# Top 10 pods por uso de memória
 topk(10,
   container_memory_working_set_bytes{container!="", container!="POD"}
 )
 ```
 
-### Functions
+### Funções
 
-| Function | Use |
+| Função | Uso |
 |----------|-----|
-| `rate(c[5m])` | Per-second rate of counter `c` |
-| `increase(c[1h])` | Counter increase over range |
-| `irate(c[5m])` | Instantaneous rate (last two samples) |
-| `delta(g[5m])` | Difference of gauge over range |
-| `deriv(g[5m])` | Per-second derivative (regression) |
-| `histogram_quantile(φ, b)` | Percentile from histogram |
-| `predict_linear(g[1h], 4*3600)` | Predict value 4 h ahead |
-| `absent(m)` | Returns 1 if `m` has no samples |
-| `label_replace(v, dst, rep, src, regex)` | Rename/transform labels |
+| `rate(c[5m])` | Taxa por segundo do contador `c` |
+| `increase(c[1h])` | Aumento do contador no intervalo |
+| `irate(c[5m])` | Taxa instantânea (últimas duas amostras) |
+| `delta(g[5m])` | Diferença do gauge no intervalo |
+| `deriv(g[5m])` | Derivada por segundo (regressão) |
+| `histogram_quantile(φ, b)` | Percentil a partir do histograma |
+| `predict_linear(g[1h], 4*3600)` | Prevê valor 4 h à frente |
+| `absent(m)` | Retorna 1 se `m` não tiver amostras |
+| `label_replace(v, dst, rep, src, regex)` | Renomeia/transforma rótulos |
 
 ---
 
-## Recording Rules
+## Regras de Gravação
 
 ```yaml
 apiVersion: monitoring.coreos.com/v1
@@ -279,7 +279,7 @@ spec:
 
 ---
 
-## Alerting Rules
+## Regras de Alerta
 
 ```yaml
 apiVersion: monitoring.coreos.com/v1
@@ -335,23 +335,23 @@ spec:
 
 ---
 
-## Common Exporters
+## Exporters Comuns
 
-| Exporter | Metrics | Helm chart / image |
+| Exporter | Métricas | Helm chart / imagem |
 |----------|---------|-------------------|
-| `node_exporter` | CPU, memory, disk, network per host | `prometheus-community/prometheus-node-exporter` |
-| `kube-state-metrics` | Kubernetes object state (pods, deployments) | bundled in kube-prometheus-stack |
-| `blackbox_exporter` | HTTP/TCP/ICMP probe success + latency | `prometheus-community/prometheus-blackbox-exporter` |
-| `postgres_exporter` | PostgreSQL activity, locks, replication | `prometheus-community/prometheus-postgres-exporter` |
-| `redis_exporter` | Redis commands, memory, keyspace | `oliver006/redis_exporter` |
-| `kafka_exporter` | Topic / partition lag, broker metrics | `danielqsj/kafka-exporter` |
-| `mysqld_exporter` | MySQL queries, replication, InnoDB | `prometheus-community/prometheus-mysql-exporter` |
-| `otel-collector` | OTLP metrics → Prometheus remote write | `open-telemetry/opentelemetry-collector` |
+| `node_exporter` | CPU, memória, disco, rede por host | `prometheus-community/prometheus-node-exporter` |
+| `kube-state-metrics` | Estado de objetos Kubernetes (pods, deployments) | incluso no kube-prometheus-stack |
+| `blackbox_exporter` | Sucesso de probe HTTP/TCP/ICMP + latência | `prometheus-community/prometheus-blackbox-exporter` |
+| `postgres_exporter` | Atividade, locks, replicação do PostgreSQL | `prometheus-community/prometheus-postgres-exporter` |
+| `redis_exporter` | Comandos, memória, keyspace do Redis | `oliver006/redis_exporter` |
+| `kafka_exporter` | Lag de tópico/partição, métricas de broker | `danielqsj/kafka-exporter` |
+| `mysqld_exporter` | Queries, replicação, InnoDB do MySQL | `prometheus-community/prometheus-mysql-exporter` |
+| `otel-collector` | Métricas OTLP → Prometheus remote write | `open-telemetry/opentelemetry-collector` |
 
-### Blackbox Probe Example
+### Exemplo de Probe Blackbox
 
 ```yaml
-# ProbeSpec — check external URLs every 30 s
+# ProbeSpec — verificar URLs externas a cada 30 s
 apiVersion: monitoring.coreos.com/v1
 kind: Probe
 metadata:
@@ -372,11 +372,11 @@ spec:
 
 ---
 
-## Federation & Thanos
+## Federação & Thanos
 
 ```yaml
-# Thanos Sidecar — long-term storage via object store
-# Add to prometheusSpec in values.yaml
+# Thanos Sidecar — armazenamento de longo prazo via object store
+# Adicionar ao prometheusSpec em values.yaml
 thanos:
   image: quay.io/thanos/thanos:v0.36.1
   objectStorageConfig:
@@ -389,7 +389,7 @@ thanos:
 ```
 
 ```bash
-# Thanos Query — global view across multiple Prometheus shards
+# Thanos Query — visão global entre múltiplos shards do Prometheus
 thanos query \
   --http-address=0.0.0.0:10902 \
   --endpoint=prometheus-0.monitoring.svc:10901 \
@@ -397,15 +397,15 @@ thanos query \
   --endpoint=thanos-store.monitoring.svc:10901
 ```
 
-!!! tip "Grafana Mimir for SaaS-style scaling"
-    Mimir is a horizontally scalable, multi-tenant Prometheus-compatible TSDB. Use it instead of Thanos when you need simpler operations: `helm install mimir grafana/mimir-distributed`.
+!!! tip "Grafana Mimir para escalabilidade estilo SaaS"
+    Mimir é um TSDB compatível com Prometheus, horizontalmente escalável e multi-tenant. Use-o em vez do Thanos quando precisar de operações mais simples: `helm install mimir grafana/mimir-distributed`.
 
 ---
 
-## Remote Write to Grafana Cloud
+## Remote Write para o Grafana Cloud
 
 ```yaml
-# In prometheusSpec.remoteWrite
+# Em prometheusSpec.remoteWrite
 remoteWrite:
   - url: https://prometheus-prod-01-eu-west-0.grafana.net/api/prom/push
     basicAuth:
@@ -416,7 +416,7 @@ remoteWrite:
         name: grafana-cloud-secret
         key: apiKey
     writeRelabelConfigs:
-      # Drop high-cardinality debug metrics
+      # Remover métricas de debug de alta cardinalidade
       - sourceLabels: [__name__]
         regex: "go_.*|process_.*"
         action: drop
@@ -424,33 +424,33 @@ remoteWrite:
 
 ---
 
-## PromQL Cheatsheet
+## Guia Rápido de PromQL
 
 ```promql
-# CPU utilisation per node (0–1)
+# Utilização de CPU por nó (0–1)
 1 - avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m]))
 
-# Memory used (bytes)
+# Memória utilizada (bytes)
 node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes
 
-# Pod restart rate
+# Taxa de reinicialização de pods
 rate(kube_pod_container_status_restarts_total[1h])
 
-# PVC usage percentage
+# Percentual de uso do PVC
 (kubelet_volume_stats_used_bytes / kubelet_volume_stats_capacity_bytes) * 100
 
-# Network receive rate (bytes/s)
+# Taxa de recebimento de rede (bytes/s)
 sum by (node) (rate(node_network_receive_bytes_total{device!="lo"}[5m]))
 
-# Kubelet unavailable nodes
+# Nós indisponíveis no Kubelet
 count(kube_node_status_condition{condition="Ready",status="true"} == 0)
 
-# Deployment unavailable replicas
+# Réplicas indisponíveis em Deployment
 kube_deployment_status_replicas_unavailable > 0
 
-# HPA at max replicas (risk of saturation)
+# HPA no máximo de réplicas (risco de saturação)
 kube_horizontalpodautoscaler_status_current_replicas
   == kube_horizontalpodautoscaler_spec_max_replicas
 ```
 
-[← Monitoring Overview](index.md) | [Grafana →](grafana.md)
+[← Visão Geral de Monitoramento](index.md) | [Grafana →](grafana.md)

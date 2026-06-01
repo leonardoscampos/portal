@@ -1,13 +1,13 @@
 ---
 title: Azure Storage
-description: Blob Storage, Azure Files, Managed Disks, Data Lake Gen2 — storage on Microsoft Azure.
+description: Blob Storage para objetos e artefatos, Managed Disks para volumes persistentes, Azure Files para montagens NFS/SMB compartilhadas e Data Lake Gen2 para pipelines de analytics — a stack completa de armazenamento Azure para cargas de trabalho DevOps.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// azure / storage</span>
     <h1 class="dph-title">Azure Storage</h1>
-    <p class="dph-desc">Blob Storage for objects and artefacts, Managed Disks for persistent volumes, Azure Files for shared NFS/SMB mounts, and Data Lake Gen2 for analytics pipelines — the full Azure storage stack for DevOps workloads.</p>
+    <p class="dph-desc">Blob Storage para objetos e artefatos, Managed Disks para volumes persistentes, Azure Files para montagens NFS/SMB compartilhadas e Data Lake Gen2 para pipelines de analytics — a stack completa de armazenamento Azure para cargas de trabalho DevOps.</p>
     <div class="dph-badges">
       <span class="tech-badge">Blob Storage</span>
       <span class="tech-badge">Azure Files</span>
@@ -22,18 +22,18 @@ description: Blob Storage, Azure Files, Managed Disks, Data Lake Gen2 — storag
 
 ## Blob Storage
 
-Azure Blob Storage is the object storage backbone for Azure — artefacts, backups, static websites, container images via ACR and Terraform remote state all rely on it.
+Azure Blob Storage é a espinha dorsal de armazenamento de objetos do Azure — artefatos, backups, sites estáticos, imagens de container via ACR e estado remoto do Terraform, todos dependem dele.
 
-### Access tiers
+### Camadas de Acesso
 
-| Tier | Retrieval latency | Min retention | Best for |
-|------|------------------|--------------|---------|
-| **Hot** | Immediate | None | Frequently accessed data |
-| **Cool** | Immediate | 30 days | Backups, infrequent reads |
-| **Cold** | Immediate | 90 days | Long-term archives, quarterly access |
-| **Archive** | Hours (rehydration) | 180 days | Compliance, 7+ year retention |
+| Camada | Latência de acesso | Retenção mínima | Melhor para |
+|--------|--------------------|-----------------|-------------|
+| **Hot** | Imediata | Nenhuma | Dados acessados com frequência |
+| **Cool** | Imediata | 30 dias | Backups, leituras infrequentes |
+| **Cold** | Imediata | 90 dias | Arquivos de longo prazo, acesso trimestral |
+| **Archive** | Horas (reidratação) | 180 dias | Conformidade, retenção de 7+ anos |
 
-### Storage account + blob container
+### Conta de Armazenamento + Container Blob
 
 ```hcl
 resource "azurerm_storage_account" "artefacts" {
@@ -62,7 +62,7 @@ resource "azurerm_storage_container" "artefacts" {
 }
 ```
 
-### Lifecycle management
+### Gerenciamento de Ciclo de Vida
 
 ```hcl
 resource "azurerm_storage_management_policy" "artefacts" {
@@ -89,7 +89,7 @@ resource "azurerm_storage_management_policy" "artefacts" {
 }
 ```
 
-### Terraform remote state in Azure
+### Estado Remoto do Terraform no Azure
 
 ```hcl
 # backend.tf
@@ -105,28 +105,28 @@ terraform {
 ```
 
 !!! tip "ZRS vs GRS"
-    For most production workloads use **ZRS** (Zone-Redundant Storage) — synchronous replication across 3 AZs in the same region with no RPO. Use **GRS/GZRS** only when you need cross-region DR with an RPO of ~15 minutes.
+    Para a maioria das cargas de trabalho em produção, use **ZRS** (Armazenamento com Redundância de Zona) — replicação síncrona em 3 AZs na mesma região sem RPO. Use **GRS/GZRS** somente quando precisar de DR entre regiões com RPO de ~15 minutos.
 
 ---
 
 ## Managed Disks
 
-Managed Disks are block storage for Azure VMs and AKS persistent volumes. Azure manages redundancy and placement.
+Managed Disks são armazenamento em bloco para VMs Azure e volumes persistentes do AKS. O Azure gerencia a redundância e o posicionamento.
 
-### Disk types
+### Tipos de Disco
 
-| Type | Max IOPS | Max throughput | Use case |
-|------|---------|---------------|---------|
-| **Standard HDD** | 2,000 | 500 MB/s | Dev/test, cold data |
-| **Standard SSD** | 6,000 | 750 MB/s | Web servers, lightly loaded DBs |
-| **Premium SSD v1** | 20,000 | 900 MB/s | Production databases |
-| **Premium SSD v2** | 80,000 | 1,200 MB/s | High-throughput databases, Kafka |
-| **Ultra Disk** | 160,000 | 4,000 MB/s | SAP HANA, top-tier DB workloads |
+| Tipo | IOPS máximos | Throughput máximo | Caso de uso |
+|------|-------------|-------------------|-------------|
+| **Standard HDD** | 2.000 | 500 MB/s | Dev/teste, dados frios |
+| **Standard SSD** | 6.000 | 750 MB/s | Servidores web, bancos de dados com pouca carga |
+| **Premium SSD v1** | 20.000 | 900 MB/s | Bancos de dados em produção |
+| **Premium SSD v2** | 80.000 | 1.200 MB/s | Bancos de dados de alto throughput, Kafka |
+| **Ultra Disk** | 160.000 | 4.000 MB/s | SAP HANA, cargas de trabalho de banco de dados de alto nível |
 
-!!! note "Ephemeral OS disks"
-    For AKS node pools, always use **Ephemeral OS disks** (`os_disk_type = "Ephemeral"`). They use local VM storage rather than a separate Managed Disk — faster node provisioning, lower latency for OS operations and zero disk cost.
+!!! note "Discos de SO efêmeros"
+    Para node pools do AKS, sempre use **discos de SO efêmeros** (`os_disk_type = "Ephemeral"`). Eles usam armazenamento local da VM em vez de um Managed Disk separado — provisionamento de nó mais rápido, menor latência para operações de SO e custo zero de disco.
 
-### AKS storage classes
+### Classes de Armazenamento AKS
 
 ```yaml
 # Premium SSD v2 storage class for AKS
@@ -149,16 +149,16 @@ allowVolumeExpansion: true
 
 ## Azure Files
 
-Azure Files provides fully managed SMB and NFS file shares accessible from Azure and on-premises simultaneously. Mounted directly in AKS pods via the Azure Files CSI driver.
+Azure Files fornece compartilhamentos de arquivos SMB e NFS totalmente gerenciados, acessíveis do Azure e on-premises simultaneamente. Montados diretamente em pods do AKS via driver CSI do Azure Files.
 
-### Share tiers
+### Camadas de Compartilhamento
 
-| Tier | Protocol | Performance | Best for |
-|------|---------|------------|---------|
-| **Transaction Optimised** | SMB / REST | Standard HDD-backed | Shared config, low-IOPS |
-| **Hot** | SMB / REST | Standard SSD | General-purpose shared storage |
-| **Cool** | SMB / REST | Standard HDD, lowest cost | Archives, infrequent access |
-| **Premium** | SMB / NFS | SSD-backed, low latency | Databases, CI caches, containers |
+| Camada | Protocolo | Desempenho | Melhor para |
+|--------|-----------|------------|-------------|
+| **Transaction Optimised** | SMB / REST | Com suporte de HDD Padrão | Config compartilhada, baixo IOPS |
+| **Hot** | SMB / REST | SSD Padrão | Armazenamento compartilhado de uso geral |
+| **Cool** | SMB / REST | HDD Padrão, menor custo | Arquivos, acesso infrequente |
+| **Premium** | SMB / NFS | Com suporte de SSD, baixa latência | Bancos de dados, caches de CI, containers |
 
 ```hcl
 resource "azurerm_storage_share" "apps" {
@@ -169,7 +169,7 @@ resource "azurerm_storage_share" "apps" {
 }
 ```
 
-### Mount in Kubernetes (RWX)
+### Montagem no Kubernetes (RWX)
 
 ```yaml
 apiVersion: v1
@@ -195,7 +195,7 @@ spec:
 
 ## Data Lake Storage Gen2
 
-ADLS Gen2 is Blob Storage with a hierarchical namespace enabled — gives POSIX-compatible directory operations, ACLs at the file/folder level and optimised analytics performance for Spark, Databricks and Synapse workloads.
+ADLS Gen2 é o Blob Storage com namespace hierárquico habilitado — fornece operações de diretório compatíveis com POSIX, ACLs no nível de arquivo/pasta e desempenho de analytics otimizado para cargas de trabalho Spark, Databricks e Synapse.
 
 ```hcl
 resource "azurerm_storage_account" "datalake" {
@@ -220,7 +220,7 @@ resource "azurerm_storage_data_lake_gen2_filesystem" "raw" {
 
 ## Azure Backup
 
-Azure Backup is the managed backup service for VMs, Managed Disks, Azure Files, Azure Database for PostgreSQL and AKS volumes.
+Azure Backup é o serviço de backup gerenciado para VMs, Managed Disks, Azure Files, Azure Database for PostgreSQL e volumes do AKS.
 
 ```hcl
 resource "azurerm_recovery_services_vault" "main" {
@@ -245,5 +245,5 @@ resource "azurerm_backup_policy_vm" "daily" {
 
 ---
 
-[← Azure Overview](index.md){ .md-button }
-[Networking →](networking.md){ .md-button .md-button--primary }
+[← Visão Geral Azure](index.md){ .md-button }
+[Rede →](networking.md){ .md-button .md-button--primary }

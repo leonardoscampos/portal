@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Flux v2, ArgoCD, SOPS, Sealed Secrets, External Secrets and multi-cluster GitOps reference.">
+        <meta name="description" content="Referência de Flux v2, ArgoCD, SOPS, Sealed Secrets, External Secrets e GitOps multi-cluster.">
       
       
         <meta name="author" content="Leonardo Campos">
@@ -86,7 +86,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gitops-principles" class="md-skip">
+        <a href="#principios-do-gitops" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -2713,10 +2713,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gitops-principles" class="md-nav__link">
+  <a href="#principios-do-gitops" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GitOps Principles
+        Princípios do GitOps
       
     </span>
   </a>
@@ -2736,10 +2736,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bootstrap-flux-onto-a-cluster" class="md-nav__link">
+  <a href="#bootstrap-do-flux-em-um-cluster" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bootstrap Flux onto a cluster
+        Bootstrap do Flux em um cluster
       
     </span>
   </a>
@@ -2747,10 +2747,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#gitrepository-source" class="md-nav__link">
+  <a href="#fonte-gitrepository" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GitRepository source
+        Fonte GitRepository
       
     </span>
   </a>
@@ -2780,10 +2780,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#image-automation" class="md-nav__link">
+  <a href="#automacao-de-imagem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Image Automation
+        Automação de Imagem
       
     </span>
   </a>
@@ -2819,10 +2819,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#applicationset-one-app-per-cluster" class="md-nav__link">
+  <a href="#applicationset-um-app-por-cluster" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ApplicationSet — one app per cluster
+        ApplicationSet — um app por cluster
       
     </span>
   </a>
@@ -2846,22 +2846,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#secrets-in-gitops" class="md-nav__link">
+  <a href="#segredos-no-gitops" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Secrets in GitOps
+        Segredos no GitOps
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Secrets in GitOps">
+    <nav class="md-nav" aria-label="Segredos no GitOps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sops-encrypt-secrets-in-git" class="md-nav__link">
+  <a href="#sops-criptografar-segredos-no-git" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SOPS — Encrypt secrets in Git
+        SOPS — Criptografar segredos no Git
       
     </span>
   </a>
@@ -2885,10 +2885,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multi-cluster-repository-layout" class="md-nav__link">
+  <a href="#layout-de-repositorio-multi-cluster" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Multi-Cluster Repository Layout
+        Layout de Repositório Multi-Cluster
       
     </span>
   </a>
@@ -3109,10 +3109,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gitops-principles" class="md-nav__link">
+  <a href="#principios-do-gitops" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GitOps Principles
+        Princípios do GitOps
       
     </span>
   </a>
@@ -3132,10 +3132,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bootstrap-flux-onto-a-cluster" class="md-nav__link">
+  <a href="#bootstrap-do-flux-em-um-cluster" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Bootstrap Flux onto a cluster
+        Bootstrap do Flux em um cluster
       
     </span>
   </a>
@@ -3143,10 +3143,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#gitrepository-source" class="md-nav__link">
+  <a href="#fonte-gitrepository" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GitRepository source
+        Fonte GitRepository
       
     </span>
   </a>
@@ -3176,10 +3176,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#image-automation" class="md-nav__link">
+  <a href="#automacao-de-imagem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Image Automation
+        Automação de Imagem
       
     </span>
   </a>
@@ -3215,10 +3215,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#applicationset-one-app-per-cluster" class="md-nav__link">
+  <a href="#applicationset-um-app-por-cluster" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ApplicationSet — one app per cluster
+        ApplicationSet — um app por cluster
       
     </span>
   </a>
@@ -3242,22 +3242,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#secrets-in-gitops" class="md-nav__link">
+  <a href="#segredos-no-gitops" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Secrets in GitOps
+        Segredos no GitOps
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Secrets in GitOps">
+    <nav class="md-nav" aria-label="Segredos no GitOps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#sops-encrypt-secrets-in-git" class="md-nav__link">
+  <a href="#sops-criptografar-segredos-no-git" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SOPS — Encrypt secrets in Git
+        SOPS — Criptografar segredos no Git
       
     </span>
   </a>
@@ -3281,10 +3281,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multi-cluster-repository-layout" class="md-nav__link">
+  <a href="#layout-de-repositorio-multi-cluster" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Multi-Cluster Repository Layout
+        Layout de Repositório Multi-Cluster
       
     </span>
   </a>
@@ -3312,7 +3312,7 @@
   <div class="dph-left">
     <span class="dph-eyebrow">// infrastructure-as-code / gitops</span>
     <h1 class="dph-title">GitOps</h1>
-    <p class="dph-desc">Git as the single source of truth for cluster state. A GitOps controller continuously reconciles the live cluster against the desired state in Git — eliminating configuration drift and enabling fully auditable, rollback-friendly deployments.</p>
+    <p class="dph-desc">Git como única fonte de verdade para o estado do cluster. Um controlador GitOps reconcilia continuamente o cluster em execução com o estado desejado no Git — eliminando o desvio de configuração e possibilitando implantações totalmente auditáveis e com suporte a rollback.</p>
     <div class="dph-badges">
       <span class="tech-badge">Flux v2</span>
       <span class="tech-badge">ArgoCD</span>
@@ -3324,81 +3324,81 @@
   </div>
 </div>
 
-<p><a href="../helm/">← Helm</a> | <a href="../">← IaC Overview</a></p>
+<p><a href="../helm/">← Helm</a> | <a href="../">← Visão Geral de IaC</a></p>
 <hr />
-<h2 id="gitops-principles">GitOps Principles</h2>
+<h2 id="principios-do-gitops">Princípios do GitOps</h2>
 <table>
 <thead>
 <tr>
-<th>Principle</th>
-<th>Description</th>
+<th>Princípio</th>
+<th>Descrição</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Declarative</strong></td>
-<td>Desired state expressed in Git, not imperative scripts</td>
+<td><strong>Declarativo</strong></td>
+<td>Estado desejado expresso no Git, não em scripts imperativos</td>
 </tr>
 <tr>
-<td><strong>Versioned &amp; immutable</strong></td>
-<td>All changes are Git commits — auditable and revertable</td>
+<td><strong>Versionado e imutável</strong></td>
+<td>Todas as alterações são commits no Git — auditáveis e reversíveis</td>
 </tr>
 <tr>
-<td><strong>Continuously reconciled</strong></td>
-<td>Controller detects and corrects drift automatically</td>
+<td><strong>Continuamente reconciliado</strong></td>
+<td>O controlador detecta e corrige desvios automaticamente</td>
 </tr>
 <tr>
-<td><strong>Pull-based</strong></td>
-<td>Cluster pulls from Git; no CI push credentials in the cluster</td>
+<td><strong>Baseado em pull</strong></td>
+<td>O cluster puxa do Git; sem credenciais de push de CI no cluster</td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h2 id="flux-v2">Flux v2</h2>
-<p>Flux v2 is a set of Kubernetes controllers built on the GitOps Toolkit. Each controller manages a specific CRD.</p>
+<p>O Flux v2 é um conjunto de controladores Kubernetes construído sobre o GitOps Toolkit. Cada controlador gerencia um CRD específico.</p>
 <table>
 <thead>
 <tr>
 <th>CRD</th>
-<th>Purpose</th>
+<th>Finalidade</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>GitRepository</code></td>
-<td>Source: polls a Git repo for changes</td>
+<td>Fonte: monitora um repositório Git por mudanças</td>
 </tr>
 <tr>
 <td><code>OCIRepository</code></td>
-<td>Source: polls an OCI artifact registry</td>
+<td>Fonte: monitora um registry de artefatos OCI</td>
 </tr>
 <tr>
 <td><code>HelmRepository</code></td>
-<td>Source: polls a Helm chart index</td>
+<td>Fonte: monitora um índice de charts Helm</td>
 </tr>
 <tr>
 <td><code>Kustomization</code></td>
-<td>Applies a Kustomize overlay from a source</td>
+<td>Aplica um overlay Kustomize de uma fonte</td>
 </tr>
 <tr>
 <td><code>HelmRelease</code></td>
-<td>Installs/upgrades a Helm chart from a source</td>
+<td>Instala/atualiza um chart Helm de uma fonte</td>
 </tr>
 <tr>
 <td><code>ImageRepository</code></td>
-<td>Watches a container registry for new tags</td>
+<td>Monitora um registry de contêineres por novas tags</td>
 </tr>
 <tr>
 <td><code>ImagePolicy</code></td>
-<td>Selects the latest image tag matching a policy</td>
+<td>Seleciona a tag de imagem mais recente que corresponde a uma política</td>
 </tr>
 <tr>
 <td><code>ImageUpdateAutomation</code></td>
-<td>Commits new image tags back to Git</td>
+<td>Realiza commits de novas tags de imagem de volta ao Git</td>
 </tr>
 </tbody>
 </table>
-<h3 id="bootstrap-flux-onto-a-cluster">Bootstrap Flux onto a cluster</h3>
+<h3 id="bootstrap-do-flux-em-um-cluster">Bootstrap do Flux em um cluster</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>flux<span class="w"> </span>bootstrap<span class="w"> </span>github<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span>--owner<span class="o">=</span>my-org<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>--repository<span class="o">=</span>fleet-infra<span class="w"> </span><span class="se">\</span>
@@ -3406,7 +3406,7 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>--path<span class="o">=</span>clusters/prod<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span>--personal
 </code></pre></div>
-<h3 id="gitrepository-source">GitRepository source</h3>
+<h3 id="fonte-gitrepository">Fonte GitRepository</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">source.toolkit.fluxcd.io/v1</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitRepository</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nt">metadata</span><span class="p">:</span>
@@ -3472,7 +3472,7 @@
 <a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">    </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
 <a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">    </span><span class="nt">cleanupOnFail</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
-<h3 id="image-automation">Image Automation</h3>
+<h3 id="automacao-de-imagem">Automação de Imagem</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Watch registry for new tags</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">image.toolkit.fluxcd.io/v1beta2</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ImageRepository</span>
@@ -3517,7 +3517,7 @@
 </code></pre></div>
 <hr />
 <h2 id="argocd">ArgoCD</h2>
-<p>ArgoCD is a declarative GitOps controller with a rich UI and RBAC model.</p>
+<p>ArgoCD é um controlador GitOps declarativo com uma interface rica e modelo RBAC.</p>
 <h3 id="application">Application</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argoproj.io/v1alpha1</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Application</span>
@@ -3552,7 +3552,7 @@
 <a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="w">        </span><span class="nt">factor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 <a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a><span class="w">        </span><span class="nt">maxDuration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3m</span>
 </code></pre></div>
-<h3 id="applicationset-one-app-per-cluster">ApplicationSet — one app per cluster</h3>
+<h3 id="applicationset-um-app-por-cluster">ApplicationSet — um app por cluster</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argoproj.io/v1alpha1</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ApplicationSet</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nt">metadata</span><span class="p">:</span>
@@ -3593,58 +3593,58 @@
 <table>
 <thead>
 <tr>
-<th>Dimension</th>
+<th>Dimensão</th>
 <th>Flux v2</th>
 <th>ArgoCD</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Architecture</strong></td>
-<td>Loosely-coupled controllers per CRD</td>
-<td>Single monolithic server + repo-server</td>
+<td><strong>Arquitetura</strong></td>
+<td>Controladores fracamente acoplados por CRD</td>
+<td>Servidor monolítico único + repo-server</td>
 </tr>
 <tr>
 <td><strong>UI</strong></td>
-<td>Minimal (Weave GitOps OSS)</td>
-<td>Full-featured web UI</td>
+<td>Mínima (Weave GitOps OSS)</td>
+<td>Interface web completa</td>
 </tr>
 <tr>
 <td><strong>Multi-tenancy</strong></td>
-<td>Flux tenants via namespaced CRDs</td>
+<td>Tenants Flux via CRDs com namespace</td>
 <td>Projects + RBAC</td>
 </tr>
 <tr>
-<td><strong>Image automation</strong></td>
-<td>Built-in via ImagePolicy CRDs</td>
-<td>Argocd-image-updater (separate project)</td>
+<td><strong>Automação de imagem</strong></td>
+<td>Integrada via CRDs ImagePolicy</td>
+<td>Argocd-image-updater (projeto separado)</td>
 </tr>
 <tr>
-<td><strong>Notification</strong></td>
+<td><strong>Notificação</strong></td>
 <td>notification-controller</td>
 <td>argocd-notifications</td>
 </tr>
 <tr>
-<td><strong>Helm support</strong></td>
+<td><strong>Suporte a Helm</strong></td>
 <td>HelmRelease CRD</td>
-<td>Native, full lifecycle</td>
+<td>Nativo, ciclo de vida completo</td>
 </tr>
 <tr>
 <td><strong>Kustomize</strong></td>
 <td>Kustomization CRD</td>
-<td>Native overlay support</td>
+<td>Suporte nativo a overlays</td>
 </tr>
 <tr>
 <td><strong>Multi-cluster</strong></td>
-<td>One Flux per cluster</td>
-<td>Centralized hub + agent spoke</td>
+<td>Um Flux por cluster</td>
+<td>Hub centralizado + spoke com agente</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="secrets-in-gitops">Secrets in GitOps</h2>
-<h3 id="sops-encrypt-secrets-in-git">SOPS — Encrypt secrets in Git</h3>
-<p>SOPS encrypts only the values in YAML/JSON files, leaving keys readable.</p>
+<h2 id="segredos-no-gitops">Segredos no GitOps</h2>
+<h3 id="sops-criptografar-segredos-no-git">SOPS — Criptografar segredos no Git</h3>
+<p>O SOPS criptografa apenas os valores em arquivos YAML/JSON, mantendo as chaves legíveis.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Generate a age key pair</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>age-keygen<span class="w"> </span>-o<span class="w"> </span>age.agekey
 <a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>cat<span class="w"> </span>age.agekey<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>public<span class="w">   </span><span class="c1"># store public key</span>
@@ -3662,7 +3662,7 @@
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path_regex</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.*/secrets\.yaml$</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">age1xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span>
 </code></pre></div>
-<p>Flux integrates SOPS natively — store the age private key as a K8s secret:</p>
+<p>O Flux integra o SOPS nativamente — armazene a chave privada age como um secret K8s:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>cat<span class="w"> </span>age.agekey<span class="w"> </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>sops-age<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span>--namespace<span class="o">=</span>flux-system<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span>--from-file<span class="o">=</span>age.agekey<span class="o">=</span>/dev/stdin
@@ -3687,7 +3687,7 @@
 </code></pre></div>
 <hr />
 <h3 id="external-secrets-operator">External Secrets Operator</h3>
-<p>ESO syncs secrets from external stores (AWS Secrets Manager, Azure Key Vault, GCP Secret Manager, HashiCorp Vault) into Kubernetes Secrets.</p>
+<p>O ESO sincroniza segredos de stores externos (AWS Secrets Manager, Azure Key Vault, GCP Secret Manager, HashiCorp Vault) em Kubernetes Secrets.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># SecretStore — connection to the external system</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1beta1</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterSecretStore</span>
@@ -3729,7 +3729,7 @@
 <a id="__codelineno-11-39" name="__codelineno-11-39" href="#__codelineno-11-39"></a><span class="w">        </span><span class="nt">property</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">host</span>
 </code></pre></div>
 <hr />
-<h2 id="multi-cluster-repository-layout">Multi-Cluster Repository Layout</h2>
+<h2 id="layout-de-repositorio-multi-cluster">Layout de Repositório Multi-Cluster</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>fleet-infra/
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>├── clusters/
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>│   ├── prod-us/

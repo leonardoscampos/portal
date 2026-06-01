@@ -1,13 +1,13 @@
 ---
-title: GCP Observability
-description: Cloud Monitoring, Cloud Logging, Cloud Trace, Managed Prometheus, Error Reporting — observability on GCP.
+title: GCP Observabilidade
+description: Cloud Monitoring, Cloud Logging, Cloud Trace, Managed Prometheus, Error Reporting — observabilidade no GCP.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// gcp / observability</span>
-    <h1 class="dph-title">GCP Observability</h1>
-    <p class="dph-desc">Cloud Operations Suite (formerly Stackdriver) covers metrics, logs and traces. Google Managed Service for Prometheus (GMP) provides native PromQL for GKE. Cloud Trace supports OpenTelemetry natively. SLO monitoring is first-class in Cloud Monitoring.</p>
+    <h1 class="dph-title">GCP Observabilidade</h1>
+    <p class="dph-desc">O Cloud Operations Suite (anteriormente Stackdriver) cobre métricas, logs e rastreamentos. O Google Managed Service for Prometheus (GMP) fornece PromQL nativo para o GKE. O Cloud Trace suporta OpenTelemetry nativamente. O monitoramento de SLO é nativo no Cloud Monitoring.</p>
     <div class="dph-badges">
       <span class="tech-badge">Cloud Monitoring</span>
       <span class="tech-badge">Cloud Logging</span>
@@ -23,9 +23,9 @@ description: Cloud Monitoring, Cloud Logging, Cloud Trace, Managed Prometheus, E
 
 ## Cloud Monitoring
 
-Cloud Monitoring collects metrics from all GCP services automatically. Custom metrics can be pushed via the Cloud Monitoring API or via the OpenTelemetry SDK. **Google Managed Service for Prometheus (GMP)** provides a PromQL interface over GKE metrics.
+O Cloud Monitoring coleta métricas de todos os serviços GCP automaticamente. Métricas personalizadas podem ser enviadas via Cloud Monitoring API ou via OpenTelemetry SDK. O **Google Managed Service for Prometheus (GMP)** fornece uma interface PromQL sobre métricas do GKE.
 
-### Alert policies
+### Políticas de alerta
 
 ```hcl
 resource "google_monitoring_alert_policy" "gke_cpu" {
@@ -68,7 +68,7 @@ resource "google_monitoring_notification_channel" "pagerduty" {
 }
 ```
 
-### SLO Monitoring
+### Monitoramento de SLO
 
 ```hcl
 resource "google_monitoring_custom_service" "api" {
@@ -105,7 +105,7 @@ resource "google_monitoring_slo" "availability" {
 
 ## Google Managed Service for Prometheus (GMP)
 
-GMP is a managed Prometheus service for GKE. It is fully compatible with the Prometheus data model and PromQL, stores data in Google's global metric backend, and requires no Prometheus cluster to operate.
+O GMP é um serviço Prometheus gerenciado para GKE. É totalmente compatível com o modelo de dados do Prometheus e com PromQL, armazena dados no backend global de métricas do Google e não requer nenhum cluster Prometheus para operar.
 
 ```yaml
 # Enable GMP on GKE cluster via PodMonitoring CRD
@@ -138,9 +138,9 @@ resource "google_container_cluster" "main" {
 }
 ```
 
-### Grafana integration
+### Integração com Grafana
 
-Connect a Grafana instance to GMP using the Cloud Monitoring data source with PromQL:
+Conecte uma instância do Grafana ao GMP usando a fonte de dados do Cloud Monitoring com PromQL:
 
 ```yaml
 # Grafana datasource for GMP
@@ -155,9 +155,9 @@ datasources:
 
 ## Cloud Logging
 
-Cloud Logging automatically collects logs from all GCP services. GKE container logs (stdout/stderr) are captured by the GKE logging agent and sent to Cloud Logging automatically.
+O Cloud Logging coleta automaticamente logs de todos os serviços GCP. Logs de contêineres GKE (stdout/stderr) são capturados pelo agente de logging do GKE e enviados ao Cloud Logging automaticamente.
 
-### Log-based metrics
+### Métricas baseadas em logs
 
 ```hcl
 resource "google_logging_metric" "error_count" {
@@ -184,7 +184,7 @@ resource "google_logging_metric" "error_count" {
 }
 ```
 
-### Log sink (export to BigQuery)
+### Sink de logs (exportar para BigQuery)
 
 ```hcl
 resource "google_logging_project_sink" "bigquery" {
@@ -207,7 +207,7 @@ resource "google_bigquery_dataset_iam_member" "sink_writer" {
 
 ## Cloud Trace
 
-Cloud Trace is GCP's distributed tracing service. It accepts spans via the OpenTelemetry OTLP protocol and integrates with Cloud Monitoring for trace-to-metric correlation.
+O Cloud Trace é o serviço de rastreamento distribuído do GCP. Aceita spans via protocolo OpenTelemetry OTLP e integra-se ao Cloud Monitoring para correlação de rastreamento com métrica.
 
 ```python
 # Python — OpenTelemetry with GCP exporter
@@ -242,7 +242,7 @@ containers:
 
 ## Error Reporting
 
-Error Reporting automatically groups exceptions from Cloud Functions, Cloud Run, GKE, App Engine and Compute Engine logs into distinct error groups with stack traces, affected users and resolution status.
+O Error Reporting agrupa automaticamente exceções de logs do Cloud Functions, Cloud Run, GKE, App Engine e Compute Engine em grupos de erros distintos com stack traces, usuários afetados e status de resolução.
 
 ```python
 # Python — report errors manually
@@ -256,12 +256,12 @@ except Exception:
     client.report_exception()  # auto-captures current exception + stack trace
 ```
 
-!!! tip "Structured logging for Error Reporting"
-    Log exceptions as structured JSON with `severity: ERROR` and a `message` field containing the stack trace. Cloud Logging automatically forwards these to Error Reporting without any SDK dependency — useful for languages without a native Error Reporting client.
+!!! tip "Logging estruturado para Error Reporting"
+    Registre exceções como JSON estruturado com `severity: ERROR` e um campo `message` contendo o stack trace. O Cloud Logging encaminha esses logs automaticamente para o Error Reporting sem nenhuma dependência de SDK — útil para linguagens sem cliente nativo de Error Reporting.
 
 ---
 
-## Cloud Billing & Cost Controls
+## Cloud Billing & Controle de Custos
 
 ```hcl
 resource "google_billing_budget" "prod" {
@@ -291,5 +291,5 @@ resource "google_billing_budget" "prod" {
 
 ---
 
-[← GCP Overview](index.md){ .md-button }
+[← Visão Geral GCP](index.md){ .md-button }
 [IaC & DevOps →](iac.md){ .md-button .md-button--primary }

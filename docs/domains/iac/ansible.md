@@ -1,13 +1,13 @@
 ---
 title: Ansible
-description: Ansible playbooks, roles, inventory, Vault, collections and AWX reference.
+description: Referência de playbooks, roles, inventário, Vault, collections e AWX do Ansible.
 ---
 
 <div class="domain-page-hero" data-domain="iac">
   <div class="dph-left">
     <span class="dph-eyebrow">// infrastructure-as-code / ansible</span>
     <h1 class="dph-title">Ansible</h1>
-    <p class="dph-desc">Agentless configuration management and application deployment over SSH. Ansible excels at OS-level configuration, software installation, patching and post-provision orchestration — a natural complement to Terraform.</p>
+    <p class="dph-desc">Gerenciamento de configuração sem agente e implantação de aplicações via SSH. O Ansible se destaca na configuração de SO, instalação de software, aplicação de patches e orquestração pós-provisionamento — um complemento natural ao Terraform.</p>
     <div class="dph-badges">
       <span class="tech-badge">Playbooks</span>
       <span class="tech-badge">Roles</span>
@@ -19,13 +19,13 @@ description: Ansible playbooks, roles, inventory, Vault, collections and AWX ref
   </div>
 </div>
 
-[← Terraform](terraform.md) | [← IaC Overview](index.md) | [CloudFormation →](cloudformation.md)
+[← Terraform](terraform.md) | [← Visão Geral de IaC](index.md) | [CloudFormation →](cloudformation.md)
 
 ---
 
-## How Ansible Works
+## Como o Ansible Funciona
 
-Ansible connects to target hosts over SSH (or WinRM for Windows), pushes temporary Python modules and cleans up — no persistent agent required.
+O Ansible conecta-se aos hosts alvo via SSH (ou WinRM para Windows), envia módulos Python temporários e os remove — nenhum agente persistente é necessário.
 
 ```
 Control Node  ──SSH──▶  Managed Nodes
@@ -37,7 +37,7 @@ Control Node  ──SSH──▶  Managed Nodes
 
 ---
 
-## Inventory
+## Inventário
 
 === "Static INI"
 
@@ -155,7 +155,7 @@ Control Node  ──SSH──▶  Managed Nodes
 
 ## Roles
 
-Roles are reusable, self-contained units with a standard directory layout.
+Roles são unidades reutilizáveis e autocontidas com um layout de diretório padrão.
 
 ```
 roles/
@@ -198,7 +198,7 @@ roles/
     enabled: true
 ```
 
-Using a role in a playbook:
+Usando uma role em um playbook:
 
 ```yaml
 - name: Configure web servers
@@ -215,7 +215,7 @@ Using a role in a playbook:
 
 ## Ansible Vault
 
-Encrypt sensitive data at rest in version control.
+Criptografe dados sensíveis em repouso no controle de versão.
 
 ```bash
 # Encrypt a new file
@@ -247,8 +247,8 @@ db_password: !vault |
 ansible-playbook site.yml --vault-password-file ~/.vault_pass
 ```
 
-!!! tip "Use a vault password file in CI"
-    Store the vault password as a CI secret, write it to a temp file at job start, and pass `--vault-password-file` to avoid prompts.
+!!! tip "Use um arquivo de senha do vault no CI"
+    Armazene a senha do vault como um segredo de CI, escreva-a em um arquivo temporário no início do job e passe `--vault-password-file` para evitar prompts.
 
 ---
 
@@ -307,39 +307,39 @@ ssh_args     = -o ControlMaster=auto -o ControlPersist=60s
 
 ---
 
-## Common Modules Cheatsheet
+## Guia Rápido de Módulos Comuns
 
-| Module | Use Case |
+| Módulo | Caso de Uso |
 |--------|----------|
-| `ansible.builtin.apt` / `yum` / `package` | Install OS packages |
-| `ansible.builtin.template` | Render Jinja2 template to file |
-| `ansible.builtin.copy` | Copy static files to hosts |
-| `ansible.builtin.file` | Manage file/dir permissions and state |
-| `ansible.builtin.service` | Start/stop/enable systemd services |
-| `ansible.builtin.user` | Create/manage OS users |
-| `ansible.builtin.cron` | Manage crontab entries |
-| `ansible.builtin.shell` / `command` | Run arbitrary commands |
-| `ansible.builtin.get_url` | Download files from URLs |
-| `ansible.builtin.lineinfile` | Idempotently edit single lines in files |
-| `community.general.docker_container` | Manage Docker containers |
-| `kubernetes.core.k8s` | Apply Kubernetes manifests |
-| `amazon.aws.ec2_instance` | Manage EC2 instances |
+| `ansible.builtin.apt` / `yum` / `package` | Instalar pacotes do SO |
+| `ansible.builtin.template` | Renderizar template Jinja2 para arquivo |
+| `ansible.builtin.copy` | Copiar arquivos estáticos para hosts |
+| `ansible.builtin.file` | Gerenciar permissões e estado de arquivos/diretórios |
+| `ansible.builtin.service` | Iniciar/parar/habilitar serviços systemd |
+| `ansible.builtin.user` | Criar/gerenciar usuários do SO |
+| `ansible.builtin.cron` | Gerenciar entradas do crontab |
+| `ansible.builtin.shell` / `command` | Executar comandos arbitrários |
+| `ansible.builtin.get_url` | Baixar arquivos de URLs |
+| `ansible.builtin.lineinfile` | Editar linhas individuais em arquivos de forma idempotente |
+| `community.general.docker_container` | Gerenciar contêineres Docker |
+| `kubernetes.core.k8s` | Aplicar manifestos Kubernetes |
+| `amazon.aws.ec2_instance` | Gerenciar instâncias EC2 |
 
 ---
 
 ## AWX / Ansible Automation Platform
 
-AWX is the open-source web UI and API for running Ansible at scale.
+AWX é a interface web e API de código aberto para executar o Ansible em escala.
 
-| Concept | Description |
+| Conceito | Descrição |
 |---------|-------------|
-| **Inventory** | Hosts/groups defined or synced from cloud sources |
-| **Credential** | SSH keys, vault passwords, cloud tokens — stored encrypted |
-| **Project** | Git repository containing playbooks |
-| **Job Template** | Playbook + inventory + credential = runnable unit |
-| **Workflow** | DAG of job templates with conditional branching |
-| **Schedule** | Cron-based automatic job execution |
-| **RBAC** | Teams, users and per-object permissions |
+| **Inventário** | Hosts/grupos definidos ou sincronizados de fontes na nuvem |
+| **Credencial** | Chaves SSH, senhas do vault, tokens de nuvem — armazenados criptografados |
+| **Projeto** | Repositório Git contendo playbooks |
+| **Job Template** | Playbook + inventário + credencial = unidade executável |
+| **Workflow** | DAG de job templates com ramificação condicional |
+| **Agendamento** | Execução automática de jobs baseada em cron |
+| **RBAC** | Times, usuários e permissões por objeto |
 
 ```yaml
 # Deploy AWX with the AWX Operator on Kubernetes

@@ -1,44 +1,44 @@
 ---
 title: Terraform
-description: Terraform HCL, providers, modules, remote state, workspaces and Terraform Cloud reference.
+description: Referência de HCL, provedores, módulos, estado remoto, workspaces e Terraform Cloud.
 ---
 
 <div class="domain-page-hero" data-domain="iac">
   <div class="dph-left">
     <span class="dph-eyebrow">// infrastructure-as-code / terraform</span>
     <h1 class="dph-title">Terraform</h1>
-    <p class="dph-desc">The de-facto multi-cloud IaC standard. Declarative HCL, a rich provider ecosystem and a mature module registry make Terraform the first choice for provisioning cloud infrastructure at any scale.</p>
+    <p class="dph-desc">O padrão de IaC multi-cloud de facto. HCL declarativo, um rico ecossistema de provedores e um registro de módulos maduro fazem do Terraform a primeira escolha para provisionamento de infraestrutura em nuvem em qualquer escala.</p>
     <div class="dph-badges">
       <span class="tech-badge">HCL</span>
       <span class="tech-badge">Providers</span>
       <span class="tech-badge">Modules</span>
-      <span class="tech-badge">Remote State</span>
+      <span class="tech-badge">Estado Remoto</span>
       <span class="tech-badge">Workspaces</span>
       <span class="tech-badge">Terraform Cloud</span>
     </div>
   </div>
 </div>
 
-[← IaC Overview](index.md) | [Ansible →](ansible.md)
+[← Visão Geral de IaC](index.md) | [Ansible →](ansible.md)
 
 ---
 
-## Core Concepts
+## Conceitos Fundamentais
 
-| Concept | Description |
+| Conceito | Descrição |
 |---------|-------------|
-| **Provider** | Plugin that maps HCL resources to API calls (AWS, Azure, GCP, OCI, Kubernetes…) |
-| **Resource** | Declarative unit of infrastructure (`aws_instance`, `azurerm_kubernetes_cluster`…) |
-| **Data source** | Read-only reference to existing infrastructure |
-| **Variable** | Input parameter — type-checked, validated, optional defaults |
-| **Output** | Exported value consumed by other modules or CLI |
-| **Module** | Reusable group of resources with inputs/outputs |
-| **State** | JSON snapshot of real-world resource IDs and attributes |
-| **Plan / Apply** | Two-phase workflow: diff first, mutate second |
+| **Provedor** | Plugin que mapeia recursos HCL para chamadas de API (AWS, Azure, GCP, OCI, Kubernetes…) |
+| **Recurso** | Unidade declarativa de infraestrutura (`aws_instance`, `azurerm_kubernetes_cluster`…) |
+| **Fonte de dados** | Referência somente leitura à infraestrutura existente |
+| **Variável** | Parâmetro de entrada — com verificação de tipo, validação e padrões opcionais |
+| **Saída** | Valor exportado consumido por outros módulos ou CLI |
+| **Módulo** | Grupo reutilizável de recursos com entradas/saídas |
+| **Estado** | Snapshot JSON dos IDs e atributos de recursos do mundo real |
+| **Plan / Apply** | Fluxo de trabalho em duas fases: diff primeiro, mutação depois |
 
 ---
 
-## Provider & Version Pinning
+## Fixação de Versão de Provedor
 
 ```hcl
 # versions.tf
@@ -72,7 +72,7 @@ provider "aws" {
 
 ---
 
-## Remote State Backends
+## Backends de Estado Remoto
 
 === "S3 (AWS)"
 
@@ -89,7 +89,7 @@ provider "aws" {
     }
     ```
 
-    Bootstrap the S3 bucket and DynamoDB lock table:
+    Inicialize o bucket S3 e a tabela de lock do DynamoDB:
 
     ```bash
     aws s3api create-bucket \
@@ -155,9 +155,9 @@ provider "aws" {
 
 ---
 
-## Module Patterns
+## Padrões de Módulo
 
-### Flat Module Structure
+### Estrutura de Módulo Simples
 
 ```
 infra/
@@ -176,7 +176,7 @@ infra/
         └── outputs.tf
 ```
 
-### Calling a Local Module
+### Chamando um Módulo Local
 
 ```hcl
 module "networking" {
@@ -199,7 +199,7 @@ module "eks" {
 }
 ```
 
-### Registry Module (Terraform Registry)
+### Módulo do Registro (Terraform Registry)
 
 ```hcl
 module "eks" {
@@ -224,7 +224,7 @@ module "eks" {
 
 ---
 
-## Variables & Validation
+## Variáveis e Validação
 
 ```hcl
 variable "environment" {
@@ -257,7 +257,7 @@ variable "allowed_cidrs" {
 
 ## Workspaces
 
-Workspaces let you maintain separate state files within a single configuration — useful for per-environment isolation without duplicating code.
+Workspaces permitem manter arquivos de estado separados dentro de uma única configuração — útil para isolamento por ambiente sem duplicar código.
 
 ```bash
 terraform workspace new staging
@@ -286,12 +286,12 @@ locals {
 }
 ```
 
-!!! tip "Prefer separate backends over workspaces for prod"
-    Workspaces share the same backend bucket. For strict prod isolation, use separate state paths or separate backend configurations per environment.
+!!! tip "Prefira backends separados a workspaces para produção"
+    Workspaces compartilham o mesmo bucket de backend. Para isolamento estrito de produção, use caminhos de estado separados ou configurações de backend separadas por ambiente.
 
 ---
 
-## State Operations
+## Operações de Estado
 
 ```bash
 # List all resources in state
@@ -315,7 +315,7 @@ terraform state pull > backup.tfstate
 
 ---
 
-## Dynamic Blocks
+## Blocos Dinâmicos
 
 ```hcl
 resource "aws_security_group" "app" {
@@ -358,18 +358,18 @@ terraform {
 }
 ```
 
-| Feature | Description |
+| Recurso | Descrição |
 |---------|-------------|
-| **Remote execution** | Plans and applies run in managed workers — no local credentials |
-| **State storage** | Encrypted remote state with history and locking |
-| **VCS integration** | Auto-plan on PR, auto-apply on merge |
-| **Sentinel policies** | Policy-as-code to enforce governance rules |
-| **Cost estimation** | Estimated monthly cost shown in plan output |
-| **Private registry** | Host internal modules and providers |
+| **Execução remota** | Plans e applies são executados em workers gerenciados — sem credenciais locais |
+| **Armazenamento de estado** | Estado remoto criptografado com histórico e bloqueio |
+| **Integração com VCS** | Auto-plan em PR, auto-apply no merge |
+| **Políticas Sentinel** | Policy-as-code para aplicar regras de governança |
+| **Estimativa de custo** | Custo mensal estimado exibido na saída do plan |
+| **Registro privado** | Hospede módulos e provedores internos |
 
 ---
 
-## GitHub Actions CI/CD
+## CI/CD com GitHub Actions
 
 ```yaml
 name: Terraform
@@ -425,15 +425,15 @@ jobs:
 
 ---
 
-## Best Practices
+## Boas Práticas
 
-| Practice | Why |
+| Prática | Por quê |
 |----------|-----|
-| **Pin provider versions** with `~>` | Avoid unexpected breaking changes |
-| **Use `terraform fmt` in CI** | Enforce consistent formatting |
-| **Store state remotely with locking** | Prevent concurrent-apply corruption |
-| **Never commit `terraform.tfvars` with secrets** | Use environment variables or Vault |
-| **Use `moved` blocks instead of `state mv`** | Refactors are tracked in code history |
-| **Separate modules from root** | Easier testing and reuse |
-| **Tag all resources via `default_tags`** | Cost attribution and compliance |
-| **Run `terraform validate` in CI** | Catch syntax errors before plan |
+| **Fixe versões de provedores** com `~>` | Evite breaking changes inesperadas |
+| **Use `terraform fmt` no CI** | Garanta formatação consistente |
+| **Armazene o estado remotamente com locking** | Evite corrupção por apply concorrente |
+| **Nunca faça commit de `terraform.tfvars` com segredos** | Use variáveis de ambiente ou Vault |
+| **Use blocos `moved` em vez de `state mv`** | Refatorações são rastreadas no histórico do código |
+| **Separe módulos do root** | Facilita testes e reutilização |
+| **Marque todos os recursos via `default_tags`** | Atribuição de custos e conformidade |
+| **Execute `terraform validate` no CI** | Capture erros de sintaxe antes do plan |

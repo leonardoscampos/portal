@@ -1,13 +1,13 @@
 ---
-title: AWS Storage
-description: S3, EBS, EFS, FSx — object, block and file storage on AWS.
+title: AWS Armazenamento
+description: S3, EBS, EFS, FSx — armazenamento de objetos, blocos e arquivos na AWS.
 ---
 
 <div class="domain-page-hero" data-domain="cloud">
   <div class="dph-left">
     <span class="dph-eyebrow">// aws / storage</span>
-    <h1 class="dph-title">AWS Storage</h1>
-    <p class="dph-desc">Object storage at infinite scale, block storage for databases, managed file systems for shared workloads — the full AWS storage stack mapped to real-world DevOps patterns.</p>
+    <h1 class="dph-title">AWS Armazenamento</h1>
+    <p class="dph-desc">Armazenamento de objetos em escala ilimitada, armazenamento em bloco para bancos de dados, sistemas de arquivos gerenciados para cargas compartilhadas — a stack completa de armazenamento AWS mapeada para padrões DevOps do mundo real.</p>
     <div class="dph-badges">
       <span class="tech-badge">S3</span>
       <span class="tech-badge">EBS</span>
@@ -23,23 +23,23 @@ description: S3, EBS, EFS, FSx — object, block and file storage on AWS.
 
 ## S3 — Simple Storage Service
 
-S3 is the backbone of AWS storage. Eleven nines of durability, unlimited capacity, S3-compatible API, native event notifications and lifecycle automation make it the default choice for artefacts, backups, data lakes and static assets.
+O S3 é a espinha dorsal do armazenamento AWS. Onze noves de durabilidade, capacidade ilimitada, API compatível com S3, notificações de eventos nativas e automação de ciclo de vida fazem dele a escolha padrão para artefatos, backups, data lakes e assets estáticos.
 
-### Storage classes
+### Classes de armazenamento
 
-| Class | Retrieval | Min duration | Best for |
-|-------|----------|-------------|---------|
-| **Standard** | Immediate | None | Frequently accessed data |
-| **Standard-IA** | Immediate | 30 days | Backups, DR replicas |
-| **One Zone-IA** | Immediate | 30 days | Re-creatable data, lower-cost IA |
-| **Intelligent-Tiering** | Immediate / minutes / hours | None | Unknown or changing access patterns |
-| **Glacier Instant** | Immediate | 90 days | Archives accessed a few times/year |
-| **Glacier Flexible** | Minutes – hours | 90 days | Long-term backups |
-| **Glacier Deep Archive** | 12–48 hours | 180 days | Compliance, 7+ year retention |
+| Classe | Recuperação | Duração mínima | Melhor para |
+|--------|-------------|----------------|-------------|
+| **Standard** | Imediata | Nenhuma | Dados acessados frequentemente |
+| **Standard-IA** | Imediata | 30 dias | Backups, réplicas de DR |
+| **One Zone-IA** | Imediata | 30 dias | Dados recriáveis, IA com menor custo |
+| **Intelligent-Tiering** | Imediata / minutos / horas | Nenhuma | Padrões de acesso desconhecidos ou variáveis |
+| **Glacier Instant** | Imediata | 90 dias | Arquivos acessados poucas vezes/ano |
+| **Glacier Flexible** | Minutos – horas | 90 dias | Backups de longo prazo |
+| **Glacier Deep Archive** | 12–48 horas | 180 dias | Conformidade, retenção 7+ anos |
 
-### Encryption
+### Criptografia
 
-All new S3 buckets encrypt objects by default using **SSE-S3** (AES-256, AWS-managed keys). Switch to **SSE-KMS** when you need customer-managed CMKs, key rotation audit trails, or cross-account access control.
+Todos os novos buckets S3 criptografam objetos por padrão usando **SSE-S3** (AES-256, chaves gerenciadas pela AWS). Mude para **SSE-KMS** quando precisar de CMKs gerenciadas pelo cliente, trilhas de auditoria de rotação de chaves ou controle de acesso entre contas.
 
 ```hcl
 resource "aws_s3_bucket" "artefacts" {
@@ -58,7 +58,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "artefacts" {
       sse_algorithm     = "aws:kms"
       kms_master_key_id = aws_kms_key.s3.arn
     }
-    bucket_key_enabled = true  # reduces KMS request costs by ~99%
+    bucket_key_enabled = true  # reduz custos de requisições KMS em ~99%
   }
 }
 
@@ -91,16 +91,16 @@ resource "aws_s3_bucket_public_access_block" "artefacts" {
 ```
 
 !!! tip "Bucket Key"
-    Always enable `bucket_key_enabled = true` on SSE-KMS buckets. It generates a short-lived data key cached at the bucket level, reducing KMS API calls (and costs) by up to 99% for buckets with many small objects.
+    Sempre habilite `bucket_key_enabled = true` em buckets com SSE-KMS. Isso gera uma chave de dados de curta duração armazenada em cache no nível do bucket, reduzindo chamadas à API KMS (e custos) em até 99% para buckets com muitos objetos pequenos.
 
-### Event notifications
+### Notificações de eventos
 
-S3 events (ObjectCreated, ObjectRemoved, etc.) can fan out to Lambda, SQS, SNS or EventBridge. Prefer **EventBridge** for fine-grained filtering and routing to multiple targets without extra Lambda functions.
+Eventos S3 (ObjectCreated, ObjectRemoved, etc.) podem ser distribuídos para Lambda, SQS, SNS ou EventBridge. Prefira o **EventBridge** para filtragem refinada e roteamento para múltiplos destinos sem funções Lambda extras.
 
 ```hcl
 resource "aws_s3_bucket_notification" "uploads" {
   bucket      = aws_s3_bucket.uploads.id
-  eventbridge = true  # route all events to EventBridge default bus
+  eventbridge = true  # roteia todos os eventos para o bus padrão do EventBridge
 }
 ```
 
@@ -108,20 +108,20 @@ resource "aws_s3_bucket_notification" "uploads" {
 
 ## EBS — Elastic Block Store
 
-EBS provides persistent block volumes attached to EC2 instances. Volumes live in a single AZ and are automatically replicated within that AZ.
+O EBS fornece volumes de bloco persistentes anexados a instâncias EC2. Os volumes residem em uma única AZ e são replicados automaticamente dentro dessa AZ.
 
-### Volume types
+### Tipos de volume
 
-| Type | IOPS | Throughput | Use case |
-|------|------|-----------|---------|
-| **gp3** (default) | 3,000–16,000 | 125–1,000 MB/s | General purpose, boot volumes, Kubernetes PVs |
-| **gp2** (legacy) | 3 IOPS/GB, up to 16,000 | Burstable | Legacy; migrate to gp3 |
-| **io2 / io2 Block Express** | up to 256,000 | up to 4,000 MB/s | High-performance databases (Oracle, SQL Server) |
-| **st1** (HDD) | 500 | 500 MB/s | Throughput-heavy sequential: Kafka, log storage |
-| **sc1** (HDD cold) | 250 | 250 MB/s | Cold data, lowest cost per GB |
+| Tipo | IOPS | Throughput | Caso de uso |
+|------|------|-----------|-------------|
+| **gp3** (padrão) | 3.000–16.000 | 125–1.000 MB/s | Uso geral, volumes de boot, PVs no Kubernetes |
+| **gp2** (legado) | 3 IOPS/GB, até 16.000 | Burstável | Legado; migre para gp3 |
+| **io2 / io2 Block Express** | até 256.000 | até 4.000 MB/s | Bancos de dados de alto desempenho (Oracle, SQL Server) |
+| **st1** (HDD) | 500 | 500 MB/s | Sequencial com alto throughput: Kafka, armazenamento de logs |
+| **sc1** (HDD frio) | 250 | 250 MB/s | Dados frios, menor custo por GB |
 
 !!! note "gp3 vs gp2"
-    **Always use gp3**. It is cheaper than gp2 at the same size, and IOPS/throughput are configured independently of disk size — no need to over-provision size just to get IOPS.
+    **Sempre use gp3**. É mais barato que o gp2 no mesmo tamanho, e IOPS/throughput são configurados independentemente do tamanho do disco — não é necessário superdimensionar o tamanho apenas para obter IOPS.
 
 ```hcl
 resource "aws_ebs_volume" "data" {
@@ -137,13 +137,13 @@ resource "aws_ebs_volume" "data" {
 }
 ```
 
-### Snapshots & automation
+### Snapshots e automação
 
-EBS Snapshots are incremental and stored in S3 (managed by AWS). Use **Amazon Data Lifecycle Manager (DLM)** for automated snapshot schedules and retention policies. Cross-region copy for DR.
+Os Snapshots do EBS são incrementais e armazenados no S3 (gerenciado pela AWS). Use o **Amazon Data Lifecycle Manager (DLM)** para agendamentos automáticos de snapshots e políticas de retenção. Cópia entre regiões para DR.
 
 ```hcl
 resource "aws_dlm_lifecycle_policy" "daily_snapshot" {
-  description        = "Daily EBS snapshot — 14-day retention"
+  description        = "Snapshot EBS diário — retenção de 14 dias"
   execution_role_arn = aws_iam_role.dlm.arn
   state              = "ENABLED"
 
@@ -169,17 +169,17 @@ resource "aws_dlm_lifecycle_policy" "daily_snapshot" {
 
 ## EFS — Elastic File System
 
-EFS is a managed NFS (NFSv4) file system that scales automatically and is accessible from multiple EC2 instances, ECS tasks or EKS pods simultaneously — in the same AZ or across multiple AZs.
+O EFS é um sistema de arquivos NFS (NFSv4) gerenciado que escala automaticamente e é acessível por múltiplas instâncias EC2, tasks ECS ou pods EKS simultaneamente — na mesma AZ ou em múltiplas AZs.
 
-### Performance & throughput modes
+### Modos de performance e throughput
 
-| Mode | Description |
-|------|-------------|
-| **General Purpose** (default) | Lowest latency; suitable for most workloads |
-| **Max I/O** | Higher aggregate throughput at higher latency; legacy, use only for HPC |
-| **Elastic throughput** (default) | Scales automatically to workload; best for spiky access patterns |
-| **Provisioned throughput** | Fixed MiB/s regardless of storage size; for sustained high throughput |
-| **Bursting throughput** | Throughput scales with storage size + burst credits; predictable workloads |
+| Modo | Descrição |
+|------|-----------|
+| **General Purpose** (padrão) | Menor latência; adequado para a maioria das cargas |
+| **Max I/O** | Maior throughput agregado com maior latência; legado, use apenas para HPC |
+| **Elastic throughput** (padrão) | Escala automaticamente com a carga; melhor para padrões de acesso esporádico |
+| **Provisioned throughput** | MiB/s fixo independente do tamanho do armazenamento; para alto throughput sustentado |
+| **Bursting throughput** | Throughput escala com o tamanho do armazenamento + créditos de burst; cargas previsíveis |
 
 ```hcl
 resource "aws_efs_file_system" "shared" {
@@ -202,9 +202,9 @@ resource "aws_efs_mount_target" "az" {
 }
 ```
 
-### EFS in Kubernetes
+### EFS no Kubernetes
 
-Mount EFS volumes in EKS pods via the **EFS CSI driver** (`aws-efs-csi-driver` add-on). Use `accessModes: ReadWriteMany` for shared mounts across pods.
+Monte volumes EFS em pods EKS via **EFS CSI driver** (add-on `aws-efs-csi-driver`). Use `accessModes: ReadWriteMany` para montagens compartilhadas entre pods.
 
 ```yaml
 apiVersion: storage.k8s.io/v1
@@ -213,43 +213,43 @@ metadata:
   name: efs-sc
 provisioner: efs.csi.aws.com
 parameters:
-  provisioningMode: efs-ap        # uses EFS Access Points
+  provisioningMode: efs-ap        # usa EFS Access Points
   fileSystemId: fs-0123456789abcdef
   directoryPerms: "700"
 ```
 
 ---
 
-## FSx — Managed File Systems
+## FSx — Sistemas de Arquivos Gerenciados
 
-FSx offers managed file systems for specialised workloads where EFS (NFS) is insufficient.
+O FSx oferece sistemas de arquivos gerenciados para cargas especializadas onde o EFS (NFS) é insuficiente.
 
-| Variant | Protocol | Best for |
-|---------|---------|---------|
-| **FSx for Lustre** | Lustre | HPC, ML training, parallel I/O; can link to S3 |
-| **FSx for Windows** | SMB / NFS | Windows workloads, Active Directory integration |
-| **FSx for NetApp ONTAP** | NFS / SMB / iSCSI | Enterprise NAS, SnapMirror replication, multi-protocol |
-| **FSx for OpenZFS** | NFS | ZFS snapshots, clones; lift-and-shift from on-prem ZFS |
+| Variante | Protocolo | Melhor para |
+|----------|-----------|-------------|
+| **FSx for Lustre** | Lustre | HPC, treinamento ML, I/O paralelo; pode vincular ao S3 |
+| **FSx for Windows** | SMB / NFS | Cargas Windows, integração com Active Directory |
+| **FSx for NetApp ONTAP** | NFS / SMB / iSCSI | NAS empresarial, replicação SnapMirror, multi-protocolo |
+| **FSx for OpenZFS** | NFS | Snapshots e clones ZFS; lift-and-shift de ZFS on-prem |
 
 !!! example "FSx for Lustre ↔ S3"
-    FSx for Lustre can be linked to an S3 bucket as a data repository. Files are lazily loaded from S3 on first access and can be exported back — ideal for ML pipelines where training data lives in S3 but needs POSIX high-throughput access.
+    O FSx for Lustre pode ser vinculado a um bucket S3 como repositório de dados. Os arquivos são carregados do S3 sob demanda no primeiro acesso e podem ser exportados de volta — ideal para pipelines de ML onde os dados de treinamento ficam no S3, mas precisam de acesso POSIX de alto throughput.
 
 ---
 
-## Glacier & Archive
+## Glacier e Arquivamento
 
-S3 Glacier is not a separate service — it is accessed via **S3 storage classes**. Use lifecycle rules to transition objects to the appropriate Glacier tier.
+O S3 Glacier não é um serviço separado — é acessado via **classes de armazenamento do S3**. Use regras de ciclo de vida para transicionar objetos para a camada Glacier adequada.
 
-| Tier | First-byte latency | Typical cost |
-|------|--------------------|-------------|
-| Glacier Instant Retrieval | Milliseconds | ~$0.004/GB/month |
-| Glacier Flexible Retrieval | 1–5 min (Expedited), 3–5 hr (Standard), 5–12 hr (Bulk) | ~$0.0036/GB/month |
-| Glacier Deep Archive | 12 hr (Standard), 48 hr (Bulk) | ~$0.00099/GB/month |
+| Camada | Latência do primeiro byte | Custo típico |
+|--------|---------------------------|--------------|
+| Glacier Instant Retrieval | Milissegundos | ~$0,004/GB/mês |
+| Glacier Flexible Retrieval | 1–5 min (Expedited), 3–5 h (Standard), 5–12 h (Bulk) | ~$0,0036/GB/mês |
+| Glacier Deep Archive | 12 h (Standard), 48 h (Bulk) | ~$0,00099/GB/mês |
 
-!!! tip "Vault Lock for compliance"
-    Use **S3 Object Lock** in compliance mode (WORM) to prevent deletion or overwrite for a fixed retention period. Required for SEC 17a-4, CFTC 1.31 and similar regulations.
+!!! tip "Vault Lock para conformidade"
+    Use o **S3 Object Lock** no modo compliance (WORM) para impedir exclusão ou sobrescrita por um período de retenção fixo. Necessário para SEC 17a-4, CFTC 1.31 e regulamentações similares.
 
 ---
 
-[← Compute](compute.md){ .md-button }
-[Networking →](networking.md){ .md-button .md-button--primary }
+[← Computação](compute.md){ .md-button }
+[Rede →](networking.md){ .md-button .md-button--primary }

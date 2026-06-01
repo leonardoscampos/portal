@@ -1,13 +1,13 @@
 ---
 title: Loki
-description: Log aggregation with Loki, LogQL, Promtail, Grafana Alloy, log-based metrics, and retention policies.
+description: Agregação de logs com Loki, LogQL, Promtail, Grafana Alloy, métricas baseadas em logs e políticas de retenção.
 ---
 
 <div class="domain-page-hero" data-domain="monitoring">
   <div class="dph-left">
-    <span class="dph-eyebrow">// monitoring-observability / loki</span>
+    <span class="dph-eyebrow">// monitoramento-observabilidade / loki</span>
     <h1 class="dph-title">Loki</h1>
-    <p class="dph-desc">Grafana Loki is a horizontally-scalable, highly-available log aggregation system inspired by Prometheus. Unlike Elasticsearch, Loki indexes only metadata labels — not log content — making it dramatically cheaper to operate at scale.</p>
+    <p class="dph-desc">O Grafana Loki é um sistema de agregação de logs horizontalmente escalável e de alta disponibilidade, inspirado no Prometheus. Ao contrário do Elasticsearch, o Loki indexa apenas rótulos de metadados — e não o conteúdo dos logs — tornando-o dramaticamente mais barato de operar em escala.</p>
     <div class="dph-badges">
       <span class="tech-badge">LogQL</span>
       <span class="tech-badge">Promtail</span>
@@ -19,11 +19,11 @@ description: Log aggregation with Loki, LogQL, Promtail, Grafana Alloy, log-base
   </div>
 </div>
 
-[← Grafana](grafana.md) | [← Monitoring Overview](index.md) | [OpenTelemetry →](opentelemetry.md)
+[← Grafana](grafana.md) | [← Visão Geral de Monitoramento](index.md) | [OpenTelemetry →](opentelemetry.md)
 
 ---
 
-## Architecture
+## Arquitetura
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -43,7 +43,7 @@ description: Log aggregation with Loki, LogQL, Promtail, Grafana Alloy, log-base
 
 ---
 
-## Installation (Helm — Simple Scalable Mode)
+## Instalação (Helm — Modo Simple Scalable)
 
 ```bash
 helm repo add grafana https://grafana.github.io/helm-charts && helm repo update
@@ -54,11 +54,11 @@ helm upgrade --install loki grafana/loki \
 ```
 
 ```yaml
-# loki-values.yaml — Simple Scalable (write + read + backend)
+# loki-values.yaml — Simple Scalable (escrita + leitura + backend)
 deploymentMode: SimpleScalable
 
 loki:
-  auth_enabled: false          # set true for multi-tenant; use X-Scope-OrgID header
+  auth_enabled: false          # defina como true para multi-tenant; use o header X-Scope-OrgID
 
   commonConfig:
     replication_factor: 2
@@ -111,7 +111,7 @@ backend:
 
 ---
 
-## Promtail (Log Shipper)
+## Promtail (Transportador de Logs)
 
 ```bash
 helm upgrade --install promtail grafana/promtail \
@@ -126,9 +126,9 @@ config:
     - url: http://loki.monitoring.svc:3100/loki/api/v1/push
 
   snippets:
-    # Kubernetes pod logs with structured metadata
+    # Logs de pods Kubernetes com metadados estruturados
     pipelineStages:
-      - cri: {}                       # parse CRI-O / containerd format
+      - cri: {}                       # analisa o formato CRI-O / containerd
       - match:
           selector: '{namespace="production"}'
           stages:
@@ -143,7 +143,7 @@ config:
             - output:
                 source: msg
 
-    # Add Kubernetes labels
+    # Adiciona rótulos do Kubernetes
     extraScrapeConfigs: |
       - job_name: kubernetes-pods
         kubernetes_sd_configs:
@@ -168,10 +168,10 @@ config:
 
 ---
 
-## Grafana Alloy — Kubernetes Logs
+## Grafana Alloy — Logs do Kubernetes
 
 ```hcl
-// alloy log collection pipeline (preferred over Promtail for new deployments)
+// pipeline de coleta de logs do Alloy (preferido ao Promtail para novas implantações)
 
 discovery.kubernetes "pods" {
   role = "pod"
@@ -209,7 +209,7 @@ loki.source.kubernetes "pods" {
 }
 
 loki.process "parse" {
-  // Parse JSON logs and extract fields as labels
+  // Analisa logs JSON e extrai campos como rótulos
   stage.json {
     expressions = {
       level  = "level",
@@ -236,68 +236,68 @@ loki.write "default" {
 
 ## LogQL
 
-### Log Selector
+### Seletor de Log
 
 ```logql
-# All logs from production namespace, app=api
+# Todos os logs do namespace production, app=api
 {namespace="production", app="api"}
 
-# Regex label match
+# Correspondência de rótulo por regex
 {namespace=~"prod|staging", level="error"}
 ```
 
-### Line Filters (fast — applied before parsing)
+### Filtros de Linha (rápidos — aplicados antes da análise)
 
 ```logql
-# Contains string
+# Contém string
 {app="api"} |= "ERROR"
 
-# Does not contain
+# Não contém
 {app="api"} != "healthcheck"
 
-# Regex match
+# Correspondência por regex
 {app="api"} |~ "error|panic|fatal"
 
-# Case-insensitive regex
+# Regex sem distinção de maiúsculas
 {app="api"} |~ "(?i)timeout"
 ```
 
-### Parsers
+### Analisadores
 
 ```logql
-# JSON parser — extract fields
+# Analisador JSON — extrai campos
 {app="api"} | json | level="error"
 
-# Logfmt parser
+# Analisador Logfmt
 {app="worker"} | logfmt | duration > 1s
 
-# Pattern parser (Apache Combined Log)
+# Analisador de padrão (Apache Combined Log)
 {app="nginx"} | pattern `<ip> - - [<ts>] "<method> <uri> <proto>" <status> <bytes>`
              | status >= 500
 
-# Regexp parser with named capture groups
+# Analisador Regexp com grupos de captura nomeados
 {app="api"} | regexp `level=(?P<level>\w+) msg="(?P<msg>[^"]+)"`
 ```
 
-### Metric Queries
+### Consultas de Métricas
 
 ```logql
-# Error rate per app (logs/s)
+# Taxa de erro por app (logs/s)
 sum by (app) (rate({namespace="production"} |= "ERROR" [5m]))
 
-# Request count over 10 min
+# Contagem de requisições em 10 min
 sum(count_over_time({app="api"}[10m]))
 
-# P99 latency from parsed JSON field
+# Latência P99 a partir de campo JSON analisado
 quantile_over_time(0.99,
   {app="api"} | json | unwrap duration_ms [5m]
 ) by (endpoint)
 
-# Bytes received per pod
+# Bytes recebidos por pod
 sum by (pod) (bytes_rate({namespace="production"}[5m]))
 ```
 
-### Log-based Alerting Rule
+### Regra de Alerta Baseada em Logs
 
 ```yaml
 apiVersion: monitoring.coreos.com/v1
@@ -309,7 +309,7 @@ spec:
   groups:
     - name: log.errors
       rules:
-        # Convert log metric to recording rule for Alertmanager
+        # Converte métrica de log em recording rule para o Alertmanager
         - alert: HighLogErrorRate
           expr: |
             sum by (app) (
@@ -324,14 +324,14 @@ spec:
 
 ---
 
-## Retention & Compaction
+## Retenção e Compactação
 
 ```yaml
-# In loki.limits_config
+# Em loki.limits_config
 limits_config:
-  retention_period: 30d            # global default
+  retention_period: 30d            # padrão global
 
-# Per-tenant / per-stream overrides (requires auth_enabled: true)
+# Sobrescritas por tenant / por stream (requer auth_enabled: true)
 per_tenant_override_config: /etc/loki/overrides.yaml
 ```
 
@@ -345,7 +345,7 @@ overrides:
 ```
 
 ```yaml
-# Enable compactor for automatic deletion
+# Habilita compactor para exclusão automática
 compactor:
   working_directory: /var/loki/compactor
   shared_store: s3
@@ -357,26 +357,26 @@ compactor:
 
 ---
 
-## Loki LogQL Cheatsheet
+## Cheatsheet de LogQL do Loki
 
 ```logql
-# Last 100 error lines from all pods in production
+# Últimas 100 linhas de erro de todos os pods em production
 {namespace="production"} |= "ERROR" | line_format "{{.pod}} {{.msg}}" | limit 100
 
-# Slow requests (parsed logfmt, duration > 500ms)
+# Requisições lentas (logfmt analisado, duração > 500ms)
 {app="api"} | logfmt | duration > 500ms
 
-# Top labels by log volume
+# Top rótulos por volume de logs
 topk(10, sum by (app) (rate({namespace="production"}[1h])))
 
-# Trace correlation — find log lines with a specific traceID
+# Correlação de traces — encontra linhas de log com um traceID específico
 {namespace="production"} | json | traceID="abc123def456"
 
-# Errors in the last 15 min grouped by pod
+# Erros nos últimos 15 min agrupados por pod
 sum by (pod) (count_over_time({namespace="production"} |= "error" [15m]))
 
-# Kubernetes event logs
+# Logs de eventos do Kubernetes
 {job="eventrouter"} | json | involvedObject_namespace="production"
 ```
 
-[← Grafana](grafana.md) | [← Monitoring Overview](index.md) | [OpenTelemetry →](opentelemetry.md)
+[← Grafana](grafana.md) | [← Visão Geral de Monitoramento](index.md) | [OpenTelemetry →](opentelemetry.md)

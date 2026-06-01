@@ -1,13 +1,13 @@
 ---
 title: Dynatrace
-description: Dynatrace full-stack observability — OneAgent, Davis AI, Smartscape, distributed tracing, log management, infrastructure monitoring and SLOs.
+description: Observabilidade full-stack com Dynatrace — OneAgent, Davis AI, Smartscape, rastreamento distribuído, gerenciamento de logs, monitoramento de infraestrutura e SLOs.
 ---
 
 <div class="domain-page-hero" data-domain="monitoring">
   <div class="dph-left">
-    <span class="dph-eyebrow">// monitoring-observability / dynatrace</span>
+    <span class="dph-eyebrow">// monitoramento-observabilidade / dynatrace</span>
     <h1 class="dph-title">Dynatrace</h1>
-    <p class="dph-desc">Dynatrace delivers AI-powered full-stack observability through a single OneAgent deployment. Davis AI automatically detects anomalies, pinpoints root causes and maps every dependency in real time via Smartscape — replacing manual dashboard review with causal answers.</p>
+    <p class="dph-desc">Dynatrace oferece observabilidade full-stack com IA por meio de uma única implantação do OneAgent. O Davis AI detecta anomalias automaticamente, identifica causas raiz e mapeia cada dependência em tempo real via Smartscape — substituindo a revisão manual de painéis por respostas causais.</p>
     <div class="dph-badges">
       <span class="tech-badge">OneAgent</span>
       <span class="tech-badge">Davis AI</span>
@@ -19,11 +19,11 @@ description: Dynatrace full-stack observability — OneAgent, Davis AI, Smartsca
   </div>
 </div>
 
-[← Datadog](datadog.md) | [← Monitoring Overview](index.md)
+[← Datadog](datadog.md) | [← Visão Geral de Monitoramento](index.md)
 
 ---
 
-## Architecture
+## Arquitetura
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -49,7 +49,7 @@ description: Dynatrace full-stack observability — OneAgent, Davis AI, Smartsca
 
 ---
 
-## OneAgent — Kubernetes Deployment
+## OneAgent — Implantação no Kubernetes
 
 ```bash
 # Operator-based deployment (recommended)
@@ -108,9 +108,9 @@ spec:
 
 ---
 
-## OpenTelemetry Integration
+## Integração com OpenTelemetry
 
-Dynatrace natively ingests OTLP — send traces, metrics, and logs without OneAgent.
+O Dynatrace ingere OTLP nativamente — envie traces, métricas e logs sem o OneAgent.
 
 ```yaml
 # OTel Collector → Dynatrace OTLP endpoint
@@ -178,7 +178,7 @@ with tracer.start_as_current_span("my_operation") as span:
 
 ---
 
-## Metrics Ingest API
+## API de Ingestão de Métricas
 
 ```bash
 # Push custom metrics via Metrics Ingest API v2 (DynatraceQL line protocol)
@@ -200,9 +200,9 @@ curl -X POST "https://ENVIRONMENT_ID.live.dynatrace.com/api/v2/metrics/ingest" \
 
 ---
 
-## DQL — Dynatrace Query Language
+## DQL — Linguagem de Consulta do Dynatrace
 
-Grail is Dynatrace's data lakehouse; DQL is its unified query language for metrics, logs, traces, events and topology.
+Grail é o data lakehouse do Dynatrace; DQL é sua linguagem de consulta unificada para métricas, logs, traces, eventos e topologia.
 
 ```sql
 -- P99 latency over the last hour by service
@@ -253,9 +253,9 @@ resource "dynatrace_slo_v2" "api_availability" {
 
 ---
 
-## Alerting & Problems
+## Alertas & Problemas
 
-### Anomaly Detection (Terraform)
+### Detecção de Anomalias (Terraform)
 
 ```hcl
 resource "dynatrace_metric_events" "high_error_rate" {
@@ -287,7 +287,7 @@ resource "dynatrace_metric_events" "high_error_rate" {
 }
 ```
 
-### Notification Integration
+### Integração de Notificações
 
 ```hcl
 # PagerDuty integration
@@ -313,17 +313,17 @@ resource "dynatrace_slack_notification" "sre_channel" {
 
 ---
 
-## Davis AI — Root Cause Analysis
+## Davis AI — Análise de Causa Raiz
 
-Davis AI automatically correlates events and identifies the root cause within seconds of a problem opening. Key capabilities:
+O Davis AI correlaciona eventos automaticamente e identifica a causa raiz em segundos após a abertura de um problema. Principais capacidades:
 
-| Feature | Description |
+| Funcionalidade | Descrição |
 |---------|-------------|
-| **Automatic baselining** | Learns normal behaviour per entity, time-of-day, day-of-week |
-| **Causal AI** | Links symptoms → root cause across topology hops |
-| **Problem grouping** | Merges related alerts into one Problem card |
-| **Impact analysis** | Shows which services/users are affected |
-| **Auto-close** | Closes Problems when metrics return to baseline |
+| **Baselining automático** | Aprende o comportamento normal por entidade, hora do dia e dia da semana |
+| **IA causal** | Conecta sintomas → causa raiz por saltos de topologia |
+| **Agrupamento de problemas** | Mescla alertas relacionados em um cartão de Problema |
+| **Análise de impacto** | Mostra quais serviços/usuários são afetados |
+| **Fechamento automático** | Fecha Problemas quando as métricas retornam ao baseline |
 
 ```bash
 # Query Problems via API
@@ -334,7 +334,7 @@ curl "https://ENVIRONMENT_ID.live.dynatrace.com/api/v2/problems?problemSelector=
 
 ---
 
-## API Automation
+## Automação via API
 
 ```bash
 # List all monitored services
@@ -357,4 +357,4 @@ curl -X POST "https://ENVIRONMENT_ID.live.dynatrace.com/api/v2/events/ingest" \
   }'
 ```
 
-[← Datadog](datadog.md) | [← Monitoring Overview](index.md)
+[← Datadog](datadog.md) | [← Visão Geral de Monitoramento](index.md)

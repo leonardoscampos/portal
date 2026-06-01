@@ -1,29 +1,29 @@
 ---
 title: Datadog
-description: Datadog APM, infrastructure monitoring, log management, dashboards, SLOs and alerting for cloud-native platforms.
+description: Datadog APM, monitoramento de infraestrutura, gerenciamento de logs, painéis, SLOs e alertas para plataformas cloud-native.
 ---
 
 <div class="domain-page-hero" data-domain="monitoring">
   <div class="dph-left">
-    <span class="dph-eyebrow">// monitoring-observability / datadog</span>
+    <span class="dph-eyebrow">// monitoramento-observabilidade / datadog</span>
     <h1 class="dph-title">Datadog</h1>
-    <p class="dph-desc">Datadog is a unified observability platform covering infrastructure metrics, APM traces, log management, real-user monitoring and synthetic testing — all correlated in a single pane of glass. The Datadog Agent ships as a DaemonSet and integrates with every cloud provider and runtime.</p>
+    <p class="dph-desc">Datadog é uma plataforma de observabilidade unificada que abrange métricas de infraestrutura, traces APM, gerenciamento de logs, monitoramento de usuário real e testes sintéticos — tudo correlacionado em um único painel. O Datadog Agent é implantado como DaemonSet e integra-se a todos os provedores de nuvem e runtimes.</p>
     <div class="dph-badges">
       <span class="tech-badge">Datadog Agent</span>
       <span class="tech-badge">APM</span>
-      <span class="tech-badge">Log Management</span>
-      <span class="tech-badge">Dashboards</span>
+      <span class="tech-badge">Gerenciamento de Logs</span>
+      <span class="tech-badge">Painéis</span>
       <span class="tech-badge">SLOs</span>
-      <span class="tech-badge">Monitors</span>
+      <span class="tech-badge">Monitores</span>
     </div>
   </div>
 </div>
 
-[← APM](apm.md) | [← Monitoring Overview](index.md) | [Dynatrace →](dynatrace.md)
+[← APM](apm.md) | [← Visão Geral de Monitoramento](index.md) | [Dynatrace →](dynatrace.md)
 
 ---
 
-## Agent Deployment (Kubernetes)
+## Implantação do Agent (Kubernetes)
 
 ```bash
 helm repo add datadog https://helm.datadoghq.com
@@ -97,9 +97,9 @@ kubeStateMetricsCore:
 
 ---
 
-## APM — Distributed Tracing
+## APM — Rastreamento Distribuído
 
-### Instrument Python
+### Instrumentar Python
 
 ```python
 # Install: pip install ddtrace
@@ -124,7 +124,7 @@ DD_AGENT_HOST=datadog-agent.datadog.svc \
 ddtrace-run gunicorn app:app
 ```
 
-### Instrument Go
+### Instrumentar Go
 
 ```go
 import (
@@ -148,7 +148,7 @@ func main() {
 }
 ```
 
-### Instrument Node.js
+### Instrumentar Node.js
 
 ```javascript
 // Must be first import
@@ -161,7 +161,7 @@ const tracer = require('dd-trace').init({
 });
 ```
 
-### Kubernetes Pod Annotations (Library Injection)
+### Anotações de Pod no Kubernetes (Injeção de Biblioteca)
 
 ```yaml
 # Let Datadog inject the tracer library — no code change required
@@ -191,9 +191,9 @@ spec:
 
 ---
 
-## Log Management
+## Gerenciamento de Logs
 
-### Log Collection from Pods
+### Coleta de Logs de Pods
 
 ```yaml
 # Autodiscovery annotations — override log parsing per pod
@@ -211,7 +211,7 @@ metadata:
       }]
 ```
 
-### Log Pipeline (Terraform)
+### Pipeline de Logs (Terraform)
 
 ```hcl
 resource "datadog_logs_index" "main" {
@@ -262,9 +262,9 @@ resource "datadog_logs_pipeline" "my_api" {
 
 ---
 
-## Monitors & Alerts
+## Monitores & Alertas
 
-### Terraform-managed Monitors
+### Monitores Gerenciados com Terraform
 
 ```hcl
 # Error rate monitor
@@ -310,7 +310,7 @@ resource "datadog_monitor" "latency_anomaly" {
 
 ---
 
-## Dashboards as Code
+## Painéis como Código
 
 ```hcl
 resource "datadog_dashboard" "service_overview" {
@@ -384,7 +384,7 @@ resource "datadog_service_level_objective" "api_availability" {
 
 ---
 
-## Synthetic Tests
+## Testes Sintéticos
 
 ```hcl
 # API test — run from multiple locations every minute
@@ -432,4 +432,4 @@ resource "datadog_synthetics_test" "api_health" {
 }
 ```
 
-[← APM](apm.md) | [← Monitoring Overview](index.md) | [Dynatrace →](dynatrace.md)
+[← APM](apm.md) | [← Visão Geral de Monitoramento](index.md) | [Dynatrace →](dynatrace.md)

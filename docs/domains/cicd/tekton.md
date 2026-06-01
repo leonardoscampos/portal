@@ -1,13 +1,13 @@
 ---
 title: Tekton
-description: Tekton Kubernetes-native CI/CD, Tasks, Pipelines, Triggers and Tekton Chains supply chain security reference.
+description: Referência de CI/CD nativo do Kubernetes com Tekton: Tasks, Pipelines, Triggers e segurança da cadeia de suprimentos com Tekton Chains.
 ---
 
 <div class="domain-page-hero" data-domain="cicd">
   <div class="dph-left">
     <span class="dph-eyebrow">// cicd-pipelines / tekton</span>
     <h1 class="dph-title">Tekton</h1>
-    <p class="dph-desc">Kubernetes-native CI/CD framework built on CRDs. Tasks, Pipelines and Triggers run as regular Kubernetes workloads — scalable, portable and fully declarative. Tekton Chains adds automatic supply-chain security with SLSA provenance and Sigstore signing.</p>
+    <p class="dph-desc">Framework de CI/CD nativo do Kubernetes construído sobre CRDs. Tasks, Pipelines e Triggers são executados como workloads regulares do Kubernetes — escaláveis, portáteis e totalmente declarativos. Tekton Chains adiciona segurança automática da cadeia de suprimentos com proveniência SLSA e assinatura Sigstore.</p>
     <div class="dph-badges">
       <span class="tech-badge">Tasks</span>
       <span class="tech-badge">Pipelines</span>
@@ -19,26 +19,26 @@ description: Tekton Kubernetes-native CI/CD, Tasks, Pipelines, Triggers and Tekt
   </div>
 </div>
 
-[← Jenkins](jenkins.md) | [← CI/CD Overview](index.md) | [Azure DevOps →](azure-devops.md)
+[← Jenkins](jenkins.md) | [← Visão Geral de CI/CD](index.md) | [Azure DevOps →](azure-devops.md)
 
 ---
 
-## Core CRD Overview
+## Visão Geral dos CRDs Principais
 
-| CRD | Description |
+| CRD | Descrição |
 |-----|-------------|
-| **Task** | Ordered list of Steps. Each Step is a container. The unit of reuse |
-| **TaskRun** | Instantiation of a Task with params and workspaces |
-| **Pipeline** | DAG of Tasks with params, workspaces and results wiring |
-| **PipelineRun** | Instantiation of a Pipeline |
-| **Workspace** | Shared volume between Tasks (PVC, ConfigMap, Secret, emptyDir) |
-| **Param** | Typed input (string, array, object) |
-| **Result** | String output emitted by a Task, consumed by downstream Tasks |
-| **StepAction** | Reusable single Step (Tekton v0.54+, Tekton Hub compatible) |
+| **Task** | Lista ordenada de Passos. Cada Passo é um contêiner. A unidade de reuso |
+| **TaskRun** | Instanciação de uma Task com parâmetros e workspaces |
+| **Pipeline** | DAG de Tasks com parâmetros, workspaces e conexão de resultados |
+| **PipelineRun** | Instanciação de um Pipeline |
+| **Workspace** | Volume compartilhado entre Tasks (PVC, ConfigMap, Segredo, emptyDir) |
+| **Param** | Entrada tipada (string, array, objeto) |
+| **Result** | Saída de string emitida por uma Task, consumida por Tasks downstream |
+| **StepAction** | Passo único reutilizável (Tekton v0.54+, compatível com Tekton Hub) |
 
 ---
 
-## Installing Tekton
+## Instalando o Tekton
 
 ```bash
 # Pipelines
@@ -230,7 +230,7 @@ spec:
 
 ---
 
-## Triggers (Webhook → PipelineRun)
+## Gatilhos (Webhook → PipelineRun)
 
 ```yaml
 # TriggerBinding — extracts values from the webhook payload
@@ -316,14 +316,14 @@ spec:
 
 ---
 
-## Tekton Chains — Supply Chain Security
+## Tekton Chains — Segurança da Cadeia de Suprimentos
 
-Tekton Chains runs as a controller watching TaskRuns. When a TaskRun completes, Chains:
+Tekton Chains é executado como um controller que monitora TaskRuns. Quando um TaskRun é concluído, o Chains:
 
-1. Captures the Task's inputs/outputs and parameters
-2. Generates an in-toto attestation (SLSA provenance)
-3. Signs it using the configured key (cosign / KMS)
-4. Stores the signature as an annotation on the TaskRun
+1. Captura as entradas/saídas e parâmetros da Task
+2. Gera um atestado in-toto (proveniência SLSA)
+3. Assina com a chave configurada (cosign / KMS)
+4. Armazena a assinatura como uma anotação no TaskRun
 
 ```yaml
 # chains-config ConfigMap (in tekton-chains namespace)
@@ -398,7 +398,7 @@ taskRef:
 
 ---
 
-## tkn CLI Cheatsheet
+## Referência Rápida da CLI tkn
 
 ```bash
 # List pipelines
@@ -430,19 +430,19 @@ curl -X POST http://el-github-listener.tekton-pipelines.svc:8080 \
 
 ---
 
-## Best Practices
+## Melhores Práticas
 
-| Practice | Implementation |
+| Prática | Implementação |
 |----------|---------------|
-| **Use Resolvers** | Reference Tasks from Hub or Git — avoid copy-pasting |
-| **Pin Task versions** | Specify exact `version` in resolver params |
-| **Workspaces over env vars** | Pass files between Tasks via shared workspaces |
-| **Task Results** | Wire outputs between Tasks without side-channel storage |
-| **Kaniko for image builds** | Rootless, daemon-free builds inside Kubernetes |
-| **Tekton Chains** | Enable for automatic SLSA provenance on every TaskRun |
-| **Resource limits** | Set CPU/memory on all Steps — prevent noisy-neighbour issues |
-| **Non-root Steps** | Run Steps as `runAsNonRoot: true` for security |
-| **PipelineRun cleanup** | Use `tektoncd/pruner` or `tkn pipelinerun delete --keep` |
-| **Dashboard RBAC** | Restrict Dashboard access; it shows secrets via workspace contents |
+| **Use Resolvers** | Referencie Tasks do Hub ou Git — evite copiar e colar |
+| **Fixe versões de Task** | Especifique o `version` exato nos parâmetros do resolver |
+| **Workspaces ao invés de variáveis de ambiente** | Passe arquivos entre Tasks via workspaces compartilhados |
+| **Resultados de Task** | Conecte saídas entre Tasks sem armazenamento por canal lateral |
+| **Kaniko para builds de imagem** | Builds sem root e sem daemon dentro do Kubernetes |
+| **Tekton Chains** | Habilite para proveniência SLSA automática em cada TaskRun |
+| **Limites de recursos** | Defina CPU/memória em todos os Passos — evite problemas de vizinho barulhento |
+| **Passos sem root** | Execute Passos com `runAsNonRoot: true` por segurança |
+| **Limpeza de PipelineRun** | Use `tektoncd/pruner` ou `tkn pipelinerun delete --keep` |
+| **RBAC do Dashboard** | Restrinja o acesso ao Dashboard; ele exibe segredos via conteúdo dos workspaces |
 
-[← Jenkins](jenkins.md) | [← CI/CD Overview](index.md) | [Azure DevOps →](azure-devops.md)
+[← Jenkins](jenkins.md) | [← Visão Geral de CI/CD](index.md) | [Azure DevOps →](azure-devops.md)

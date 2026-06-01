@@ -1,13 +1,13 @@
 ---
 title: Helm
-description: Helm chart structure, values, templating, Helmfile, OCI registries and chart testing reference.
+description: Referência de estrutura de charts Helm, valores, templates, Helmfile, registries OCI e testes de charts.
 ---
 
 <div class="domain-page-hero" data-domain="iac">
   <div class="dph-left">
     <span class="dph-eyebrow">// infrastructure-as-code / helm</span>
     <h1 class="dph-title">Helm</h1>
-    <p class="dph-desc">The package manager for Kubernetes. Helm charts bundle Kubernetes manifests with configurable values, enabling repeatable deployments across environments. Helmfile manages multiple releases declaratively across clusters.</p>
+    <p class="dph-desc">O gerenciador de pacotes para Kubernetes. Os charts Helm agrupam manifestos Kubernetes com valores configuráveis, possibilitando implantações repetíveis entre ambientes. O Helmfile gerencia múltiplos releases de forma declarativa em diferentes clusters.</p>
     <div class="dph-badges">
       <span class="tech-badge">Charts</span>
       <span class="tech-badge">Values</span>
@@ -19,11 +19,11 @@ description: Helm chart structure, values, templating, Helmfile, OCI registries 
   </div>
 </div>
 
-[← Pulumi](pulumi.md) | [← IaC Overview](index.md) | [GitOps →](gitops.md)
+[← Pulumi](pulumi.md) | [← Visão Geral de IaC](index.md) | [GitOps →](gitops.md)
 
 ---
 
-## Chart Structure
+## Estrutura do Chart
 
 ```
 my-app/
@@ -195,7 +195,7 @@ spec:
 
 ---
 
-## Core CLI Commands
+## Comandos CLI Principais
 
 ```bash
 # Add and update a chart repository
@@ -233,9 +233,9 @@ helm uninstall my-app -n production
 
 ---
 
-## OCI Registry
+## Registry OCI
 
-Helm 3.8+ supports storing and pulling charts from OCI-compliant registries (ECR, ACR, GAR, Docker Hub).
+Helm 3.8+ suporta armazenar e baixar charts de registries compatíveis com OCI (ECR, ACR, GAR, Docker Hub).
 
 ```bash
 # Push to AWS ECR
@@ -261,7 +261,7 @@ helm upgrade --install my-app \
 
 ## Helmfile
 
-Helmfile declares all Helm releases for an environment in a single YAML file, enabling `helmfile apply` as a single idempotent operation.
+O Helmfile declara todos os releases Helm de um ambiente em um único arquivo YAML, permitindo que `helmfile apply` seja uma operação idempotente.
 
 ```yaml
 # helmfile.yaml
@@ -328,9 +328,9 @@ helmfile --environment prod destroy
 
 ---
 
-## Helm Hooks
+## Hooks do Helm
 
-Hooks let you run Jobs at specific lifecycle points.
+Hooks permitem executar Jobs em pontos específicos do ciclo de vida.
 
 ```yaml
 # templates/db-migrate-job.yaml
@@ -355,22 +355,22 @@ spec:
                 name: {{ include "my-app.name" . }}-db-secret
 ```
 
-| Hook | When it runs |
+| Hook | Quando é executado |
 |------|-------------|
-| `pre-install` | Before any resources are created |
-| `post-install` | After all resources are installed |
-| `pre-upgrade` | Before an upgrade begins |
-| `post-upgrade` | After an upgrade succeeds |
-| `pre-rollback` | Before a rollback begins |
-| `post-rollback` | After a rollback succeeds |
-| `pre-delete` | Before a release is deleted |
-| `test` | When `helm test` is run |
+| `pre-install` | Antes de qualquer recurso ser criado |
+| `post-install` | Após todos os recursos serem instalados |
+| `pre-upgrade` | Antes de um upgrade começar |
+| `post-upgrade` | Após um upgrade ser bem-sucedido |
+| `pre-rollback` | Antes de um rollback começar |
+| `post-rollback` | Após um rollback ser bem-sucedido |
+| `pre-delete` | Antes de um release ser excluído |
+| `test` | Quando `helm test` é executado |
 
 ---
 
-## Chart Testing (ct)
+## Teste de Charts (ct)
 
-`chart-testing` is the official lint + test tool for Helm charts, designed for CI.
+`chart-testing` é a ferramenta oficial de lint + teste para charts Helm, projetada para CI.
 
 ```yaml
 # .github/workflows/chart-test.yml

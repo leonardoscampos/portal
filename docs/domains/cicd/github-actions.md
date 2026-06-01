@@ -1,13 +1,13 @@
 ---
 title: GitHub Actions
-description: GitHub Actions workflows, runners, matrix builds, OIDC, reusable workflows and environments reference.
+description: Workflows, runners, matrix builds, OIDC, workflows reutilizáveis e referência de ambientes do GitHub Actions.
 ---
 
 <div class="domain-page-hero" data-domain="cicd">
   <div class="dph-left">
     <span class="dph-eyebrow">// cicd-pipelines / github-actions</span>
     <h1 class="dph-title">GitHub Actions</h1>
-    <p class="dph-desc">GitHub's native CI/CD platform. Event-driven workflows defined as YAML living alongside your code. Massive marketplace of community actions, built-in OIDC for passwordless cloud auth and first-class support for matrix builds, reusable workflows and deployment environments.</p>
+    <p class="dph-desc">Plataforma nativa de CI/CD do GitHub. Workflows orientados a eventos definidos como YAML que vivem junto ao seu código. Vasto marketplace de actions da comunidade, OIDC integrado para autenticação em nuvem sem senha e suporte de primeira classe para matrix builds, workflows reutilizáveis e ambientes de implantação.</p>
     <div class="dph-badges">
       <span class="tech-badge">Workflows</span>
       <span class="tech-badge">Runners</span>
@@ -19,11 +19,11 @@ description: GitHub Actions workflows, runners, matrix builds, OIDC, reusable wo
   </div>
 </div>
 
-[← CI/CD Overview](index.md) | [GitLab CI →](gitlab-ci.md)
+[← Visão Geral de CI/CD](index.md) | [GitLab CI →](gitlab-ci.md)
 
 ---
 
-## Workflow Anatomy
+## Anatomia do Workflow
 
 ```yaml
 # .github/workflows/ci.yml
@@ -71,22 +71,22 @@ jobs:
 
 ---
 
-## Core Concepts
+## Conceitos Principais
 
-| Concept | Description |
+| Conceito | Descrição |
 |---------|-------------|
-| **Workflow** | YAML file in `.github/workflows/` — top-level automation unit |
-| **Event** | Trigger: `push`, `pull_request`, `schedule`, `workflow_dispatch`, `release`… |
-| **Job** | Set of steps that run on the same runner. Jobs run in parallel by default |
-| **Step** | Atomic unit — either `run` (shell) or `uses` (action) |
-| **Action** | Reusable unit: JavaScript, Docker container, or composite |
-| **Runner** | Host executing jobs. GitHub-hosted (Ubuntu/Windows/macOS) or self-hosted |
-| **Context** | Built-in objects: `github`, `env`, `vars`, `secrets`, `inputs`, `steps`, `jobs` |
-| **Expression** | `${{ ... }}` — evaluated by the runner, supports functions and operators |
+| **Workflow** | Arquivo YAML em `.github/workflows/` — unidade de automação de nível superior |
+| **Event** | Gatilho: `push`, `pull_request`, `schedule`, `workflow_dispatch`, `release`… |
+| **Job** | Conjunto de passos executados no mesmo runner. Jobs rodam em paralelo por padrão |
+| **Step** | Unidade atômica — `run` (shell) ou `uses` (action) |
+| **Action** | Unidade reutilizável: JavaScript, container Docker ou composta |
+| **Runner** | Host que executa os jobs. Hospedado pelo GitHub (Ubuntu/Windows/macOS) ou self-hosted |
+| **Context** | Objetos integrados: `github`, `env`, `vars`, `secrets`, `inputs`, `steps`, `jobs` |
+| **Expression** | `${{ ... }}` — avaliado pelo runner, suporta funções e operadores |
 
 ---
 
-## Triggers Reference
+## Referência de Gatilhos
 
 ```yaml
 on:
@@ -152,7 +152,7 @@ jobs:
 
 ---
 
-## Caching
+## Cache
 
 ```yaml
 steps:
@@ -177,7 +177,7 @@ steps:
 
 ---
 
-## OIDC — Passwordless Cloud Auth
+## OIDC — Autenticação em Nuvem Sem Senha
 
 === "AWS"
 
@@ -230,9 +230,9 @@ steps:
 
 ---
 
-## Reusable Workflows
+## Workflows Reutilizáveis
 
-=== "Caller"
+=== "Chamador"
 
     ```yaml
     # .github/workflows/deploy.yml
@@ -254,7 +254,7 @@ steps:
         secrets: inherit
     ```
 
-=== "Called Workflow"
+=== "Workflow Chamado"
 
     ```yaml
     # .github/workflows/deploy.yml (in shared-workflows repo)
@@ -284,7 +284,7 @@ steps:
 
 ---
 
-## Composite Actions
+## Actions Compostas
 
 ```yaml
 # .github/actions/setup-terraform/action.yml
@@ -320,7 +320,7 @@ runs:
 
 ---
 
-## Deployment Environments
+## Ambientes de Implantação
 
 ```yaml
 jobs:
@@ -338,13 +338,13 @@ jobs:
           APP_URL: ${{ vars.PROD_APP_URL }}      # env-scoped variable
 ```
 
-!!! tip "Protection rules"
-    Environments support required reviewers, wait timers and branch/tag policies.
-    Configure under **Settings → Environments** in your repository.
+!!! tip "Regras de proteção"
+    Ambientes suportam revisores obrigatórios, temporizadores de espera e políticas de branch/tag.
+    Configure em **Configurações → Ambientes** no seu repositório.
 
 ---
 
-## Container Services & Docker
+## Serviços de Container e Docker
 
 ```yaml
 jobs:
@@ -381,7 +381,7 @@ jobs:
 
 ---
 
-## Container Image Build & Push
+## Build e Push de Imagem de Container
 
 ```yaml
 jobs:
@@ -424,7 +424,7 @@ jobs:
 
 ---
 
-## Job Dependencies & Outputs
+## Dependências e Saídas de Jobs
 
 ```yaml
 jobs:
@@ -452,24 +452,24 @@ jobs:
 
 ---
 
-## Security Best Practices
+## Boas Práticas de Segurança
 
-| Practice | Implementation |
+| Prática | Implementação |
 |----------|---------------|
-| **Pin actions to SHAs** | `uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683` not `@v4` |
-| **Least-privilege permissions** | Declare `permissions:` at job level, grant only what's needed |
-| **OIDC over long-lived secrets** | Use Workload Identity Federation — no stored cloud credentials |
-| **Secret scanning** | Enable GitHub Secret Scanning + push protection in repo settings |
-| **Dependency review** | `actions/dependency-review-action` on every PR |
-| **Step security** | `GITHUB_TOKEN` auto-expires per run; never `echo` secrets |
-| **Third-party actions** | Audit marketplace actions; prefer org-owned or verified creators |
-| **Environment protection** | Require reviewers for production environments |
+| **Fixar actions em SHAs** | `uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683` e não `@v4` |
+| **Permissões mínimas** | Declare `permissions:` no nível do job, conceda apenas o necessário |
+| **OIDC em vez de segredos de longa duração** | Use Workload Identity Federation — sem credenciais de nuvem armazenadas |
+| **Varredura de segredos** | Ative o GitHub Secret Scanning + proteção de push nas configurações do repositório |
+| **Revisão de dependências** | `actions/dependency-review-action` em cada PR |
+| **Segurança de passos** | `GITHUB_TOKEN` expira automaticamente por execução; nunca use `echo` em segredos |
+| **Actions de terceiros** | Audite actions do marketplace; prefira criadores verificados ou da organização |
+| **Proteção de ambientes** | Exija revisores para ambientes de produção |
 
 ---
 
-## Actions Cheatsheet
+## Cheatsheet de Actions
 
-| Task | Action |
+| Tarefa | Action |
 |------|--------|
 | Checkout | `actions/checkout@v4` |
 | Node.js | `actions/setup-node@v4` |
@@ -482,12 +482,12 @@ jobs:
 | AWS OIDC | `aws-actions/configure-aws-credentials@v4` |
 | GCP OIDC | `google-github-actions/auth@v2` |
 | Azure login | `azure/login@v2` |
-| kubectl | `azure/setup-kubectl@v4` or `google-github-actions/setup-gcloud@v2` |
+| kubectl | `azure/setup-kubectl@v4` ou `google-github-actions/setup-gcloud@v2` |
 | Helm | `azure/setup-helm@v4` |
 | Terraform | `hashicorp/setup-terraform@v3` |
-| Upload artifact | `actions/upload-artifact@v4` |
-| Download artifact | `actions/download-artifact@v4` |
+| Upload de artefato | `actions/upload-artifact@v4` |
+| Download de artefato | `actions/download-artifact@v4` |
 | Cache | `actions/cache@v4` |
-| Slack notify | `slackapi/slack-github-action@v2` |
+| Notificação Slack | `slackapi/slack-github-action@v2` |
 
-[← CI/CD Overview](index.md) | [GitLab CI →](gitlab-ci.md)
+[← Visão Geral de CI/CD](index.md) | [GitLab CI →](gitlab-ci.md)

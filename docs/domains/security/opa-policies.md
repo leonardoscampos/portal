@@ -1,13 +1,13 @@
 ---
-title: Policy as Code
-description: OPA, Gatekeeper, Kyverno — admission control, compliance guardrails, and policy enforcement across Kubernetes and CI/CD.
+title: Política como Código
+description: OPA, Gatekeeper, Kyverno — controle de admissão, barreiras de conformidade e aplicação de políticas no Kubernetes e CI/CD.
 ---
 
 <div class="domain-page-hero" data-domain="security">
   <div class="dph-left">
     <span class="dph-eyebrow">// security-devsecops / policy-as-code</span>
-    <h1 class="dph-title">Policy as Code</h1>
-    <p class="dph-desc">Policy as Code encodes compliance, security, and operational rules in version-controlled, testable policy files. Admission controllers enforce policies at the Kubernetes API boundary — blocking or mutating non-compliant resources before they are persisted.</p>
+    <h1 class="dph-title">Política como Código</h1>
+    <p class="dph-desc">Política como Código codifica regras de conformidade, segurança e operação em arquivos de política versionados e testáveis. Os controladores de admissão aplicam políticas na fronteira da API do Kubernetes — bloqueando ou mutando recursos não conformes antes de serem persistidos.</p>
     <div class="dph-badges">
       <span class="tech-badge">OPA</span>
       <span class="tech-badge">Gatekeeper</span>
@@ -19,13 +19,13 @@ description: OPA, Gatekeeper, Kyverno — admission control, compliance guardrai
   </div>
 </div>
 
-[← Secrets Management](secrets.md) | [← Security Overview](index.md) | [Vulnerability Scanning →](vulnerability-scanning.md)
+[← Gerenciamento de Segredos](secrets.md) | [← Visão Geral de Segurança](index.md) | [Varredura de Vulnerabilidades →](vulnerability-scanning.md)
 
 ---
 
 ## OPA Gatekeeper
 
-### Installation
+### Instalação
 
 ```bash
 helm repo add gatekeeper https://open-policy-agent.github.io/gatekeeper/charts
@@ -85,9 +85,9 @@ spec:
     labels: ["app.kubernetes.io/name", "app.kubernetes.io/version", "team"]
 ```
 
-### Common Gatekeeper Policies
+### Políticas Comuns do Gatekeeper
 
-=== "Block latest tag"
+=== "Bloquear tag :latest"
 
     ```yaml
     apiVersion: templates.gatekeeper.sh/v1
@@ -117,7 +117,7 @@ spec:
             }
     ```
 
-=== "Require resource limits"
+=== "Exigir limites de recursos"
 
     ```yaml
     apiVersion: templates.gatekeeper.sh/v1
@@ -153,7 +153,7 @@ spec:
             }
     ```
 
-=== "Disallow privileged containers"
+=== "Proibir contêineres privilegiados"
 
     ```yaml
     apiVersion: templates.gatekeeper.sh/v1
@@ -183,7 +183,7 @@ spec:
             }
     ```
 
-=== "Require non-root user"
+=== "Exigir usuário não root"
 
     ```yaml
     apiVersion: templates.gatekeeper.sh/v1
@@ -208,20 +208,20 @@ spec:
             }
     ```
 
-### Gatekeeper Audit
+### Auditoria do Gatekeeper
 
 ```bash
-# Check constraint violations across the cluster
+# Verificar violações de restrição no cluster
 kubectl get constraints
 kubectl describe k8srequiredlabels require-team-label
-# Shows: .status.violations — all non-compliant resources
+# Exibe: .status.violations — todos os recursos não conformes
 ```
 
 ---
 
 ## Kyverno
 
-### Installation
+### Instalação
 
 ```bash
 helm upgrade --install kyverno kyverno/kyverno \
@@ -230,7 +230,7 @@ helm upgrade --install kyverno kyverno/kyverno \
   --set admissionController.resources.limits.memory=384Mi
 ```
 
-### Validate Policy
+### Política de Validação
 
 ```yaml
 apiVersion: kyverno.io/v1
@@ -261,7 +261,7 @@ spec:
                 (image): "!*:latest"
 ```
 
-### Mutate Policy
+### Política de Mutação
 
 ```yaml
 apiVersion: kyverno.io/v1
@@ -283,7 +283,7 @@ spec:
               +(env): "{{ request.namespace }}"
 ```
 
-### Generate Policy (NetworkPolicy on namespace creation)
+### Política de Geração (NetworkPolicy na criação de namespace)
 
 ```yaml
 apiVersion: kyverno.io/v1
@@ -309,7 +309,7 @@ spec:
             policyTypes: [Ingress]
 ```
 
-### Verify Image Signatures (Supply Chain)
+### Verificar Assinaturas de Imagem (Cadeia de Suprimentos)
 
 ```yaml
 apiVersion: kyverno.io/v1
@@ -341,7 +341,7 @@ spec:
 
 ---
 
-## OPA + Conftest (CI enforcement)
+## OPA + Conftest (Aplicação em CI)
 
 ```bash
 # Install conftest
@@ -403,7 +403,7 @@ warn[msg] if {
 
 ---
 
-## OPA Decision Logs
+## Logs de Decisão do OPA
 
 ```yaml
 # OPA standalone — decision logging
@@ -420,18 +420,18 @@ opa run \
 
 ---
 
-## Policy Coverage Matrix
+## Matriz de Cobertura de Políticas
 
-| Policy | Gatekeeper | Kyverno | Conftest |
+| Política | Gatekeeper | Kyverno | Conftest |
 |--------|-----------|---------|---------|
-| Block `:latest` tag | ConstraintTemplate | ClusterPolicy validate | Rego rule |
-| Require resource limits | ConstraintTemplate | ClusterPolicy validate | Rego rule |
-| Require non-root | ConstraintTemplate | ClusterPolicy validate | Rego rule |
-| Disallow privileged | ConstraintTemplate | ClusterPolicy validate | — |
-| Auto-add labels | — | ClusterPolicy mutate | — |
-| Generate NetworkPolicy | — | ClusterPolicy generate | — |
-| Verify image signature | — | ClusterPolicy verifyImages | — |
-| Terraform compliance | — | — | Rego policy |
-| Dockerfile best practices | — | — | Rego policy |
+| Bloquear tag `:latest` | ConstraintTemplate | ClusterPolicy validate | Regra Rego |
+| Exigir limites de recursos | ConstraintTemplate | ClusterPolicy validate | Regra Rego |
+| Exigir não-root | ConstraintTemplate | ClusterPolicy validate | Regra Rego |
+| Proibir modo privilegiado | ConstraintTemplate | ClusterPolicy validate | — |
+| Adicionar labels automaticamente | — | ClusterPolicy mutate | — |
+| Gerar NetworkPolicy | — | ClusterPolicy generate | — |
+| Verificar assinatura de imagem | — | ClusterPolicy verifyImages | — |
+| Conformidade Terraform | — | — | Política Rego |
+| Boas práticas de Dockerfile | — | — | Política Rego |
 
-[← Secrets Management](secrets.md) | [← Security Overview](index.md) | [Vulnerability Scanning →](vulnerability-scanning.md)
+[← Gerenciamento de Segredos](secrets.md) | [← Visão Geral de Segurança](index.md) | [Varredura de Vulnerabilidades →](vulnerability-scanning.md)

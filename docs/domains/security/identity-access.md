@@ -1,13 +1,13 @@
 ---
-title: Identity & Access
-description: SPIFFE/SPIRE, zero-trust networking, workload identity, OIDC, RBAC and cloud IAM patterns.
+title: Identidade & Acesso
+description: SPIFFE/SPIRE, redes de confiança zero, identidade de workload, OIDC, RBAC e padrões de IAM na nuvem.
 ---
 
 <div class="domain-page-hero" data-domain="security">
   <div class="dph-left">
     <span class="dph-eyebrow">// security-devsecops / identity-access</span>
-    <h1 class="dph-title">Identity & Access</h1>
-    <p class="dph-desc">In a zero-trust model, every workload must prove its identity before accessing any resource — not just at the network perimeter. SPIFFE/SPIRE issues cryptographic workload identities; OIDC federates cloud IAM; Kubernetes RBAC governs the control plane.</p>
+    <h1 class="dph-title">Identidade & Acesso</h1>
+    <p class="dph-desc">Em um modelo de confiança zero, todo workload deve provar sua identidade antes de acessar qualquer recurso — não apenas no perímetro da rede. O SPIFFE/SPIRE emite identidades criptográficas de workload; o OIDC realiza a federação do IAM na nuvem; o RBAC do Kubernetes governa o plano de controle.</p>
     <div class="dph-badges">
       <span class="tech-badge">SPIFFE/SPIRE</span>
       <span class="tech-badge">OIDC Federation</span>
@@ -19,11 +19,11 @@ description: SPIFFE/SPIRE, zero-trust networking, workload identity, OIDC, RBAC 
   </div>
 </div>
 
-[← Vulnerability Scanning](vulnerability-scanning.md) | [← Security Overview](index.md) | [Supply Chain →](supply-chain.md)
+[← Varredura de Vulnerabilidades](vulnerability-scanning.md) | [← Visão Geral de Segurança](index.md) | [Cadeia de Suprimentos →](supply-chain.md)
 
 ---
 
-## Zero-Trust Principles
+## Princípios de Confiança Zero
 
 ```
 Traditional perimeter:            Zero-Trust:
@@ -40,9 +40,9 @@ Traditional perimeter:            Zero-Trust:
 
 ## SPIFFE / SPIRE
 
-SPIFFE (Secure Production Identity Framework for Everyone) defines a standard for workload identity. SPIRE is the reference implementation.
+SPIFFE (Secure Production Identity Framework for Everyone) define um padrão para identidade de workload. SPIRE é a implementação de referência.
 
-### Architecture
+### Arquitetura
 
 ```
 ┌────────────────────────────────┐
@@ -67,7 +67,7 @@ SPIFFE (Secure Production Identity Framework for Everyone) defines a standard fo
     └──────────────────────────┘
 ```
 
-### Installation (Helm)
+### Instalação (Helm)
 
 ```bash
 helm upgrade --install spire-crds spire/spire-crds \
@@ -108,7 +108,7 @@ spire-agent:
       enabled: true
 ```
 
-### Registration Entries
+### Entradas de Registro
 
 ```bash
 # Register a workload — SVID issued when pod matches all selectors
@@ -146,9 +146,9 @@ client := &http.Client{Transport: &http.Transport{TLSClientConfig: tlsConfig}}
 
 ---
 
-## OIDC Workload Identity Federation
+## Federação de Identidade de Workload via OIDC
 
-Replace long-lived cloud credentials with short-lived tokens issued via OIDC.
+Substitua credenciais de nuvem de longa duração por tokens de curta duração emitidos via OIDC.
 
 ### GitHub Actions → AWS
 
@@ -219,9 +219,9 @@ metadata:
 
 ---
 
-## Kubernetes RBAC
+## RBAC do Kubernetes
 
-### Principle of Least Privilege
+### Princípio do Menor Privilégio
 
 ```yaml
 # Role — namespaced permissions
@@ -287,7 +287,7 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
-### RBAC Audit Commands
+### Comandos de Auditoria RBAC
 
 ```bash
 # Check what a user can do
@@ -309,7 +309,7 @@ kubectl rbac-tool who-can create pods -n production
 
 ---
 
-## Cloud IAM Best Practices
+## Melhores Práticas de IAM na Nuvem
 
 === "AWS"
 
@@ -380,7 +380,7 @@ kubectl rbac-tool who-can create pods -n production
 
 ---
 
-## mTLS with Istio (Zero-Trust Service Mesh)
+## mTLS com Istio (Malha de Serviços com Confiança Zero)
 
 ```yaml
 # Enforce STRICT mTLS across the entire mesh
@@ -426,7 +426,7 @@ spec:
 
 ---
 
-## Just-in-Time (JIT) Access
+## Acesso Just-in-Time (JIT)
 
 ```bash
 # Teleport — short-lived certificates for SSH/K8s/DB access
@@ -447,4 +447,4 @@ tsh app login aws-console
 tsh aws s3 ls
 ```
 
-[← Vulnerability Scanning](vulnerability-scanning.md) | [← Security Overview](index.md) | [Supply Chain →](supply-chain.md)
+[← Varredura de Vulnerabilidades](vulnerability-scanning.md) | [← Visão Geral de Segurança](index.md) | [Cadeia de Suprimentos →](supply-chain.md)
